@@ -1,0 +1,28 @@
+import ROOT 
+
+
+ops = ["cW", "cHW", "cHWB", "cHbox", "cHB", "cHl1", "cHQ1", "cHj1"]
+f = ROOT.TFile("plots_fit_2018_EFT_prova.root", "UPDATE")
+
+for region in [i.GetName() for i in f.GetListOfKeys()]:
+    d = f.Get(region)
+    f.cd(region)
+
+    for var in [j.GetName() for j in d.GetListOfKeys()]:
+        d_ = d.Get(var)
+        f.cd(region + "/" + var)
+
+        for shape in ["lin", "quad"]:
+            for op in ops:
+
+                s_ = "histo_" + shape + "_" + op 
+                new_s_ = "histo_" + shape + "m1_" + op 
+
+                h = d_.Get(s_)
+                h2 = h.Clone(new_s_)
+                h2.Scale(-1)
+                h2.SetName(new_s_)
+
+                h2.Write(new_s_)
+
+f.Close()

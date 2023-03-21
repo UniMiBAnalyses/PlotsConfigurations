@@ -1,5 +1,18 @@
 from itertools import combinations
 
+
+def readReweightCard(file_):
+    rew = []
+    f = open(file_, "r")
+    contents = f.readlines()
+    for line in contents:
+        if "--rwgt_name" in line:
+            op = line.split("--rwgt_name=")[-1].split("\n")[0]
+            rew.append(op)
+    
+    return rew
+    
+
 def getListOfSamplesSingleChannels(dict_, sample):
     l = []
     for key in dict_.keys():
@@ -11,8 +24,27 @@ def generateLatinosSamplesSingleChannels(dict_, sample):
     for key in dict_.keys():
         l += "samples['{}_{}'] = ".format(key, sample) + "{\n"
         l += "   'name': nanoGetSampleFiles(directory_EFT,'{}'),\n".format(sample)
-        l += "   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil*dipole_EFT_weight' + '*' + '{}',\n".format(dict_[key])
+        l += "   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '{}',\n".format(dict_[key])
         l += "   'FilesPerJob': 50,\n"
+        l += "}\n"
+        l += "\n"
+        
+    return l
+
+def generateLatinosSamples(dict_, samples):
+
+    s = ""
+    for sam in samples:
+        s += "nanoGetSampleFiles(directory_EFT,'{}') + ".format(sam)
+
+    s = s[:-2] + ",\n"
+
+    l = ""
+    for key in dict_.keys():
+        l += "samples['{}'] = ".format(key) + "{\n"
+        l += "   'name': {}".format(s)
+        l += "   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '{}',\n".format(dict_[key])
+        l += "   'FilesPerJob': 1,\n"
         l += "}\n"
         l += "\n"
         
