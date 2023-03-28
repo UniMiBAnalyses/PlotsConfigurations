@@ -158,9 +158,10 @@ samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcPrivateDirectory,'WLNuJ
 ###########################################
 
 
-####### Wjets #########
+# # ####### Wjets #########
 Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(PhotonGen_eta)<2.5 ) > 0) '
 Total_correction = 'WJets_reweight'
+# Total_correction = '1'
 
 samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcPrivateDirectory, 'WJetsToLNu-LO')
                                    + nanoGetSampleFiles(mcPrivateDirectory, 'WJetsToLNu_HT70_100')
@@ -193,6 +194,26 @@ addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT800_1200',  '1.1285')
 addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT1200_2500', '1.3268') 
 addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT2500_inf',  '2.7948') 
 
+
+
+# samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectory, 'WJetsToLNu')
+#                                    + nanoGetSampleFiles(mcDirectory, 'WJetsToLNu_Pt50to100')
+#                                    + nanoGetSampleFiles(mcDirectory, 'WJetsToLNu_Pt100to250')
+#                                    + nanoGetSampleFiles(mcDirectory, 'WJetsToLNu_Pt250to400')
+#                                    + nanoGetSampleFiles(mcDirectory, 'WJetsToLNu_Pt400to600')
+#                                    + nanoGetSampleFiles(mcDirectory, 'WJetsToLNu_Pt600toInf'),
+#                         # 'weight': CommonWeight+'*' + Wjets_photon_filter +'* ewknloW',
+#                         'weight': CommonWeight+'*' + Wjets_photon_filter,
+#                         # 'weight' : '1',
+# 			                  'FilesPerJob' : 15, 
+#                         'subsamples': {
+#                           'hardJets'  : 'hardJets',
+#                           'PUJets'    : 'PUJets'
+#                                     }
+# 		                 }
+
+
+
 ###############################################
 
 
@@ -215,6 +236,9 @@ samples['top'] = {    'name'   : nanoGetSampleFiles(mcPrivateDirectory,'TTTo2L2N
 #                     'suppressNegative' :['all'],
 #                     'suppressNegativeNuisances' :['all'],
                 }
+
+# !!!! TTToSemiLeptonic_ext3?
+
 
 addSampleWeight(samples,'top','TTTo2L2Nu','Top_pTrw')
 addSampleWeight(samples,'top','TTToSemiLeptonic','Top_pTrw')
@@ -416,7 +440,7 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcPrivateDirectory,'ZZZ')
                                 + nanoGetSampleFiles(mcPrivateDirectory,'WWZ')
                                 + nanoGetSampleFiles(mcPrivateDirectory,'WWW'),
                     'weight': CommonWeight,
-                                #+ nanoGetSampleFiles(mcPrivateDirectory,'WWG'), #should this be included? or is it already taken into account in the WW sample?
+                                #+ nanoGetSampleFiles(mcDirectory,'WWG'), #should this be included? or is it already taken into account in the WW sample?
 #                    'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch ,
                     'FilesPerJob' : 15,
                      'EventsPerJob' : 70000,

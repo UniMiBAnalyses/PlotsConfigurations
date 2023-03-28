@@ -172,6 +172,19 @@ variables['njet_30']  = {
                          }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
                          }
 
+
+# variables['basew']  = {
+#                          'name': 'baseW',     
+#                          'range' : (100,-0.2,0.2),   
+#                          'xaxis' : 'baseW',
+#                          'fold' : 3,
+#                          'blind': {
+#                            'ele_SR' : 'full',
+#                            'mu_SR' : 'full'
+#                           }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
+#                          }
+
+
 variables['njet_40']  = {
                          'name': 'Sum$(CleanJet_pt>40)',     
                          'range' : (8,0,8),   

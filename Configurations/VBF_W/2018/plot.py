@@ -178,6 +178,7 @@ plot['Wjets_HT_hardJets'] = {
                  'scale'    : 1.0
                  #'scale'    : 1.1231175589276459 #mu
                  #'scale'    : 1.2795330335917352
+                # 'scale'    : 0.5
                 }
 
 plot['Wjets_HT_PUJets'] = {   

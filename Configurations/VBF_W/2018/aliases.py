@@ -8,6 +8,7 @@ conf_folder = configurations +"/VBF_W/2018/"
 #aliases = {}
 
 mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
+# mc = [skey for skey in samples]
 
 ####################
 
@@ -125,6 +126,11 @@ aliases['Dphilep1met'] = {
     'expr' : 'abs(Lepton_phi[0] - PuppiMET_phi) * (abs(Lepton_phi[0] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(Lepton_phi[0] - PuppiMET_phi)) * (abs(Lepton_phi[0] - PuppiMET_phi) >= 3.1415)'
 } 
 
+aliases['singleW'] = {
+    'expr' : 'baseW/(1000*Xsec)',
+    'samples' : mc
+}
+
 ###################
 # trigger eff
 
@@ -180,8 +186,13 @@ aliases['bReqSF'] = {
     'samples': mc
 }
 
+# aliases['btagSF'] = {
+#     'expr': 'bVeto*bVetoSF + bReqTight *bReqSF',
+#     'samples': mc
+# }
+
 aliases['btagSF'] = {
-    'expr': 'bVeto*bVetoSF + bReqTight *bReqSF',
+    'expr': 'bVetoSF',
     'samples': mc
 }
 
