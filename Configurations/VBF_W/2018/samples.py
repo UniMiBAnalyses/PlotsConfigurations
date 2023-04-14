@@ -41,7 +41,9 @@ mcSteps = 'MCl1loose2018v7__MCCorr2018v7'
 #from VBS
 dataSteps = 'DATAl1loose2018v7__DATACombJJLNu2018'
 
-skim = '2Jets1leptonW'
+MC_skim = '2Jets1leptonW2018'
+
+DATA_skim = 'DATA2Jets1leptonW2018'
 
 
 ##############################################
@@ -62,10 +64,10 @@ def makeMCDirectory(var=''):
       return os.path.join(treeBaseDirPrivate, mcProduction, (mcSteps + '__' + skim).format(var=''))
 
 mcDirectory = os.path.join(treeBaseDir,  mcProduction , mcSteps)
-mcPrivateDirectory = os.path.join(treeBaseDirPrivate,  mcProduction , mcSteps + '__' + skim)
+mcPrivateDirectory = os.path.join(treeBaseDirPrivate,  mcProduction , mcSteps + '__' + MC_skim)
 #fakeDirectory = os.path.join(treeBaseDir, fakeRe
 dataDirectory = os.path.join(treeBaseDir, dataReco, dataSteps)
-dataPrivateDirectory = os.path.join(treeBaseDirPrivate, dataReco, dataSteps + '__' + skim)
+dataPrivateDirectory = os.path.join(treeBaseDirPrivate, dataReco, dataSteps + '__' + DATA_skim)
 
 
 ############################# PROVA
@@ -459,8 +461,13 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcPrivateDirectory,'ZZZ')
 
 # Then corrected
 fakeW = 'fakeWeight_35'
-Fake_correction = '(((abs(Lepton_pdgId[0])==11)*(0.8013918943)) + ((abs(Lepton_pdgId[0])==13)*(0.7654731335)))'
-#Fake_correction = '1.'
+Fake_correction = '((abs(Lepton_pdgId[0])==11)*((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(0.4)+((Lepton_phi[0]>=-1.)*(Lepton_phi[0]<=-1.5)*(1))) + ((abs(Lepton_pdgId[0])==13)*((Lepton_phi[0]>0.3)*(Lepton_phi[0]<1.)*(0.5)+((Lepton_phi[0]<=0.3)*(Lepton_phi[0]>=1.)*(1)))))'
+# Fake_correction = '1.'
+
+Fake_ele_corr = '((abs(Lepton_pdgId[0]) == 11) * (((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(0.4)) + ((Lepton_phi[0]>-1.)*(Lepton_phi[0]<1.5)*(1.))))'
+Fake_mu_corr = '((abs(Lepton_pdgId[0]) == 13 ) * (((Lepton_phi[0]>0.3)*(Lepton_phi[0]<1.)*(0.5)) + ((Lepton_phi[0]<0.3)*(Lepton_phi[0]>1.)*(1.))))'
+
+Fake_correction = Fake_ele_corr + ' + ' + Fake_mu_corr
 
 ### Fakes
 samples['Fake'] = {
@@ -500,3 +507,7 @@ for Run in DataRun :
 
 
 #samples = {   key:v for key,v in samples.items() if key  in ["VBS_dipoleRecoil"]}
+
+# mkPostProc.py -p Autumn18_102X_nAODv7_Full2018v7 -s 2Jets1leptonW2018 -i MCl1loose2018v7__MCCorr2018v7 -b -Q workday -T  WLNuJJ_EWK,WJetsToLNu-LO,WJetsToLNu_HT70_100,WJetsToLNu_HT100_200,WJetsToLNu_HT200_400,WJetsToLNu_HT400_600,WJetsToLNu_HT600_800,WJetsToLNu_HT800_1200,WJetsToLNu_HT1200_2500,WJetsToLNu_HT2500_inf,WJetsToLNu,WJetsToLNu_Pt50to100,WJetsToLNu_Pt100to250,WJetsToLNu_Pt250to400,WJetsToLNu_Pt400to600,WJetsToLNu_Pt600toInf,TTTo2L2Nu,ST_s-channel_ext1,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop_ext1,ST_tW_top_ext1,TTToSemiLeptonic,TTZjets,TTWjets,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,WWToLNuQQ,GluGluWWToLNuQQ,GluGluHToWWToLNuQQ_M125,HWminusJ_HToWW_LNu_M125,HWplusJ_HToWW_LNu_M125,VBFHToWWToLNuQQ_M125,DYJetsToLL_M-50,DYJetsToLL_M-50_ext2,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,DYJetsToLL_M-10to50-LO_ext1,DYJetsToLL_M-4to50_HT-100to200,DYJetsToLL_M-4to50_HT-200to400,DYJetsToLL_M-4to50_HT-400to600,DYJetsToLL_M-4to50_HT-600toInf,EWKZ2Jets_ZToLL_M-50,Wg_MADGRAPHMLM,ZGToLLG,ZZZ,WZZ,WWZ,WWW,WJetsToLNu-0J,WJetsToLNu-1J,WJetsToLNu-2J
+
+# # mkPostProc.py -p Run2018_102X_nAODv7_Full2018v7 -s DATA2Jets1leptonW2018 -i DATAl1loose2018v7__DATACombJJLNu2018 -b -Q workday

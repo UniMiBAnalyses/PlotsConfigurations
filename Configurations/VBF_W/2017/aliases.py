@@ -370,10 +370,10 @@ aliases['getGenZpt_OTF'] = {
 handle = open('%s/src/PlotsConfigurations/Configurations/patches/DYrew30.py' % os.getenv('CMSSW_BASE'),'r')
 exec(handle)
 handle.close()
-# aliases['DY_NLO_pTllrw'] = {
-#     'expr': '('+DYrew['2017']['NLO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
-#     'samples': ['DY_M-50', 'DY_else']
-# }
+aliases['DY_NLO_pTllrw'] = {
+    'expr': '('+DYrew['2017']['NLO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
+    'samples': ['DY_M-50', 'DY_else']
+}
 aliases['DY_LO_pTllrw'] = {
     'expr': '('+DYrew['2017']['LO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
     'samples': ['DY_M-50', 'DY_else']

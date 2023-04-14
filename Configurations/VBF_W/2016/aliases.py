@@ -284,22 +284,22 @@ aliases['nCleanGenJet'] = {
 }
 
 # ##### DY Z pT reweighting
-# aliases['getGenZpt_OTF'] = {
-#     'linesToAdd':['.L %s/src/PlotsConfigurations/Configurations/patches/getGenZpt.cc+' % os.getenv('CMSSW_BASE')],
-#     'class': 'getGenZpt',
-#     'samples': ['DY_else','DY_M-50']
-# }
-# handle = open('%s/src/PlotsConfigurations/Configurations/patches/DYrew30.py' % os.getenv('CMSSW_BASE'),'r')
-# exec(handle)
-# handle.close()
-# aliases['DY_NLO_pTllrw'] = {
-#     'expr': '('+DYrew['2016']['NLO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
-#     'samples': ['DY_else','DY_M-50']
-# }
-# aliases['DY_LO_pTllrw'] = {
-#     'expr': '('+DYrew['2016']['LO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
-#     'samples': ['DY_else','DY_M-50']
-# }
+aliases['getGenZpt_OTF'] = {
+    'linesToAdd':['.L %s/src/PlotsConfigurations/Configurations/patches/getGenZpt.cc+' % os.getenv('CMSSW_BASE')],
+    'class': 'getGenZpt',
+    'samples': ['DY_else','DY_M-50']
+}
+handle = open('%s/src/PlotsConfigurations/Configurations/patches/DYrew30.py' % os.getenv('CMSSW_BASE'),'r')
+exec(handle)
+handle.close()
+aliases['DY_NLO_pTllrw'] = {
+    'expr': '('+DYrew['2016']['NLO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
+    'samples': ['DY_else','DY_M-50']
+}
+aliases['DY_LO_pTllrw'] = {
+    'expr': '('+DYrew['2016']['LO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
+    'samples': ['DY_else','DY_M-50']
+}
 
 #######################################################
 

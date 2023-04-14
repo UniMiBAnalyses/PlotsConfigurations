@@ -128,9 +128,17 @@ groupPlot['Wjets_HT']  = {
                 'nameHR' : 'WJets_HT',
                 'isSignal' : 0,
                 'color':   palette["Yellow"],
-                'samples'  : ['Wjets_HT'],
+                'samples'  : ['Wjets_HT',],
                 'fill': 1001
                 }
+
+# groupPlot['Wjets_NLO_pt']  = {  
+#                 'nameHR' : 'WJets_NLO_pt',
+#                 'isSignal' : 0,
+#                 'color':   palette["GreenDarker"],
+#                 'samples'  : ['Wjets_NLO_pt'],
+#                 'fill': 1001
+#                 }
 
 # groupPlot['Wjets_HT_PUJets']  = {  
 #                 'nameHR' : 'WJets_PUJets',
@@ -170,19 +178,31 @@ groupPlot['Wjets_HT']  = {
 #                   'scale'    : 1.   
 #              }
 
+# plot['Wjets_HT'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  'scale'    : 1.0
+#                 }
+
 plot['Wjets_HT'] = {   
                  'color': colors['kAzure']-1,
                  'isSignal' : 0,
                  'isData'   : 0, 
                  'scale'    : 1.0
                 }
+# plot['Wjets_NLO_pt'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  'scale'    : 1.0
+#                 }
 
-plot['Wjets_NLO'] = {   
-                  'nameHR' : 'WJets_NLO',
+plot['Wjets_NLO_J'] = {   
+                  'nameHR' : 'Wjets_NLO_J',
                   'color': 1 ,  
                   'isSignal' : 0,
                   'isData'   : 1 ,
-                  'isBlind'  : 0
                 }
 
 # plot['top'] = {   

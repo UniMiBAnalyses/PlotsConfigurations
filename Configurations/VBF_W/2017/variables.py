@@ -531,6 +531,7 @@ variables['DeepBj2'] = {   'name': 'Jet_btagDeepB[CleanJet_jetIdx[1]]',
                          }
 }
 
+
 # variables['DNNoutput_ALLbin1'] = {   'name': 'DNNoutputSR_ALL',     
 #                         'range' : ([0., 0.10, 0.20, 0.30, 0.40, 0.50, 1.],), 
 #                         'xaxis' : 'DNNoutput',

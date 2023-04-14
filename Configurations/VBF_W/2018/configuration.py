@@ -5,7 +5,7 @@ treeName = 'Events'
 tag = 'vbf_w_2018'
 
 # used by mkShape to define output directory for root files
-outputDir = 'rootFile'
+outputDir = 'rootFile/NEWSKIM'
 
 # file with TTree aliases
 aliasesFile = 'aliases.py'

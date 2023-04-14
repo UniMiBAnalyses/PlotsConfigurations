@@ -14,7 +14,19 @@ supercut = '((Alt$(abs(CleanJet_eta[0]), 3) <2.5) || (Alt$(abs(CleanJet_eta[0]),
 #   Alt$(Lepton_isTightElectron_mvaFall17V1Iso_WP90[1], 0) < 0.5 && 
 # Alt$(Lepton_isTightMuon_cut_Tight_HWWW[1],0) < 0.5 )"',
 
-cuts['Z'] = '1'
+# NEW
+# '"(Alt$(Lepton_pt[0],0) > 25.) && 
+# (Alt$(CleanJet_pt[1], 0) > 30.) && 
+# (Alt$(CleanJet_pt[0],0) > 40.) && (mjj >= 400.) && 
+# (detajj > 2.) && (Alt$(Lepton_eta[0],-3) > -2.) && 
+# (Alt$(Lepton_eta[0],3) < 2.) && Alt$(Lepton_pt[1],0)<=15. && 
+# Alt$(Lepton_isLoose[1],1)> 0.5 && 
+# (Alt$(Lepton_isTightElectron_mvaFall17V1Iso_WP90[1], 0) < 0.5 &&
+#  Alt$(Lepton_isTightMuon_cut_Tight_HWWW[1],0) < 0.5 ) && 
+# (Lepton_isTightElectron_mvaFall17V1Iso_WP90[0] > 0.5 || Lepton_isTightMuon_cut_Tight_HWWW[0] > 0.5 )"',
+ 
+
+# cuts['Z'] = '1'
 
 #SR is ort to:
 #top
@@ -23,6 +35,7 @@ cuts['Z'] = '1'
 #fake
 
 cuts['ele_SR'] = '(abs(Lepton_pdgId[0])==11) \
+                  && Lepton_pt[0] > 35. \
                   && bVeto \
                   && CleanJet_pt[1]>70. \
                   && detajj >= 4 \
@@ -39,6 +52,7 @@ cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13)\
 
 ##Hard & PU WJets CRs
 cuts['ele_HWJ'] = '(abs(Lepton_pdgId[0])==11) \
+                    && Lepton_pt[0] > 35. \
                     && CleanJet_pt[1]>70. \
                     && bVeto \
                     && mjj <= 750. \
@@ -47,6 +61,7 @@ cuts['ele_HWJ'] = '(abs(Lepton_pdgId[0])==11) \
                     '
 
 cuts['ele_PUWJ'] = '(abs(Lepton_pdgId[0])==11) \
+                    && Lepton_pt[0] > 35. \
                     && detajj >= 5. \
                     && CleanJet_pt[1]<=50.\
                     && bVeto \
@@ -84,6 +99,7 @@ cuts['topcr']  = '((zeroJet && !bVeto) || bReqTight) \
 
 ## Fake CR   
 cuts['ele_FakeCR']  = '(abs(Lepton_pdgId[0])==11) \
+                      && Lepton_pt[0] > 35. \
                       && detajj < 5. \
                       && bVeto\
                       && mtw1<50. \

@@ -117,12 +117,17 @@ from itertools import product, chain
 
 structure['Wjets_HT']  = {  
                   'isSignal' : 0,
-                  'isData'   : 0 
+                  'isData'   : 0
               }
 
-structure['Wjets_NLO']  = {  
+# structure['Wjets_NLO_J']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 1 
+#               }
+
+structure['Wjets_NLO_J']  = {  
                   'isSignal' : 0,
-                  'isData'   : 1 
+                  'isData'   : 1
               }
 
 

@@ -273,9 +273,11 @@ plot['Fake'] = {
                 'color': colors['kAzure']-1,
                 'isSignal' : 0,
                 'isData'   : 0, 
-                'scale'    : 1.0 
+                'scale'    : 1.
                 #'scale' : 0.713100632928824
                 #'scale' : 0.6454715517898252
+                #'scale' : 0.4 ele
+                #'scale' : 0.5 mu
                }
 
 
