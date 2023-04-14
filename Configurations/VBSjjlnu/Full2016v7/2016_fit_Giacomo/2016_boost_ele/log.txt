@@ -1,0 +1,13 @@
+01/11/2023 07:00:50 PM - INFO: Working in dry mode, no commands executed
+01/11/2023 07:00:50 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+01/11/2023 07:00:50 PM - INFO: Creating workspace
+01/11/2023 07:00:50 PM - DEBUG: combineCards.py boost_sig_ele_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/boost_sig_ele/DNNoutput_boost/datacard.txt boost_wjet_ele_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/boost_wjetcr_ele/fit_bins_boost/datacard.txt boost_top_ele_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/boost_topcr_ele/events/datacard.txt > 2016_fit_Giacomo/2016_boost_ele/combined_2016_boost_ele.txt
+01/11/2023 07:00:50 PM - DEBUG: text2workspace.py 2016_fit_Giacomo/2016_boost_ele/combined_2016_boost_ele.txt -o 2016_fit_Giacomo/2016_boost_ele/combined_2016_boost_ele.root --X-pack-asympows 
+01/11/2023 07:00:50 PM - INFO: Preparing datacard: 2016_boost_ele
+01/11/2023 07:02:30 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+01/11/2023 07:02:30 PM - INFO: Creating workspace
+01/11/2023 07:02:30 PM - DEBUG: combineCards.py boost_sig_ele_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/boost_sig_ele/DNNoutput_boost/datacard.txt boost_wjet_ele_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/boost_wjetcr_ele/fit_bins_boost/datacard.txt boost_top_ele_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/boost_topcr_ele/events/datacard.txt > 2016_fit_Giacomo/2016_boost_ele/combined_2016_boost_ele.txt
+01/11/2023 07:02:30 PM - DEBUG: text2workspace.py 2016_fit_Giacomo/2016_boost_ele/combined_2016_boost_ele.txt -o 2016_fit_Giacomo/2016_boost_ele/combined_2016_boost_ele.root --X-pack-asympows 
+01/11/2023 07:02:30 PM - INFO: Preparing workspace
+01/11/2023 07:02:30 PM - INFO: Workspace ready
+01/11/2023 07:02:30 PM - INFO: Preparing datacard: 2016_boost_ele

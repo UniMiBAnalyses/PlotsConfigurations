@@ -2,8 +2,8 @@
 treeName= 'Events'
 
 
-tag = 'fit_2018_split_Combined'
-direc = "conf_fit_Combination"
+tag = 'fit_2017_bkg_reproduction'
+direc = "conf_fit_bkg_reproduction"
 
 # used by mkShape to define output directory for root files
 outputDir = 'rootFile_'+tag 
@@ -43,7 +43,7 @@ structureFile = direc+'/structure_split.py'
 # nuisances file for mkDatacards and for mkShape
 # nuisancesFile = direc+'/nuisances.py'
 # nuisancesFile = direc + '/nuisances_datacard_split.py'
-nuisancesFile = direc + '/nuisances_datacard_old.py'
+nuisancesFile = direc + '/nuisances_datacard_split_2pois_mkShapes.py'
 
 
 

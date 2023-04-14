@@ -552,7 +552,7 @@ for jtype in ["quark", "gluon"]:
 import json, os
 # VBS_pdf_factors = json.load(open("/afs/cern.ch/work/d/dvalsecc/private/CMSSW_11_1_4" + "/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7/conf_fit_v4.3/pdf_normcorr_VBS.json"))
 # nuis_factors = json.load(open("/afs/cern.ch/work/d/dvalsecc/private/CMSSW_11_1_4" + "/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7/conf_fit_v4.5/nuisance_incl_norm_factors_2018.json"))
-nuis_factors = json.load(open("/afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7/conf_fit_Combination/nuisance_incl_norm_factors_2018_split.json"))
+nuis_factors = json.load(open("/afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7/conf_fit_Giacomo/nuisance_incl_norm_factors_2018_split.json"))
 
 for sample in mc :
     if sample in ["ggWW","VBS","VBS_dipoleRecoil"] + wjets_all_bins + VBS_samples + VV_samples : continue

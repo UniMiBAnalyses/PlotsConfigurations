@@ -1,0 +1,13 @@
+01/11/2023 07:00:50 PM - INFO: Working in dry mode, no commands executed
+01/11/2023 07:00:50 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+01/11/2023 07:00:50 PM - INFO: Creating workspace
+01/11/2023 07:00:50 PM - DEBUG: combineCards.py res_sig_mu_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/res_sig_mu/DNNoutput_res_v1/datacard.txt res_wjet_mu_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/res_wjetcr_mu/fit_bins_res/datacard.txt res_top_mu_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/res_topcr_mu/events/datacard.txt > 2016_fit_Giacomo/2016_res_mu/combined_2016_res_mu.txt
+01/11/2023 07:00:50 PM - DEBUG: text2workspace.py 2016_fit_Giacomo/2016_res_mu/combined_2016_res_mu.txt -o 2016_fit_Giacomo/2016_res_mu/combined_2016_res_mu.root --X-pack-asympows 
+01/11/2023 07:00:50 PM - INFO: Preparing datacard: 2016_res_mu
+01/11/2023 07:02:30 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+01/11/2023 07:02:30 PM - INFO: Creating workspace
+01/11/2023 07:02:30 PM - DEBUG: combineCards.py res_sig_mu_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/res_sig_mu/DNNoutput_res_v1/datacard.txt res_wjet_mu_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/res_wjetcr_mu/fit_bins_res/datacard.txt res_top_mu_2016=./Full2016v7/datacards_fit_Giacomo_2016_Giacomo/res_topcr_mu/events/datacard.txt > 2016_fit_Giacomo/2016_res_mu/combined_2016_res_mu.txt
+01/11/2023 07:02:30 PM - DEBUG: text2workspace.py 2016_fit_Giacomo/2016_res_mu/combined_2016_res_mu.txt -o 2016_fit_Giacomo/2016_res_mu/combined_2016_res_mu.root --X-pack-asympows 
+01/11/2023 07:02:30 PM - INFO: Preparing workspace
+01/11/2023 07:02:30 PM - INFO: Workspace ready
+01/11/2023 07:02:30 PM - INFO: Preparing datacard: 2016_res_mu

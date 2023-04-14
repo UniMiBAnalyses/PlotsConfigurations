@@ -516,7 +516,7 @@ for ir in range(1,8):
     wjets_bins.append("Wjets_boost_"+str(ir))
 
 # VBS_pdf_factors = json.load(open(os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2017v7/conf_fit_v4.3/pdf_normcorr_VBS.json"))
-nuis_factors = json.load(open(os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2017v7/conf_fit_v4.5/nuisance_incl_norm_factors_2017.json"))
+nuis_factors = json.load(open(os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2017v7/conf_fit_Giacomo/nuisance_incl_norm_factors_2017_split.json"))
 
 for sample in mc :
     if sample in ["ggWW","VBS","VBS_dipoleRecoil","Wjets_boost"] + wjets_res_bins + VBS_samples + VV_samples : continue
