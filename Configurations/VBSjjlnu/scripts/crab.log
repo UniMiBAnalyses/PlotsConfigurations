@@ -1,0 +1,55 @@
+DEBUG 2023-01-27 10:07:22.642 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-27 10:07:22.643 UTC: 	 Running on: Linux lxplus770.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-27 10:07:22.643 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-01-27 10:07:22.644 UTC: 	 Found CRAB cache file /afs/cern.ch/user/g/gboldrin/.crab3
+DEBUG 2023-01-27 10:07:22.696 UTC: 	 Checking credentials
+DEBUG 2023-01-27 10:07:22.784 UTC: 	 Found proxy file /afs/cern.ch/user/g/gboldrin/proxy/x509up_u132569
+DEBUG 2023-01-27 10:07:22.784 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-01-27 10:07:22.784 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /afs/cern.ch/user/g/gboldrin/proxy/x509up_u132569
+DEBUG 2023-01-27 10:07:23.617 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-01-27 10:07:23.617 UTC: 	 Getting proxy life time left
+DEBUG 2023-01-27 10:07:23.617 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /afs/cern.ch/user/g/gboldrin/proxy/x509up_u132569
+DEBUG 2023-01-27 10:07:24.259 UTC: 	 output : 0
+0
+
+ error: 
+ retcode : 0
+DEBUG 2023-01-27 10:07:24.260 UTC: 	 Proxy valid for 00:00:00 hours
+DEBUG 2023-01-27 10:07:24.260 UTC: 	 Creating new proxy for 172:00 hours
+DEBUG 2023-01-27 10:07:24.260 UTC: 	 Executing command :
+ voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/user/g/gboldrin/proxy/x509up_u132569 --valid 192:00 --voms cms:/cms
+DEBUG 2023-01-27 10:07:33.141 UTC: 	 output : 
+ error: 
+ retcode : 0
+DEBUG 2023-01-27 10:07:33.142 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /afs/cern.ch/user/g/gboldrin/proxy/x509up_u132569
+DEBUG 2023-01-27 10:07:33.704 UTC: 	 output : 691198
+691198
+
+ error: 
+ retcode : 0
+DEBUG 2023-01-27 10:07:33.705 UTC: 	 Proxy created.
+ERROR 2023-01-27 10:07:33.705 UTC: 	 Error: Please specify the site where to check the write permissions. Use the --site option.
+ERROR 2023-01-27 10:07:33.705 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/checkwrite.py", line 20, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/SubCommand.py", line 378, in __init__
+    self.validateOptions()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.221018.00/lib/CRABClient/Commands/checkwrite.py", line 291, in validateOptions
+    raise ex
+MissingOptionException: [91mError[0m: Please specify the site where to check the write permissions. Use the --site option.
+INFO 2023-01-27 10:07:33.712 UTC: 	 Log file is /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/scripts/crab.log
+DEBUG 2023-01-27 10:07:41.049 UTC: 	 CRAB Client version: v3.221018
+DEBUG 2023-01-27 10:07:41.050 UTC: 	 Running on: Linux lxplus770.cern.ch 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-01-27 10:07:41.050 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2023-01-27 10:07:41.050 UTC: 	 Found CRAB cache file /afs/cern.ch/user/g/gboldrin/.crab3

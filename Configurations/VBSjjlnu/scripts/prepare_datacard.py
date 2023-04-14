@@ -73,7 +73,7 @@ def create_logger(name, file):
 
 
 ##################################################
-
+    
 def prepare_workspace(datac, onlyDC=False):
     log = logging.getLogger(datac["datacard_name"])
     outdir = datac["outputdir"] 
@@ -90,17 +90,21 @@ def prepare_workspace(datac, onlyDC=False):
     
     
     cmds = [
-        "combineCards.py {} > {}/combined_{}.txt".format(" ".join(cards), outdir, datac["datacard_name"]),
-        txt2wp
+        "combineCards.py {} > {}/combined_{}.txt".format(" ".join(cards), outdir, datac["datacard_name"])
     ]
+
+    if not onlyDC: cmds.append(txt2wp)
+
     for cmd in cmds:
         log.debug(cmd)
 
     if not args.dry:
+        log.info("Combining datacards")
         os.system(cmds[0])
-        log.info("Preparing workspace")
-        os.system(cmds[1])
-        log.info("Workspace ready")
+        if len(cmds) > 1:
+           log.info("Preparing workspace")
+           os.system(cmds[1])
+           log.info("Workspace ready")
     
 
 
@@ -239,19 +243,20 @@ for datac in config:
     
     log.info(">>>>>>>>>>>>>>>>>> Starting new run")
 
-    if os.path.exists("{0}/combined_{1}.root".format(outdir, datac["datacard_name"])):
-        if args.redo_workspace:
-            log.info("Recreate workspace...")
-            prepare_workspace(datac)
-    else:
-        log.info("Creating workspace")            
-        prepare_workspace(datac)
+    if args.process == "combine":
 
-    log.info("Preparing datacard: "+ datac["datacard_name"])
-
+        log.info("Preparing datacard: "+ datac["datacard_name"])
+        prepare_workspace(datac, onlyDC=True)
    
-    if args.process == "workspace":
-        print("DONE")
+    elif args.process == "workspace":
+        if os.path.exists("{0}/combined_{1}.root".format(outdir, datac["datacard_name"])):
+           if args.redo_workspace:
+               log.info("Recreate workspace...")
+               prepare_workspace(datac)
+        else:
+           log.info("Creating workspace")
+           prepare_workspace(datac)
+
     elif args.process == "significance":
         significance(datac)    
     elif args.process == "fit_and_pulls_mcasimov":

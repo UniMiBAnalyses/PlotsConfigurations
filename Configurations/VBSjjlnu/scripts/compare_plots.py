@@ -1,5 +1,4 @@
 import argparse
-
 parser = argparse.ArgumentParser()
 parser.add_argument("-A", help="File A", type=str, )
 parser.add_argument("-B", help="File B", type=str)
@@ -14,6 +13,7 @@ args = parser.parse_args()
 
 import ROOT as R 
 
+R.gROOT.SetBatch(1)
 R.gStyle.SetOptStat(0)
 fA = R.TFile(args.A)
 fB = R.TFile(args.B)
@@ -33,4 +33,4 @@ hA.GetXaxis().SetTitle("eta")
 hR1.Draw()
 leg.Draw()
 c.Draw()
-#c.SaveAs(args.output+".png")
+c.SaveAs(args.output+"/{}_{}_{}.png".format(args.cut, args.var, args.sample))
