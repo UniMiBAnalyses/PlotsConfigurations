@@ -593,26 +593,8 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 
 # these samples do share the same structuee in the reweight weights:
 
-samples['mupVjj_ewk_dim6_EFT'] = {
-   'name': mupSamples,
-   'weight': "1",
-   'FilesPerJob': 3,
-}
-
-samples['epVjj_ewk_dim6_EFT'] = {
-   'name': epSamples,
-   'weight': "1",
-   'FilesPerJob': 3,
-}
-
-samples['tamVjj_ewk_dim6_EFT'] = {
-   'name': tamSamples,
-   'weight': "1",
-   'FilesPerJob': 3,
-}
-
-samples['tapVjj_ewk_dim6_EFT'] = {
-   'name': tapSamples,
+samples['tapVjj_mupVjj_epVjj_tamVjj_ewk_dim6_EFT'] = {
+   'name': tapSamples + mupSamples + epSamples + tamSamples,
    'weight': "1",
    'FilesPerJob': 3,
 }
@@ -665,12 +647,12 @@ VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
 
 EFT_samples = [
    # 'emVjj_ewk_dim6_EFT',
-   'epVjj_ewk_dim6_EFT',
+   # 'epVjj_ewk_dim6_EFT',
    # 'mumVjj_ewk_dim6_EFT',
-   'mupVjj_ewk_dim6_EFT',
-   'tamVjj_ewk_dim6_EFT',
-   'tapVjj_ewk_dim6_EFT'
-   # 'tapVjj_mupVjj_epVjj_tamVjj_ewk_dim6_EFT'
+   # 'mupVjj_ewk_dim6_EFT',
+   # 'tamVjj_ewk_dim6_EFT',
+   # 'tapVjj_ewk_dim6_EFT'
+   'tapVjj_mupVjj_epVjj_tamVjj_ewk_dim6_EFT'
 ]
 
 

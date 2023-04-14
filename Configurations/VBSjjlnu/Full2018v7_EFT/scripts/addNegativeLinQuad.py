@@ -2,7 +2,7 @@ import ROOT
 
 
 ops = ["cW", "cHW", "cHWB", "cHbox", "cHB", "cHl1", "cHQ1", "cHj1"]
-f = ROOT.TFile("plots_fit_2018_EFT_200323.root", "UPDATE")
+f = ROOT.TFile("plots_fit_2018_EFT_prova.root", "UPDATE")
 
 for region in [i.GetName() for i in f.GetListOfKeys()]:
     d = f.Get(region)
