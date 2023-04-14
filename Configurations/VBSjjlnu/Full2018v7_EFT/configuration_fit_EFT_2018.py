@@ -2,8 +2,8 @@
 treeName= 'Events'
 
 
-tag = 'fit_2018_split_Giacomo'
-direc = "conf_fit_Giacomo"
+tag = 'fit_2018_EFT'
+direc = "conf_fit_EFT"
 
 # used by mkShape to define output directory for root files
 outputDir = 'rootFile_'+tag 
