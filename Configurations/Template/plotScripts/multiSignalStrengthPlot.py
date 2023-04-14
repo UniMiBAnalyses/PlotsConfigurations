@@ -14,6 +14,7 @@ tdrstyle.setTDRStyle()
 
 parser = OptionParser()
 parser.add_option("-s", "--stat",   dest="stat",          default=False, action="store_true")  # ignore systematic uncertainties to consider statistical uncertainties only
+parser.add_option("-v", "--verbose",   dest="verbose",          default=False, action="store_true")
 #parser.add_option("-S", "--force-shape", dest="shape",    default=False, action="store_true")  # ignore systematic uncertainties to consider statistical uncertainties only
 #parser.add_option("-a", "--asimov", dest="asimov",  default=False, action="store_true")
 #parser.add_option("-m", "--mass", dest="mass",  default=125, type="float")
@@ -53,50 +54,55 @@ signals     = DC.list_of_signals()
 #if "ZH_htt" in signals: signals.remove("ZH_htt")
 
 #combChannels = ['0 jet ggH-tagged','1 jet ggH-tagged','2 jet ggH-tagged','2 jet VBF-tagged','2 jet VH-tagged']
-combChannels = ['4-lepton ZH-tagged','3-lepton WH-tagged','2-jet VH-tagged','2-jet VBF-tagged high mjj','2-jet VBF-tagged low mjj','2-jet VBF-tagged','2-jet ggH-tagged','1-jet SF ggH-tagged','1-jet ggH-tagged','0-jet SF ggH-tagged','0-jet ggH-tagged']
+#combChannels = ['4-lepton ZH-tagged','3-lepton WH-tagged','2-jet VH-tagged','2-jet VBF-tagged high mjj','2-jet VBF-tagged low mjj','2-jet VBF-tagged','2-jet ggH-tagged','1-jet SF ggH-tagged','1-jet ggH-tagged','0-jet SF ggH-tagged','0-jet ggH-tagged']
 
+combChannels = ['WVlnujj','OSWW','SSWW','WZ', 'ZZ', 'ZZ2l2nu']
 overallSignalRate = OrderedDict()
 overallTotalSignal = OrderedDict()
 
 for c in combChannels:
   overallSignalRate[c] = OrderedDict() 
-  overallSignalRate[c]['ggH_hww'] = 0.
-  overallSignalRate[c]['qqH_hww'] = 0.
-  overallSignalRate[c]['WH_hww'] = 0.
-  overallSignalRate[c]['ZH_hww'] = 0.
-  overallSignalRate[c]['bbH_hww'] = 0.
-  overallSignalRate[c]['ttH_hww'] = 0.
-#  overallSignalRate[c]['ggZH_hww'] = 0.
+  overallSignalRate[c]['ewk_SSWW'] = 0.
+  overallSignalRate[c]['ewk_OSWW'] = 0.
+  overallSignalRate[c]['ewk_WZ'] = 0.
+  overallSignalRate[c]['ewk_ZZ'] = 0.
 
   overallTotalSignal[c] = 0.
 
 splitVBF=False
 
 for channel in DC.exp:
-  if "Top" in channel or "DYtt" in channel or "WW" in channel or "wh3l_wz" in channel or "wh3l_zg" in channel or "zh4l_ZZ" in channel: continue
 
   print " channel = ", channel
 
-  if 'of0j' in channel: c='0-jet ggH-tagged'
-  elif 'of_0j' in channel: c='0-jet ggH-tagged' 
-  elif 'of1j' in channel: c='1-jet ggH-tagged'
-  elif 'of_1j' in channel: c='1-jet ggH-tagged'
-  elif 'of2j' in channel and not ('vbf' in channel or 'vh' in channel): c='2-jet ggH-tagged'
-  elif 'of_2j' in channel and not ('vbf' in channel or 'vh' in channel): c='2-jet ggH-tagged'
-  elif 'vbf' in channel:
-    if splitVBF:
-      if 'lowmjj'  in channel: c='2-jet VBF-tagged low mjj'
-      elif 'highmjj'  in channel: c='2-jet VBF-tagged high mjj'
-    else:
-      c='2-jet VBF-tagged'
-  elif 'vh' in channel: c='2-jet VH-tagged'
-  elif 'sf0j' in channel: c='0-jet SF ggH-tagged'
-  elif 'sf1j' in channel: c='1-jet SF ggH-tagged'
-  elif 'wh3l' in channel: c='3-lepton WH-tagged'
-  elif 'zh4l' in channel: c='4-lepton ZH-tagged'
+  #if 'of0j' in channel: c='0-jet ggH-tagged'
+  #elif 'of_0j' in channel: c='0-jet ggH-tagged' 
+  #elif 'of1j' in channel: c='1-jet ggH-tagged'
+  #elif 'of_1j' in channel: c='1-jet ggH-tagged'
+  #elif 'of2j' in channel and not ('vbf' in channel or 'vh' in channel): c='2-jet ggH-tagged'
+  #elif 'of_2j' in channel and not ('vbf' in channel or 'vh' in channel): c='2-jet ggH-tagged'
+  #elif 'vbf' in channel:
+  #  if splitVBF:
+  #    if 'lowmjj'  in channel: c='2-jet VBF-tagged low mjj'
+  #    elif 'highmjj'  in channel: c='2-jet VBF-tagged high mjj'
+  #  else:
+  #    c='2-jet VBF-tagged'
+  #elif 'vh' in channel: c='2-jet VH-tagged'
+  #elif 'sf0j' in channel: c='0-jet SF ggH-tagged'
+  #elif 'sf1j' in channel: c='1-jet SF ggH-tagged'
+  #elif 'wh3l' in channel: c='3-lepton WH-tagged'
+  #elif 'zh4l' in channel: c='4-lepton ZH-tagged'
+  #else:
+  #  print "UNKNOWN CHANNEL"
+  #  break 
+  if 'WVjjlnu' in channel: c='WVjjlnu'
+  elif 'SSWW' in channel: c = 'SSWW'
+  elif 'OSWW' in channel: c = "OSWW"
+  elif "WZ" in channel: c = "WZ"
+  elif "ZZ" in channel: c = "ZZ"
   else:
-    print "UNKNOWN CHANNEL"
-    break 
+     print "channel {} not found, continue".format(channel)
+     continue
  
   for s in signals :
     if s in DC.exp[channel].keys(): # possible that some backgrounds/signals appear only in some channels
