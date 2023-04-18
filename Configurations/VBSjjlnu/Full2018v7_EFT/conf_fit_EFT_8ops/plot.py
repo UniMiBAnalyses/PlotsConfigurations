@@ -74,7 +74,7 @@ for ir in range(1,8):
     wjets_bins.append("Wjets_boost_"+str(ir))
 
 
-"""
+
 groupPlot['VV+VVV']  = {  
                   'nameHR' : 'VV+VVV',
                   'isSignal' : 0,
@@ -129,63 +129,15 @@ groupPlot["Wjets"]  = {
                         'fill': 1001
                 }
 
-groupPlot['VBS']  = {  
-                 'nameHR' : 'VBS',
-                 'isSignal' : 1,
-                 'color': colors["kRed"]+1,   
-                 'samples'  : ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ", "ewk_WpWm", "ewk_WpWp", "ewk_WmWm"],
-                 'fill': 1001
+
+# additional options
+groupPlot['VBS_dipoleRecoil']  = {  
+                  'nameHR' : 'VBS_dipoleRecoil',
+                  'isSignal' : 0,
+                  'color': palette["Pink"], #palette["Peach3"],  
+                  'samples'  : ['VBS_dipoleRecoil'],
+                  'fill': 1001
               }
-
-# groupPlot['ewk_WpWp']  = {  
-#                  'nameHR' : 'ewk_WpWp',
-#                  'isSignal' : 1,
-#                  'color': colors["kBlue"], #palette["Peach3"],   
-#                  'samples'  : ['ewk_WpWp'],
-#                  'fill': 1001
-#               }
-
-# groupPlot['ewk_WpWm']  = {  
-#                  'nameHR' : 'ewk_WpWm',
-#                  'isSignal' : 1,
-#                  'color': palette["Orange2"],   
-#                  'samples'  : ['ewk_WpWm'],
-#                  'fill': 1001
-#               }
-
-# groupPlot['ewk_WmWm']  = {  
-#                  'nameHR' : 'ewk_WmWm',
-#                  'isSignal' : 1,
-#                  'color': palette["Pink2"],   
-#                  'samples'  : ['ewk_WmWm'],
-#                  'fill': 1001
-#               }
-
-# groupPlot['ewk_WmZ']  = {  
-#                  'nameHR' : 'ewk_WmZ',
-#                  'isSignal' : 1,
-#                  'color': colors["kMagenta"],   
-#                  'samples'  : ['ewk_WmZ'],
-#                  'fill': 1001
-#               }
-
-# groupPlot['ewk_WpZ']  = {  
-#                  'nameHR' : 'ewk_WpZ',
-#                  'isSignal' : 1,
-#                  'color': colors["kRed"],   
-#                  'samples'  : ['ewk_WpZ'],
-#                  'fill': 1001
-#               }
-
-# groupPlot['ewk_ZZ']  = {  
-#                  'nameHR' : 'ewk_ZZ',
-#                  'isSignal' : 1,
-#                  'color': colors["kGray"],   
-#                  'samples'  : ['ewk_ZZ'],
-#                  'fill': 1001
-#               }
-
-#plot = {}
 
 # keys here must match keys in samples.py    
 # 
@@ -277,52 +229,14 @@ for wjetbin in wjets_bins:
 
 
 # Signals
-plot['ewk_WpWp']  = { 
-                  'color': wjets_palette[0],    
-                  'isSignal' : 1,
-                  'isData'   : 0,
-                  'scale'    : 1.0
-                  }
 
-
-plot['ewk_WmWm']  = {
-                  'color': wjets_palette[1],  
-                  'isSignal' : 1,
-                  'isData'   : 0,
-                  'scale'    : 1.   ,
-              }   
-         
-
-
-plot['ewk_WpWm']  = {  
-                'color': wjets_palette[2],
-                'isSignal' : 1,
+plot['VBS_dipoleRecoil']  = {  
+                'color': colors['kTeal'],
+                'isSignal' : 0,
                 'isData'   : 0, 
                 'scale'    : 1.0,
             }
-
-plot['ewk_WpZ']  = {
-                  'color': wjets_palette[3],  
-                  'isSignal' : 1,
-                  'isData'   : 0,
-                  'scale'    : 1.   ,
-              }
-
-plot['ewk_WmZ']  = {
-                  'color': wjets_palette[4],  
-                  'isSignal' : 1,
-                  'isData'   : 0,
-                  'scale'    : 1.   ,
-              }   
          
-
-
-plot['ewk_ZZ']  = {  
-                'color': wjets_palette[5],
-                'isSignal' : 1,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
 
 # # data
 
@@ -334,47 +248,6 @@ plot['DATA']  = {
                  'isBlind'  : 0
              }
 
-
-"""
-# additional options
-groupPlot['VBS_dipoleRecoil']  = {  
-                  'nameHR' : 'VBS_dipoleRecoil',
-                  'isSignal' : 0,
-                  'color': palette["Pink"], #palette["Peach3"],  
-                  'samples'  : ['VBS_dipoleRecoil'],
-                  'fill': 1001
-              }
-
-#groupPlot['top']  = {  
-#                 'nameHR' : 'top',
-#                 'isSignal' : 0,
-#                 'color':  palette["MediumBlue"], #palette["MediumBlue2"],  
-#                 'samples'  : ['top'],
-#                 'fill': 1001
-#             }
-
-plot['sm']  = { 
-                 'nameHR' : 'sm',
-                 'color': 1 ,  
-                 'isSignal' : 3,
-                 'retainMCErrs': 1,
-                 'isData'   : 1 ,
-                 'isBlind'  : 0
-             }
-
-plot['VBS_dipoleRecoil']  = {  
-                'color': colors['kTeal'],
-                'isSignal' : 0,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-# plot['top'] = {   
-#                  'color': colors['kAzure']-1,
-#                  'isSignal' : 0,
-#                  'isData'   : 0, 
-#                  'scale'    : 1.0 
-#                  }
 
 legend['lumi'] = 'L = 59.74/fb'
 

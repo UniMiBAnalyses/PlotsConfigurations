@@ -1,8 +1,13 @@
 import ROOT 
+import sys
 
+
+if len(sys.argv) < 2:
+   print("Usage python scripts/addNegativeLinQuad.py <root file>")
+   sys.exit(0)
 
 ops = ["cW", "cHW", "cHWB", "cHbox", "cHB", "cHl1", "cHQ1", "cHj1"]
-f = ROOT.TFile("plots_fit_2018_EFT_prova.root", "UPDATE")
+f = ROOT.TFile(sys.argv[1], "UPDATE")
 
 for region in [i.GetName() for i in f.GetListOfKeys()]:
     d = f.Get(region)

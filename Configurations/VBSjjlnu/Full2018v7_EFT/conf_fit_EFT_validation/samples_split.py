@@ -45,6 +45,20 @@ directory_EFT     = os.path.join(treeBaseDir_EFT ,  mcProduction_EFT , mcSteps)
 directory_data   = os.path.join(treeBaseDir_SMP,       dataProduction, dataSteps)
 directory_interference = '/eos/user/g/govoni/valsecchi/LatinosSamples/Autumn18_102X_nAODv7_Full2018v7/MCl1loose2018v7__MCCorr2018v7__MCCombJJLNu2018'
 
+
+##############
+# EFT samples
+
+tapSamples = nanoGetSampleFiles(directory_EFT,'tapVjj_ewk_dim6_EFT')
+tamSamples = nanoGetSampleFiles(directory_EFT,'tamVjj_ewk_dim6_EFT')
+mupSamples = nanoGetSampleFiles(directory_EFT,'mupVjj_ewk_dim6_EFT')
+mumSamples = nanoGetSampleFiles(directory_EFT,'mumVjj_ewk_dim6_EFT')
+epSamples = nanoGetSampleFiles(directory_EFT,'epVjj_ewk_dim6_EFT')
+emSamples = nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT')
+
+##############
+
+
 wjets_res_bins = []
 wjets_boost_bins = []
 directory_wjets_bins = {}
@@ -132,7 +146,7 @@ DataTrig = {
 
 ########### DY ############
 
-DY_photon_filter = '( !(Sum$(PhotonGen_isPrompt==1 && PhotonGen_pt>15 && abs(PhotonGen_eta)<2.6) > 0 && Sum$(LeptonGen_isPrompt==1 && LeptonGen_pt>15)>=2) )'
+# DY_photon_filter = '( !(Sum$(PhotonGen_isPrompt==1 && PhotonGen_pt>15 && abs(PhotonGen_eta)<2.6) > 0 && Sum$(LeptonGen_isPrompt==1 && LeptonGen_pt>15)>=2) )'
 
 # samples['DY'] = {    'name'   :   nanoGetSampleFiles(directory_bkg,'DYJetsToLL_M-50') #Don't use LO(_ext0)! DYMVA Training!
 #                                   + nanoGetSampleFiles(directory_bkg,'DYJetsToLL_M-50_ext2')
@@ -177,11 +191,11 @@ DY_photon_filter = '( !(Sum$(PhotonGen_isPrompt==1 && PhotonGen_pt>15 && abs(Pho
 # addSampleWeight(samples,'DY','DYJetsToLL_M-4to50_HT-600toInf','DY_LO_pTllrw')
 
 
-# ################################
-# ############ Top ############
+################################
+############ Top ############
 
-#samples['top'] = {    'name'   :   nanoGetSampleFiles(directory_bkg,'TTTo2L2Nu')
-# samples['top'] = {    'name'   : nanoGetSampleFiles(directory_bkg,'ST_s-channel_ext1') 
+# samples['top'] = {    'name'   :   nanoGetSampleFiles(directory_bkg,'TTTo2L2Nu')
+#                                  + nanoGetSampleFiles(directory_bkg,'ST_s-channel_ext1') 
 #                                  + nanoGetSampleFiles(directory_bkg,'ST_t-channel_antitop') 
 #                                  + nanoGetSampleFiles(directory_bkg,'ST_t-channel_top') 
 #                                  + nanoGetSampleFiles(directory_bkg,'ST_tW_antitop_ext1') 
@@ -267,7 +281,7 @@ DY_photon_filter = '( !(Sum$(PhotonGen_isPrompt==1 && PhotonGen_pt>15 && abs(Pho
 #   addSampleWeight(samples,wjbin_res, 'WJetsToLNu_HT2500_inf',  '2.7948') 
   
 
-# ###############################################
+# # ###############################################
 
 # # samples['VV']  = { 'name' :  
 # #                nanoGetSampleFiles(directory_signal,'WmToLNu_WmTo2J_QCD') +
@@ -433,7 +447,7 @@ samples['VBS_dipoleRecoil']  = { 'name' :
                nanoGetSampleFiles(directory_signal,'ZTo2L_ZTo2J_dipoleRecoil',  ),
        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
        'FilesPerJob' :15,
-       'EventsPerJob' : 70000,
+       
 }
 
 
@@ -445,7 +459,7 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 # #                nanoGetSampleFiles(directory_interference,'ZToLLZToJJ_EWKQCD') ,
 # #        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
 # #        'FilesPerJob' :10,
-# #        'EventsPerJob' : 70000,
+# #        
 # # }
 
 # # samples['VBS_notop']  = { 'name' :  
@@ -460,7 +474,7 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 # #               #  nanoGetSampleFiles(directory_signal,'ZTo2L_ZTo2J_dipoleRecoil',  ),
 # #        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil * (Sum$(abs(GenPart_pdgId)==6)==0)',
 # #        'FilesPerJob' :16,
-# #        'EventsPerJob' : 70000,
+# #        
 # # }
 
 # # samples['VBS_top']  = { 'name' :  
@@ -475,7 +489,7 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 # #               #  nanoGetSampleFiles(directory_signal,'ZTo2L_ZTo2J_dipoleRecoil',  ),
 # #        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil * (Sum$(abs(GenPart_pdgId)==6)>0)',
 # #        'FilesPerJob' :16,
-# #        'EventsPerJob' : 70000,
+# #        
 # # }
 
 # ####################################
@@ -486,14 +500,14 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 # samples['ewk_WpWp']  = { 'name' :  nanoGetSampleFiles(directory_signal,'WpToLNu_WpTo2J_dipoleRecoil'),
 #        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
 #        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
+#        
 # }
 
 
 # samples['ewk_WmWm']  = { 'name' :  nanoGetSampleFiles(directory_signal,'WmToLNu_WmTo2J_dipoleRecoil'),
 #        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
 #        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
+#        
 # }
 
 # samples['ewk_WpWm']  = { 'name' :  
@@ -501,7 +515,7 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 #             nanoGetSampleFiles(directory_signal,'WpTo2J_WmToLNu_dipoleRecoil'),
 #        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
 #        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
+#        
 # }
 
 # samples['ewk_WpZ']  = { 'name' :  
@@ -509,7 +523,7 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 #               nanoGetSampleFiles(directory_signal,'WpTo2J_ZTo2L_dipoleRecoil', ),
 #        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
 #        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
+#        
 # }
 
 # samples['ewk_WmZ']  = { 'name' :  
@@ -517,14 +531,14 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 #               nanoGetSampleFiles(directory_signal,'WmTo2J_ZTo2L_dipoleRecoil', ),
 #        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
 #        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
+#        
 # }
 
 # samples['ewk_ZZ']  = { 'name' :  
 #                nanoGetSampleFiles(directory_signal,'ZTo2L_ZTo2J_dipoleRecoil',  ),
 #        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
 #        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
+#        
 # }
 
 # ###############################################
@@ -535,7 +549,7 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 #                nanoGetSampleFiles(directory_signal,'WpToLNu_WpTo2J_QCD'),
 #         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
 #         'FilesPerJob' : 15,
-#         'EventsPerJob' : 70000,
+#         
 # }
 
 
@@ -544,7 +558,7 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 #                nanoGetSampleFiles(directory_signal,'WpToLNu_WmTo2J_QCD'),
 #         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
 #         'FilesPerJob' : 15,
-#         'EventsPerJob' : 70000,
+#         
 # }
 
 
@@ -553,7 +567,7 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 #                nanoGetSampleFiles(directory_signal,'WpToLNu_ZTo2J_QCD',) ,
 #         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
 #         'FilesPerJob' : 15,
-#         'EventsPerJob' : 70000,
+#         
 # }
 
 
@@ -562,7 +576,7 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 #                nanoGetSampleFiles(directory_signal,'WpTo2J_ZTo2L_QCD', ),
 #         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
 #         'FilesPerJob' : 15,
-#         'EventsPerJob' : 70000,
+#         
 # }
 
 
@@ -570,136 +584,552 @@ samples['VBS_dipoleRecoil']  = { 'name' :
 #                nanoGetSampleFiles(directory_signal,'ZTo2L_ZTo2J_QCD',  ) ,
 #         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
 #         'FilesPerJob' : 15,
-#         'EventsPerJob' : 70000,
+#         
 # }
 
 
 ###################################################################################
 
-# With files x jobs and events x job
+# EFT
 
-samples['sm_mupVjj_ewk_dim6_EFT'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'mupVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
-   'EventsPerJob' : 70000,
+###################################################################################
+
+samples['quad_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[14] + LHEReweightingWeight[13] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
 }
 
-samples['sm_mumVjj_ewk_dim6_EFT'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'mumVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
-   'EventsPerJob' : 70000,
+samples['sm_lin_quad_mixed_cW_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[21]',
+   'FilesPerJob': 1,
 }
 
-samples['sm_emVjj_ewk_dim6_EFT'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
-   'EventsPerJob' : 70000,
+samples['lin_quad_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[8] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
 }
 
-samples['sm_epVjj_ewk_dim6_EFT'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'epVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
-   'EventsPerJob' : 70000,
+samples['sm_lin_quad_mixed_cW_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[19]',
+   'FilesPerJob': 1,
 }
 
-samples['sm_tamVjj_ewk_dim6_EFT'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'tamVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
-   'EventsPerJob' : 70000,
+samples['quad_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[6] + LHEReweightingWeight[5] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
 }
 
-samples['sm_tapVjj_ewk_dim6_EFT'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
-   'EventsPerJob' : 70000,
+samples['lin_quad_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[12] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
 }
 
-#only files per job
-
-samples['sm_mupVjj_ewk_dim6_EFT_exj'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'mupVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
+samples['sm_lin_quad_mixed_cHbox_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[32]',
+   'FilesPerJob': 1,
 }
 
-samples['sm_mumVjj_ewk_dim6_EFT_exj'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'mumVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
+samples['sm_lin_quad_mixed_cHWB_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[28]',
+   'FilesPerJob': 1,
 }
 
-samples['sm_emVjj_ewk_dim6_EFT_exj'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
+samples['sm_lin_quad_mixed_cHW_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[37]',
+   'FilesPerJob': 1,
 }
 
-samples['sm_epVjj_ewk_dim6_EFT_exj'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'epVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
+samples['sm_lin_quad_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[10]',
+   'FilesPerJob': 1,
 }
 
-samples['sm_tamVjj_ewk_dim6_EFT_exj'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'tamVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
+samples['quad_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[10] + LHEReweightingWeight[9] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
 }
 
-samples['sm_tapVjj_ewk_dim6_EFT_exj'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
+samples['lin_quad_mixed_cHB_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[43] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
 }
 
-# All together only event x job
-
-samples['sm_exj'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'epVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'mumVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'mupVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'tamVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'tapVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
+samples['lin_quad_mixed_cHW_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[38] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
 }
 
-# All together with event x job and events x job
+samples['lin_quad_cW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[2] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cW_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[20] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cW_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[23]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[4] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHbox_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[34]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[4] - LHEReweightingWeight[3])',
+   'FilesPerJob': 1,
+}
+
+samples['quad_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[16] + LHEReweightingWeight[15] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[10] - LHEReweightingWeight[9])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHB_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[43]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHW_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[35] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHWB_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[26]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHQ1_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[44]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHl1_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[39] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cW_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[18] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cW_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[17]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[12] - LHEReweightingWeight[11])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_cW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[2]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHWB_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[28] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[4]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHbox_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[34] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[8] - LHEReweightingWeight[7])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHl1_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[41] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHWB_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[27] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cW_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[18]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHWB_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[25] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['quad_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[12] + LHEReweightingWeight[11] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHbox_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[31] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['quad_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[8] + LHEReweightingWeight[7] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[16] - LHEReweightingWeight[15])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cW_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[20]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHbox_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[33]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHl1_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[41]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cW_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[19] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cW_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[22]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHWB_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[27]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHW_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[36]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHWB_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[25]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cW_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[21] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHWB_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[24] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHQ1_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[44] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cW_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[17] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[10] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[14]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHW_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[38]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHWB_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[29]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHW_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[36] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHbox_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[33] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['quad_cW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[2] + LHEReweightingWeight[1] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHl1_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[40]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[6] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[8]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[6]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[12]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHWB_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[29] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[14] - LHEReweightingWeight[13])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHl1_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[39]',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHbox_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[30]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cW_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[22] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[14] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHB_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[42]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHl1_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[40] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[16]',
+   'FilesPerJob': 1,
+}
+
+samples['quad_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[4] + LHEReweightingWeight[3] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHW_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[35]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cW_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[23] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[16] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['sm_lin_quad_mixed_cHbox_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[31]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[6] - LHEReweightingWeight[5])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHbox_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[32] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHWB_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[26] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
 
 samples['sm'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'epVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'mumVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'mupVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'tamVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'tapVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 50,
-   'EventsPerJob' : 70000,
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[0]',
+   'FilesPerJob': 1,
 }
 
-# All together 6 files x job
-
-samples['sm_6fxj'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'epVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'mumVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'mupVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'tamVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'tapVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'FilesPerJob': 6,
+samples['lin_quad_mixed_cHB_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[42] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
 }
 
-# All together with 70k events x job
+samples['lin_quad_mixed_cHbox_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[30] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
 
-samples['sm_70exj'] = {
-   'name': nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'epVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'mumVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'mupVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'tamVjj_ewk_dim6_EFT') + nanoGetSampleFiles(directory_EFT,'tapVjj_ewk_dim6_EFT'),
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*' + GenLepMatch + '*btagSF_corr_VBS_dipoleRecoil' + '*' + '*dipole_EFT_weight',
-   'EventsPerJob' : 70000,
+samples['sm_lin_quad_mixed_cHWB_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[24]',
+   'FilesPerJob': 1,
+}
+
+samples['lin_quad_mixed_cHW_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '(LHEReweightingWeight[37] - LHEReweightingWeight[0])',
+   'FilesPerJob': 1,
+}
+
+samples['lin_cW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + '0.5*(LHEReweightingWeight[2] - LHEReweightingWeight[1])',
+   'FilesPerJob': 1,
 }
 
 
-VBS_samples = ["VBS_osWW", "VBS_ssWW", "VBS_WZjj", "VBS_WZll", "VBS_ZZ"]
-VBS_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ", "ewk_WpWm", "ewk_WpWp", "ewk_WmWm"]
-VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
-# samples = {key:v for key,v in samples.items() if key in VBS_samples + VV_samples}
 
-EFT_samples = ['sm_tapVjj_ewk_dim6_EFT', 'sm_tamVjj_ewk_dim6_EFT', 'sm_mupVjj_ewk_dim6_EFT', 'sm_mumVjj_ewk_dim6_EFT', 'sm_epVjj_ewk_dim6_EFT', 'sm_emVjj_ewk_dim6_EFT']
-EFT_samples += ['sm_tapVjj_ewk_dim6_EFT_exj', 'sm_tamVjj_ewk_dim6_EFT_exj', 'sm_mupVjj_ewk_dim6_EFT_exj', 'sm_mumVjj_ewk_dim6_EFT_exj', 'sm_epVjj_ewk_dim6_EFT_exj', 'sm_emVjj_ewk_dim6_EFT_exj']
-EFT_samples += ['sm', 'sm_70exj', 'sm_6fxj', 'sm_exj']
+EFT_samples = ['quad_cHQ1', 'sm_lin_quad_mixed_cW_cHB', 'lin_quad_cHW', 'sm_lin_quad_mixed_cW_cHW', 'quad_cHbox', 'lin_quad_cHB', 'sm_lin_quad_mixed_cHbox_cHB', 'sm_lin_quad_mixed_cHWB_cHQ1', 'sm_lin_quad_mixed_cHW_cHQ1', 'sm_lin_quad_cHl1', 'quad_cHl1', 'lin_quad_mixed_cHB_cHj1', 'lin_quad_mixed_cW_cHW', 'lin_quad_cW', 'lin_quad_mixed_cW_cHl1', 'sm_lin_quad_mixed_cW_cHj1', 'lin_quad_cHWB', 'sm_lin_quad_mixed_cHbox_cHj1', 'lin_cHWB', 'sm_lin_quad_cHWB', 'lin_cHl1', 'sm_lin_quad_mixed_cHB_cHj1', 'lin_quad_mixed_cHW_cHl1', 'lin_quad_mixed_cW_cHj1', 'sm_lin_quad_mixed_cHQ1_cHj1', 'lin_quad_mixed_cHl1_cHB', 'lin_quad_mixed_cW_cHbox', 'sm_lin_quad_mixed_cW_cHWB', 'lin_cHB', 'sm_lin_quad_cW', 'lin_quad_mixed_cHWB_cHQ1', 'quad_cHj1', 'lin_quad_mixed_cHbox_cHj1', 'lin_cHW', 'lin_quad_mixed_cHl1_cHj1', 'lin_quad_mixed_cHWB_cHB', 'sm_lin_quad_mixed_cW_cHbox', 'lin_quad_mixed_cHWB_cHW', 'quad_cHB', 'lin_quad_mixed_cHbox_cHl1', 'quad_cHW', 'lin_cHj1', 'sm_lin_quad_mixed_cW_cHl1', 'sm_lin_quad_mixed_cHbox_cHQ1', 'sm_lin_quad_mixed_cHl1_cHj1', 'lin_quad_mixed_cHW_cHj1', 'sm_lin_quad_mixed_cW_cHQ1', 'sm_lin_quad_mixed_cHWB_cHB', 'sm_lin_quad_mixed_cHW_cHB', 'sm_lin_quad_mixed_cHWB_cHW', 'lin_quad_mixed_cW_cHB', 'lin_quad_mixed_cHWB_cHbox', 'lin_quad_mixed_cHQ1_cHj1', 'lin_quad_mixed_cW_cHWB', 'lin_quad_cHl1', 'sm_lin_quad_cHQ1', 'sm_lin_quad_mixed_cHW_cHj1', 'sm_lin_quad_mixed_cHWB_cHj1', 'lin_quad_mixed_cHW_cHB', 'lin_quad_mixed_cHbox_cHQ1', 'quad_cW', 'sm_lin_quad_mixed_cHl1_cHQ1', 'lin_quad_cHbox', 'sm_lin_quad_cHW', 'sm_lin_quad_cHbox', 'sm_lin_quad_cHB', 'lin_quad_mixed_cHWB_cHj1', 'lin_cHQ1', 'sm_lin_quad_mixed_cHl1_cHB', 'sm_lin_quad_mixed_cHbox_cHW', 'lin_quad_mixed_cW_cHQ1', 'lin_quad_cHQ1', 'sm_lin_quad_mixed_cHB_cHQ1', 'lin_quad_mixed_cHl1_cHQ1', 'sm_lin_quad_cHj1', 'quad_cHWB', 'sm_lin_quad_mixed_cHW_cHl1', 'sm_lin_quad_mixed_cHWB_cHl1', 'lin_quad_cHj1', 'sm_lin_quad_mixed_cHbox_cHl1', 'lin_cHbox', 'lin_quad_mixed_cHbox_cHB', 'lin_quad_mixed_cHWB_cHl1', 'sm', 'lin_quad_mixed_cHB_cHQ1', 'lin_quad_mixed_cHbox_cHW', 'sm_lin_quad_mixed_cHWB_cHbox', 'lin_quad_mixed_cHW_cHQ1', 'lin_cW']
 
-
-samples = {key:v for key,v in samples.items() if key in EFT_samples + ["VBS_dipoleRecoil"]}
+samples = {key:v for key,v in samples.items() if key in EFT_samples + ['VBS_dipoleRecoil']}

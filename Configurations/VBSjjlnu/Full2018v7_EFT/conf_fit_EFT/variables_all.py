@@ -282,3 +282,5 @@ variables['deltaeta_vjet'] = {   'name': 'deltaeta_vjet',
                         'fold' : 3,
                         'cuts': res_cuts
                         }   
+
+# variables = {k:v for k,v in variables.items() if k in ["DNNoutput_res_v1", "lin_weight_cHbox"]}

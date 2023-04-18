@@ -27,12 +27,6 @@ for wbin in wjets_bins:
                     'removeFromCuts': phase_spaces_boost 
         }
 
-
-# structure['Wjets_HT']  = {  
-#                   'isSignal' : 0,
-#                   'isData'   : 0
-#               }
-
 structure['DY']  = {  
                   'isSignal' : 0,
                   'isData'   : 0
@@ -43,10 +37,7 @@ structure['top']  = {
                   'isData'   : 0
               }
 
-# structure['VV']  = {  
-#                   'isSignal' : 0,
-#                   'isData'   : 0
-#               }
+
 for VV_s in VV_samples:
     structure[VV_s]  = {  
                   'isSignal' : 0,
@@ -64,10 +55,6 @@ structure['VVV']  = {
                   'isData'   : 0 
               }
 
-# structure['VBF-V']  = {  
-#                   'isSignal' : 0,
-#                   'isData'   : 0 
-#               }
 
 structure['VBF-V_dipole']  = {  
                   'isSignal' : 0,
@@ -89,70 +76,14 @@ structure['VgS']  = {
                   'isData'   : 0 
               }
 
-# structure['VBS_WZll']  = {  
-#                   'isSignal' : 0,
-#                   'isData'   : 0 
-#               }
-
-# structure['VBS_ZZ']  = {  
-#                   'isSignal' : 0,
-#                   'isData'   : 0 
-#               }
-
-
-# # structure['VBS']  = { 
-# #                   'isSignal' : 1,
-# #                   'isData'   : 0 
-# #               }
-
-# # structure['VBS_dipoleRecoil']  = { 
-# #                   'isSignal' : 1,
-# #                   'isData'   : 0 
-# #               }
-
-# structure['VBS_osWW']  = {  
-#                   'isSignal' : 1,
-#                   'isData'   : 0 
-#               }
-
-# structure['VBS_ssWW']  = {  
-#                   'isSignal' : 1,
-#                   'isData'   : 0 
-#               }
-
-# structure['VBS_WZjj']  = {  
-#                   'isSignal' : 1,
-#                   'isData'   : 0 
-#               }
-
-structure['ewk_WpWm']  = { 
-                  'isSignal' : 1,
-                  'isData'   : 0 
-              }
-structure['ewk_WpWp']  = { 
-                  'isSignal' : 1,
-                  'isData'   : 0 
-              }
-structure['ewk_WmWm']  = { 
-                  'isSignal' : 1,
-                  'isData'   : 0 
-              }
-structure['ewk_WpZ']  = { 
-                  'isSignal' : 1,
-                  'isData'   : 0 
-              }
-structure['ewk_WmZ']  = { 
-                  'isSignal' : 1,
-                  'isData'   : 0 
-              }
-structure['ewk_ZZ']  = { 
-                  'isSignal' : 1,
-                  'isData'   : 0 
-              }
+# EFTs
+for eft_sample in EFT_samples_datacard:
+    structure[eft_sample]  = {  
+                    'isSignal' : 1,
+                    'isData'   : 0 
+                }
               
 # data
-
-
 structure['DATA']  = { 
                   'isSignal' : 0,
                   'isData'   : 1 
