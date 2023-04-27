@@ -69,7 +69,7 @@ ww6 = 'Alt$(Lepton_pt[0],0.)>25 && Alt$(Lepton_pt[1],0.)>20 && Alt$(Lepton_pt[2]
 
 # ------------------ good
 cuts['ssww_tri_tauVeto']=ww+'&& bVeto &&'+zlep+'&&'+zveto+'&&'+triple_charge+'&& tauVeto_ww'
-cuts['ssww_tri_btag_tauVeto']=ww+'&&'+ bJetTag+'&&'+zlep+'&&'+zveto+'&&'+triple_charge+'&& tauVeto_ww'
+# cuts['ssww_tri_btag_tauVeto']=ww+'&&'+ bJetTag+'&&'+zlep+'&&'+zveto+'&&'+triple_charge+'&& tauVeto_ww'
 # cuts['ssww_tri_btag_tauVeto_incl_mjj200']=ww_mjj200+'&&'+ bJetTag+'&&'+zlep+'&&'+zveto+'&&'+triple_charge+'&& tauVeto_ww'
 # cuts['ssww_tri_tauVeto_incl_mjj200']=ww_mjj200+'&& bVeto &&'+zlep+'&&'+zveto+'&&'+triple_charge+'&& tauVeto_ww'
 # cuts['ssww_tri_btag_tauVeto_incl_lowmjj']=ww_lowmjj+'&&'+ bJetTag+'&&'+zlep+'&&'+zveto+'&&'+triple_charge+'&& tauVeto_ww'
