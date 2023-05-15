@@ -292,10 +292,9 @@ variables['deltaeta_vjet'] = {   'name': 'deltaeta_vjet',
                         'cuts': sig_res_cuts
                         }   
 
-# boost_vars = ['w_lep_pt', 'DNNoutput_boost', 'fit_bins_boost', 'events', 'Zlep', 'nJets_boost', 'vbs_1_pt_boost', 'deltaeta_vbs', 'mjj_vjet_boost', 'vbs_0_pt', 'mjj_vbs']
-# res_vars = ['DNNoutput_res_v1', 'Lepton_pt', 'Lepton_eta', 'Centr_ww', 'deltaphi_vbs', 'deltaeta_vjet', 'vbs_1_pt_res', 'w_lep_pt', 'events', 'fit_bins_res', 'Zlep', 'vbs_0_pt', 'vbs_1_pt_res_morebins', 'mjj_vbs', 'DNNoutput_res_v2', 'mjj_vjet_res', 'deltaeta_vbs', 'vjet_1_pt', 'nJets_res', 'vjet_0_pt']
-res_vars = ["DNNoutput_res_v1"]
-boost_vars = ["DNNoutput_boost"]
-
+boost_vars = ['w_lep_pt', 'DNNoutput_boost', 'fit_bins_boost', 'events', 'Zlep', 'nJets_boost', 'vbs_1_pt_boost', 'deltaeta_vbs', 'mjj_vjet_boost', 'vbs_0_pt', 'mjj_vbs']
+res_vars = ['DNNoutput_res_v1', 'Lepton_pt', 'Lepton_eta', 'Centr_ww', 'deltaphi_vbs', 'deltaeta_vjet', 'vbs_1_pt_res', 'w_lep_pt', 'events', 'fit_bins_res', 'Zlep', 'vbs_0_pt', 'vbs_1_pt_res_morebins', 'mjj_vbs', 'DNNoutput_res_v2', 'mjj_vjet_res', 'deltaeta_vbs', 'vjet_1_pt', 'nJets_res', 'vjet_0_pt']
+# res_vars = ["DNNoutput_res_v1"]
+# boost_vars = ["DNNoutput_boost"]
 
 variables = {k:v for k,v in variables.items() if k in boost_vars +  res_vars}

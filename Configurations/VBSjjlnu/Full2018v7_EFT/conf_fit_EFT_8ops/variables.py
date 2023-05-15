@@ -283,4 +283,9 @@ variables['deltaeta_vjet'] = {   'name': 'deltaeta_vjet',
                         'cuts': res_cuts
                         }   
 
+
+# these vriables, used in SM fit are the one where we have splitting of VV sample
+# in all the other variables we only have histo_VV all together...
+variables = {k:v for k,v in variables.items() if k in ["events", "DNNoutput_res_v1", "DNNoutput_boost", "fit_bins_res","fit_bins_boost"]}
+
 # variables = {k:v for k,v in variables.items() if k in ["DNNoutput_res_v1", "lin_weight_cHbox"]}

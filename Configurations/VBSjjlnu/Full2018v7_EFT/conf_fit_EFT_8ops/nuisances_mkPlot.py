@@ -1,15 +1,15 @@
 from pprint import pprint
 # # # name of samples here must match keys in samples.py 
 
+VBS_samples = ["VBS_osWW", "VBS_ssWW", "VBS_WZjj", "VBS_WZll", "VBS_ZZ"]
 VBS_WV_samples = ["VBS_osWW", "VBS_ssWW", "VBS_WZjj"]
 VBS_ZV_samples = ["VBS_WZll", "VBS_ZZ"]
 VV_WV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj"]
 VV_ZV_samples = ["VV_WZll", "VV_ZZ"]
 VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
 
-VBS_samples = ['VBS_dipoleRecoil']
 
-mc =["DY", "top", "VV", "VVV",  "VBF-V_dipole", "Vg", "VgS",  "ggWW"] + wjets_all_bins + VV_samples + VBS_samples + EFT_samples
+mc =["DY", "top", "VV", "VVV",  "VBF-V_dipole", "Vg", "VgS",  "ggWW"] + wjets_all_bins + VV_samples + VBS_samples
 #"VBF-V","VBS",
 
 phasespaces = ["res_wjetcr_ele","res_wjetcr_mu" ,"boost_wjetcr_ele" ,"boost_wjetcr_mu",
@@ -776,12 +776,12 @@ nuisances['PU']  = {
                 'type'  : 'shape',
                 'samples'  : {
                     s : ['(puWeightUp/puWeight) * {}'.format(nuis_factors[s]["CMS_PU_2018"][0]),
-                         '(puWeightDown/puWeight) * {}'.format(nuis_factors[s]["CMS_PU_2018"][1])] for s in mc if s not in wjets_all_bins + EFT_samples },
+                         '(puWeightDown/puWeight) * {}'.format(nuis_factors[s]["CMS_PU_2018"][1])] for s in mc if s not in wjets_all_bins },
                     # s : ["",""] for s in mc }, # only for dataset and plotting 
                 'AsLnN'      : '1',
 }
 
-for s in wjets_all_bins + EFT_samples:
+for s in wjets_all_bins:
     nuisances['PU']['samples'][s] = ['(puWeightUp/puWeight)', '(puWeightDown/puWeight)']
 
 
@@ -809,7 +809,7 @@ nuisances['pdf_weight_accept'] = {
     'type'  : 'shape',
     # 'samples' :  { "VBS": [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ],
     #                "VBS_dipoleRecoil": [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ]}
-    'samples': { k : [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ] for k in VBS_samples + EFT_samples}
+    'samples': { k : [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ] for k in VBS_samples}
 }
 
 
