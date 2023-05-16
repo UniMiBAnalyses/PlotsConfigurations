@@ -1,0 +1,33 @@
+[
+  {
+    "datacard_name": "2018_all_dipole",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_8ops_SMonly_VBS", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "DNNoutput_res_v1", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "DNNoutput_res_v1", 
+          "cut": "res_sig_ele"
+      },
+      {
+          "name": "boost_sig_mu",
+          "var": "DNNoutput_boost", 
+          "cut": "boost_sig_mu"
+      },
+      {
+          "name": "boost_sig_ele",
+          "var": "DNNoutput_boost", 
+          "cut": "boost_sig_ele"
+      }
+    ]
+  }
+]
