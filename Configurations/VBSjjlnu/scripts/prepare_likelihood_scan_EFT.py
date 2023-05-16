@@ -101,7 +101,7 @@ def do_scan(datac):
                         "" if not args.prof else " --floatOtherPOIs=1",  "" if args.freeze is None else ",".join(i for i in args.freeze)))
     if args.clean:
         cmd.append("rm higgsCombine.{0}.scan_all.POINTS*".format("_".join(i for i in args.pois)))
-    cmd.append("""combineTool.py -M MultiDimFit higgsCombine.{0}.initialFit.MultiDimFit.mH125.root -n .{0}.scan_all \
+    cmd.append("""combineTool.py -M MultiDimFit -m 125  higgsCombine.{0}.initialFit.MultiDimFit.mH125.root -n .{0}.scan_all \
                 --setParameterRanges {1}  --snapshotName MultiDimFit  \
                 {2} --algo grid --point {3} {4} \
                 --split-points={9} --job-mode=condor --task-name {8} \
@@ -126,7 +126,7 @@ def do_hadd(datac):
     cmd = [ ]
     cmd.append("cd "+ outdir)
     # Prepare the script to create the impacts
-    cmd.append("hadd -f higgsCombine.{0}.scan_all.POINTS.root  higgsCombine.{}.scan_all.POINTS.*.MultiDimFit.mH125.root".format("_".join(i for i in args.pois)))
+    cmd.append("hadd -f higgsCombine.{0}.scan_all.POINTS.root  higgsCombine.{0}.scan_all.POINTS.*.MultiDimFit.mH125.root".format("_".join(i for i in args.pois)))
     
     with open("{}/script_preparation_hadd.sh".format(outdir), "w") as of:
         of.write("\n\n".join(cmd))
