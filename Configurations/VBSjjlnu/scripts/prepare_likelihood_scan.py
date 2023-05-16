@@ -9,15 +9,14 @@ import CombineHarvester.CombineTools.plotting as plot
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-c","--config", help="Config file" , type=str)
-parser.add_argument("-d","--datacards", help="Datacard names", nargs="+", type=str)
 parser.add_argument("-o","--outputdir", help="Output folder", type=str)
 parser.add_argument("-of","--outputfile", help="Output file for plot/graph command", type=str)
-parser.add_argument("-p","--process", help="Process to run", type=str)
+parser.add_argument("-p","--process", help="Process to run [scan, hadd, graph, interval]", type=str)
 parser.add_argument("--mc-asimov", action="store_true", default=False)
 parser.add_argument("--data-asimov", action="store_true", default=False)
 parser.add_argument("--data-unblind", action="store_true", default=False)
 parser.add_argument("--dry", action="store_true", help="Do not run, only create script", default=False)
-parser.add_argument("-fo","--fit-options", help="Robust fit options ", type=int, default=0)
+parser.add_argument("-fo","--fit-options", help="Robust fit options 0,1,2", type=int, default=0)
 parser.add_argument("-q","--queue", help="Queue", type=str,default="microcentury")
 parser.add_argument("-v","--verbose", help="Combine verbosity level", type=int, default=0)
 parser.add_argument("--points", help="Points", type=int,default=200)
@@ -67,7 +66,8 @@ def do_scan(datac):
     log = logging.getLogger(datac["datacard_name"])
     outdir = datac["outputdir"] 
     workspace = datac['workspace']
-    cmd = []   
+    cmd = []  
+    print(workspace) 
     cmd.append("cp {0} {1}/combined.root".format(workspace, outdir))
     cmd.append("cd "+ outdir)
     cmd.append("echo '{}' > log.txt".format("Initial dir: "+ outdir))
@@ -145,7 +145,10 @@ def do_graph(datac, outputfile):
 def do_getinterval(datac, outputfile):
     outdir = datac["outputdir"] 
     log.info("Getting interval: "+ datac['datacard_name'])
-    os.system("python ../scripts/fit_results_tools/get_likelihood_scan_crossing.py {}/higgsCombine.scan_all.POINTS.root {} >> {}".format(datac["outputdir"], datac["datacard_name"], outputfile))
+
+    print(os.getcwd())
+    print("python scripts/fit_results_tools/get_likelihood_scan_crossing.py {}/higgsCombine.scan_all.POINTS.root {} >> {}".format(datac["outputdir"], datac["datacard_name"], outputfile))    
+    os.system("python scripts/fit_results_tools/get_likelihood_scan_crossing.py {}/higgsCombine.scan_all.POINTS.root {} >> {}".format(datac["outputdir"], datac["datacard_name"], outputfile))
 
 #############################################
 
@@ -157,8 +160,7 @@ if args.process == "graph":
         exit(1)
 
 for datac in config:
-    #if args.datacards and not any([re.match(d,datac["datacard_name"])!=None for d in args.datacards]): continue
-    datac['workspace'] = args.outputdir + "/" + datac["datacard_name"] + "/combined_{}.root".format(datac["datacard_name"])
+    datac['workspace'] = args.outputdir + "/" + datac["datacard_name"] + "/combined_{}.root".format(datac["datacard_name"]) 
     outdir = args.outputdir + "/" + datac["datacard_name"] + "/likelihood_scan"
 
     if args.data_asimov:

@@ -49,7 +49,7 @@ fitter_options= {
     '5':  "--robustFit=1 --robustHesse=1 --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_MaxCalls=9999999 --cminFallbackAlgo Minuit2,Migrad,0:0.1  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND",
     '6':  "--robustFit=1 --robustHesse=1 --cminDefaultMinimizerStrategy 0 --X-rtd=MINIMIZER_analytic --X-rtd MINIMIZER_MaxCalls=9999999 --cminFallbackAlgo Minuit2,Migrad,0:0.1  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND",
     '7':  "--robustFit=1 --stepSize=0.001 --robustHesse=1 --cminDefaultMinimizerStrategy 0 --X-rtd=MINIMIZER_analytic --X-rtd MINIMIZER_MaxCalls=9999999 --cminFallbackAlgo Minuit2,Migrad,0:0.2  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND",
-    '8':  "--robustFit=1 --stepSize=0.001 --cminDefaultMinimizerStrategy 0 --X-rtd=MINIMIZER_analytic --X-rtd MINIMIZER_MaxCalls=9999999 --cminFallbackAlgo Minuit2,Migrad,0:0.2  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND",
+    '8':  "--robustFit=1 --robustHesse=1 --stepSize=0.001 --cminDefaultMinimizerStrategy 0 --X-rtd=MINIMIZER_analytic --X-rtd MINIMIZER_MaxCalls=99999999999999 --cminFallbackAlgo Minuit2,Migrad,0:0.2  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND",
 
 }
 
@@ -169,6 +169,15 @@ def fit_and_pulls(datac):
              mv fitDiagnostics.{3}.root {0}/ """.format(
              outdir, datac["datacard_name"], toys_opts, result_name, mask, fitter_options[args.fit_options],
                         "--saveWithUncertainties" if args.save_uncert else "", args.verbosity)
+    
+
+    # I want infos printed on the screen
+    cmd = """combineTool.py -M FitDiagnostics -d {0}/combined_{1}.root {2} -n .{3}  \\
+         --saveShapes --saveNormalizations {6} {4} {5} -v {7}; \\
+             mv fitDiagnostics.{3}.root {0}/ """.format(
+             outdir, datac["datacard_name"], toys_opts, result_name, mask, fitter_options[args.fit_options],
+                        "--saveWithUncertainties" if args.save_uncert else "", args.verbosity)
+
     log.debug(cmd)
     if not args.dry:
         try:

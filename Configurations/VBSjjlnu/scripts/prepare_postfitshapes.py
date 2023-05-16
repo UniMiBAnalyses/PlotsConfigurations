@@ -89,12 +89,13 @@ def prepare_workspace(datac, onlyDC=False):
     current_path = os.getcwd()
 
     if not args.dry:
-        os.chdir(outdir)
+        # os.chdir(outdir)
         os.system(cmds[0])
         log.info("Preparing workspace")
         os.system(cmds[1])
         log.info("Workspace ready")
-        os.chdir(current_path)
+        os.system("mv combined_{0}.txt combined_{0}.root {1}".format(datac["datacard_name"], outdir))
+        #os.chdir(current_path)
     
 
 ##########################################################
@@ -128,6 +129,7 @@ def postfit_plot(datac):
 
     if not os.path.exists(args.outputdir_plots):
         os.makedirs(args.outputdir_plots)
+
     os.chdir(args.outputdir_plots)
     current_path = os.getcwd()
     log.debug("current path " + current_path )
@@ -135,6 +137,8 @@ def postfit_plot(datac):
     if not os.path.exists(datac["datacard_name"]):
         os.makedirs(datac["datacard_name"])
     os.chdir(datac["datacard_name"])
+
+    os.system("cp {0}/output_postfit.root {1}".format(outdir, args.outputdir_plots + "/" + datac["datacard_name"]))
 
     log.info("Plotting")
     year = datac["datacard_name"].split("_")[-1]
@@ -161,10 +165,24 @@ def postfit_plot(datac):
     if "bin6" in datac["datacard_name"]: plotFile = "plot_wjets_wlepbin6.py"
 
 
-    cmd = [ """mkPostFitCombinedPlot.py --inputFilePostFitShapesFromWorkspace  ../../../datacards/{0}/output_postfit.root \\
+    # cmd = [ """mkPostFitCombinedPlot.py --inputFilePostFitShapesFromWorkspace  ../../../datacards/{0}/output_postfit.root \\
+    #        --outputFile postfit_shapes.root --kind P --cutName combined  \\
+    #        --variable {1} --structureFile ../../../Full2018v7/conf_fit_v4.5/structure_split.py \\
+    #        --plotFile ../../{2} --lumiText "137/fb" """.format(datac["outputdir"], datac["phase_spaces"][0]["var"], plotFile),
+
+    #        """mkPlot.py --pycfg=configuration_combined.py --inputFile=postfit_shapes.root  --showRelativeRatio \\
+    #         --minLogC 1 --maxLogC 1e2 --minLogCratio 1 --maxLogCratio 1e2 --plotNormalizedDistributions """ #--showIntegralLegend=1 
+    # ]
+
+
+    structure_file = "/afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/conf_fit_EFT_wBenchmarkSM/structure_split.py"
+    plotFile = "/afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/conf_fit_EFT_wBenchmarkSM/plot.py"
+    
+
+    cmd = [ """mkPostFitCombinedPlot.py --inputFilePostFitShapesFromWorkspace  output_postfit.root \\
            --outputFile postfit_shapes.root --kind P --cutName combined  \\
-           --variable {1} --structureFile ../../../Full2018v7/conf_fit_v4.5/structure_split.py \\
-           --plotFile ../../{2} --lumiText "137/fb" """.format(datac["outputdir"], datac["phase_spaces"][0]["var"], plotFile),
+           --variable {1} --structureFile {3} \\
+           --plotFile {2} --lumiText "137/fb" """.format(datac["outputdir"], datac["phase_spaces"][0]["var"], plotFile, structure_file),
 
            """mkPlot.py --pycfg=configuration_combined.py --inputFile=postfit_shapes.root  --showRelativeRatio \\
             --minLogC 1 --maxLogC 1e2 --minLogCratio 1 --maxLogCratio 1e2 --plotNormalizedDistributions """ #--showIntegralLegend=1 
@@ -179,6 +197,9 @@ def postfit_plot(datac):
         cmd[0] += " --nonFitVariable --listOfFilesOriginal {}".format(",".join(cards))
 
     for c in cmd:  log.debug(cmd)
+
+    print("---->")
+    print(os.getcwd())
 
     if not args.dry:  
         for cm in cmd:
