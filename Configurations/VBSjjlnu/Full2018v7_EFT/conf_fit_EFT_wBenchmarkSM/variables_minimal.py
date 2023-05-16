@@ -42,7 +42,7 @@ variables['DNNoutput_boost'] = {
     'fold': 3 ,
     'cuts': boost_cuts,
     'divideByBinWidth': True,
-    'blind': { c:[0.6,1] for c in cuts if "_sig_" in c} ,
+    # 'blind': { c:[0.6,1] for c in cuts if "_sig_" in c} ,
 }
 #####################
 #Fit variables
@@ -112,39 +112,11 @@ variables['mjj_vjet_boost'] = {   'name': 'mjj_vjet',
                         'cuts' : [c for c in boost_cuts  if 'wjetcr' not in c] 
                         }
 
-variables['mjj_vjet_all'] = {   'name': 'mjj_vjet',      
+variables['mjj_vjet_wjetcr'] = {   'name': 'mjj_vjet',      
                         'range' : (50,40,250),  
                         'xaxis' : 'Whad reco mass', 
                         'fold' : 3,
                         'cuts' : [c for c in cuts if 'wjetcr' in c]
-                        }
-
-variables['mjj_vjet_res_low'] = {   'name': 'mjj_vjet',      
-                        'range' : (5,40,65),  
-                        'xaxis' : 'Whad reco mass', 
-                        'fold' : 0,
-                        'cuts' : [c for c in cuts if 'wjetcr' in c and 'res' in c ]
-                        }
-
-variables['mjj_vjet_boost_low'] = {   'name': 'mjj_vjet',      
-                        'range' : (6,40,70),  
-                        'xaxis' : 'Whad reco mass', 
-                        'fold' : 0,
-                        'cuts' : [c for c in cuts if 'wjetcr' in c and 'boost' in c ]
-                        }
-
-variables['mjj_vjet_res_high'] = {   'name': 'mjj_vjet',      
-                        'range' : (15,105,250),  
-                        'xaxis' : 'Whad reco mass', 
-                        'fold' : 2,
-                        'cuts' : [c for c in cuts if 'wjetcr' in c and 'res' in c]
-                        }
-
-variables['mjj_vjet_boost_high'] = {   'name': 'mjj_vjet',      
-                        'range' : (15,115,250),  
-                        'xaxis' : 'Whad reco mass', 
-                        'fold' : 2,
-                        'cuts' : [c for c in cuts if 'wjetcr' in c and 'boost' in c ]
                         }
 
 variables['mjj_vbs'] = {   'name': 'mjj_vbs',      
@@ -178,7 +150,8 @@ variables['Zlep'] = {   'name': 'Zlep',
 variables['Zvjets_0'] = {   'name': 'Zvjets_0',      
                         'range' : (20,-1,1),  
                         'xaxis' : 'Zepp. lepton', 
-                        'fold' : 3
+                        'fold' : 3,
+                        'cuts': sig_cuts
                         }
 
 
@@ -186,21 +159,21 @@ variables['vbs_0_qgl_res'] = {  'name': 'vbs_0_qgl_res',
                         'range': (26,-0.04,1.),
                         'xaxis': 'Qgl VBS 0 jet',
                         'fold': 3,
-                        'cuts':  res_cuts
+                        'cuts':  [c for c in sig_cuts if "res" in c]
                 }
 
 variables['vjet_0_qgl_res'] = {  'name': 'vjet_0_qgl_res',
                         'range': (26,-0.04,1.),
                         'xaxis': 'Qgl Vjet 0 jet',
                         'fold': 3,
-                        'cuts':  res_cuts
+                        'cuts':  [c for c in sig_cuts if "res" in c]
                 }
 
 variables['vjet_1_qgl_res'] = {  'name': 'vjet_1_qgl_res',
                         'range': (26,-0.04,1.),
                         'xaxis': 'Qgl Vjet 1 jet',
                         'fold': 3,
-                        'cuts': res_cuts
+                        'cuts': [c for c in sig_cuts if "res" in c]
                 }
 
 
@@ -208,13 +181,13 @@ variables['vbs_0_qgl_boost'] = {  'name': 'vbs_0_qgl_boost',
                         'range': (26,-0.04,1.),
                         'xaxis': 'Qgl VBS 0 jet',
                         'fold': 3,
-                        'cuts':  boost_cuts
+                        'cuts':  [c for c in sig_cuts if "boost" in c]
                 }
 
 
 variables['vbs_0_pt'] = {   'name': 'vbs_0_pt',      
                         'range' : (35,50,400),  
-                        'xaxis' : 'trailing VBS jet pt', 
+                        'xaxis' : 'leading VBS jet pt', 
                         'fold' : 3
                         } 
 
@@ -222,7 +195,8 @@ variables['vbs_0_pt'] = {   'name': 'vbs_0_pt',
 variables['vjet_0_pt'] = {   'name': 'vjet_0_pt',      
                         'range' : (20,30,180),  
                         'xaxis' : 'leading V-jet pt', 
-                        'fold' : 3
+                        'fold' : 3,
+                        'cuts': [c for c in sig_cuts if "res" in c]
                         }
 
 
@@ -230,7 +204,7 @@ variables['whad_pt_boost'] = {  'name': "w_had_pt",
                                 'range': (20, 200, 600),
                                 'xaxis': 'W hadronic Pt',
                                 'fold': 3 ,
-                                'cuts':boost_cuts
+                                'cuts': [c for c in boost_cuts if 'sig' in c]
                             }
 
 
@@ -238,41 +212,39 @@ variables['vjet_1_pt'] = {   'name': 'vjet_1_pt',
                         'range' : (20,30,100),  
                         'xaxis' : 'trailing V-jet pt', 
                         'fold' : 3,
-                        'cuts': res_cuts
+                        'cuts': [c for c in sig_cuts if "res" in c]
                         }
 
 
 variables['deltaphi_vbs'] = {   'name': 'deltaphi_vbs',      
                         'range' : (20,0,3.14),  
                         'xaxis' : '#Delta#phi VBS jets', 
-                        'fold' : 3
+                        'fold' : 3,
+                        'cuts': sig_cuts
                         }
 
 
 variables['Lepton_eta'] = {   'name': 'Lepton_eta[0]',      
                         'range' : (30,-2.5,2.5),  
                         'xaxis' : 'Lepton #eta', 
-                        'fold' : 3
+                        'fold' : 3,
+                        'cuts': sig_cuts
                         }
 
 variables['Lepton_pt'] = {   'name': 'Lepton_pt[0]',      
                         'range' : (20,25,400),  
                         'xaxis' : 'Lepton pt', 
-                        'fold' : 3
-                        } 
+                        'fold' : 3,
+                        'cuts': sig_cuts
+                        }   
 
-                        
-variables['PuppiMET'] = {   'name': 'PuppiMET_pt',      
-                        'range' : (30,30,300),  
-                        'xaxis' : 'PuppiMET', 
-                        'fold' : 3
-                        } 
 
 
 variables['Centr_ww'] = {   'name': 'Centr_ww',      
                         'range' : (30,-3,3),  
                         'xaxis' : 'W boson centrality', 
-                        'fold' : 3
+                        'fold' : 3,
+                        'cuts': sig_cuts
                         }
 
 
@@ -280,12 +252,21 @@ variables['deltaeta_vjet'] = {   'name': 'deltaeta_vjet',
                         'range' : (20,0,2),  
                         'xaxis' : '#Delta#eta V jets', 
                         'fold' : 3,
-                        'cuts': res_cuts
+                        'cuts': [c for c in sig_cuts if "res" in c]
                         }   
 
 
-# these vriables, used in SM fit are the one where we have splitting of VV sample
-# in all the other variables we only have histo_VV all together...
-variables = {k:v for k,v in variables.items() if k in ["events", "DNNoutput_res_v1", "DNNoutput_boost", "fit_bins_res","fit_bins_boost"]}
+# variables['run_info_boost'] = {
+#     'tree':  {"run":"run","lumi":"luminosityBlock","event":"event", "DNN":"DNNoutput_boosted"},
+#     'cuts' : ['boost_sig_ele', 'boost_sig_mu']
+# }
 
-# variables = {k:v for k,v in variables.items() if k in ["DNNoutput_res_v1", "lin_weight_cHbox"]}
+# variables['run_info_res'] = {
+#     'tree':  {"run":"run","lumi":"luminosityBlock","event":"event", "DNN":"DNNoutput_resolved_v1"},
+#     'cuts' : ['res_sig_ele', 'res_sig_mu']
+# }
+
+
+variables = {k:v for k,v in variables.items() if k in ["events", "DNNoutput_res_v1", "DNNoutput_boost", "fit_bins_res","fit_bins_boost", ]}
+# variables = {k:v for k,v in variables.items() if k in ["events", "DNNoutput_res_v1", "DNNoutput_boost", "fit_bins_res","fit_bins_boost", "w_lep_pt", "vbs_1_pt_res", "deltaeta_vjet", "Centr_ww", "Lepton_pt", "Lepton_eta", "deltaphi_vbs", "Zlep"]}
+# variables = {k:v for k,v in variables.items() if k in ["mjj_vbs"]}

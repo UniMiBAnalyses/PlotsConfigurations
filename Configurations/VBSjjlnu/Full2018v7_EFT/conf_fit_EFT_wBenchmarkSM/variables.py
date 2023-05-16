@@ -21,7 +21,7 @@ variables['DNNoutput_res_v1'] = {
     'fold': 3 ,
     'cuts':  res_cuts,
     'divideByBinWidth': True, 
-    # 'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
+    'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
 }
 
 variables['DNNoutput_res_v2'] = {
@@ -31,7 +31,7 @@ variables['DNNoutput_res_v2'] = {
     'fold': 3 ,
     'cuts':  res_cuts,
     'divideByBinWidth': True, 
-    # 'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
+    'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
 }
 
 
@@ -112,12 +112,12 @@ variables['mjj_vjet_boost'] = {   'name': 'mjj_vjet',
                         'cuts' : [c for c in boost_cuts  if 'wjetcr' not in c] 
                         }
 
-variables['mjj_vjet_wjetcr'] = {   'name': 'mjj_vjet',      
-                        'range' : (50,40,250),  
-                        'xaxis' : 'Whad reco mass', 
-                        'fold' : 3,
-                        'cuts' : [c for c in cuts if 'wjetcr' in c]
-                        }
+# variables['mjj_vjet_wjetcr'] = {   'name': 'mjj_vjet',      
+#                         'range' : (50,40,250),  
+#                         'xaxis' : 'Whad reco mass', 
+#                         'fold' : 3,
+#                         'cuts' : [c for c in cuts if 'wjetcr' in c]
+#                         }
 
 variables['mjj_vbs'] = {   'name': 'mjj_vbs',      
                         'range' : (25,500,3500) , 
@@ -266,7 +266,3 @@ variables['deltaeta_vjet'] = {   'name': 'deltaeta_vjet',
 #     'cuts' : ['res_sig_ele', 'res_sig_mu']
 # }
 
-
-variables = {k:v for k,v in variables.items() if k in ["events", "DNNoutput_res_v1", "DNNoutput_boost", "fit_bins_res","fit_bins_boost", ]}
-# variables = {k:v for k,v in variables.items() if k in ["events", "DNNoutput_res_v1", "DNNoutput_boost", "fit_bins_res","fit_bins_boost", "w_lep_pt", "vbs_1_pt_res", "deltaeta_vjet", "Centr_ww", "Lepton_pt", "Lepton_eta", "deltaphi_vbs", "Zlep"]}
-# variables = {k:v for k,v in variables.items() if k in ["mjj_vbs"]}

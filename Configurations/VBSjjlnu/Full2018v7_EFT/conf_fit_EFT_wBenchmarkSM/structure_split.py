@@ -43,15 +43,15 @@ structure['top']  = {
                   'isData'   : 0
               }
 
-# structure['VV']  = {  
-#                   'isSignal' : 0,
-#                   'isData'   : 0
-#               }
-for VV_s in VV_samples:
-    structure[VV_s]  = {  
+structure['VV']  = {  
                   'isSignal' : 0,
                   'isData'   : 0
               }
+# for VV_s in VV_samples:
+#     structure[VV_s]  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0
+#               }
 
 structure['Fake']  = {  
                   'isSignal' : 0,
