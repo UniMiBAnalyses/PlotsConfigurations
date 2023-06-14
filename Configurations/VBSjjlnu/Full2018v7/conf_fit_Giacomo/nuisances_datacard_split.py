@@ -773,8 +773,8 @@ nuisances['PU']  = {
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
-                    s : ['(puWeightUp/puWeight) * {}'.format(nuis_factors[s]["CMS_PU_2017"][0]),
-                         '(puWeightDown/puWeight) * {}'.format(nuis_factors[s]["CMS_PU_2017"][1])] for s in mc },
+                    s : ['(puWeightUp/puWeight) * {}'.format(nuis_factors[s]["CMS_PU_2018"][0]),
+                         '(puWeightDown/puWeight) * {}'.format(nuis_factors[s]["CMS_PU_2018"][1])] for s in mc },
                     # s : ["",""] for s in mc }, # only for dataset and plotting 
                 'AsLnN'      : '1',
 }

@@ -79,7 +79,7 @@ groupPlot['VV+VVV']  = {
                   'nameHR' : 'VV+VVV',
                   'isSignal' : 0,
                   'color': palette["Pink"], #palette["Peach3"],  
-                  'samples'  : ['VVV', 'VV','ggWW'],
+                  'samples'  : ['VVV', 'ggWW', 'VV_ssWW', 'VV_osWW', 'VV_WZjj', 'VV_WZll', 'VV_ZZ'],
                   'fill': 1001
               }
 
@@ -137,6 +137,14 @@ groupPlot['VBS']  = {
                  'fill': 1001
               }
 
+# groupPlot['VBS']  = {  
+#                  'nameHR' : 'VBS',
+#                  'isSignal' : 1,
+#                  'color': colors["kRed"]+1,   
+#                  'samples'  : ["VBS_dipoleRecoil"],
+#                  'fill': 1001
+#               }
+
 # groupPlot['ewk_WpWp']  = {  
 #                  'nameHR' : 'ewk_WpWp',
 #                  'isSignal' : 1,
@@ -190,21 +198,62 @@ groupPlot['VBS']  = {
 # keys here must match keys in samples.py    
 # 
 
+
+# # # # # VV + VVV # # # # # # 
+
+# plot['VVV']  = { 
+#                   'color': colors["kAzure"] -3,    
+#                   'isSignal' : 0,
+#                   'isData'   : 0,
+#                   'scale'    : 1.0
+#                   }
+# 
+# 
+# plot['VV']  = {
+#                   'color': colors['kGreen']+3,  
+#                   'isSignal' : 0,
+#                   'isData'   : 0,
+#                   'scale'    : 1.   ,
+#               }   
+ 
+
 plot['VVV']  = { 
-                  'color': colors["kAzure"] -3,    
-                  'isSignal' : 0,
-                  'isData'   : 0,
-                  'scale'    : 1.0
-                  }
+                   'color': colors["kAzure"] -3,    
+                   'isSignal' : 0,
+                   'isData'   : 0,
+                   'scale'    : 1.0
+                   }
 
-
-plot['VV']  = {
-                  'color': colors['kGreen']+3,  
-                  'isSignal' : 0,
-                  'isData'   : 0,
-                  'scale'    : 1.   ,
-              }   
-         
+plot['VV_ssWW']  = {
+                'color': colors['kMagenta']+1,
+                'isSignal' : 0,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
+plot['VV_osWW']  = {
+                'color': colors['kMagenta']+1,
+                'isSignal' : 0,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
+plot['VV_WZjj']  = {
+                'color': colors['kMagenta']+1,
+                'isSignal' : 0,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
+plot['VV_WZll']  = {
+                'color': colors['kMagenta']+1,
+                'isSignal' : 0,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
+plot['VV_ZZ']  = {
+                'color': colors['kMagenta']+1,
+                'isSignal' : 0,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
 
 
 plot['DY']  = {  
@@ -324,6 +373,13 @@ plot['ewk_ZZ']  = {
                 'scale'    : 1.0,
             }
 
+# plot['VBS_dipoleRecoil']  = {
+#                   'color': colors["kCyan"]+1, 
+#                   'isSignal' : 1,
+#                   'isData'   : 0,
+#                   'scale'    : 1.   ,
+#               }
+
 # # data
 
 plot['DATA']  = { 
@@ -333,7 +389,6 @@ plot['DATA']  = {
                  'isData'   : 1 ,
                  'isBlind'  : 0
              }
-
 
 
 # additional options
