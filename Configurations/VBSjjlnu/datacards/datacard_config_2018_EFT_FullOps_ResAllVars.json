@@ -1,0 +1,863 @@
+[
+  { 
+    "datacard_name": "2018_DNN",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "DNNoutput_res_v1", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "DNNoutput_res_v1", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Lepton_pt",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "Lepton_pt", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "Lepton_pt", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_vbs_0_qgl_res",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "vbs_0_qgl_res", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "vbs_0_qgl_res", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Zvjets_0",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "Zvjets_0", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "Zvjets_0", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_vbs_0_pt",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "vbs_0_pt", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "vbs_0_pt", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_vbs_1_pt_res_morebins",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "vbs_1_pt_res_morebins", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "vbs_1_pt_res_morebins", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_vjet_1_qgl_res",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "vjet_1_qgl_res", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "vjet_1_qgl_res", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_events",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "events", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "events", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_vjet_0_qgl_res",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "vjet_0_qgl_res", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "vjet_0_qgl_res", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_mjj_vjet_res",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "mjj_vjet_res", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "mjj_vjet_res", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_deltaeta_vbs",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "deltaeta_vbs", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "deltaeta_vbs", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Centr_ww",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "Centr_ww", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "Centr_ww", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Lepton_eta",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "Lepton_eta", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "Lepton_eta", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_vbs_1_pt_res",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "vbs_1_pt_res", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "vbs_1_pt_res", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_w_lep_pt",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "w_lep_pt", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "w_lep_pt", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_vjet_1_pt",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "vjet_1_pt", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "vjet_1_pt", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_nJets_res",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "nJets_res", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "nJets_res", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_deltaphi_vbs",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "deltaphi_vbs", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "deltaphi_vbs", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_deltaeta_vjet",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "deltaeta_vjet", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "deltaeta_vjet", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_vjet_0_pt",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "vjet_0_pt", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "vjet_0_pt", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Zlep",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "Zlep", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "Zlep", 
+          "cut": "res_sig_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res", 
+        "cut": "res_wjetcr_mu"
+      },
+      {
+          "name": "res_wjet_ele",
+          "var": "fit_bins_res", 
+          "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events", 
+        "cut": "res_topcr_mu"
+      },
+      { 
+        "name": "res_top_ele",
+        "var": "events", 
+        "cut": "res_topcr_ele"
+      }
+    ]
+  }
+]
