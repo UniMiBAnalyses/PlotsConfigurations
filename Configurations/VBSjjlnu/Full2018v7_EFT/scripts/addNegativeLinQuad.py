@@ -10,10 +10,12 @@ ops = ["cW", "cHW", "cHWB", "cHbox", "cHB", "cHl1", "cHQ1", "cHj1"]
 f = ROOT.TFile(sys.argv[1], "UPDATE")
 
 for region in [i.GetName() for i in f.GetListOfKeys()]:
+    print("-->Region: ", region)
     d = f.Get(region)
     f.cd(region)
 
     for var in [j.GetName() for j in d.GetListOfKeys()]:
+        print("--> Var: " + var)
         d_ = d.Get(var)
         f.cd(region + "/" + var)
 
