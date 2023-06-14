@@ -14,9 +14,10 @@ variables['events']  = {   'name': '1',
 ########################
 
 variables['Mww'] = {   'name': 'Mww',      
-                        'range' : ([ 200.,  400.,  600.,  800., 1000., 1500., 2500.],), #variable range  
+                        'range' : ([ 200., 600.,  800., 1000., 1200., 2000., 3000.],), #variable range  
                         'xaxis' : 'Mww', 
                         'fold' : 3,
+                        'cuts': sig_cuts
                         #'divideByBinWidth': True, 
                          #'blind': [1000,2000]
                         }
@@ -30,17 +31,6 @@ variables['DNNoutput_res_v1'] = {
     'divideByBinWidth': True, 
     'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
 }
-
-variables['DNNoutput_res_v2'] = {
-    'name': 'DNNoutput_resolved_v1',
-    'range': ([i*0.04 for i in range(20) ] + [0.8+0.025*i for i in range(9)],),
-    'xaxis': 'DNN resolved',
-    'fold': 3 ,
-    'cuts':  res_cuts,
-    'divideByBinWidth': True, 
-    'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
-}
-
 
 variables['DNNoutput_boost'] = {
     'name': 'DNNoutput_boosted',
@@ -73,7 +63,8 @@ variables['fit_bins_boost'] ={  'name' : 'w_lep_pt',
 variables['w_lep_pt'] = {   'name': 'w_lep_pt',      
                         'range' :  (10,0,400),  
                         'xaxis' : 'Pt W leptonic', 
-                        'fold' : 3
+                        'fold' : 3,
+                        'cuts': sig_cuts
                         }
 
 variables['vbs_1_pt_res'] = {   'name': 'vbs_1_pt',      
@@ -92,24 +83,25 @@ variables['vbs_1_pt_boost'] = {   'name': 'vbs_1_pt',
                         }   
 
 variables['deltaeta_vbs'] = {   'name': 'deltaeta_vbs',      
-                        'range' : (5,2.5,8.5),  
+                        'range' : (10,2.5,8.5),  
                         'xaxis' : '#Delta#eta VBS jets', 
                         'fold' : 3,
+                        'cuts': sig_cuts
                         }    
 
-variables['mjj_vjet_res'] = {   'name': 'mjj_vjet',      
-                        'range' : (15,65,105),  
-                        'xaxis' : 'Whad reco mass', 
-                        'fold' : 3,
-                        'cuts' : [c for c in res_cuts if 'wjetcr' not in c] 
-                        }
+# variables['mjj_vjet_res'] = {   'name': 'mjj_vjet',      
+#                         'range' : (15,65,105),  
+#                         'xaxis' : 'Whad reco mass', 
+#                         'fold' : 3,
+#                         'cuts' : [c for c in res_cuts if 'wjetcr' not in c] 
+#                         }
 
-variables['mjj_vjet_boost'] = {   'name': 'mjj_vjet',      
-                        'range' : (10,70,115),  
-                        'xaxis' : 'Whad reco mass', 
-                        'fold' : 3,
-                        'cuts' : [c for c in boost_cuts  if 'wjetcr' not in c] 
-                        }
+# variables['mjj_vjet_boost'] = {   'name': 'mjj_vjet',      
+#                         'range' : (10,70,115),  
+#                         'xaxis' : 'Whad reco mass', 
+#                         'fold' : 3,
+#                         'cuts' : [c for c in boost_cuts  if 'wjetcr' not in c] 
+#                         }
 
 # variables['mjj_vjet_wjetcr'] = {   'name': 'mjj_vjet',      
 #                         'range' : (50,40,250),  
@@ -122,6 +114,7 @@ variables['mjj_vbs'] = {   'name': 'mjj_vbs',
                         'range' : (10,500,3500) , 
                         'xaxis' : 'M_{jj} VBS', 
                         'fold' : 3,
+                        'cuts': sig_cuts,
                         #'blind':  { c: [1500,3000] for c in cuts if 'sig' in c} ,
                     }
 
@@ -142,7 +135,8 @@ variables['nJets_boost'] = {   'name': 'nJets30',
 variables['Zlep'] = {   'name': 'Zlep',      
                         'range' : (10,-1,1),  
                         'xaxis' : 'Zepp. lepton', 
-                        'fold' : 3,
+                        'cuts': sig_cuts,
+                        'fold' : 3
                         }
 
 variables['Zvjets_0'] = {   'name': 'Zvjets_0',      
@@ -153,9 +147,10 @@ variables['Zvjets_0'] = {   'name': 'Zvjets_0',
                         }
 
 variables['vbs_0_pt'] = {   'name': 'vbs_0_pt',      
-                        'range' : (15,50,400),  
+                        'range' : (10,50,400),  
                         'xaxis' : 'leading VBS jet pt', 
-                        'fold' : 3
+                        'fold' : 3,
+                        'cuts': sig_cuts
                         } 
 
 variables['vjet_0_pt'] = {   'name': 'vjet_0_pt',      
@@ -183,11 +178,11 @@ variables['deltaphi_vbs'] = {   'name': 'deltaphi_vbs',
                         'range' : (10,0,3.14),  
                         'xaxis' : '#Delta#phi VBS jets', 
                         'fold' : 3,
-                        'cuts': sig_cuts
+                        'cuts': sig_cuts,
                         }
 
 variables['Lepton_eta'] = {   'name': 'Lepton_eta[0]',      
-                        'range' : (15,-2.5,2.5),  
+                        'range' : (10,-2.5,2.5),  
                         'xaxis' : 'Lepton #eta', 
                         'fold' : 3,
                         'cuts': sig_cuts
@@ -201,7 +196,7 @@ variables['Lepton_pt'] = {   'name': 'Lepton_pt[0]',
                         }   
 
 variables['Centr_ww'] = {   'name': 'Centr_ww',      
-                        'range' : (15,-3,3),  
+                        'range' : (10,-3,3),  
                         'xaxis' : 'W boson centrality', 
                         'fold' : 3,
                         'cuts': sig_cuts

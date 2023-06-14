@@ -9,7 +9,7 @@ conf_folder = configurations +"/VBSjjlnu/Full2018v7"
 
 mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
 
-VBS_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ", "ewk_WpWm", "ewk_WpWp", "ewk_WmWm"]
+VBS_samples = ["sm"]
 VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
 
 ####################

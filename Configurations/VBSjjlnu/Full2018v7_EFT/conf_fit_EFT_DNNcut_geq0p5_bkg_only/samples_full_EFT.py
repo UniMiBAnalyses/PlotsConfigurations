@@ -1177,4 +1177,4 @@ EFT_samples_datacard = [i for i in EFT_samples if not i.startswith("lin")]
 EFT_samples_dropped = [i for i in EFT_samples if i not in EFT_samples_datacard]
 
 # samples = {k: j for k,j in samples.items() if k not in EFT_samples_dropped}
-# samples = {k: j for k,j in samples.items() if in EFT_samples}
+samples = {k: j for k,j in samples.items() if k not in EFT_samples}
