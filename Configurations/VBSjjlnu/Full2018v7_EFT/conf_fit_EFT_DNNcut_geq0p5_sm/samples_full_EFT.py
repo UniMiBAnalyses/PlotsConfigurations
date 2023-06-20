@@ -31,7 +31,7 @@ dataProduction = 'Run2018_102X_nAODv7_Full2018v7_skim'
 
 SITE=os.uname()[1]
 xrootdPath=''
-if  'cern' in SITE :
+if  'cern' in SITE and 'hercules' in SITE:
   #xrootdPath='root://eoscms.cern.ch/'
   treeBaseDir = '/eos/cms/store/group/phys_higgs/cmshww/amassiro/HWWNano/'
   treeBaseDir_SMP = '/eos/cms/store/group/phys_smp/VJets_NLO_VBSanalyses/'
