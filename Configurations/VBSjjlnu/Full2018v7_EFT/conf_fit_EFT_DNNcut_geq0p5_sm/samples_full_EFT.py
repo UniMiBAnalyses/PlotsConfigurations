@@ -40,7 +40,7 @@ if  'cern' in SITE :
 directory_bkg    = os.path.join(treeBaseDir_SMP ,  mcProduction , mcSteps)
 directory_signal = os.path.join(treeBaseDir_SMP ,  mcProduction , mcSteps)
 directory_mc     = os.path.join(treeBaseDir_SMP ,  mcProduction , mcSteps)
-directory_EFT     = os.path.join(treeBaseDir_EFT ,  mcProduction_EFT , mcSteps)
+directory_EFT     = os.path.join(treeBaseDir_SMP ,  mcProduction_EFT , mcSteps)
 directory_data   = os.path.join(treeBaseDir_SMP,       dataProduction, dataSteps)
 directory_interference = '/eos/user/g/govoni/valsecchi/LatinosSamples/Autumn18_102X_nAODv7_Full2018v7/MCl1loose2018v7__MCCorr2018v7__MCCombJJLNu2018'
 
@@ -53,6 +53,12 @@ mupSamples = nanoGetSampleFiles(directory_EFT,'mupVjj_ewk_dim6_EFT')
 mumSamples = nanoGetSampleFiles(directory_EFT,'mumVjj_ewk_dim6_EFT')
 epSamples = nanoGetSampleFiles(directory_EFT,'epVjj_ewk_dim6_EFT')
 emSamples = nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT')
+
+# Dropping corrupted files 
+
+emSamples = [i for i in emSamples if "nanoLatino_emVjj_ewk_dim6_EFT__part30.root" not in i]
+tamSamples = [i for i in tamSamples if "nanoLatino_tamVjj_ewk_dim6_EFT__part77.root" not in i] 
+
 ###############################################
 
 wjets_res_bins = []
@@ -636,7 +642,7 @@ DataTrig = {
 samples['sm'] = {
    'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
    'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[0]',
-   'FilesPerJob': 3,
+   'FilesPerJob': 1,
 }
 
 
