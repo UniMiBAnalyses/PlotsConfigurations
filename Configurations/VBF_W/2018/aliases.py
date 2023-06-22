@@ -4,6 +4,7 @@ import inspect
 
 configurations = os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurations/"
 conf_folder = configurations +"/VBF_W/2018/"
+utils_folder = configurations +"/VBF_W/utils/"
 
 #aliases = {}
 
@@ -209,12 +210,12 @@ for s in systs:
 
 
 aliases['hardJets'] = {
-    'expr':  'Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 25 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 25',
+    'expr':  'Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10',
     'samples': ['Wjets_HT']
 }
 
 aliases['PUJets'] = {
-    'expr':  '!(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 25 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 25)',
+    'expr':  '!(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10)',
     'samples': ['Wjets_HT']
 }
 
@@ -332,35 +333,25 @@ aliases['fakeWeight_35_statDo'] = {
 puidSFSource = '{}/patches/PUID_81XTraining_EffSFandUncties.root'.format(configurations)
 
 aliases['PUJetIdSF'] = {
-    'linesToAdd': [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L %s/patches/pujetidsf_event_new.cc+' % configurations
-    ],
-    'class': 'PUJetIdEventSF',
-    'args': (puidSFSource, '2018', 'loose'),
-    'samples': mc
-}
-
-aliases['PUJetIdSF'] = {
-  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2)*TMath::Log(Jet_PUIDSF_loose)))',
+  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
+                                          && ( (Jet_muonIdx1 != Lepton_muonIdx[0] ) || Jet_muonIdx1 < 0 ) \
+                            )*TMath::Log(Jet_PUIDSF_loose)))',
   'samples': mc
 }
 
+
 aliases['PUJetIdSF_up'] = {
-  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2)*TMath::Log(Jet_PUIDSF_loose_up)))',
+  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
+                                          && ( (Jet_muonIdx1 != Lepton_muonIdx[0] ) || Jet_muonIdx1 < 0 ) \
+                            )*TMath::Log(Jet_PUIDSF_loose_up)))',
   'samples': mc
 }
 
 
 aliases['PUJetIdSF_down'] = {
-  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2)*TMath::Log(Jet_PUIDSF_loose_down)))',
-  'samples': mc
-}
-
-aliases['PUJetIdSF'] = {
   'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
                                           && ( (Jet_muonIdx1 != Lepton_muonIdx[0] ) || Jet_muonIdx1 < 0 ) \
-                            )*TMath::Log(Jet_PUIDSF_loose)))',
+                            )*TMath::Log(Jet_PUIDSF_loose_down)))',
   'samples': mc
 }
 
@@ -628,30 +619,39 @@ aliases['category_WJets'] = {
 }
 
 ##reweight for Wjets samples
-morphing_file = conf_folder + 'utils/reweight/WJets_reweight.root'
+morphing_file = utils_folder + 'reweight/NWJets_reweight.root'
 aliases['WJets_reweight'] = {
     'class': 'ReweightJet1pT',
     'samples': ['Wjets_HT'],
-    'args': (morphing_file, False),
+    'args': (morphing_file, "ele_ideal_function", "mu_ideal_function"),
      'linesToAdd' : [
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}utils/reweight/reweight_Jet1pT.cc+'.format(conf_folder)
+        '.L {}reweight/reweight_Jet1pT.cc+'.format(utils_folder)
         ] 
 } 
 
-# ## DNN
-# models_path = conf_folder + 'utils/NN'
-# model_best = '64_64_64/SR/ALL/'
+aliases['WJets_reweight_up'] = {
+    'class': 'ReweightJet1pT',
+    'samples': ['Wjets_HT'],
+    'args': (morphing_file, copy.deepcopy("ele_sys_up"), copy.deepcopy("mu_sys_up"))
+} 
 
-# aliases['DNNoutputSR_ALL'] = {
-#   'class': 'MVAReaderDNN',
-#   'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
-#   'linesToAdd':[
-#       'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#       'gSystem->Load("libDNNEvaluator.so")',
-#       '.L {}utils/NN/ALLmva_reader_DNN.cc+'.format(conf_folder)
-#   ]
-# }
+aliases['WJets_reweight_do'] = {
+    'class': 'ReweightJet1pT',
+    'samples': ['Wjets_HT'],
+    'args': (morphing_file, copy.deepcopy("ele_sys_down"), copy.deepcopy("mu_sys_down"))
+} 
 
+# DNN
+models_path = utils_folder + 'NN'
+model_best = '64_64_64/SR_part/noRQ2jetpt/'
 
-
+aliases['DNNoutputSR_ALL'] = {
+  'class': 'MVAReaderDNN',
+  'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
+  'linesToAdd':[
+      'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+      'gSystem->Load("libDNNEvaluator.so")',
+      '.L {}NN/NORQ2JETPTmva_reader_DNN.cc+'.format(utils_folder)
+  ]
+}

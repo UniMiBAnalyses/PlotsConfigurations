@@ -175,7 +175,9 @@ plot['Wjets_HT_hardJets'] = {
                  'isSignal' : 0,
                  'isData'   : 0, 
                  #'scale'    : 1.09950003 
-                 'scale'    : 1.0
+                #  'scale'    : 1.0
+                 'scale'    : 1.0064
+                #  'scale'     : 1.0232
                  #'scale'    : 1.1231175589276459 #mu
                  #'scale'    : 1.2795330335917352
                 # 'scale'    : 0.5
@@ -186,7 +188,9 @@ plot['Wjets_HT_PUJets'] = {
                  'isSignal' : 0,
                  'isData'   : 0, 
                  #'scale'    : 1.050420857 
-                 'scale'    : 1.0
+                #  'scale'    : 1.0
+                 'scale'    : 1.1871
+                #  'scale'    : 1.0854
                  #'scale'    : 1.0958905448504972
                  #'scale'    : 1.1768637821969707
                 }
@@ -195,7 +199,8 @@ plot['top'] = {
                  'color': colors['kAzure']-1,
                  'isSignal' : 0,
                  'isData'   : 0, 
-                 'scale'    : 1.0 
+                #  'scale'    : 1.0 
+                 'scale'    : 0.93512
                  }
     
 plot['VV']  = {
@@ -274,10 +279,13 @@ plot['Fake'] = {
                 'isSignal' : 0,
                 'isData'   : 0, 
                 'scale'    : 1.
+                # 'scale'    : 0.90796
                 #'scale' : 0.713100632928824
                 #'scale' : 0.6454715517898252
                 #'scale' : 0.4 ele
                 #'scale' : 0.5 mu
+                # 'scale' : 1.0253
+                
                }
 
 
@@ -307,3 +315,4 @@ legend['lumi'] = 'L = 59.74/fb'
 legend['sqrt'] = '#sqrt{s} = 13 TeV'
 
 
+['detajj', 'mjj', 'ptW', 'Zl1', 'eta1']

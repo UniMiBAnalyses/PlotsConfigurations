@@ -78,11 +78,11 @@ For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for e
 
 # Make nuis plot
     python DrawNuisancesAll.py \
-     --inputFile ../../../../PlotsConfigurations/Configurations/VBF_W/2018/datacards/topcr/eta1/shapes/histos_topcr.root  \
-     --outputDirPlots ../../../../PlotsConfigurations/Configurations/VBF_W/2018/topcr_nuisance  \
+     --inputFile ../../../../PlotsConfigurations/Configurations/VBF_W/2018/datacards/ele_SR/DNNoutput_ALLbin1/shapes/histos_ele_SR.root  \
+     --outputDirPlots ../../../../PlotsConfigurations/Configurations/VBF_W/2018/ele_SR_nuisance  \
      --nuisancesFile ../../../../PlotsConfigurations/Configurations/VBF_W/2018/nuisances.py  \
      --samplesFile   ../../../../PlotsConfigurations/Configurations/VBF_W/2018/samples.py \
-     --cutName topcr
+     --cutName ele_SR
 
 # How to run the analysis 
 ### CMSSW_11_1_4 IS NEEDED FOR DNN OUTPUT VARIABLE!!
@@ -168,3 +168,17 @@ For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for e
      --nuisancesFile ../../../../PlotsConfigurations/Configurations/VBF_W/2018/nuisances.py  \
      --samplesFile   ../../../../PlotsConfigurations/Configurations/VBF_W/2018/samples.py \
      --cutName topcr
+
+    python DrawNuisancesAll.py \
+    --inputFile datacards/ele_HWJ/mjj/shapes/histos_ele_HWJ.root \
+    --outputDirPlots plots/single_sys \
+    --nuisancesFile nuisances.py \
+    --samplesFile samples.py \
+    --cutName ele_HWJ
+
+    python DrawNuisancesAll.py \
+    --inputFile datacards/ele_SR/DNNoutput_ALLbin1/shapes/histos_ele_SR.root  \
+    --outputDirPlots ele_SR_nuisance  \
+    --nuisancesFile nuisances.py  \
+    --samplesFile   samples.py \
+    --cutName ele_SR

@@ -521,35 +521,35 @@ variables['DeepBj2'] = {   'name': 'Jet_btagDeepB[CleanJet_jetIdx[1]]',
                          }
 }
 
-# variables['DNNoutput_ALLbin1'] = {   'name': 'DNNoutputSR_ALL',     
-#                         'range' : ([0., 0.10, 0.20, 0.30, 0.40, 0.50, 1.],), 
-#                         'xaxis' : 'DNNoutput',
-#                         'fold' : 3,
-#                         'blind': {
-#                            'ele_SR' : 'full',
-#                            'mu_SR' : 'full'
-#                          }
-# }
+variables['DNNoutput_ALLbin1'] = {   'name': 'DNNoutputSR_ALL',     
+                        'range' : ([0., 0.10, 0.20, 0.30, 0.40, 0.50, 1.],), 
+                        'xaxis' : 'DNNoutput',
+                        'fold' : 3,
+                        'blind': {
+                           'ele_SR' : 'full',
+                           'mu_SR' : 'full'
+                         }
+}
 
-# variables['DNNoutput_ALLbin2'] = {   'name': 'DNNoutputSR_ALL',     
-#                         'range' : ([0., 0.10, 0.20, 0.30, 0.40, 0.50, 0.6, 1.],), 
-#                         'xaxis' : 'DNNoutput',
-#                         'fold' : 3,
-#                         'blind': {
-#                            'ele_SR' : 'full',
-#                            'mu_SR' : 'full'
-#                          }
-# }
+variables['DNNoutput_ALLbin2'] = {   'name': 'DNNoutputSR_ALL',     
+                        'range' : ([0., 0.10, 0.20, 0.30, 0.40, 0.50, 0.6, 1.],), 
+                        'xaxis' : 'DNNoutput',
+                        'fold' : 3,
+                        'blind': {
+                           'ele_SR' : 'full',
+                           'mu_SR' : 'full'
+                         }
+}
 
-# variables['DNNoutput_ALLbin3'] = {   'name': 'DNNoutputSR_ALL',     
-#                         'range' : ([0., 0.10, 0.20, 0.30, 0.40, 0.50, 0.6, 0.9, 1.],), 
-#                         'xaxis' : 'DNNoutput',
-#                         'fold' : 3,
-#                         'blind': {
-#                            'ele_SR' : 'full',
-#                            'mu_SR' : 'full'
-#                          }
-# }
+variables['DNNoutput_ALLbin3'] = {   'name': 'DNNoutputSR_ALL',     
+                        'range' : ([0., 0.10, 0.20, 0.30, 0.40, 0.50, 0.6, 0.9, 1.],), 
+                        'xaxis' : 'DNNoutput',
+                        'fold' : 3,
+                        'blind': {
+                           'ele_SR' : 'full',
+                           'mu_SR' : 'full'
+                         }
+}
 
 variables['mjj_bin1']      = {   'name': 'mjj',            #   variable name    
                             'range' : ([400., 500., 600., 700., 800., 900., 1000., 1100., 1200., 1300., 1400., 1500., 1600., 1700., 1800., 1900., 2000., 2500.],),    #   variable range

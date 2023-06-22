@@ -4,6 +4,7 @@ import inspect
 
 configurations = os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurations/"
 conf_folder = configurations +"/VBF_W/2017/"
+utils_folder = configurations +"/VBF_W/utils/"
 
 #aliases = {}
 
@@ -500,19 +501,16 @@ aliases['puWeight_noeras'] = {
 #         ] 
 # } 
 
-## DNN
-# models_path = conf_folder + 'utils/NN'
-# model_best = '64_64_64/SR/ALL/'
+# DNN
+models_path = utils_folder + 'NN'
+model_best = '64_64_64/SR/ALL/'
 
-# aliases['DNNoutputSR_ALL'] = {
-#   'class': 'MVAReaderDNN',
-#   'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
-#   'linesToAdd':[
-#       'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#       'gSystem->Load("libDNNEvaluator.so")',
-#       '.L {}utils/NN/ALLmva_reader_DNN.cc+'.format(conf_folder)
-#   ]
-# }
-
-
-
+aliases['DNNoutputSR_ALL'] = {
+  'class': 'MVAReaderDNN',
+  'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
+  'linesToAdd':[
+      'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+      'gSystem->Load("libDNNEvaluator.so")',
+      '.L {}NN/ALLmva_reader_DNN.cc+'.format(utils_folder)
+  ]
+}

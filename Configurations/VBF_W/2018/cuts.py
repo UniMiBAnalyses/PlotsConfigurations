@@ -34,18 +34,19 @@ supercut = '((Alt$(abs(CleanJet_eta[0]), 3) <2.5) || (Alt$(abs(CleanJet_eta[0]),
 #levo fake e DY + ort to WH
 #fake
 
+
 cuts['ele_SR'] = '(abs(Lepton_pdgId[0])==11) \
                   && Lepton_pt[0] > 35. \
                   && bVeto \
                   && CleanJet_pt[1]>70. \
-                  && detajj >= 4 \
+                  && detajj > 4 \
                   && mtw1 > 50. \
                  '
 
 cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13)\
                   && bVeto \
                   && CleanJet_pt[1]>70. \
-                  && detajj >= 4 \
+                  && detajj > 4 \
                   && mtw1 > 50. \
                  '
 
@@ -53,17 +54,35 @@ cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13)\
 ##Hard & PU WJets CRs
 cuts['ele_HWJ'] = '(abs(Lepton_pdgId[0])==11) \
                     && Lepton_pt[0] > 35. \
-                    && CleanJet_pt[1]>70. \
                     && bVeto \
                     && mjj <= 750. \
-                    && detajj < 4 \
+                    && detajj <= 4 \
                     && mtw1 > 50. \
+                    '
+
+cuts['ele_HWJ-SR'] = '(abs(Lepton_pdgId[0])==11) \
+                    && Lepton_pt[0] > 35. \
+                    && bVeto \
+                    && mjj <= 750. \
+                    && detajj <= 4 \
+                    && mtw1 > 50. \
+                    && detajj > 3 \
+                    && CleanJet_pt[1]>70. \
+                    '
+
+cuts['ele_HWJ_cutted'] = '(abs(Lepton_pdgId[0])==11) \
+                    && Lepton_pt[0] > 35. \
+                    && bVeto \
+                    && mjj <= 750. \
+                    && detajj <= 4 \
+                    && mtw1 > 50. \
+                    && DNNoutputSR_ALL > 0.3\
                     '
 
 cuts['ele_PUWJ'] = '(abs(Lepton_pdgId[0])==11) \
                     && Lepton_pt[0] > 35. \
-                    && detajj >= 5. \
-                    && CleanJet_pt[1]<=50.\
+                    && detajj > 5. \
+                    && CleanJet_pt[1]<=70.\
                     && bVeto \
                     && PuppiMET_pt>70. \
                     && mtw1>50. \
@@ -71,16 +90,31 @@ cuts['ele_PUWJ'] = '(abs(Lepton_pdgId[0])==11) \
 
 
 cuts['mu_HWJ'] = '(abs(Lepton_pdgId[0])==13) \
-                    && CleanJet_pt[1]>70. \
                     && bVeto \
                     && mjj <= 750. \
-                    && detajj < 4 \
+                    && detajj <= 4 \
                     && mtw1 > 50. \
+                    '
+cuts['mu_HWJ-SR'] = '(abs(Lepton_pdgId[0])==13) \
+                    && bVeto \
+                    && mjj <= 750. \
+                    && detajj <= 4 \
+                    && mtw1 > 50. \
+                    && detajj > 3 \
+                    && CleanJet_pt[1]>70. \
+                    '
+
+cuts['mu_HWJ_cutted'] = '(abs(Lepton_pdgId[0])==13) \
+                    && bVeto \
+                    && mjj <= 750. \
+                    && detajj <= 4 \
+                    && mtw1 > 50. \
+                    && DNNoutputSR_ALL > 0.3\
                     '
 
 cuts['mu_PUWJ'] = '(abs(Lepton_pdgId[0])==13) \
-                    && detajj >= 5. \
-                    && CleanJet_pt[1]<=50.\
+                    && detajj > 5. \
+                    && CleanJet_pt[1]<=70.\
                     && bVeto \
                     && PuppiMET_pt>70. \
                     && mtw1>50. \
@@ -88,27 +122,71 @@ cuts['mu_PUWJ'] = '(abs(Lepton_pdgId[0])==13) \
 
                     
 # Top control region (common mu & e)
-
-# cuts['ele_topcr']  = 'abs(Lepton_pdgId[0])==11 && bReqTight \
-#                  '
-# cuts['mu_topcr']  = 'abs(Lepton_pdgId[0])==13 && bReqTight \
-#                 '
-
 cuts['topcr']  = '((zeroJet && !bVeto) || bReqTight) \
-                '
+                    '
 
 ## Fake CR   
 cuts['ele_FakeCR']  = '(abs(Lepton_pdgId[0])==11) \
                       && Lepton_pt[0] > 35. \
-                      && detajj < 5. \
+                      && detajj <= 5. \
                       && bVeto\
-                      && mtw1<50. \
-                      && CleanJet_pt[1]<70.  \
+                      && mtw1<=50. \
+                      && CleanJet_pt[1]<=70.  \
                      '
 
+# cuts['ele_FakeCR_cutted']  = '(abs(Lepton_pdgId[0])==11) \
+#                       && Lepton_pt[0] > 35. \
+#                       && detajj <= 5. \
+#                       && bVeto\
+#                       && mtw1<=50. \
+#                       && CleanJet_pt[1]<=70.  \
+#                       && DNNoutputSR_ALL > 0.3 \
+#                      '
+
 cuts['mu_FakeCR']  = '(abs(Lepton_pdgId[0])==13) \
-                      && detajj < 5. \
+                      && detajj <= 5. \
                       && bVeto\
-                      && mtw1<50. \
-                      && CleanJet_pt[1]<70.  \
+                      && mtw1<=50. \
+                      && CleanJet_pt[1]<=70.  \
                      '
+
+# cuts['mu_FakeCR_cutted']  = '(abs(Lepton_pdgId[0])==13) \
+#                       && detajj <= 5. \
+#                       && bVeto\
+#                       && mtw1<=50. \
+#                       && CleanJet_pt[1]<=70.  \
+#                       && DNNoutputSR_ALL > 0.3\
+#                      '
+
+
+# cuts['medium'] = 'Lepton_pt[0] > 35. \
+#                     && bVeto \
+#                     && mtw1 > 50. \
+#                     '
+
+
+# cuts['ele_SR'] = ' (abs(Lepton_pdgId[0])==11) \
+#                     && Lepton_pt[0] > 35. \
+#                     && bVeto \
+#                     && mtw1 > 50. \
+#                     && abs(Zl1) <= 0.8 \
+#                     '
+# cuts['mu_SR'] = ' (abs(Lepton_pdgId[0])==13) \
+#                     && bVeto \
+#                     && mtw1 > 50. \
+#                     && abs(Zl1) <= 0.8 \
+#                     '
+
+# cuts['NEWHWJ'] = 'Lepton_pt[0] > 35. \
+#                     && bVeto \
+#                     && mtw1 > 50. \
+#                     && abs(Zl1) > 0.8 \
+#                     && detajj <= 4.5 \
+#                     '
+
+# cuts['NEWPUWJ'] = 'Lepton_pt[0] > 35. \
+#                     && bVeto \
+#                     && mtw1 > 50. \
+#                     && abs(Zl1) > 0.8 \
+#                     && detajj > 4.5 \
+#                     '

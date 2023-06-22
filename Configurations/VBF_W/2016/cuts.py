@@ -32,7 +32,6 @@ supercut = '1'
 #fake
 
 cuts['ele_SR'] = '(abs(Lepton_pdgId[0])==11) \
-                  && (Alt$(Lepton_pt[0],0) > 30.) \
                   && bVeto \
                   && CleanJet_pt[1]>70. \
                   && detajj >= 4 \
@@ -48,7 +47,6 @@ cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13) \
 
 ##Hard & PU WJets CRs
 cuts['ele_HWJ'] = '(abs(Lepton_pdgId[0])==11) \
-                    && (Alt$(Lepton_pt[0],0) > 30.) \
                     && CleanJet_pt[1]>70. \
                     && bVeto \
                     && mjj <= 750. \
@@ -58,7 +56,6 @@ cuts['ele_HWJ'] = '(abs(Lepton_pdgId[0])==11) \
 
 
 cuts['ele_PUWJ'] = '(abs(Lepton_pdgId[0])==11) \
-                    && (Alt$(Lepton_pt[0],0) > 30.) \
                     && detajj >= 5. \
                     && CleanJet_pt[1]<=50.\
                     && bVeto \
@@ -88,13 +85,11 @@ cuts['mu_topcr']  = 'abs(Lepton_pdgId[0])==13 && bReqTight \
                  '
 
 cuts['ele_topcr']  = 'abs(Lepton_pdgId[0])==11 && bReqTight \
-                    && (Alt$(Lepton_pt[0],0) > 30.) \
                  '
 
 
 ## Fake CR   
 cuts['ele_FakeCR']  = '(abs(Lepton_pdgId[0])==11) \
-                      && (Alt$(Lepton_pt[0],0) > 30.) \
                       && detajj < 5. \
                       && bVeto\
                       && mtw1<50. \

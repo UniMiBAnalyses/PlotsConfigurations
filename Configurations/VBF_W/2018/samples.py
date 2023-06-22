@@ -108,7 +108,7 @@ LepWPWeight = LepWPWeight_1l
 XSWeight   = 'XSWeight'
 SFweight1l = [ 'puWeight', 'SingleLepton_trigEff_corrected[0]',
               'Lepton_RecoSF[0]',LepWPWeight_1l, LepWPCut_1l,
-              'btagSF','PUJetIdSF'] #btagSF removed
+              'btagSF','PUJetIdSF'] 
 
 SFweight = '*'.join(SFweight1l)
 
@@ -293,6 +293,43 @@ samples['VBS']  = { 'name' :  nanoGetSampleFiles(mcPrivateDirectory,'WmToLNu_ZTo
                     'EventsPerJob' : 70000,
                 }
 
+
+# 2018
+
+# WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+# WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+# WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+# WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+# WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+# WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+# WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+# WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+# ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+# WWToLNuQQ_NNPDF31_TuneCP5_13TeV-powheg-pythia8
+
+
+# 2017
+# WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_Tune*_13TeV-madgraph-pythia8
+# WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_Tune*_13TeV-madgraph-pythia8
+# WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_Tune*_13TeV-madgraph-pythia8
+# ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_Tune*_13TeV-madgraph-pythia8
+# WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_Tune*_13TeV-madgraph-pythia8
+# WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_Tune*_13TeV-madgraph-pythia8
+# WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_Tune*_13TeV-madgraph-pythia8
+# WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_Tune*_13TeV-madgraph-pythia8
+# WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_Tune*_13TeV-madgraph-pythia8
+# WWToLNuQQ_NNPDF31_Tune*_PSweights_13TeV-powheg-pythia8
+
+# 2016
+# WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+# WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+# ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+# WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+# WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+# WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+# WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+# WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+# WWToLNuQQ_13TeV-powheg/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1
 ########################################
 
 
@@ -461,18 +498,18 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcPrivateDirectory,'ZZZ')
 
 # Then corrected
 fakeW = 'fakeWeight_35'
-Fake_correction = '((abs(Lepton_pdgId[0])==11)*((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(0.4)+((Lepton_phi[0]>=-1.)*(Lepton_phi[0]<=-1.5)*(1))) + ((abs(Lepton_pdgId[0])==13)*((Lepton_phi[0]>0.3)*(Lepton_phi[0]<1.)*(0.5)+((Lepton_phi[0]<=0.3)*(Lepton_phi[0]>=1.)*(1)))))'
+# Fake_correction = '((abs(Lepton_pdgId[0])==11)*((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(0.4)+((Lepton_phi[0]>=-1.)*(Lepton_phi[0]<=-1.5)*(1))) + ((abs(Lepton_pdgId[0])==13)*((Lepton_phi[0]>0.3)*(Lepton_phi[0]<1.)*(0.5)+((Lepton_phi[0]<=0.3)*(Lepton_phi[0]>=1.)*(1)))))'
 # Fake_correction = '1.'
 
-Fake_ele_corr = '((abs(Lepton_pdgId[0]) == 11) * (((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(0.4)) + ((Lepton_phi[0]>-1.)*(Lepton_phi[0]<1.5)*(1.))))'
-Fake_mu_corr = '((abs(Lepton_pdgId[0]) == 13 ) * (((Lepton_phi[0]>0.3)*(Lepton_phi[0]<1.)*(0.5)) + ((Lepton_phi[0]<0.3)*(Lepton_phi[0]>1.)*(1.))))'
-
-Fake_correction = Fake_ele_corr + ' + ' + Fake_mu_corr
+# Fake_ele_corr = ((abs(Lepton_pdgId[0]) == 11) * (((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(0.4)) + ((Lepton_phi[0]>-1.)*(1.) + (Lepton_phi[0]<1.5)*(1.))))
+Fake_corr = '(((abs(Lepton_pdgId[0]) == 11) * (1. + ((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(-0.6)))) + ((abs(Lepton_pdgId[0]) == 13 ) * 1.))'
+# Fake_mu_corr = ((abs(Lepton_pdgId[0]) == 13 ) * 1.)
+# Fake_correction = Fake_ele_corr + '+' + Fake_mu_corr
 
 ### Fakes
 samples['Fake'] = {
   'name': [],
-  'weight': METFilter_DATA+'*'+fakeW + '*' + Fake_correction,
+  'weight': METFilter_DATA+'*'+fakeW + '*' + Fake_corr,
   'weights': [],
   'isData': ['all'],
   'FilesPerJob' : 40,
@@ -487,9 +524,9 @@ for _, sd in DataRun:
 
     
 
-#########################################
-################ DATA ###################
-#########################################
+# #########################################
+# ################ DATA ###################
+# #########################################
 
 samples['DATA']  = {   'name': [ ] ,
                        'weight' : METFilter_DATA+'*'+LepWPCut,
