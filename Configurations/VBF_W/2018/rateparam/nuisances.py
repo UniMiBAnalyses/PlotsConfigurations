@@ -3,7 +3,7 @@ from pprint import pprint
 
 mc =["WLNuJJ", "Wjets_HT", "top", "VV", "VBS", "ggWW", "Higgs", "DY_M-50", "DY_else", "VBF-Z", "Vg", "VgS", "VVV"]
 # regions = ["ele_SR","mu_SR","ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","mu_topcr","ele_topcr","ele_FakeCR","mu_FakeCR"]
-regions = ["ele_SR","mu_SR","ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","topcr","ele_FakeCR","mu_FakeCR", "ele_HWJ-SR", "mu_HWJ-SR"]
+# regions = ["ele_SR","mu_SR","ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","topcr","ele_FakeCR","mu_FakeCR", "ele_HWJ-SR", "mu_HWJ-SR"]
 regions = ["ele_HWJ","mu_HWJ"]
 from LatinoAnalysis.Tools.commonTools import getSampleFiles, getBaseW, addSampleWeight
 
@@ -471,7 +471,7 @@ binRegions = ["HWJbin1", "HWJbin2", "HWJbin3", "HWJbin4", "HWJbin5", "HWJbin6", 
 
 for fl in ["ele", "mu"]:
     for subs in binRegions:
-        nuisances["WhardJet_norm_{}_2018".format(fl)]  = {
+        nuisances["WhardJet_norm_{}_{}_2018".format(fl,subs)]  = {
                         'name'  : 'CMS_WhardJet_norm_{}_{}_2018'.format(fl, subs),
                         'samples'  : {'Wjets_HT_{}'.format(subs) : '1.00'},
                         'type'  : 'rateParam',

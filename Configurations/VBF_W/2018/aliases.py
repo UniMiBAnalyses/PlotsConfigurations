@@ -644,7 +644,7 @@ aliases['WJets_reweight_do'] = {
 
 # DNN
 models_path = utils_folder + 'NN'
-model_best = '64_64_64/SR_part/noRQ2jetpt/'
+model_best = '64_64_64/SR_part/ALL/'
 
 aliases['DNNoutputSR_ALL'] = {
   'class': 'MVAReaderDNN',
@@ -652,6 +652,6 @@ aliases['DNNoutputSR_ALL'] = {
   'linesToAdd':[
       'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
       'gSystem->Load("libDNNEvaluator.so")',
-      '.L {}NN/NORQ2JETPTmva_reader_DNN.cc+'.format(utils_folder)
+      '.L {}NN/ALLmva_reader_DNN.cc+'.format(utils_folder)
   ]
 }
