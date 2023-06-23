@@ -9,8 +9,8 @@ cd $CMSSW_BASE/src/LatinoAnalysis/Tools/scripts
 # EFT files
 python submitSkimWithSystematics.py \
         --tag 2018 \
-        --basedir /eos/user/g/gboldrin/nanoLatino/Autumn18_102X_nAODv7_Full2018v7  \
-        --targetdir /eos/user/a/amassiro/EFT/latino/Autumn18_102X_nAODv7_Full2018v7_skim  \
+        --basedir /eos/cms/store/group/phys_smp/VJets_NLO_VBSanalyses/Autumn18_102X_nAODv7_Full2018v7  \
+        --targetdir /eos/cms/store/group/phys_smp/VJets_NLO_VBSanalyses/Autumn18_102X_nAODv7_Full2018v7_skim  \
         --step MCl1loose2018v7__MCCorr2018v7__MCCombJJLNu2018 \
         --samples-file  $BASEDIR/samples_to_skim_largeMC_2018_EFT.cfg \
         --variations ElepT MupT MET JES JER fatjetJES fatjetJER fatjetJMR fatjetJMS   \

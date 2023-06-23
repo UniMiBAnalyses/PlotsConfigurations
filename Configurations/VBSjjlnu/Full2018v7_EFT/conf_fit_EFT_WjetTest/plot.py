@@ -70,56 +70,8 @@ wjets_palette = ['#DF7000', '#FF8A00','#FFA133','#F7C307','#FFE200','#FFEC57']
 wjets_bins = []
 for ir in range(1,22):
     wjets_bins.append("Wjets_res_"+str(ir))
-for ir in range(1,8):
-    wjets_bins.append("Wjets_boost_"+str(ir))
-
-
-
-groupPlot['VV+VVV']  = {  
-                  'nameHR' : 'VV+VVV',
-                  'isSignal' : 0,
-                  'color': palette["Pink"], #palette["Peach3"],  
-                  #'samples'  : ['VVV', 'VV_ssWW', 'VV_osWW', 'VV_WZjj', 'VV_WZll', 'VV_ZZ','ggWW'],
-                  'samples'  : ['VVV', 'VV' ,'ggWW'],
-                  'fill': 1001
-              }
-
-
-
-groupPlot['DY']  = {  
-                  'nameHR' : "DY",
-                  'isSignal' : 0,
-                  'color'    : palette["GreenDarker"],
-                  'samples'  : ['DY'],
-                  'fill': 1001
-              }
-
-groupPlot['Others']  = {  
-                'nameHR' : "VBF-V + V#gamma",
-                'isSignal' : 0,
-                'color':palette["GreenLighter"],# palette["Green5"],    #Green2
-                'samples'  : ['VBF-V_dipole', 'Vg','VgS' ],
-                'fill': 1001
-            }
-
-
-groupPlot['Fake']  = {  
-                'nameHR' : "Non-prompt",
-                'isSignal' : 0,
-                'color': palette["LightBlue"],   
-                'samples'  : ['Fake'],
-                'fill': 1001
-            }
-
-
-groupPlot['top']  = {  
-                 'nameHR' : 'top',
-                 'isSignal' : 0,
-                 'color':  palette["MediumBlue"], #palette["MediumBlue2"],  
-                 'samples'  : ['top'],
-                 'fill': 1001
-             }
-
+# for ir in range(1,8):
+#     wjets_bins.append("Wjets_boost_"+str(ir))
 
 
 groupPlot["Wjets"]  = {  
@@ -130,106 +82,8 @@ groupPlot["Wjets"]  = {
                         'fill': 1001
                 }
 
-groupPlot['VBS']  = {  
-                 'nameHR' : 'VBS Gridpack',
-                 'isSignal' : 0,
-                 'color': colors["kRed"]+1,   
-                 'samples'  : ["sm"],
-                 'fill': 1001
-              }
-
-groupPlot['cW_1']  = {  
-                 'nameHR' : 'BSM c_{W} = 1',
-                 'isSignal' : 1,
-                 'color': palette["DarkBlue"],   
-                 'samples'  : ["lin_cW", "quad_cW"],
-                 'fill': 1001
-              }
-
-groupPlot['cHW_1']  = {  
-                 'nameHR' : 'BSM c_{HW} = 10',
-                 'isSignal' : 1,
-                 'color': palette["Orange2"],   
-                 'samples'  : ["linm1_cW", "quadm1_cW", "lin_cHW", "quad_cHW"],
-                 'fill': 1001
-              }
-
 # keys here must match keys in samples.py    
 # 
-
-plot['VVV']  = { 
-                  'color': colors["kAzure"] -3,    
-                  'isSignal' : 0,
-                  'isData'   : 0,
-                  'scale'    : 1.0
-                  }
-
-plot['VV']  = {
-                'color': colors['kMagenta']+1,
-                'isSignal' : 0,
-                'isData'   : 0,
-                'scale'    : 1.0,
-            }
-
-
-plot['DY']  = {  
-                'color': colors['kMagenta']+1,
-                'isSignal' : 0,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-plot['VBF-V_dipole']  = {
-                  'color': colors['kYellow']+3,  
-                  'isSignal' : 0,
-                  'isData'   : 0,
-                  'scale'    : 1.   ,
-              }
-
-plot['Vg']  = {
-                  'color': colors['kGreen']+3,  
-                  'isSignal' : 0,
-                  'isData'   : 0,
-                  'scale'    : 1.   ,
-              }   
-         
-
-
-plot['VgS']  = {  
-                'color': colors['kMagenta']+1,
-                'isSignal' : 0,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-plot['ggWW']  = {  
-                'color': colors['kMagenta']+1,
-                'isSignal' : 0,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-plot['Fake']  = {  
-                'color': colors['kTeal'],
-                'isSignal' : 0,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-
-plot['top'] = {   
-                 'color': colors['kAzure']-1,
-                 'isSignal' : 0,
-                 'isData'   : 0, 
-                 'scale'    : 1.0 
-                 }
-
-# plot['Wjets_HT'] = {   
-#                  'color': colors['kAzure']-1,
-#                  'isSignal' : 0,
-#                  'isData'   : 0, 
-#                  'scale'    : 1.0 
-#                  }
 
 for wjetbin in wjets_bins:
     plot[wjetbin] = {   
@@ -238,73 +92,6 @@ for wjetbin in wjets_bins:
                     'isData'   : 0, 
                     'scale'    : 1.0 
                     }
-
-
-
-# Signals
-
-plot['sm']  = {  
-                'color': wjets_palette[5],
-                'isSignal' : 0,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-plot['lin_cW']  = {  
-                'color': wjets_palette[5],
-                'isSignal' : 1,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-plot['quad_cW']  = {  
-                'color': wjets_palette[5],
-                'isSignal' : 1,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-plot['lin_cHW']  = {  
-                'color': wjets_palette[5],
-                'isSignal' : 1,
-                'isData'   : 0, 
-                'scale'    : 10.0,
-            }
-
-plot['quad_cHW']  = {  
-                'color': wjets_palette[5],
-                'isSignal' : 1,
-                'isData'   : 0, 
-                'scale'    : 100.0,
-            }
-
-plot['linm1_cW']  = {  
-                'color': wjets_palette[5],
-                'isSignal' : 1,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-plot['quadm1_cW']  = {  
-                'color': wjets_palette[5],
-                'isSignal' : 1,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-
-
-# # data
-
-plot['DATA']  = { 
-                 'nameHR' : 'Data',
-                 'color': 1 ,  
-                 'isSignal' : 0,
-                 'isData'   : 1 ,
-                 'isBlind'  : 0
-             }
-
-
 
 # additional options
 

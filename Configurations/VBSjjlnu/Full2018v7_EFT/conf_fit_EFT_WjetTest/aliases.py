@@ -9,17 +9,13 @@ conf_folder = configurations +"/VBSjjlnu/Full2018v7"
 
 mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
 
-VBS_samples = ["sm"]
+VBS_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ", "ewk_WpWm", "ewk_WpWp", "ewk_WmWm"]
 VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
 
 ####################
 
 aliases['nJets30']= {
     'expr' : 'Sum$(CleanJet_pt[CleanJetNotFat_jetIdx] >= 30)'
-}
-
-aliases['nJetsBtag']= {
-    'expr' : 'Sum$(CleanJet_pt > 20 && abs(CleanJet_eta)<2.5)'
 }
 
 aliases['fit_bin_res'] = {
@@ -121,13 +117,17 @@ aliases['btagSF'] = {
 }
 
 
-"""
 systs = ['jes','lf','hf','lfstats1','lfstats2','hfstats1','hfstats2','cferr1','cferr2']
 
 for s in systs:
   aliases['btagSF'+s+'up'] = { 'expr': '(bVeto*'+aliases['bVetoSF']['expr'].replace('shape','shape_up_'+s)+'+bReqTight*'+aliases['bReqSF']['expr'].replace('shape','shape_up_'+s)+'+ ( (!bVeto) && (!bReqTight) ))', 'samples':mc  }
   aliases['btagSF'+s+'down'] = { 'expr': '(bVeto*'+aliases['bVetoSF']['expr'].replace('shape','shape_down_'+s)+'+bReqTight*'+aliases['bReqSF']['expr'].replace('shape','shape_down_'+s)+'+ ( (!bVeto) && (!bReqTight) ))', 'samples':mc }
-"""
+
+
+aliases['nJetsBtag']= {
+    'expr' : 'Sum$(CleanJet_pt > 20 && abs(CleanJet_eta)<2.5)'
+}
+
 
 btagSF_corr_samples_groups = {
     'VBS': ['VBS','VBS_ZLL'],
@@ -189,25 +189,24 @@ aliases['nCleanGenJet'] = {
     'samples': mc
 }
 
-# ##### DY Z pT reweighting
-# aliases['getGenZpt_OTF'] = {
-#     'linesToAdd':['.L %s/src/PlotsConfigurations/Configurations/patches/getGenZpt.cc+' % os.getenv('CMSSW_BASE')],
-#     'class': 'getGenZpt',
-#     'samples': ['DY']
-# }
-# handle = open('%s/src/PlotsConfigurations/Configurations/patches/DYrew30.py' % os.getenv('CMSSW_BASE'),'r')
-# exec(handle)
-# handle.close()
-# aliases['DY_NLO_pTllrw'] = {
-#     'expr': '('+DYrew['2018']['NLO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
-#     'samples': ['DY']
-# }
-# aliases['DY_LO_pTllrw'] = {
-#     'expr': '('+DYrew['2018']['LO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
-#     'samples': ['DY']
-# }
+##### DY Z pT reweighting
+aliases['getGenZpt_OTF'] = {
+    'linesToAdd':['.L %s/src/PlotsConfigurations/Configurations/patches/getGenZpt.cc+' % os.getenv('CMSSW_BASE')],
+    'class': 'getGenZpt',
+    'samples': ['DY']
+}
+handle = open('%s/src/PlotsConfigurations/Configurations/patches/DYrew30.py' % os.getenv('CMSSW_BASE'),'r')
+exec(handle)
+handle.close()
+aliases['DY_NLO_pTllrw'] = {
+    'expr': '('+DYrew['2018']['NLO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
+    'samples': ['DY']
+}
+aliases['DY_LO_pTllrw'] = {
+    'expr': '('+DYrew['2018']['LO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
+    'samples': ['DY']
+}
 
-"""
 
 ###########################################################################################
 #fakes
@@ -247,24 +246,24 @@ aliases['fakeWeight_35_statDo'] = {
         'samples': ["Fake"]
     }
 
-"""
+
 ###################################
 
 # PU jet Id SF
 
-puidSFSource = '{}/patches/PUID_81XTraining_EffSFandUncties.root'.format(configurations)
+# puidSFSource = '{}/patches/PUID_81XTraining_EffSFandUncties.root'.format(configurations)
 
-aliases['PUJetIdSF'] = {
-    'linesToAdd': [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L %s/patches/pujetidsf_event_new.cc+' % configurations
-    ],
-    'class': 'PUJetIdEventSF',
-    'args': (puidSFSource, '2018', 'loose'),
-    'samples': mc
-}
+# aliases['PUJetIdSF'] = {
+#     'linesToAdd': [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L %s/patches/pujetidsf_event_new.cc+' % configurations
+#     ],
+#     'class': 'PUJetIdEventSF',
+#     'args': (puidSFSource, '2018', 'loose'),
+#     'samples': mc
+# }
 
-"""
+
 aliases['PUJetIdSF'] = {
   'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
                                           && ( (Jet_muonIdx1 != Lepton_muonIdx[0] ) || Jet_muonIdx1 < 0 ) \
@@ -287,7 +286,7 @@ aliases['PUJetIdSF_down'] = {
                             )*TMath::Log(Jet_PUIDSF_loose_down)))',
   'samples': mc
 }
-"""
+
 
 ######################################
 
@@ -316,7 +315,6 @@ aliases['veto_fatjet_180'] = {
 
 ############################################
 
-"""
 aliases['QCDscale_normalized'] = {
             'class': 'QCDScaleNormalized',
             'args': (),
@@ -336,15 +334,13 @@ aliases['PDFweight_normalized'] = {
             ] ,
             'samples':['VBS','VBS_dipoleRecoil','VV'] + VBS_samples + VV_samples
 }
-"""
+
 ###################################
 # QGL variables
-
 
 morphing_file = configurations + "/VBSjjlnu/weights_files/qgl_morphing/morphing_functions_withvars_2018.root"
 
 
-"""
 aliases["CleanJet_qgl_morphed"]  = {
     'class': 'QGL_morphing',
     'args' : (morphing_file, "nom", "0000"),
@@ -353,7 +349,6 @@ aliases["CleanJet_qgl_morphed"]  = {
         '.L {}/macros/qgl_morphing.cc+'.format(configurations)
         ] 
 }
-
 
 ###################
 
@@ -380,7 +375,6 @@ aliases['vbs_0_qgl_boost'] = {
 aliases['vbs_1_qgl_boost'] = {
     'expr': 'Alt$(CleanJet_qgl_morphed[VBS_jets_maxmjj[1]],-1)'
 } 
-
 
 
 ##########################
@@ -415,32 +409,32 @@ aliases['Zlep_residual'] = {
     'samples': wjets_res_bins  + wjets_boost_bins,
 }
 
-"""
+
 
 #########################
 
-# mva_reader_path = os.getenv('CMSSW_BASE') + '/src/PlotsConfigurations/Configurations/VBSjjlnu/macros/'
-# models_path = '/eos/home-d/dvalsecc/www/VBSPlots/DNN_archive/FullRun2_v7/FullRun2_v7/'
+mva_reader_path = os.getenv('CMSSW_BASE') + '/src/PlotsConfigurations/Configurations/VBSjjlnu/macros/'
+models_path = '/eos/home-d/dvalsecc/www/VBSPlots/DNN_archive/FullRun2_v7/FullRun2_v7/'
 
-# aliases['DNNoutput_boosted'] = {
-#     'class': 'MVAReaderBoosted_mVauto',
-#     'args': ( models_path +'boost_sig/models/v3_d/',  models_path +'boost_sig/models/v3_d/cumulative_signal_2018.root', False, 0),
-#     'linesToAdd':[
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         'gSystem->Load("libDNNEvaluator.so")',
-#         '.L ' + mva_reader_path + 'mva_reader_boosted_v3d_mVauto.cc+', 
-#     ],
-# }
+aliases['DNNoutput_boosted'] = {
+    'class': 'MVAReaderBoosted_mVauto',
+    'args': ( models_path +'boost_sig/models/v3_d/',  models_path +'boost_sig/models/v3_d/cumulative_signal_2018.root', False, 0),
+    'linesToAdd':[
+        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+        'gSystem->Load("libDNNEvaluator.so")',
+        '.L ' + mva_reader_path + 'mva_reader_boosted_v3d_mVauto.cc+', 
+    ],
+}
 
-# aliases['DNNoutput_resolved_v1'] = {
-#     'class': 'MVAReaderResolved_mVauto',
-#     'args': ( models_path+ 'res_sig/models/v4_d/',models_path+ 'res_sig/models/v4_d/cumulative_signal_2018.root', False, 1),
-#     'linesToAdd':[
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         'gSystem->Load("libDNNEvaluator.so")',
-#         '.L ' + mva_reader_path + 'mva_reader_resolved_v4d_mVauto.cc+', 
-#     ],
-# }
+aliases['DNNoutput_resolved_v1'] = {
+    'class': 'MVAReaderResolved_mVauto',
+    'args': ( models_path+ 'res_sig/models/v4_d/',models_path+ 'res_sig/models/v4_d/cumulative_signal_2018.root', False, 1),
+    'linesToAdd':[
+        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+        'gSystem->Load("libDNNEvaluator.so")',
+        '.L ' + mva_reader_path + 'mva_reader_resolved_v4d_mVauto.cc+', 
+    ],
+}
 
 
 # aliases['dipole_weight'] = {

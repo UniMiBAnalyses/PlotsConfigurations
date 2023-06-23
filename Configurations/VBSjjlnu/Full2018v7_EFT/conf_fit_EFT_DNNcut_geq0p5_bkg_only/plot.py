@@ -80,7 +80,7 @@ groupPlot['VV+VVV']  = {
                   'isSignal' : 0,
                   'color': palette["Pink"], #palette["Peach3"],  
                   #'samples'  : ['VVV', 'VV_ssWW', 'VV_osWW', 'VV_WZjj', 'VV_WZll', 'VV_ZZ','ggWW'],
-                  'samples'  : ['VVV', 'VV' ,'ggWW'],
+                  'samples'  : ['VVV', 'VV_ssWW', 'VV_osWW', 'VV_WZjj', 'VV_WZll', 'VV_ZZ' ,'ggWW'],
                   'fill': 1001
               }
 
@@ -130,22 +130,6 @@ groupPlot["Wjets"]  = {
                         'fill': 1001
                 }
 
-groupPlot['VBS']  = {  
-                 'nameHR' : 'VBS Gridpack',
-                 'isSignal' : 0,
-                 'color': colors["kRed"]+1,   
-                 'samples'  : ["sm"],
-                 'fill': 1001
-              }
-
-# groupPlot['cW_1']  = {  
-#                  'nameHR' : 'BSM c_{W} = 1',
-#                  'isSignal' : 1,
-#                  'color': palette["DarkBlue"],   
-#                  'samples'  : ["lin_cW", "quad_cW"],
-#                  'fill': 1001
-#               }
-
 # keys here must match keys in samples.py    
 # 
 
@@ -156,7 +140,35 @@ plot['VVV']  = {
                   'scale'    : 1.0
                   }
 
-plot['VV']  = {
+plot['VV_ssWW']  = {
+                'color': colors['kMagenta']+1,
+                'isSignal' : 0,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
+
+plot['VV_osWW']  = {
+                'color': colors['kMagenta']+1,
+                'isSignal' : 0,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
+
+plot['VV_WZjj']  = {
+                'color': colors['kMagenta']+1,
+                'isSignal' : 0,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
+
+plot['VV_WZll']  = {
+                'color': colors['kMagenta']+1,
+                'isSignal' : 0,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
+
+plot['VV_ZZ']  = {
                 'color': colors['kMagenta']+1,
                 'isSignal' : 0,
                 'isData'   : 0,
@@ -230,32 +242,6 @@ for wjetbin in wjets_bins:
                     'isData'   : 0, 
                     'scale'    : 1.0 
                     }
-
-
-
-# Signals
-
-plot['sm']  = {  
-                'color': wjets_palette[5],
-                'isSignal' : 0,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
-
-# plot['lin_cW']  = {  
-#                 'color': wjets_palette[5],
-#                 'isSignal' : 1,
-#                 'isData'   : 0, 
-#                 'scale'    : 1.0,
-#             }
-
-# plot['quad_cW']  = {  
-#                 'color': wjets_palette[5],
-#                 'isSignal' : 1,
-#                 'isData'   : 0, 
-#                 'scale'    : 1.0,
-#             }
-
 
 
 # # data

@@ -14,12 +14,12 @@ variables['events']  = {   'name': '1',
 ########################
 
 variables['Mww'] = {   'name': 'Mww',      
-                        'range' : ([ 200.,  400.,  600.,  800., 1000., 1200., 1400., 2000., 2200., 2400., 3000.],), #variable range  
-                        'xaxis' : 'Mww', 
+                        'range' : ([ 200., 600.,  800., 1000., 1500., 2000., 3000.],), #variable range  
+                        'xaxis' : 'M_{VV} [GeV]', 
                         'fold' : 3,
-                        'cuts': sig_cuts
+                        'cuts': sig_cuts, 
                         #'divideByBinWidth': True, 
-                         #'blind': [1000,2000]
+                        'blind': [200. ,3000.]
                         }
 
 variables['DNNoutput_res_v1'] = {
@@ -31,17 +31,6 @@ variables['DNNoutput_res_v1'] = {
     'divideByBinWidth': True, 
     'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
 }
-
-variables['DNNoutput_res_v2'] = {
-    'name': 'DNNoutput_resolved_v1',
-    'range': ([i*0.04 for i in range(20) ] + [0.8+0.025*i for i in range(9)],),
-    'xaxis': 'DNN resolved',
-    'fold': 3 ,
-    'cuts':  res_cuts,
-    'divideByBinWidth': True, 
-    'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
-}
-
 
 variables['DNNoutput_boost'] = {
     'name': 'DNNoutput_boosted',

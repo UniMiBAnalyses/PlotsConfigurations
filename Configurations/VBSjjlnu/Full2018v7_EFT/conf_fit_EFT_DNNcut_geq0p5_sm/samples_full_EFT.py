@@ -31,7 +31,7 @@ dataProduction = 'Run2018_102X_nAODv7_Full2018v7_skim'
 
 SITE=os.uname()[1]
 xrootdPath=''
-if  'cern' in SITE and 'hercules' in SITE:
+if  'cern' in SITE or 'hercules' in SITE:
   #xrootdPath='root://eoscms.cern.ch/'
   treeBaseDir = '/eos/cms/store/group/phys_higgs/cmshww/amassiro/HWWNano/'
   treeBaseDir_SMP = '/eos/cms/store/group/phys_smp/VJets_NLO_VBSanalyses/'
@@ -57,6 +57,9 @@ emSamples = nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT')
 # Dropping corrupted files 
 
 emSamples = [i for i in emSamples if "nanoLatino_emVjj_ewk_dim6_EFT__part30.root" not in i]
+# epSamples = [i for i in epSamples if "nanoLatino_epVjj_ewk_dim6_EFT__part6.root" not in i and "nanoLatino_epVjj_ewk_dim6_EFT__part2.root" not in i]
+# mumSamples = [i for i in mumSamples if "nanoLatino_mumVjj_ewk_dim6_EFT__part37.root" not in i]
+# tamSamples = [i for i in tamSamples if "nanoLatino_tamVjj_ewk_dim6_EFT__part77.root" not in i and "nanoLatino_tamVjj_ewk_dim6_EFT__part72.root" not in i and "nanoLatino_tamVjj_ewk_dim6_EFT__part34.root" not in i] 
 tamSamples = [i for i in tamSamples if "nanoLatino_tamVjj_ewk_dim6_EFT__part77.root" not in i] 
 
 ###############################################

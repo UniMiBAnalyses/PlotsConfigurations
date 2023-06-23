@@ -156,8 +156,9 @@ for iwboost, wjbin_boost in enumerate(wjets_boost_bins):
             # + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT800_1200')
             # + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT1200_2500')
             # + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT2500_inf'),
-          'weight': "( fit_bin_boost == {} )*".format(iwboost+1) +XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '*' + Wjets_photon_filter +  '* ewknloW * btagSF_corr_Wjets_HT',
-          'FilesPerJob' : 25 #nfiles_wjets_boost[iwboost],   
+          # 'weight': "( fit_bin_boost == {} )*".format(iwboost+1) +XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '*' + Wjets_photon_filter +  '* ewknloW * btagSF_corr_Wjets_HT',
+          'weight': "( fit_bin_boost == {} )".format(iwboost+1),
+          'FilesPerJob' : 2 #nfiles_wjets_boost[iwboost],   
       }
 
   # Fix Wjets binned + LO 
@@ -185,8 +186,9 @@ for iwres, wjbin_res in enumerate(wjets_res_bins):
             # + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT800_1200')
             # + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT1200_2500')
             # + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT2500_inf'),
-          'weight': "( fit_bin_res == {} )*".format(iwres+1) +XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '*' + Wjets_photon_filter +  '* ewknloW * btagSF_corr_Wjets_HT',
-          'FilesPerJob' : 25#files_wjets_res[iwres],   
+          # 'weight': "( fit_bin_res == {} )*".format(iwres+1) +XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '*' + Wjets_photon_filter +  '* ewknloW * btagSF_corr_Wjets_HT',
+          'weight': "( fit_bin_res == {} )".format(iwres+1),
+          'FilesPerJob' : 2#files_wjets_res[iwres],   
       }
 
   # Fix Wjets binned + LO 

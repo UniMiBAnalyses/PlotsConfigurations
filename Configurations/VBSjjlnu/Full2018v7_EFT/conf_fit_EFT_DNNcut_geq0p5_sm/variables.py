@@ -14,7 +14,7 @@ variables['events']  = {   'name': '1',
 ########################
 
 variables['Mww'] = {   'name': 'Mww',      
-                        'range' : ([ 200., 600.,  800., 1000., 1200., 2000., 3000.],), #variable range  
+                        'range' : ([ 200., 600.,  800., 1000., 1500., 2000., 3000.],), #variable range  
                         'xaxis' : 'Mww', 
                         'fold' : 3,
                         'cuts': sig_cuts

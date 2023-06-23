@@ -40,7 +40,7 @@ if  'cern' in SITE :
 directory_bkg    = os.path.join(treeBaseDir_SMP ,  mcProduction , mcSteps)
 directory_signal = os.path.join(treeBaseDir_SMP ,  mcProduction , mcSteps)
 directory_mc     = os.path.join(treeBaseDir_SMP ,  mcProduction , mcSteps)
-directory_EFT     = os.path.join(treeBaseDir_EFT ,  mcProduction_EFT , mcSteps)
+directory_EFT     = os.path.join(treeBaseDir_SMP ,  mcProduction_EFT , mcSteps)
 directory_data   = os.path.join(treeBaseDir_SMP,       dataProduction, dataSteps)
 directory_interference = '/eos/user/g/govoni/valsecchi/LatinosSamples/Autumn18_102X_nAODv7_Full2018v7/MCl1loose2018v7__MCCorr2018v7__MCCombJJLNu2018'
 
@@ -63,11 +63,11 @@ nfiles_wjets_boost = [6,6,6,6,7,8,8]
 for i in range(1, 22):
   wjbin = "Wjets_res_{}".format(i)
   wjets_res_bins.append(wjbin)
-  directory_wjets_bins[wjbin] = treeBaseDir_SMP + 'Autumn18_102X_nAODv7_Full2018v7_WjetsBins_skim/res_bin_{}/'.format(i) + mcSteps
+  #directory_wjets_bins[wjbin] = treeBaseDir_SMP + 'Autumn18_102X_nAODv7_Full2018v7_WjetsBins_skim/res_bin_{}/'.format(i) + mcSteps
 for i in range(1, 8):
   wjbin = "Wjets_boost_{}".format(i)
   wjets_boost_bins.append(wjbin)
-  directory_wjets_bins[wjbin] = treeBaseDir_SMP + 'Autumn18_102X_nAODv7_Full2018v7_WjetsBins_skim/boost_bin_{}/'.format(i) + mcSteps
+  #directory_wjets_bins[wjbin] = treeBaseDir_SMP + 'Autumn18_102X_nAODv7_Full2018v7_WjetsBins_skim/boost_bin_{}/'.format(i) + mcSteps
 
 wjets_all_bins = wjets_res_bins + wjets_boost_bins
 
@@ -160,8 +160,7 @@ samples['DY'] = {    'name'   :   nanoGetSampleFiles(directory_bkg,'DYJetsToLL_M
                                   + nanoGetSampleFiles(directory_bkg,'DYJetsToLL_M-4to50_HT-400to600')
                                   + nanoGetSampleFiles(directory_bkg,'DYJetsToLL_M-4to50_HT-600toInf'),
                        'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter +'*btagSF_corr_DY',# missing ewkNLOW
-                       'FilesPerJob' : 6,
-                       'EventsPerJob' : 70000,
+                       'FilesPerJob' : 10,
                       #  'suppressNegative' :['all'],
                       #  'suppressNegativeNuisances' :['all'],
                    }
@@ -201,8 +200,7 @@ samples['top'] = {    'name'   :   nanoGetSampleFiles(directory_bkg,'TTTo2L2Nu')
                                  + nanoGetSampleFiles(directory_bkg,'TTWjets'),
                                 #+  nanoGetSampleFiles(directory_bkg,'TTWJetsToLNu'), #also this is available
                      'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC +'*btagSF_corr_top',
-                     'FilesPerJob' : 4,
-                     'EventsPerJob' : 70000,
+                     'FilesPerJob' : 20,
                      'suppressNegative' :['all'],
                      'suppressNegativeNuisances' :['all'],
                  }
@@ -223,17 +221,17 @@ Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(P
 
 for iwboost, wjbin_boost in enumerate(wjets_boost_bins):
   samples[wjbin_boost] = { 'name' :   
-            nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu-LO')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT70_100')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT100_200')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT200_400')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT400_600')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT600_800')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT800_1200')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT1200_2500')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_boost], 'WJetsToLNu_HT2500_inf'),
+            nanoGetSampleFiles(directory_bkg, 'WJetsToLNu-LO')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT70_100')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT100_200')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT200_400')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT400_600')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT600_800')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT800_1200')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT1200_2500')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT2500_inf'),
           'weight': "( fit_bin_boost == {} )*".format(iwboost+1) +XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '*' + Wjets_photon_filter +  '* ewknloW * btagSF_corr_Wjets_HT',
-          'FilesPerJob' : 10 #nfiles_wjets_boost[iwboost],   
+          'FilesPerJob' : 20 ,   
       }
 
   # Fix Wjets binned + LO 
@@ -252,17 +250,17 @@ for iwboost, wjbin_boost in enumerate(wjets_boost_bins):
 ###################################################3
 for iwres, wjbin_res in enumerate(wjets_res_bins):
   samples[wjbin_res] = { 'name' :   
-            nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu-LO')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT70_100')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT100_200')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT200_400')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT400_600')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT600_800')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT800_1200')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT1200_2500')
-            + nanoGetSampleFiles(directory_wjets_bins[wjbin_res], 'WJetsToLNu_HT2500_inf'),
+            nanoGetSampleFiles(directory_bkg, 'WJetsToLNu-LO')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT70_100')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT100_200')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT200_400')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT400_600')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT600_800')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT800_1200')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT1200_2500')
+            + nanoGetSampleFiles(directory_bkg, 'WJetsToLNu_HT2500_inf'),
           'weight': "( fit_bin_res == {} )*".format(iwres+1) +XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '*' + Wjets_photon_filter +  '* ewknloW * btagSF_corr_Wjets_HT',
-          'FilesPerJob' : 10#files_wjets_res[iwres],   
+          'FilesPerJob' : 20,   
       }
 
   # Fix Wjets binned + LO 
@@ -277,24 +275,23 @@ for iwres, wjbin_res in enumerate(wjets_res_bins):
   addSampleWeight(samples,wjbin_res, 'WJetsToLNu_HT800_1200',  '1.1285') 
   addSampleWeight(samples,wjbin_res, 'WJetsToLNu_HT1200_2500', '1.3268') 
   addSampleWeight(samples,wjbin_res, 'WJetsToLNu_HT2500_inf',  '2.7948') 
-  
+
 
 ###############################################
 
-samples['VV']  = { 'name' :  
-               nanoGetSampleFiles(directory_signal,'WmToLNu_WmTo2J_QCD') +
-               nanoGetSampleFiles(directory_signal,'WmToLNu_ZTo2J_QCD',) +
-               nanoGetSampleFiles(directory_signal,'WmTo2J_ZTo2L_QCD', ) +
-               nanoGetSampleFiles(directory_signal,'WpTo2J_WmToLNu_QCD') +
-               nanoGetSampleFiles(directory_signal,'WpTo2J_ZTo2L_QCD', ) +
-               nanoGetSampleFiles(directory_signal,'WpToLNu_WpTo2J_QCD') +
-               nanoGetSampleFiles(directory_signal,'WpToLNu_WmTo2J_QCD') +
-               nanoGetSampleFiles(directory_signal,'WpToLNu_ZTo2J_QCD',) +
-               nanoGetSampleFiles(directory_signal,'ZTo2L_ZTo2J_QCD',  ) ,
-        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
-        'FilesPerJob' : 15,
-        'EventsPerJob' : 70000,
-}
+# samples['VV']  = { 'name' :  
+#                nanoGetSampleFiles(directory_signal,'WmToLNu_WmTo2J_QCD') +
+#                nanoGetSampleFiles(directory_signal,'WmToLNu_ZTo2J_QCD',) +
+#                nanoGetSampleFiles(directory_signal,'WmTo2J_ZTo2L_QCD', ) +
+#                nanoGetSampleFiles(directory_signal,'WpTo2J_WmToLNu_QCD') +
+#                nanoGetSampleFiles(directory_signal,'WpTo2J_ZTo2L_QCD', ) +
+#                nanoGetSampleFiles(directory_signal,'WpToLNu_WpTo2J_QCD') +
+#                nanoGetSampleFiles(directory_signal,'WpToLNu_WmTo2J_QCD') +
+#                nanoGetSampleFiles(directory_signal,'WpToLNu_ZTo2J_QCD',) +
+#                nanoGetSampleFiles(directory_signal,'ZTo2L_ZTo2J_QCD',  ) ,
+#         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
+#         'FilesPerJob' : 1,
+# }
 
 ############ VVV ############
   
@@ -304,8 +301,7 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(directory_bkg,'ZZZ')
                                 + nanoGetSampleFiles(directory_bkg,'WWW'),
                                 #+ nanoGetSampleFiles(directory_bkg,'WWG'), #should this be included? or is it already taken into account in the WW sample?
                     'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW',
-                    'FilesPerJob' : 15,
-                     'EventsPerJob' : 70000,
+                    'FilesPerJob' : 10,
                   }
 
  ############## VBF-V ########
@@ -322,8 +318,7 @@ samples['VBF-V_dipole']  = {  'name'   :
                                     nanoGetSampleFiles(directory_bkg,'EWK_LNuJJ_herwig') +
                                   nanoGetSampleFiles(directory_bkg,'EWK_LLJJ_herwig'),
                     'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_Vg_VgS_VBFV',
-                    'FilesPerJob' : 8,
-                    'EventsPerJob' : 70000,
+                    'FilesPerJob' : 10,
                   }
 
 
@@ -332,8 +327,7 @@ samples['VBF-V_dipole']  = {  'name'   :
 samples['ggWW']  = {  'name'   :  
                                   nanoGetSampleFiles(directory_bkg,'GluGluWWToLNuQQ'),
                     'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VV_VVV_ggWW',
-                    'FilesPerJob' : 15,
-                    'EventsPerJob' : 70000,
+                    'FilesPerJob' : 10,
                   }
 
 ##################################################
@@ -342,8 +336,7 @@ samples['ggWW']  = {  'name'   :
 samples['Vg']  = {  'name'   :   nanoGetSampleFiles(directory_bkg,'Wg_MADGRAPHMLM')
                                + nanoGetSampleFiles(directory_bkg,'ZGToLLG'),
                     'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*(Gen_ZGstar_mass <= 0) *btagSF_corr_Vg_VgS_VBFV',
-                    'FilesPerJob' : 15,
-                    'EventsPerJob' : 70000,
+                    'FilesPerJob' : 10,
                     'suppressNegative' :['all'],
                     'suppressNegativeNuisances' :['all'],
                   }
@@ -358,8 +351,7 @@ samples['VgS']  =  {  'name'   :   nanoGetSampleFiles(directory_bkg,'Wg_MADGRAPH
                                  + nanoGetSampleFiles(directory_bkg,'ZGToLLG')
                                  + nanoGetSampleFiles(directory_bkg,'WZTo3LNu_mllmin01'),
                       'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + ' * (gstarLow * 0.94 + gstarHigh * 1.14) *btagSF_corr_Vg_VgS_VBFV',
-                      'FilesPerJob' : 15,
-                      'EventsPerJob' : 70000,
+                      'FilesPerJob' : 10,
                       'suppressNegative' :['all'],
                       'suppressNegativeNuisances' :['all'],
                       # 'subsamples': {
@@ -540,94 +532,43 @@ for Run in DataRun :
 ###############################################
 #############################################
 
-# samples['VV_ssWW']  = { 'name' :  
-#                nanoGetSampleFiles(directory_signal,'WmToLNu_WmTo2J_QCD') +
-#                nanoGetSampleFiles(directory_signal,'WpToLNu_WpTo2J_QCD'),
-#         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
-#         'FilesPerJob' : 15,
-#         'EventsPerJob' : 70000,
-# }
-# 
-# 
-# samples['VV_osWW']  = { 'name' :  
-#                nanoGetSampleFiles(directory_signal,'WpTo2J_WmToLNu_QCD') +
-#                nanoGetSampleFiles(directory_signal,'WpToLNu_WmTo2J_QCD'),
-#         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
-#         'FilesPerJob' : 15,
-#         'EventsPerJob' : 70000,
-# }
-# 
-# 
-# samples['VV_WZjj']  = { 'name' :      
-#                nanoGetSampleFiles(directory_signal,'WmToLNu_ZTo2J_QCD',) +
-#                nanoGetSampleFiles(directory_signal,'WpToLNu_ZTo2J_QCD',) ,
-#         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
-#         'FilesPerJob' : 15,
-#         'EventsPerJob' : 70000,
-# }
-# 
-# 
-# samples['VV_WZll']  = { 'name' :  
-#                nanoGetSampleFiles(directory_signal,'WmTo2J_ZTo2L_QCD', ) +
-#                nanoGetSampleFiles(directory_signal,'WpTo2J_ZTo2L_QCD', ),
-#         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
-#         'FilesPerJob' : 15,
-#         'EventsPerJob' : 70000,
-# }
-# 
-# 
-# samples['VV_ZZ']  = { 'name' :  
-#                nanoGetSampleFiles(directory_signal,'ZTo2L_ZTo2J_QCD',  ) ,
-#         'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
-#         'FilesPerJob' : 15,
-#         'EventsPerJob' : 70000,
-# }
+samples['VV_ssWW']  = { 'name' :  
+               nanoGetSampleFiles(directory_signal,'WmToLNu_WmTo2J_QCD') +
+               nanoGetSampleFiles(directory_signal,'WpToLNu_WpTo2J_QCD'),
+        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
+        'FilesPerJob' : 10,
+}
 
 
-# VBS Samples splitting 
-# samples['ewk_WpWp']  = { 'name' :  nanoGetSampleFiles(directory_signal,'WpToLNu_WpTo2J_dipoleRecoil'),
-#        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
-#        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
-# }
+samples['VV_osWW']  = { 'name' :  
+               nanoGetSampleFiles(directory_signal,'WpTo2J_WmToLNu_QCD') +
+               nanoGetSampleFiles(directory_signal,'WpToLNu_WmTo2J_QCD'),
+        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
+        'FilesPerJob' : 10,
+}
 
 
-# samples['ewk_WmWm']  = { 'name' :  nanoGetSampleFiles(directory_signal,'WmToLNu_WmTo2J_dipoleRecoil'),
-#        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
-#        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
-# }
+samples['VV_WZjj']  = { 'name' :      
+               nanoGetSampleFiles(directory_signal,'WmToLNu_ZTo2J_QCD',) +
+               nanoGetSampleFiles(directory_signal,'WpToLNu_ZTo2J_QCD',) ,
+        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
+        'FilesPerJob' : 10,
+}
 
-# samples['ewk_WpWm']  = { 'name' :  
-#             nanoGetSampleFiles(directory_signal,'WpToLNu_WmTo2J_dipoleRecoil') + 
-#             nanoGetSampleFiles(directory_signal,'WpTo2J_WmToLNu_dipoleRecoil'),
-#        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
-#        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
-# }
 
-# samples['ewk_WpZ']  = { 'name' :  
-#               nanoGetSampleFiles(directory_signal,'WpToLNu_ZTo2J_dipoleRecoil',) +
-#               nanoGetSampleFiles(directory_signal,'WpTo2J_ZTo2L_dipoleRecoil', ),
-#        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
-#        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
-# }
+samples['VV_WZll']  = { 'name' :  
+               nanoGetSampleFiles(directory_signal,'WmTo2J_ZTo2L_QCD', ) +
+               nanoGetSampleFiles(directory_signal,'WpTo2J_ZTo2L_QCD', ),
+        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
+        'FilesPerJob' : 10,
+}
 
-# samples['ewk_WmZ']  = { 'name' :  
-#               nanoGetSampleFiles(directory_signal,'WmToLNu_ZTo2J_dipoleRecoil',) +
-#               nanoGetSampleFiles(directory_signal,'WmTo2J_ZTo2L_dipoleRecoil', ),
-#        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
-#        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
-# }
 
-# samples['ewk_ZZ']  = { 'name' :  
-#                nanoGetSampleFiles(directory_signal,'ZTo2L_ZTo2J_dipoleRecoil',  ),
-#        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil',
-#        'FilesPerJob' :15,
-#        'EventsPerJob' : 70000,
-# }
+samples['VV_ZZ']  = { 'name' :  
+               nanoGetSampleFiles(directory_signal,'ZTo2L_ZTo2J_QCD',  ) ,
+        'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch +'*btagSF_corr_VV_VVV_ggWW', # still missing EWKnlowW 
+        'FilesPerJob' : 10,
+}
 
 
 ######################################
@@ -1176,5 +1117,4 @@ EFT_samples_datacard = [i for i in EFT_samples if not i.startswith("lin")]
 
 EFT_samples_dropped = [i for i in EFT_samples if i not in EFT_samples_datacard]
 
-# samples = {k: j for k,j in samples.items() if k not in EFT_samples_dropped}
 samples = {k: j for k,j in samples.items() if k not in EFT_samples}
