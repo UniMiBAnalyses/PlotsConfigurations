@@ -8,7 +8,7 @@ tag = 'VBS_WW'+date
 
 
 # used by mkShape to define output directory for root files
-outputDir = 'SSWW_nuisances/giulia/rootFile'+date
+outputDir = 'rootFile'+date
 
 # file with TTree aliases
 aliasesFile = 'aliases_4giulia.py'#'aliases_4giulia.py'
@@ -35,7 +35,7 @@ outputDirPlots = 'plotVBS'+date
 
 
 # used by mkDatacards to define output directory for datacards
-outputDirDatacard = 'SSWW_nuisances/giulia/datacards'+date
+outputDirDatacard = 'datacards'+date
 
 
 # structure file for datacard
