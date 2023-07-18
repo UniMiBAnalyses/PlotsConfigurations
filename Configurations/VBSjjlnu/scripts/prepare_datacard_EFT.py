@@ -28,6 +28,7 @@ parser.add_argument("-fo","--fit-options", help="Robust fit options", type=str, 
 parser.add_argument("-v","--verbosity", help="Verbosity level", type=int, default=0)
 parser.add_argument("--save-uncert", help="Save uncertainties for fit diagnostic", action="store_true", default=False, required=False)
 parser.add_argument("-ops","--ops", help="Operators to build datacards", nargs="+", type=str)
+parser.add_argument("--linear", help="Do the fit at the linear only level with", action="store_true")
 args = parser.parse_args()
 
 if args.config.endswith(".yaml"):
@@ -84,12 +85,16 @@ def prepare_workspace(datac, onlyDC=False):
             cards.append("{0}_{1}={2}/{3}/{4}/datacard.txt".format(
                                 card["name"], folder["name"],  args.basedir + "/" + folder["basedir"],
                                                                 card["cut"], card["var"]))
+
+    if not args.linear: model = "HiggsAnalysis.AnalyticAnomalousCoupling.AnomalousCouplingEFTNegative:analiticAnomalousCouplingEFTNegative"
+    else: model = "HiggsAnalysis.AnalyticAnomalousCoupling.AnomalousCouplingLinearEFTNegative:AnomalousCouplingLinearEFTNegative"
+
     if args.masks:
-        txt2wp = "text2workspace.py {0}/combined_{1}.txt -P HiggsAnalysis.AnalyticAnomalousCoupling.AnomalousCouplingEFTNegative:analiticAnomalousCouplingEFTNegative \
-			--X-allow-no-signal -o {0}/combined_{1}.root --channel-masks --X-pack-asympows --PO eftOperators={2}".format(outdir, datac["datacard_name"], ",".join(i for i in args.ops))
+        txt2wp = "text2workspace.py {0}/combined_{1}.txt -P {3} \
+			--X-allow-no-signal -o {0}/combined_{1}.root --channel-masks --X-pack-asympows --PO eftOperators={2}".format(outdir, datac["datacard_name"], ",".join(i for i in args.ops), model)
     else:
-        txt2wp = "text2workspace.py {0}/combined_{1}.txt -P HiggsAnalysis.AnalyticAnomalousCoupling.AnomalousCouplingEFTNegative:analiticAnomalousCouplingEFTNegative \
-			--X-allow-no-signal -o {0}/combined_{1}.root --X-pack-asympows --PO eftOperators={2}".format(outdir, datac["datacard_name"], ",".join(i for i in args.ops))
+        txt2wp = "text2workspace.py {0}/combined_{1}.txt -P {3} \
+			--X-allow-no-signal -o {0}/combined_{1}.root --X-pack-asympows --PO eftOperators={2}".format(outdir, datac["datacard_name"], ",".join(i for i in args.ops), model)
     
     
     cmds = [

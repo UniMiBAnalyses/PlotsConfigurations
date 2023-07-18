@@ -1,0 +1,1226 @@
+[
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "nJets_boost", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "nJets_boost", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "nJets_boost"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "Mww", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "Mww", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "Mww"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "Lepton_pt", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "Lepton_pt", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "Lepton_pt"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "vbs_0_phi", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "vbs_0_phi", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "vbs_0_phi"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "Lepton_eta", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "Lepton_eta", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "Lepton_eta"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "whad_pt_boost", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "whad_pt_boost", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "whad_pt_boost"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "Mtw_lep", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "Mtw_lep", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "Mtw_lep"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "Zvjets_0", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "Zvjets_0", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "Zvjets_0"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "vbs_0_pt", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "vbs_0_pt", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "vbs_0_pt"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "vbs_0_eta", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "vbs_0_eta", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "vbs_0_eta"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "vbs_1_phi", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "vbs_1_phi", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "vbs_1_phi"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "mjj_vbs", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "mjj_vbs", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "mjj_vbs"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "events", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "events"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "DNNoutput_boost"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "vbs_1_eta", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "vbs_1_eta", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "vbs_1_eta"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "deltaeta_vbs", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "deltaeta_vbs", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "deltaeta_vbs"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "fit_bins_boost"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "Centr_ww", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "Centr_ww", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "Centr_ww"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "w_lep_pt", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "w_lep_pt", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "w_lep_pt"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "vbs_1_E", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "vbs_1_E", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "vbs_1_E"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "vbs_1_pt_boost", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "vbs_1_pt_boost", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "vbs_1_pt_boost"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "vbs_0_E", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "vbs_0_E", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "vbs_0_E"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "deltaphi_vbs", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "deltaphi_vbs", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "deltaphi_vbs"
+    }, 
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "Zlep", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "Zlep", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_boost", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "Zlep"
+    }
+]

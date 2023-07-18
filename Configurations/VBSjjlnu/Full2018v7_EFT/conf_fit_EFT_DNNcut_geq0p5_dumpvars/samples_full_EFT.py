@@ -53,6 +53,9 @@ mupSamples = nanoGetSampleFiles(directory_EFT,'mupVjj_ewk_dim6_EFT')
 mumSamples = nanoGetSampleFiles(directory_EFT,'mumVjj_ewk_dim6_EFT')
 epSamples = nanoGetSampleFiles(directory_EFT,'epVjj_ewk_dim6_EFT')
 emSamples = nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT')
+
+emSamples = [i for i in emSamples if "nanoLatino_emVjj_ewk_dim6_EFT__part30.root" not in i]
+tamSamples = [i for i in tamSamples if "nanoLatino_tamVjj_ewk_dim6_EFT__part77.root" not in i] 
 ###############################################
 
 wjets_res_bins = []

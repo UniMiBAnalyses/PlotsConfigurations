@@ -13,14 +13,36 @@ variables['events']  = {   'name': '1',
 
 ########################
 
-variables['Mww'] = {   'name': 'Mww',      
-                        'range' : ([ 200., 600.,  800., 1000., 1500., 2000., 3000.],), #variable range  
-                        'xaxis' : 'Mww', 
+
+variables['Mww'] = {   'name': 'Mww',
+                        'range' : ([ 200., 400., 600., 800., 1000., 1200., 1500., 2000., 3000.],), #variable range  
+                        'xaxis' : 'M_{WV} [GeV]',
                         'fold' : 3,
-                        'cuts': sig_cuts
-                        #'divideByBinWidth': True, 
-                         #'blind': [1000,2000]
+                        'cuts': sig_cuts,
+                        # 'divideByBinWidth': True, 
+                        'blind': [200. ,3000.]
                         }
+
+
+variables['Mww_10'] = {   'name': 'Mww',
+                        'range' : ([ 200., 300., 400., 500., 600., 800., 1000., 1200., 1500., 2000., 3000.],), #variable range  
+                        'xaxis' : 'M_{WV} [GeV]',
+                        'fold' : 3,
+                        'cuts': sig_cuts,
+                        # 'divideByBinWidth': True, 
+                        'blind': [200. ,3000.]
+                        }
+
+
+variables['Mww_14'] = {   'name': 'Mww',
+                        'range' : ([ 200., 300., 400., 500., 600., 700., 800., 900., 1000., 1200., 1400., 1600., 2000., 2500., 3000.],), #variable range  
+                        'xaxis' : 'M_{WV} [GeV]',
+                        'fold' : 3,
+                        'cuts': sig_cuts,
+                        # 'divideByBinWidth': True, 
+                        'blind': [200. ,3000.]
+                        }
+
 
 variables['DNNoutput_res_v1'] = {
     'name': 'DNNoutput_resolved_v1',
@@ -58,10 +80,67 @@ variables['fit_bins_boost'] ={  'name' : 'w_lep_pt',
                             'cuts': boost_cuts
 }   
 
+
 ######################
+
+
+variables['vbs_0_eta'] = {   'name': 'vbs_0_eta',      
+                        'range' : (10,-4.7,4.7),  
+                        'xaxis' : 'VBS leading jet #eta', 
+                        'fold' : 3,
+                        'cuts': sig_cuts
+                        }
+
+variables['vbs_1_eta'] = {   'name': 'vbs_1_eta',      
+                        'range' : (10,-4.7,4.7),  
+                        'xaxis' : 'VBS trailing jet #eta', 
+                        'fold' : 3,
+                        'cuts': sig_cuts
+                        }
+
+
+variables['vbs_0_phi'] = {   'name': 'vbs_0_phi',      
+                        'range' : (10,-3.14,3.14),  
+                        'xaxis' : 'VBS leading jet #phi', 
+                        'fold' : 3,
+                        'cuts': sig_cuts
+                        }
+
+variables['vbs_1_phi'] = {   'name': 'vbs_1_phi',      
+                        'range' : (10,-3.14,3.14),  
+                        'xaxis' : 'VBS trailing jet #phi', 
+                        'fold' : 3,
+                        'cuts': sig_cuts
+                        }
+
+
+variables['vbs_0_E'] = {   'name': 'vbs_0_E',      
+                        'range' : (10,0,1000),  
+                        'xaxis' : 'VBS leading jet E', 
+                        'fold' : 3,
+                        'cuts': sig_cuts
+                        }
+
+variables['vbs_1_E'] = {   'name': 'vbs_1_E',      
+                        'range' : (10,0,1000),  
+                        'xaxis' : 'VBS trailing jet E', 
+                        'fold' : 3,
+                        'cuts': sig_cuts
+                        }
+
+
+#######################
 
 variables['w_lep_pt'] = {   'name': 'w_lep_pt',      
                         'range' :  (10,0,400),  
+                        'xaxis' : 'Pt W leptonic', 
+                        'fold' : 3,
+                        'cuts': sig_cuts
+                        }
+
+
+variables['Mtw_lep'] = {   'name': 'Mtw_lep',      
+                        'range' :  (10,0,200),  
                         'xaxis' : 'Pt W leptonic', 
                         'fold' : 3,
                         'cuts': sig_cuts

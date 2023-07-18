@@ -18,7 +18,9 @@ for k in f.GetListOfKeys():
     R.gDirectory.Cd(k.GetName())
     for z in R.gDirectory.GetListOfKeys():
         R.gDirectory.Cd(z.GetName())
-        
+       
+        R.gDirectory.ls() 
+        print("histo_"+args.sample)
         h = R.gDirectory.Get("histo_"+args.sample)
         h.SetName("histo_"+args.rename)
         h.Write()

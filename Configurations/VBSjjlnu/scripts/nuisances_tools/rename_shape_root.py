@@ -64,4 +64,5 @@ for k in f.GetListOfKeys():
 
 # Already writter
 #f.Write()
+print("-> Closing")
 f.Close()

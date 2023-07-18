@@ -1,0 +1,371 @@
+[
+  { 
+    "datacard_name": "2018_Mww_1000",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu_DNN_geq_0p5",
+          "var": "Mww_1000", 
+          "cut": "boost_sig_mu_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_sig_ele_DNN_geq_0p5",
+          "var": "Mww_1000", 
+          "cut": "boost_sig_ele_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_wjet_mu",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_mu"
+      },
+      {
+          "name": "boost_wjet_ele",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_ele"
+      },
+      {
+        "name": "boost_top_mu",
+        "var": "events", 
+        "cut": "boost_topcr_mu"
+      },
+      { 
+        "name": "boost_top_ele",
+        "var": "events", 
+        "cut": "boost_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Mww_1100",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu_DNN_geq_0p5",
+          "var": "Mww_1100", 
+          "cut": "boost_sig_mu_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_sig_ele_DNN_geq_0p5",
+          "var": "Mww_1100", 
+          "cut": "boost_sig_ele_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_wjet_mu",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_mu"
+      },
+      {
+          "name": "boost_wjet_ele",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_ele"
+      },
+      {
+        "name": "boost_top_mu",
+        "var": "events", 
+        "cut": "boost_topcr_mu"
+      },
+      { 
+        "name": "boost_top_ele",
+        "var": "events", 
+        "cut": "boost_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Mww_1200",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu_DNN_geq_0p5",
+          "var": "Mww_1200", 
+          "cut": "boost_sig_mu_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_sig_ele_DNN_geq_0p5",
+          "var": "Mww_1200", 
+          "cut": "boost_sig_ele_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_wjet_mu",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_mu"
+      },
+      {
+          "name": "boost_wjet_ele",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_ele"
+      },
+      {
+        "name": "boost_top_mu",
+        "var": "events", 
+        "cut": "boost_topcr_mu"
+      },
+      { 
+        "name": "boost_top_ele",
+        "var": "events", 
+        "cut": "boost_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Mww_1300",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu_DNN_geq_0p5",
+          "var": "Mww_1300", 
+          "cut": "boost_sig_mu_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_sig_ele_DNN_geq_0p5",
+          "var": "Mww_1300", 
+          "cut": "boost_sig_ele_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_wjet_mu",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_mu"
+      },
+      {
+          "name": "boost_wjet_ele",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_ele"
+      },
+      {
+        "name": "boost_top_mu",
+        "var": "events", 
+        "cut": "boost_topcr_mu"
+      },
+      { 
+        "name": "boost_top_ele",
+        "var": "events", 
+        "cut": "boost_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Mww_1500",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu_DNN_geq_0p5",
+          "var": "Mww_1500", 
+          "cut": "boost_sig_mu_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_sig_ele_DNN_geq_0p5",
+          "var": "Mww_1500", 
+          "cut": "boost_sig_ele_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_wjet_mu",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_mu"
+      },
+      {
+          "name": "boost_wjet_ele",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_ele"
+      },
+      {
+        "name": "boost_top_mu",
+        "var": "events", 
+        "cut": "boost_topcr_mu"
+      },
+      { 
+        "name": "boost_top_ele",
+        "var": "events", 
+        "cut": "boost_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Mww_1800",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu_DNN_geq_0p5",
+          "var": "Mww_1800", 
+          "cut": "boost_sig_mu_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_sig_ele_DNN_geq_0p5",
+          "var": "Mww_1800", 
+          "cut": "boost_sig_ele_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_wjet_mu",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_mu"
+      },
+      {
+          "name": "boost_wjet_ele",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_ele"
+      },
+      {
+        "name": "boost_top_mu",
+        "var": "events", 
+        "cut": "boost_topcr_mu"
+      },
+      { 
+        "name": "boost_top_ele",
+        "var": "events", 
+        "cut": "boost_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Mww_2000",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu_DNN_geq_0p5",
+          "var": "Mww_2000", 
+          "cut": "boost_sig_mu_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_sig_ele_DNN_geq_0p5",
+          "var": "Mww_2000", 
+          "cut": "boost_sig_ele_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_wjet_mu",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_mu"
+      },
+      {
+          "name": "boost_wjet_ele",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_ele"
+      },
+      {
+        "name": "boost_top_mu",
+        "var": "events", 
+        "cut": "boost_topcr_mu"
+      },
+      { 
+        "name": "boost_top_ele",
+        "var": "events", 
+        "cut": "boost_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Mww_2300",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu_DNN_geq_0p5",
+          "var": "Mww_2300", 
+          "cut": "boost_sig_mu_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_sig_ele_DNN_geq_0p5",
+          "var": "Mww_2300", 
+          "cut": "boost_sig_ele_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_wjet_mu",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_mu"
+      },
+      {
+          "name": "boost_wjet_ele",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_ele"
+      },
+      {
+        "name": "boost_top_mu",
+        "var": "events", 
+        "cut": "boost_topcr_mu"
+      },
+      { 
+        "name": "boost_top_ele",
+        "var": "events", 
+        "cut": "boost_topcr_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2018_Mww_2500",
+    "folders": [
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5", 
+        "name": 2018
+      }
+    ], 
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu_DNN_geq_0p5",
+          "var": "Mww_2500", 
+          "cut": "boost_sig_mu_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_sig_ele_DNN_geq_0p5",
+          "var": "Mww_2500", 
+          "cut": "boost_sig_ele_DNN_geq_0p5"
+      },
+      {
+          "name": "boost_wjet_mu",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_mu"
+      },
+      {
+          "name": "boost_wjet_ele",
+          "var": "fit_bins_boost", 
+          "cut": "boost_wjetcr_ele"
+      },
+      {
+        "name": "boost_top_mu",
+        "var": "events", 
+        "cut": "boost_topcr_mu"
+      },
+      { 
+        "name": "boost_top_ele",
+        "var": "events", 
+        "cut": "boost_topcr_ele"
+      }
+    ]
+  }
+]

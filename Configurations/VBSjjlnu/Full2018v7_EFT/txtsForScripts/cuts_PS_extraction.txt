@@ -1,0 +1,16 @@
+res_wjetcr_ele
+res_wjetcr_mu
+boost_wjetcr_ele
+boost_wjetcr_mu
+res_topcr_ele
+res_topcr_mu
+boost_topcr_ele
+boost_topcr_mu
+res_sig_ele_DNN_geq_0p5
+res_sig_mu_DNN_geq_0p5
+res_sig_ele_DNN_leq_0p5
+res_sig_mu_DNN_leq_0p5
+boost_sig_ele_DNN_geq_0p5
+boost_sig_mu_DNN_geq_0p5
+boost_sig_ele_DNN_leq_0p5
+boost_sig_mu_DNN_leq_0p5

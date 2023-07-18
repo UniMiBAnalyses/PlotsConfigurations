@@ -645,7 +645,7 @@ DataTrig = {
 samples['sm'] = {
    'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
    'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS_dipoleRecoil' + '*' + 'LHEReweightingWeight[0]',
-   'FilesPerJob': 1,
+   'FilesPerJob': 5,
 }
 
 

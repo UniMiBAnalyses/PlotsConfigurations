@@ -41,9 +41,9 @@ structureFile = direc+'/structure_split.py'
 
 
 # nuisances file for mkDatacards and for mkShape
-# nuisancesFile = direc+'/nuisances.py'
+nuisancesFile = direc+'/nuisances_tmp.py'
 # nuisancesFile = direc + '/nuisances_datacard_split.py'
-nuisancesFile = direc + '/nuisances_datacard_split_2pois.py'
+# nuisancesFile = direc + '/nuisances_datacard_split_2pois.py'
 
 
 

@@ -19,7 +19,6 @@ for ir in range(1,8):
 
 
 for k in f.GetListOfKeys():
-    print(k)
     R.gDirectory.Cd(k.GetName())
     for z in R.gDirectory.GetListOfKeys():
         R.gDirectory.Cd(z.GetName())
@@ -27,14 +26,14 @@ for k in f.GetListOfKeys():
 
             for sample  in samples:
                 oldshape = sample + "_" + shape_name +"_"+ sample
-
+                print(l.GetName(), oldshape, "histo_"+oldshape+"Down" == l.GetName(), "histo_"+oldshape+"Up" == l.GetName())
                 if "histo_"+oldshape+"Down" == l.GetName():
-                    # print(l.GetName(),"histo_"+oldshape+"Down" )
+                    print(l.GetName(),"histo_"+oldshape+"Down" )
                     obj = R.gDirectory.Get(l.GetName())
                     obj.SetName("histo_" + sample+"_"+shape_name + "_WjetsDown")
                     obj.Write()
                 if "histo_"+oldshape+"Up" == l.GetName():
-                    # print(l.GetName(),"histo_"+oldshape+"Down" )
+                    print(l.GetName(),"histo_"+oldshape+"Down" )
                     obj = R.gDirectory.Get(l.GetName())
                     obj.SetName("histo_" + sample+"_"+shape_name+  "_WjetsUp")
                     obj.Write()

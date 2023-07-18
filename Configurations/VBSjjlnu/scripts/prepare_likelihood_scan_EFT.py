@@ -9,14 +9,26 @@ import numpy as np
 import CombineHarvester.CombineTools.plotting as plot
 
 ranges = {
-    'k_cW': [-5,5],
-    'k_cHB': [-30,30],
-    'k_cHQ1': [-100,100],
-    'k_cHW': [-20,20],
-    'k_cHWB': [-30,30],
-    'k_cHbox': [-10,10],
-    'k_cHj1': [-10,10],
-    'k_cHl1': [-300,300]
+    'k_cW': [-1,1],
+    'k_cHB': [-15,15],
+#    'k_cHQ1': [-200,200],
+    'k_cHW': [-5,5],
+    'k_cHWB': [-10,10],
+    'k_cHbox': [-20,20],
+    'k_cHj1': [-5,5],
+#    'k_cHl1': [-300,300]
+}
+
+
+priors = {
+    'k_cW': 100,
+    'k_cHB': 100,
+    'k_cHQ1': 500,
+    'k_cHW': 100,
+    'k_cHWB': 100,
+    'k_cHbox': 100,
+    'k_cHj1': 100,
+    'k_cHl1': 100
 }
 
 parser = argparse.ArgumentParser()
@@ -39,7 +51,7 @@ parser.add_argument("-fo","--fit-options", help="Robust fit options 0,1,2", type
 parser.add_argument("-q","--queue", help="Queue", type=str,default="microcentury")
 parser.add_argument("-v","--verbose", help="Combine verbosity level", type=int, default=0)
 parser.add_argument("--points", help="Points", type=int,default=200)
-parser.add_argument("--prior", help="Float specifying the prior for profiled operators", type=float,default=200)
+parser.add_argument("--prior", help="Float specifying the prior for profiled operators", type=float,default=None)
 parser.add_argument("--split", help="Split", type=int,default=5)
 parser.add_argument("--rMin", help="Min for scan", type=float,default=0)
 parser.add_argument("--rMax", help="Max for scan", type=float,default=1.5)
@@ -107,13 +119,13 @@ def do_scan(datac):
     if args.prof:
         for key, _ in ranges.items():
             if key not in args.pois:
-                range_str += key + "=-{0},{0}:".format(args.prior)
+                range_str += key + "=-{0},{0}:".format(args.prior if args.prior else priors[key])
                 
     range_str = range_str[:-1]
 
     saveFunc = ""
     if not args.doNotSaveFunc:
-        saveFunc = " --saveSpecifiedFunc=" +  ",".join(key for key in ranges.keys())
+        saveFunc = " --saveSpecifiedFunc=r," +  ",".join(key for key in ranges.keys())
 
         if not args.doNotSaveRateParam:
             rp = []
@@ -133,9 +145,9 @@ def do_scan(datac):
     # Prepare the script to create the impacts
     if not args.skip_initial:
         cmd.append("""combine -M MultiDimFit --saveWorkspace -n .{5}.initialFit \
-                    combined.root {0} {1} -v {2} -m 125 --redefineSignalPOIs {3} --setParameterRanges {4} {6}""".format(toysf,
+                    combined.root {0} {1} -v {2} -m 125 --redefineSignalPOIs {3} --setParameterRanges {4} {6} {7}""".format(toysf,
                         fitter_options[args.fit_options], args.verbose, ",".join(i for i in args.pois), range_str, file_name, 
-                        "" if not args.prof else " --floatOtherPOIs=1"))
+                        "" if not args.prof else " --floatOtherPOIs=1", saveFunc))
     if args.clean:
         cmd.append("rm higgsCombine.{0}.scan_all.POINTS*".format("_".join(i for i in args.pois)))
 
@@ -146,7 +158,7 @@ def do_scan(datac):
                     --split-points={9} --job-mode=condor --task-name {8} \
                     --sub-opts='+JobFlavour="{5}"' -v {6} {7} {10} {11}""".format(file_name, range_str, toysf, args.points,
                             fitter_options[args.fit_options],args.queue, args.verbose, "--dry-run" if args.dry else "",
-                            datac["datacard_name"], args.split, "" if not args.prof else "--floatOtherPOIs=1 ", saveFunc) )
+                            datac["datacard_name"] + "_" + "_".join(i for i in args.pois), args.split, "" if not args.prof else "--floatOtherPOIs=1 ", saveFunc) )
 
     else:
         cmd.append("""combine -M MultiDimFit -m 125  higgsCombine.{0}.initialFit.MultiDimFit.mH125.root -n .{0}.scan_all.POINTS \
@@ -228,17 +240,17 @@ def do_graph(datac, outputfile):
     #gr.Write(file_name + "/" + datac['datacard_name'])
 
     # Save scans in pdf and png
-    os.system("mkEFTScan.py {0} -p {1} -o {2}/{3}_{4}.pdf ".format(
+    os.system("mkEFTScan.py {0} -p {1} -maxNLL 10 -o {2}/{3}_{4}.pdf ".format(
         outdir + "/higgsCombine.{0}.scan_all.POINTS.root".format(file_name), 
-        ",".join(args.pois),
+        " ".join(args.pois),
         outdir,
         datac['datacard_name'],
         file_name
     ))
 
-    os.system("mkEFTScan.py {0} -p {1} -o {2}/{3}_{4}.png ".format(
+    os.system("mkEFTScan.py {0} -p {1} -maxNLL 10 -o {2}/{3}_{4}.png ".format(
         outdir + "/higgsCombine.{0}.scan_all.POINTS.root".format(file_name), 
-        ",".join(args.pois),
+        " ".join(args.pois),
         outdir,
         datac['datacard_name'],
         file_name

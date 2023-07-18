@@ -13,14 +13,36 @@ variables['events']  = {   'name': '1',
 
 ########################
 
-variables['Mww'] = {   'name': 'Mww',      
-                        'range' : ([ 200., 600.,  800., 1000., 1500., 2000., 3000.],), #variable range  
-                        'xaxis' : 'M_{VV} [GeV]', 
+
+variables['Mww'] = {   'name': 'Mww',
+                        'range' : ([ 200., 400., 600., 800., 1000., 1200., 1500., 2000., 3000.],), #variable range  
+                        'xaxis' : 'M_{WV} [GeV]',
                         'fold' : 3,
-                        'cuts': sig_cuts, 
-                        #'divideByBinWidth': True, 
+                        'cuts': sig_cuts,
+                        # 'divideByBinWidth': True, 
                         'blind': [200. ,3000.]
                         }
+
+
+variables['Mww_10'] = {   'name': 'Mww',
+                        'range' : ([ 200., 300., 400., 500., 600., 800., 1000., 1200., 1500., 2000., 3000.],), #variable range  
+                        'xaxis' : 'M_{WV} [GeV]',
+                        'fold' : 3,
+                        'cuts': sig_cuts,
+                        # 'divideByBinWidth': True, 
+                        'blind': [200. ,3000.]
+                        }
+
+
+variables['Mww_14'] = {   'name': 'Mww',
+                        'range' : ([ 200., 300., 400., 500., 600., 700., 800., 900., 1000., 1200., 1400., 1600., 2000., 2500., 3000.],), #variable range  
+                        'xaxis' : 'M_{WV} [GeV]',
+                        'fold' : 3,
+                        'cuts': sig_cuts,
+                        # 'divideByBinWidth': True, 
+                        'blind': [200. ,3000.]
+                        }
+
 
 variables['DNNoutput_res_v1'] = {
     'name': 'DNNoutput_resolved_v1',

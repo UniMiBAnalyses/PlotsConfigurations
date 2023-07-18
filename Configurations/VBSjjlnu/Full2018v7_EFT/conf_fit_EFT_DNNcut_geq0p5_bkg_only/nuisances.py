@@ -1,13 +1,34 @@
 from pprint import pprint
 # # # name of samples here must match keys in samples.py 
 
-mc =["DY", "top", "VV", "VVV", "VBF-V", "VBF-V_dipole", "Vg", "VgS", "VBS", "ggWW","VBS_dipoleRecoil"] + wjets_all_bins + VBS_samples + VV_samples
+VBS_samples = ["sm"]
+VBS_WV_samples = ["ewk_WpZ", "ewk_WmZ","ewk_WpWm", "ewk_WpWp", "ewk_WmWm"]
+VBS_ZV_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ"]
+VV_WV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj"]
+VV_ZV_samples = ["VV_WZll", "VV_ZZ"]
 
+mc =["DY", "top", "VV", "VVV",  "VBF-V_dipole", "Vg", "VgS",  "ggWW","VBS_dipoleRecoil"] + wjets_all_bins + VBS_samples + VV_samples
+#"VBF-V","VBS",
 
-phasespaces = ["res_wjetcr_ele","res_wjetcr_mu" ,"boost_wjetcr_ele" ,"boost_wjetcr_mu",
-        "res_topcr_ele","res_topcr_mu" ,"boost_topcr_ele" ,"boost_topcr_mu",
-        "res_sig_ele","res_sig_mu" ,"boost_sig_ele" ,"boost_sig_mu" ]
+phasespaces = ["res_wjetcr_ele",
+               "res_wjetcr_mu" ,
+               "boost_wjetcr_ele" ,
+               "boost_wjetcr_mu",
+               "res_topcr_ele",
+               "res_topcr_mu" ,
+               "boost_topcr_ele" ,
+               "boost_topcr_mu",
+               "res_sig_ele_DNN_geq_0p5",
+               "res_sig_mu_DNN_geq_0p5",
+               "res_sig_ele_DNN_leq_0p5" ,
+               "res_sig_mu_DNN_leq_0p5",
+               "boost_sig_ele_DNN_geq_0p5" ,
+               "boost_sig_mu_DNN_geq_0p5",
+               "boost_sig_ele_DNN_leq_0p5" ,
+               "boost_sig_mu_DNN_leq_0p5",
+               ]
 
+               
 def getSamplesWithout(samples, samples_to_remove):
     return [m for m in samples if m not in samples_to_remove]
 
@@ -688,6 +709,7 @@ nuisances['pdf_weight'] = {
     'samples' :  { s: [' Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in mc if s not in ["VBS", "top"]+wjets_all_bins+VBS_samples},
     'AsLnN':  '1'
 }
+
 
 nuisances['pdf_weight_accept'] = {
     'name'  : 'pdf_weight_1718_accept',

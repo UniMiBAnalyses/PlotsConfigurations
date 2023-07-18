@@ -53,6 +53,7 @@ if __name__ == "__main__":
    parser.add_argument('-v', "--variables",    dest='variables',     help='Plot only these variables', required = False, nargs="+")
    parser.add_argument('-o', "--output",    dest='output',     help='name of the outoput folder that will store the plots. Default=tree_plots', required = False, default="tree_plots")
    parser.add_argument('-l', "--lumi",    dest='lumi',     help='Luminosity. Default=60', required = False, default=60., type=float)
+   parser.add_argument('-ln', "--logy",    dest='logy',     help='Also plot logy', required = False, action="store_true")
    args = parser.parse_args()
 
    ROOT.gROOT.SetBatch(1)
@@ -84,10 +85,10 @@ if __name__ == "__main__":
       for v in var:
          
          if args.variables is not None and v not in args.variables: continue
-         try:
-            os.mkdir(args.output + "/" + reg + "/" + v)
-            os.system("cp /afs/cern.ch/user/g/gboldrin/public/index.php " + args.output + "/" + reg + "/" + v)
-         except: pass
+         # try:
+         #    os.mkdir(args.output + "/" + reg + "/" + v)
+         #    os.system("cp /afs/cern.ch/user/g/gboldrin/public/index.php " + args.output + "/" + reg + "/" + v)
+         # except: pass
 
          hists = d.Get(v)
          shapes = [i.GetName() for i in hists.GetListOfKeys() if "Up" not in i.GetName() and "Down" not in i.GetName()]
@@ -144,5 +145,12 @@ if __name__ == "__main__":
             #c.Print( args.output + "/{}.pdf".format(s) )
 
             #c.SetLogy()
-            c.Print( args.output + "/" + reg + "/" + v + "/{}_{}_log.png".format(v, sh) )
-            c.Print( args.output + "/" + reg + "/" + v + "/{}_{}_log.pdf".format(v, sh) )
+            c.Print( args.output + "/" + reg + "/{}_{}.png".format(v, sh) )
+            c.Print( args.output + "/" + reg + "/{}_{}.pdf".format(v, sh) )
+
+            if args.logy:
+               c.SetLogy()
+               c.Update()
+               c.Draw()
+               c.Print( args.output + "/" + reg + "/{}_{}_log.png".format(v, sh) )
+               c.Print( args.output + "/" + reg + "/{}_{}_log.pdf".format(v, sh) )

@@ -1,0 +1,34 @@
+[
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5",
+                "name": ""
+            }
+        ],
+        "phase_spaces": [
+            {
+                "var": "DNNoutput_boost",
+                "cut": "boost_sig_mu_DNN_leq_0p5",
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            },
+            {
+                "var": "DNNoutput_boost",
+                "cut": "boost_sig_ele_DNN_leq_0p5",
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            },
+            {
+                "var": "mjj_vbs",
+                "cut": "boost_sig_mu_DNN_geq_0p5",
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            },
+            {
+                "var": "mjj_vbs",
+                "cut": "boost_sig_ele_DNN_geq_0p5",
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }
+        ],
+        "datacard_name": "mjj_vbs"
+    }
+]
+
