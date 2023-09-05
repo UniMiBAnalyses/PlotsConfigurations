@@ -517,7 +517,7 @@ Fake_corr = '1.'
 ### Fakes
 samples['Fake'] = {
   'name': [],
-  'weight': METFilter_DATA,
+  'weight': METFilter_DATA+'*fakeW35',
   'weights': [],
   'isData': ['all'],
   'FilesPerJob' : 70,

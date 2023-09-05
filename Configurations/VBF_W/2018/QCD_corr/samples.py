@@ -268,7 +268,7 @@ samples['VV']  = { 'name' :  nanoGetSampleFiles(mcPrivateDirectory,'WmToLNu_WmTo
                              + nanoGetSampleFiles(mcPrivateDirectory,'ZTo2L_ZTo2J_QCD'),
                    'weight': CommonWeight,
 #                   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch, # still missing EWKnlowW 
-                   'FilesPerJob' : 20,
+                   'FilesPerJob' : 30,
                   #  'EventsPerJob' : 70000,
                 }
 
@@ -510,7 +510,7 @@ samples['Fake'] = {
   'weight': METFilter_DATA+'*'+fakeW + '*' + Fake_corr,
   'weights': [],
   'isData': ['all'],
-  'FilesPerJob' : 40,
+  'FilesPerJob' : 60,
 }
 
 for _, sd in DataRun:
