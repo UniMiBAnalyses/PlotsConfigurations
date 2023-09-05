@@ -175,7 +175,7 @@ plot['Wjets_HT_hardJets'] = {
                  'isSignal' : 0,
                  'isData'   : 0, 
                  #'scale'    : 1.09950003 
-                 'scale'    : 1.2
+                 'scale'    : 1.
                  #'scale'    : 1.1231175589276459 #mu
                  #'scale'    : 1.2795330335917352
                 }

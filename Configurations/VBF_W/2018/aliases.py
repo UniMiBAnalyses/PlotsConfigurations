@@ -392,7 +392,7 @@ aliases['QCDscale_normalized'] = {
                 'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
                 '.L {}/VBSjjlnu/macros/QCDscale_normalize.cc+'.format(configurations)
             ] ,
-            'samples':['VBS', 'VV']
+            'samples':["WLNuJJ"]
 }
 
 aliases['PDFweight_normalized'] = {
@@ -402,7 +402,7 @@ aliases['PDFweight_normalized'] = {
                 'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
                 '.L {}/VBSjjlnu/macros/PDFweight_normalize.cc+'.format(configurations)
             ] ,
-            'samples':['VBS','VV']
+            'samples':["WLNuJJ"]
 }
 
 ###################################
@@ -619,14 +619,14 @@ aliases['category_WJets'] = {
 }
 
 ##reweight for Wjets samples
-morphing_file = utils_folder + 'reweight/NWJets_reweight.root'
+morphing_file = utils_folder + '2018/reweight/NEWreweight.root'
 aliases['WJets_reweight'] = {
     'class': 'ReweightJet1pT',
     'samples': ['Wjets_HT'],
     'args': (morphing_file, "ele_ideal_function", "mu_ideal_function"),
      'linesToAdd' : [
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}reweight/reweight_Jet1pT.cc+'.format(utils_folder)
+        '.L {}macros/reweight_Jet1pT.cc+'.format(utils_folder)
         ] 
 } 
 
@@ -642,8 +642,14 @@ aliases['WJets_reweight_do'] = {
     'args': (morphing_file, copy.deepcopy("ele_sys_down"), copy.deepcopy("mu_sys_down"))
 } 
 
+aliases['WJets_reweight_func'] = {
+    'class': 'ReweightJet1pT',
+    'samples': ['Wjets_HT'],
+    'args': (morphing_file, copy.deepcopy("ele_pol2"), copy.deepcopy("mu_pol2"))
+} 
+
 # DNN
-models_path = utils_folder + 'NN'
+models_path = utils_folder + '2018/NN'
 model_best = '64_64_64/SR_part/ALL/'
 
 aliases['DNNoutputSR_ALL'] = {
@@ -652,6 +658,6 @@ aliases['DNNoutputSR_ALL'] = {
   'linesToAdd':[
       'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
       'gSystem->Load("libDNNEvaluator.so")',
-      '.L {}NN/ALLmva_reader_DNN.cc+'.format(utils_folder)
+      '.L {}macros/ALLmva_reader_DNN.cc+'.format(utils_folder)
   ]
 }

@@ -665,29 +665,29 @@ aliases['category_WJets'] = {
     'samples': ['Wjets_HT']
 }
 
-##reweight for Wjets samples
-morphing_file = utils_folder + 'reweight/NWJets_reweight.root'
-aliases['WJets_reweight'] = {
-    'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
-    'args': (morphing_file, "ele_ideal_function", "mu_ideal_function"),
-     'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}reweight/reweight_Jet1pT.cc+'.format(utils_folder)
-        ] 
-} 
+# ##reweight for Wjets samples
+# morphing_file = utils_folder + 'reweight/NWJets_reweight.root'
+# aliases['WJets_reweight'] = {
+#     'class': 'ReweightJet1pT',
+#     'samples': ['Wjets_HT'],
+#     'args': (morphing_file, "ele_ideal_function", "mu_ideal_function"),
+#      'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}reweight/reweight_Jet1pT.cc+'.format(utils_folder)
+#         ] 
+# } 
 
-aliases['WJets_reweight_up'] = {
-    'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
-    'args': (morphing_file, copy.deepcopy("ele_sys_up"), copy.deepcopy("mu_sys_up"))
-} 
+# aliases['WJets_reweight_up'] = {
+#     'class': 'ReweightJet1pT',
+#     'samples': ['Wjets_HT'],
+#     'args': (morphing_file, copy.deepcopy("ele_sys_up"), copy.deepcopy("mu_sys_up"))
+# } 
 
-aliases['WJets_reweight_do'] = {
-    'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
-    'args': (morphing_file, copy.deepcopy("ele_sys_down"), copy.deepcopy("mu_sys_down"))
-} 
+# aliases['WJets_reweight_do'] = {
+#     'class': 'ReweightJet1pT',
+#     'samples': ['Wjets_HT'],
+#     'args': (morphing_file, copy.deepcopy("ele_sys_down"), copy.deepcopy("mu_sys_down"))
+# } 
 
 # DNN
 models_path = utils_folder + 'NN'

@@ -278,13 +278,13 @@ import json, os
 # VBS_pdf_factors = json.load(open("/afs/cern.ch/work/d/dvalsecc/private/CMSSW_11_1_4" + "/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7/conf_fit_v4.3/pdf_normcorr_VBS.json"))
 configurations = os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurations/"
 conf_folder = configurations +"/VBF_W/"
-FileJson = "/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/utils/nuisance_incl_norm_factors_2018.json"
+FileJson = "/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/utils/2018/nuisance_incl_norm_factors_2018.json"
 with open(FileJson) as jsonFile:
     nuis_factors = json.load(jsonFile)
     jsonFile.close()
 
 for sample in mc :
-    if sample in ["ggWW","VV", "VBS", "Wjets_HT"]: continue
+    if sample in ["WLNuJJ"]: continue
     nuisances['QCD_scale_'+sample] = {
         'name'  : 'QCDscale_'+sample,
         'kind'  : 'weight',
@@ -292,36 +292,43 @@ for sample in mc :
         'samples'  :  { sample: ["LHEScaleWeight[0]", "LHEScaleWeight[8]"] }
     }
 
-# #Correlate all signal samples
-nuisances['QCD_scale_VBS'] = {
-            'name'  : 'QCDscale_VBS_accept',
-            'kind'  : 'weight',
-            'type'  : 'shape',
-            # 'samples'  :  { "VBS": ["QCDscale_normalized[0]", "QCDscale_normalized[8]"],
-            #                 "VBS_dipoleRecoil": ["QCDscale_normalized[0]", "QCDscale_normalized[8]"], }
-            'samples': { k:["QCDscale_normalized[0]", "QCDscale_normalized[8]"] for k in ["VBS"] }
-        }
+# # #Correlate all signal samples
+# nuisances['QCD_scale_VBS'] = {
+#             'name'  : 'QCDscale_VBS_accept',
+#             'kind'  : 'weight',
+#             'type'  : 'shape',
+#             # 'samples'  :  { "VBS": ["QCDscale_normalized[0]", "QCDscale_normalized[8]"],
+#             #                 "VBS_dipoleRecoil": ["QCDscale_normalized[0]", "QCDscale_normalized[8]"], }
+#             'samples': { k:["QCDscale_normalized[0]", "QCDscale_normalized[8]"] for k in ["VBS"] }
+#         }
 
 
-nuisances['QCD_scale_VV_accept'] = {
-            'name'  : 'QCDscale_VV_accept',
-            'kind'  : 'weight',
-            'type'  : 'shape',
-            'samples': { k:["QCDscale_normalized[0]", "QCDscale_normalized[8]"] for k in ["VV"] }
-        }
+# nuisances['QCD_scale_VV_accept'] = {
+#             'name'  : 'QCDscale_VV_accept',
+#             'kind'  : 'weight',
+#             'type'  : 'shape',
+#             'samples': { k:["QCDscale_normalized[0]", "QCDscale_normalized[8]"] for k in ["VV"] }
+#         }
 
-nuisances['QCD_scale_VV'] = {
-            'name'  : 'QCDscale_VV',
-            'kind'  : 'weight',
-            'type'  : 'shape',
-            'samples': { k:["LHEScaleWeight[0]", "LHEScaleWeight[8]"] for k in ["VV"]}
-        }
+# nuisances['QCD_scale_VV'] = {
+#             'name'  : 'QCDscale_VV',
+#             'kind'  : 'weight',
+#             'type'  : 'shape',
+#             'samples': { k:["LHEScaleWeight[0]", "LHEScaleWeight[8]"] for k in ["VV"]}
+#         }
 
-nuisances['QCD_scale_Wjets'] = {
-            'name'  : 'QCDscale_Wjets',
+# nuisances['QCD_scale_Wjets'] = {
+#             'name'  : 'QCDscale_Wjets',
+#             'kind'  : 'weight',
+#             'type'  : 'shape',
+#             'samples'  :  { sample: ["LHEScaleWeight[0]", "LHEScaleWeight[8]"] for sample in ["Wjets_HT"]}
+#         }
+
+nuisances['QCD_scale_WLNuJJ_accept'] = {
+            'name'  : 'QCD_scale_WLNuJJ_accept',
             'kind'  : 'weight',
             'type'  : 'shape',
-            'samples'  :  { sample: ["LHEScaleWeight[0]", "LHEScaleWeight[8]"] for sample in ["Wjets_HT"]}
+            'samples'  :  { k:["QCDscale_normalized[0]", "QCDscale_normalized[8]"] for k in ["WLNuJJ"] }
         }
 
 
@@ -365,7 +372,7 @@ nuisances['pdf_weight'] = {
     'name'  : 'pdf_weight_1718',
     'kind'  : 'weight_envelope',
     'type'  : 'shape',
-    'samples' :  { s: [' Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in mc if s not in ["VBS", "top","Wjets_HT","VBS"]},
+    'samples' :  { s: [' Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in mc if s not in ["WLNuJJ"]},
     'AsLnN':  '1'
 }
 
@@ -375,7 +382,7 @@ nuisances['pdf_weight_accept'] = {
     'type'  : 'shape',
     # 'samples' :  { "VBS": [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ],
     #                "VBS_dipoleRecoil": [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ]}
-    'samples': { k : [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ] for k in ["VV"]}
+    'samples': { k : [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ] for k in ["WLNuJJ"] }
 }
 
 # # An overall 1.5% UE uncertainty will cover all the UEup/UEdo variations
@@ -387,13 +394,12 @@ nuisances['UE']  = {
                 'samples': dict((skey, '1.015') for skey in mc if skey not in ["top","Wjets_HT"]), 
 }
 
-
-## reweight wjet nuisances
+# reweight wjet nuisances
 WJets_up = '( WJets_reweight_up / WJets_reweight )'
 WJets_do = '( WJets_reweight_do / WJets_reweight )'
 
 nuisances['WJets_reweight'] = {
-    'name': 'WJets_rew',
+    'name': 'WJets_rew_2018',
     'kind': 'weight',
     'type': 'shape',
     'samples': { 
@@ -401,8 +407,19 @@ nuisances['WJets_reweight'] = {
       }
 }
 
+WJets_functional = '( WJets_reweight_func /  WJets_reweight )'
+nuisances['WJets_reweight_functional'] = {
+    'name': 'WJets_rew_func_2018',
+    'kind': 'weight',
+    'type': 'shape',
+    'samples': {
+       'Wjets_HT': [WJets_functional, "1."]
+      },
+    'symmetrize': True
+}
 
-# ####### Generic "cross section uncertainties"
+
+####### Generic "cross section uncertainties"
 ##############
 # Normalization factors
 ##############
@@ -413,47 +430,35 @@ nuisances["Top_norm_2018"]  = {
     'samples'  : {
         'top' : '1.00',
         },
-    'type'  : 'rateParam',
-    'cuts' : 'topcr'
+    'type'  : 'rateParam'
 }
 
-
 # for fl in ["ele", "mu"]:
-#     nuisances["top_norm_{}_2018".format(fl)]  = {
-#         'name'  : 'CMS_Top_norm_{}_2018'.format(fl),
+#     nuisances["Fake_norm_{}_2018".format(fl)]  = {
+#         'name'  : 'CMS_Fake_norm_{}_2018'.format(fl),
 #         'samples'  : {
-#             'top' : '1.00',
+#             'Fake' : '1.00',
 #             },
 #         'type'  : 'rateParam',
-#         'cuts' : [f for f in regions if "{}_topcr".format(fl) in f]
+#         'cuts': [region for region in regions if fl in region or "topcr" in region]
 #     }
 
 for fl in ["ele", "mu"]:
-    nuisances["Fake_norm_{}_2018".format(fl)]  = {
-        'name'  : 'CMS_Fake_norm_{}_2018'.format(fl),
-        'samples'  : {
-            'Fake' : '1.00',
-            },
+    nuisances["WPUJet_norm_{}_2018".format(fl)]  = {
+        'name'  : 'CMS_WPUJet_norm_{}_2018'.format(fl),
+        'samples'  : {'Wjets_HT_PUJets' : '1.00'},
         'type'  : 'rateParam',
-        'cuts' : [f for f in regions if "{}_FakeCR".format(fl) in f]
+        'cuts': [region for region in regions if fl in region or "topcr" in region]
     }
 
+
 for fl in ["ele", "mu"]:
-    for subs in ["hardJets", "PUJets"]:
-        if subs == "hardJets":
-            nuisances["WhardJet_norm_{}_2018".format(fl)]  = {
-                'name'  : 'CMS_WhardJet_norm_{}_2018'.format(fl),
-                'samples'  : {'Wjets_HT_hardJets' : '1.00'},
-                'type'  : 'rateParam',
-                'cuts' : [f for f in regions if "{}_HWJ".format(fl) in f]
-        }
-        else:
-            nuisances["WPUJet_norm_{}_2018".format(fl)]  = {
-                'name'  : 'CMS_WPUJet_norm_{}_2018'.format(fl),
-                'samples'  : {'Wjets_HT_PUJets' : '1.00'},
-                'type'  : 'rateParam',
-                'cuts' : [f for f in regions if "{}_PUWJ".format(fl) in f]
-        }
+    nuisances["WhardJet_norm_{}_2018".format(fl)]  = {
+                    'name'  : 'CMS_WhardJet_norm_{}_2018'.format(fl),
+                    'samples'  : {'Wjets_HT_hardJets' : '1.00'},
+                    'type'  : 'rateParam',
+                    'cuts': [region for region in regions if fl in region or "topcr" in region]
+            }
 
 
 # ## Use the following if you want to apply the automatic combine MC stat nuisances.

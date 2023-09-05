@@ -176,9 +176,9 @@ For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for e
     --samplesFile samples.py \
     --cutName ele_HWJ
 
-    python DrawNuisancesAll.py \
-    --inputFile datacards/ele_SR/DNNoutput_ALLbin1/shapes/histos_ele_SR.root  \
-    --outputDirPlots ele_SR_nuisance  \
-    --nuisancesFile nuisances.py  \
-    --samplesFile   samples.py \
-    --cutName ele_SR
+python DrawNuisancesAll.py \
+--inputFile datacards/yessys_yesrw/ele_SR/DNNoutput_ALLbin1/shapes/histos_ele_SR.root  \
+--outputDirPlots ele_SR_nuisance  \
+--nuisancesFile nuisances.py  \
+--samplesFile   samples.py \
+--cutName ele_SR \

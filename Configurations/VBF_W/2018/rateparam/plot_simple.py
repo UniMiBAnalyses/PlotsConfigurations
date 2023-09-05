@@ -95,7 +95,7 @@ groupPlot['Top']  = {
                 'fill': 1001
             }
 
-for ir in range(1,11):
+for ir in range(1,12):
     groupPlot['Wjets_HT_HWJbin'+str(ir)]  = {  
                 'nameHR' : 'Wjets_HT_HWJbin'+str(ir),
                 'isSignal' : 0,
@@ -103,14 +103,6 @@ for ir in range(1,11):
                 'samples'  : ['Wjets_HT_HWJbin'+str(ir)],
                 'fill': 1001
                 }
-
-# groupPlot['Wjets_HT_hardJets']  = {  
-#                 'nameHR' : 'WJets_hardJets',
-#                 'isSignal' : 0,
-#                 'color':   palette["Yellow"],
-#                 'samples'  : ['Wjets_HT_hardJets'],
-#                 'fill': 1001
-#                 }
 
 groupPlot['Fake']  = {  
                'nameHR' : "Non-prompt",
@@ -143,12 +135,15 @@ plot['WLNuJJ']  = {
              }
 
 
-for ir in range(1,11):
+scalessss = [1.2829, 1.1814, 1.1695, 1.0909, 1.0561, 0.98421, 0.95901, 0.93080, 0.88233, 0.79389, 0.61516]
+
+for ir in range(1,12):
     plot['Wjets_HT_HWJbin'+str(ir)]  = {
                   'color':   colors['kAzure']-1,
                   'isSignal' : 0,
                   'isData'   : 0,
-                  'scale'    : 1.,
+                  'scale'    : scalessss[ir-1],
+                #   'scale'    : 1.0,
              }
 
 plot['Wjets_HT_PUJets'] = {   

@@ -2,7 +2,7 @@
 from itertools import product, chain
 #structure = {}
 
-for i in range (1,11):
+for i in range (1,12):
     structure['Wjets_HT_HWJbin{}'.format(i)]  = {  
                     'isSignal' : 0,
                     'isData'   : 0 

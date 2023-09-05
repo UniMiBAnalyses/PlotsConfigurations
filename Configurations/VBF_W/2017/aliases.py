@@ -270,12 +270,12 @@ for s in systs:
 
 
 aliases['hardJets'] = {
-    'expr':  'Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 25 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 25',
+    'expr':  'Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10',
     'samples': ['Wjets_HT']
 }
 
 aliases['PUJets'] = {
-    'expr':  '!(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 25 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 25)',
+    'expr':  '!(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10)',
     'samples': ['Wjets_HT']
 }
 
@@ -445,25 +445,25 @@ aliases['puWeight_noeras'] = {
 
 ############################################
 
-# aliases['QCDscale_normalized'] = {
-#             'class': 'QCDScaleNormalized',
-#             'args': (),
-#             'linesToAdd' : [
-#                 'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#                 '.L {}/VBSjjlnu/macros/QCDscale_normalize.cc+'.format(configurations)
-#             ] ,
-#             'samples':['VBS','VBS_dipoleRecoil','VV']          
-# }
+aliases['QCDscale_normalized'] = {
+            'class': 'QCDScaleNormalized',
+            'args': (),
+            'linesToAdd' : [
+                'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+                '.L {}/VBSjjlnu/macros/QCDscale_normalize.cc+'.format(configurations)
+            ] ,
+            'samples':['WLNuJJ']          
+}
 
-# aliases['PDFweight_normalized'] = {
-#             'class': 'PDFWeightNormalized',
-#             'args': (),
-#             'linesToAdd' : [
-#                 'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#                 '.L {}/VBSjjlnu/macros/PDFweight_normalize.cc+'.format(configurations)
-#             ] ,
-#             'samples':['VBS','VBS_dipoleRecoil','VV']          
-# }
+aliases['PDFweight_normalized'] = {
+            'class': 'PDFWeightNormalized',
+            'args': (),
+            'linesToAdd' : [
+                'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+                '.L {}/VBSjjlnu/macros/PDFweight_normalize.cc+'.format(configurations)
+            ] ,
+            'samples':['WLNuJJ']          
+}
 
 
 # aliases['lhe_mjj'] = {
@@ -484,26 +484,39 @@ aliases['puWeight_noeras'] = {
 
 ## WJET REWEIGHT
 
-# aliases['category_WJets'] = {
-#     'expr': '0.*(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 25 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 25) + 1.*(!(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 25 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 25))',
-#     'samples': ['Wjets_HT']
-# }
+##reweight for Wjets samples
+morphing_file = utils_folder + '2017/reweight/NEWreweight.root'
+aliases['WJets_reweight'] = {
+    'class': 'ReweightJet1pT',
+    'samples': ['Wjets_HT'],
+    'args': (morphing_file, "ele_ideal_function", "mu_ideal_function"),
+     'linesToAdd' : [
+        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+        '.L {}macros/reweight_Jet1pT.cc+'.format(utils_folder)
+        ] 
+} 
 
-# ##reweight for Wjets samples
-# morphing_file = conf_folder + 'utils/reweight/WJets_reweight.root'
-# aliases['WJets_reweight'] = {
-#     'class': 'ReweightJet1pT',
-#     'samples': ['Wjets_HT'],
-#     'args': (morphing_file, False),
-#      'linesToAdd' : [
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L {}utils/reweight/reweight_Jet1pT.cc+'.format(conf_folder)
-#         ] 
-# } 
+aliases['WJets_reweight_up'] = {
+    'class': 'ReweightJet1pT',
+    'samples': ['Wjets_HT'],
+    'args': (morphing_file, copy.deepcopy("ele_sys_up"), copy.deepcopy("mu_sys_up"))
+} 
+
+aliases['WJets_reweight_do'] = {
+    'class': 'ReweightJet1pT',
+    'samples': ['Wjets_HT'],
+    'args': (morphing_file, copy.deepcopy("ele_sys_down"), copy.deepcopy("mu_sys_down"))
+} 
+
+aliases['WJets_reweight_func'] = {
+    'class': 'ReweightJet1pT',
+    'samples': ['Wjets_HT'],
+    'args': (morphing_file, copy.deepcopy("ele_pol2"), copy.deepcopy("mu_pol2"))
+} 
 
 # DNN
-models_path = utils_folder + 'NN'
-model_best = '64_64_64/SR/ALL/'
+models_path = utils_folder + '2018/NN'
+model_best = '64_64_64/SR_part/ALL/'
 
 aliases['DNNoutputSR_ALL'] = {
   'class': 'MVAReaderDNN',
@@ -511,6 +524,6 @@ aliases['DNNoutputSR_ALL'] = {
   'linesToAdd':[
       'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
       'gSystem->Load("libDNNEvaluator.so")',
-      '.L {}NN/ALLmva_reader_DNN.cc+'.format(utils_folder)
+      '.L {}macros/ALLmva_reader_DNN.cc+'.format(utils_folder)
   ]
 }

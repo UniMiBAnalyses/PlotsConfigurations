@@ -143,8 +143,7 @@ but in
 
 or
 
-    hadd rootFile/plots_vbf_w_2018.root rootFile/plots_vbf_w_2018_ALL_*.root
-    hadd rootFile/plots_vbf_w_2018.root rootFile/plots_vbf_w_2018_do.root rootFile/prov/plots_vbf_w_2018.root 
+    hadd -j 5 -f (+ -ff for original compression) rootFile/plots_vbf_w_2018.root rootFile/plots_vbf_w_2018_ALL_*.root
 
 
 # Make plots:
@@ -168,3 +167,4 @@ For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for e
      --nuisancesFile ../../../../PlotsConfigurations/Configurations/VBF_W/2018/nuisances.py  \
      --samplesFile   ../../../../PlotsConfigurations/Configurations/VBF_W/2018/samples.py \
      --cutName topcr
+

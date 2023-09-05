@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'rateparam'
+tagger = 'w_rateparam'
 
 tag = 'vbf_w_2018'+tagger
 # tag = 'vbf_w_2018NORWALLSYS'
@@ -34,7 +34,7 @@ lumi = 59.74
 # different from "outputDir" to do things more tidy
 #outputDirPlots = 'plots'
 # outputDirPlots = 'plots/NORWALLSYS'
-outputDirPlots = 'plots/'+tagger
+outputDirPlots = 'plots/'+tagger+"1"
 
 
 # used by mkDatacards to define output directory for datacards

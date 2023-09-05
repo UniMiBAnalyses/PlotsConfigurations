@@ -60,24 +60,24 @@ cuts['ele_HWJ'] = '(abs(Lepton_pdgId[0])==11) \
                     && mtw1 > 50. \
                     '
 
-cuts['ele_HWJ-SR'] = '(abs(Lepton_pdgId[0])==11) \
-                    && Lepton_pt[0] > 35. \
-                    && bVeto \
-                    && mjj <= 750. \
-                    && detajj <= 4 \
-                    && mtw1 > 50. \
-                    && detajj > 3 \
-                    && CleanJet_pt[1]>70. \
-                    '
+# cuts['ele_HWJ-SR'] = '(abs(Lepton_pdgId[0])==11) \
+#                     && Lepton_pt[0] > 35. \
+#                     && bVeto \
+#                     && mjj <= 750. \
+#                     && detajj <= 4 \
+#                     && mtw1 > 50. \
+#                     && detajj > 3 \
+#                     && CleanJet_pt[1]>70. \
+#                     '
 
-cuts['ele_HWJ_cutted'] = '(abs(Lepton_pdgId[0])==11) \
-                    && Lepton_pt[0] > 35. \
-                    && bVeto \
-                    && mjj <= 750. \
-                    && detajj <= 4 \
-                    && mtw1 > 50. \
-                    && DNNoutputSR_ALL > 0.3\
-                    '
+# cuts['ele_HWJ_cutted'] = '(abs(Lepton_pdgId[0])==11) \
+#                     && Lepton_pt[0] > 35. \
+#                     && bVeto \
+#                     && mjj <= 750. \
+#                     && detajj <= 4 \
+#                     && mtw1 > 50. \
+#                     && DNNoutputSR_ALL > 0.3\
+#                     '
 
 cuts['ele_PUWJ'] = '(abs(Lepton_pdgId[0])==11) \
                     && Lepton_pt[0] > 35. \
@@ -95,22 +95,22 @@ cuts['mu_HWJ'] = '(abs(Lepton_pdgId[0])==13) \
                     && detajj <= 4 \
                     && mtw1 > 50. \
                     '
-cuts['mu_HWJ-SR'] = '(abs(Lepton_pdgId[0])==13) \
-                    && bVeto \
-                    && mjj <= 750. \
-                    && detajj <= 4 \
-                    && mtw1 > 50. \
-                    && detajj > 3 \
-                    && CleanJet_pt[1]>70. \
-                    '
+# cuts['mu_HWJ-SR'] = '(abs(Lepton_pdgId[0])==13) \
+#                     && bVeto \
+#                     && mjj <= 750. \
+#                     && detajj <= 4 \
+#                     && mtw1 > 50. \
+#                     && detajj > 3 \
+#                     && CleanJet_pt[1]>70. \
+#                     '
 
-cuts['mu_HWJ_cutted'] = '(abs(Lepton_pdgId[0])==13) \
-                    && bVeto \
-                    && mjj <= 750. \
-                    && detajj <= 4 \
-                    && mtw1 > 50. \
-                    && DNNoutputSR_ALL > 0.3\
-                    '
+# cuts['mu_HWJ_cutted'] = '(abs(Lepton_pdgId[0])==13) \
+#                     && bVeto \
+#                     && mjj <= 750. \
+#                     && detajj <= 4 \
+#                     && mtw1 > 50. \
+#                     && DNNoutputSR_ALL > 0.3\
+#                     '
 
 cuts['mu_PUWJ'] = '(abs(Lepton_pdgId[0])==13) \
                     && detajj > 5. \

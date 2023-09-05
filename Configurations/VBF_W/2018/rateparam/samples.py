@@ -176,7 +176,7 @@ samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcPrivateDirectory, 'WJets
                                    + nanoGetSampleFiles(mcPrivateDirectory, 'WJetsToLNu_HT2500_inf'),
 #				                'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '* ewknloW',
                         'weight': CommonWeight+'*' + Wjets_photon_filter +'* ewknloW' + '*' +Total_correction,
-			                	'FilesPerJob' : 15, 
+			                	'FilesPerJob' : 5, 
                         'subsamples': {
                           'HWJbin1'  : 'HWJbin1',
                           'HWJbin2'  : 'HWJbin2',
@@ -243,8 +243,8 @@ samples['top'] = {    'name'   : nanoGetSampleFiles(mcPrivateDirectory,'TTTo2L2N
                                  #+ nanoGetSampleFiles(mcPrivateDirectory,'TTWJetsToLNu'), #also this is available (was commented)
                       'weight': CommonWeight,
 #                     'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC ,
-                      'FilesPerJob' : 16,
-                      'EventsPerJob' : 70000,
+                      'FilesPerJob' : 10,
+                      # 'EventsPerJob' : 70000,
 #                     'suppressNegative' :['all'],
 #                     'suppressNegativeNuisances' :['all'],
                 }

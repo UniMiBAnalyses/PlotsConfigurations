@@ -2,11 +2,9 @@
 
 treeName = 'Events'
 
-tagger = 'latest'
+tagger = 'final'
 
 tag = 'vbf_w_2018'+tagger
-# tag = 'vbf_w_2018NORWALLSYS'
-# tag = 'vbf_w_2018'
 
 # used by mkShape to define output directory for root files
 # outputDir = 'rootFile/NORWALLSYS'
@@ -36,9 +34,8 @@ lumi = 59.74
 # outputDirPlots = 'plots/NORWALLSYS'
 outputDirPlots = 'plots/'+tagger
 
-
 # used by mkDatacards to define output directory for datacards
-outputDirDatacard = 'datacards'
+outputDirDatacard = 'datacards/'+tagger
 
 # structure file for datacard
 structureFile = 'structure.py'

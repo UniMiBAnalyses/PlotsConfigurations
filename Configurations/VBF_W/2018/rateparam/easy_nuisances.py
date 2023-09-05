@@ -14,7 +14,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin1',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -25,7 +30,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin2',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -36,7 +46,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin3',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -47,7 +62,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin4',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -58,7 +78,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin5',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -69,7 +94,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin6',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -80,7 +110,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin7',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -91,7 +126,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin8',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -102,7 +142,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin9',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -113,7 +158,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin10',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -124,7 +174,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin11',
      },  
      'cuts'  :  [ 
+            'ele_SR',
             'ele_HWJ',
+            'ele_PUWJ',
+            'topcr',
+            'ele_FakeCR',
+            'ele_HWJ-SR',
      ],  
 }  
    
@@ -135,7 +190,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin1',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    
@@ -146,7 +206,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin2',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    
@@ -157,7 +222,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin3',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    
@@ -168,7 +238,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin4',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    
@@ -179,7 +254,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin5',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    
@@ -190,7 +270,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin6',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    
@@ -201,7 +286,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin7',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    
@@ -212,7 +302,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin8',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    
@@ -223,7 +318,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin9',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    
@@ -234,7 +334,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin10',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    
@@ -245,7 +350,12 @@ nuisances['stat'] = {
             'Wjets_HT_HWJbin11',
      },  
      'cuts'  :  [ 
+            'mu_SR',
             'mu_HWJ',
+            'mu_PUWJ',
+            'topcr',
+            'mu_FakeCR',
+            'mu_HWJ-SR',
      ],  
 }  
    

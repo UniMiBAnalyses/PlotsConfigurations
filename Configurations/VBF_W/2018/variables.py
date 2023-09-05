@@ -27,15 +27,15 @@ variables['pt1']  = {   'name': 'Lepton_pt[0]',
                             }
                         }
 
-variables['pt1Zb1']  = {   'name': 'Lepton_pt[0]',     
-                        'range' : (30,20,50),   
-                        'xaxis' : 'p_{T} 1st lep',
-                        'fold' : 0,
-                            'blind': {
-                              'ele_SR' : 'full',
-                              'mu_SR' : 'full'
-                            }
-                        }
+# variables['pt1Zb1']  = {   'name': 'Lepton_pt[0]',     
+#                         'range' : (30,20,50),   
+#                         'xaxis' : 'p_{T} 1st lep',
+#                         'fold' : 0,
+#                             'blind': {
+#                               'ele_SR' : 'full',
+#                               'mu_SR' : 'full'
+#                             }
+#                         }
 
 variables['pt1Zb2']  = {   'name': 'Lepton_pt[0]',     
                         'range' : (20,20,50),   
@@ -48,25 +48,25 @@ variables['pt1Zb2']  = {   'name': 'Lepton_pt[0]',
                         }
 
 
-variables['pt1Zb3']  = {   'name': 'Lepton_pt[0]',     
-                        'range' : (10,20,50),   
-                        'xaxis' : 'p_{T} 1st lep',
-                        'fold' : 0,
-                            'blind': {
-                              'ele_SR' : 'full',
-                              'mu_SR' : 'full'
-                            }
-                        }
+# variables['pt1Zb3']  = {   'name': 'Lepton_pt[0]',     
+#                         'range' : (10,20,50),   
+#                         'xaxis' : 'p_{T} 1st lep',
+#                         'fold' : 0,
+#                             'blind': {
+#                               'ele_SR' : 'full',
+#                               'mu_SR' : 'full'
+#                             }
+#                         }
 
-variables['pt1Zb4']  = {   'name': 'Lepton_pt[0]',     
-                        'range' : (5,20,50),   
-                        'xaxis' : 'p_{T} 1st lep',
-                        'fold' : 0,
-                            'blind': {
-                              'ele_SR' : 'full',
-                              'mu_SR' : 'full'
-                            }
-                        }
+# variables['pt1Zb4']  = {   'name': 'Lepton_pt[0]',     
+#                         'range' : (5,20,50),   
+#                         'xaxis' : 'p_{T} 1st lep',
+#                         'fold' : 0,
+#                             'blind': {
+#                               'ele_SR' : 'full',
+#                               'mu_SR' : 'full'
+#                             }
+#                         }
 
 variables['eta1']  = {  'name': 'Lepton_eta[0]',     
                         'range' : (24,-2.4,2.4),   
@@ -185,27 +185,27 @@ variables['njet_30']  = {
 #                          }
 
 
-variables['njet_40']  = {
-                         'name': 'Sum$(CleanJet_pt>40)',     
-                         'range' : (8,0,8),   
-                         'xaxis' : 'Number of jets w/ pt>40 GeV',
-                         'fold' : 3,
-                        'blind': {
-                           'ele_SR' : 'full',
-                           'mu_SR' : 'full'
-                         }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
-                         }
+# variables['njet_40']  = {
+#                          'name': 'Sum$(CleanJet_pt>40)',     
+#                          'range' : (8,0,8),   
+#                          'xaxis' : 'Number of jets w/ pt>40 GeV',
+#                          'fold' : 3,
+#                         'blind': {
+#                            'ele_SR' : 'full',
+#                            'mu_SR' : 'full'
+#                          }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
+#                          }
 
-variables['njet_80']  = {
-                         'name': 'Sum$(CleanJet_pt>80)',     
-                         'range' : (8,0,8),   
-                         'xaxis' : 'Number of jets w/ pt>80 GeV',
-                         'fold' : 3,
-                        'blind': {
-                           'ele_SR' : 'full',
-                           'mu_SR' : 'full'
-                         }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
-                         }
+# variables['njet_80']  = {
+#                          'name': 'Sum$(CleanJet_pt>80)',     
+#                          'range' : (8,0,8),   
+#                          'xaxis' : 'Number of jets w/ pt>80 GeV',
+#                          'fold' : 3,
+#                         'blind': {
+#                            'ele_SR' : 'full',
+#                            'mu_SR' : 'full'
+#                          }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
+#                          }
 
 variables['jetpt1']  = {
                         'name': 'CleanJet_pt[0]',
@@ -454,25 +454,25 @@ variables['RPU'] = {   'name': 'R_AN',
                          }
 }
 
-variables['Zl1bin1'] = {   'name': 'Zl1',     
-                        'range' : (50,0,5),   
-                        'xaxis' : 'Zl1',
-                        'fold' : 3,
-                        'blind': {
-                           'ele_SR' : 'full',
-                           'mu_SR' : 'full'
-                         }
-}
+# variables['Zl1bin1'] = {   'name': 'Zl1',     
+#                         'range' : (50,0,5),   
+#                         'xaxis' : 'Zl1',
+#                         'fold' : 3,
+#                         'blind': {
+#                            'ele_SR' : 'full',
+#                            'mu_SR' : 'full'
+#                          }
+# }
 
-variables['Zl1bin2'] = {   'name': 'Zl1',     
-                        'range' : (10,0,5),   
-                        'xaxis' : 'Zl1',
-                        'fold' : 3,
-                        'blind': {
-                           'ele_SR' : 'full',
-                           'mu_SR' : 'full'
-                         }
-}
+# variables['Zl1bin2'] = {   'name': 'Zl1',     
+#                         'range' : (10,0,5),   
+#                         'xaxis' : 'Zl1',
+#                         'fold' : 3,
+#                         'blind': {
+#                            'ele_SR' : 'full',
+#                            'mu_SR' : 'full'
+#                          }
+# }
 
 variables['Zl1bin3'] = {   'name': 'Zl1',     
                         'range' : (60,-3,3),   
