@@ -109,9 +109,10 @@ LepWPWeight = LepWPWeight_1l
 #corrected trigger efficiency
 
 XSWeight   = 'XSWeight'
-SFweight1l = ['puWeight', 'SingleLepton_trigEff_corrected[0]',
-              'Lepton_RecoSF[0]',LepWPWeight_1l, LepWPCut_1l,
-              'btagSF','PUJetIdSF'] 
+SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF'] 
+# SFweight1l = ['puWeight', 'SingleLepton_trigEff_corrected[0]',
+#               'Lepton_RecoSF[0]',LepWPWeight_1l, LepWPCut_1l,
+#               'btagSF','PUJetIdSF'] 
 
 SFweight = '*'.join(SFweight1l)
 
@@ -165,9 +166,10 @@ samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_
 
 
 # # ####### Wjets #########
-Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(PhotonGen_eta)<2.5 ) > 0) '
+# Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(PhotonGen_eta)<2.5 ) > 0) '
+Wjets_photon_filter = '1.'
 # Total_correction = 'WJets_reweight'
-Total_correction = '1'
+Total_correction = '1.'
 
 samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryHWW, 'WJetsToLNu-LO')
                                    + nanoGetSampleFiles(mcDirectoryHWW, 'WJetsToLNu_HT70To100')
@@ -191,7 +193,7 @@ samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryHWW, 'WJetsToLN
 # Fix Wjets binned + LO 
 addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu-LO', '(LHE_HT < 70)') 
 ############
-# HT stiching corrections 2018
+# # HT stiching corrections 2018
 addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT70To100',    '1.21 * 0.95148')  #adding also k-factor
 addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT100To200',   '0.9471') 
 addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT200To400',   '0.9515') 
@@ -517,7 +519,7 @@ Fake_corr = '1.'
 ### Fakes
 samples['Fake'] = {
   'name': [],
-  'weight': METFilter_DATA+'*fakeW35',
+  'weight': METFilter_DATA+'*'+fakeW,
   'weights': [],
   'isData': ['all'],
   'FilesPerJob' : 70,
@@ -529,7 +531,7 @@ for Run in DataRun :
     if "SingleMuon" in DataSet and any(k in Run[0] for k in ["A", "B", "C"]):
       version = 'v2'
     # BE Careful --> we use directory_data because the Lepton tight cut was not applied in post-processing
-    files = nanoGetSampleFiles(fakeDirectoryLat, DataSet+'_'+Run[1]+'-'+version)
+    files = nanoGetSampleFiles(dataDirectoryHWW, DataSet+'_'+Run[1]+'-'+version)
     samples['Fake']['name'].extend(files)
     samples['Fake']['weights'].extend([DataTrig[DataSet]] * len(files))
 

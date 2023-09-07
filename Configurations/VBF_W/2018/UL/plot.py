@@ -199,8 +199,8 @@ plot['top'] = {
                  'color': colors['kAzure']-1,
                  'isSignal' : 0,
                  'isData'   : 0, 
-                #  'scale'    : 1.0 
-                 'scale'    : 0.93512
+                 'scale'    : 1.0 
+                #  'scale'    : 0.93512
                  }
     
 plot['VV']  = {

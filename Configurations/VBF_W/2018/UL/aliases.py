@@ -290,71 +290,71 @@ aliases['DY_LO_pTllrw'] = {
 ###########################################################################################
 #fakes
 
-# basedir_fakes = configurations + "/VBSjjlnu/weights_files/fake_rates/2018"
+basedir_fakes = configurations + "/VBF_W/utils/weights_files/fake_rates/2018UL"
 
-# ets = ["25", "35", "45"]
+ets = ["10", "15", "20", "25", "30", "35", "45"]
 
-# el_pr_file = configurations + "/VBSjjlnu/weights_files/prompt_rates/2018/plot_ElCh_l1_etaVpt_ptel_2D_pr.root"
-# mu_pr_file = configurations + "/VBSjjlnu/weights_files/prompt_rates/2018/plot_MuCh_l1_etaVpt_ptmu_2D_pr.root"
+el_pr_file = configurations + "/VBF_W/utils/weights_files/prompt_rates/2018UL/ElePR.root"
+mu_pr_file = configurations + "/VBF_W/utils/weights_files/prompt_rates/2018UL/MuonPR.root"
 
-# for et in ets:
-#     el_fr_file = basedir_fakes + "/plot_ElCh_JetEt"+et+"_l1_etaVpt_ptel_aseta_fw_ewk_2D.root" #No absolute value for fakes
-#     mu_fr_file = basedir_fakes + "/plot_MuCh_JetEt"+et+"_l1_etaVpt_ptmu_fw_ewk_2D.root"
-#     aliases['fakeWeight_'+et] = { 
-#         'class': 'newFakeWeightOTFall',
-#         'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False),  #doabsEta=False, no stat variations
-#         'linesToAdd' : [
-#             'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#             '.L {}/VBSjjlnu/macros/newfakeweight_OTFall.cc+'.format(configurations)
-#         ],     
-#         'samples': ["Fake"]
+for et in ets:
+    el_fr_file = basedir_fakes + "/EleFR_jet"+et+".root"
+    mu_fr_file = basedir_fakes + "/MuonFR_jet"+et+".root"
+    aliases['fakeWeight_'+et] = { 
+        'class': 'newFakeWeightOTFall',
+        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), True, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+        'linesToAdd' : [
+            'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+            '.L {}/VBF_W/utils/macros/newfakeweight_OTFall.cc+'.format(configurations)
+        ],     
+        'samples': ["Fake"]
+    }
+
+# for et in ["20", "25", "35"]:
+#     aliases['fakeW'+et] = {
+#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
+#         'samples': ['Fake']
 #     }
 
-for et in ["20", "25", "35"]:
-    aliases['fakeW'+et] = {
-        'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-        'samples': ['Fake']
-    }
+#     aliases['fakeWEleUp'+et] = {
+#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_ElUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
+#         'samples': ['Fake']
+#     }
 
-    aliases['fakeWEleUp'+et] = {
-        'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_ElUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-        'samples': ['Fake']
-    }
+#     aliases['fakeWEleDown'+et] = {
+#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_ElDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
+#         'samples': ['Fake']
+#     }
 
-    aliases['fakeWEleDown'+et] = {
-        'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_ElDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-        'samples': ['Fake']
-    }
+#     aliases['fakeWMuUp'+et] = {
+#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_MuUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
+#         'samples': ['Fake']
+#     }
 
-    aliases['fakeWMuUp'+et] = {
-        'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_MuUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-        'samples': ['Fake']
-    }
+#     aliases['fakeWMuDown'+et] = {
+#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_MuDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
+#         'samples': ['Fake']
+#     }
 
-    aliases['fakeWMuDown'+et] = {
-        'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_MuDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-        'samples': ['Fake']
-    }
+#     aliases['fakeWStatEleUp'+et] = {
+#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statElUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
+#         'samples': ['Fake']
+#     }
 
-    aliases['fakeWStatEleUp'+et] = {
-        'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statElUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-        'samples': ['Fake']
-    }
+#     aliases['fakeWStatEleDown'+et] = {
+#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statElDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
+#         'samples': ['Fake']
+#     }
 
-    aliases['fakeWStatEleDown'+et] = {
-        'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statElDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-        'samples': ['Fake']
-    }
+#     aliases['fakeWStatMuUp'+et] = {
+#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statMuUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
+#         'samples': ['Fake']
+#     }
 
-    aliases['fakeWStatMuUp'+et] = {
-        'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statMuUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-        'samples': ['Fake']
-    }
-
-    aliases['fakeWStatMuDown'+et] = {
-        'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statMuDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-        'samples': ['Fake']
-    }
+#     aliases['fakeWStatMuDown'+et] = {
+#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statMuDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
+#         'samples': ['Fake']
+#     }
 
 
 

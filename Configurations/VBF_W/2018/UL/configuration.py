@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'UL_newFake'
+tagger = 'UL_handmadeFake35_NOTrig'
 
 tag = 'vbf_w_2018'+tagger
 
