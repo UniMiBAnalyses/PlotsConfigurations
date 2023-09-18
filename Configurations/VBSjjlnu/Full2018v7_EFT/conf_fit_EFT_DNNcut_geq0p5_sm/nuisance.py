@@ -1,7 +1,6 @@
 from pprint import pprint
 # # # name of samples here must match keys in samples.py 
 
-# VBS_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ", "ewk_WpWm", "ewk_WpWp", "ewk_WmWm"]
 VBS_samples = ["sm"]
 VBS_WV_samples = ["ewk_WpZ", "ewk_WmZ","ewk_WpWm", "ewk_WpWp", "ewk_WmWm"]
 VBS_ZV_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ"]

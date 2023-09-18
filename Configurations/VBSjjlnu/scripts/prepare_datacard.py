@@ -49,7 +49,7 @@ fitter_options= {
     '5':  "--robustFit=1 --robustHesse=1 --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_MaxCalls=9999999 --cminFallbackAlgo Minuit2,Migrad,0:0.1  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND",
     '6':  "--robustFit=1 --robustHesse=1 --cminDefaultMinimizerStrategy 0 --X-rtd=MINIMIZER_analytic --X-rtd MINIMIZER_MaxCalls=9999999 --cminFallbackAlgo Minuit2,Migrad,0:0.1  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND",
     '7':  "--robustFit=1 --stepSize=0.001 --robustHesse=1 --cminDefaultMinimizerStrategy 0 --X-rtd=MINIMIZER_analytic --X-rtd MINIMIZER_MaxCalls=9999999 --cminFallbackAlgo Minuit2,Migrad,0:0.2  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND",
-    '8':  "--robustFit=1 --robustHesse=1 --stepSize=0.001 --cminDefaultMinimizerStrategy 0 --X-rtd=MINIMIZER_analytic --X-rtd MINIMIZER_MaxCalls=99999999999999 --cminFallbackAlgo Minuit2,Migrad,0:0.2  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND",
+    '8':  "--robustFit=1 --stepSize=0.001 --cminDefaultMinimizerStrategy 0 --X-rtd=MINIMIZER_analytic --X-rtd MINIMIZER_MaxCalls=99999999999999 --cminFallbackAlgo Minuit2,Migrad,0:0.2  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND",
 
 }
 
@@ -179,13 +179,18 @@ def fit_and_pulls(datac):
                         "--saveWithUncertainties" if args.save_uncert else "", args.verbosity)
 
     log.debug(cmd)
+
     if not args.dry:
+        log.info("PWD: " + os.getcwd())
+        log.info("Outdir: " + outdir)
+        log.info("result: " + result_name)
         try:
             os.system(cmd)
             with open("{0}/logFit_{1}.txt".format(outdir, result_name)) as f: 
                 log.info(f.read())
-        except e:
-            log.error(e)
+        except:
+            # log.error(e)
+            pass
             
 
     log.info("Printing Pulls and fit diagnostic")
@@ -197,6 +202,8 @@ def fit_and_pulls(datac):
         if not args.dry: os.system(cmd)
     except e:
         log.error(e)
+
+    os.system("mv higgsCombine.{}.FitDiagnostics.mH120.root {}".format(result_name, outdir))
     log.info("DONE!")
 
 ################################################################################## 

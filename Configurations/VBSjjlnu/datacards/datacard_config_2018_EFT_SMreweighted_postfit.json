@@ -3,7 +3,7 @@
     "datacard_name": "2018_signal_res",
     "folders": [
       {
-        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT", 
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT_sm_reweight_only", 
         "name": 2018
       }
     ], 
@@ -24,7 +24,7 @@
     "datacard_name": "2018_signal_boost",
     "folders": [
       {
-        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT",
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT_sm_reweight_only",
         "name": 2018
       }
     ],
@@ -46,7 +46,7 @@
     "datacard_name": "2018_signal_boost_ele",
     "folders": [
       {
-        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT",
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT_sm_reweight_only",
         "name": 2018
       }
     ],
@@ -63,7 +63,7 @@
     "datacard_name": "2018_signal_boost_mu",
     "folders": [
       { 
-        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT",
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT_sm_reweight_only",
         "name": 2018
       }
     ],
@@ -80,7 +80,7 @@
     "datacard_name": "2018_signal_res_ele",
     "folders": [
       {
-        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT",
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT_sm_reweight_only",
         "name": 2018
       }
     ],
@@ -96,7 +96,7 @@
     "datacard_name": "2018_signal_res_mu",
     "folders": [
       { 
-        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT",
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_split_Giacomo_EFT_sm_reweight_only",
         "name": 2018
       }
     ],

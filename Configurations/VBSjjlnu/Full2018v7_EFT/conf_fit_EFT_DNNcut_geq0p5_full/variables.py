@@ -23,6 +23,27 @@ variables['Mww'] = {   'name': 'Mww',
                         'blind': [200. ,3000.]
                         }
 
+
+variables['Mww_10'] = {   'name': 'Mww',
+                        'range' : ([ 200., 300., 400., 500., 600., 800., 1000., 1200., 1500., 2000., 3000.],), #variable range  
+                        'xaxis' : 'M_{WV} [GeV]',
+                        'fold' : 3,
+                        'cuts': sig_cuts,
+                        # 'divideByBinWidth': True, 
+                        'blind': [200. ,3000.]
+                        }
+
+
+variables['Mww_14'] = {   'name': 'Mww',
+                        'range' : ([ 200., 300., 400., 500., 600., 700., 800., 900., 1000., 1200., 1400., 1600., 2000., 2500., 3000.],), #variable range  
+                        'xaxis' : 'M_{WV} [GeV]',
+                        'fold' : 3,
+                        'cuts': sig_cuts,
+                        # 'divideByBinWidth': True, 
+                        'blind': [200. ,3000.]
+                        }
+
+
 variables['DNNoutput_res_v1'] = {
     'name': 'DNNoutput_resolved_v1',
     'range': (25,0.,1),
@@ -268,4 +289,4 @@ variables['deltaeta_vjet'] = {   'name': 'deltaeta_vjet',
                         'cuts': [c for c in sig_cuts if "res" in c]
                         } 
 
-# variables = {i:k for i,k in variables.items() if i == "Mww_2500"}
+variables = {i:k for i,k in variables.items() if i in ["Mww", "Mww_10", "Mww_14", "DNNoutput_res_v1", "DNNoutput_boost", "events", "fit_bins_res", "fit_bins_boost"]}

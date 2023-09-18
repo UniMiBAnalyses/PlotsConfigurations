@@ -1,0 +1,31 @@
+09/08/2023 04:36:34 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+09/08/2023 04:36:34 PM - INFO: Creating workspace
+09/08/2023 04:36:34 PM - DEBUG: combineCards.py res_sig_mu_DNN_geq_0p5_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/res_sig_mu_DNN_geq_0p5/DNNoutput_res_v1/datacard.txt res_sig_mu_DNN_leq_0p5_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/res_sig_mu_DNN_leq_0p5/DNNoutput_res_v1/datacard.txt res_sig_ele_DNN_geq_0p5_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/res_sig_ele_DNN_geq_0p5/DNNoutput_res_v1/datacard.txt res_sig_ele_DNN_leq_0p5_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/res_sig_ele_DNN_leq_0p5/DNNoutput_res_v1/datacard.txt res_wjet_mu_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/res_wjetcr_mu/fit_bins_res/datacard.txt res_wjet_ele_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/res_wjetcr_ele/fit_bins_res/datacard.txt res_top_mu_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/res_topcr_mu/events/datacard.txt res_top_ele_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/res_topcr_ele/events/datacard.txt > datacards/2017_WVlnujj_EFT_SMreweighted/2017_res_dipole/combined_2017_res_dipole.txt
+09/08/2023 04:36:34 PM - DEBUG: text2workspace.py datacards/2017_WVlnujj_EFT_SMreweighted/2017_res_dipole/combined_2017_res_dipole.txt -o datacards/2017_WVlnujj_EFT_SMreweighted/2017_res_dipole/combined_2017_res_dipole.root --X-pack-asympows 
+09/08/2023 04:36:34 PM - INFO: Combining datacards
+09/08/2023 04:36:34 PM - INFO: Preparing workspace
+09/08/2023 04:36:59 PM - INFO: Workspace ready
+09/08/2023 04:44:45 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+09/08/2023 04:44:45 PM - INFO: Running combine (Asimov + pre-fit nuisances)
+09/08/2023 04:44:45 PM - DEBUG: combine -M Significance -t -1  --expectSignal=1 datacards/2017_WVlnujj_EFT_SMreweighted/2017_res_dipole/combined_2017_res_dipole.root   -v 0 \
+                > datacards/2017_WVlnujj_EFT_SMreweighted/2017_res_dipole/logSignificance_MCasimov.txt
+09/08/2023 04:45:05 PM - INFO:  <<< Combine >>> 
+>>> random number generator seed is 123456
+>>> method used is Significance
+
+ -- Significance -- 
+Significance: 1.82007
+Done in 0.28 min (cpu), 0.28 min (real)
+
+09/08/2023 04:45:05 PM - INFO: Running combine (Asimov + post-fit nuisances)
+09/08/2023 04:45:05 PM - DEBUG: combine -M Significance -t -1  --expectSignal=1 --toysFreq datacards/2017_WVlnujj_EFT_SMreweighted/2017_res_dipole/combined_2017_res_dipole.root   -v 0\
+                > datacards/2017_WVlnujj_EFT_SMreweighted/2017_res_dipole/logSignificance_data_asimov.txt
+09/08/2023 04:45:41 PM - INFO:  <<< Combine >>> 
+>>> random number generator seed is 123456
+>>> method used is Significance
+
+ -- Significance -- 
+Significance: 1.71503
+Done in 0.31 min (cpu), 0.31 min (real)
+
+09/08/2023 04:45:41 PM - INFO: Done

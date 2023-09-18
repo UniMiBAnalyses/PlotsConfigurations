@@ -1,0 +1,32 @@
+09/18/2023 12:39:50 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+09/18/2023 12:39:50 PM - INFO: Creating workspace
+09/18/2023 12:39:50 PM - DEBUG: combineCards.py boost_sig_mu_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_mu/DNNoutput_boost/datacard.txt boost_wjet_mu_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_wjetcr_mu/fit_bins_boost/datacard.txt boost_top_mu_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_topcr_mu/events/datacard.txt > datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_boost_mu_dipole/combined_2017_boost_mu_dipole.txt
+09/18/2023 12:39:50 PM - DEBUG: text2workspace.py datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_boost_mu_dipole/combined_2017_boost_mu_dipole.txt -o datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_boost_mu_dipole/combined_2017_boost_mu_dipole.root --X-pack-asympows 
+09/18/2023 12:39:50 PM - INFO: Combining datacards
+09/18/2023 12:39:50 PM - INFO: Preparing workspace
+09/18/2023 12:39:55 PM - INFO: Workspace ready
+09/18/2023 12:41:40 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+09/18/2023 12:41:40 PM - INFO: Running combine (Data unblinding)
+09/18/2023 12:41:40 PM - DEBUG: combine -M Significance  datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_boost_mu_dipole/combined_2017_boost_mu_dipole.root   -v 0 \
+                > datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_boost_mu_dipole/logSignificance_Data.txt
+09/18/2023 12:41:43 PM - INFO:  <<< Combine >>> 
+>>> random number generator seed is 123456
+>>> method used is Significance
+
+ -- Significance -- 
+Significance: 0.656127
+Done in 0.02 min (cpu), 0.02 min (real)
+
+09/18/2023 12:41:43 PM - INFO: Done
+09/18/2023 12:50:48 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+09/18/2023 12:50:48 PM - INFO: Running maximum likelihood fit
+09/18/2023 12:50:48 PM - DEBUG: combineTool.py -M FitDiagnostics -d datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_boost_mu_dipole/combined_2017_boost_mu_dipole.root  -n .2017_boost_mu_dipole_data_unblind  \
+         --saveShapes --saveNormalizations   --robustFit=1 --stepSize=0.001 --cminDefaultMinimizerStrategy 0 --X-rtd=MINIMIZER_analytic --X-rtd MINIMIZER_MaxCalls=99999999999999 --cminFallbackAlgo Minuit2,Migrad,0:0.2  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND -v 3; \
+             mv fitDiagnostics.2017_boost_mu_dipole_data_unblind.root datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_boost_mu_dipole/ 
+09/18/2023 12:50:48 PM - INFO: PWD: /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu
+09/18/2023 12:50:48 PM - INFO: Outdir: datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_boost_mu_dipole
+09/18/2023 12:50:48 PM - INFO: result: 2017_boost_mu_dipole_data_unblind
+09/18/2023 12:50:56 PM - INFO: Printing Pulls and fit diagnostic
+09/18/2023 12:50:56 PM - DEBUG: python /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_10_2_13/src/HiggsAnalysis/CombinedLimit/test/diffNuisances.py --all --abs --format html \
+             datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_boost_mu_dipole/fitDiagnostics.2017_boost_mu_dipole_data_unblind.root > datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_boost_mu_dipole/fit_diagnostic_2017_boost_mu_dipole_data_unblind.html
+09/18/2023 12:50:58 PM - INFO: DONE!

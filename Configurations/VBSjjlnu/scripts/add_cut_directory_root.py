@@ -11,6 +11,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-i","--input",help="Inputfile", type=str)
 parser.add_argument("-o","--output",help="Output file", type=str)
 parser.add_argument("--cut",help="Cut to add", type=str)
+parser.add_argument("--variables",help="Variables to add", nargs="+", default=[])
 args = parser.parse_args()
 
 inF = R.TFile(args.input, "read")
@@ -28,14 +29,14 @@ for cut in inDir.GetListOfKeys():
     inDir.cd(cut.GetName())
 
     for var in inDir.GetListOfKeys():
-        
-        print("Var: ", var.GetName())
+        if len(args.variables) != 0 and var.GetName() not in args.variables: continue 
+        print("Variable: ", var.GetName())
         
         ofF.mkdir(cut.GetName()+"/"+ var.GetName())
         inF.cd(cut.GetName()+"/"+ var.GetName())
         
         for hist in R.gDirectory.GetListOfKeys():
-            print(hist)
+            # print(hist)
             inF.cd(cut.GetName()+"/"+ var.GetName())
             obj = hist.ReadObj()
             ofF.cd(cut.GetName()+"/"+ var.GetName())

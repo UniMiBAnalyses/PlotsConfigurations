@@ -1,0 +1,1 @@
+Initial dir: datacards/2017_EFT_FullOps_DNNcut_geq0p5_mWW_10_cHB_cW_cHW_cHWB_cHj1_cHbox_cHl1_cHQ1/Mww/likelihood_scan_data_asimov

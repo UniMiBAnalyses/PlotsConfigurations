@@ -12,10 +12,10 @@ outputDir = 'rootFile_'+tag
 aliasesFile = direc+'/aliases.py'
 
 # file with list of variables
-variablesFile = direc+'/variables.py'
+variablesFile = direc+'/variables_sm.py'
 
 # file with list of cuts
-cutsFile = direc +'/cuts.py' 
+cutsFile = direc +'/cuts_sm.py' 
 
 # file with list of samples
 samplesFile = direc+'/samples_sm_datacards.py' 
@@ -37,6 +37,6 @@ outputDirDatacard = 'datacards_'+tag
 structureFile = direc+'/structure_split.py'
 
 # nuisance file for mkDatacards
-nuisancesFile = direc+'/nuisances_datacard_tmp.py'
+nuisancesFile = direc+'/nuisances_datacard_sm.py'
 
 customizeScript = direc + '/customize.py'

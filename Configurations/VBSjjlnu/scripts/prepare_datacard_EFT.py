@@ -86,8 +86,8 @@ def prepare_workspace(datac, onlyDC=False):
                                 card["name"], folder["name"],  args.basedir + "/" + folder["basedir"],
                                                                 card["cut"], card["var"]))
 
-    if not args.linear: model = "HiggsAnalysis.AnalyticAnomalousCoupling.AnomalousCouplingEFTNegative:analiticAnomalousCouplingEFTNegative"
-    else: model = "HiggsAnalysis.AnalyticAnomalousCoupling.AnomalousCouplingLinearEFTNegative:AnomalousCouplingLinearEFTNegative"
+    if not args.linear: model = "HiggsAnalysis.AnalyticAnomalousCoupling2.AnomalousCouplingEFTNegative:analiticAnomalousCouplingEFTNegative"
+    else: model = "HiggsAnalysis.AnalyticAnomalousCoupling2.AnomalousCouplingLinearEFTNegative:analiticAnomalousCouplingLinearEFTNegative"
 
     if args.masks:
         txt2wp = "text2workspace.py {0}/combined_{1}.txt -P {3} \

@@ -1,0 +1,67 @@
+WARNING: the default behaviour of PostFitShapesFromWorkspace is to use the covariance matrix sampling method for the post-fit uncertainty. The option --sampling is deprecated and will be removed in future versions of CombineHarvester
+[SetFlag] Changing value of flag "workspaces-use-clone" from 0 to 1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing dataset boost_sig_ele_2017
+[SetFlag] Changing value of flag "workspaces-use-clone" from 0 to 1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Top_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_6_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_7_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_4_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_5_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_2_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_3_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_1_norm_ele_boost_2017
+>> Doing postfit: TotalBkg
+>> Doing postfit: TotalSig
+>> Doing postfit: TotalProcs
+>> Doing postfit: boost_sig_ele_2017,DY
+>> Doing postfit: boost_sig_ele_2017,Fake
+>> Doing postfit: boost_sig_ele_2017,VBF-V_dipole
+>> Doing postfit: boost_sig_ele_2017,VVV
+>> Doing postfit: boost_sig_ele_2017,VV_WZjj
+>> Doing postfit: boost_sig_ele_2017,VV_WZll
+>> Doing postfit: boost_sig_ele_2017,VV_ZZ
+>> Doing postfit: boost_sig_ele_2017,VV_osWW
+>> Doing postfit: boost_sig_ele_2017,VV_ssWW
+>> Doing postfit: boost_sig_ele_2017,Vg
+>> Doing postfit: boost_sig_ele_2017,VgS
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_1
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_2
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_3
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_4
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_5
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_6
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_7
+>> Doing postfit: boost_sig_ele_2017,ggWW
+>> Doing postfit: boost_sig_ele_2017,sm
+>> Doing postfit: boost_sig_ele_2017,top
+>> Doing postfit: boost_sig_ele_2017,TotalBkg
+>> Doing postfit: boost_sig_ele_2017,TotalSig
+>> Doing postfit: boost_sig_ele_2017,TotalProcs
+
+Bin                       Total relative bkg uncert. (postfit)
+----------------------------------------------------------
+boost_sig_ele_2017        0.02615   
+
+Bin                       Process              Scale factor
+----------------------------------------------------------
+boost_sig_ele_2017        DY                   1.00000   
+boost_sig_ele_2017        Fake                 1.00000   
+boost_sig_ele_2017        VBF-V_dipole         1.00000   
+boost_sig_ele_2017        VVV                  1.00000   
+boost_sig_ele_2017        VV_WZjj              1.00000   
+boost_sig_ele_2017        VV_WZll              1.00000   
+boost_sig_ele_2017        VV_ZZ                1.00000   
+boost_sig_ele_2017        VV_osWW              1.00000   
+boost_sig_ele_2017        VV_ssWW              1.00000   
+boost_sig_ele_2017        Vg                   1.00000   
+boost_sig_ele_2017        VgS                  1.00000   
+boost_sig_ele_2017        Wjets_boost_1        1.00000   
+boost_sig_ele_2017        Wjets_boost_2        1.00000   
+boost_sig_ele_2017        Wjets_boost_3        1.00000   
+boost_sig_ele_2017        Wjets_boost_4        1.00000   
+boost_sig_ele_2017        Wjets_boost_5        1.00000   
+boost_sig_ele_2017        Wjets_boost_6        1.00000   
+boost_sig_ele_2017        Wjets_boost_7        1.00000   
+boost_sig_ele_2017        ggWW                 1.00000   
+boost_sig_ele_2017        sm                   1.00000   
+boost_sig_ele_2017        top                  1.00000   

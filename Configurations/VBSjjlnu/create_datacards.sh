@@ -1,0 +1,1 @@
+python scripts/prepare_datacard_EFT.py -c datacards/datacard_config_2017_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_10.json  -b . -o $PWD/datacards/2017_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_10_cHB_cW_cHW_cHWB_cHj1_cHbox_cHl1_cHQ1 -p workspace -d 2017 --ops cW cHW cHWB cHbox cHB cHl1 cHQ1 cHj1

@@ -25,6 +25,7 @@ parser.add_argument("--rMin", help="Min for scan", type=float,default=0)
 parser.add_argument("--rMax", help="Max for scan", type=float,default=1.5)
 parser.add_argument("--skip-initial", action="store_true", help="skip initial fit", default=False)
 parser.add_argument("--clean", help="Remove previous scan point root files", action="store_true", default=False)
+parser.add_argument("--doLocal", action="store_true", help="Do not run in Batch, run in local", default=False)
 args = parser.parse_args()
 
 
@@ -79,13 +80,21 @@ def do_scan(datac):
                         fitter_options[args.fit_options], args.verbose,args.rMin, args.rMax))
     if args.clean:
         cmd.append("rm higgsCombine.scan_all.POINTS*")
-    cmd.append("""combineTool.py -M MultiDimFit higgsCombine.initialFit.MultiDimFit.mH120.root -n .scan_all \
-                --rMin={0} --rMax={1}  --snapshotName MultiDimFit  \
-                {2} --algo grid --point {3} {4} \
-                --split-points={9} --job-mode=condor --task-name {8} \
-                --sub-opts='+JobFlavour="{5}"' -v {6} {7}""".format(args.rMin, args.rMax, toysf, args.points,
-                        fitter_options[args.fit_options],args.queue, args.verbose, "--dry-run" if args.dry else "",
-                        datac["datacard_name"], args.split ))
+
+    if not args.doLocal:
+       cmd.append("""combineTool.py -M MultiDimFit higgsCombine.initialFit.MultiDimFit.mH120.root -n .scan_all \
+                   --rMin={0} --rMax={1}  --snapshotName MultiDimFit  \
+                   {2} --algo grid --points {3} {4} \
+                   --split-points={9} --job-mode=condor --task-name {8} \
+                   --sub-opts='+JobFlavour="{5}"' -v {6} {7}""".format(args.rMin, args.rMax, toysf, args.points,
+                           fitter_options[args.fit_options],args.queue, args.verbose, "--dry-run" if args.dry else "",
+                           datac["datacard_name"], args.split ))
+    else:
+       cmd.append("""combine -M MultiDimFit higgsCombine.initialFit.MultiDimFit.mH120.root -n .scan_all \
+                   --rMin={0} --rMax={1}  --snapshotName MultiDimFit  \
+                   {2} --algo grid --points {3} {4}  -v {6} {7}""".format(args.rMin, args.rMax, toysf, args.points,
+                           fitter_options[args.fit_options],args.queue, args.verbose, "--dry-run" if args.dry else "",
+                           datac["datacard_name"], args.split ))
 
     with open("{}/script_preparation.sh".format(outdir), "w") as of:
         of.write("\n\n".join(cmd))

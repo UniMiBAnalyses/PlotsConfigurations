@@ -1,0 +1,11 @@
+for poi in k_cHB; do python scripts/prepare_likelihood_scan_EFT.py -c datacards/datacard_config_2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_10.json -o $PWD/datacards/2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_cHB_cHbox_cW_cHW_cHWB_cHj1 -p graph -pois $poi --data-asimov -fo 1 --points 20 --doLocal -v 0 -fr k_cW k_cHbox k_cHW k_cHj1 k_cHWB --points 50; done
+
+for poi in k_cW; do python scripts/prepare_likelihood_scan_EFT.py -c datacards/datacard_config_2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_10.json -o $PWD/datacards/2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_cHB_cHbox_cW_cHW_cHWB_cHj1 -p scan -pois $poi --data-asimov -fo 1 --points 50 --doLocal -v 0 -fr k_cHB k_cHbox k_cHW k_cHj1 k_cHWB --points 50; done
+
+for poi in k_cHW; do python scripts/prepare_likelihood_scan_EFT.py -c datacards/datacard_config_2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_10.json -o $PWD/datacards/2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_cHB_cHbox_cW_cHW_cHWB_cHj1 -p scan -pois $poi --data-asimov -fo 1 --points 20 --doLocal -v 0 -fr k_cW k_cHbox k_cHB k_cHj1 k_cHWB --points 50; done
+
+for poi in k_cHWB; do python scripts/prepare_likelihood_scan_EFT.py -c datacards/datacard_config_2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_10.json -o $PWD/datacards/2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_cHB_cHbox_cW_cHW_cHWB_cHj1 -p scan -pois $poi --data-asimov -fo 1 --points 20 --doLocal -v 0 -fr k_cW k_cHbox k_cHB k_cHj1 k_cHW --points 50; done
+
+for poi in k_cHbox; do python scripts/prepare_likelihood_scan_EFT.py -c datacards/datacard_config_2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_10.json -o $PWD/datacards/2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_cHB_cHbox_cW_cHW_cHWB_cHj1 -p scan -pois $poi --data-asimov -fo 1 --points 20 --doLocal -v 0 -fr k_cW k_cHW k_cHB k_cHj1 k_cHWB --points 50; done
+
+for poi in k_cHj1; do python scripts/prepare_likelihood_scan_EFT.py -c datacards/datacard_config_2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_10.json -o $PWD/datacards/2018_EFT_FullOps_BoostAllVars_DNNcut_geq0p5_full_mWW_cHB_cHbox_cW_cHW_cHWB_cHj1 -p scan -pois $poi --data-asimov -fo 1 --points 20 --doLocal -v 0 -fr k_cW k_cHbox k_cHB k_cHW k_cHWB --points 50; done

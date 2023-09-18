@@ -140,14 +140,14 @@ groupPlot['VBS']  = {
               }
 
 
-# groupPlot['cW']  = {
-#                  'nameHR' : 'SM+cW=1',
-#                  'isSignal' : 1,
-#                  'color': palette["Green"],
-#                  'samples'  : ["lin_cW", "quad_cW"],
-#                  'fill': 1001
-#               }
-# 
+groupPlot['cW']  = {
+                 'nameHR' : 'SM+cW=1',
+                 'isSignal' : 3,
+                 'color': palette["Green"],
+                 'samples'  : ["lin_cW", "quad_cW"],
+                 'fill': 1001
+              }
+
 # groupPlot['cHW']  = {
 #                  'nameHR' : 'SM+cHW=5',
 #                  'isSignal' : 1,
@@ -279,19 +279,19 @@ plot['sm']  = {
             }
 
 
-# plot['lin_cW']  = {
-#                 'color': wjets_palette[5],
-#                 'isSignal' : 1,
-#                 'isData'   : 0,
-#                 'scale'    : 1.0,
-#             }
-# 
-# plot['quad_cW']  = {
-#                 'color': wjets_palette[5],
-#                 'isSignal' : 1,
-#                 'isData'   : 0,
-#                 'scale'    : 1.0,
-#             }
+plot['lin_cW']  = {
+                'color': wjets_palette[5],
+                'isSignal' : 1,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
+
+plot['quad_cW']  = {
+                'color': wjets_palette[5],
+                'isSignal' : 1,
+                'isData'   : 0,
+                'scale'    : 1.0,
+            }
 # 
 # plot['linm1_cW']  = {
 #                 'color': wjets_palette[5],

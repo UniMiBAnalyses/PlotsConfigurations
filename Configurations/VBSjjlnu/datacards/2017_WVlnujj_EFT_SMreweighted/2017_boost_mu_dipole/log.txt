@@ -1,0 +1,31 @@
+09/08/2023 04:38:04 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+09/08/2023 04:38:04 PM - INFO: Creating workspace
+09/08/2023 04:38:04 PM - DEBUG: combineCards.py boost_sig_mu_DNN_geq_0p5_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/boost_sig_mu_DNN_geq_0p5/DNNoutput_boost/datacard.txt boost_sig_mu_DNN_leq_0p5_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/boost_sig_mu_DNN_leq_0p5/DNNoutput_boost/datacard.txt boost_wjet_mu_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/boost_wjetcr_mu/fit_bins_boost/datacard.txt boost_top_mu_2017=./Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_sm_datacards/boost_topcr_mu/events/datacard.txt > datacards/2017_WVlnujj_EFT_SMreweighted/2017_boost_mu_dipole/combined_2017_boost_mu_dipole.txt
+09/08/2023 04:38:04 PM - DEBUG: text2workspace.py datacards/2017_WVlnujj_EFT_SMreweighted/2017_boost_mu_dipole/combined_2017_boost_mu_dipole.txt -o datacards/2017_WVlnujj_EFT_SMreweighted/2017_boost_mu_dipole/combined_2017_boost_mu_dipole.root --X-pack-asympows 
+09/08/2023 04:38:04 PM - INFO: Combining datacards
+09/08/2023 04:38:04 PM - INFO: Preparing workspace
+09/08/2023 04:38:10 PM - INFO: Workspace ready
+09/08/2023 04:46:44 PM - INFO: >>>>>>>>>>>>>>>>>> Starting new run
+09/08/2023 04:46:44 PM - INFO: Running combine (Asimov + pre-fit nuisances)
+09/08/2023 04:46:44 PM - DEBUG: combine -M Significance -t -1  --expectSignal=1 datacards/2017_WVlnujj_EFT_SMreweighted/2017_boost_mu_dipole/combined_2017_boost_mu_dipole.root   -v 0 \
+                > datacards/2017_WVlnujj_EFT_SMreweighted/2017_boost_mu_dipole/logSignificance_MCasimov.txt
+09/08/2023 04:46:47 PM - INFO:  <<< Combine >>> 
+>>> random number generator seed is 123456
+>>> method used is Significance
+
+ -- Significance -- 
+Significance: 1.30375
+Done in 0.02 min (cpu), 0.02 min (real)
+
+09/08/2023 04:46:47 PM - INFO: Running combine (Asimov + post-fit nuisances)
+09/08/2023 04:46:47 PM - DEBUG: combine -M Significance -t -1  --expectSignal=1 --toysFreq datacards/2017_WVlnujj_EFT_SMreweighted/2017_boost_mu_dipole/combined_2017_boost_mu_dipole.root   -v 0\
+                > datacards/2017_WVlnujj_EFT_SMreweighted/2017_boost_mu_dipole/logSignificance_data_asimov.txt
+09/08/2023 04:46:51 PM - INFO:  <<< Combine >>> 
+>>> random number generator seed is 123456
+>>> method used is Significance
+
+ -- Significance -- 
+Significance: 1.37124
+Done in 0.02 min (cpu), 0.02 min (real)
+
+09/08/2023 04:46:51 PM - INFO: Done

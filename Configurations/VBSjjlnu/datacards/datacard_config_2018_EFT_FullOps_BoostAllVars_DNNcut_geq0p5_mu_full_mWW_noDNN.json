@@ -18,12 +18,12 @@
                 "name": "boost_wjetcr_mu"
             }, 
             {
-                "var": "Mww", 
+                "var": "Mww_10", 
                 "cut": "boost_sig_mu_DNN_geq_0p5", 
                 "name": "boost_sig_mu_DNN_geq_0p5"
             }, 
             {
-                "var": "Mww", 
+                "var": "Mww_10", 
                 "cut": "boost_sig_mu_DNN_leq_0p5", 
                 "name": "boost_sig_mu_DNN_leq_0p5"
             } 

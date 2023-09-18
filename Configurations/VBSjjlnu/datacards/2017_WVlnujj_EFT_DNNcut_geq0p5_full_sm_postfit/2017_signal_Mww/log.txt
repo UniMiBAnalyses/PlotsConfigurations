@@ -1,0 +1,700 @@
+09/18/2023 01:16:16 PM - INFO: Preparing datacard: 2017_signal_Mww
+09/18/2023 01:16:16 PM - DEBUG: combineCards.py boost_sig_mu_2017=/afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_mu/Mww_10/datacard.txt boost_sig_ele_2017=/afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_ele/Mww_10/datacard.txt res_sig_mu_2017=/afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/res_sig_mu/Mww_10/datacard.txt res_sig_ele_2017=/afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/res_sig_ele/Mww_10/datacard.txt > combined_2017_signal_Mww.txt
+09/18/2023 01:16:16 PM - DEBUG: text2workspace.py combined_2017_signal_Mww.txt -o combined_2017_signal_Mww.root --X-pack-asympows
+09/18/2023 01:16:16 PM - INFO: Preparing workspace
+09/18/2023 01:16:31 PM - INFO: Workspace ready
+09/18/2023 01:16:48 PM - INFO: Preparing datacard: 2017_signal_Mww
+09/18/2023 01:16:48 PM - INFO: Running combine
+09/18/2023 01:16:48 PM - DEBUG: PostFitShapesFromWorkspace -w combined_2017_signal_Mww.root -d combined_2017_signal_Mww.txt -o output_postfit.root  \
+         -f /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/datacards/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm/2017_all_dipole/fitDiagnostics.2017_all_dipole_data_unblind.root:fit_b --samples 500 \
+         --postfit --sampling --total-shapes --print --covariance --skip-prefit > logPostFitShape.txt
+09/18/2023 01:22:13 PM - INFO: WARNING: the default behaviour of PostFitShapesFromWorkspace is to use the covariance matrix sampling method for the post-fit uncertainty. The option --sampling is deprecated and will be removed in future versions of CombineHarvester
+[SetFlag] Changing value of flag "workspaces-use-clone" from 0 to 1
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing dataset boost_sig_ele_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing dataset boost_sig_mu_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing dataset res_sig_ele_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing dataset res_sig_mu_2017
+[SetFlag] Changing value of flag "workspaces-use-clone" from 0 to 1
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+                                 boost_sig_mu_2017            0   Fake             0    292.38     0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    1229.3     0    
+[LoadShapes] Warning: process shape has negative bins
+--------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  rate       shape
+--------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Fake             0    15107      0    
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_PS_FSR_Wjets_res_9                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_PS_FSR_Wjets_res_9                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_PS_FSR_Wjets_res_9                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_PS_ISR_Wjets_res_9                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_PS_ISR_Wjets_res_9                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_PS_ISR_Wjets_res_9                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_cferr1                               shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_cferr1                               shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_cferr1                               shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_cferr2                               shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_cferr2                               shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_cferr2                               shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_hf                                   shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_hf                                   shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_hf                                   shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_hfstats1_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_hfstats1_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_hfstats1_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_hfstats2_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_hfstats2_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_hfstats2_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_jes                                  shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_jes                                  shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_jes                                  shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_lf                                   shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_lf                                   shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_lf                                   shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_lfstats1_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_lfstats1_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_lfstats1_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_lfstats2_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_lfstats2_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_btag_lfstats2_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_eff_m_2017                                shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_eff_m_2017                                shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_eff_m_2017                                shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_eff_prefiring_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_eff_prefiring_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_eff_prefiring_2017                        shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_eff_trigger_2017                          shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_eff_trigger_2017                          shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_eff_trigger_2017                          shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 boost_sig_mu_2017            0   Fake             0    CMS_fake_mu_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 boost_sig_mu_2017            0   Fake             0    CMS_fake_mu_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 boost_sig_mu_2017            0   Fake             0    CMS_fake_mu_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Fake             0    CMS_fake_mu_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Fake             0    CMS_fake_mu_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Fake             0    CMS_fake_mu_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 boost_sig_mu_2017            0   Fake             0    CMS_fake_mu_stat_2017                         shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 boost_sig_mu_2017            0   Fake             0    CMS_fake_mu_stat_2017                         shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 boost_sig_mu_2017            0   Fake             0    CMS_fake_mu_stat_2017                         shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Fake             0    CMS_fake_mu_stat_2017                         shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Fake             0    CMS_fake_mu_stat_2017                         shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Fake             0    CMS_fake_mu_stat_2017                         shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_fatjet_tau21eff_2017                      shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_fatjet_tau21eff_2017                      shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_fatjet_tau21eff_2017                      shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_fj_tau21ptextr_2017                       shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_fj_tau21ptextr_2017                       shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_fj_tau21ptextr_2017                       shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_jetpuid_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_jetpuid_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_jetpuid_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_scale_m_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_scale_m_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    CMS_scale_m_2017                              shape    1             0    0   
+[LoadShapes] Warning: Systematic shape has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    QCDscale_Wjets                                shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_u has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    QCDscale_Wjets                                shape    1             0    0   
+[LoadShapes] Warning: Systematic shape_d has negative bins
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mass   analysis  era    channel  bin                          id  process          sig  nuisance                                      type     value         sh_d sh_u
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 res_sig_mu_2017              0   Wjets_res_9      0    QCDscale_Wjets                                shape    1             0    0   
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_4_norm_mu_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_8_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_9_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_4_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_17_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_6_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_7_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_1_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_2_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_16_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_14_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_15_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_14_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_21_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_20_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_7_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Top_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_15_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Top_norm_mu_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_5_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Top_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_9_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_8_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_3_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_2_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_1_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_1_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_7_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_6_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_5_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_4_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_16_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_17_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_20_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_21_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_12_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_13_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_10_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_11_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_3_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_18_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_19_norm_ele_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_19_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_18_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_13_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_12_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_5_norm_mu_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_10_norm_mu_res_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_3_norm_mu_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_2_norm_mu_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_1_norm_mu_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Top_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_6_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_7_norm_mu_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_4_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_5_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_2_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_3_norm_ele_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_boost_6_norm_mu_boost_2017
+[#1] INFO:ObjectHandling -- RooWorkspace::import(_rateParams) importing RooRealVar::CMS_Wjets_res_11_norm_mu_res_2017
+>> Doing postfit: TotalBkg
+>> Doing postfit: TotalSig
+>> Doing postfit: TotalProcs
+>> Doing postfit: boost_sig_ele_2017,DY
+>> Doing postfit: boost_sig_ele_2017,Fake
+>> Doing postfit: boost_sig_ele_2017,VBF-V_dipole
+>> Doing postfit: boost_sig_ele_2017,VVV
+>> Doing postfit: boost_sig_ele_2017,VV_WZjj
+>> Doing postfit: boost_sig_ele_2017,VV_WZll
+>> Doing postfit: boost_sig_ele_2017,VV_ZZ
+>> Doing postfit: boost_sig_ele_2017,VV_osWW
+>> Doing postfit: boost_sig_ele_2017,VV_ssWW
+>> Doing postfit: boost_sig_ele_2017,Vg
+>> Doing postfit: boost_sig_ele_2017,VgS
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_1
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_2
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_3
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_4
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_5
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_6
+>> Doing postfit: boost_sig_ele_2017,Wjets_boost_7
+>> Doing postfit: boost_sig_ele_2017,ggWW
+>> Doing postfit: boost_sig_ele_2017,sm
+>> Doing postfit: boost_sig_ele_2017,top
+>> Doing postfit: boost_sig_ele_2017,TotalBkg
+>> Doing postfit: boost_sig_ele_2017,TotalSig
+>> Doing postfit: boost_sig_ele_2017,TotalProcs
+>> Doing postfit: boost_sig_mu_2017,DY
+>> Doing postfit: boost_sig_mu_2017,Fake
+>> Doing postfit: boost_sig_mu_2017,VBF-V_dipole
+>> Doing postfit: boost_sig_mu_2017,VVV
+>> Doing postfit: boost_sig_mu_2017,VV_WZjj
+>> Doing postfit: boost_sig_mu_2017,VV_WZll
+>> Doing postfit: boost_sig_mu_2017,VV_ZZ
+>> Doing postfit: boost_sig_mu_2017,VV_osWW
+>> Doing postfit: boost_sig_mu_2017,VV_ssWW
+>> Doing postfit: boost_sig_mu_2017,Vg
+>> Doing postfit: boost_sig_mu_2017,VgS
+>> Doing postfit: boost_sig_mu_2017,Wjets_boost_1
+>> Doing postfit: boost_sig_mu_2017,Wjets_boost_2
+>> Doing postfit: boost_sig_mu_2017,Wjets_boost_3
+>> Doing postfit: boost_sig_mu_2017,Wjets_boost_4
+>> Doing postfit: boost_sig_mu_2017,Wjets_boost_5
+>> Doing postfit: boost_sig_mu_2017,Wjets_boost_6
+>> Doing postfit: boost_sig_mu_2017,Wjets_boost_7
+>> Doing postfit: boost_sig_mu_2017,ggWW
+>> Doing postfit: boost_sig_mu_2017,sm
+>> Doing postfit: boost_sig_mu_2017,top
+>> Doing postfit: boost_sig_mu_2017,TotalBkg
+>> Doing postfit: boost_sig_mu_2017,TotalSig
+>> Doing postfit: boost_sig_mu_2017,TotalProcs
+>> Doing postfit: res_sig_ele_2017,DY
+>> Doing postfit: res_sig_ele_2017,Fake
+>> Doing postfit: res_sig_ele_2017,VBF-V_dipole
+>> Doing postfit: res_sig_ele_2017,VVV
+>> Doing postfit: res_sig_ele_2017,VV_WZjj
+>> Doing postfit: res_sig_ele_2017,VV_WZll
+>> Doing postfit: res_sig_ele_2017,VV_ZZ
+>> Doing postfit: res_sig_ele_2017,VV_osWW
+>> Doing postfit: res_sig_ele_2017,VV_ssWW
+>> Doing postfit: res_sig_ele_2017,Vg
+>> Doing postfit: res_sig_ele_2017,VgS
+>> Doing postfit: res_sig_ele_2017,Wjets_res_1
+>> Doing postfit: res_sig_ele_2017,Wjets_res_10
+>> Doing postfit: res_sig_ele_2017,Wjets_res_11
+>> Doing postfit: res_sig_ele_2017,Wjets_res_12
+>> Doing postfit: res_sig_ele_2017,Wjets_res_13
+>> Doing postfit: res_sig_ele_2017,Wjets_res_14
+>> Doing postfit: res_sig_ele_2017,Wjets_res_15
+>> Doing postfit: res_sig_ele_2017,Wjets_res_16
+>> Doing postfit: res_sig_ele_2017,Wjets_res_17
+>> Doing postfit: res_sig_ele_2017,Wjets_res_18
+>> Doing postfit: res_sig_ele_2017,Wjets_res_19
+>> Doing postfit: res_sig_ele_2017,Wjets_res_2
+>> Doing postfit: res_sig_ele_2017,Wjets_res_20
+>> Doing postfit: res_sig_ele_2017,Wjets_res_21
+>> Doing postfit: res_sig_ele_2017,Wjets_res_3
+>> Doing postfit: res_sig_ele_2017,Wjets_res_4
+>> Doing postfit: res_sig_ele_2017,Wjets_res_5
+>> Doing postfit: res_sig_ele_2017,Wjets_res_6
+>> Doing postfit: res_sig_ele_2017,Wjets_res_7
+>> Doing postfit: res_sig_ele_2017,Wjets_res_8
+>> Doing postfit: res_sig_ele_2017,Wjets_res_9
+>> Doing postfit: res_sig_ele_2017,ggWW
+>> Doing postfit: res_sig_ele_2017,sm
+>> Doing postfit: res_sig_ele_2017,top
+>> Doing postfit: res_sig_ele_2017,TotalBkg
+>> Doing postfit: res_sig_ele_2017,TotalSig
+>> Doing postfit: res_sig_ele_2017,TotalProcs
+>> Doing postfit: res_sig_mu_2017,DY
+>> Doing postfit: res_sig_mu_2017,Fake
+>> Doing postfit: res_sig_mu_2017,VBF-V_dipole
+>> Doing postfit: res_sig_mu_2017,VVV
+>> Doing postfit: res_sig_mu_2017,VV_WZjj
+>> Doing postfit: res_sig_mu_2017,VV_WZll
+>> Doing postfit: res_sig_mu_2017,VV_ZZ
+>> Doing postfit: res_sig_mu_2017,VV_osWW
+>> Doing postfit: res_sig_mu_2017,VV_ssWW
+>> Doing postfit: res_sig_mu_2017,Vg
+>> Doing postfit: res_sig_mu_2017,VgS
+>> Doing postfit: res_sig_mu_2017,Wjets_res_1
+>> Doing postfit: res_sig_mu_2017,Wjets_res_10
+>> Doing postfit: res_sig_mu_2017,Wjets_res_11
+>> Doing postfit: res_sig_mu_2017,Wjets_res_12
+>> Doing postfit: res_sig_mu_2017,Wjets_res_13
+>> Doing postfit: res_sig_mu_2017,Wjets_res_14
+>> Doing postfit: res_sig_mu_2017,Wjets_res_15
+>> Doing postfit: res_sig_mu_2017,Wjets_res_16
+>> Doing postfit: res_sig_mu_2017,Wjets_res_17
+>> Doing postfit: res_sig_mu_2017,Wjets_res_18
+>> Doing postfit: res_sig_mu_2017,Wjets_res_19
+>> Doing postfit: res_sig_mu_2017,Wjets_res_2
+>> Doing postfit: res_sig_mu_2017,Wjets_res_20
+>> Doing postfit: res_sig_mu_2017,Wjets_res_21
+>> Doing postfit: res_sig_mu_2017,Wjets_res_3
+>> Doing postfit: res_sig_mu_2017,Wjets_res_4
+>> Doing postfit: res_sig_mu_2017,Wjets_res_5
+>> Doing postfit: res_sig_mu_2017,Wjets_res_6
+>> Doing postfit: res_sig_mu_2017,Wjets_res_7
+>> Doing postfit: res_sig_mu_2017,Wjets_res_8
+>> Doing postfit: res_sig_mu_2017,Wjets_res_9
+>> Doing postfit: res_sig_mu_2017,ggWW
+>> Doing postfit: res_sig_mu_2017,sm
+>> Doing postfit: res_sig_mu_2017,top
+>> Doing postfit: res_sig_mu_2017,TotalBkg
+>> Doing postfit: res_sig_mu_2017,TotalSig
+>> Doing postfit: res_sig_mu_2017,TotalProcs
+
+Bin                       Total relative bkg uncert. (postfit)
+----------------------------------------------------------
+boost_sig_ele_2017        0.02409   
+boost_sig_mu_2017         0.01743   
+res_sig_ele_2017          0.00603   
+res_sig_mu_2017           0.00535   
+
+Bin                       Process              Scale factor
+----------------------------------------------------------
+boost_sig_ele_2017        DY                   1.00000   
+boost_sig_ele_2017        Fake                 1.00000   
+boost_sig_ele_2017        VBF-V_dipole         1.00000   
+boost_sig_ele_2017        VVV                  1.00000   
+boost_sig_ele_2017        VV_WZjj              1.00000   
+boost_sig_ele_2017        VV_WZll              1.00000   
+boost_sig_ele_2017        VV_ZZ                1.00000   
+boost_sig_ele_2017        VV_osWW              1.00000   
+boost_sig_ele_2017        VV_ssWW              1.00000   
+boost_sig_ele_2017        Vg                   1.00000   
+boost_sig_ele_2017        VgS                  1.00000   
+boost_sig_ele_2017        Wjets_boost_1        1.00000   
+boost_sig_ele_2017        Wjets_boost_2        1.00000   
+boost_sig_ele_2017        Wjets_boost_3        1.00000   
+boost_sig_ele_2017        Wjets_boost_4        1.00000   
+boost_sig_ele_2017        Wjets_boost_5        1.00000   
+boost_sig_ele_2017        Wjets_boost_6        1.00000   
+boost_sig_ele_2017        Wjets_boost_7        1.00000   
+boost_sig_ele_2017        ggWW                 1.00000   
+boost_sig_ele_2017        sm                   1.00000   
+boost_sig_ele_2017        top                  1.00000   
+boost_sig_mu_2017         DY                   1.00000   
+boost_sig_mu_2017         Fake                 1.00000   
+boost_sig_mu_2017         VBF-V_dipole         1.00000   
+boost_sig_mu_2017         VVV                  1.00000   
+boost_sig_mu_2017         VV_WZjj              1.00000   
+boost_sig_mu_2017         VV_WZll              1.00000   
+boost_sig_mu_2017         VV_ZZ                1.00000   
+boost_sig_mu_2017         VV_osWW              1.00000   
+boost_sig_mu_2017         VV_ssWW              1.00000   
+boost_sig_mu_2017         Vg                   1.00000   
+boost_sig_mu_2017         VgS                  1.00000   
+boost_sig_mu_2017         Wjets_boost_1        1.00000   
+boost_sig_mu_2017         Wjets_boost_2        1.00000   
+boost_sig_mu_2017         Wjets_boost_3        1.00000   
+boost_sig_mu_2017         Wjets_boost_4        1.00000   
+boost_sig_mu_2017         Wjets_boost_5        1.00000   
+boost_sig_mu_2017         Wjets_boost_6        1.00000   
+boost_sig_mu_2017         Wjets_boost_7        1.00000   
+boost_sig_mu_2017         ggWW                 1.00000   
+boost_sig_mu_2017         sm                   1.00000   
+boost_sig_mu_2017         top                  1.00000   
+res_sig_ele_2017          DY                   1.00000   
+res_sig_ele_2017          Fake                 1.00000   
+res_sig_ele_2017          VBF-V_dipole         1.00000   
+res_sig_ele_2017          VVV                  1.00000   
+res_sig_ele_2017          VV_WZjj              1.00000   
+res_sig_ele_2017          VV_WZll              1.00000   
+res_sig_ele_2017          VV_ZZ                1.00000   
+res_sig_ele_2017          VV_osWW              1.00000   
+res_sig_ele_2017          VV_ssWW              1.00000   
+res_sig_ele_2017          Vg                   1.00000   
+res_sig_ele_2017          VgS                  1.00000   
+res_sig_ele_2017          Wjets_res_1          1.00000   
+res_sig_ele_2017          Wjets_res_10         1.00000   
+res_sig_ele_2017          Wjets_res_11         1.00000   
+res_sig_ele_2017          Wjets_res_12         1.00000   
+res_sig_ele_2017          Wjets_res_13         1.00000   
+res_sig_ele_2017          Wjets_res_14         1.00000   
+res_sig_ele_2017          Wjets_res_15         1.00000   
+res_sig_ele_2017          Wjets_res_16         1.00000   
+res_sig_ele_2017          Wjets_res_17         1.00000   
+res_sig_ele_2017          Wjets_res_18         1.00000   
+res_sig_ele_2017          Wjets_res_19         1.00000   
+res_sig_ele_2017          Wjets_res_2          1.00000   
+res_sig_ele_2017          Wjets_res_20         1.00000   
+res_sig_ele_2017          Wjets_res_21         1.00000   
+res_sig_ele_2017          Wjets_res_3          1.00000   
+res_sig_ele_2017          Wjets_res_4          1.00000   
+res_sig_ele_2017          Wjets_res_5          1.00000   
+res_sig_ele_2017          Wjets_res_6          1.00000   
+res_sig_ele_2017          Wjets_res_7          1.00000   
+res_sig_ele_2017          Wjets_res_8          1.00000   
+res_sig_ele_2017          Wjets_res_9          1.00000   
+res_sig_ele_2017          ggWW                 1.00000   
+res_sig_ele_2017          sm                   1.00000   
+res_sig_ele_2017          top                  1.00000   
+res_sig_mu_2017           DY                   1.00000   
+res_sig_mu_2017           Fake                 1.00000   
+res_sig_mu_2017           VBF-V_dipole         1.00000   
+res_sig_mu_2017           VVV                  1.00000   
+res_sig_mu_2017           VV_WZjj              1.00000   
+res_sig_mu_2017           VV_WZll              1.00000   
+res_sig_mu_2017           VV_ZZ                1.00000   
+res_sig_mu_2017           VV_osWW              1.00000   
+res_sig_mu_2017           VV_ssWW              1.00000   
+res_sig_mu_2017           Vg                   1.00000   
+res_sig_mu_2017           VgS                  1.00000   
+res_sig_mu_2017           Wjets_res_1          1.00000   
+res_sig_mu_2017           Wjets_res_10         1.00000   
+res_sig_mu_2017           Wjets_res_11         1.00000   
+res_sig_mu_2017           Wjets_res_12         1.00000   
+res_sig_mu_2017           Wjets_res_13         1.00000   
+res_sig_mu_2017           Wjets_res_14         1.00000   
+res_sig_mu_2017           Wjets_res_15         1.00000   
+res_sig_mu_2017           Wjets_res_16         1.00000   
+res_sig_mu_2017           Wjets_res_17         1.00000   
+res_sig_mu_2017           Wjets_res_18         1.00000   
+res_sig_mu_2017           Wjets_res_19         1.00000   
+res_sig_mu_2017           Wjets_res_2          1.00000   
+res_sig_mu_2017           Wjets_res_20         1.00000   
+res_sig_mu_2017           Wjets_res_21         1.00000   
+res_sig_mu_2017           Wjets_res_3          1.00000   
+res_sig_mu_2017           Wjets_res_4          1.00000   
+res_sig_mu_2017           Wjets_res_5          1.00000   
+res_sig_mu_2017           Wjets_res_6          1.00000   
+res_sig_mu_2017           Wjets_res_7          1.00000   
+res_sig_mu_2017           Wjets_res_8          1.00000   
+res_sig_mu_2017           Wjets_res_9          1.00000   
+res_sig_mu_2017           ggWW                 1.00000   
+res_sig_mu_2017           sm                   1.00000   
+res_sig_mu_2017           top                  1.00000   
+
+09/18/2023 01:22:13 PM - INFO: Done
+09/18/2023 01:38:28 PM - INFO: Preparing datacard: 2017_signal_Mww
+09/18/2023 01:38:28 PM - DEBUG: current path /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/PostFitPlots/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm
+09/18/2023 01:38:28 PM - INFO: Plotting
+09/18/2023 01:38:28 PM - DEBUG: ['mkPostFitCombinedPlot.py --inputFilePostFitShapesFromWorkspace  output_postfit.root \\\n           --outputFile postfit_shapes.root --kind P --cutName combined  \\\n           --variable Mww_10 --structureFile /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/conf_fit_EFT_wBenchmarkSM/structure_split.py \\\n           --plotFile /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/conf_fit_EFT_wBenchmarkSM/plot.py --lumiText "137/fb"  --nonFitVariable --listOfFilesOriginal ../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_mu/Mww_10/shapes/histos_boost_sig_mu.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_ele/Mww_10/shapes/histos_boost_sig_ele.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/res_sig_mu/Mww_10/shapes/histos_res_sig_mu.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/res_sig_ele/Mww_10/shapes/histos_res_sig_ele.root', 'mkPlot.py --pycfg=configuration_combined.py --inputFile=postfit_shapes.root  --showRelativeRatio \\\n            --minLogC 1 --maxLogC 1e2 --minLogCratio 1 --maxLogCratio 1e2 --plotNormalizedDistributions ']
+09/18/2023 01:38:28 PM - DEBUG: ['mkPostFitCombinedPlot.py --inputFilePostFitShapesFromWorkspace  output_postfit.root \\\n           --outputFile postfit_shapes.root --kind P --cutName combined  \\\n           --variable Mww_10 --structureFile /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/conf_fit_EFT_wBenchmarkSM/structure_split.py \\\n           --plotFile /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/conf_fit_EFT_wBenchmarkSM/plot.py --lumiText "137/fb"  --nonFitVariable --listOfFilesOriginal ../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_mu/Mww_10/shapes/histos_boost_sig_mu.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_ele/Mww_10/shapes/histos_boost_sig_ele.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/res_sig_mu/Mww_10/shapes/histos_res_sig_mu.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/res_sig_ele/Mww_10/shapes/histos_res_sig_ele.root', 'mkPlot.py --pycfg=configuration_combined.py --inputFile=postfit_shapes.root  --showRelativeRatio \\\n            --minLogC 1 --maxLogC 1e2 --minLogCratio 1 --maxLogCratio 1e2 --plotNormalizedDistributions ']
+09/18/2023 01:38:28 PM - INFO: Done
+09/18/2023 01:38:31 PM - INFO: Preparing datacard: 2017_signal_Mww
+09/18/2023 01:38:32 PM - DEBUG: current path /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/PostFitPlots/2017_WVlnujj_EFT_DNNcut_geq0p5_full_sm
+09/18/2023 01:38:32 PM - INFO: Plotting
+09/18/2023 01:38:32 PM - DEBUG: ['mkPostFitCombinedPlot.py --inputFilePostFitShapesFromWorkspace  output_postfit.root \\\n           --outputFile postfit_shapes.root --kind P --cutName combined  \\\n           --variable Mww_10 --structureFile /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/conf_fit_EFT_wBenchmarkSM/structure_split.py \\\n           --plotFile /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/conf_fit_EFT_wBenchmarkSM/plot.py --lumiText "137/fb"  --nonFitVariable --listOfFilesOriginal ../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_mu/Mww_10/shapes/histos_boost_sig_mu.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_ele/Mww_10/shapes/histos_boost_sig_ele.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/res_sig_mu/Mww_10/shapes/histos_res_sig_mu.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/res_sig_ele/Mww_10/shapes/histos_res_sig_ele.root', 'mkPlot.py --pycfg=configuration_combined.py --inputFile=postfit_shapes.root  --showRelativeRatio \\\n            --minLogC 1 --maxLogC 1e2 --minLogCratio 1 --maxLogCratio 1e2 --plotNormalizedDistributions ']
+09/18/2023 01:38:32 PM - DEBUG: ['mkPostFitCombinedPlot.py --inputFilePostFitShapesFromWorkspace  output_postfit.root \\\n           --outputFile postfit_shapes.root --kind P --cutName combined  \\\n           --variable Mww_10 --structureFile /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/conf_fit_EFT_wBenchmarkSM/structure_split.py \\\n           --plotFile /afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/conf_fit_EFT_wBenchmarkSM/plot.py --lumiText "137/fb"  --nonFitVariable --listOfFilesOriginal ../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_mu/Mww_10/shapes/histos_boost_sig_mu.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/boost_sig_ele/Mww_10/shapes/histos_boost_sig_ele.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/res_sig_mu/Mww_10/shapes/histos_res_sig_mu.root,../../../Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm/res_sig_ele/Mww_10/shapes/histos_res_sig_ele.root', 'mkPlot.py --pycfg=configuration_combined.py --inputFile=postfit_shapes.root  --showRelativeRatio \\\n            --minLogC 1 --maxLogC 1e2 --minLogCratio 1 --maxLogCratio 1e2 --plotNormalizedDistributions ']
+09/18/2023 01:38:42 PM - INFO: Done

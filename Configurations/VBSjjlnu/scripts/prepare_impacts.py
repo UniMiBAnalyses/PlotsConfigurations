@@ -150,15 +150,15 @@ if not args.plot:
                 {} {} -v {}""".format(toysf, args.queue, fitter_options[args.fit_options],mask, args.verbose))
 
 
-    cmd.append("""combineTool.py -M Impacts -d combined.root -m 125  --doInitialFit \\
-               {} -n rateParams \\
-                --named {} --setParameterRanges {} \\
-                {} {} -v {}""".format(toysf, rparam_names, rparam_ranges, fitter_options[args.fit_options], mask, args.verbose))
-    
-    cmd.append("""combineTool.py -M Impacts -d combined.root -m 125  --doFits \\
-              {} --job-mode condor  --sub-opts '+JobFlavour="{}"' --task-name rateParams -n rateParams \\
-                --named {} --setParameterRanges {} \\
-                {} {} -v {}""".format(toysf, args.queue, rparam_names, rparam_ranges, fitter_options[args.fit_options], mask, args.verbose ))
+    # cmd.append("""combineTool.py -M Impacts -d combined.root -m 125  --doInitialFit \\
+    #            {} -n rateParams \\
+    #             --named {} --setParameterRanges {} \\
+    #             {} {} -v {}""".format(toysf, rparam_names, rparam_ranges, fitter_options[args.fit_options], mask, args.verbose))
+    # 
+    # cmd.append("""combineTool.py -M Impacts -d combined.root -m 125  --doFits \\
+    #           {} --job-mode condor  --sub-opts '+JobFlavour="{}"' --task-name rateParams -n rateParams \\
+    #             --named {} --setParameterRanges {} \\
+    #             {} {} -v {}""".format(toysf, args.queue, rparam_names, rparam_ranges, fitter_options[args.fit_options], mask, args.verbose ))
 
     with open("{}/script_preparation.sh".format(args.outputdir), "w") as of:
         of.write("\n\n".join(cmd))
@@ -169,8 +169,8 @@ if not args.plot:
 
 if args.plot:
     cmd.append("""combineTool.py -M Impacts -d combined.root {} -m 125  -o impacts.nuis.json -n nuis""".format(toysf))
-    cmd.append("""combineTool.py -M Impacts -d combined.root {} -m 125 --named {} \\
-                --setParameterRanges {} -o impacts.rateParams.json -n rateParams  """.format(toysf,rparam_names,rparam_ranges))
+    # cmd.append("""combineTool.py -M Impacts -d combined.root {} -m 125 --named {} \\
+    #             --setParameterRanges {} -o impacts.rateParams.json -n rateParams  """.format(toysf,rparam_names,rparam_ranges))
 
     with open("{}/script_preparation_plots.sh".format(args.outputdir), "w") as of:
         of.write("\n\n".join(cmd))
@@ -179,13 +179,15 @@ if args.plot:
         os.system("sh {}/script_preparation_plots.sh".format(args.outputdir))
 
         result_nuis =  json.load(open("{}/impacts.nuis.json".format(args.outputdir)))
-        result_rateparam =  json.load(open("{}/impacts.rateParams.json".format(args.outputdir)))
+        # result_rateparam =  json.load(open("{}/impacts.rateParams.json".format(args.outputdir)))
 
         results = {}
         results["POIs"] = result_nuis["POIs"]
-        results["params"] = result_rateparam["params"]
-        names = [pr["name"] for pr in results["params"]]
-        
+        # results["params"] = result_rateparam["params"]
+        # names = [pr["name"] for pr in results["params"]]
+        names = []
+        results["params"] = []
+
         for pr in result_nuis["params"]:
             if pr["name"] not in names:
                 results["params"].append(pr)

@@ -221,7 +221,7 @@ def postfit_plot_onlyplot(datac):
     log.info("Plotting")
     cmd = [ 
 
-           """mkPlot.py --pycfg=configuration_combined.py --inputFile=postfit_shapes_new.root  --showRelativeRatio \\
+           """mkPlot.py --pycfg=configuration_combined.py --inputFile=postfit_shapes.root  --showRelativeRatio \\
             --minLogC 10 --maxLogC 1e2 --minLogCratio 10 --maxLogCratio 1e2  --plotNormalizedDistributions """ #--showIntegralLegend=1
     ]
 

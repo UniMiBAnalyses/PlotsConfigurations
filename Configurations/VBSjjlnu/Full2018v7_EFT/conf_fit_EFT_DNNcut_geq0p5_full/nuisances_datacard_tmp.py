@@ -7,7 +7,7 @@ VBS_ZV_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ"]
 VV_WV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj"]
 VV_ZV_samples = ["VV_WZll", "VV_ZZ"]
 
-mc =["DY", "top", "VV", "VVV",  "VBF-V_dipole", "Vg", "VgS",  "ggWW","VBS_dipoleRecoil"] + wjets_all_bins + VBS_samples + VV_samples
+mc =["DY", "top", "VV", "VVV",  "VBF-V_dipole", "Vg", "VgS",  "ggWW"] + wjets_all_bins + VBS_samples + VV_samples
 #"VBF-V","VBS",
 
 phasespaces = ["res_wjetcr_ele",
@@ -725,6 +725,16 @@ nuisances['QCD_scale_Wjets'] = {
             'samples'  :  { sample: ["LHEScaleWeight[0]", "LHEScaleWeight[8]"] for sample in wjets_all_bins }
         }
 
+# This was imported from 2017 and is not present in the 2018 workflow
+# this is because QCDscales are not present in 2018 nAOD but they are the same as 2017 where they are present
+
+nuisances['QCD_scale_VBS_full_envelope'] = {
+    'name'  : 'QCDscale_VBS_envelope',
+    'kind'  : 'weight_envelope',
+    'type'  : 'shape',
+    'samples' :  { s: [' Alt$(LHEScaleWeight['+str(i)+'], 1.)' for i in range(0,43)] for s in VBS_samples},
+    # 'AsLnN':  '1'
+}
 
 # # #
 # # # PS and UE
@@ -774,7 +784,7 @@ nuisances['QCD_scale_Wjets'] = {
 #     wjets_bins.append("Wjets_HT_boost_"+str(ir))
 
 ####### Use this for datacards
-samples_PS = ['sm','top','DY','VVV','Vg','VgS','VBF-V_dipole','ggWW'] + wjets_all_bins + VV_samples #+['VBS_dipoleRecoil']
+samples_PS = ['sm','top','DY','VVV','Vg','VgS','VBF-V_dipole','ggWW'] + wjets_all_bins + VV_samples + VBS_samples #+['VBS_dipoleRecoil']
 # #
 # # PS and UE
 # # #

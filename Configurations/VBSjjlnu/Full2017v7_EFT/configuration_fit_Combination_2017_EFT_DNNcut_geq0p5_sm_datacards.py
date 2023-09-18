@@ -1,0 +1,43 @@
+# example of configuration file
+treeName= 'Events'
+
+
+tag = 'fit_2017_EFT_DNNcut_geq0p5_sm_datacards'
+direc = "conf_fit_EFT_DNNcut_geq0p5_sm_datacards"
+
+# used by mkShape to define output directory for root files
+outputDir = 'rootFile_'+tag 
+
+# file with TTree aliases
+aliasesFile = direc+'/aliases.py'
+
+# file with list of variables
+variablesFile = direc+'/variables_datacard.py'
+
+# file with list of cuts
+cutsFile = direc +'/cuts.py' 
+
+# file with list of samples
+samplesFile = direc+'/samples_datacard.py' 
+
+#t file with list of samples
+plotFile = direc+'/plot.py' 
+
+# luminosity to normalize to (in 1/fb)
+lumi = 41.5
+
+# used by mkPlot to define output directory for plots
+outputDirPlots = 'plot_'+tag  
+
+# used by mkDatacards to define output directory for datacards
+outputDirDatacard = 'datacards_'+tag 
+
+# structure file for datacard
+structureFile = direc+'/structure_split.py'
+
+
+# nuisances file for mkDatacards and for mkShape
+nuisancesFile = direc+'/nuisances.py'
+
+
+customizeScript = direc + '/customize.py'

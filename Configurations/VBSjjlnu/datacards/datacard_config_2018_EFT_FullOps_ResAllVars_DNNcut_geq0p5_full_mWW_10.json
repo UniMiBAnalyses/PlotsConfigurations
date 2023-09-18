@@ -1,0 +1,53 @@
+[
+    {
+        "folders": [
+            {
+                "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full", 
+                "name": ""
+            }
+        ], 
+        "phase_spaces": [
+            {
+                "var": "Mww",
+                "cut": "res_sig_ele_DNN_geq_0p5",
+                "name": "res_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events",
+                "cut": "res_topcr_mu",
+                "name": "res_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_res",
+                "cut": "res_wjetcr_mu",
+                "name": "res_wjetcr_mu"
+            }, 
+            {
+                "var": "DNNoutput_res_v1",
+                "cut": "res_sig_ele_DNN_leq_0p5",
+                "name": "res_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_res",
+                "cut": "res_wjetcr_ele",
+                "name": "res_wjetcr_ele"
+            }, 
+            {
+                "var": "Mww",
+                "cut": "res_sig_mu_DNN_geq_0p5",
+                "name": "res_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "DNNoutput_res_v1",
+                "cut": "res_sig_mu_DNN_leq_0p5",
+                "name": "res_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events",
+                "cut": "res_topcr_ele",
+                "name": "res_topcr_ele"
+            }
+        ], 
+        "datacard_name": "Mww"
+    } 
+]

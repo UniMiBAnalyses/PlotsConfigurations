@@ -1,12 +1,12 @@
 from pprint import pprint
 # # # name of samples here must match keys in samples.py 
 
-# VBS_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ", "ewk_WpWm", "ewk_WpWp", "ewk_WmWm"]
 VBS_samples = ["sm"]
 VBS_WV_samples = ["ewk_WpZ", "ewk_WmZ","ewk_WpWm", "ewk_WpWp", "ewk_WmWm"]
 VBS_ZV_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ"]
 VV_WV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj"]
 VV_ZV_samples = ["VV_WZll", "VV_ZZ"]
+VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
 
 mc =["DY", "top", "VV", "VVV",  "VBF-V_dipole", "Vg", "VgS",  "ggWW","VBS_dipoleRecoil"] + wjets_all_bins + VBS_samples + VV_samples
 #"VBF-V","VBS",
@@ -31,7 +31,6 @@ phasespaces = ["res_wjetcr_ele",
 
 def getSamplesWithout(samples, samples_to_remove):
     return [m for m in samples if m not in samples_to_remove]
-
 
 phase_spaces_boost = [ c for c in phasespaces if 'boost' in c]
 phase_spaces_res = [ c for c in phasespaces if 'res' in c]
