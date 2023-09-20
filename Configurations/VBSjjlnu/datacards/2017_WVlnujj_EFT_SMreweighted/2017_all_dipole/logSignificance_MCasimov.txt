@@ -1,7 +1,0 @@
- <<< Combine >>> 
->>> random number generator seed is 123456
->>> method used is Significance
-
- -- Significance -- 
-Significance: 2.38034
-Done in 0.77 min (cpu), 0.78 min (real)
