@@ -51,7 +51,7 @@ variables['DNNoutput_res_v1'] = {
     'fold': 3 ,
     'cuts':  res_cuts,
     'divideByBinWidth': True, 
-    'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
+#     'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
 }
 
 variables['DNNoutput_boost'] = {
