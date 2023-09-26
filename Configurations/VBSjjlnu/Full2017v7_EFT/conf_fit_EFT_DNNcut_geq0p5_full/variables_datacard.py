@@ -289,5 +289,5 @@ variables['deltaeta_vjet'] = {   'name': 'deltaeta_vjet',
                         'cuts': [c for c in sig_cuts if "res" in c]
                         } 
 
-variables = {i:k for i,k in variables.items() if i in ["Mww_10", "DNNoutput_res_v1", "DNNoutput_boost", "events", "fit_bins_res", "fit_bins_boost"]}
+variables = {i:k for i,k in variables.items() if i in ["Mww", "Mww_10", "DNNoutput_res_v1", "DNNoutput_boost", "events", "fit_bins_res", "fit_bins_boost"]}
 # variables = {i:k for i,k in variables.items() if i == "Mww_2500"}

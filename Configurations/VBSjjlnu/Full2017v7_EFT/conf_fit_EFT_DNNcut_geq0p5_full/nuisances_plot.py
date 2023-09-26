@@ -8,7 +8,7 @@ VV_WV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj"]
 VV_ZV_samples = ["VV_WZll", "VV_ZZ"]
 VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
 
-mc =["DY", "top", "VV", "VVV",  "VBF-V_dipole", "Vg", "VgS",  "ggWW"] + wjets_all_bins + VBS_samples + VV_samples
+mc =["DY", "top", "VV", "VVV",  "VBF-V_dipole", "Vg", "VgS",  "ggWW"] + wjets_all_bins + VBS_samples + VV_samples + EFT_samples
 #"VBF-V","VBS",
 
 phasespaces = ["res_wjetcr_ele",
@@ -719,7 +719,7 @@ import json, os
 nuis_factors = json.load(open(os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2017v7_EFT/conf_fit_EFT_DNNcut_geq0p5_sm/nuisance_incl_norm_factors_2017_split.json"))
 
 for sample in mc :
-    if sample in ["ggWW"] + wjets_all_bins + VBS_samples + VV_samples : continue
+    if sample in ["ggWW"] + wjets_all_bins + VBS_samples + VV_samples + EFT_samples: continue
     nuisances['QCD_scale_'+sample] = {
         'name'  : 'QCDscale_'+sample,
         'kind'  : 'weight',
@@ -900,7 +900,8 @@ nuisances['QCD_scale_Wjets'] = {
 
 
 ####### Use this for datacards
-samples_PS = ['sm','top','DY','VVV','Vg','VgS','VBF-V_dipole','ggWW'] + wjets_all_bins + VV_samples + VBS_samples #+['VBS_dipoleRecoil']
+samples_PS = ['top','DY','VVV','Vg','VgS','VBF-V_dipole','ggWW'] + wjets_all_bins #VBS_dipoleRecoil
+
 # #
 # # PS and UE
 # # #
@@ -910,18 +911,75 @@ for sample in samples_PS:
                     'kind'  : 'weight',
                     'type'  : 'shape',
                     'samples'  : {
-                        sample : ['PSWeight[2]', 'PSWeight[0]'],
-                    }
+                        sample :      ['PSWeight[2]', 'PSWeight[0]'],
+                    },
+                    'cuts_samples':{'Vg': [ f for f in phasespaces if "boost_topcr" not in f  ]} # necessary only for postfit in the cr
                 }
     nuisances['PS_FSR_'+sample]  = {
                     'name'  : 'CMS_PS_FSR_'+sample,
                     'kind'  : 'weight',
                     'type'  : 'shape',
                     'samples'  : {
-                        sample :  ['PSWeight[3]', 'PSWeight[1]'],
-                    }
+                        sample :      ['PSWeight[3]', 'PSWeight[1]'],
+                    },
+                    'cuts_samples':{'Vg': [ f for f in phasespaces if "boost_topcr" not in f  ]}  # necessary only for postfit in the cr
                 }
 
+#  for SM signal
+
+nuisances['PS_ISR_VBS']  = {
+                    'name'  : 'CMS_PS_ISR_VBS',
+                    'kind'  : 'weight',
+                    'type'  : 'shape',
+                    'samples'  : {
+                        sample : ['PSWeight[2]', 'PSWeight[0]'] for sample in VBS_samples
+                    }
+                }
+nuisances['PS_FSR_VBS_WV']  = {
+                'name'  : 'CMS_PS_FSR_VBS',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                    sample :  ['PSWeight[3]', 'PSWeight[1]'] for sample in VBS_samples
+                }
+            }
+
+# for EFT 
+
+nuisances['PS_ISR_EFT']  = {
+                    'name'  : 'CMS_PS_ISR_EFT',
+                    'kind'  : 'weight',
+                    'type'  : 'shape',
+                    'samples'  : {
+                        sample : ['PSWeight[2]', 'PSWeight[0]'] for sample in EFT_samples if sample != "sm"
+                    }
+                }
+nuisances['PS_FSR_VBS_WV']  = {
+                'name'  : 'CMS_PS_FSR_EFT',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                    sample :  ['PSWeight[3]', 'PSWeight[1]'] for sample in EFT_samples if sample != "sm"
+                }
+            }
+
+
+nuisances['PS_ISR_QCD_VV']  = {
+                    'name'  : 'CMS_PS_ISR_QCD_VV',
+                    'kind'  : 'weight',
+                    'type'  : 'shape',
+                    'samples'  : {
+                        sample : ['PSWeight[2]', 'PSWeight[0]'] for sample in VV_samples
+                    }
+                }
+nuisances['PS_FSR_QCD_VV']  = {
+                'name'  : 'CMS_PS_FSR_QCD_VV',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                    sample :  ['PSWeight[3]', 'PSWeight[1]'] for sample in VV_samples
+                }
+            }
 
 #########################################
 
@@ -931,20 +989,8 @@ nuisances['PU']  = {
                 'type'  : 'shape',
                 'samples'  : {
                     # s : ['(puWeight_noeras[1]/puWeight_noeras[0]) * {}'.format(nuis_factors[s]["CMS_PU_2017"][0]),
-                    #      '(puWeight_noeras[2]/puWeight_noeras[0]) * {}'.format(nuis_factors[s]["CMS_PU_2017"][1])] for s in mc if s not in wjets_all_bins  },
-                    s : ['(puWeight_noeras[1]/puWeight_noeras[0])','(puWeight_noeras[2]/puWeight_noeras[0])'] for s in mc if s not in wjets_all_bins  },
-                'AsLnN'      : '1',
-}
-
-
-nuisances['PU_wjets']  = {
-                'name'  : 'CMS_PU_2017',
-                'kind'  : 'weight',
-                'type'  : 'shape',
-                'samples'  : {
-                    # s : ['(puWeight_noeras[1]/puWeight_noeras[0]) * {}'.format(nuis_factors["Wjets_res"]["CMS_PU_2017"][0]),
-                    #      '(puWeight_noeras[2]/puWeight_noeras[0]) * {}'.format(nuis_factors["Wjets_res"]["CMS_PU_2017"][1])] for s in wjets_all_bins },
-                    s : ['(puWeight_noeras[1]/puWeight_noeras[0])','(puWeight_noeras[2]/puWeight_noeras[0])'] for s in wjets_all_bins },
+                    #      '(puWeight_noeras[2]/puWeight_noeras[0])* {}'.format(nuis_factors[s]["CMS_PU_2017"][1])] for s in mc },
+                    s : ["",""] for s in mc }, # only for dataset and plotting 
                 'AsLnN'      : '1',
 }
 
@@ -1053,5 +1099,5 @@ for n in nuisances.values():
 exclude = ["pdf_weight_accept", "QCD_scale_VV_accept", "QCD_scale_VBS", "QCD_scale_VBS_full_standard"]
 nuisances = {k:v for k,v in nuisances.items() if k not in exclude } #if 'PS' in k or 'QCD' in k
 
-
+# nuisances = {k:v for k,v in nuisances.items() if "pdf" in k or "JER" in k or "JES" in k or "PS" in k}
 # print ' '.join(nuis['name'] for nname, nuis in nuisances.iteritems() if nname not in ('lumi', 'stat'))
