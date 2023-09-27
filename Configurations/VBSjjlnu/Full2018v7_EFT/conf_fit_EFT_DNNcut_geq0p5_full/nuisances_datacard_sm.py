@@ -960,7 +960,7 @@ for n in nuisances.values():
     n['skipCMS'] = 1
 
    
-exclude = ["QCD_scale_VBS", "QCD_scale_VBS_WV_accept","QCD_scale_VBS_ZV_accept", "QCD_scale_QCD_WV_accept", "pdf_weight_accept", "pdf_weight_accept_VBS"]
+exclude = ["QCD_scale_VV_accept", "QCD_scale_VBS", "QCD_scale_VBS_WV_accept","QCD_scale_VBS_ZV_accept", "QCD_scale_QCD_WV_accept", "pdf_weight_accept", "pdf_weight_accept_VBS"]
 nuisances = {k:v for k,v in nuisances.items() if k not in exclude}
 # nuisances = {k:v for k,v in nuisances.items() if k in ['detavbs_residual', 'zlep_residual']} #if 'PS' in k or 'QCD' in k
 

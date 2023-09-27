@@ -4,6 +4,8 @@ mkShapesMulti.py --pycfg=configuration_EFT_weights.py --doBatch=1 --batchSplit=S
 
 mkPlot.py --pycfg=configuration_fit_Combination_2018_EFT_DNNcut_geq0p5_sm.py  --inputFile=rootFile_fit_2018_EFT_DNNcut_geq0p5_sm/plots_fit_2018_EFT_DNNcut_geq0p5_sm.root --showIntegralLegend=1 --onlyPlot=cratio --minLogC=1e-3 --logOnly --minLogCratio 1e-3 --maxLogCratio 1e7 --scaleToPlot=10
 
+mkPlot.py --pycfg=configuration_fit_Combination_2017_EFT_DNNcut_geq0p5_full_plot.py --inputFile=rootfiles/Full2017v7_EFT/plots_fit_2017_EFT_DNNcut_geq0p5_full_wPS_fullEFTNuisances_plotting.root --showIntegralLegend=1 --onlyPlot=cratio --minLogC=1e-2 --logOnly --minLogCratio 1e-2 --maxLogCratio 1e7 --scaleToPlot=10 --fileFormats=png,pdf
+
 # mkPlot.py --pycfg=configuration_fit_EFT_2018.py  --inputFile=plots_fit_2018_split_Combined_total_EFT.root --showIntegralLegend=1 --plotNormalizedIncludeData=1 --plotNormalizedDistributions --onlyPlot=cratio --minLogC=50 --maxLogC=1e7 --minLogCratio=50 --maxLogCratio=1e7 --scaleToPlot=1
 
 # mkPlot.py --pycfg=configuration_fit_EFT_2018.py  --inputFile=/afs/cern.ch/work/g/gboldrin/public/public/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7_EFT/plots_fit_2018_split_Combined_total_EFT.root --showIntegralLegend=1 --plotNormalizedIncludeData=1 --plotNormalizedDistributions --onlyPlot=cratio --minLogC=50 --maxLogC=1e7 --minLogCratio=50 --maxLogCratio=1e7 --scaleToPlot=1

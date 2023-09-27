@@ -1,4 +1,3 @@
-sm
 top
 DY
 VBF-V_dipole

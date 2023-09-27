@@ -51,7 +51,7 @@ variables['DNNoutput_res_v1'] = {
     'fold': 3 ,
     'cuts':  res_cuts,
     'divideByBinWidth': True, 
-    'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
+#     'blind': { c:[0.6,1] for c in cuts if "_sig_" in c},
 }
 
 variables['DNNoutput_boost'] = {
@@ -199,7 +199,7 @@ variables['mjj_vbs'] = {   'name': 'mjj_vbs',
 
 variables['nJets_res'] = {   'name': 'nJets30',      
                         'range' : (6,4,10),  
-                        'xaxis' : 'nJets cleaned from Ak8 >= 30 GeV', 
+                        'xaxis' : 'nJets cleaned from Ak4 >= 30 GeV', 
                         'fold' : 3,
                         'cuts': res_cuts
                         }
@@ -289,4 +289,4 @@ variables['deltaeta_vjet'] = {   'name': 'deltaeta_vjet',
                         'cuts': [c for c in sig_cuts if "res" in c]
                         } 
 
-variables = {i:k for i,k in variables.items() if i in ["Mww", "Mww_10", "Mww_14", "DNNoutput_res_v1", "DNNoutput_boost", "events", "fit_bins_res", "fit_bins_boost"]}
+# variables = {i:k for i,k in variables.items() if i in ["Mww", "Mww_10", "Mww_14", "DNNoutput_res_v1", "DNNoutput_boost", "events", "fit_bins_res", "fit_bins_boost"]}

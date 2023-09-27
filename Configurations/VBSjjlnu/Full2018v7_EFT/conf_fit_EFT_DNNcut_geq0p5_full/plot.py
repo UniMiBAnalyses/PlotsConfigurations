@@ -139,23 +139,37 @@ groupPlot['VBS']  = {
                  'fill': 1001
               }
 
+groupPlot['cHW']  = {
+                 'nameHR' : 'SM+cHW=5',
+                 'isSignal' : 5,
+                 'color': palette["Orange"],
+                 'samples'  : ["lin_cHW", "quad_cHW"],
+                 'fill': 1001
+              }
 
 groupPlot['cW']  = {
                  'nameHR' : 'SM+cW=1',
-                 'isSignal' : 3,
+                 'isSignal' : 4,
                  'color': palette["Green"],
                  'samples'  : ["lin_cW", "quad_cW"],
                  'fill': 1001
               }
 
-# groupPlot['cHW']  = {
-#                  'nameHR' : 'SM+cHW=5',
-#                  'isSignal' : 1,
-#                  'color': palette["Peach3"],
-#                  'samples'  : ["linm1_cW", "quadm1_cW", "lin_cHW", "quad_cHW"],
-#                  'fill': 1001
-#               }
+groupPlot['cHWB']  = {
+                 'nameHR' : 'SM+cHWB=5',
+                 'isSignal' : 6,
+                 'color': palette["MediumBlue2"],
+                 'samples'  : ["lin_cHWB", "quad_cHWB"],
+                 'fill': 1001
+              }
 
+groupPlot['cHj1']  = {
+                 'nameHR' : 'SM+cHj1=3',
+                 'isSignal' : 7,
+                 'color': colors["kRed"]-4,
+                 'samples'  : ["lin_cHj1", "quad_cHj1"],
+                 'fill': 1001
+              }
 # keys here must match keys in samples.py    
 # 
 
@@ -278,51 +292,61 @@ plot['sm']  = {
                 'scale'    : 1.0,
             }
 
-
 plot['lin_cW']  = {
-                'color': wjets_palette[5],
-                'isSignal' : 1,
+                'color': palette["Green"],
+                'isSignal' : 4,
                 'isData'   : 0,
-                'scale'    : 1.0,
+                'scale'    : 1,
             }
 
 plot['quad_cW']  = {
-                'color': wjets_palette[5],
-                'isSignal' : 1,
+                'color': palette["Green"],
+                'isSignal' : 4,
                 'isData'   : 0,
-                'scale'    : 1.0,
+                'scale'    : 1,
             }
-# 
-# plot['linm1_cW']  = {
-#                 'color': wjets_palette[5],
-#                 'isSignal' : 1,
-#                 'isData'   : 0,
-#                 'scale'    : 1.0,
-#             }
-# 
-# plot['quadm1_cW']  = {
-#                 'color': wjets_palette[5],
-#                 'isSignal' : 1,
-#                 'isData'   : 0,
-#                 'scale'    : 1.0,
-#             }
-# 
-# 
-# plot['lin_cHW']  = {
-#                 'color': wjets_palette[5],
-#                 'isSignal' : 1,
-#                 'isData'   : 0,
-#                 'scale'    : 5.0,
-#             }
-# 
-# plot['quad_cHW']  = {
-#                 'color': wjets_palette[5],
-#                 'isSignal' : 1,
-#                 'isData'   : 0,
-#                 'scale'    : 25.0,
-#             }
 
+plot['lin_cHW']  = {
+                'color': palette["Orange"],
+                'isSignal' : 5,
+                'isData'   : 0,
+                'scale'    : 5.0,
+            }
 
+plot['quad_cHW']  = {
+                'color': palette["Orange"],
+                'isSignal' : 5,
+                'isData'   : 0,
+                'scale'    : 25.0,
+            }
+
+plot['lin_cHWB']  = {
+                'color': palette["MediumBlue2"],
+                'isSignal' : 6,
+                'isData'   : 0,
+                'scale'    : 5.0,
+            }
+
+plot['quad_cHWB']  = {
+                'color': palette["MediumBlue2"],
+                'isSignal' : 6,
+                'isData'   : 0,
+                'scale'    : 25.0,
+            }
+
+plot['lin_cHj1']  = {
+                'color': colors["kRed"]-4,
+                'isSignal' : 7,
+                'isData'   : 0,
+                'scale'    : 3.0,
+            }
+
+plot['quad_cHj1']  = {
+                'color': colors["kRed"]-4,
+                'isSignal' : 7,
+                'isData'   : 0,
+                'scale'    : 9.0,
+            }
 # # data
 
 plot['DATA']  = { 
