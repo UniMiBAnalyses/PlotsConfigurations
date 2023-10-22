@@ -11,19 +11,13 @@ import CombineHarvester.CombineTools.plotting as plot
 ranges = {
     'k_cW': [-1,1],
     'k_cHB': [-20,20],
-    'k_cHQ1': [-110,110],
+    'k_cHQ1': [-100,100],
     'k_cHW': [-5,5],
-    'k_cHWB': [-15,15],
+    'k_cHWB': [-10,10],
     'k_cHbox': [-30,30],
-    'k_cHj1': [-10,10],
-    'k_cHl1': [-200,200]
+    'k_cHj1': [-2,2],
+    'k_cHl1': [-120,120]
 }
-
-fact = 1
-for key in ranges.keys():
-   ranges[key][0]*=fact
-   ranges[key][1]*=fact
-
 
 priors = {
     'k_cW': 50,
@@ -63,8 +57,14 @@ parser.add_argument("--rMax", help="Max for scan", type=float,default=1.5)
 parser.add_argument("--skip-initial", action="store_true", help="skip initial fit", default=False)
 parser.add_argument("--clean", help="Remove previous scan point root files", action="store_true", default=False)
 parser.add_argument("--randomPoints", help="Random start points for MultiDim", type=int,default=0)
+parser.add_argument("--rangeFactor", help="Factor to scale current ranges", type=int,default=1)
 args = parser.parse_args()
 
+
+fact = args.rangeFactor
+for key in ranges.keys():
+   ranges[key][0]*=fact
+   ranges[key][1]*=fact
 
 if args.config.endswith(".yaml"):
     config = yaml.load(open(args.config))
@@ -113,7 +113,9 @@ def do_scan(datac):
     workspace = datac['workspace']
 
     cmd = []  
-    print(workspace) 
+    print(workspace)
+#    cmd.append("source /cvmfs/cms.cern.ch/cmsset_default.sh")
+#    cmd.append("eval `scramv1 runtime -sh`") 
     cmd.append("cp {0} {1}/combined.root".format(workspace, outdir))
     cmd.append("cd "+ outdir)
     cmd.append("echo '{}' > log.txt".format("Initial dir: "+ outdir))
@@ -257,7 +259,7 @@ def do_graph(datac, outputfile):
     #gr.Write(file_name + "/" + datac['datacard_name'])
 
     # Save scans in pdf and png
-    os.system("mkEFTScan.py {0} -p {1} -maxNLL 5 -o {2}/{3}_{4} ".format(
+    os.system("mkEFTScan.py {0} -ff png pdf -p {1} -maxNLL 5 -o {2}/{3}_{4} ".format(
         outdir + "/higgsCombine.{0}.scan_all.POINTS.root -cms -preliminary -energy 13 -lumi 59.74".format(file_name), 
         " ".join(args.pois),
         outdir,
