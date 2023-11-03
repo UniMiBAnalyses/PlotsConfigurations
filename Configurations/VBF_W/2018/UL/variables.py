@@ -118,10 +118,63 @@ variables['mtw1']  = {   'name': 'mtw1',
                          }
                        }
 
+variables['mtw1bin2']  = {   'name': 'mtw1',
+                        'range' : (100,0,200),
+                         'xaxis' : 'm_{T}^{l1+MET} [GeV]',
+                        'fold' : 3,
+                        'blind': {
+                           'ele_SR' : 'full',
+                           'mu_SR' : 'full'
+                         }
+                       }
+
+variables['mtw1bin1']  = {   'name': 'mtw1',
+                        'range' : (50,0,50),
+                         'xaxis' : 'm_{T}^{l1+MET} [GeV]',
+                        'fold' : 3,
+                        'blind': {
+                           'ele_SR' : 'full',
+                           'mu_SR' : 'full'
+                         }
+                       }
+
 variables['puppimet']  = {
                         'name': 'PuppiMET_pt',
                         'range' : (40,0,200),
                         'xaxis' : 'puppimet [GeV]',
+                        'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
+
+variables['puppimetbin1']  = {
+                        'name': 'PuppiMET_pt',
+                        'range' : (60,0,60),
+                        'xaxis' : 'puppimet [GeV]',
+                        'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
+
+variables['met']  = {
+                        'name': 'MET_pt',
+                        'range' : (40,0,200),
+                        'xaxis' : 'MET_pt [GeV]',
+                        'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
+
+variables['metbin1']  = {
+                        'name': 'MET_pt',
+                        'range' : (60,0,60),
+                        'xaxis' : 'MET_pt [GeV]',
                         'fold' : 3,
                             'blind': {
                               'ele_SR' : 'full',
@@ -275,7 +328,7 @@ variables['jeteta2']  = {
                         }
 
 variables['mjj']      = {   'name': 'mjj',            #   variable name    
-                            'range' : (25,500,2500),    #   variable range
+                            'range' : (25,0,2500),    #   variable range
                             'xaxis' : 'm_{jj} [GeV]',  #   x axis name
                             'fold' : 3,
                             'blind': {
@@ -285,7 +338,7 @@ variables['mjj']      = {   'name': 'mjj',            #   variable name
                         }
 
 variables['mjjPU']      = {   'name': 'mjj',            #   variable name    
-                            'range' : (15,400,2500),    #   variable range
+                            'range' : (15,0,2500),    #   variable range
                             'xaxis' : 'm_{jj} [GeV]PU',  #   x axis name
                             'fold' : 3,
                             'blind': {
@@ -295,7 +348,7 @@ variables['mjjPU']      = {   'name': 'mjj',            #   variable name
                         }
 
 variables['mjj_H']      = {   'name': 'mjj',            #   variable name    
-                            'range' : (20,400,1000),    #   variable range
+                            'range' : (20,0,1000),    #   variable range
                             'xaxis' : 'm_{jj}H [GeV]',  #   x axis name
                             'fold' : 3,
                             'blind': {

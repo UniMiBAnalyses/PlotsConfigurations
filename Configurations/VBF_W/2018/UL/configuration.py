@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'UL_handmadeFake35_NOTrig'
+tagger = 'mylatest_triggerSF_photfilter_oldapproxrw'
 
 tag = 'vbf_w_2018'+tagger
 

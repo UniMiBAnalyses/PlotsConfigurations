@@ -132,33 +132,22 @@ aliases['singleW'] = {
     'samples' : mc
 }
 
-###################
-# trigger eff
+# ####### trigger
+# aliases['ele_trig_eff'] = {
+#     'linesToAdd': [
+#         'gSystem->AddIncludePath("-I%s/src");' % os.getenv('CMSSW_BASE'),
+#         '.L %s/src/PlotsConfigurations/Configurations/patches/triggerEff_1lep.cc+' % os.getenv('CMSSW_BASE')
+#     ],
+#     'class': 'TrigEff_1lep',
+#     'args': ('/afs/cern.ch/user/a/arun/public/fixedTextfiles/2018/mvaid/Ele32_pt_eta_efficiency_withSys_Run2018.txt'),
+#     'samples': mc
+# }
 
-aliases['ele_trig_eff'] = {
-    'linesToAdd': [
-        'gSystem->AddIncludePath("-I%s/src");' % os.getenv('CMSSW_BASE'),
-        '.L %s/src/PlotsConfigurations/Configurations/patches/triggerEff_1lep.cc+' % os.getenv('CMSSW_BASE')
-    ],
-    'class': 'TrigEff_1lep',
-    'args': ('/afs/cern.ch/user/a/arun/public/fixedTextfiles/2018/mvaid/Ele32_pt_eta_efficiency_withSys_Run2018.txt'),
-    'samples': mc
-}
+# aliases['SingleLepton_trigEff_corrected'] = {
+#     'expr': '(abs(Lepton_pdgId[0])==11)*ele_trig_eff[0] +  (abs(Lepton_pdgId[0])==13)*TriggerEffWeight_1l',
+#     'samples': mc
+# }
 
-aliases['SingleLepton_trigEff_corrected'] = {
-    'expr': '(abs(Lepton_pdgId[0])==11)*ele_trig_eff[0] +  (abs(Lepton_pdgId[0])==13)*TriggerEffWeight_1l',
-    'samples': mc
-}
-
-aliases['SingleLepton_trigEff_corrected_up'] = {
-   'expr': '(abs(Lepton_pdgId[0])==11)*ele_trig_eff[1] +  (abs(Lepton_pdgId[0])==13)*TriggerEffWeight_1l_u',
-    'samples': mc
-}
-
-aliases['SingleLepton_trigEff_corrected_down'] = {
-    'expr': '(abs(Lepton_pdgId[0])==11)*ele_trig_eff[2] +  (abs(Lepton_pdgId[0])==13)*TriggerEffWeight_1l_d',
-    'samples': mc
-}
 ############################################
 # B tagging
 # loose 0.1241
@@ -290,72 +279,36 @@ aliases['DY_LO_pTllrw'] = {
 ###########################################################################################
 #fakes
 
-basedir_fakes = configurations + "/VBF_W/utils/weights_files/fake_rates/2018UL"
+basedir_fakes = configurations + "/VBF_W/utils/weights_files/my_latest"
 
-ets = ["10", "15", "20", "25", "30", "35", "45"]
+ets = ["30"]
 
-el_pr_file = configurations + "/VBF_W/utils/weights_files/prompt_rates/2018UL/ElePR.root"
-mu_pr_file = configurations + "/VBF_W/utils/weights_files/prompt_rates/2018UL/MuonPR.root"
+el_pr_file = configurations + "/VBF_W/utils/weights_files/my_latest/ElePR.root"
+mu_pr_file = configurations + "/VBF_W/utils/weights_files/my_latest/MuonPR.root"
 
 for et in ets:
     el_fr_file = basedir_fakes + "/EleFR_jet"+et+".root"
     mu_fr_file = basedir_fakes + "/MuonFR_jet"+et+".root"
     aliases['fakeWeight_'+et] = { 
         'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), True, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations
         'linesToAdd' : [
             'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
             '.L {}/VBF_W/utils/macros/newfakeweight_OTFall.cc+'.format(configurations)
-        ],     
+        ],
         'samples': ["Fake"]
     }
 
-# for et in ["20", "25", "35"]:
-#     aliases['fakeW'+et] = {
-#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-#         'samples': ['Fake']
-#     }
-
-#     aliases['fakeWEleUp'+et] = {
-#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_ElUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-#         'samples': ['Fake']
-#     }
-
-#     aliases['fakeWEleDown'+et] = {
-#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_ElDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-#         'samples': ['Fake']
-#     }
-
-#     aliases['fakeWMuUp'+et] = {
-#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_MuUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-#         'samples': ['Fake']
-#     }
-
-#     aliases['fakeWMuDown'+et] = {
-#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_MuDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-#         'samples': ['Fake']
-#     }
-
-#     aliases['fakeWStatEleUp'+et] = {
-#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statElUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-#         'samples': ['Fake']
-#     }
-
-#     aliases['fakeWStatEleDown'+et] = {
-#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statElDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-#         'samples': ['Fake']
-#     }
-
-#     aliases['fakeWStatMuUp'+et] = {
-#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statMuUp/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-#         'samples': ['Fake']
-#     }
-
-#     aliases['fakeWStatMuDown'+et] = {
-#         'expr': 'fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35_statMuDown/fakeW_ele_'+eleWP+'_mu_'+muWP+'_1l_mu'+et+'_ele35',
-#         'samples': ['Fake']
-#     }
-
+    aliases['fakeWeight_statUp'] = { 
+            'class': 'newFakeWeightOTFall',
+            'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, True, False),   
+            'samples': ["Fake"]
+        }
+    aliases['fakeWeight_statDo'] = { 
+            'class': 'newFakeWeightOTFall',
+            'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, True), 
+            'samples': ["Fake"]
+        }
 
 
 ###################################
@@ -402,17 +355,6 @@ aliases['gstarHigh'] = {
     'samples': 'VgS'
 }
 
-#############################
-
-#aliases['veto_fatjet_180'] = {
-#            'class': 'VetoFatJetResolved',
-#            'args': (180.),
-#            'linesToAdd' : [
-#                'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#                '.L {}/VBSjjlnu/macros/veto_fatjet_resolved.cc+'.format(configurations)
-#            ]           
-#}
-
 ###################################
 
 ############################################
@@ -437,195 +379,6 @@ aliases['PDFweight_normalized'] = {
             'samples':["WLNuJJ"]
 }
 
-###################################
-
-# QGL variables
-
-#morphing_file = configurations + "/VBSjjlnu/weights_files/qgl_morphing/morphing_functions_withvars_2018.root"
-
-
-#aliases["CleanJet_qgl_morphed"]  = {
-#    'class': 'QGL_morphing',
-#    'args' : (morphing_file, "nom", "0000"),
-#    'linesToAdd' : [
-#        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#        '.L {}/macros/qgl_morphing.cc+'.format(configurations)
-#        ] 
-#}
-
-# aliases["CleanJet_qgl_morphed_morphUp_gluon_loweta"]  = {
-#     'class': 'QGL_morphing',
-#     'args' : (morphing_file, "up", "0001"),
-#     'linesToAdd' : [
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L {}/macros/qgl_morphing.cc+'.format(configurations)
-#         ] 
-# }
-
-# aliases["CleanJet_qgl_morphed_morphUp_gluon_higheta"]  = {
-#     'class': 'QGL_morphing',
-#     'args' : (morphing_file, "up", "0010"),
-#     'linesToAdd' : [
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L {}/macros/qgl_morphing.cc+'.format(configurations)
-#         ] 
-# }
-
-# aliases["CleanJet_qgl_morphed_morphUp_quark_loweta"]  = {
-#     'class': 'QGL_morphing',
-#     'args' : (morphing_file, "up", "0100"),
-#     'linesToAdd' : [
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L {}/macros/qgl_morphing.cc+'.format(configurations)
-#         ] 
-# }
-
-# aliases["CleanJet_qgl_morphed_morphUp_quark_higheta"]  = {
-#     'class': 'QGL_morphing',
-#     'args' : (morphing_file, "up", "1000"),
-#     'linesToAdd' : [
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L {}/macros/qgl_morphing.cc+'.format(configurations)
-#         ] 
-# }
-
-# ######
-# aliases["CleanJet_qgl_morphed_morphDown_gluon_loweta"]  = {
-#     'class': 'QGL_morphing',
-#     'args' : (morphing_file, "down", "0001"),
-#     'linesToAdd' : [
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L {}/macros/qgl_morphing.cc+'.format(configurations)
-#         ] 
-# }
-
-# aliases["CleanJet_qgl_morphed_morphDown_gluon_higheta"]  = {
-#     'class': 'QGL_morphing',
-#     'args' : (morphing_file, "down", "0010"),
-#     'linesToAdd' : [
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L {}/macros/qgl_morphing.cc+'.format(configurations)
-#         ] 
-# }
-
-# aliases["CleanJet_qgl_morphed_morphDown_quark_loweta"]  = {
-#     'class': 'QGL_morphing',
-#     'args' : (morphing_file, "down", "0100"),
-#     'linesToAdd' : [
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L {}/macros/qgl_morphing.cc+'.format(configurations)
-#         ] 
-# }
-
-# aliases["CleanJet_qgl_morphed_morphDown_quark_higheta"]  = {
-#     'class': 'QGL_morphing',
-#     'args' : (morphing_file, "down", "1000"),
-#     'linesToAdd' : [
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L {}/macros/qgl_morphing.cc+'.format(configurations)
-#         ] 
-# }
-
-##########################
-
-
-
-#aliases['vbs_0_qglmorphed_res'] = {
-#   'expr': 'Alt$(CleanJet_qgl_morphed[VBS_jets_maxmjj_massWZ[0]],-1)'
-#} 
-
-#aliases['vbs_1_qglmorphed_res'] = {
-#   'expr': 'Alt$(CleanJet_qgl_morphed[VBS_jets_maxmjj_massWZ[1]],-1)'
-#} 
-
-#aliases['vjet_0_qglmorphed_res'] = {
-#    'expr': 'Alt$(CleanJet_qgl_morphed[V_jets_maxmjj_massWZ[0]],-1)'
-#} 
-
-#aliases['vjet_1_qglmorphed_res'] = {
-#    'expr': 'Alt$(CleanJet_qgl_morphed[V_jets_maxmjj_massWZ[1]],-1)'
-#} 
-
-#aliases['vbs_0_qglmorphed_boost'] = {
-#    'expr': 'Alt$(CleanJet_qgl_morphed[VBS_jets_maxmjj[0]],-1)'
-#} 
-
-#aliases['vbs_1_qglmorphed_boost'] = {
-#    'expr': 'Alt$(CleanJet_qgl_morphed[VBS_jets_maxmjj[1]],-1)'
-#} 
-
-###########
-# ## morphUP
-
-# for jt in ['quark', 'gluon']:
-#     for jeta in ['loweta', 'higheta']:
-#         for morph in ['morphUp', 'morphDown']:
-#             jtype = morph + "_" + jt+"_"+jeta
-
-#             aliases['vbs_0_qgl_res_' +jtype ] = {
-#                 'expr': 'Alt$(CleanJet_qgl_morphed_' + jtype + '[VBS_jets_maxmjj_massWZ[0]],-1)'
-#             } 
-#             aliases['vjet_0_qgl_res_' +jtype ] = {
-#                 'expr': 'Alt$(CleanJet_qgl_morphed_' + jtype + '[V_jets_maxmjj_massWZ[0]],-1)'
-#             } 
-#             aliases['vjet_1_qgl_res_' +jtype] = {
-#                 'expr': 'Alt$(CleanJet_qgl_morphed_' + jtype + '[V_jets_maxmjj_massWZ[1]],-1)'
-#             } 
-#             aliases['vbs_0_qgl_boost_' +jtype ] = {
-#                 'expr': 'Alt$(CleanJet_qgl_morphed_' + jtype + '[VBS_jets_maxmjj[0]],-1)'
-#             } 
-#             aliases['vbs_1_qgl_boost_' +jtype ] = {
-#                 'expr': 'Alt$(CleanJet_qgl_morphed_' + jtype + '[VBS_jets_maxmjj[1]],-1)'
-#             } 
-
-
-##########################
-# # additional uncertainties for Wtagging from pt extrapolation
-# aliases['BoostedWtagSF_ptextr'] = {
-#     'class': 'Wtagging_SF_ptExtrap',
-#     'args': ('2018'),
-#     'linesToAdd' : [
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L {}/VBSjjlnu/macros/Wtagging_SF_ptExtrap.cc+'.format(configurations)
-#     ]   
-# }
-
-###########################
-# Njets nuisances for signal
-
-# aliases['njets_herwig_signal'] = {
-#     'expr': '(VBS_category==0)*( (nJets30==2)*1.428 + (nJets30==3)*0.590 + (nJets30==4)*0.291 + (nJets30>4)*1) +\
-#              (VBS_category==1)*( (nJets30==4)*1.428 + (nJets30==5)*0.590 + (nJets30==6)*0.291 + (nJets30>6)*1)',
-#     'samples': ['VBS']
-# }
-
-
-# mva_reader_path = os.getenv('CMSSW_BASE') + '/src/PlotsConfigurations/Configurations/VBSjjlnu/macros/'
-# models_path = '/eos/home-d/dvalsecc/www/VBSPlots/DNN_archive/FullRun2_v7/FullRun2_v7/'
-
-# aliases['DNNoutput_boosted'] = {
-#     'class': 'MVAReaderBoosted_mVauto',
-#     'args': ( models_path +'boost_sig/models/v3_d/',  models_path +'boost_sig/models/v3_d/cumulative_signal_2018.root', False, 0),
-#     'linesToAdd':[
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         'gSystem->Load("libDNNEvaluator.so")',
-#         '.L ' + mva_reader_path + 'mva_reader_boosted_v3d_mVauto.cc+', 
-#     ],
-# }
-
-# aliases['DNNoutput_resolved'] = {
-#     'class': 'MVAReaderResolved_mVauto',
-#     'args': ( models_path+ 'res_sig/models/v4_d/',models_path+ 'res_sig/models/v4_d/cumulative_signal_2018.root', False, 1),
-#     'linesToAdd':[
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         'gSystem->Load("libDNNEvaluator.so")',
-#         '.L ' + mva_reader_path + 'mva_reader_resolved_v4d_mVauto.cc+', 
-#     ],
-# }
-
-# aliases['DNNoutput'] = {
-#     'expr': '(VBS_category==0)*(DNNoutput_boosted) + (VBS_category==1)*(DNNoutput_resolved)'
-# }
 
 aliases['lhe_mjj'] = {
     'expr': 'TMath::Sqrt(2. * LHEPart_pt[4] * LHEPart_pt[5] * (TMath::CosH(LHEPart_eta[4] - LHEPart_eta[5]) - TMath::Cos(LHEPart_phi[4] - LHEPart_phi[5])))',
@@ -645,13 +398,8 @@ aliases['ele_isT'] = {
 
 ## WJET REWEIGHT
 
-# aliases['category_WJets'] = {
-#     'expr': '0.*(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 25 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 25) + 1.*(!(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 25 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 25))',
-#     'samples': ['Wjets_HT']
-# }
-
 ##reweight for Wjets samples
-morphing_file = utils_folder + '2018/reweight/NEWreweight.root'
+morphing_file = utils_folder + '2018/UL/reweight/UL_approx_4fakes.root'
 aliases['WJets_reweight'] = {
     'class': 'ReweightJet1pT',
     'samples': ['Wjets_HT'],
@@ -674,11 +422,11 @@ aliases['WJets_reweight_do'] = {
     'args': (morphing_file, copy.deepcopy("ele_sys_down"), copy.deepcopy("mu_sys_down"))
 } 
 
-aliases['WJets_reweight_func'] = {
-    'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
-    'args': (morphing_file, copy.deepcopy("ele_pol2"), copy.deepcopy("mu_pol2"))
-} 
+# aliases['WJets_reweight_func'] = {
+#     'class': 'ReweightJet1pT',
+#     'samples': ['Wjets_HT'],
+#     'args': (morphing_file, copy.deepcopy("ele_pol2_HWJ"), copy.deepcopy("mu_pol2_HWJ"))
+# } 
 
 # DNN
 models_path = utils_folder + '2018/NN'

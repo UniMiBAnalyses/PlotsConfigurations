@@ -176,7 +176,7 @@ plot['Wjets_HT_hardJets'] = {
                  'isData'   : 0, 
                  #'scale'    : 1.09950003 
                 #  'scale'    : 1.0
-                 'scale'    : 1.0064
+                 'scale'    : 1.0
                 #  'scale'     : 1.0232
                  #'scale'    : 1.1231175589276459 #mu
                  #'scale'    : 1.2795330335917352
@@ -189,7 +189,7 @@ plot['Wjets_HT_PUJets'] = {
                  'isData'   : 0, 
                  #'scale'    : 1.050420857 
                 #  'scale'    : 1.0
-                 'scale'    : 1.1871
+                 'scale'    : 1.0
                 #  'scale'    : 1.0854
                  #'scale'    : 1.0958905448504972
                  #'scale'    : 1.1768637821969707
@@ -307,6 +307,3 @@ plot['DATA']  = {
 legend['lumi'] = 'L = 59.74/fb'
 
 legend['sqrt'] = '#sqrt{s} = 13 TeV'
-
-
-['detajj', 'mjj', 'ptW', 'Zl1', 'eta1']

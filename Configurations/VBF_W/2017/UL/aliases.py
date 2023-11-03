@@ -136,65 +136,65 @@ aliases['ele_passHLT'] = {
 }
 
 
-aliases['ele_trig_eff_B'] = {
-    'linesToAdd': [
-        'gSystem->AddIncludePath("-I%s/src");' % os.getenv('CMSSW_BASE'),
-        '.L %s/src/PlotsConfigurations/Configurations/patches/triggerEff_1lep.cc+' % os.getenv('CMSSW_BASE')
-    ],
-    'class': 'TrigEff_1lep',
-    'args': ('/afs/cern.ch/user/a/arun/public/fixedTextfiles/2017/mvaid/Ele32_pt_eta_efficiency_withSys_Run2017B.txt'),
-    'samples': mc
-}
+# aliases['ele_trig_eff_B'] = {
+#     'linesToAdd': [
+#         'gSystem->AddIncludePath("-I%s/src");' % os.getenv('CMSSW_BASE'),
+#         '.L %s/src/PlotsConfigurations/Configurations/patches/triggerEff_1lep.cc+' % os.getenv('CMSSW_BASE')
+#     ],
+#     'class': 'TrigEff_1lep',
+#     'args': ('/afs/cern.ch/user/a/arun/public/fixedTextfiles/2017/mvaid/Ele32_pt_eta_efficiency_withSys_Run2017B.txt'),
+#     'samples': mc
+# }
 
-aliases['ele_trig_eff_CDE'] = {
-    'linesToAdd': [
-        'gSystem->AddIncludePath("-I%s/src");' % os.getenv('CMSSW_BASE'),
-        '.L %s/src/PlotsConfigurations/Configurations/patches/triggerEff_1lep.cc+' % os.getenv('CMSSW_BASE')
-    ],
-    'class': 'TrigEff_1lep',
-    'args': ('/afs/cern.ch/user/a/arun/public/fixedTextfiles/2017/mvaid/Ele32_pt_eta_efficiency_withSys_Run2017CDE.txt'),
-    'samples': mc
-}
+# aliases['ele_trig_eff_CDE'] = {
+#     'linesToAdd': [
+#         'gSystem->AddIncludePath("-I%s/src");' % os.getenv('CMSSW_BASE'),
+#         '.L %s/src/PlotsConfigurations/Configurations/patches/triggerEff_1lep.cc+' % os.getenv('CMSSW_BASE')
+#     ],
+#     'class': 'TrigEff_1lep',
+#     'args': ('/afs/cern.ch/user/a/arun/public/fixedTextfiles/2017/mvaid/Ele32_pt_eta_efficiency_withSys_Run2017CDE.txt'),
+#     'samples': mc
+# }
 
-aliases['ele_trig_eff_F'] = {
-    'linesToAdd': [
-        'gSystem->AddIncludePath("-I%s/src");' % os.getenv('CMSSW_BASE'),
-        '.L %s/src/PlotsConfigurations/Configurations/patches/triggerEff_1lep.cc+' % os.getenv('CMSSW_BASE')
-    ],
-    'class': 'TrigEff_1lep',
-    'args': ('/afs/cern.ch/user/a/arun/public/fixedTextfiles/2017/mvaid/Ele32_pt_eta_efficiency_withSys_Run2017F.txt'),
-    'samples': mc
-}
+# aliases['ele_trig_eff_F'] = {
+#     'linesToAdd': [
+#         'gSystem->AddIncludePath("-I%s/src");' % os.getenv('CMSSW_BASE'),
+#         '.L %s/src/PlotsConfigurations/Configurations/patches/triggerEff_1lep.cc+' % os.getenv('CMSSW_BASE')
+#     ],
+#     'class': 'TrigEff_1lep',
+#     'args': ('/afs/cern.ch/user/a/arun/public/fixedTextfiles/2017/mvaid/Ele32_pt_eta_efficiency_withSys_Run2017F.txt'),
+#     'samples': mc
+# }
 
-aliases['ele_trig_eff_tot'] = {
-    'expr' : '(run_period==1)*ele_trig_eff_B[0] + (run_period>1 && run_period<5)*ele_trig_eff_CDE[0] + (run_period==5)*ele_trig_eff_F[0]',
-    'samples': mc
-}
+# aliases['ele_trig_eff_tot'] = {
+#     'expr' : '(run_period==1)*ele_trig_eff_B[0] + (run_period>1 && run_period<5)*ele_trig_eff_CDE[0] + (run_period==5)*ele_trig_eff_F[0]',
+#     'samples': mc
+# }
 
-aliases['ele_trig_eff_tot_up'] = {
-    'expr' : '(run_period==1)*ele_trig_eff_B[1] + (run_period>1 && run_period<5)*ele_trig_eff_CDE[1] + (run_period==5)*ele_trig_eff_F[1]',
-    'samples': mc
-}
+# aliases['ele_trig_eff_tot_up'] = {
+#     'expr' : '(run_period==1)*ele_trig_eff_B[1] + (run_period>1 && run_period<5)*ele_trig_eff_CDE[1] + (run_period==5)*ele_trig_eff_F[1]',
+#     'samples': mc
+# }
 
-aliases['ele_trig_eff_tot_down'] = {
-    'expr' : '(run_period==1)*ele_trig_eff_B[2] + (run_period>1 && run_period<5)*ele_trig_eff_CDE[2] + (run_period==5)*ele_trig_eff_F[2]',
-    'samples': mc
-}
+# aliases['ele_trig_eff_tot_down'] = {
+#     'expr' : '(run_period==1)*ele_trig_eff_B[2] + (run_period>1 && run_period<5)*ele_trig_eff_CDE[2] + (run_period==5)*ele_trig_eff_F[2]',
+#     'samples': mc
+# }
 
-aliases['SingleLepton_trigEff_corrected'] = {
-    'expr': '(abs(Lepton_pdgId[0])==11)*ele_trig_eff_tot +  (abs(Lepton_pdgId[0])==13)*TriggerEffWeight_1l',
-    'samples': mc
-}
+# aliases['SingleLepton_trigEff_corrected'] = {
+#     'expr': '(abs(Lepton_pdgId[0])==11)*ele_trig_eff_tot +  (abs(Lepton_pdgId[0])==13)*TriggerEffWeight_1l',
+#     'samples': mc
+# }
 
-aliases['SingleLepton_trigEff_corrected_up'] = {
-    'expr': '(abs(Lepton_pdgId[0])==11)*ele_trig_eff_tot_up +  (abs(Lepton_pdgId[0])==13)*TriggerEffWeight_1l_u',
-    'samples': mc
-}
+# aliases['SingleLepton_trigEff_corrected_up'] = {
+#     'expr': '(abs(Lepton_pdgId[0])==11)*ele_trig_eff_tot_up +  (abs(Lepton_pdgId[0])==13)*TriggerEffWeight_1l_u',
+#     'samples': mc
+# }
 
-aliases['SingleLepton_trigEff_corrected_down'] = {
-    'expr': '(abs(Lepton_pdgId[0])==11)*ele_trig_eff_tot_down +  (abs(Lepton_pdgId[0])==13)*TriggerEffWeight_1l_d',
-    'samples': mc
-}
+# aliases['SingleLepton_trigEff_corrected_down'] = {
+#     'expr': '(abs(Lepton_pdgId[0])==11)*ele_trig_eff_tot_down +  (abs(Lepton_pdgId[0])==13)*TriggerEffWeight_1l_d',
+#     'samples': mc
+# }
 
 ############################################
 # B tagging
@@ -406,37 +406,35 @@ aliases['DY_LO_pTllrw'] = {
 
 ###########################
 
-basedir_fakes = configurations + "/VBSjjlnu/weights_files/fake_rates/2017_Ele32"
+basedir_fakes = configurations + "/VBF_W/utils/weights_files/my_latest"
 
-ets = ["25", "35", "45"]
-el_pr_file = configurations + "/VBSjjlnu/weights_files/prompt_rates/2017/plot_ElCh_l1_etaVpt_ptel_2D_pr.root"
-mu_pr_file = configurations + "/VBSjjlnu/weights_files/prompt_rates/2017/plot_MuCh_l1_etaVpt_ptmu_2D_pr.root"
+ets = ["30"]
+
+el_pr_file = configurations + "/VBF_W/utils/weights_files/my_latest/ElePR.root"
+mu_pr_file = configurations + "/VBF_W/utils/weights_files/my_latest/MuonPR.root"
 
 for et in ets:
-    el_fr_file = basedir_fakes + "/plot_ElCh_JetEt"+et+"_l1_etaVpt_ptel_aseta_fw_ewk_2D.root" #No absolute value for fakes
-    mu_fr_file = basedir_fakes + "/plot_MuCh_JetEt"+et+"_l1_etaVpt_ptmu_fw_ewk_2D.root"
+    el_fr_file = basedir_fakes + "/EleFR_jet"+et+".root"
+    mu_fr_file = basedir_fakes + "/MuonFR_jet"+et+".root"
     aliases['fakeWeight_'+et] = { 
         'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False),  #doabsEta=False, no stat variations
+        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations
         'linesToAdd' : [
             'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-            '.L {}/VBSjjlnu/macros/newfakeweight_OTFall.cc+'.format(configurations)
-        ],     
+            '.L {}/VBF_W/utils/macros/newfakeweight_OTFall.cc+'.format(configurations)
+        ],
         'samples': ["Fake"]
     }
 
-#stat variations
-el_fr_file35 = basedir_fakes + "/plot_ElCh_JetEt35_l1_etaVpt_ptel_aseta_fw_ewk_2D.root" #No absolute value for fakes
-mu_fr_file35 = basedir_fakes + "/plot_MuCh_JetEt35_l1_etaVpt_ptmu_fw_ewk_2D.root"
-
-aliases['fakeWeight_35_statUp'] = { 
+# #stat variations
+aliases['fakeWeight_statUp'] = { 
         'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file35), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file35), copy.deepcopy(mu_pr_file), False, True, False),   
+        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, True, False),   
         'samples': ["Fake"]
     }
-aliases['fakeWeight_35_statDo'] = { 
+aliases['fakeWeight_statDo'] = { 
         'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file35), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file35), copy.deepcopy(mu_pr_file), False, False, True), 
+        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, True), 
         'samples': ["Fake"]
     }
 
@@ -490,10 +488,10 @@ aliases['PDFweight_normalized'] = {
 }
 
 
-# aliases['lhe_mjj'] = {
-#     'expr': 'TMath::Sqrt(2. * LHEPart_pt[4] * LHEPart_pt[5] * (TMath::CosH(LHEPart_eta[4] - LHEPart_eta[5]) - TMath::Cos(LHEPart_phi[4] - LHEPart_phi[5])))',
-#     'samples': ['VBF-Z']
-# }
+aliases['lhe_mjj'] = {
+    'expr': 'TMath::Sqrt(2. * LHEPart_pt[4] * LHEPart_pt[5] * (TMath::CosH(LHEPart_eta[4] - LHEPart_eta[5]) - TMath::Cos(LHEPart_phi[4] - LHEPart_phi[5])))',
+    'samples': ['VBF-Z']
+}
 
 # aliases['mu_isT'] = {
 #     'expr': '(Lepton_isTightMuon_cut_Tight_HWWW[0]<0.5)+(Lepton_isTightMuon_cut_Tight_HWWW[0]>0.5)',

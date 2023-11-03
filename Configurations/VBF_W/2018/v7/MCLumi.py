@@ -2,7 +2,7 @@ from LatinoAnalysis.Tools.commonTools import *
 import os
 import ROOT
 
-def getLumi(TreeName, iProd, prodCfg='LatinoAnalysis/NanoGardener/python/framework/Productions_cfg.py'):
+def getLumi(TreeName, iProd, prodCfg='/eos/user/a/abulla/CMSSW_11_0_4/src/LatinoAnalysis/NanoGardener/python/framework/Productions_cfg.py'):
  # Compute #evts
     genEventCount = 0
     genEventSumw  = 0.0
@@ -89,7 +89,7 @@ def GetTree(MClist):
 
 
 if __name__ == '__main__':
-    samplesCfg = "PlotsConfigurations/Configurations/VBF_W/2017/samples_central.py"
+    samplesCfg = "PlotsConfigurations/Configurations/VBF_W/2018/UL/samples.py"
     CMSSW=os.environ["CMSSW_BASE"]
 
     if os.path.exists(CMSSW+'/src/'+samplesCfg) :
@@ -108,12 +108,12 @@ if __name__ == '__main__':
 
     for tree in MCTreeslist:
         # print("tree: ", tree)
-        lumi = getLumi(tree, "Fall2017_102X_nAODv7_Full2017v7")
+        lumi = getLumi(tree, "Summer20UL18_106x_nAODv9_Full2018v9")
         ## fill the dictionary
         lumi_dict[tree] = lumi
 
     ## print the dictionary in a txt file
-    with open("lumi_dict2017.txt", "w") as f:
+    with open("UL/lumi_dict2018.txt", "w") as f:
         f.write(str(lumi_dict))
 
     # print(getLumi("WLNuJJ_EWK", "Autumn18_102X_nAODv7_Full2018v7"))

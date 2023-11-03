@@ -2,22 +2,25 @@
 
 treeName = 'Events'
 
-tag = 'vbf_w_2018DNN'
+tagger = 'EFT_1'
+
+tag = 'vbf_w_2018'+tagger
 
 # used by mkShape to define output directory for root files
-outputDir = 'rootFile/DNN'
+# outputDir = 'rootFile/NORWALLSYS'
+outputDir = '../../rootFile/'+tagger
 
 # file with TTree aliases
 aliasesFile = 'aliases.py'
 
 # file with list of variables
-variablesFile = 'variables_dnn.py'
+variablesFile = 'variables.py'
 
 # file with list of cuts
 cutsFile = 'cuts.py' 
 
 # file with list of samples
-samplesFile = 'samples.py' 
+samplesFile = 'samples.py'
 
 # file with list of samples
 plotFile = 'plot.py' 
@@ -28,11 +31,11 @@ lumi = 59.74
 # used by mkPlot to define output directory for plots
 # different from "outputDir" to do things more tidy
 #outputDirPlots = 'plots'
-outputDirPlots = 'plots/DNN'
-
+# outputDirPlots = 'plots/NORWALLSYS'
+outputDirPlots = '../../plots/'+tagger
 
 # used by mkDatacards to define output directory for datacards
-outputDirDatacard = 'datacards'
+outputDirDatacard = '../../datacards/'+tagger
 
 # structure file for datacard
 structureFile = 'structure.py'

@@ -109,7 +109,7 @@ XSWeight      = 'XSWeight'
 #               'Lepton_RecoSF[0]','EMTFbug_veto', LepWPWeight_1l, LepWPCut_1l,
 #               'PrefireWeight', 'PUJetIdSF',
 #               'btagSF',  'BoostedWtagSF_nominal']
-SFweight1l = [ 'puWeight_noeras[0]', 'SingleLepton_trigEff_corrected[0]',
+SFweight1l = [ 'puWeight_noeras[0]', 'TriggerEffWeight_1l',
               'Lepton_RecoSF[0]','EMTFbug_veto', LepWPWeight_1l, LepWPCut_1l,
               'PrefireWeight', 'PUJetIdSF',
               'btagSF']
@@ -438,12 +438,19 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryHWW,'ZZZ')
 
 
 #########################################################################
-fake_weight_corrected = "fakeWeight_35"
 
-### Fakes
+# Then corrected
+fakeW = 'fakeWeight_30'
+
+# Fake_ele_corr = ((abs(Lepton_pdgId[0]) == 11) * (((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(0.4)) + ((Lepton_phi[0]>-1.)*(1.) + (Lepton_phi[0]<1.5)*(1.))))
+# Fake_corr = '(((abs(Lepton_pdgId[0]) == 11) * (1. + ((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(-0.6)))) + ((abs(Lepton_pdgId[0]) == 13 ) * 1.))'
+# Fake_corr = '1.'
+
+
+# ## Fakes
 samples['Fake'] = {
   'name': [],
-  'weight': METFilter_DATA,
+  'weight': METFilter_DATA+'*'+fakeW,
   'weights': [],
   'isData': ['all'],
   'FilesPerJob' : 45
@@ -453,7 +460,7 @@ samples['Fake'] = {
 #
 for _, sd in DataRun:
   for pd in DataSets:
-    files = nanoGetSampleFiles(fakeDirectoryLat, pd + '_' + sd)
+    files = nanoGetSampleFiles(dataDirectoryHWW, pd + '_' + sd)
     # # BE Careful --> we use directory_data because the Lepton tight cut was not applied in post-processing
     samples['Fake']['name'].extend(files)
     samples['Fake']['weights'].extend([DataTrig[pd]] * len(files))

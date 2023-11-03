@@ -170,11 +170,11 @@ For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for e
      --cutName topcr
 
     python DrawNuisancesAll.py \
-    --inputFile datacards/ele_HWJ/mjj/shapes/histos_ele_HWJ.root \
-    --outputDirPlots plots/single_sys \
+    --inputFile datacards/UL_sys/topcr/jetpt1/shapes/histos_topcr.root \
+    --outputDirPlots ../plots/debug_nuis_top \
     --nuisancesFile nuisances.py \
     --samplesFile samples.py \
-    --cutName ele_HWJ
+    --cutName topcr
 
 python DrawNuisancesAll.py \
 --inputFile datacards/yessys_yesrw/ele_SR/DNNoutput_ALLbin1/shapes/histos_ele_SR.root  \
