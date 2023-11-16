@@ -9,6 +9,8 @@ parser.add_argument("-i","--input", help="input file", type=str)
 parser.add_argument("-o","--output", help="output file", type=str)
 parser.add_argument("-m","--merge", help="Merge these regions in format new_name:reg1,reg2 new_name:reg3,reg4", type=str, nargs="+")
 parser.add_argument("-v","--variables", help="merge only these variables", type=str, nargs="+")
+parser.add_argument("--copy", dest="copy", help="Copy unmerged regions.", default="False", action="store_true")
+parser.add_argument("--include-old", dest="includeold", help="Also include old regions before merging", default="False", action="store_true")
 args = parser.parse_args()
 
 if __name__ == "__main__":
@@ -30,10 +32,13 @@ if __name__ == "__main__":
    print(ignore_regions)
 
    to_be_merged = {}
+   to_not_merge = {}
 
    f = ROOT.TFile(args.input, "READ")
    
    regions = [i.GetName() for i in f.GetListOfKeys()]
+   not_merged = [i for i in regions if i not in ignore_regions]
+   if args.includeold: not_merged += ignore_regions
   
    for new_region in merge_pattern.keys():
       to_be_merged[new_region] = {}
@@ -51,6 +56,18 @@ if __name__ == "__main__":
             d = f.Get(r + "/" + v)
             for hist in [i.GetName() for i in d.GetListOfKeys()]:
                 to_be_merged[new_region][r][v][hist] = d.Get(hist).Clone()
+
+   for region in not_merged:
+      to_not_merge[region] = {}
+      for v in args.variables:
+         d_ = f.Get(region)
+         vars = [i.GetName() for i in d_.GetListOfKeys()]
+         if v not in vars: continue
+         d = f.Get(region + "/" + v)
+         to_not_merge[region][v] = {}
+         for hist in [i.GetName() for i in d.GetListOfKeys()]:
+            to_not_merge[region][v][hist] = d.Get(hist).Clone()
+
 
    merged = {}
 
@@ -77,39 +94,28 @@ if __name__ == "__main__":
 
    end = datetime.now()
    print("Collected merged histo in {} seconds".format((end - start).total_seconds()))
-   
-#    # first copy the original shapes
-#    f_out = ROOT.TFile(args.output, "RECREATE")
-#    for r in regions:
-#       if r in ignore_regions : continue 
-# 
-#       print(">Cut: ", r)
-#       d = f.Get(r)
-#       f_out.mkdir(r)
-#       f.cd(r)
-#    
-#       for v in args.variables:
-#          vars_ = [i.GetName() for i in d.GetListOfKeys()]
-#          if v not in vars_: continue
-#          
-#          var = d.Get(v)
-#          f_out.mkdir(r + "/" + v)
-#          f_out.cd(r + "/" + v)
-#      
-#          for histo in [h.GetName() for h in var.GetListOfKeys()]:
-#             h_ = var.Get(histo).Clone()
-#             h_.Write()
-#           
-#          f_out.cd("..")
-# 
-#       end = datetime.now()
-#       print("Done in {} seconds".format((end - start).total_seconds()))
-#    
-#    f_out.cd("..")
+  
+   f_out = ROOT.TFile(args.output, "update")
+
+   if args.copy: 
+      print ("> Now adding the old regions")      
+      for region in to_not_merge.keys():
+         print(">Cut: ", region)
+         f_out.mkdir(region)
+         f_out.cd(region)
+         for v in to_not_merge[region].keys():
+            print("Variable: " + v)
+            f_out.mkdir(region + "/" + v)
+            f_out.cd(region + "/" + v)
+            for histo in to_not_merge[region][v].keys():
+               to_not_merge[region][v][histo].Write()
+            f_out.cd("..")
+         end = datetime.now()
+         print("Done in {} seconds".format((end - start).total_seconds()))
+         f_out.cd("..")
 
    print ("> Now adding the new regions")
 
-   f_out = ROOT.TFile(args.output, "update")
    for new_region in merged.keys():
       print(">Cut: ", new_region)
       f_out.mkdir(new_region)

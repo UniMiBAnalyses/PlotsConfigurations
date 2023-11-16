@@ -184,7 +184,7 @@ def postfit_plot(datac):
            --variable {1} --structureFile {3} \\
            --plotFile {2} --lumiText "137/fb" """.format(datac["outputdir"], datac["phase_spaces"][0]["var"], plotFile, structure_file),
 
-           """mkPlot.py --pycfg=configuration_combined.py --inputFile=postfit_shapes.root  --showRelativeRatio \\
+           """mkPlot.py --pycfg=configuration_combined.py --fileFormats=png,pdf --inputFile=postfit_shapes.root  --showRelativeRatio \\
             --minLogC 1 --maxLogC 1e2 --minLogCratio 1 --maxLogCratio 1e2 --plotNormalizedDistributions """ #--showIntegralLegend=1 
     ]
 
@@ -222,7 +222,7 @@ def postfit_plot_onlyplot(datac):
     cmd = [ 
 
            """mkPlot.py --pycfg=configuration_combined.py --inputFile=postfit_shapes.root  --showRelativeRatio \\
-            --minLogC 10 --maxLogC 1e2 --minLogCratio 10 --maxLogCratio 1e2  --plotNormalizedDistributions """ #--showIntegralLegend=1
+            --minLogC 1 --maxLogC 1e1 --minLogCratio 1 --fileFormats=png,pdf --maxLogCratio 1e2  --plotNormalizedDistributions """ #--showIntegralLegend=1
     ]
 
     for c in cmd:  log.debug(cmd)

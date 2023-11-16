@@ -11,7 +11,7 @@ import CombineHarvester.CombineTools.plotting as plot
 ranges = {
     'k_cW': [-1,1],
     'k_cHB': [-20,20],
-    'k_cHQ1': [-110,110],
+    'k_cHQ1': [-60,60],
     'k_cHW': [-5,5],
     'k_cHWB': [-15,15],
     'k_cHbox': [-30,30],
@@ -34,6 +34,17 @@ priors = {
     'k_cHbox': 10,
     'k_cHj1': 50,
     'k_cHl1': 50
+}
+
+poi_to_label = {
+   "k_cHB": "\"c_{HB} [TeV^{-2}]\"",
+   "k_cHWB": "\"c_{HWB} [TeV^{-2}]\"",
+   "k_cHl1": "\"c_{Hl}^{(1)} [TeV^{-2}]\"",
+   "k_cW": "\"c_{W} [TeV^{-2}]\"",
+   "k_cHW": "\"c_{HW} [TeV^{-2}]\"",
+   "k_cHQ1": "\"c_{HQ}^{(1)} [TeV^{-2}]\"",
+   "k_cHj1": "\"c_{Hj}^{(1)} [TeV^{-2}]\"",
+   "k_cHbox": "\"c_{HBox} [TeV^{-2}]\""
 }
 
 parser = argparse.ArgumentParser()
@@ -63,7 +74,14 @@ parser.add_argument("--rMax", help="Max for scan", type=float,default=1.5)
 parser.add_argument("--skip-initial", action="store_true", help="skip initial fit", default=False)
 parser.add_argument("--clean", help="Remove previous scan point root files", action="store_true", default=False)
 parser.add_argument("--randomPoints", help="Random start points for MultiDim", type=int,default=0)
+parser.add_argument("--rangeFactor", help="Factor to scale current ranges", type=int,default=1)
 args = parser.parse_args()
+
+
+fact = args.rangeFactor
+for key in ranges.keys():
+   ranges[key][0]*=fact
+   ranges[key][1]*=fact
 
 
 if args.config.endswith(".yaml"):
@@ -207,7 +225,7 @@ def do_hadd(datac):
     cmd = [ ]
     cmd.append("cd "+ outdir)
     # Prepare the script to create the impacts
-    cmd.append("hadd -f higgsCombine.{0}.scan_all.POINTS.root  higgsCombine.{0}.scan_all.POINTS.*.MultiDimFit.mH125.root".format(file_name))
+    cmd.append("hadd -f -k higgsCombine.{0}.scan_all.POINTS.root  higgsCombine.{0}.scan_all.POINTS.*.MultiDimFit.mH125.root".format(file_name))
     
     with open("{}/script_preparation_hadd_{}.sh".format(outdir, file_name), "w") as of:
         of.write("\n\n".join(cmd))
@@ -256,13 +274,24 @@ def do_graph(datac, outputfile):
     outputfile.Write()
     #gr.Write(file_name + "/" + datac['datacard_name'])
 
-    # Save scans in pdf and png
-    os.system("mkEFTScan.py {0} -p {1} -maxNLL 5 -o {2}/{3}_{4} ".format(
-        outdir + "/higgsCombine.{0}.scan_all.POINTS.root -cms -preliminary -energy 13 -lumi 59.74".format(file_name), 
+    print(
+       "mkEFTScan.py {0} -p {1} --xlabel {5} -maxNLL 5 -o {2}/{3}_{4} ".format(
+        outdir + "/higgsCombine.{0}.scan_all.POINTS.root -cms -preliminary -energy 13 -lumi 137".format(file_name),
         " ".join(args.pois),
         outdir,
         datac['datacard_name'],
-        file_name
+        file_name,
+        poi_to_label[args.pois[0]]
+    )
+    )
+    # Save scans in pdf and png
+    os.system("mkEFTScan.py {0} -p {1} --xlabel {5} -maxNLL 5 -o {2}/{3}_{4} ".format(
+        outdir + "/higgsCombine.{0}.scan_all.POINTS.root -cms -preliminary -energy 13 -lumi 137".format(file_name), 
+        " ".join(args.pois),
+        outdir,
+        datac['datacard_name'],
+        file_name,
+        poi_to_label[args.pois[0]]
     ))
 
 #############################################
@@ -326,7 +355,11 @@ def do_getinterval(datac, outfile_graph, outputfile):
 
         #print(graphname, ranges[graphname]["ones"], ranges[graphname]["twos"])
 
-    f_out.write("[{}]\n".format(file_name))
+    name = file_name
+    if "freeze" in name:
+       name = name.split("_freeze_")[0]
+ 
+    f_out.write("[{}]\n".format(name))
     for key, items in ranges.items():
         f_out.write("{} \t [{:.3f},{:.3f}] \t [{:.3f},{:.3f}]\n".format(
             key,

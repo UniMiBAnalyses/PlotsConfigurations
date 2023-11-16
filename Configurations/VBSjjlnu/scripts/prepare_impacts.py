@@ -16,6 +16,7 @@ parser.add_argument("-fo","--fit-options", help="Robust fit options ", type=int,
 parser.add_argument("--masks", help="File with list of channels to mask",  type=str)
 parser.add_argument("-q","--queue", help="Queue", type=str,default="microcentury")
 parser.add_argument("-v","--verbose", help="Combine verbosity level", type=int, default=0)
+parser.add_argument("--skipinit", help="Skip the initial fit", default=False, action="store_true")
 args = parser.parse_args()
 
 
@@ -141,8 +142,9 @@ else:
 
 if not args.plot:
 # Prepare the script to create the impacts
-    cmd.append("""combineTool.py -M Impacts -d combined.root -m 125 --doInitialFit \\
-                {} -n nuis  {} {} -v {}""".format(toysf, fitter_options[args.fit_options], mask, args.verbose))
+    if not args.skipinit:
+       cmd.append("""combineTool.py -M Impacts -d combined.root -m 125 --doInitialFit \\
+                   {} -n nuis  {} {} -v {}""".format(toysf, fitter_options[args.fit_options], mask, args.verbose))
 
     cmd.append("""combineTool.py -M Impacts -d combined.root -m 125  --doFits \\
               {} --job-mode condor --sub-opts '+JobFlavour="{}"' \\
@@ -173,6 +175,7 @@ if args.plot:
     #             --setParameterRanges {} -o impacts.rateParams.json -n rateParams  """.format(toysf,rparam_names,rparam_ranges))
 
     with open("{}/script_preparation_plots.sh".format(args.outputdir), "w") as of:
+        print(cmd)
         of.write("\n\n".join(cmd))
 
     if not args.dry:

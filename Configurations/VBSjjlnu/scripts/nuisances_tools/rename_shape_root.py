@@ -18,6 +18,8 @@ parser.add_argument("--samples","-s", help="Samples", nargs="+", type=str)
 parser.add_argument("-sf","--samples-file", help="Samples", type=str)
 parser.add_argument("-ev","--exclude-vars", help="Exclude vars", type=str, nargs="+")
 parser.add_argument("-ec","--exclude-cuts", help="Exclude cuts", type=str, nargs="+")
+parser.add_argument("-dc","--do-cuts", help="Do cuts", type=str, nargs="+")
+parser.add_argument("-dv","--do-vars", help="Do vars", type=str, nargs="+")
 args = parser.parse_args()
 
 
@@ -34,13 +36,16 @@ f = R.TFile(args.input, "UPDATE")
 shape_name = args.shape_name
 rename_shape = args.rename
 
+print("--> Starting")
 for k in f.GetListOfKeys():
     if args.exclude_cuts and k.GetName() in args.exclude_cuts: continue
+    if args.do_cuts and k.GetName() not in args.do_cuts: continue
     R.gDirectory.Cd(k.GetName())
     for z in R.gDirectory.GetListOfKeys():
         if args.exclude_vars and z.GetName() in args.exclude_vars: continue
+        if args.do_vars and z.GetName() not in args.do_vars: continue
         R.gDirectory.Cd(z.GetName())
-        print(k.GetName(), z.GetName())
+        # print(k.GetName(), z.GetName())
         for l in R.gDirectory.GetListOfKeys():
 
             for sample in samples:
@@ -48,13 +53,15 @@ for k in f.GetListOfKeys():
                 else:  new_shape_name = rename_shape
 
                 if "histo_"+sample+"_"+shape_name+"Down" == l.GetName():
-                    #print(l.GetName(),"histo_"+sample+"_"+shape_name+"Down" )
+                    # print(l.GetName(),"histo_"+sample+"_"+shape_name+"Down" )
                     obj = R.gDirectory.Get(l.GetName())
+                    # print("Renaming: " + "histo_" + sample+"_"+new_shape_name+"Down")
                     obj.SetName("histo_" + sample+"_"+new_shape_name+"Down")
                     obj.Write()
                 if "histo_"+sample+"_"+shape_name+"Up" == l.GetName():
-                    #print(l.GetName(),"histo_"+sample+"_"+shape_name+"Down" )
+                    # print(l.GetName(),"histo_"+sample+"_"+shape_name+"Down" )
                     obj = R.gDirectory.Get(l.GetName())
+                    # print("Renaming: " + "histo_" + sample+"_"+new_shape_name+"Up")
                     obj.SetName("histo_" + sample+"_"+new_shape_name+"Up")
                     obj.Write()
             
@@ -63,6 +70,6 @@ for k in f.GetListOfKeys():
     R.gDirectory.Cd("../")
 
 # Already writter
-#f.Write()
+f.Write()
 print("-> Closing")
 f.Close()
