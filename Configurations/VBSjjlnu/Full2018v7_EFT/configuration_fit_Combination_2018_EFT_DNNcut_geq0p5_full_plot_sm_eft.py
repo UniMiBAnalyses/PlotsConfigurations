@@ -15,13 +15,13 @@ aliasesFile = direc+'/aliases.py'
 variablesFile = direc+'/variables.py'
 
 # file with list of cuts
-cutsFile = direc +'/cuts.py' 
+cutsFile = direc +'/cuts_top_wjet.py' 
 
 # file with list of samples
 samplesFile = direc+'/samples.py' 
 
 #t file with list of samples
-plotFile = direc+'/plot_sm_eft.py' 
+plotFile = direc+'/plot.py' 
 
 # luminosity to normalize to (in 1/fb)
 lumi = 59.74
@@ -38,7 +38,7 @@ structureFile = direc+'/structure_split.py'
 
 
 # nuisances file for for mkShape / mkPlot
-nuisancesFile = direc+'/nuisances_empty.py'
-
+# nuisancesFile = direc+'/nuisances_empty.py'
+nuisancesFile = direc+'/nuisances_datacard_tmp.py'
 
 customizeScript = direc + '/customize.py'

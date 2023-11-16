@@ -137,8 +137,7 @@ samples['VBF-V']  = {  'name'   :
                                     nanoGetSampleFiles(directory_bkg,'WLNuJJ_EWK') +
                                   nanoGetSampleFiles(directory_bkg,'EWKZ2Jets_ZToLL_M-50'),
                     'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_Vg_VgS_VBFV',
-                    'FilesPerJob' : 15,
-                    'EventsPerJob' : 70000,
+                    'FilesPerJob' : 2,
                   }
 
 # samples['VBF-V_dipole']  = {  'name'   :  

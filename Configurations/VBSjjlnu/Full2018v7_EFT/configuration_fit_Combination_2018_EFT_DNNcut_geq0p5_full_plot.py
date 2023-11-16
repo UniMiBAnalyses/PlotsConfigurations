@@ -38,7 +38,7 @@ structureFile = direc+'/structure_split.py'
 
 
 # nuisances file for for mkShape / mkPlot
-nuisancesFile = direc+'/nuisances_empty.py'
-
+# nuisancesFile = direc+'/nuisances_empty.py'
+nuisancesFile = direc+'/nuisances_datacard_tmp.py'
 
 customizeScript = direc + '/customize.py'

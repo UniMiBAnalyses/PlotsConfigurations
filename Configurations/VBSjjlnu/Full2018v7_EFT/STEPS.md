@@ -51,13 +51,30 @@ Then we decorrelate FSR and ISR for all the samples
 
 #################
 
-for var in CMS_PS_FSR CMS_PS_ISR; do python ../scripts/nuisances_tools/rename_shape_root.py -i plots_fit_2018_EFT_DNNcut_geq0p5_full_wPS.root --shape-name ${var} -sf txtsForScripts/samples_PS_extraction.txt; done
+# for var in CMS_PS_FSR CMS_PS_ISR; do python ../scripts/nuisances_tools/rename_shape_root.py -i plots_fit_2018_EFT_DNNcut_geq0p5_full_wPS.root --shape-name ${var} -sf txtsForScripts/samples_PS_extraction.txt; done
+for var in CMS_PS_FSR CMS_PS_ISR; do python ../scripts/nuisances_tools/rename_shape_root.py -i rootfiles_2/plots_fit_2018_EFT_DNNcut_geq0p5_bkg_only.root --shape-name ${var} -sf txtsForScripts/samples_PS_extraction.txt; done
+for var in CMS_PS_FSR CMS_PS_ISR; do python ../scripts/nuisances_tools/rename_shape_root.py -i rootfiles_2/plots_fit_2018_EFT_DNNcut_geq0p5_sm.root --shape-name ${var} --rename "$var"_VBS -sf txtsForScripts/samples_PS_merging_VBS_sm.txt; done
+for var in CMS_PS_FSR CMS_PS_ISR; do python ../scripts/nuisances_tools/rename_shape_root.py -i rootfiles_2/plots_fit_2018_EFT_DNNcut_geq0p5_bkg_only.root --shape-name ${var} --rename "$var"_QCD_VV -sf txtsForScripts/samples_PS_merging_VV.txt; done
+for var in CMS_PS_FSR CMS_PS_ISR; do python ../../scripts/nuisances_tools/rename_shape_root.py -i plots_fit_2018_EFT_DNNcut_geq0p5_eft.root --shape-name ${var} --rename "$var"_EFT -sf ../txtsForScripts/samples_EFT_datacard.txt; done
 
 ################
 
 # Apply QCD scales from 2017 to 2018 as in 2018 they were not saved in the root files
 
 python ../scripts/nuisances_tools/apply_nuisances_effect.py -i plots_fit_2018_EFT_DNNcut_geq0p5_full_wPS.root -o plots_fit_2018_EFT_DNNcut_geq0p5_full_QCDscales_sm.root --nuisance-effect /eos/user/g/gboldrin/Full2017v7_EFT/QCDscale_effect_sm_bkg_fit_2017_EFT_DNNcut_geq0p5_full.root -s sm -n QCDscale_VBS_envelope
+
+################
+
+# Extract PS for EFT to apply to 2016
+
+python ../scripts/nuisances_tools/extract_nuisances_effect.py -i rootfiles_2/plots_fit_2018_EFT_DNNcut_geq0p5_eft.root -o rootfiles_2/PS_effect_plots_fit_2018_EFT_DNNcut_geq0p5_eft.root -sf txtsForScripts/samples_EFT_datacard.txt -cf txtsForScripts/cuts_PS_extraction.txt -v ALL -n CMS_PS_ISR CMS_PS_FSR
+
+################
+
+# Extract PDF to apply to 2016 
+
+python ../../scripts/nuisances_tools/extract_nuisances_effect.py -i plots_fit_v4.5_2018_split.root -o PDF_effect_bkg_fit_v4.5_2018.root -sf ../samples_PDF_extraction.txt -cf ../cuts_PS_extraction.txt -v ALL -n pdf_weight_1718
+
 
 ################
 
