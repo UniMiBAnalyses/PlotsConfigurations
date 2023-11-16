@@ -1,0 +1,110 @@
+[
+  { 
+    "datacard_name": "2016_signal_res",
+    "folders": [
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm", 
+        "name": 2016
+      }
+    ], 
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "DNNoutput_res_v1", 
+        "cut": "res_sig_mu"
+      },
+      {
+          "name": "res_sig_ele",
+          "var": "DNNoutput_res_v1", 
+          "cut": "res_sig_ele"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_signal_boost",
+    "folders": [
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu",
+          "var": "DNNoutput_boost",
+          "cut": "boost_sig_mu"
+      },
+      {
+          "name": "boost_sig_ele",
+          "var": "DNNoutput_boost",
+          "cut": "boost_sig_ele"
+      }
+
+    ]
+  },
+  {
+    "datacard_name": "2016_signal_res_ele",
+    "folders": [
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+          "name": "res_sig_ele",
+          "var": "DNNoutput_res_v1",
+          "cut": "res_sig_ele"
+      }
+    ]
+  },
+  { 
+    "datacard_name": "2016_signal_res_mu",
+    "folders": [
+      { 
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+          "name": "res_sig_mu",
+          "var": "DNNoutput_res_v1",
+          "cut": "res_sig_mu"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_signal_boost_ele",
+    "folders": [
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+          "name": "boost_sig_ele",
+          "var": "DNNoutput_boost",
+          "cut": "boost_sig_ele"
+      }
+
+    ]
+  }, 
+  { 
+    "datacard_name": "2016_signal_boost_mu",
+    "folders": [
+      { 
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+          "name": "boost_sig_mu",
+          "var": "DNNoutput_boost",
+          "cut": "boost_sig_mu"
+      }
+    ]
+  }
+]

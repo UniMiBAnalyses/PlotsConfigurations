@@ -1,0 +1,416 @@
+[
+  {
+    "datacard_name": "2016_2017_2018_signal_res",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "DNNoutput_res_v1",
+        "cut": "res_sig_mu"
+      },
+      {
+        "name": "res_sig_ele",
+        "var": "DNNoutput_res_v1",
+        "cut": "res_sig_ele"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_signal_boost",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "boost_sig_mu",
+        "var": "DNNoutput_boost",
+        "cut": "boost_sig_mu"
+      },
+      {
+        "name": "boost_sig_ele",
+        "var": "DNNoutput_boost",
+        "cut": "boost_sig_ele"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_signal_res_ele",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "res_sig_ele",
+        "var": "DNNoutput_res_v1",
+        "cut": "res_sig_ele"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_signal_res_mu",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "res_sig_mu",
+        "var": "DNNoutput_res_v1",
+        "cut": "res_sig_mu"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_signal_boost_ele",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "boost_sig_ele",
+        "var": "DNNoutput_boost",
+        "cut": "boost_sig_ele"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_signal_boost_mu",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "boost_sig_mu",
+        "var": "DNNoutput_boost",
+        "cut": "boost_sig_mu"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_res_wjet_mu",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res",
+        "cut": "res_wjetcr_mu"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_boost_wjet_mu",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "boost_wjet_mu",
+        "var": "fit_bins_boost",
+        "cut": "boost_wjetcr_mu"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_res_wjet_ele",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "res_wjet_ele",
+        "var": "fit_bins_res",
+        "cut": "res_wjetcr_ele"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_boost_wjet_ele",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "boost_wjet_ele",
+        "var": "fit_bins_boost",
+        "cut": "boost_wjetcr_ele"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_res_wjet",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "res_wjet_ele",
+        "var": "fit_bins_res",
+        "cut": "res_wjetcr_ele"
+      },
+      {
+        "name": "res_wjet_mu",
+        "var": "fit_bins_res",
+        "cut": "res_wjetcr_mu"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_boost_wjet",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "boost_wjet_ele",
+        "var": "fit_bins_boost",
+        "cut": "boost_wjetcr_ele"
+      },
+      {
+        "name": "boost_wjet_mu",
+        "var": "fit_bins_boost",
+        "cut": "boost_wjetcr_mu"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_res_topcr",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "res_top_ele",
+        "var": "events",
+        "cut": "res_topcr_ele"
+      },
+      {
+        "name": "res_top_mu",
+        "var": "events",
+        "cut": "res_topcr_mu"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_res_topcr_ele",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "res_top_ele",
+        "var": "events",
+        "cut": "res_topcr_ele"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_res_topcr_mu",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "res_top_mu",
+        "var": "events",
+        "cut": "res_topcr_mu"
+      }
+    ]
+  },
+  {
+    "datacard_name": "2016_2017_2018_boost_topcr",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "boost_top_ele",
+        "var": "events",
+        "cut": "boost_topcr_ele"
+      },
+      {
+        "name": "boost_top_mu",
+        "var": "events",
+        "cut": "boost_topcr_mu"
+      }
+    ]
+  }
+]

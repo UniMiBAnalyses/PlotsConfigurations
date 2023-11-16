@@ -1,0 +1,93 @@
+[
+    {
+        "folders": [
+            {
+                "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full",
+                "name": "2016"
+            }
+        ], 
+        "phase_spaces": [
+            {   
+                "var": "Mww_resolved_6", 
+                "cut": "res_sig_mu_DNN_leq_0p5",
+                "name": "res_sig_mu_DNN_leq_0p5"
+            },
+            {   
+                "var": "fit_bins_res", 
+                "cut": "res_wjetcr_ele",
+                "name": "res_wjetcr_ele"
+            },
+            {   
+                "var": "Mww_resolved_6", 
+                "cut": "res_sig_mu_DNN_geq_0p5",
+                "name": "res_sig_mu_DNN_geq_0p5"
+            },
+            {   
+                "var": "events", 
+                "cut": "res_topcr_ele",
+                "name": "res_topcr_ele"
+            },
+            {
+                "var": "Mww_resolved_6",
+                "cut": "res_sig_ele_DNN_leq_0p5",
+                "name": "res_sig_ele_DNN_leq_0p5"
+            },
+            {
+                "var": "fit_bins_res",
+                "cut": "res_wjetcr_mu",
+                "name": "res_wjetcr_mu"
+            },
+            {
+                "var": "events",
+                "cut": "res_topcr_mu",
+                "name": "res_topcr_mu"
+            },
+            {
+                "var": "Mww_resolved_6",
+                "cut": "res_sig_ele_DNN_geq_0p5",
+                "name": "res_sig_ele_DNN_geq_0p5"
+            },
+            {
+                "var": "Mww", 
+                "cut": "boost_sig_ele_DNN_geq_0p5", 
+                "name": "boost_sig_ele_DNN_geq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_mu", 
+                "name": "boost_topcr_mu"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_mu", 
+                "name": "boost_wjetcr_mu"
+            }, 
+            {
+                "var": "Mww", 
+                "cut": "boost_sig_ele_DNN_leq_0p5", 
+                "name": "boost_sig_ele_DNN_leq_0p5"
+            }, 
+            {
+                "var": "fit_bins_boost", 
+                "cut": "boost_wjetcr_ele", 
+                "name": "boost_wjetcr_ele"
+            }, 
+            {
+                "var": "Mww", 
+                "cut": "boost_sig_mu_DNN_geq_0p5", 
+                "name": "boost_sig_mu_DNN_geq_0p5"
+            }, 
+            {
+                "var": "Mww", 
+                "cut": "boost_sig_mu_DNN_leq_0p5", 
+                "name": "boost_sig_mu_DNN_leq_0p5"
+            }, 
+            {
+                "var": "events", 
+                "cut": "boost_topcr_ele", 
+                "name": "boost_topcr_ele"
+            }
+        ], 
+        "datacard_name": "Mww"
+    } 
+]

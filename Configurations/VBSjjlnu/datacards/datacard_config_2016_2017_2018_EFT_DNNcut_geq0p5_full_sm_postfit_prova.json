@@ -1,0 +1,26 @@
+[
+  {
+    "datacard_name": "2016_2017_2018_signal_res_ele",
+    "folders": [
+      {
+        "basedir": "Full2017v7_EFT/datacards_fit_2017_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2017
+      },
+      {
+        "basedir": "Full2018v7_EFT/datacards_fit_2018_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2018
+      },
+      {
+        "basedir": "Full2016v7_EFT/datacards_fit_2016_EFT_DNNcut_geq0p5_full_sm",
+        "name": 2016
+      }
+    ],
+    "phase_spaces": [
+      {
+        "name": "res_sig_ele",
+        "var": "DNNoutput_res_v1",
+        "cut": "res_sig_ele"
+      }
+    ]
+  }
+]
