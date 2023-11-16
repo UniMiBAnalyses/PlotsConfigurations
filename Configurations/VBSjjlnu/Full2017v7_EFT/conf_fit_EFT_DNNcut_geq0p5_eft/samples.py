@@ -1141,6 +1141,10 @@ EFT_samples_dropped = [i for i in EFT_samples if i not in EFT_samples_datacard]
 
 EFT_samples = EFT_samples_datacard
 
+
 # sm is not in samples just reming here again that sm shapes
 # should be treated separately as they include all possible nuisances
 samples = {k: j for k,j in samples.items() if k in EFT_samples and k != "sm"}
+
+
+

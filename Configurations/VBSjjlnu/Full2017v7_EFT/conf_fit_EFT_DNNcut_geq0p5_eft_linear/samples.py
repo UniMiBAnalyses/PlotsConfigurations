@@ -598,35 +598,532 @@ samples['VV_ZZ']  = { 'name' :
 
 ######################################
 
-
-samples['sm'] = {
+samples['quad_cHQ1'] = {
    'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[0]',
-   'FilesPerJob': 1,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[14] + LHEReweightingWeight[13] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 15
 }
 
-samples['sm_QCDscale_VBSUp'] = {
+samples['sm_lin_quad_mixed_cW_cHB'] = {
    'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[0]',
-   'FilesPerJob': 1,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[21]',
+   'FilesPerJob': 15
 }
 
-samples['sm_QCDscale_VBSDown'] = {
+samples['lin_quad_cHW'] = {
    'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[0]',
-   'FilesPerJob': 1,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[8] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
 }
 
-samples['sm_QCDscale_VBS_envelopeUp'] = {
+samples['sm_lin_quad_mixed_cW_cHW'] = {
    'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[0]',
-   'FilesPerJob': 1,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[19]',
+   'FilesPerJob': 15
 }
 
-samples['sm_QCDscale_VBS_envelopeDown'] = {
+samples['quad_cHbox'] = {
    'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
-   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[0]',
-   'FilesPerJob': 1,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[6] + LHEReweightingWeight[5] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[12] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHbox_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[32]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHWB_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[28]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHW_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[37]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[10]',
+   'FilesPerJob': 15
+}
+
+samples['quad_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[10] + LHEReweightingWeight[9] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHB_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[43] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHW_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[38] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_cW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[2] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cW_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[20] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cW_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[23]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[4] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHbox_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[34]',
+   'FilesPerJob': 15
+}
+
+samples['lin_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[4] - LHEReweightingWeight[3])',
+   'FilesPerJob': 5
+}
+
+samples['quad_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[16] + LHEReweightingWeight[15] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[10] - LHEReweightingWeight[9])',
+   'FilesPerJob': 5
+}
+
+samples['sm_lin_quad_mixed_cHB_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[43]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHW_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[35] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHWB_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[26]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHQ1_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[44]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHl1_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[39] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cW_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[18] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cW_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[17]',
+   'FilesPerJob': 15
+}
+
+samples['lin_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[12] - LHEReweightingWeight[11])',
+   'FilesPerJob': 5
+}
+
+samples['sm_lin_quad_cW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[2]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHWB_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[28] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[4]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHbox_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[34] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[8] - LHEReweightingWeight[7])',
+   'FilesPerJob': 5
+}
+
+samples['lin_quad_mixed_cHl1_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[41] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHWB_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[27] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cW_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[18]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHWB_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[25] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['quad_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[12] + LHEReweightingWeight[11] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHbox_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[31] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['quad_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[8] + LHEReweightingWeight[7] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[16] - LHEReweightingWeight[15])',
+   'FilesPerJob': 5
+}
+
+samples['sm_lin_quad_mixed_cW_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[20]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHbox_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[33]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHl1_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[41]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cW_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[19] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cW_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[22]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHWB_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[27]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHW_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[36]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHWB_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[25]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cW_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[21] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHWB_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[24] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHQ1_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[44] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cW_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[17] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[10] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[14]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHW_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[38]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHWB_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[29]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHW_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[36] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHbox_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[33] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['quad_cW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[2] + LHEReweightingWeight[1] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHl1_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[40]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[6] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[8]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[6]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[12]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHWB_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[29] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[14] - LHEReweightingWeight[13])',
+   'FilesPerJob': 5
+}
+
+samples['sm_lin_quad_mixed_cHl1_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[39]',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHbox_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[30]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cW_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[22] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[14] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHB_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[42]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHl1_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[40] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[16]',
+   'FilesPerJob': 15
+}
+
+samples['quad_cHWB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[4] + LHEReweightingWeight[3] - 2*LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHW_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[35]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cW_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[23] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_cHj1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[16] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHbox_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[31]',
+   'FilesPerJob': 15
+}
+
+samples['lin_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[6] - LHEReweightingWeight[5])',
+   'FilesPerJob': 5
+}
+
+samples['lin_quad_mixed_cHbox_cHB'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[32] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHWB_cHl1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[26] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHB_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[42] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHbox_cHW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[30] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['sm_lin_quad_mixed_cHWB_cHbox'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[24]',
+   'FilesPerJob': 15
+}
+
+samples['lin_quad_mixed_cHW_cHQ1'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '(LHEReweightingWeight[37] - LHEReweightingWeight[0])',
+   'FilesPerJob': 15
+}
+
+samples['lin_cW'] = {
+   'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
+   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + '0.5*(LHEReweightingWeight[2] - LHEReweightingWeight[1])',
+   'FilesPerJob': 5
 }
 
 #########################################
@@ -634,9 +1131,16 @@ samples['sm_QCDscale_VBS_envelopeDown'] = {
 VBS_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ", "ewk_WpWm", "ewk_WpWp", "ewk_WmWm"]
 VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
 
-EFT_samples = ['quad_cHQ1', 'sm_lin_quad_mixed_cW_cHB', 'lin_quad_cHW', 'sm_lin_quad_mixed_cW_cHW', 'quad_cHbox', 'lin_quad_cHB', 'sm_lin_quad_mixed_cHbox_cHB', 'sm_lin_quad_mixed_cHWB_cHQ1', 'sm_lin_quad_mixed_cHW_cHQ1', 'sm_lin_quad_cHl1', 'quad_cHl1', 'lin_quad_mixed_cHB_cHj1', 'lin_quad_mixed_cW_cHW', 'lin_quad_cW', 'lin_quad_mixed_cW_cHl1', 'sm_lin_quad_mixed_cW_cHj1', 'lin_quad_cHWB', 'sm_lin_quad_mixed_cHbox_cHj1', 'lin_cHWB', 'sm_lin_quad_cHWB', 'lin_cHl1', 'sm_lin_quad_mixed_cHB_cHj1', 'lin_quad_mixed_cHW_cHl1', 'lin_quad_mixed_cW_cHj1', 'sm_lin_quad_mixed_cHQ1_cHj1', 'lin_quad_mixed_cHl1_cHB', 'lin_quad_mixed_cW_cHbox', 'sm_lin_quad_mixed_cW_cHWB', 'lin_cHB', 'sm_lin_quad_cW', 'lin_quad_mixed_cHWB_cHQ1', 'quad_cHj1', 'lin_quad_mixed_cHbox_cHj1', 'lin_cHW', 'lin_quad_mixed_cHl1_cHj1', 'lin_quad_mixed_cHWB_cHB', 'sm_lin_quad_mixed_cW_cHbox', 'lin_quad_mixed_cHWB_cHW', 'quad_cHB', 'lin_quad_mixed_cHbox_cHl1', 'quad_cHW', 'lin_cHj1', 'sm_lin_quad_mixed_cW_cHl1', 'sm_lin_quad_mixed_cHbox_cHQ1', 'sm_lin_quad_mixed_cHl1_cHj1', 'lin_quad_mixed_cHW_cHj1', 'sm_lin_quad_mixed_cW_cHQ1', 'sm_lin_quad_mixed_cHWB_cHB', 'sm_lin_quad_mixed_cHW_cHB', 'sm_lin_quad_mixed_cHWB_cHW', 'lin_quad_mixed_cW_cHB', 'lin_quad_mixed_cHWB_cHbox', 'lin_quad_mixed_cHQ1_cHj1', 'lin_quad_mixed_cW_cHWB', 'lin_quad_cHl1', 'sm_lin_quad_cHQ1', 'sm_lin_quad_mixed_cHW_cHj1', 'sm_lin_quad_mixed_cHWB_cHj1', 'lin_quad_mixed_cHW_cHB', 'lin_quad_mixed_cHbox_cHQ1', 'quad_cW', 'sm_lin_quad_mixed_cHl1_cHQ1', 'lin_quad_cHbox', 'sm_lin_quad_cHW', 'sm_lin_quad_cHbox', 'sm_lin_quad_cHB', 'lin_quad_mixed_cHWB_cHj1', 'lin_cHQ1', 'sm_lin_quad_mixed_cHl1_cHB', 'sm_lin_quad_mixed_cHbox_cHW', 'lin_quad_mixed_cW_cHQ1', 'lin_quad_cHQ1', 'sm_lin_quad_mixed_cHB_cHQ1', 'lin_quad_mixed_cHl1_cHQ1', 'sm_lin_quad_cHj1', 'quad_cHWB', 'sm_lin_quad_mixed_cHW_cHl1', 'sm_lin_quad_mixed_cHWB_cHl1', 'lin_quad_cHj1', 'sm_lin_quad_mixed_cHbox_cHl1', 'lin_cHbox', 'lin_quad_mixed_cHbox_cHB', 'lin_quad_mixed_cHWB_cHl1', 'sm', 'lin_quad_mixed_cHB_cHQ1', 'lin_quad_mixed_cHbox_cHW', 'sm_lin_quad_mixed_cHWB_cHbox', 'lin_quad_mixed_cHW_cHQ1', 'lin_cW']
-EFT_samples_datacard = [i for i in EFT_samples if not i.startswith("lin")]
+EFT_samples = ['quad_cHQ1', 'sm_lin_quad_mixed_cW_cHB', 'lin_quad_cHW', 'sm_lin_quad_mixed_cW_cHW', 'quad_cHbox', 'lin_quad_cHB', 'sm_lin_quad_mixed_cHbox_cHB', 'sm_lin_quad_mixed_cHWB_cHQ1', 'sm_lin_quad_mixed_cHW_cHQ1', 'sm_lin_quad_cHl1', 'quad_cHl1', 'lin_quad_mixed_cHB_cHj1', 'lin_quad_mixed_cW_cHW', 'lin_quad_cW', 'lin_quad_mixed_cW_cHl1', 'sm_lin_quad_mixed_cW_cHj1', 'lin_quad_cHWB', 'sm_lin_quad_mixed_cHbox_cHj1', 'lin_cHWB', 'sm_lin_quad_cHWB', 'lin_cHl1', 'sm_lin_quad_mixed_cHB_cHj1', 'lin_quad_mixed_cHW_cHl1', 'lin_quad_mixed_cW_cHj1', 'sm_lin_quad_mixed_cHQ1_cHj1', 'lin_quad_mixed_cHl1_cHB', 'lin_quad_mixed_cW_cHbox', 'sm_lin_quad_mixed_cW_cHWB', 'lin_cHB', 'sm_lin_quad_cW', 'lin_quad_mixed_cHWB_cHQ1', 'quad_cHj1', 'lin_quad_mixed_cHbox_cHj1', 'lin_cHW', 'lin_quad_mixed_cHl1_cHj1', 'lin_quad_mixed_cHWB_cHB', 'sm_lin_quad_mixed_cW_cHbox', 'lin_quad_mixed_cHWB_cHW', 'quad_cHB', 'lin_quad_mixed_cHbox_cHl1', 'quad_cHW', 'lin_cHj1', 'sm_lin_quad_mixed_cW_cHl1', 'sm_lin_quad_mixed_cHbox_cHQ1', 'sm_lin_quad_mixed_cHl1_cHj1', 'lin_quad_mixed_cHW_cHj1', 'sm_lin_quad_mixed_cW_cHQ1', 'sm_lin_quad_mixed_cHWB_cHB', 'sm_lin_quad_mixed_cHW_cHB', 'sm_lin_quad_mixed_cHWB_cHW', 'lin_quad_mixed_cW_cHB', 'lin_quad_mixed_cHWB_cHbox', 'lin_quad_mixed_cHQ1_cHj1', 'lin_quad_mixed_cW_cHWB', 'lin_quad_cHl1', 'sm_lin_quad_cHQ1', 'sm_lin_quad_mixed_cHW_cHj1', 'sm_lin_quad_mixed_cHWB_cHj1', 'lin_quad_mixed_cHW_cHB', 'lin_quad_mixed_cHbox_cHQ1', 'quad_cW', 'sm_lin_quad_mixed_cHl1_cHQ1', 'lin_quad_cHbox', 'sm_lin_quad_cHW', 'sm_lin_quad_cHbox', 'sm_lin_quad_cHB', 'lin_quad_mixed_cHWB_cHj1', 'lin_cHQ1', 'sm_lin_quad_mixed_cHl1_cHB', 'sm_lin_quad_mixed_cHbox_cHW', 'lin_quad_mixed_cW_cHQ1', 'lin_quad_cHQ1', 'sm_lin_quad_mixed_cHB_cHQ1', 'lin_quad_mixed_cHl1_cHQ1', 'sm_lin_quad_cHj1', 'quad_cHWB', 'sm_lin_quad_mixed_cHW_cHl1', 'sm_lin_quad_mixed_cHWB_cHl1', 'lin_quad_cHj1', 'sm_lin_quad_mixed_cHbox_cHl1', 'lin_cHbox', 'lin_quad_mixed_cHbox_cHB', 'lin_quad_mixed_cHWB_cHl1', 'lin_quad_mixed_cHB_cHQ1', 'lin_quad_mixed_cHbox_cHW', 'sm_lin_quad_mixed_cHWB_cHbox', 'lin_quad_mixed_cHW_cHQ1', 'lin_cW']
 
-EFT_samples_dropped = [i for i in EFT_samples if i not in EFT_samples_datacard]
+EFT_samples_datacard = []
 
-samples = {k: j for k,j in samples.items() if k in ["sm", "sm_QCDscale_VBSUp", "sm_QCDscale_VBSDown", "sm_QCDscale_VBS_envelopeDown", "sm_QCDscale_VBS_envelopeUp"]}
+EFT_samples = ["lin_cHWB", "lin_cHW", "lin_cHQ1", "lin_cW", "lin_cHbox", "lin_cHB", "lin_cHj1", "lin_cHl1"]
+
+
+# sm is not in samples just reming here again that sm shapes
+# should be treated separately as they include all possible nuisances
+samples = {k: j for k,j in samples.items() if k in EFT_samples and k != "sm"}
+
+
+

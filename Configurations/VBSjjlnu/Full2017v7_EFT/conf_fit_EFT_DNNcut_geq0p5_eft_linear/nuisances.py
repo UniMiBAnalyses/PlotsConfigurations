@@ -1,15 +1,14 @@
 from pprint import pprint
 # # # name of samples here must match keys in samples.py 
 
-EFT_samples = []
-VBS_samples = []
+VBS_samples = ["sm"]
 VBS_WV_samples = ["ewk_WpZ", "ewk_WmZ","ewk_WpWm", "ewk_WpWp", "ewk_WmWm"]
 VBS_ZV_samples = ["ewk_WpZ", "ewk_WmZ", "ewk_ZZ"]
 VV_WV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj"]
 VV_ZV_samples = ["VV_WZll", "VV_ZZ"]
 VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
 
-mc =["DY", "top", "VV", "VVV",  "VBF-V_dipole", "Vg", "VgS",  "ggWW","VBS_dipoleRecoil"] + wjets_all_bins + VBS_samples + VV_samples
+mc =["DY", "top", "VV", "VVV",  "VBF-V_dipole", "Vg", "VgS",  "ggWW","VBS_dipoleRecoil"] + wjets_all_bins + VBS_samples + VV_samples + EFT_samples
 #"VBF-V","VBS",
 
 phasespaces = ["res_wjetcr_ele",
@@ -250,7 +249,7 @@ nuisances['electronpt']  = {
                 'mapUp': 'ElepTup',
                 'mapDown': 'ElepTdo',
                 'cuts': phase_spaces_tot_ele,
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins + VBS_samples),
+                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins + VBS_samples + EFT_samples),
                 'folderUp' : directory_mc+'_ElepTup',
                 'folderDown' : directory_mc+'_ElepTdo',
 }
@@ -262,7 +261,7 @@ nuisances['electronpt_VBS']  = {
                 'mapUp': 'ElepTup',
                 'mapDown': 'ElepTdo',
                 'cuts': phase_spaces_tot_ele,
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples), 
+                'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples + EFT_samples), 
                 #include also W+jets bins since this is only for plot and datacards
                 'folderUp' : directory_EFT+'__MCCombJJLNu2017_ElepTup',
                 'folderDown' : directory_EFT+'__MCCombJJLNu2017_ElepTdo',
@@ -299,7 +298,7 @@ nuisances['muonpt']  = {
                 'mapUp': 'MupTup',
                 'mapDown': 'MupTdo',
                 'cuts': phase_spaces_tot_mu,
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins+VBS_samples),
+                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins+VBS_samples+EFT_samples),
                 'folderUp' : directory_mc+'_MupTup',
                 'folderDown' : directory_mc+'_MupTdo',
 }
@@ -311,7 +310,7 @@ nuisances['muonpt_VBS']  = {
                 'mapUp': 'MupTup',
                 'mapDown': 'MupTdo',
                 'cuts': phase_spaces_tot_mu,
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples),
+                'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples+EFT_samples),
                 'folderUp' : directory_EFT+'__MCCombJJLNu2017_MupTup',
                 'folderDown' : directory_EFT+'__MCCombJJLNu2017_MupTdo',
 }
@@ -354,7 +353,7 @@ for js in jes_systs:
                     'type': 'shape',
                     'mapUp': js+'up',
                     'mapDown': js+'do',
-                    'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins+VBS_samples),
+                    'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins+VBS_samples+EFT_samples),
                     'folderUp' : directory_mc+'_JESup',
                     'folderDown' : directory_mc+'_JESdo',
                     'AsLnN'      : '1',             
@@ -365,7 +364,7 @@ for js in jes_systs:
                     'type': 'shape',
                     'mapUp': js+'up',
                     'mapDown': js+'do',
-                    'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples),
+                    'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples+EFT_samples),
                     'folderUp' : directory_EFT+'__MCCombJJLNu2017_JESup',
                     'folderDown' : directory_EFT+'__MCCombJJLNu2017_JESdo',
                     'AsLnN'      : '1',
@@ -379,7 +378,7 @@ for js in jes_systs:
                         'mapUp':   'fatjet'+js+'up',
                         'mapDown': 'fatjet'+js+'do',
                         'cuts': phase_spaces_boost, #because we are vetoing fatjets anyway in resolved category 
-                        'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins+VBS_samples),
+                        'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins+VBS_samples+EFT_samples),
                         'folderUp' : directory_mc+'_fatjetJESup',
                         'folderDown' : directory_mc+'_fatjetJESdo',
                         'AsLnN'      : '1',
@@ -391,7 +390,7 @@ for js in jes_systs:
                         'mapUp': 'fatjet' + js+'up',
                         'mapDown': 'fatjet' + js+'do',
                         'cuts': phase_spaces_boost, #because we are vetoing fatjets anyway in resolved category 
-                        'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples),
+                        'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples+EFT_samples),
                         'folderUp' : directory_EFT+'__MCCombJJLNu2017_fatjetJESup',
                         'folderDown' : directory_EFT+'__MCCombJJLNu2017_fatjetJESdo',
                         'AsLnN'      : '1',
@@ -428,7 +427,7 @@ for wjbinres in wjets_res_bins:
                         'AsLnN'      : '1',          
         }
     nuisances['JER_'+wjbinres] = {
-            'name': 'CMS_res_j_2018',
+            'name': 'CMS_res_j_2017',
             'kind': 'suffix',
             'type': 'shape',
             'mapUp': 'JERup',
@@ -470,7 +469,7 @@ for wjbinboost in wjets_boost_bins:
         }
 
     nuisances['JER_'+wjbinboost] = {
-            'name': 'CMS_res_j_2018',
+            'name': 'CMS_res_j_2017',
             'kind': 'suffix',
             'type': 'shape',
             'mapUp': 'JERup',
@@ -481,7 +480,7 @@ for wjbinboost in wjets_boost_bins:
             'AsLnN'      : '1',
     }   
     nuisances['fatjetJER_'+wjbinboost] = {
-            'name': 'CMS_fatjet_res_2018',
+            'name': 'CMS_fatjet_res_2017',
             'kind': 'suffix',
             'type': 'shape',
             'mapUp': 'fatjetJERup',
@@ -501,7 +500,7 @@ nuisances['JER']  = {
                 'type': 'shape',
                 'mapUp': 'JERup',
                 'mapDown': 'JERdo',
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins+VBS_samples),
+                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins+VBS_samples+EFT_samples),
                 'folderUp' : directory_mc+'_JERup',
                 'folderDown' : directory_mc+'_JERdo',
                 'AsLnN'      : '1',
@@ -513,7 +512,7 @@ nuisances['JER_VBS'] = {
                 'type': 'shape',
                 'mapUp': 'JERup',
                 'mapDown': 'JERdo',
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples),
+                'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples+EFT_samples),
                 'folderUp' : directory_EFT+'__MCCombJJLNu2017_JERup',
                 'folderDown' : directory_EFT+'__MCCombJJLNu2017_JERdo',
                 'AsLnN'      : '1',
@@ -526,7 +525,7 @@ nuisances['fatjetJER']  = {
                 'mapUp': 'fatjetJERup',
                 'mapDown': 'fatjetJERdo',
                 'cuts': phase_spaces_boost, #because we are vetoing fatjets anyway in resolved category
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ["Vg","VgS", 'ggWW']+wjets_all_bins+VBS_samples),
+                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ["Vg","VgS", 'ggWW']+wjets_all_bins+VBS_samples+EFT_samples),
                 'folderUp' : directory_mc+'_fatjetJERup',
                 'folderDown' : directory_mc+'_fatjetJERdo',
                 'AsLnN'      : '1',
@@ -539,7 +538,7 @@ nuisances['fatjetJER_VBS'] = {
                 'mapUp': 'fatjetJERup',
                 'mapDown': 'fatjetJERdo',
                 'cuts': phase_spaces_boost, #because we are vetoing fatjets anyway in resolved category
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples),
+                'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples+EFT_samples),
                 'folderUp' : directory_EFT+'__MCCombJJLNu2017_fatjetJERup',
                 'folderDown' : directory_EFT+'__MCCombJJLNu2017_fatjetJERdo',
                 'AsLnN'      : '1',
@@ -553,7 +552,7 @@ nuisances['MET']  = {
                 'type'  : 'shape',
                 'mapUp':   'METup',
                 'mapDown': 'METdo', 
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins+VBS_samples),
+                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', 'ggWW']+wjets_all_bins+VBS_samples+EFT_samples),
                 'folderUp' : directory_mc+'_METup',
                 'folderDown' : directory_mc+'_METdo',
                 'AsLnN'      : '1',
@@ -565,7 +564,7 @@ nuisances['MET_VBS']  = {
                 'type'  : 'shape',
                 'mapUp':   'METup',
                 'mapDown': 'METdo', 
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples),
+                'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples+EFT_samples),
                 'folderUp' : directory_EFT+'__MCCombJJLNu2017_METup',
                 'folderDown' : directory_EFT+'__MCCombJJLNu2017_METdo',
                 'AsLnN'      : '1',
@@ -573,7 +572,7 @@ nuisances['MET_VBS']  = {
 
 for wjbin in wjets_all_bins:
     nuisances['MET_'+wjbin]  = {
-                'name'  : 'CMS_scale_met_2018',
+                'name'  : 'CMS_scale_met_2017',
                 'kind'  : 'suffix',
                 'type'  : 'shape',
                 'mapUp':   'METup',
@@ -612,7 +611,7 @@ nuisances['fatjetJMR']  = {
         'mapUp': 'fatjetJMRup',
         'mapDown': 'fatjetJMRdo',
         'cuts': phase_spaces_boost, #because we are vetoing fatjets anyway in resolved category
-        'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ["Vg","VgS", 'ggWW']+wjets_all_bins+VBS_samples),
+        'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ["Vg","VgS", 'ggWW']+wjets_all_bins+VBS_samples+EFT_samples),
         'folderUp' : directory_mc+'_fatjetJMRup',
         'folderDown' : directory_mc+'_fatjetJMRdo',
         'AsLnN'      : '1',
@@ -625,7 +624,7 @@ nuisances['fatjetJMR_VBS']  = {
     'mapUp': 'fatjetJMRup',
     'mapDown': 'fatjetJMRdo',
     'cuts': phase_spaces_boost, #because we are vetoing fatjets anyway in resolved category
-    'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples),
+    'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples+EFT_samples),
     'folderUp' : directory_EFT+'__MCCombJJLNu2017_fatjetJMRup',
     'folderDown' : directory_EFT+'__MCCombJJLNu2017_fatjetJMRdo',
     'AsLnN'      : '1',
@@ -639,7 +638,7 @@ nuisances['fatjetJMS']  = {
     'mapUp': 'fatjetJMSup',
     'mapDown': 'fatjetJMSdo',
     'cuts': phase_spaces_boost, #because we are vetoing fatjets anyway in resolved category
-    'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ["Vg","VgS", 'ggWW']+wjets_all_bins+VBS_samples),
+    'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ["Vg","VgS", 'ggWW']+wjets_all_bins+VBS_samples+EFT_samples),
     'folderUp' : directory_mc+'_fatjetJMSup',
     'folderDown' : directory_mc+'_fatjetJMSdo',
     'AsLnN'      : '1',
@@ -652,7 +651,7 @@ nuisances['fatjetJMS_VBS']  = {
     'mapUp': 'fatjetJMSup',
     'mapDown': 'fatjetJMSdo',
     'cuts': phase_spaces_boost, #because we are vetoing fatjets anyway in resolved category
-    'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples),
+    'samples': dict((skey, ['1.','1.']) for skey in mc if skey in VBS_samples+EFT_samples),
     'folderUp' : directory_EFT+'__MCCombJJLNu2017_fatjetJMSup',
     'folderDown' : directory_EFT+'__MCCombJJLNu2017_fatjetJMSdo',
     'AsLnN'      : '1',
@@ -661,7 +660,7 @@ nuisances['fatjetJMS_VBS']  = {
 for wjbinboost in wjets_boost_bins:
     #FatJet mass scale and resolution
     nuisances['fatjetJMR_'+wjbinboost]  = {
-        'name': 'CMS_fatjet_jmr_2018',
+        'name': 'CMS_fatjet_jmr_2017',
         'kind': 'suffix',
         'type': 'shape',
         'mapUp': 'fatjetJMRup',
@@ -673,7 +672,7 @@ for wjbinboost in wjets_boost_bins:
         'AsLnN'      : '1',
     }
     nuisances['fatjetJMS_'+wjbinboost]  = {
-        'name': 'CMS_fatjet_jms_2018',
+        'name': 'CMS_fatjet_jms_2017',
         'kind': 'suffix',
         'type': 'shape',
         'mapUp': 'fatjetJMSup',
@@ -940,7 +939,6 @@ nuisances['PU_wjets']  = {
 
 
 ######## PDF uncertainty
-
 nuisances['pdf_weight'] = {
     'name'  : 'pdf_weight_1718',
     'kind'  : 'weight_envelope',
@@ -953,9 +951,10 @@ nuisances['pdf_weight_VBS'] = { # --> Now save also the normalization one for th
     'name'  : 'pdf_weight_1718',
     'kind'  : 'weight_envelope',
     'type'  : 'shape',
-    'samples' :  { s: [' Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,33)] for s in VBS_samples + EFT_samples},
+    'samples' :  { s: [' Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,33)] for s in VBS_samples},
     'AsLnN':  '1'
 }
+
 
 # An overall 1.5% UE uncertainty will cover all the UEup/UEdo variations
 # And we don't observe any dependency of UE variations on njet
@@ -1039,9 +1038,5 @@ nuisances['stat']  = {
 for n in nuisances.values():
     n['skipCMS'] = 1
 
-   
 
-# nuisances = {k:v for k,v in nuisances.items() if "JES" in k } #if 'PS' in k or 'QCD' in k
-
-
-# print ' '.join(nuis['name'] for nname, nuis in nuisances.iteritems() if nname not in ('lumi', 'stat'))
+nuisances = {}

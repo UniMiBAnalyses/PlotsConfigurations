@@ -2,8 +2,8 @@
 treeName= 'Events'
 
 
-tag = 'fit_2017_EFT_DNNcut_geq0p5_sm_qcdscales'
-direc = "conf_fit_EFT_DNNcut_geq0p5_sm_qcdscales"
+tag = 'fit_2017_EFT_DNNcut_geq0p5_eft_Mww_resolved'
+direc = "conf_fit_EFT_DNNcut_geq0p5_eft_Mww_resolved"
 
 # used by mkShape to define output directory for root files
 outputDir = 'rootFile_'+tag 
@@ -18,7 +18,7 @@ variablesFile = direc+'/variables.py'
 cutsFile = direc +'/cuts.py' 
 
 # file with list of samples
-samplesFile = direc+'/samples_split.py' 
+samplesFile = direc+'/samples.py' 
 
 #t file with list of samples
 plotFile = direc+'/plot.py' 
@@ -33,7 +33,7 @@ outputDirPlots = 'plot_'+tag
 outputDirDatacard = 'datacards_'+tag 
 
 # structure file for datacard
-structureFile = direc+'/structure_split.py'
+structureFile = direc+'/structure.py'
 
 
 # nuisances file for mkDatacards and for mkShape

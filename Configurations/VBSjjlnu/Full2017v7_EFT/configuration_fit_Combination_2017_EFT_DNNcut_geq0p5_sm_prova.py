@@ -2,8 +2,8 @@
 treeName= 'Events'
 
 
-tag = 'fit_2017_EFT_DNNcut_geq0p5_VBS_dipole'
-direc = "conf_fit_EFT_DNNcut_geq0p5_VBS_dipole"
+tag = 'fit_2017_EFT_DNNcut_geq0p5_sm_prova'
+direc = "conf_fit_EFT_DNNcut_geq0p5_sm_prova"
 
 # used by mkShape to define output directory for root files
 outputDir = 'rootFile_'+tag 

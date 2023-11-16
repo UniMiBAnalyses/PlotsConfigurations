@@ -935,14 +935,15 @@ nuisances['PS_ISR_VBS']  = {
                         sample : ['PSWeight[2]', 'PSWeight[0]'] for sample in VBS_samples
                     }
                 }
-nuisances['PS_FSR_VBS_WV']  = {
-                'name'  : 'CMS_PS_FSR_VBS',
-                'kind'  : 'weight',
-                'type'  : 'shape',
-                'samples'  : {
-                    sample :  ['PSWeight[3]', 'PSWeight[1]'] for sample in VBS_samples
+
+nuisances['PS_FSR_VBS']  = {
+                    'name'  : 'CMS_PS_FSR_VBS',
+                    'kind'  : 'weight',
+                    'type'  : 'shape',
+                    'samples'  : {
+                        sample : ['PSWeight[2]', 'PSWeight[0]'] for sample in VBS_samples
+                    }
                 }
-            }
 
 # for EFT 
 
@@ -954,15 +955,15 @@ nuisances['PS_ISR_EFT']  = {
                         sample : ['PSWeight[2]', 'PSWeight[0]'] for sample in EFT_samples if sample != "sm"
                     }
                 }
-nuisances['PS_FSR_VBS_WV']  = {
-                'name'  : 'CMS_PS_FSR_EFT',
-                'kind'  : 'weight',
-                'type'  : 'shape',
-                'samples'  : {
-                    sample :  ['PSWeight[3]', 'PSWeight[1]'] for sample in EFT_samples if sample != "sm"
-                }
-            }
 
+nuisances['PS_FSR_EFT']  = {
+                    'name'  : 'CMS_PS_FSR_EFT',
+                    'kind'  : 'weight',
+                    'type'  : 'shape',
+                    'samples'  : {
+                        sample : ['PSWeight[2]', 'PSWeight[0]'] for sample in EFT_samples if sample != "sm"
+                    }
+                }
 
 nuisances['PS_ISR_QCD_VV']  = {
                     'name'  : 'CMS_PS_ISR_QCD_VV',
@@ -1000,7 +1001,15 @@ nuisances['pdf_weight'] = {
     'name'  : 'pdf_weight_1718',
     'kind'  : 'weight_envelope',
     'type'  : 'shape',
-    'samples' :  { s: [' Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in mc if s not in ["VBS","VBS_dipoleRecoil" "top"]+wjets_all_bins},
+    'samples' :  { s: [' Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in mc if s not in ["VBS","VBS_dipoleRecoil", "top"]+wjets_all_bins+EFT_samples},
+    'AsLnN':  '1'
+}
+
+nuisances['pdf_weight_VBS'] = {
+    'name'  : 'pdf_weight_1718',
+    'kind'  : 'weight_envelope',
+    'type'  : 'shape',
+    'samples' :  { s: [' Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in mc if s == "sm"},
     'AsLnN':  '1'
 }
 

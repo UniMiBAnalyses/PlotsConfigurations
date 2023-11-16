@@ -427,7 +427,7 @@ for wjbinres in wjets_res_bins:
                         'AsLnN'      : '1',          
         }
     nuisances['JER_'+wjbinres] = {
-            'name': 'CMS_res_j_2018',
+            'name': 'CMS_res_j_2017',
             'kind': 'suffix',
             'type': 'shape',
             'mapUp': 'JERup',
@@ -469,7 +469,7 @@ for wjbinboost in wjets_boost_bins:
         }
 
     nuisances['JER_'+wjbinboost] = {
-            'name': 'CMS_res_j_2018',
+            'name': 'CMS_res_j_2017',
             'kind': 'suffix',
             'type': 'shape',
             'mapUp': 'JERup',
@@ -480,7 +480,7 @@ for wjbinboost in wjets_boost_bins:
             'AsLnN'      : '1',
     }   
     nuisances['fatjetJER_'+wjbinboost] = {
-            'name': 'CMS_fatjet_res_2018',
+            'name': 'CMS_fatjet_res_2017',
             'kind': 'suffix',
             'type': 'shape',
             'mapUp': 'fatjetJERup',
@@ -572,7 +572,7 @@ nuisances['MET_VBS']  = {
 
 for wjbin in wjets_all_bins:
     nuisances['MET_'+wjbin]  = {
-                'name'  : 'CMS_scale_met_2018',
+                'name'  : 'CMS_scale_met_2017',
                 'kind'  : 'suffix',
                 'type'  : 'shape',
                 'mapUp':   'METup',
@@ -660,7 +660,7 @@ nuisances['fatjetJMS_VBS']  = {
 for wjbinboost in wjets_boost_bins:
     #FatJet mass scale and resolution
     nuisances['fatjetJMR_'+wjbinboost]  = {
-        'name': 'CMS_fatjet_jmr_2018',
+        'name': 'CMS_fatjet_jmr_2017',
         'kind': 'suffix',
         'type': 'shape',
         'mapUp': 'fatjetJMRup',
@@ -672,7 +672,7 @@ for wjbinboost in wjets_boost_bins:
         'AsLnN'      : '1',
     }
     nuisances['fatjetJMS_'+wjbinboost]  = {
-        'name': 'CMS_fatjet_jms_2018',
+        'name': 'CMS_fatjet_jms_2017',
         'kind': 'suffix',
         'type': 'shape',
         'mapUp': 'fatjetJMSup',
@@ -811,7 +811,7 @@ nuisances['QCD_scale_VBS_full_envelope'] = {
     'name'  : 'QCDscale_VBS_envelope',
     'kind'  : 'weight_envelope',
     'type'  : 'shape',
-    'samples' :  { s: [' Alt$(LHEScaleWeight['+str(i)+'], 1.)' for i in range(0,43)] for s in VBS_samples + EFT_samples},
+    'samples' :  { s: [' Alt$(LHEScaleWeight['+str(i)+'], 1.)' for i in range(0,43)] for s in VBS_samples},
     'AsLnN':  '1'
 }
 
@@ -951,7 +951,7 @@ nuisances['pdf_weight_VBS'] = { # --> Now save also the normalization one for th
     'name'  : 'pdf_weight_1718',
     'kind'  : 'weight_envelope',
     'type'  : 'shape',
-    'samples' :  { s: [' Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,33)] for s in VBS_samples + EFT_samples},
+    'samples' :  { s: [' Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,33)] for s in VBS_samples},
     'AsLnN':  '1'
 }
 

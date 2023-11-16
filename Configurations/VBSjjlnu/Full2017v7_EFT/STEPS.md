@@ -58,6 +58,10 @@ python ../scripts/sum_data_flavours.py  -i rootFile_fit_2017_EFT_DNNcut_geq0p5_b
 
 	python ../scripts/nuisances_tools/extract_nuisances_effect.py -i plots_fit_2017_EFT_DNNcut_geq0p5_full.root -o QCDscale_effect_sm_bkg_fit_2017_EFT_DNNcut_geq0p5_full.root -s sm -cf ../Full2018v7_EFT/txtsForScripts/cuts_PS_extraction.txt -v ALL -n QCDscale_VBS_envelope
 
+#################
+
+for var in CMS_PS_FSR CMS_PS_ISR; do python ../scripts/nuisances_tools/rename_shape_root.py -i rootfiles_2/plots_fit_2017_EFT_DNNcut_geq0p5_eft.root --shape-name ${var} --rename "$var"_EFT -sf ../Full2018v7_EFT/txtsForScripts/samples_EFT_datacard.txt; done
+
 
 #################
 
