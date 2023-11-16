@@ -2,7 +2,7 @@
 treeName= 'Events'
 
 
-tag = 'fit_2017_EFT_DNNcut_geq0p5_full'
+tag = 'fit_2016_EFT_DNNcut_geq0p5_full'
 direc = "conf_fit_EFT_DNNcut_geq0p5_full"
 
 # used by mkShape to define output directory for root files
@@ -18,13 +18,13 @@ variablesFile = direc+'/variables_datacard.py'
 cutsFile = direc +'/cuts.py' 
 
 # file with list of samples
-samplesFile = direc+'/samples_datacard.py' 
+samplesFile = direc+'/samples.py' 
 
 #t file with list of samples
 plotFile = direc+'/plot.py' 
 
 # luminosity to normalize to (in 1/fb)
-lumi = 41.5
+lumi = 35.86
 
 # used by mkPlot to define output directory for plots
 outputDirPlots = 'plot_'+tag  
@@ -37,7 +37,7 @@ structureFile = direc+'/structure_split.py'
 
 
 # nuisances file for mkDatacards and for mkShape
-nuisancesFile = direc+'/nuisances.py'
+nuisancesFile = direc+'/nuisances_datacard.py'
 
 
 customizeScript = direc + '/customize.py'

@@ -9,11 +9,20 @@ conf_folder = configurations +"/VBSjjlnu/Full2016v7"
 
 mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
 
-wjets_res_bins = [ ]
+VBS_samples = ["sm"]
+VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
+
+
+wjets_res_bins = []
+wjets_boost_bins = []
 for i in range(1, 22):
-    wjets_res_bins.append("Wjets_res_{}".format(i))
-# for i in range(1, 8):
-#     Wjets_bins.append("Wjets_boost_{}".format(i))
+  wjbin = "Wjets_res_{}".format(i)
+  wjets_res_bins.append(wjbin)
+for i in range(1, 8):
+  wjbin = "Wjets_boost_{}".format(i)
+  wjets_boost_bins.append(wjbin)
+  
+wjets_all_bins = wjets_res_bins + wjets_boost_bins
 
 
 aliases['nJets30']= {
@@ -44,6 +53,18 @@ aliases['fit_bin_res'] = {
             20*( (w_lep_pt >= 400 && w_lep_pt < 500) && (vbs_1_pt >= 85) ) +\
             21*( w_lep_pt >= 500) \
             ) + (VBS_category==0)*(-1)'
+}
+
+aliases['fit_bin_boost'] = {
+    'expr':  '(VBS_category==0)*(\
+                1* (w_lep_pt < 50) + \
+                2* (w_lep_pt >= 50 && w_lep_pt < 100) + \
+                3* (w_lep_pt >= 100 && w_lep_pt < 150) + \
+                4* (w_lep_pt >= 150 && w_lep_pt < 200) + \
+                5* (w_lep_pt >= 200 && w_lep_pt < 300) + \
+                6* (w_lep_pt >= 300 && w_lep_pt < 400) + \
+                7* (w_lep_pt >= 400)\
+            ) + (VBS_category==1)*(-1)   '
 }
 
 ###################3
@@ -86,7 +107,7 @@ aliases['EWKnloW'] = {
     ],
     'class': 'EWKnloW_otf',
     'args': ('%s/src/LatinoAnalysis/Gardener/python/data/ewk/kewk_w_for_python.txt' % os.getenv('CMSSW_BASE')),
-    'samples': wjets_res_bins + ['Wjets_boost']
+    'samples': wjets_all_bins
 }
 
 ##################################
@@ -137,8 +158,8 @@ aliases['nJetsBtag']= {
 
 
 btagSF_corr_samples_groups = {
-    'VBS': ['VBS', 'VBS_dipoleRecoil'],
-    'Wjets_HT': ['Wjets_boost']+wjets_res_bins,
+    'VBS': ['VBS', 'VBS_dipoleRecoil'] + VBS_samples + EFT_samples,
+    'Wjets_HT': wjets_all_bins,
     'Vg_VgS_VBFV':['Vg','VgS','VBF-V', 'VBF-V_dipole'],
     'VV_VVV_ggWW':['VVV','VV','ggWW'],
     'top':['top'],
@@ -310,7 +331,7 @@ aliases['QCDscale_normalized'] = {
                 # 'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
                 '.L {}/VBSjjlnu/macros/QCDscale_normalize.cc+'.format(configurations)
             ] ,
-            'samples':['VBS', 'VBS_dipoleRecoil', 'VV']          
+            'samples':['VBS', 'VBS_dipoleRecoil', 'VV']  + VBS_samples + VV_samples        
 }
 
 # aliases['PDFweight_normalized'] = {
@@ -414,142 +435,3 @@ aliases['DNNoutput_resolved_v1'] = {
 #     ],
 #     'samples': ["VBS", "VBS_dipoleRecoil"]
 # }
-
-aliases['gen_jets_vectors'] = {
-    'class': 'GenLevelObjects',
-    'args': (),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBSjjlnu/macros/GenLevelObjects.cc+'.format(configurations)
-    ]   
-}
-
-
-aliases['VBS_Category'] ={
-    'expr' : 'gen_jets_vectors[0]'
-}
-
-aliases['GenLeptonE'] ={
-    'expr' : 'gen_jets_vectors[1]'
-}
-
-aliases['GenLeptonPx'] ={
-    'expr' : 'gen_jets_vectors[2]'
-}
-
-aliases['GenLeptonPy'] ={
-    'expr' : 'gen_jets_vectors[3]'
-}
-
-aliases['GenLeptonPz'] ={
-    'expr' : 'gen_jets_vectors[4]'
-}
-
-aliases['GenLeptonPDGID'] ={
-    'expr' : 'gen_jets_vectors[5]'
-}
-
-aliases['GenJetVBS1E'] ={
-    'expr' : 'gen_jets_vectors[6]'
-}
-
-aliases['GenJetVBS1Px'] ={
-    'expr' : 'gen_jets_vectors[7]'
-}
-
-aliases['GenJetVBS1Py'] ={
-    'expr' : 'gen_jets_vectors[8]'
-}
-
-aliases['GenJetVBS1Pz'] ={
-    'expr' : 'gen_jets_vectors[9]'
-}
-
-aliases['GenJetVBS2E'] ={
-    'expr' : 'gen_jets_vectors[10]'
-}
-
-aliases['GenJetVBS2Px'] ={
-    'expr' : 'gen_jets_vectors[11]'
-}
-
-aliases['GenJetVBS2Py'] ={
-    'expr' : 'gen_jets_vectors[12]'
-}
-
-aliases['GenJetVBS2Pz'] ={
-    'expr' : 'gen_jets_vectors[13]'
-}
-
-aliases['GenJetVBSMjj'] ={
-    'expr' : 'gen_jets_vectors[14]'
-}
-
-aliases['GenJetVBSPt'] ={
-    'expr' : 'gen_jets_vectors[15]'
-}
-
-aliases['GenJetV1E'] ={
-    'expr' : 'gen_jets_vectors[16]'
-}
-
-aliases['GenJetV1Px'] ={
-    'expr' : 'gen_jets_vectors[17]'
-}
-
-aliases['GenJetV1Py'] ={
-    'expr' : 'gen_jets_vectors[18]'
-}
-
-aliases['GenJetV1Pz'] ={
-    'expr' : 'gen_jets_vectors[19]'
-}
-
-aliases['GenJetV2E'] ={
-    'expr' : 'gen_jets_vectors[20]'
-}
-
-aliases['GenJetV2Px'] ={
-    'expr' : 'gen_jets_vectors[21]'
-}
-
-aliases['GenJetV2Py'] ={
-    'expr' : 'gen_jets_vectors[22]'
-}
-
-aliases['GenJetV2Pz'] ={
-    'expr' : 'gen_jets_vectors[23]'
-}
-
-aliases['GenJetVMjj'] ={
-    'expr' : 'gen_jets_vectors[24]'
-}
-
-aliases['GenJetVPt'] ={
-    'expr' : 'gen_jets_vectors[25]'
-}
-
-aliases['GenMETPhi'] ={
-    'expr' : 'gen_jets_vectors[26]'
-}
-
-aliases['GenMETPt'] ={
-    'expr' : 'gen_jets_vectors[27]'
-}
-
-aliases['Njets'] ={
-    'expr' : 'gen_jets_vectors[28]'
-}
-
-
-aliases['NLep'] ={
-    'expr' : 'gen_jets_vectors[29]'
-}
-
-aliases['Nele'] ={
-    'expr' : 'gen_jets_vectors[30]'
-}
-
-aliases['Nmu'] ={
-    'expr' : 'gen_jets_vectors[31]'
-}

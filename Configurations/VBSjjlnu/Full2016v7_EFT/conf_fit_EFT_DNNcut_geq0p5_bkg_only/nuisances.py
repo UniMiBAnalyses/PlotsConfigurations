@@ -524,13 +524,6 @@ nuisances['QCD_scale_VBS'] = {
         }
 
 
-nuisances['QCD_scale_VV_accept'] = {
-            'name'  : 'QCDscale_VV_accept',
-            'kind'  : 'weight',
-            'type'  : 'shape',
-            'samples': { k:["QCDscale_normalized[0]", "QCDscale_normalized[8]"] for k in VV_samples }
-        }
-
 nuisances['QCD_scale_VV'] = {
             'name'  : 'QCDscale_VV',
             'kind'  : 'weight',

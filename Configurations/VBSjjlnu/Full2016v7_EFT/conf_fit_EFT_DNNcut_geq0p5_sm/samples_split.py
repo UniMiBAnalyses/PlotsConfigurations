@@ -40,15 +40,20 @@ directory_fakes  = treeBaseDir_SMP + 'Run2016_102X_nAODv7_Full2016v7_skim/'  + f
 directory_data   = treeBaseDir_SMP + 'Run2016_102X_nAODv7_Full2016v7_skim/'  + dataSteps
 
 wjets_res_bins = []
-directory_wjets_res_bins = {}
-nfiles_wjets = [4,4,5,6,8,8,4,4,5,6,8,8,5,5,6,8,8,8,8,8,8]
+wjets_boost_bins = []
+directory_wjets_bins = {}
+nfiles_wjets_res = [4,4,5,6,8,8,4,4,5,6,8,8,5,5,6,8,8,8,8,8,8]
+nfiles_wjets_boost = [6,6,6,6,7,8,8]
 for i in range(1, 22):
   wjbin = "Wjets_res_{}".format(i)
   wjets_res_bins.append(wjbin)
-  directory_wjets_res_bins[wjbin] = treeBaseDir_SMP + 'Summer16_102X_nAODv7_Full2016v7_WjetsBins_skim/res_bin_{}/'.format(i) + mcSteps
+  directory_wjets_bins[wjbin] = treeBaseDir_SMP + 'Summer16_102X_nAODv7_Full2016v7_WjetsBins_skim/res_bin_{}/'.format(i) + mcSteps
+for i in range(1, 8):
+  wjbin = "Wjets_boost_{}".format(i)
+  wjets_boost_bins.append(wjbin)
+  directory_wjets_bins[wjbin] = treeBaseDir_SMP + 'Summer16_102X_nAODv7_Full2016v7_WjetsBins_skim/boost_bin_{}/'.format(i) + mcSteps
 
-print "Wjets bins: ", wjets_res_bins
-print directory_wjets_res_bins
+wjets_all_bins = wjets_res_bins + wjets_boost_bins
 
 ###############################################
 # EFT samples
@@ -59,6 +64,35 @@ mupSamples = nanoGetSampleFiles(directory_EFT,'mupVjj_ewk_dim6_EFT')
 mumSamples = nanoGetSampleFiles(directory_EFT,'mumVjj_ewk_dim6_EFT')
 epSamples = nanoGetSampleFiles(directory_EFT,'epVjj_ewk_dim6_EFT')
 emSamples = nanoGetSampleFiles(directory_EFT,'emVjj_ewk_dim6_EFT')
+
+# Missing samples 
+
+miss = [
+   'nanoLatino_emVjj_ewk_dim6_EFT__part88.root',
+   'nanoLatino_emVjj_ewk_dim6_EFT__part99.root',
+   'nanoLatino_tamVjj_ewk_dim6_EFT__part66.root',
+   'nanoLatino_mupVjj_ewk_dim6_EFT__part16.root',
+   'nanoLatino_mupVjj_ewk_dim6_EFT__part183.root',
+   'nanoLatino_mumVjj_ewk_dim6_EFT__part21.root',
+   'nanoLatino_mumVjj_ewk_dim6_EFT__part4.root',
+   'nanoLatino_mumVjj_ewk_dim6_EFT__part53.root',
+   'nanoLatino_mumVjj_ewk_dim6_EFT__part82.root',
+   'nanoLatino_epVjj_ewk_dim6_EFT__part120.root',
+   'nanoLatino_epVjj_ewk_dim6_EFT__part136.root',
+   'nanoLatino_epVjj_ewk_dim6_EFT__part41.root',
+   'nanoLatino_epVjj_ewk_dim6_EFT__part82.root',
+   'nanoLatino_epVjj_ewk_dim6_EFT__part97.root',
+   'nanoLatino_epVjj_ewk_dim6_EFT__part0.root'
+]
+
+miss = ["###root://eoscms.cern.ch//eos/cms/store/group/phys_smp/VJets_NLO_VBSanalyses/Summer16_102X_nAODv7_Full2016v7/MCl1loose2016v7__MCCorr2016v7__MCCombJJLNu2016/" + i for i in miss]
+
+tapSamples = [i for i in tapSamples if i not in miss]
+tamSamples = [i for i in tamSamples if i not in miss]
+mupSamples = [i for i in mupSamples if i not in miss]
+mumSamples = [i for i in mumSamples if i not in miss]
+epSamples = [i for i in epSamples if i not in miss]
+emSamples = [i for i in emSamples if i not in miss]
 
 ################################################
 ############ NUMBER OF LEPTONS #################
@@ -1087,7 +1121,7 @@ samples['lin_quad_mixed_cHWB_cHl1'] = {
 samples['sm'] = {
    'name': tapSamples + tamSamples + mupSamples + mumSamples + epSamples + emSamples    ,
    'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch+'*btagSF_corr_VBS' + '*' + 'LHEReweightingWeight[0]',
-   'FilesPerJob': 1,
+   'FilesPerJob': 3,
 }
 
 samples['lin_quad_mixed_cHB_cHQ1'] = {

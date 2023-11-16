@@ -8,7 +8,7 @@ conf_folder = configurations +"/VBSjjlnu/Full2016v7"
 #aliases = {}
 
 mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
-
+VV_samples = ["VV_osWW", "VV_ssWW", "VV_WZjj", "VV_WZll", "VV_ZZ"]
 
 wjets_res_bins = []
 wjets_boost_bins = []
@@ -158,7 +158,7 @@ btagSF_corr_samples_groups = {
     'VBS': ['VBS', 'VBS_dipoleRecoil'],
     'Wjets_HT': wjets_all_bins,
     'Vg_VgS_VBFV':['Vg','VgS','VBF-V', 'VBF-V_dipole'],
-    'VV_VVV_ggWW':['VVV','VV','ggWW'],
+    'VV_VVV_ggWW':['VVV','VV','ggWW']+ VV_samples,
     'top':['top'],
     'DY': ['DY']
 }

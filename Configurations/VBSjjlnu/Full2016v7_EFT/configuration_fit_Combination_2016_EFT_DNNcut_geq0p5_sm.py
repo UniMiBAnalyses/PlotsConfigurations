@@ -2,7 +2,7 @@
 treeName= 'Events'
 
 
-tag = 'fit_2017_EFT_DNNcut_geq0p5_sm'
+tag = 'fit_2016_EFT_DNNcut_geq0p5_sm'
 direc = "conf_fit_EFT_DNNcut_geq0p5_sm"
 
 # used by mkShape to define output directory for root files
