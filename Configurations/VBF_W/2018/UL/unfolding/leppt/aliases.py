@@ -132,6 +132,30 @@ aliases['singleW'] = {
     'samples' : mc
 }
 
+
+
+# aliases['GenNjets'] = {
+# }
+
+# aliases['GenMjj'] = {
+# }
+
+# aliases['GenDetajj'] = {
+# }
+
+# aliases['GenWpt'] = {
+# }
+
+# aliases['GenDphi(l,met)'] = {
+# }
+
+# aliases['GenDphi(W,dijet)'] = {
+# }
+
+# # GenJet_pt --> cleaning GenDressedLepton from GenJet with DR
+# # NeutrinoGen ?? va bene?
+
+
 ###################
 # trigger eff
 
