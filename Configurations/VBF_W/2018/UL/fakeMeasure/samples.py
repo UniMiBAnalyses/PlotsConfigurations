@@ -101,7 +101,7 @@ LepWPCut_1l =  '(Lepton_isTightElectron_'+eleWP+'[0]>0.5 || Lepton_isTightMuon_'
 LepWPWeight_1l = 'Lepton_tightElectron_'+eleWP+'_IdIsoSF'+'[0]*\
                 Lepton_tightMuon_'+muWP+'_IdIsoSF[0]'
 
-trigg_MC = '(HLT_IsoMu24 > 0.5 || HLT_Ele32_WPTight_Gsf > 0.5)'
+trigg_MC = '( (abs(Lepton_pdgId[0])==13) * (HLT_IsoMu24 > 0.5) || (abs(Lepton_pdgId[0])==11) * (HLT_Ele32_WPTight_Gsf > 0.5) )'
 
 LepWPCut = LepWPCut_1l
 LepWPWeight = LepWPWeight_1l
@@ -112,8 +112,8 @@ LepWPWeight = LepWPWeight_1l
 
 XSWeight   = 'XSWeight'
 # SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l'] 
-# SFweight1l = ['puWeight',LepWPCut_1l, trigg_MC,'TriggerSFWeight_1l']
-SFweight1l = ['puWeight', trigg_MC,'TriggerSFWeight_1l']
+# SFweight1l = ['puWeight',LepWPCut_1l, trigg_MC,'TriggerSFWeight_1l','Lepton_RecoSF[0]', 'btagSF','PUJetIdSF']
+SFweight1l = ['puWeight', trigg_MC,'TriggerSFWeight_1l','Lepton_RecoSF[0]', 'btagSF','PUJetIdSF']
 
 # SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l'] 
 # SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l'] 
@@ -484,33 +484,45 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryHWW,'ZZZ')
 
 
 # Then corrected
-fakeW = 'fakeWeight_30'
+# fakeW = 'fakeWeight_30'
+fakeW_0p9_0p8 = 'fakeWeight_0p9_0p8'
+fakeW_0p9_0p9 = 'fakeWeight_0p9_0p9'
+fakeW_0p9_1p0 = 'fakeWeight_0p9_1p0'
+fakeW_1p0_0p8 = 'fakeWeight_1p0_0p8'
+fakeW_1p0_0p9 = 'fakeWeight_1p0_0p9'
+fakeW_1p0_1p0 = 'fakeWeight_1p0_1p0'
+fakeW_1p1_0p8 = 'fakeWeight_1p1_0p8'
+fakeW_1p1_0p9 = 'fakeWeight_1p1_0p9'
+fakeW_1p1_1p0 = 'fakeWeight_1p1_1p0'
+
+# fakeweights = [fakeW_0p9_0p8, fakeW_0p9_0p9, fakeW_0p9_1p0, fakeW_1p0_0p8, fakeW_1p0_0p9, fakeW_1p0_1p0, fakeW_1p1_0p8, fakeW_1p1_0p9, fakeW_1p1_1p0]
+fakeweights = [fakeW_1p0_1p0]
 # Fake_correction = '((abs(Lepton_pdgId[0])==11)*((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(0.4)+((Lepton_phi[0]>=-1.)*(Lepton_phi[0]<=-1.5)*(1))) + ((abs(Lepton_pdgId[0])==13)*((Lepton_phi[0]>0.3)*(Lepton_phi[0]<1.)*(0.5)+((Lepton_phi[0]<=0.3)*(Lepton_phi[0]>=1.)*(1)))))'
 # Fake_correction = '1.'
 
 
 
+for fakew in fakeweights:
+  # # ## Fakes
+  samples['Fake_{}_{}'.format(fakew.split("_")[1], fakew.split("_")[2])] = {
+    'name': [],
+    'weight': METFilter_DATA+'*'+ fakew + '*' + 'HEM_correction'+'*'+trigg_MC,
+    # 'weight': METFilter_DATA+'*'+fakeW,
+    'weights': [],
+    'isData': ['all'],
+    'FilesPerJob' : 70,
+  }
 
-# # ## Fakes
-samples['Fake'] = {
-  'name': [],
-  'weight': METFilter_DATA+'*'+fakeW + '*' + 'HEM_correction',
-  # 'weight': METFilter_DATA+'*'+fakeW,
-  'weights': [],
-  'isData': ['all'],
-  'FilesPerJob' : 70,
-}
-
-for Run in DataRun :
-  for DataSet in DataSets :
-    version = 'v1'
-    if "SingleMuon" in DataSet and any(k in Run[0] for k in ["A", "B", "C"]):
-      version = 'v2'
-    # # BE Careful --> we use directory_data because the Lepton tight cut was not applied in post-processing
-    files = nanoGetSampleFiles(dataDirectoryHWW, DataSet+'_'+Run[1]+'-'+version)
-    for iFile in files:
-      samples['Fake']['name'].append(iFile)
-      samples['Fake']['weights'].append(DataTrig[DataSet])
+  for Run in DataRun :
+    for DataSet in DataSets :
+      version = 'v1'
+      if "SingleMuon" in DataSet and any(k in Run[0] for k in ["A", "B", "C"]):
+        version = 'v2'
+      # # BE Careful --> we use directory_data because the Lepton tight cut was not applied in post-processing
+      files = nanoGetSampleFiles(dataDirectoryHWW, DataSet+'_'+Run[1]+'-'+version)
+      for iFile in files:
+        samples['Fake_{}_{}'.format(fakew.split("_")[1], fakew.split("_")[2])]['name'].append(iFile)
+        samples['Fake_{}_{}'.format(fakew.split("_")[1], fakew.split("_")[2])]['weights'].append(DataTrig[DataSet])
 
     
 
@@ -519,8 +531,8 @@ for Run in DataRun :
 #########################################
 
 samples['DATA']  = {   'name': [ ] ,
-                      #  'weight' : METFilter_DATA+'*'+LepWPCut,
-                       'weight' : METFilter_DATA,
+                       'weight' : METFilter_DATA+'*'+LepWPCut,
+                      #  'weight' : METFilter_DATA,
                        'weights' : [ ],
                        'isData': ['all'],
                        'FilesPerJob' : 70,         

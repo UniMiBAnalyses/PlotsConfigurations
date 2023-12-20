@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'EFT_1'
+tagger = 'EFT_partialNuisances'
 
 tag = 'vbf_w_2018'+tagger
 

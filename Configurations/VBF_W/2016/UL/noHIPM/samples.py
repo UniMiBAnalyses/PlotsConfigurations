@@ -441,12 +441,12 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryHWW,'ZZZ')
 
 # Then corrected
 # fakeW = 'fakeWeight_35'
-fakeW = 'fakeWeight_35'
+fakeW = 'fakeWeight_30'
 
 ### Fakes
 samples['Fake'] = {
   'name': [],
-  'weight': METFilter_DATA,
+  'weight': METFilter_DATA+'*'+fakeW,
   'weights': [],
   'isData': ['all'],
   'FilesPerJob' : 40,
@@ -454,7 +454,7 @@ samples['Fake'] = {
 
 for _, sd in DataRun:
   for pd in DataSets:
-    files = nanoGetSampleFiles(fakeDirectoryLat, pd + '_' + sd)
+    files = nanoGetSampleFiles(dataDirectoryHWW, pd + '_' + sd)
     samples['Fake']['name'].extend(files)
     samples['Fake']['weights'].extend([DataTrig[pd]] * len(files))
 

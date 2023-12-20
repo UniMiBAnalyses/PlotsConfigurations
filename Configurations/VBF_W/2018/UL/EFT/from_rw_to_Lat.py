@@ -49,17 +49,24 @@ def do_lin_quad(op, card):
                     w_minus = int(line.split("rwgt_")[1]) - 1 
 
     ## forse in realtà ci va un -1!!!
-    file_content += "samples['lin_{}'] = {{".format(op) + "\n"
+    # file_content += "samples['lin_{}'] = {{".format(op) + "\n"
+    # file_content += "    'name': changeMEname," + "\n"
+    # file_content += "    'weight': changeMEweight + '*' + '(0.5*(LHEReweightingWeight[{}] - LHEReweightingWeight[{}]))',".format(w_plus, w_minus) + "\n"
+    # file_content += "    'FilesPerJob': 30," + "\n"
+    # file_content += "}" + "\n\n"
+
+    ## this goes in datacard, but now we are debugging 
+    file_content += "samples['sm_lin_quad_{}'] = {{".format(op) + "\n"
     file_content += "    'name': changeMEname," + "\n"
-    file_content += "    'weight': changeMEweight + '*' + '(0.5*(LHEReweightingWeight[{}] - LHEReweightingWeight[{}]))',".format(w_plus, w_minus) + "\n"
+    file_content += "    'weight': changeMEweight + '*' + '(LHEReweightingWeight[{}])',".format(w_plus) + "\n"
     file_content += "    'FilesPerJob': 30," + "\n"
     file_content += "}" + "\n\n"
 
-    file_content += "samples['quad_{}'] = {{".format(op) + "\n"
-    file_content += "    'name': changeMEname," + "\n"
-    file_content += "    'weight': changeMEweight + '*' + '(0.5*(LHEReweightingWeight[{}] + LHEReweightingWeight[{}] -2*LHEReweightingWeight[0]))',".format(w_plus, w_minus) + "\n"
-    file_content += "    'FilesPerJob': 30," + "\n"
-    file_content += "}" + "\n\n"
+    # file_content += "samples['quad_{}'] = {{".format(op) + "\n"
+    # file_content += "    'name': changeMEname," + "\n"
+    # file_content += "    'weight': changeMEweight + '*' + '(0.5*(LHEReweightingWeight[{}] + LHEReweightingWeight[{}] -2*LHEReweightingWeight[0]))',".format(w_plus, w_minus) + "\n"
+    # file_content += "    'FilesPerJob': 30," + "\n"
+    # file_content += "}" + "\n\n"
 
     return file_content
 
@@ -67,19 +74,34 @@ def do_lin_quad(op, card):
 def do_mixed(op1, op2, card):
     file_content = ""
     w = ""
+    w1_plus = ""
+    w2_plus = ""
 
     with open(card, "r") as file:
         for line in file:
-            if op1 in line and op2 in line:
+            if op1 in line and "," not in line:
+                if op1+"=1" in line:
+                    w1_plus = int(line.split("rwgt_")[1]) - 1
+            elif op2 in line and "," not in line:
+                if op2+"=1" in line:
+                    w2_plus = int(line.split("rwgt_")[1]) - 1
+            elif op1 in line and op2 in line:
                     w = int(line.split("rwgt_")[1]) - 1
     
-     ## forse in realtà ci va un -1!!! (bisogna vedere se LHEReweightingWeight[0] è SM o cosa..) --> certo che lo è, è scritto...
-     ## cioè capire se reweighting[i] = LHEReightingWeight[i] 
-    file_content += "samples['mixed_{}_{}'] = {{".format(op1,op2) + "\n"
+    ## forse in realtà ci va un -1!!! (bisogna vedere se LHEReweightingWeight[0] è SM o cosa..) --> certo che lo è, è scritto...
+    ## cioè capire se reweighting[i] = LHEReightingWeight[i] 
+    ## this goes in datacard, but now we are debugging
+    file_content += "samples['sm_lin_quad_mixed_{}_{}'] = {{".format(op1,op2) + "\n"
     file_content += "    'name': changeMEname," + "\n"
     file_content += "    'weight': changeMEweight + '*' + '(LHEReweightingWeight[{}])',".format(w) + "\n"
     file_content += "    'FilesPerJob': 30," + "\n"
     file_content += "}" + "\n\n"
+
+    # file_content += "samples['mixed_{}_{}'] = {{".format(op1,op2) + "\n"
+    # file_content += "    'name': changeMEname," + "\n"
+    # file_content += "    'weight': changeMEweight + '*' + '(LHEReweightingWeight[{}] + LHEReweightingWeight[0] - LHEReweightingWeight[{}] - LHEReweightingWeight[{}])',".format(w,w1_plus,w2_plus) + "\n"
+    # file_content += "    'FilesPerJob': 30," + "\n"
+    # file_content += "}" + "\n\n"
 
     return file_content
     

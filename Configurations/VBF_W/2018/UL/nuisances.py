@@ -3,7 +3,7 @@ from pprint import pprint
 
 mc =["WLNuJJ", "Wjets_HT", "top", "VV", "VBS" , "Higgs", "DY_M-50", "DY_else", "VBF-Z", "Vg", "VgS", "VVV"]
 # regions = ["ele_SR","mu_SR","ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","mu_topcr","ele_topcr","ele_FakeCR","mu_FakeCR"]
-regions = ["ele_SR","mu_SR","ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","topcr","ele_FakeCR","mu_FakeCR", "ele_HWJ-SR", "mu_HWJ-SR"]
+regions = ["ele_SR","mu_SR","ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","topcr","ele_FakeCR","mu_FakeCR"]
 from LatinoAnalysis.Tools.commonTools import getSampleFiles, getBaseW, addSampleWeight
 
 def nanoGetSampleFiles(inputDir, Sample):
@@ -11,10 +11,13 @@ def nanoGetSampleFiles(inputDir, Sample):
 
 phase_spaces_tot_ele = [ c for c in regions if 'ele' in c]
 phase_spaces_tot_mu = [ c for c in regions if 'mu' in c]
+phase_spaces_tot_sr = [ c for c in regions if 'SR' in c]
+phase_spaces_tot_sr_top = [ c for c in regions if 'SR' in c or "topcr" in c]
+wj_region = [ c for c in regions if 'HWJ' in c]
 
-# # # # ################################ EXPERIMENTAL UNCERTAINTIES  #################################
+# # # # # ################################ EXPERIMENTAL UNCERTAINTIES  #################################
 
-# # # #### Luminosity
+# # #### Luminosity
 
 # nuisances['lumi_Uncorrelated'] = {
 #     'name': 'lumi_13TeV_2018',
@@ -48,6 +51,7 @@ phase_spaces_tot_mu = [ c for c in regions if 'mu' in c]
 
 # fakeW_statUp        =  '( fakeWeight_statUp / fakeWeight_30  )'
 # fakeW_statDown      =  '( fakeWeight_statDo / fakeWeight_30  )'
+# fakeW_EWKsub     =  '( fakeWeight_EWKsubtractionSF / fakeWeight_30  )'
 
 # nuisances['fake_syst_ele']  = {
 #                'name'  : 'CMS_fake_syst_ele',
@@ -89,6 +93,30 @@ phase_spaces_tot_mu = [ c for c in regions if 'mu' in c]
 #                 'cuts':  phase_spaces_tot_mu
 # }
 
+# nuisances['fake_ele_EWKsub']  = {
+#                 'name'  : 'CMS_fake_ele_EWKsub_2018',
+#                 'kind'  : 'weight',
+#                 'type'  : 'shape',
+#                 'samples'  : {
+#                               'Fake'      : [ fakeW_EWKsub , "1." ],
+#                              },
+#                 'symmetrize': True,
+#                 'cuts':  phase_spaces_tot_ele
+# }
+
+# nuisances['fake_mu_EWKsub']  = {
+#                 'name'  : 'CMS_fake_mu_EWKsub_2018',
+#                 'kind'  : 'weight',
+#                 'type'  : 'shape',
+#                 'samples'  : {
+#                               'Fake'      : [ fakeW_EWKsub , "1." ],
+#                              },
+#                 'symmetrize': True,
+#                 'cuts':  phase_spaces_tot_mu
+# }
+
+
+
 # # ##### Btag nuisances
 
 # for shift in ['jes', 'lf', 'hf', 'hfstats1', 'hfstats2', 'lfstats1', 'lfstats2', 'cferr1', 'cferr2']:
@@ -107,7 +135,8 @@ phase_spaces_tot_mu = [ c for c in regions if 'mu' in c]
 
 # # # # # ##### Trigger Efficiency
 
-# trig_syst = ['((TriggerSFWeight_1l_u)/(TriggerSFWeight_1l))*(TriggerSFWeight_1l>0.02) + (TriggerSFWeight_1l<=0.02)', '(TriggerSFWeight_1l_d)/(TriggerSFWeight_1l)']
+# # trig_syst = ['((TriggerSFWeight_1l_u)/(TriggerSFWeight_1l))*(TriggerSFWeight_1l>0.02) + (TriggerSFWeight_1l<=0.02)', '(TriggerSFWeight_1l_d)/(TriggerSFWeight_1l)']
+# trig_syst = ['((TriggerSFWeight_1l_u)/(TriggerSFWeight_1l))', '(TriggerSFWeight_1l_d)/(TriggerSFWeight_1l)']
 
 # nuisances['trigg']  = {
 #                 'name'  : 'CMS_eff_trigger_2018',
@@ -266,7 +295,7 @@ phase_spaces_tot_mu = [ c for c in regions if 'mu' in c]
 #     jsonFile.close()
 
 # for sample in mc :
-#     if sample in ["WLNuJJ"]: continue
+#     if sample in ["WLNuJJ"] : continue
 #     nuisances['QCD_scale_'+sample] = {
 #         'name'  : 'QCDscale_'+sample,
 #         'kind'  : 'weight',
@@ -318,22 +347,62 @@ phase_spaces_tot_mu = [ c for c in regions if 'mu' in c]
 #                 'AsLnN'      : '1',
 # }
 
+# #### mettere per tutti i sample ma in SR, poi anche in CR per quelli che hanno una CR
+# ## valutare se le cose sono strane con drawnuisances e se sono piatti via di logN
 
 # # # ######## PDF uncertainty
-# nuisances['pdf_weight'] = {
-#     'name'  : 'pdf_weight_1718',
-#     'kind'  : 'weight_envelope',
-#     'type'  : 'shape',
-#     'samples' :  { s: ['Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in mc if s not in ["WLNuJJ"]},
-#     'AsLnN':  '1'
-# }
-
-# # nuisances['pdf_weight_accept'] = {
-# #     'name'  : 'pdf_weight_1718_accept',
+# # nuisances['pdf_weight'] = {
+# #     'name'  : 'pdf_weight_1718',
 # #     'kind'  : 'weight_envelope',
 # #     'type'  : 'shape',
-# #     'samples': { k : [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ] for k in ["WLNuJJ"] }
+# #     'samples' :  { s: ['Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in mc },
+# #     'AsLnN':  '1',
+# #     'cuts':  phase_spaces_tot_sr
 # # }
+
+# ###### uncomment from here 4 datacards
+# nuisances['pdf_weight_'+"Wjets_HT"] = {
+#     'name'  : 'pdf_weight_1718_'+"Wjets_HT",
+#     'kind'  : 'weight_envelope',
+#     'type'  : 'shape',
+#     'samples' :  { s: ['Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in ["Wjets_HT"]},
+#     'AsLnN':  '1',
+#     'cuts':  wj_region + phase_spaces_tot_sr
+# }
+
+# nuisances['pdf_weight_'+"top"] = {
+#     'name'  : 'pdf_weight_1718_'+"top",
+#     'kind'  : 'weight_envelope',
+#     'type'  : 'shape',
+#     'samples' :  { s: ['Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in ["top"] },
+#     'AsLnN':  '1',
+#     'cuts':  phase_spaces_tot_sr_top
+# }
+# nuisances['pdf_weight_'+"VV"] = {
+#     'name'  : 'pdf_weight_1718_'+"VV",
+#     'kind'  : 'weight_envelope',
+#     'type'  : 'shape',
+#     'samples' :  { s: ['Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in ["VV"] },
+#     'AsLnN':  '1',
+#     'cuts':  phase_spaces_tot_sr_top
+# }
+# nuisances['pdf_weight_'+"VBS"] = {
+#     'name'  : 'pdf_weight_1718_'+"VBS",
+#     'kind'  : 'weight_envelope',
+#     'type'  : 'shape',
+#     'samples' :  { s: ['Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in ["VBS"] },
+#     'AsLnN':  '1',
+#     'cuts':  phase_spaces_tot_sr_top
+# }
+
+# nuisances['pdf_weight_accept'] = {
+#     'name'  : 'pdf_weight_1718_accept',
+#     'kind'  : 'weight_envelope',
+#     'type'  : 'shape',
+#     'samples': { k : [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ] for k in ["WLNuJJ"] },
+#     'cuts':  phase_spaces_tot_sr
+# }
+# ####### until here
 
 # # # # An overall 1.5% UE uncertainty will cover all the UEup/UEdo variations
 # # # # And we don't observe any dependency of UE variations on njet
@@ -349,22 +418,22 @@ phase_spaces_tot_mu = [ c for c in regions if 'mu' in c]
 # WJets_up = '( WJets_reweight_up / WJets_reweight )'
 # WJets_do = '( WJets_reweight_do / WJets_reweight )'
 
-# nuisances['WJets_reweight'] = {
+# nuisances['WJets_reweight_stat'] = {
 #     'name': 'WJets_rew_2018',
 #     'kind': 'weight',
 #     'type': 'shape',
 #     'samples': { 
-#        'Wjets_HT': [WJets_up, WJets_do]
+#        'Wjets_HT_hardJets': [WJets_up, WJets_do]
 #       }
 # }
 
 # WJets_functional = '( WJets_reweight_func /  WJets_reweight )'
-# nuisances['WJets_reweight_functional'] = {
+# nuisances['WJets_reweight_functional_2018'] = {
 #     'name': 'WJets_rew_func_2018',
 #     'kind': 'weight',
 #     'type': 'shape',
 #     'samples': {
-#        'Wjets_HT': [WJets_functional, "1."]
+#        'Wjets_HT_hardJets': [WJets_functional, "1."]
 #       },
 #     'symmetrize': True
 # }
@@ -423,11 +492,11 @@ phase_spaces_tot_mu = [ c for c in regions if 'mu' in c]
 #              }
 
 
-# # for n in nuisances.values():
-# #     n['skipCMS'] = 1
+# for n in nuisances.values():
+#     n['skipCMS'] = 1
 
    
 
-# # # # nuisances = {k:v for k,v in nuisances.items() if k in ['detavbs_residual', 'zlep_residual']} #if 'PS' in k or 'QCD' in k
+# # # nuisances = {k:v for k,v in nuisances.items() if k in ['detavbs_residual', 'zlep_residual']} #if 'PS' in k or 'QCD' in k
 
-# # # # print ' '.join(nuis['name'] for nname, nuis in nuisances.iteritems() if nname not in ('lumi', 'stat'))
+# # # print ' '.join(nuis['name'] for nname, nuis in nuisances.iteritems() if nname not in ('lumi', 'stat'))

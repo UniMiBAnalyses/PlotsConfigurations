@@ -152,13 +152,13 @@ DataTrig = {
 #########################################
 ###### W + jj EWK #######
 
-samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_EWK')
-                                    + nanoGetSampleFiles(mcDirectoryLat,'Wp_LNuJJ_EWK'),
-#                        'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
-                        'weight': CommonWeight,
-                        'FilesPerJob' : 5,
-                        'EventsPerJob' : 7000,
-                    }
+# samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_EWK')
+#                                     + nanoGetSampleFiles(mcDirectoryLat,'Wp_LNuJJ_EWK'),
+# #                        'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
+#                         'weight': CommonWeight,
+#                         'FilesPerJob' : 5,
+#                         'EventsPerJob' : 7000,
+#                     }
 
 ###########################################
 #############  BACKGROUNDS  ###############
@@ -166,8 +166,8 @@ samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_
 
 
 # # ####### Wjets #########
-# Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(PhotonGen_eta)<2.5 ) > 0) '
-Wjets_photon_filter = '1.'
+Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(PhotonGen_eta)<2.5 ) > 0) '
+# Wjets_photon_filter = '1.'
 Total_correction = 'WJets_reweight'
 # Total_correction = '1.'
 
@@ -455,11 +455,6 @@ if os.path.exists(CMSSW+'/src/'+sampleEFTFile):
   exec(handle)
   handle.close()
 
-# samples['quad_cHQ1'] = {
-#    'name': EFTSamples,
-#    'weight': CommonWeight + '*' + '0.5*(LHEReweightingWeight[14] + LHEReweightingWeight[13] - 2*LHEReweightingWeight[0])',
-#    'FilesPerJob': 60,
-# }
 
 # Then corrected
 fakeW = 'fakeWeight_30'

@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'fake18_noRW_18regions'
+tagger = 'finalUL'
 
 tag = 'vbf_w_2017'+tagger
 

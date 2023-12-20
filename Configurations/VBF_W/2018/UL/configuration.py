@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'mylatest_triggerSF_photfilter_oldapproxrw'
+tagger = 'FakeTEST_mks'
 
 tag = 'vbf_w_2018'+tagger
 

@@ -279,12 +279,14 @@ aliases['DY_LO_pTllrw'] = {
 ###########################################################################################
 #fakes
 
-basedir_fakes = configurations + "/VBF_W/utils/weights_files/my_latest"
+# basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/newHLT_2018"
+# basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/nnewHLT_18_1p4_top"
+basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/mkshapesFAKE"
 
 ets = ["30"]
 
-el_pr_file = configurations + "/VBF_W/utils/weights_files/my_latest/ElePR.root"
-mu_pr_file = configurations + "/VBF_W/utils/weights_files/my_latest/MuonPR.root"
+el_pr_file = basedir_fakes + "/ElePR.root"
+mu_pr_file = basedir_fakes + "/MuonPR.root"
 
 for et in ets:
     el_fr_file = basedir_fakes + "/EleFR_jet"+et+".root"
@@ -299,16 +301,48 @@ for et in ets:
         'samples': ["Fake"]
     }
 
-    aliases['fakeWeight_statUp'] = { 
-            'class': 'newFakeWeightOTFall',
-            'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, True, False),   
-            'samples': ["Fake"]
-        }
-    aliases['fakeWeight_statDo'] = { 
-            'class': 'newFakeWeightOTFall',
-            'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, True), 
-            'samples': ["Fake"]
-        }
+    # aliases['fakeWeight_statUp'] = { 
+    #         'class': 'newFakeWeightOTFall',
+    #         'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, True, False),   
+    #         'samples': ["Fake"]
+    #     }
+    # aliases['fakeWeight_statDo'] = { 
+    #         'class': 'newFakeWeightOTFall',
+    #         'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, True), 
+    #         'samples': ["Fake"]
+    #     }
+#     basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/2018_def_1p3"
+#     el_fr_file = basedir_fakes + "/EleFR_jet"+et+".root"
+#     mu_fr_file = basedir_fakes + "/MuonFR_jet"+et+".root"
+
+#     aliases['fakeWeight_EWKsubtractionSF'] = { 
+#             'class': 'newFakeWeightOTFall',
+#             'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False), 
+#             'samples': ["Fake"]
+#         }
+
+HEM_histo = configurations + "/VBF_W/utils/2018/fakes/HEMcorrection_ele/histo_ele_fake_ratio.root"
+aliases['HEM_correction'] = { 
+    'class': 'HEMcorrector',
+    'args': (copy.deepcopy(HEM_histo), False, False),
+    'linesToAdd' : [
+        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+        '.L {}/VBF_W/utils/macros/HEMcorr.cc+'.format(configurations)
+    ],
+    'samples': ["Fake"]
+}
+
+# aliases['HEM_correction_up'] = { 
+#     'class': 'HEMcorrector',
+#     'args': (copy.deepcopy(HEM_histo), True, False), 
+#     'samples': ["Fake"]
+# }
+
+# aliases['HEM_correction_do'] = { 
+#     'class': 'HEMcorrector',
+#     'args': (copy.deepcopy(HEM_histo), False, True), 
+#     'samples': ["Fake"]
+# }
 
 
 ###################################
@@ -399,7 +433,7 @@ aliases['ele_isT'] = {
 ## WJET REWEIGHT
 
 ##reweight for Wjets samples
-morphing_file = utils_folder + '2018/UL/reweight/UL_approx_4fakes.root'
+morphing_file = utils_folder + '2018/UL/reweight/reweight.root'
 aliases['WJets_reweight'] = {
     'class': 'ReweightJet1pT',
     'samples': ['Wjets_HT'],
@@ -422,11 +456,11 @@ aliases['WJets_reweight_do'] = {
     'args': (morphing_file, copy.deepcopy("ele_sys_down"), copy.deepcopy("mu_sys_down"))
 } 
 
-# aliases['WJets_reweight_func'] = {
-#     'class': 'ReweightJet1pT',
-#     'samples': ['Wjets_HT'],
-#     'args': (morphing_file, copy.deepcopy("ele_pol2_HWJ"), copy.deepcopy("mu_pol2_HWJ"))
-# } 
+aliases['WJets_reweight_func'] = {
+    'class': 'ReweightJet1pT',
+    'samples': ['Wjets_HT'],
+    'args': (morphing_file, copy.deepcopy("ele_pol2_HWJ"), copy.deepcopy("mu_pol2_HWJ"))
+} 
 
 # DNN
 models_path = utils_folder + '2018/NN'

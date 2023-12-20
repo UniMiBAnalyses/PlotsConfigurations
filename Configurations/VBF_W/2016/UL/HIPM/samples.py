@@ -109,7 +109,7 @@ LepWPWeight = LepWPWeight_1l
 ################################################
 
 XSWeight   = 'XSWeight'
-SFweight1l = [ 'puWeight', 'SingleLepton_trigEff_corrected[0]',
+SFweight1l = [ 'puWeight', 'TriggerSFWeight_1l',
               'Lepton_RecoSF[0]', 'EMTFbug_veto', 
               LepWPWeight_1l, LepWPCut_1l,
               'PrefireWeight','PUJetIdSF', 
@@ -443,12 +443,12 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryHWW,'ZZZ')
 
 # Then corrected
 # fakeW = 'fakeWeight_35'
-fakeW = 'fakeWeight_35'
+fakeW = 'fakeWeight_30'
 
 ### Fakes
 samples['Fake'] = {
   'name': [],
-  'weight': METFilter_DATA,
+  'weight': METFilter_DATA+'*'+fakeW,
   'weights': [],
   'isData': ['all'],
   'FilesPerJob' : 40,
@@ -456,7 +456,7 @@ samples['Fake'] = {
 
 for _, sd in DataRun:
   for pd in DataSets:
-    files = nanoGetSampleFiles(fakeDirectoryLat, pd + '_' + sd)
+    files = nanoGetSampleFiles(dataDirectoryHWW, pd + '_' + sd)
     samples['Fake']['name'].extend(files)
     samples['Fake']['weights'].extend([DataTrig[pd]] * len(files))
 

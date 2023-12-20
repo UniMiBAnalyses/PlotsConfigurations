@@ -3,8 +3,9 @@
 treeName = 'Events'
 
 # tagger = 'FakeMeasureREALHERE_looseTESTCONDOR'
-tagger = 'FakeMeasureREALHERE_loose'
-# tagger = 'FakeMeasureREALHERE'
+# tagger = 'FakeMeasureREALHERE_loose_weight'
+# tagger = 'FakeMeasureREALHERE_weight'
+tagger = 'FakeMeasureREALHERE'
 
 tag = 'vbf_w_2018'+tagger
 

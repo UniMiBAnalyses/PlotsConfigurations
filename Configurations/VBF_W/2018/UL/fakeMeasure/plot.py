@@ -140,13 +140,13 @@ groupPlot['Wjets_HT_hardJets']  = {
 #                 'fill': 1001
 #                 }
 
-# groupPlot['Fake']  = {  
-#                'nameHR' : "Non-prompt",
-#                'isSignal' : 0,
-#                'color': palette["LightBlue"],   
-#               'samples'  : ['Fake'],
-#               'fill': 1001
-#           }
+groupPlot['Fake']  = {  
+               'nameHR' : "Non-prompt",
+               'isSignal' : 0,
+               'color': palette["LightBlue"],   
+              'samples'  : ['Fake'],
+              'fill': 1001
+          }
 
 groupPlot['WLNuJJ']  = {  
                 'nameHR' : 'WLNuJJ',
@@ -268,18 +268,18 @@ plot['VVV'] = {
                 }
 
 
-# plot['Fake'] = {   
-#                 'color': colors['kAzure']-1,
-#                 'isSignal' : 0,
-#                 'isData'   : 0, 
-#                 'scale'    : 1.
-#                 # 'scale'    : 0.90796
-#                 #'scale' : 0.713100632928824
-#                 #'scale' : 0.6454715517898252
-#                 #'scale' : 0.4 ele
-#                 #'scale' : 0.5 mu
-#                 # 'scale' : 1.0253
-#                }
+plot['Fake'] = {   
+                'color': colors['kAzure']-1,
+                'isSignal' : 0,
+                'isData'   : 0, 
+                'scale'    : 1.
+                # 'scale'    : 0.90796
+                #'scale' : 0.713100632928824
+                #'scale' : 0.6454715517898252
+                #'scale' : 0.4 ele
+                #'scale' : 0.5 mu
+                # 'scale' : 1.0253
+               }
 
 
 # for wjetbin in wjets_bins:

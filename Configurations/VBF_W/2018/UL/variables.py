@@ -27,17 +27,7 @@ variables['pt1']  = {   'name': 'Lepton_pt[0]',
                             }
                         }
 
-# variables['pt1Zb1']  = {   'name': 'Lepton_pt[0]',     
-#                         'range' : (30,20,50),   
-#                         'xaxis' : 'p_{T} 1st lep',
-#                         'fold' : 0,
-#                             'blind': {
-#                               'ele_SR' : 'full',
-#                               'mu_SR' : 'full'
-#                             }
-#                         }
-
-variables['pt1Zb2']  = {   'name': 'Lepton_pt[0]',     
+variables['pt1bin2']  = {   'name': 'Lepton_pt[0]',     
                         'range' : (20,20,50),   
                         'xaxis' : 'p_{T} 1st lep',
                         'fold' : 0,
@@ -47,29 +37,27 @@ variables['pt1Zb2']  = {   'name': 'Lepton_pt[0]',
                             }
                         }
 
-
-# variables['pt1Zb3']  = {   'name': 'Lepton_pt[0]',     
-#                         'range' : (10,20,50),   
-#                         'xaxis' : 'p_{T} 1st lep',
-#                         'fold' : 0,
-#                             'blind': {
-#                               'ele_SR' : 'full',
-#                               'mu_SR' : 'full'
-#                             }
-#                         }
-
-# variables['pt1Zb4']  = {   'name': 'Lepton_pt[0]',     
-#                         'range' : (5,20,50),   
-#                         'xaxis' : 'p_{T} 1st lep',
-#                         'fold' : 0,
-#                             'blind': {
-#                               'ele_SR' : 'full',
-#                               'mu_SR' : 'full'
-#                             }
-#                         }
+variables['pt1bin3']  = {   'name': 'Lepton_pt[0]',     
+                        'range' : (6,25,75),   
+                        'xaxis' : 'p_{T} 1st lep',
+                        'fold' : 0,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
 
 variables['eta1']  = {  'name': 'Lepton_eta[0]',     
                         'range' : (24,-2.4,2.4),   
+                        'xaxis' : '#eta 1st lep',
+                        'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }                         
+                        }
+variables['eta1binHEM']  = {  'name': 'Lepton_eta[0]',     
+                        'range' : (30,-2.,-1.),   
                         'xaxis' : '#eta 1st lep',
                         'fold' : 3,
                             'blind': {
@@ -320,6 +308,28 @@ variables['jeteta2']  = {
                         'name': 'CleanJet_eta[1]',
                          'range' : (40,-5.0,5.0),
                          'xaxis' : '#eta 2nd jet',
+                         'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
+
+variables['jetphi1']  = {
+                        'name': 'CleanJet_phi[0]',
+                         'range' : (40,-3.2,3.2),
+                         'xaxis' : '#phi 1st jet',
+                         'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
+
+variables['jetphi2']  = {
+                        'name': 'CleanJet_phi[1]',
+                         'range' : (40,-3.2,3.2),
+                         'xaxis' : '#phi 2nd jet',
                          'fold' : 3,
                             'blind': {
                               'ele_SR' : 'full',

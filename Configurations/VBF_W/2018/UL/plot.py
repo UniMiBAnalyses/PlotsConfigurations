@@ -150,7 +150,7 @@ groupPlot['Fake']  = {
 
 groupPlot['WLNuJJ']  = {  
                 'nameHR' : 'WLNuJJ',
-                'isSignal' : 1,
+                'isSignal' : 3,
                 'color': palette["FerrariRed"],   
                 'samples'  : ['WLNuJJ'],
                 'fill': 1001

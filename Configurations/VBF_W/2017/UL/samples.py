@@ -109,7 +109,7 @@ XSWeight      = 'XSWeight'
 #               'Lepton_RecoSF[0]','EMTFbug_veto', LepWPWeight_1l, LepWPCut_1l,
 #               'PrefireWeight', 'PUJetIdSF',
 #               'btagSF',  'BoostedWtagSF_nominal']
-SFweight1l = [ 'puWeight_noeras[0]', 'TriggerEffWeight_1l',
+SFweight1l = [ 'puWeight', 'TriggerSFWeight_1l',
               'Lepton_RecoSF[0]','EMTFbug_veto', LepWPWeight_1l, LepWPCut_1l,
               'PrefireWeight', 'PUJetIdSF',
               'btagSF']
@@ -171,8 +171,8 @@ samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_
 
 ####### Wjets #########
 Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(PhotonGen_eta)<2.5 ) > 0) '
-# Total_correction = 'WJets_reweight'
-Total_correction = '1.'
+Total_correction = 'WJets_reweight'
+# Total_correction = '1.'
 
 samples['Wjets_HT'] = { 'name' : nanoGetSampleFiles(mcDirectoryHWW, 'WJetsToLNu-LO')
                                   # + nanoGetSampleFiles(mcDirectory, 'WJetsToLNu-LO_ext1')

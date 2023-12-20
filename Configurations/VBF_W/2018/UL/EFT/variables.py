@@ -585,3 +585,12 @@ variables['mjj_bin1']      = {   'name': 'mjj',            #   variable name
                             }
                         }
 
+variables['DNN1leppt'] = {   'name': 'DNNoutputSR_ALL:Lepton_pt[0]',            #   variable name    
+                            'range' : ([35., 50., 75., 100., 200.,1000.],[0., 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.0],),    #   variable range
+                            'xaxis' : 'DNNoutput : Lepton_pt [GeV]',  #   x axis name
+                            'fold' :3 ,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }

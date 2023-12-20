@@ -8,7 +8,8 @@ utils_folder = configurations +"/VBF_W/utils/"
 
 #aliases = {}
 
-mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
+mc = [skey for skey in samples if 'Fake' not in skey and 'DATA' not in skey]
+fakes = [skey for skey in samples if 'Fake' in skey]
 # mc = [skey for skey in samples]
 
 ####################
@@ -284,37 +285,79 @@ aliases['DY_LO_pTllrw'] = {
 #fakes
 
 # basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/newHLT_2018"
-basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/nnewHLT_18_1p4"
-basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/mkshapesFAKE"
+# basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/nnewHLT_18_1p4"
+# basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/mkshapesFAKE"
+basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/HLTMC"
 
 ets = ["30"]
 
 el_pr_file = basedir_fakes + "/ElePR.root"
 mu_pr_file = basedir_fakes + "/MuonPR.root"
 
-for et in ets:
-    el_fr_file = basedir_fakes + "/EleFR_jet"+et+".root"
-    mu_fr_file = basedir_fakes + "/MuonFR_jet"+et+".root"
-    aliases['fakeWeight_'+et] = { 
-        'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations
-        'linesToAdd' : [
-            'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-            '.L {}/VBF_W/utils/macros/newfakeweight_OTFall.cc+'.format(configurations)
-        ],
-        'samples': ["Fake"]
-    }
+# for et in ets:
+el_fr_file = basedir_fakes + "/EleFR_jet"+"30"+".root"
+mu_fr_file = basedir_fakes + "/MuonFR_jet"+"30"+".root"
+aliases['fakeWeight_1p0_1p0'] = { 
+    'class': 'newFakeWeightOTFall',
+    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, 1.0, 1.0),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+    'linesToAdd' : [
+        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+        '.L {}/VBF_W/utils/macros/newfakeweight_OTFall.cc+'.format(configurations)
+    ],
+    'samples': fakes
+}
+aliases['fakeWeight_0p9_0p8'] = { 
+    'class': 'newFakeWeightOTFall',
+    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, 0.9, 0.8),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+    'samples': fakes
+}
+aliases['fakeWeight_0p9_0p9'] = { 
+    'class': 'newFakeWeightOTFall',
+    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, 0.9, 0.9),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+    'samples': fakes
+}
+aliases['fakeWeight_0p9_1p0'] = { 
+    'class': 'newFakeWeightOTFall',
+    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, 0.9, 1.0),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+    'samples': fakes
+}
+aliases['fakeWeight_1p0_0p8'] = { 
+    'class': 'newFakeWeightOTFall',
+    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, 1.0, 0.8),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+    'samples': fakes
+}
+aliases['fakeWeight_1p0_0p9'] = { 
+    'class': 'newFakeWeightOTFall',
+    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, 1.0, 0.9),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+    'samples': fakes
+}
 
-    # aliases['fakeWeight_statUp'] = { 
-    #         'class': 'newFakeWeightOTFall',
-    #         'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, True, False),   
-    #         'samples': ["Fake"]
-    #     }
-    # aliases['fakeWeight_statDo'] = { 
-    #         'class': 'newFakeWeightOTFall',
-    #         'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, True), 
-    #         'samples': ["Fake"]
-    #     }
+aliases['fakeWeight_1p1_0p8'] = { 
+    'class': 'newFakeWeightOTFall',
+    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, 1.1, 0.8),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+    'samples': fakes
+}
+aliases['fakeWeight_1p1_0p9'] = { 
+    'class': 'newFakeWeightOTFall',
+    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, 1.1, 0.9),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+    'samples': fakes
+}
+aliases['fakeWeight_1p1_1p0'] = { 
+    'class': 'newFakeWeightOTFall',
+    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, 1.1, 1.0),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+    'samples': fakes
+}
+
+# aliases['fakeWeight_statUp'] = { 
+#         'class': 'newFakeWeightOTFall',
+#         'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, True, False),   
+#         'samples': ["Fake"]
+#     }
+# aliases['fakeWeight_statDo'] = { 
+#         'class': 'newFakeWeightOTFall',
+#         'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, True), 
+#         'samples': ["Fake"]
+#     }
 #     basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/2018_def_1p3"
 #     el_fr_file = basedir_fakes + "/EleFR_jet"+et+".root"
 #     mu_fr_file = basedir_fakes + "/MuonFR_jet"+et+".root"
@@ -333,7 +376,7 @@ aliases['HEM_correction'] = {
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
         '.L {}/VBF_W/utils/macros/HEMcorr.cc+'.format(configurations)
     ],
-    'samples': ["Fake"]
+    'samples': fakes
 }
 
 # aliases['HEM_correction_up'] = { 

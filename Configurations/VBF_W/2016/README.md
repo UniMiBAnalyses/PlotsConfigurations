@@ -66,7 +66,7 @@ or
 For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for example) recreating the same path ~/CMSSW 10../src/Plotconfig/config/VBF_W/2016/ and here it is needed utils folder. This folder is used somewhere in the nuisances, it is easy to solve this problem, didnt have the time!
 
 
-    mkPlot.py --pycfg=configuration.py --inputFile rootFile/plots_vbf_w_2016.root --onlyPlot=cratio --linearOnly --showIntegralLegend=1 --plotNormalizedDistributions
+    mkPlot.py --pycfg=configuration.py --inputFile rootFile/plots_vbf_w_2016.root --onlyPlot=cratio  --showIntegralLegend=1 --plotNormalizedDistributions
 
     mkPlot.py --pycfg=configuration.py --inputFile rootFile/plots_vbf_w_2016.root --showIntegralLegend=1
     mkPlot.py --pycfg=configuration.py --inputFile rootFile/plots_vbf_w_2016.root --showIntegralLegend=1  --plotNormalizedDistributionsTHstack
