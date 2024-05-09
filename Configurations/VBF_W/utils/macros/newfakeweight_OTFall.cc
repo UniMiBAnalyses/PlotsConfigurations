@@ -27,14 +27,14 @@ using namespace std;
 class newFakeWeightOTFall : public multidraw::TTreeFunction {
 public:
   //newFakeWeightOTFall(string file, string ele_WP, string mu_WP, string fr_ele_path, string pr_ele_path, string fr_mu_path, string pr_mu_path);
-  newFakeWeightOTFall(string ele_WP, string mu_WP, string fr_ele_path, string pr_ele_path, string fr_mu_path, string pr_mu_path, bool do_absEta, float FR_factor, float PR_factor);
+  newFakeWeightOTFall(string ele_WP, string mu_WP, string fr_ele_path, string pr_ele_path, string fr_mu_path, string pr_mu_path, bool do_absEta, bool do_statUp, bool do_statDo, bool do_shiftPR);
 
   char const* getName() const override { 
       return "newFakeWeightOTFall"; 
   }
   TTreeFunction* clone() const override { 
       //return new newFakeWeightOTFall(inputfile_path, ele_WP, mu_WP, fr_ele_path, pr_ele_path, fr_mu_path, pr_mu_path); 
-      return new newFakeWeightOTFall(ele_WP, mu_WP, fr_ele_path, pr_ele_path, fr_mu_path, pr_mu_path,do_absEta, FR_factor, PR_factor); 
+      return new newFakeWeightOTFall(ele_WP, mu_WP, fr_ele_path, pr_ele_path, fr_mu_path, pr_mu_path,do_absEta, do_statUp, do_statDo, do_shiftPR); 
   }
 
   unsigned getNdata() override { return 1; }
@@ -43,9 +43,10 @@ public:
 protected:  
   ~newFakeWeightOTFall();
   void bindTree_(multidraw::FunctionLibrary&) override;
-  float FR_factor;
-  float PR_factor;
+  bool do_statUp;
+  bool do_statDo;
   bool do_absEta;
+  bool do_shiftPR;
 
   
   //string inputfile_path;
@@ -79,13 +80,13 @@ protected:
 };
 
 //newFakeWeightOTFall::newFakeWeightOTFall(string in_file, string ele_WP, string mu_WP, string in_fr_ele_path, string in_pr_ele_path, string in_fr_mu_path, string in_pr_mu_path) :
-newFakeWeightOTFall::newFakeWeightOTFall(string ele_WP, string mu_WP, string in_fr_ele_path, string in_pr_ele_path, string in_fr_mu_path, string in_pr_mu_path,bool do_absEta, float FR_factor = 1.0, float PR_factor = 1.0) :
+newFakeWeightOTFall::newFakeWeightOTFall(string ele_WP, string mu_WP, string in_fr_ele_path, string in_pr_ele_path, string in_fr_mu_path, string in_pr_mu_path,bool do_absEta, bool do_statUp, bool do_statDo, bool do_shiftPR) :
   TTreeFunction(), 
                   //inputfile_path(in_file), 
                   fr_ele_path(in_fr_ele_path), pr_ele_path(in_pr_ele_path),
                   fr_mu_path(in_fr_mu_path), pr_mu_path(in_pr_mu_path),
                   ele_WP(ele_WP), mu_WP(mu_WP), do_absEta(do_absEta),
-                  FR_factor(FR_factor), PR_factor(PR_factor) 
+                  do_statUp(do_statUp), do_statDo(do_statDo), do_shiftPR(do_shiftPR) 
 {
   //inputfile = new TFile(inputfile_path.c_str(), "read");
   //for (int i = 1; i<=10; i++){
@@ -115,9 +116,9 @@ newFakeWeightOTFall::newFakeWeightOTFall(string ele_WP, string mu_WP, string in_
   fr_mu_file->Close();
   fr_mu_file->Close();
   
-  // if (FR_factor && PR_factor){
-  //     throw std::runtime_error("Can't do both up and down at once");
-  // }
+  if (do_statUp && do_statDo){
+      throw std::runtime_error("Can't do both up and down at once");
+  }
 }
 
 
@@ -132,92 +133,127 @@ newFakeWeightOTFall::evaluate(unsigned)
   float pt = Lepton_pt->At(0);
   float new_fakew = 0.;
 
+  // maximum effect of the statistical variation is 30%
+  float limit_eff = 0.3;
+  float limit = limit_eff*10;
+
   if (abs(Lepton_pdgId->At(0)) != 11){
       float maxpt = pr_mu_h2->GetXaxis()->GetBinCenter(pr_mu_h2->GetNbinsX());
       float prompt_rate;
       if (pt > maxpt){
-        prompt_rate   = (PR_factor) * (pr_mu_h2->GetBinContent(pr_mu_h2->FindBin(maxpt,eta_touse)));
+        prompt_rate   = (pr_mu_h2->GetBinContent(pr_mu_h2->FindBin(maxpt,eta_touse)));
       }else{
-        prompt_rate   = (PR_factor) * (pr_mu_h2->GetBinContent(pr_mu_h2->FindBin(pt,eta_touse)));
+        prompt_rate   = (pr_mu_h2->GetBinContent(pr_mu_h2->FindBin(pt,eta_touse)));
       }
       float fake_rate, fake_rate_e; 
       //maxpt = 35.; 
       maxpt = fr_mu_h2->GetXaxis()->GetBinCenter(fr_mu_h2->GetNbinsX());
       if (pt > maxpt){
-        fake_rate   = (FR_factor) * (fr_mu_h2->GetBinContent(fr_mu_h2->FindBin(maxpt, eta_touse)));
-        // fake_rate_e = fr_mu_h2->GetBinError(fr_mu_h2->FindBin(maxpt, eta_touse));
+        fake_rate   = (fr_mu_h2->GetBinContent(fr_mu_h2->FindBin(maxpt, eta_touse)));
+        fake_rate_e = fr_mu_h2->GetBinError(fr_mu_h2->FindBin(maxpt, eta_touse));
       }else{
-        fake_rate   = (FR_factor) * (fr_mu_h2->GetBinContent(fr_mu_h2->FindBin(pt, eta_touse)));
-        // fake_rate_e = fr_mu_h2->GetBinError(fr_mu_h2->FindBin(pt, eta_touse));
+        fake_rate   = (fr_mu_h2->GetBinContent(fr_mu_h2->FindBin(pt, eta_touse)));
+        fake_rate_e = fr_mu_h2->GetBinError(fr_mu_h2->FindBin(pt, eta_touse));
       }
-      // if (FR_factor){
-      //   if (pt >=40 ) fake_rate += fake_rate_e / 2; // Only for muons
-      //   else fake_rate += fake_rate_e;
-      //   if (fake_rate >=1.) fake_rate = 0.99; 
-      // }
-      // if (PR_factor){
-      //   if (pt >=40 ) fake_rate -= fake_rate_e / 2;
-      //   else fake_rate -= fake_rate_e;
-      //   if (fake_rate < 0) fake_rate=0.;
-      // }
-      // We have to fix this case if not the formula will fail
-       if (fake_rate >= (prompt_rate-0.025)){
-            fake_rate = prompt_rate - 0.025; // Educated guess, keep fake rate 2.5% less of the prompt rate
-            std::cout << "for muon, fakerate - prompt rate > 0.025" << endl;
-            std::cout << "FR: " << fake_rate/FR_factor << endl;
-            std::cout << "PR: " << prompt_rate/PR_factor << endl;
-            std::cout << "eta: " << eta_touse << " and Lep_pt: " << pt << endl;
-       }
-      //std::cout << "fw: "<< fake_rate << ",  prompt rate "<< prompt_rate << "  " << 1/(prompt_rate - fake_rate) <<" eta,pt "<< abseta << " " << pt << std::endl;
+      /// educated guess, never fake > prompt
+      if (fake_rate >= prompt_rate) fake_rate = prompt_rate-0.025;
+
+      // this is the limit value for the error on the FR for which the statistical effect does not 
+      // reach more than 30% of effect. not very honest, to be honest.. but... you know..
+      float val_lim = (limit*fake_rate*(prompt_rate-fake_rate))/(10*prompt_rate + limit*fake_rate);
+
+      if (do_statUp){
+        if (fake_rate_e > val_lim) {
+          fake_rate_e = val_lim;
+        }
+        fake_rate += fake_rate_e; // Only for muons to prevent explosion at the denominator in the formula
+        if (fake_rate >=1.) fake_rate = 0.99; 
+      }
+
+      if (do_statDo){
+        if (fake_rate_e > val_lim) {
+          fake_rate_e = val_lim;
+        }
+        fake_rate -= fake_rate_e;
+        if (fake_rate < 0) fake_rate=0.;
+      }
+      // // We have to fix this case if not the formula will fail
+      // // If do_shiftPR is False, means that i'm using the nominal (from DATA) PR, and I simply correct the FR  
+      // // to keep it under 2% of the prompt. Now if do_shiftPR is true, i'm varying the PR (using the one from MC).
+      // // This PR is *lower* then the one from data, so i'm **not** correcting the FR, lowering it to keep it under 2%
+      // // but i'm raising the PR. Then i still have to correct in case of non physical numbers 
+      if (do_shiftPR == true) {
+        if (prompt_rate <= (fake_rate+0.025)){
+          prompt_rate = fake_rate + 0.025;
+          if( prompt_rate > 1. ){
+            prompt_rate = 1.;
+            fake_rate = prompt_rate - 0.025;
+          } 
+        }
+      }
       if (Lepton_isTightMu->At(0)){
-          // new_fakew = (-1) * fake_rate * (1 - prompt_rate)/(prompt_rate - fake_rate);
-          new_fakew = (-1) * (1 - prompt_rate)/(prompt_rate - fake_rate);
+          new_fakew = (-1) * fake_rate * (1 - prompt_rate)/(prompt_rate - fake_rate);
+          // new_fakew = (-1) * (1 - prompt_rate)/(prompt_rate - fake_rate);
       }else{
-          // new_fakew = (fake_rate * prompt_rate)/(prompt_rate - fake_rate);
-          new_fakew = (prompt_rate)/(prompt_rate - fake_rate);
+          new_fakew = (fake_rate * prompt_rate)/(prompt_rate - fake_rate);
+          // new_fakew = (prompt_rate)/(prompt_rate - fake_rate);
       }
   }else{
       float maxpt = pr_ele_h2->GetXaxis()->GetBinCenter(pr_ele_h2->GetNbinsX());
       float prompt_rate;
       if (pt > maxpt){
-        prompt_rate   = (PR_factor) * (pr_ele_h2->GetBinContent(pr_ele_h2->FindBin(maxpt,eta_touse)));
+        prompt_rate   = (pr_ele_h2->GetBinContent(pr_ele_h2->FindBin(maxpt,eta_touse)));
       }else{
-        prompt_rate   = (PR_factor) * (pr_ele_h2->GetBinContent(pr_ele_h2->FindBin(pt,eta_touse)));
+        prompt_rate   = (pr_ele_h2->GetBinContent(pr_ele_h2->FindBin(pt,eta_touse)));
       }
       float fake_rate, fake_rate_e; 
       //maxpt = 35.; 
       maxpt = fr_ele_h2->GetXaxis()->GetBinCenter(fr_ele_h2->GetNbinsX());
       if (pt > maxpt){
-        fake_rate   =  (FR_factor) * (fr_ele_h2->GetBinContent(fr_ele_h2->FindBin(maxpt, eta_touse)));
-        // fake_rate_e = fr_ele_h2->GetBinError(fr_ele_h2->FindBin(maxpt, eta_touse));
+        fake_rate   =  (fr_ele_h2->GetBinContent(fr_ele_h2->FindBin(maxpt, eta_touse)));
+        fake_rate_e = fr_ele_h2->GetBinError(fr_ele_h2->FindBin(maxpt, eta_touse));
       }else{
-        fake_rate   = (FR_factor) * (fr_ele_h2->GetBinContent(fr_ele_h2->FindBin(pt, eta_touse)));
-        // fake_rate_e = fr_ele_h2->GetBinError(fr_ele_h2->FindBin(pt, eta_touse));
+        fake_rate   = (fr_ele_h2->GetBinContent(fr_ele_h2->FindBin(pt, eta_touse)));
+        fake_rate_e = fr_ele_h2->GetBinError(fr_ele_h2->FindBin(pt, eta_touse));
       }
 
-      // if (FR_factor){
-      //     fake_rate += fake_rate_e;
-      //     if (fake_rate >=1.) fake_rate = 0.99; 
-      // }
-      // if (PR_factor){
-      //     fake_rate -= fake_rate_e; 
-      //     if (fake_rate < 0) fake_rate=0.;
-      // }
-      // We have to fix this case if not the formula will fail
-       if (fake_rate >= (prompt_rate-0.02)){
-            fake_rate = prompt_rate - 0.02; // Educated guess, keep fake rate 2% less of the prompt rate
-            std::cout << "for electron, fakerate - prompt rate > 0.02" << endl;
-            std::cout << "FR: " << fake_rate/FR_factor << endl;
-            std::cout << "PR: " << prompt_rate/PR_factor << endl;
-            std::cout << "eta: " << eta_touse << " and Lep_pt: " << pt << endl;
+      float val_lim = (limit*fake_rate*(prompt_rate-fake_rate))/(10*prompt_rate + limit*fake_rate);
+      
+      if (do_statUp){
+        if (fake_rate_e > val_lim) {
+          fake_rate_e = val_lim;
+        }
+        fake_rate += fake_rate_e;
+        if (fake_rate >=1.) fake_rate = 0.99; 
+      }
+      if (do_statDo){
+        if (fake_rate_e > val_lim) {
+          fake_rate_e = val_lim;
+        }
+        fake_rate -= fake_rate_e; 
+          if (fake_rate < 0) fake_rate=0.;
+      }
+      // We have to fix this case if not the formula will fail and gives non physical results
+      // If do_shiftPR is False, means that i'm using the nominal (from DATA) PR, and I simply correct the FR  
+      // to keep it under 2% of the prompt. Now if do_shiftPR is true, i'm varying the PR (using the one from MC).
+      // This PR is *lower* then the one from data, so i'm not correcting the FR, lowering it to keep it under 2%
+      // but i'm raising the PR. Then i still have to correct in case of non physical numbers 
+      if (do_shiftPR == true) {
+        if (prompt_rate <= (fake_rate+0.02)){
+          prompt_rate = fake_rate + 0.02;
+          if( prompt_rate > 1. ){
+            prompt_rate = 1.;
+            fake_rate = prompt_rate - 0.02;
+          } 
+        }
+      }
 
-       }
       if (Lepton_isTightEle->At(0)){
-          // new_fakew = (-1) * fake_rate * (1 - prompt_rate)/(prompt_rate - fake_rate);
-          new_fakew = (-1) * (1 - prompt_rate)/(prompt_rate - fake_rate);
+          new_fakew = (-1) * fake_rate * (1 - prompt_rate)/(prompt_rate - fake_rate);
+          // new_fakew = (-1) * (1 - prompt_rate)/(prompt_rate - fake_rate);
       }else{
-          // new_fakew = (fake_rate * prompt_rate)/(prompt_rate - fake_rate);
-          new_fakew = (prompt_rate)/(prompt_rate - fake_rate);
+          new_fakew = (fake_rate * prompt_rate)/(prompt_rate - fake_rate);
+          // new_fakew = (prompt_rate)/(prompt_rate - fake_rate);
       }
   }
 

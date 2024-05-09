@@ -76,14 +76,6 @@ For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for e
     mkDatacards.py --pycfg=configuration.py --inputFile rootFile/plots_vbf_w_2018.root
 
 
-# Make nuis plot
-    python DrawNuisancesAll.py \
-     --inputFile ../../../../PlotsConfigurations/Configurations/VBF_W/2018/datacards/ele_SR/DNNoutput_ALLbin1/shapes/histos_ele_SR.root  \
-     --outputDirPlots ../../../../PlotsConfigurations/Configurations/VBF_W/2018/ele_SR_nuisance  \
-     --nuisancesFile ../../../../PlotsConfigurations/Configurations/VBF_W/2018/nuisances.py  \
-     --samplesFile   ../../../../PlotsConfigurations/Configurations/VBF_W/2018/samples.py \
-     --cutName ele_SR
-
 # How to run the analysis 
 ### CMSSW_11_1_4 IS NEEDED FOR DNN OUTPUT VARIABLE!!
 To run it on CMSSW_10_6_4 pls comment the dnn variable everywhere
@@ -170,15 +162,33 @@ For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for e
      --cutName topcr
 
     python DrawNuisancesAll.py \
-    --inputFile datacards/UL_sys/topcr/jetpt1/shapes/histos_topcr.root \
-    --outputDirPlots ../plots/debug_nuis_top \
+    --inputFile datacards/noNuis_fakeFinal/mu_FakeCR/pt1/shapes/histos_mu_FakeCR.root \
+    --outputDirPlots ../plots/debug_nuis_mu_fake_newerr \
     --nuisancesFile nuisances.py \
     --samplesFile samples.py \
-    --cutName topcr
+    --cutName mu_FakeCR
 
-python DrawNuisancesAll.py \
---inputFile datacards/yessys_yesrw/ele_SR/DNNoutput_ALLbin1/shapes/histos_ele_SR.root  \
---outputDirPlots ele_SR_nuisance  \
---nuisancesFile nuisances.py  \
---samplesFile   samples.py \
---cutName ele_SR \
+    python DrawNuisancesAll.py \
+    --inputFile datacards/yessys_yesrw/ele_SR/DNNoutput_ALLbin1/shapes/histos_ele_SR.root  \
+    --outputDirPlots ele_SR_nuisance  \
+    --nuisancesFile nuisances.py  \
+    --samplesFile   samples.py \
+    --cutName ele_SR \
+
+
+
+# Run Differential analysis
+    Run a shape maker in opt_binning. We are running on signal samples in ~SR + fiducial. Here for the first time "fiducial" phase-space is defined!!
+    Then run 'python fine_tuning_binning.py' which computes the cumulative and choose the correct binning such as we end up with the same statistic in each bin.
+    In this file you can set the number of GenBin (line 49 "nGenBin") and the previous hadded shape L7.
+    The output is "opt_variables.py". You can round the values here. 
+
+    Now go to compute_measures and as the very first thing run 'pyhthon from_opt_to_xs.py'. The output is compute_cuts.py which is needed to compute the various
+    XS measurment. If you want to change the fiducial phase-space, here you need to do it again!!
+    Now run a shape which runs over CENTRAL DAS signal files with only weight XS and with the given cuts file. 
+    Now run 'python GetDiffXS.py --file ....' where you point the file you already did. The outout is a JSON file with all the XS values computed. This is useful for fits.
+
+    Last step, go to ALL:
+    Here you can run 'python from_xs_to_samples.py' and this will gives you a "ALL_samples.py" file which is ready to be run as input for shapes, running on postprocessed samples.
+    We are almost ready. Now just run 'python mkDatacard_modified.py' which will create single version of the datacard where only one-varible gen-binned signal is present. 
+    We have our datacard and also lots of config and samples we can use indipendently. Which is fine actually. THE END? (no, still to be fitted :))

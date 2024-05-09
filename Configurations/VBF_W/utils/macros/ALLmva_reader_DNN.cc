@@ -14,18 +14,18 @@
 using namespace std;
 using namespace NNEvaluation;
 
-#ifndef MVAREADERDNN
-#define MVAREADERDNN
+#ifndef MVAREADERDNNALL
+#define MVAREADERDNNALL
 
 typedef TTreeReaderValue<Double_t> DoubleValueReader;
 
-class MVAReaderDNN : public multidraw::TTreeFunction {
+class MVAReaderDNNALL : public multidraw::TTreeFunction {
 public:
   
-  MVAReaderDNN(const char* model_path,  const char* transform_path, bool verbose, int category);
+  MVAReaderDNNALL(const char* model_path,  const char* transform_path, bool verbose, int category);
 
-  char const* getName() const override { return "MVAReaderDNN"; }
-  TTreeFunction* clone() const override { return new MVAReaderDNN(model_path_.c_str(), 
+  char const* getName() const override { return "MVAReaderDNNALL"; }
+  TTreeFunction* clone() const override { return new MVAReaderDNNALL(model_path_.c_str(), 
                                            transform_path_.c_str(), verbose, category_); }
 
   std::string model_path_;
@@ -39,7 +39,7 @@ protected:
  
   bool verbose;
   void bindTree_(multidraw::FunctionLibrary&) override;
-  // ~MVAReaderDNN();
+  // ~MVAReaderDNNALL();
   
   DNNEvaluatorSavedModel* dnn_tensorflow;
 
@@ -78,7 +78,7 @@ protected:
 };
 
 
-MVAReaderDNN::MVAReaderDNN(const char* model_path, const char* transform_path, bool verbose, int category):
+MVAReaderDNNALL::MVAReaderDNNALL(const char* model_path, const char* transform_path, bool verbose, int category):
     model_path_(model_path), 
     transform_path_(transform_path),
     verbose(verbose),
@@ -101,7 +101,7 @@ MVAReaderDNN::MVAReaderDNN(const char* model_path, const char* transform_path, b
 
 
 double
-MVAReaderDNN::evaluate(unsigned)
+MVAReaderDNNALL::evaluate(unsigned)
 {
 
   // I have to bypass the aliases.py problem.
@@ -208,7 +208,7 @@ MVAReaderDNN::evaluate(unsigned)
 }
 
 void
-MVAReaderDNN::bindTree_(multidraw::FunctionLibrary& _library)
+MVAReaderDNNALL::bindTree_(multidraw::FunctionLibrary& _library)
 {  
   _library.bindBranch(detajj, "detajj");
   _library.bindBranch(CleanJet_pt, "CleanJet_pt");
@@ -224,7 +224,7 @@ MVAReaderDNN::bindTree_(multidraw::FunctionLibrary& _library)
 }
 
 
-// MVAReaderDNN::~MVAReaderDNN(){  
+// MVAReaderDNNALL::~MVAReaderDNNALL(){  
 //   delete dnn_transformation;
 //   // delete dnn_tensorflow;
 

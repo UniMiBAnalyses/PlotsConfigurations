@@ -64,71 +64,96 @@ phase_spaces_tot_mu = [c for c in regions if "mu" in c]
 
 # # #### FAKES
 
-# ##########Fakes
-
+##########Fakes
 # fakeW_jetUp       = '( fakeWeight_45 / fakeWeight_35  )'
 # fakeW_jetDown     =  '( fakeWeight_25 / fakeWeight_35  )'
-# fakeW_statUp        =  '( fakeWeight_35_statUp / fakeWeight_35  )'
-# fakeW_statDown      =  '( fakeWeight_35_statDo / fakeWeight_35  )'
+## not a systematic because i preselect my phase-space!
 
-# nuisances['fake_syst_ele']  = {
-#                'name'  : 'CMS_fake_syst_ele',
-#                'type'  : 'lnN',
-#                'samples'  : {
-#                              'Fake' : '1.30',
-#                              },
-#                 'cuts': phase_spaces_tot_ele
-#                }
-               
-# nuisances['fake_syst_mu']  = {
-#                'name'  : 'CMS_fake_syst_mu',
-#                'type'  : 'lnN',
-#                'samples'  : {
-#                              'Fake' : '1.30',
-#                              },
-#                 'cuts': phase_spaces_tot_mu
-#                }
+fakeW_statUp        =  '( fakeWeight_statUp / fakeWeight_1p3  )'
+fakeW_statDown      =  '( fakeWeight_statDo / fakeWeight_1p3  )'
+fakeW_EWKsubUp     =  '( fakeWeight_1p4 / fakeWeight_1p3  )'
+fakeW_EWKsubDown     =  '( fakeWeight_1p2 / fakeWeight_1p3  )'
+fakeW_PRMC     =  '( fakeWeight_PRfromMC / fakeWeight_1p3  )'
 
-# nuisances['fake_ele']  = {
-#                 'name'  : 'CMS_fake_ele_2016',
-#                 'kind'  : 'weight',
-#                 'type'  : 'shape',
-#                 'samples'  : {
-#                               'Fake'     : [ fakeW_jetUp , fakeW_jetDown ],
-#                              },
-#                 'cuts':  phase_spaces_tot_ele
-# }
+nuisances['fake_syst_ele']  = {
+               'name'  : 'CMS_fake_syst_ele',
+               'type'  : 'lnN',
+               'samples'  : {
+                             'Fake' : '1.30',
+                             },
+               'cuts': phase_spaces_tot_ele
+               }
 
-# nuisances['fake_ele_stat']  = {
-#                 'name'  : 'CMS_fake_ele_stat_2016',
-#                 'kind'  : 'weight',
-#                 'type'  : 'shape',
-#                 'samples'  : {
-#                               'Fake'      : [ fakeW_statUp , fakeW_statDown ],
-#                              },
-#                 'cuts':  phase_spaces_tot_ele
-# }
+nuisances['fake_syst_mu']  = {
+               'name'  : 'CMS_fake_syst_mu',
+               'type'  : 'lnN',
+               'samples'  : {
+                             'Fake' : '1.30',
+                             },
+                'cuts': phase_spaces_tot_mu
+               }
 
-# nuisances['fake_mu']  = {
-#                 'name'  : 'CMS_fake_mu_2016',
-#                 'kind'  : 'weight',
-#                 'type'  : 'shape',
-#                 'samples'  : {
-#                               'Fake'     : [ fakeW_jetUp , fakeW_jetDown ],
-#                              },
-#                 'cuts':  phase_spaces_tot_mu
-# }
+nuisances['fake_ele_stat']  = {
+                'name'  : 'CMS_fake_ele_stat_2016',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                              'Fake'      : [ fakeW_statUp , fakeW_statDown ],
+                             },
+                'cuts':  phase_spaces_tot_ele
+}
 
+nuisances['fake_mu_stat']  = {
+                'name'  : 'CMS_fake_mu_stat_2016',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                              'Fake'     :[ fakeW_statUp , fakeW_statDown ],
+                             },
+                'cuts':  phase_spaces_tot_mu
+}
 
-# nuisances['fake_mu_stat']  = {
-#                 'name'  : 'CMS_fake_mu_stat_2016',
-#                 'kind'  : 'weight',
-#                 'type'  : 'shape',
-#                 'samples'  : {
-#                               'Fake'     :[ fakeW_statUp , fakeW_statDown ],
-#                              },
-#                 'cuts':  phase_spaces_tot_mu
-# }
+nuisances['fake_ele_EWKsub']  = {
+                'name'  : 'CMS_fake_ele_EWKsub_2016',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                              'Fake'      : [ fakeW_EWKsubUp , fakeW_EWKsubDown ],
+                             },
+                'cuts':  phase_spaces_tot_ele
+}
+
+nuisances['fake_mu_EWKsub']  = {
+                'name'  : 'CMS_fake_mu_EWKsub_2016',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                              'Fake'      : [ fakeW_EWKsubUp , fakeW_EWKsubDown ],
+                             },
+                'cuts':  phase_spaces_tot_mu
+}
+
+nuisances['fake_mu_PRMC']  = {
+                'name'  : 'CMS_fake_mu_PR_fromMC_2016',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                              'Fake'      : [ fakeW_PRMC , "1." ],
+                             },
+                'symmetrize': True,
+                'cuts':  phase_spaces_tot_mu
+}
+
+nuisances['fake_ele_PRMC']  = {
+                'name'  : 'CMS_fake_ele_PR_fromMC_2016',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                              'Fake'      : [ fakeW_PRMC , "1." ],
+                             },
+                'symmetrize': True,
+                'cuts':  phase_spaces_tot_ele
+}
 
 # # # ##### Btag nuisances
 
@@ -495,7 +520,7 @@ phase_spaces_tot_mu = [c for c in regions if "mu" in c]
 # WJets_do = '( WJets_reweight_do / WJets_reweight )'
 
 # nuisances['WJets_reweight'] = {
-#     'name': 'WJets_rew',
+#     'name': 'WJets_rew_2016',
 #     'kind': 'weight',
 #     'type': 'shape',
 #     'samples': { 
@@ -505,7 +530,7 @@ phase_spaces_tot_mu = [c for c in regions if "mu" in c]
 
 # WJets_functional = '( WJets_reweight_func /  WJets_reweight )'
 # nuisances['WJets_reweight_functional'] = {
-#     'name': 'WJets_rew_func',
+#     'name': 'WJets_rew_func_2016',
 #     'kind': 'weight',
 #     'type': 'shape',
 #     'samples': {

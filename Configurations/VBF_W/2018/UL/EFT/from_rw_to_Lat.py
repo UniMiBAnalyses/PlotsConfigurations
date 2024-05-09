@@ -88,8 +88,6 @@ def do_mixed(op1, op2, card):
             elif op1 in line and op2 in line:
                     w = int(line.split("rwgt_")[1]) - 1
     
-    ## forse in realtà ci va un -1!!! (bisogna vedere se LHEReweightingWeight[0] è SM o cosa..) --> certo che lo è, è scritto...
-    ## cioè capire se reweighting[i] = LHEReightingWeight[i] 
     ## this goes in datacard, but now we are debugging
     file_content += "samples['sm_lin_quad_mixed_{}_{}'] = {{".format(op1,op2) + "\n"
     file_content += "    'name': changeMEname," + "\n"

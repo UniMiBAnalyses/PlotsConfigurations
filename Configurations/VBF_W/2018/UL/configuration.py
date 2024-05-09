@@ -2,7 +2,8 @@
 
 treeName = 'Events'
 
-tagger = 'FakeTEST_mks'
+tagger = 'JERtest'
+# tagger = 'den_analysis'
 
 tag = 'vbf_w_2018'+tagger
 

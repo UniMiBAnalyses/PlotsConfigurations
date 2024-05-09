@@ -172,7 +172,7 @@ variables['metbin1']  = {
 
 
 variables['Dphilep1met']  = {   'name': 'Dphilep1met',     
-                        'range' : (30,0,3.14),   
+                        'range' : (60,-3.14,3.14),   
                         'xaxis' : '#Delta#phi_{L1, MET}',
                         'fold' : 3,
                         'blind': {
@@ -182,7 +182,7 @@ variables['Dphilep1met']  = {   'name': 'Dphilep1met',
                         }
 
 variables['Dphilep1metPU']  = {   'name': 'Dphilep1met',     
-                        'range' : (15,0,3.14),   
+                        'range' : (30,-3.14,3.14),   
                         'xaxis' : '#Delta#phi_{L1, MET}PU',
                         'fold' : 3,
                         'blind': {
@@ -398,7 +398,7 @@ variables['detajj_H'] = {   'name': 'detajj',            #   variable name
                         }
 
 variables['Dphijet1met']  = {   'name': 'Dphijet1met',     
-                        'range' : (30,0,3.14),   
+                        'range' : (60,-3.14,3.14),   
                         'xaxis' : '#Delta#phi{J1, MET}',
                         'fold' : 3,
                         'blind': {
@@ -408,7 +408,7 @@ variables['Dphijet1met']  = {   'name': 'Dphijet1met',
                         }
 
 variables['Dphijet1metPU']  = {   'name': 'Dphijet1met',     
-                        'range' : (15,0,3.14),   
+                        'range' : (30,-3.14,3.14),   
                         'xaxis' : '#Delta#phi{J1, MET}PU',
                         'fold' : 3,
                         'blind': {
@@ -418,7 +418,7 @@ variables['Dphijet1metPU']  = {   'name': 'Dphijet1met',
                         }
 
 variables['Dphijet2met']  = {   'name': 'Dphijet2met',     
-                        'range' : (30,0,3.14),   
+                        'range' : (60,-3.14,3.14),   
                         'xaxis' : '#Delta#phi{J2, MET}',
                         'fold' : 3,
                         'blind': {
@@ -428,7 +428,7 @@ variables['Dphijet2met']  = {   'name': 'Dphijet2met',
                         }
 
 variables['Dphijet2metPU']  = {   'name': 'Dphijet2met',     
-                        'range' : (15,0,3.14),   
+                        'range' : (30,-3.14,3.14),   
                         'xaxis' : '#Delta#phi{J2, MET}PU',
                         'fold' : 3,
                         'blind': {
@@ -438,7 +438,7 @@ variables['Dphijet2metPU']  = {   'name': 'Dphijet2met',
                         }
 
 variables['Dphijet1jet2']  = {   'name': 'Dphijet1jet2',     
-                        'range' : (30,0,3.14),   
+                        'range' : (60,-3.14,3.14),   
                         'xaxis' : '#Delta#phi{J1, J2}',
                         'fold' : 3,
                         'blind': {
@@ -448,7 +448,7 @@ variables['Dphijet1jet2']  = {   'name': 'Dphijet1jet2',
                         }
 
 variables['Dphijet1jet2PU']  = {   'name': 'Dphijet1jet2',     
-                        'range' : (15,0,3.14),   
+                        'range' : (30,-3.14,3.14),   
                         'xaxis' : '#Delta#phi{J1, J2}PU',
                         'fold' : 3,
                         'blind': {
@@ -458,7 +458,7 @@ variables['Dphijet1jet2PU']  = {   'name': 'Dphijet1jet2',
                         }
 
 variables['Dphilep1jet1']  = {   'name': 'Dphilep1jet1',     
-                        'range' : (30,0,3.14),   
+                        'range' : (60,-3.14,3.14),   
                         'xaxis' : '#Delta#phi{L1, J1}',
                         'fold' : 3,
                         'blind': {
@@ -468,7 +468,7 @@ variables['Dphilep1jet1']  = {   'name': 'Dphilep1jet1',
                         }
 
 variables['Dphilep1jet1PU']  = {   'name': 'Dphilep1jet1',     
-                        'range' : (15,0,3.14),   
+                        'range' : (30,-3.14,3.14),   
                         'xaxis' : '#Delta#phi{L1, J1}PU',
                         'fold' : 3,
                         'blind': {
@@ -478,7 +478,7 @@ variables['Dphilep1jet1PU']  = {   'name': 'Dphilep1jet1',
                         }
 
 variables['Dphilep1jet2']  = {   'name': 'Dphilep1jet2',     
-                        'range' : (30,0,3.14),   
+                        'range' : (60,-3.14,3.14),   
                         'xaxis' : '#Delta#phi{L1, J2}',
                         'fold' : 3,
                         'blind': {
@@ -488,7 +488,7 @@ variables['Dphilep1jet2']  = {   'name': 'Dphilep1jet2',
                         }
 
 variables['Dphilep1jet2PU']  = {   'name': 'Dphilep1jet2',     
-                        'range' : (15,0,3.14),   
+                        'range' : (30,-3.14,3.14),   
                         'xaxis' : '#Delta#phi{L1, J2}PU',
                         'fold' : 3,
                         'blind': {
@@ -557,25 +557,6 @@ variables['Zl1bin4'] = {   'name': 'Zl1',
                          }
 }
 
-variables['QGL1'] = {   'name': 'Jet_qgl[0]',     
-                        'range' : (10,0,1),   
-                        'xaxis' : 'QGL1',
-                        'fold' : 3,
-                        'blind': {
-                           'ele_SR' : 'full',
-                           'mu_SR' : 'full'
-                         }
-}
-
-variables['QGL2'] = {   'name': 'Jet_qgl[1]',     
-                        'range' : (10,0,1),   
-                        'xaxis' : 'QGL2',
-                        'fold' : 3,
-                        'blind': {
-                           'ele_SR' : 'full',
-                           'mu_SR' : 'full'
-                         }
-}
 
 variables['DeepBj1'] = {   'name': 'Jet_btagDeepB[CleanJet_jetIdx[0]]',     
                         'range' : (10,0,1),   
@@ -597,7 +578,7 @@ variables['DeepBj2'] = {   'name': 'Jet_btagDeepB[CleanJet_jetIdx[1]]',
                          }
 }
 
-variables['DNNoutput_ALLbin1'] = {   'name': 'DNNoutputSR_ALL',     
+variables['DNNoutput_ALLbin1'] = {   'name': 'DNNoutputSR_noQGL',     
                         'range' : ([0., 0.10, 0.20, 0.30, 0.40, 1.],), 
                         'xaxis' : 'DNNoutput',
                         'fold' : 3,
@@ -607,7 +588,7 @@ variables['DNNoutput_ALLbin1'] = {   'name': 'DNNoutputSR_ALL',
                          }
 }
 
-variables['DNNoutput_ALLbin2'] = {   'name': 'DNNoutputSR_ALL',     
+variables['DNNoutput_ALLbin2'] = {   'name': 'DNNoutputSR_noQGL',     
                         'range' : ([0., 0.10, 0.20, 0.30, 0.40, 0.50, 1.],), 
                         'xaxis' : 'DNNoutput',
                         'fold' : 3,
@@ -617,7 +598,7 @@ variables['DNNoutput_ALLbin2'] = {   'name': 'DNNoutputSR_ALL',
                          }
 }
 
-variables['DNNoutput_ALLbin3'] = {   'name': 'DNNoutputSR_ALL',     
+variables['DNNoutput_ALLbin3'] = {   'name': 'DNNoutputSR_noQGL',     
                         'range' : ([0., 0.10, 0.20, 0.30, 0.40, 0.50, 0.6, 1.],), 
                         'xaxis' : 'DNNoutput',
                         'fold' : 3,
@@ -627,7 +608,7 @@ variables['DNNoutput_ALLbin3'] = {   'name': 'DNNoutputSR_ALL',
                          }
 }
 
-variables['DNNoutput_ALLbin4'] = {   'name': 'DNNoutputSR_ALL',     
+variables['DNNoutput_ALLbin4'] = {   'name': 'DNNoutputSR_noQGL',     
                         'range' : (10,0,1), 
                         'xaxis' : 'DNNoutput',
                         'fold' : 3,
@@ -648,3 +629,106 @@ variables['mjj_bin1']      = {   'name': 'mjj',            #   variable name
                             }
                         }
 
+variables['leppt_eta'] = {   'name': 'Lepton_pt[0]:Lepton_eta[0]',            #   variable name    
+                            'range' : ([-2., -1.5, -1., -0.5, 0., 0.5, 1., 1.5, 2.],[25., 30., 35., 40., 45., 60., 75.,],),    #   variable range
+                            'xaxis' : 'Lepton_pt : Lepton_eta [GeV]',  #   x axis name
+                            'fold' :0 ,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
+
+variables['lhe_mjj']      = {   'name': 'lhe_mjj',            #   variable name    
+                            'range' : (25,0,2500),    #   variable range
+                            'xaxis' : 'm_{jj} [GeV]',  #   x axis name
+                            'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
+
+variables['lhe_jetpt1']  = {
+                        'name': 'LHEPart_pt[4]',
+                        'range' : (70,40,350),
+                        'xaxis' : 'p_{T} 1st jet',
+                        'fold' : 3,
+                        'blind': {
+                           'ele_SR' : 'full',
+                           'mu_SR' : 'full'
+                         }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
+                        }
+
+variables['lhe_jetpt2']  = {
+                        'name': 'LHEPart_pt[5]',
+                        'range' : (50,30,250),
+                        'xaxis' : 'p_{T} 2nd jet',
+                        'fold' : 3,
+                        'blind': {
+                           'ele_SR' : 'full',
+                           'mu_SR' : 'full'
+                         }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
+                        }
+
+variables['lhe_eta1']  = {  'name': 'LHEPart_eta[2]',     
+                        'range' : (24,-2.4,2.4),   
+                        'xaxis' : '#eta 1st lep',
+                        'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }                         
+                        }
+                        
+variables['lhe_pt1']  = {   'name': 'LHEPart_pt[2]',     
+                        'range' : (35,0,175),   
+                        'xaxis' : 'p_{T} 1st lep',
+                        'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
+
+variables['lhe_eta_neutrino']  = {  'name': 'LHEPart_eta[3]',     
+                        'range' : (24,-2.4,2.4),   
+                        'xaxis' : '#eta 1st lep',
+                        'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }                         
+                        }
+                        
+variables['lhe_pt_neutrino']  = {   'name': 'LHEPart_pt[3]',     
+                        'range' : (35,0,175),   
+                        'xaxis' : 'p_{T} 1st lep',
+                        'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
+
+variables['lhe_jeteta1']  = {
+                        'name': 'LHEPart_eta[4]',
+                         'range' : (40,-5.0,5.0),
+                         'xaxis' : '#eta 1st jet',
+                         'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }
+
+variables['lhe_jeteta2']  = {
+                        'name': 'LHEPart_eta[5]',
+                         'range' : (40,-5.0,5.0),
+                         'xaxis' : '#eta 2nd jet',
+                         'fold' : 3,
+                            'blind': {
+                              'ele_SR' : 'full',
+                              'mu_SR' : 'full'
+                            }
+                        }

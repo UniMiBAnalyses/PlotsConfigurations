@@ -102,29 +102,20 @@ LepWPCut_1l =  '(Lepton_isTightElectron_'+eleWP+'[0]>0.5 || Lepton_isTightMuon_'
 LepWPWeight_1l = 'Lepton_tightElectron_'+eleWP+'_IdIsoSF'+'[0]*\
                 Lepton_tightMuon_'+muWP+'_IdIsoSF'+'[0]'
 
+trigg_MC = '( (abs(Lepton_pdgId[0])==13) * (HLT_IsoTkMu24 > 0.5 || HLT_IsoMu24 > 0.5 ) || (abs(Lepton_pdgId[0])==11) * (HLT_Ele27_WPTight_Gsf > 0.5 || HLT_Ele25_eta2p1_WPTight_Gsf > 0.5) )'
+
 LepWPCut = LepWPCut_1l
 LepWPWeight = LepWPWeight_1l
 ################################################
 ############ BASIC MC WEIGHTS ##################
 ################################################
 
-XSWeight   = 'XSWeight'
-SFweight1l = [ 'puWeight', 'SingleLepton_trigEff_corrected[0]',
-              'Lepton_RecoSF[0]', 'EMTFbug_veto', 
-              LepWPWeight_1l, LepWPCut_1l,
-              'PrefireWeight','PUJetIdSF', 
-              'btagSF']
-              
-# SFweight1l = [ 'puWeight', 'SingleLepton_trigEff_corrected[0]',
-#               'Lepton_RecoSF[0]', 'EMTFbug_veto', 
-#               LepWPWeight_1l, LepWPCut_1l,
-#               'PrefireWeight','PUJetIdSF', 
-#               'btagSF', 'BoostedWtagSF_nominal']
+XSWeight   = 'XSWeight'         
+SFweight1l = [ 'puWeight', 'TriggerSFWeight_1l', 'Lepton_RecoSF[0]', 'EMTFbug_veto', LepWPWeight_1l, LepWPCut_1l, 'PrefireWeight','PUJetIdSF', 'btagSF', trigg_MC]
 
 SFweight = '*'.join(SFweight1l)
      
 GenLepMatch   = 'Lepton_genmatched[0]'
-
 
 ################################################
 ############   MET  FILTERS  ###################
@@ -175,8 +166,8 @@ samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_
 
 ####### Wjets #########
 Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(PhotonGen_eta)<2.5 ) > 0) '
-# Total_correction = 'WJets_reweight'
-Total_correction = '1.'
+Total_correction = 'WJets_reweight'
+# Total_correction = '1.'
 
 samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryHWW, 'WJetsToLNu-LO')
                                    + nanoGetSampleFiles(mcDirectoryHWW, 'WJetsToLNu_HT70To100')
@@ -192,7 +183,7 @@ samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryHWW, 'WJetsToLN
                                   #  + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500_ext1')
                                    + nanoGetSampleFiles(mcDirectoryHWW, 'WJetsToLNu_HT2500ToInf'),
                                   #  + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf_ext1'),
-                        'weight': CommonWeight+'*' + Wjets_photon_filter +'* ewknloW' + '*' +Total_correction,
+                        # 'weight': CommonWeight+'*' + Wjets_photon_filter +'* ewknloW' + '*' +Total_correction,
                         'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction,
 			                	'FilesPerJob' : 10, 
                         'subsamples': {
@@ -441,7 +432,7 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryHWW,'ZZZ')
 
 # Then corrected
 # fakeW = 'fakeWeight_35'
-fakeW = 'fakeWeight_30'
+fakeW = 'fakeWeight_1p3'
 
 ### Fakes
 samples['Fake'] = {

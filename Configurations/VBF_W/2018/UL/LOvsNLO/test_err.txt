@@ -1,0 +1,329 @@
+INFO:__main__:Compressing
+INFO:__main__:merge ['/tmp/tmpPzioBK/tmp.root'] -> /afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/2017/UL/../rootFile/Full_with_nuis/plots_vbf_w_2017Full_with_nuis.root
+INFO:__main__:/tmp/tmpPzioBK/tmp.root -> /afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/2017/UL/../rootFile/Full_with_nuis/plots_vbf_w_2017Full_with_nuis.root: 251328 new, 0 merged (1039.4 s)
+
+ *** Break *** bus error
+
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+#0  0x00007f448be1460c in waitpid () from /lib64/libc.so.6
+#1  0x00007f448bd91f62 in do_system () from /lib64/libc.so.6
+#2  0x00007f448b13d3c3 in TUnixSystem::StackTrace() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#3  0x00007f448b13fc14 in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#4  <signal handler called>
+#5  0x00007f448cc527c1 in do_lookup_x () from /lib64/ld-linux-x86-64.so.2
+#6  0x00007f448cc5309f in _dl_lookup_symbol_x () from /lib64/ld-linux-x86-64.so.2
+#7  0x00007f448be8cd09 in do_sym () from /lib64/libc.so.6
+#8  0x00007f448c6230c4 in dlsym_doit () from /lib64/libdl.so.2
+#9  0x00007f448cc587d4 in _dl_catch_error () from /lib64/ld-linux-x86-64.so.2
+#10 0x00007f448c6235ad in _dlerror_run () from /lib64/libdl.so.2
+#11 0x00007f448c623118 in dlsym () from /lib64/libdl.so.2
+#12 0x00007f4487d9b358 in llvm::sys::DynamicLibrary::SearchForAddressOfSymbol(char const*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#13 0x00007f4485c3b6fd in llvm::orc::LambdaResolver<cling::IncrementalJIT::addModule(std::shared_ptr<llvm::Module> const&)::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}, cling::IncrementalJIT::addModule(std::shared_ptr<llvm::Module> const&)::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#2}>::findSymbolInLogicalDylib(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#14 0x00007f44868e22bf in llvm::RuntimeDyldImpl::resolveExternalSymbols() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#15 0x00007f44868e2735 in llvm::RuntimeDyldImpl::resolveRelocations() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#16 0x00007f44868e2c3d in llvm::RuntimeDyld::finalizeWithMemoryManagerLocking() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#17 0x00007f4485c35160 in std::_Function_handler<llvm::Expected<unsigned long> (), llvm::orc::RTDyldObjectLinkingLayer::ConcreteLinkedObject<std::shared_ptr<llvm::RuntimeDyld::MemoryManager>, std::shared_ptr<llvm::JITSymbolResolver>, llvm::orc::RTDyldObjectLinkingLayer::addObject(std::shared_ptr<llvm::object::OwningBinary<llvm::object::ObjectFile> >, std::shared_ptr<llvm::JITSymbolResolver>)::{lambda(std::_List_iterator<std::unique_ptr<llvm::orc::RTDyldObjectLinkingLayerBase::LinkedObject, std::default_delete<llvm::orc::RTDyldObjectLinkingLayerBase::LinkedObject> > >, llvm::RuntimeDyld&, std::shared_ptr<llvm::object::OwningBinary<llvm::object::ObjectFile> > const&, std::function<void ()>)#1}>::getSymbolMaterializer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)::{lambda()#1}>::_M_invoke(std::_Any_data const&) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#18 0x00007f4485c3ece3 in std::_Function_handler<llvm::Expected<unsigned long> (), llvm::orc::LazyEmittingLayer<llvm::orc::IRCompileLayer<cling::IncrementalJIT::RemovableObjectLinkingLayer, llvm::orc::SimpleCompiler> >::EmissionDeferredModule::find(llvm::StringRef, bool, llvm::orc::IRCompileLayer<cling::IncrementalJIT::RemovableObjectLinkingLayer, llvm::orc::SimpleCompiler>&)::{lambda()#1}>::_M_invoke(std::_Any_data const&) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#19 0x00007f4485c33fe5 in cling::IncrementalExecutor::executeWrapper(llvm::StringRef, cling::Value*) const () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#20 0x00007f4485bc93c5 in cling::Interpreter::RunFunction(clang::FunctionDecl const*, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#21 0x00007f4485bce5fc in cling::Interpreter::EvaluateInternal(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cling::CompilationOptions, cling::Value*, cling::Transaction**, unsigned long) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#22 0x00007f4485c88d10 in cling::MetaSema::actOnxCommand(llvm::StringRef, llvm::StringRef, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#23 0x00007f4485c98f14 in cling::MetaParser::isXCommand(cling::MetaSema::ActionResult&, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#24 0x00007f4485c991d6 in cling::MetaParser::isCommand(cling::MetaSema::ActionResult&, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#25 0x00007f4485c828a9 in cling::MetaProcessor::process(llvm::StringRef, cling::Interpreter::CompilationResult&, cling::Value*, bool) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#26 0x00007f4485b4352c in HandleInterpreterException(cling::MetaProcessor*, char const*, cling::Interpreter::CompilationResult&, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#27 0x00007f4485b564bd in TCling::ProcessLine(char const*, TInterpreter::EErrorCode*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#28 0x00007f4485b56782 in TCling::ProcessLineSynch(char const*, TInterpreter::EErrorCode*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#29 0x00007f448b000e0d in TApplication::ExecuteFile(char const*, int*, bool) [clone .localalias.62] () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#30 0x00007f4485b517bf in TCling::ExecuteMacro(char const*, TInterpreter::EErrorCode*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#31 0x00007f448aff9087 in TROOT::Macro(char const*, int*, bool) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#32 0x00007f448b03b0ba in TPluginManager::LoadHandlerMacros(char const*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#33 0x00007f448b03b844 in TPluginManager::LoadHandlersFromPluginDirs(char const*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#34 0x00007f448b03c8bc in TPluginManager::FindHandler(char const*, char const*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#35 0x00007f448b417c35 in TFile::Open(char const*, char const*, char const*, int, int) [clone .localalias.197] () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libRIO.so
+#36 0x00007f447579c121 in ?? ()
+#37 0x00007ffef9d15090 in ?? ()
+#38 0x00007f4485b34f02 in TClingCallFunc::make_wrapper() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#39 0x00007f448bce13b9 in FastCall(long, void*, void*, void*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#40 0x00007f448bce25c0 in Cppyy::CallR(long, void*, void*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#41 0x00007f448bce5d26 in PyROOT::TCppObjectExecutor::Execute(long, void*, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#42 0x00007f448bd0c9f2 in PyROOT::TMethodHolder::CallSafe(void*, long, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#43 0x00007f448bd0bd15 in PyROOT::TMethodHolder::Execute(void*, long, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#44 0x00007f448bceb25a in PyROOT::(anonymous namespace)::mp_call(PyROOT::MethodProxy*, _object*, _object*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#45 0x00007f448ca90333 in PyObject_Call (func=func
+entry=0x7f4464d89810, arg=arg
+entry=0x7f44752aaa28, kw=kw
+entry=0x0) at Objects/abstract.c:2547
+#46 0x00007f448cb3aadc in do_call (nk=<optimized out>, na=<optimized out>, pp_stack=0x7ffef9d15748, func=0x7f4464d89810) at Python/ceval.c:4589
+#47 call_function (oparg=<optimized out>, pp_stack=0x7ffef9d15748) at Python/ceval.c:4394
+#48 PyEval_EvalFrameEx (f=f
+entry=0x1331ea0, throwflag=throwflag
+entry=0) at Python/ceval.c:3009
+#49 0x00007f448cb40712 in PyEval_EvalCodeEx (co=co
+entry=0x7f448cc9aeb0, globals=globals
+entry=0x7f448cdc9168, locals=locals
+entry=0x7f448cdc9168, args=args
+entry=0x0, argcount=argcount
+entry=0, kws=kws
+entry=0x0, kwcount=0, defs=0x0, defcount=0, closure=0x0) at Python/ceval.c:3604
+#50 0x00007f448cb409a9 in PyEval_EvalCode (co=co
+entry=0x7f448cc9aeb0, globals=globals
+entry=0x7f448cdc9168, locals=locals
+entry=0x7f448cdc9168) at Python/ceval.c:669
+#51 0x00007f448cb65448 in run_mod (arena=0x1282680, flags=0x7ffef9d1598c, locals=0x7f448cdc9168, globals=0x7f448cdc9168, filename=0x7f448cc9aeb0 "\002", mod=0x13763e8) at Python/pythonrun.c:1385
+#52 PyRun_FileExFlags (fp=fp
+entry=0x130d850, filename=filename
+entry=0x7ffef9d168d4 "/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/bin/slc7_amd64_gcc820/mkShapesMulti.py", start=start
+entry=257, globals=globals
+entry=0x7f448cdc9168, locals=locals
+entry=0x7f448cdc9168, closeit=closeit
+entry=1, flags=0x7ffef9d1598c) at Python/pythonrun.c:1371
+#53 0x00007f448cb663c3 in PyRun_SimpleFileExFlags (fp=fp
+entry=0x130d850, filename=0x7ffef9d168d4 "/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/bin/slc7_amd64_gcc820/mkShapesMulti.py", closeit=closeit
+entry=1, flags=flags
+entry=0x7ffef9d1598c) at Python/pythonrun.c:957
+#54 0x00007f448cb66a33 in PyRun_AnyFileExFlags (fp=fp
+entry=0x130d850, filename=<optimized out>, closeit=closeit
+entry=1, flags=flags
+entry=0x7ffef9d1598c) at Python/pythonrun.c:761
+#55 0x00007f448cb7986e in Py_Main (argc=<optimized out>, argv=<optimized out>) at Modules/main.c:641
+#56 0x00007f448bd71555 in __libc_start_main () from /lib64/libc.so.6
+#57 0x000000000040108e in _start ()
+===========================================================
+
+
+The lines below might hint at the cause of the crash.
+You may get help by asking at the ROOT forum http://root.cern.ch/forum
+Only if you are really convinced it is a bug in ROOT then please submit a
+report at http://root.cern.ch/bugs Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#5  0x00007f448cc527c1 in do_lookup_x () from /lib64/ld-linux-x86-64.so.2
+#6  0x00007f448cc5309f in _dl_lookup_symbol_x () from /lib64/ld-linux-x86-64.so.2
+#7  0x00007f448be8cd09 in do_sym () from /lib64/libc.so.6
+#8  0x00007f448c6230c4 in dlsym_doit () from /lib64/libdl.so.2
+#9  0x00007f448cc587d4 in _dl_catch_error () from /lib64/ld-linux-x86-64.so.2
+#10 0x00007f448c6235ad in _dlerror_run () from /lib64/libdl.so.2
+#11 0x00007f448c623118 in dlsym () from /lib64/libdl.so.2
+#12 0x00007f4487d9b358 in llvm::sys::DynamicLibrary::SearchForAddressOfSymbol(char const*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#13 0x00007f4485c3b6fd in llvm::orc::LambdaResolver<cling::IncrementalJIT::addModule(std::shared_ptr<llvm::Module> const&)::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}, cling::IncrementalJIT::addModule(std::shared_ptr<llvm::Module> const&)::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#2}>::findSymbolInLogicalDylib(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#14 0x00007f44868e22bf in llvm::RuntimeDyldImpl::resolveExternalSymbols() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#15 0x00007f44868e2735 in llvm::RuntimeDyldImpl::resolveRelocations() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#16 0x00007f44868e2c3d in llvm::RuntimeDyld::finalizeWithMemoryManagerLocking() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#17 0x00007f4485c35160 in std::_Function_handler<llvm::Expected<unsigned long> (), llvm::orc::RTDyldObjectLinkingLayer::ConcreteLinkedObject<std::shared_ptr<llvm::RuntimeDyld::MemoryManager>, std::shared_ptr<llvm::JITSymbolResolver>, llvm::orc::RTDyldObjectLinkingLayer::addObject(std::shared_ptr<llvm::object::OwningBinary<llvm::object::ObjectFile> >, std::shared_ptr<llvm::JITSymbolResolver>)::{lambda(std::_List_iterator<std::unique_ptr<llvm::orc::RTDyldObjectLinkingLayerBase::LinkedObject, std::default_delete<llvm::orc::RTDyldObjectLinkingLayerBase::LinkedObject> > >, llvm::RuntimeDyld&, std::shared_ptr<llvm::object::OwningBinary<llvm::object::ObjectFile> > const&, std::function<void ()>)#1}>::getSymbolMaterializer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)::{lambda()#1}>::_M_invoke(std::_Any_data const&) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#18 0x00007f4485c3ece3 in std::_Function_handler<llvm::Expected<unsigned long> (), llvm::orc::LazyEmittingLayer<llvm::orc::IRCompileLayer<cling::IncrementalJIT::RemovableObjectLinkingLayer, llvm::orc::SimpleCompiler> >::EmissionDeferredModule::find(llvm::StringRef, bool, llvm::orc::IRCompileLayer<cling::IncrementalJIT::RemovableObjectLinkingLayer, llvm::orc::SimpleCompiler>&)::{lambda()#1}>::_M_invoke(std::_Any_data const&) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#19 0x00007f4485c33fe5 in cling::IncrementalExecutor::executeWrapper(llvm::StringRef, cling::Value*) const () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#20 0x00007f4485bc93c5 in cling::Interpreter::RunFunction(clang::FunctionDecl const*, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#21 0x00007f4485bce5fc in cling::Interpreter::EvaluateInternal(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cling::CompilationOptions, cling::Value*, cling::Transaction**, unsigned long) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#22 0x00007f4485c88d10 in cling::MetaSema::actOnxCommand(llvm::StringRef, llvm::StringRef, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#23 0x00007f4485c98f14 in cling::MetaParser::isXCommand(cling::MetaSema::ActionResult&, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#24 0x00007f4485c991d6 in cling::MetaParser::isCommand(cling::MetaSema::ActionResult&, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#25 0x00007f4485c828a9 in cling::MetaProcessor::process(llvm::StringRef, cling::Interpreter::CompilationResult&, cling::Value*, bool) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+#26 0x00007f4485b4352c in HandleInterpreterException(cling::MetaProcessor*, char const*, cling::Interpreter::CompilationResult&, cling::Value*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCling.so
+===========================================================
+
+
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/bin/slc7_amd64_gcc820/mkShapesMulti.py", line 600, in <module>
+TypeError: none of the 2 overloaded methods succeeded. Full details:
+  static TFile* TFile::Open(const char* name, const char* option = "", const char* ftitle = "", int compress = ROOT::RCompressionSetting::EDefaults::kUseCompiledDefault, int netopt = 0) =>
+    problem in C++; program state has been reset
+  static TFile* TFile::Open(TFileOpenHandle* handle) =>
+    takes at most 1 arguments (2 given)
+
+*** Break *** segmentation violation
+
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+#0  0x00007f448be1460c in waitpid () from /lib64/libc.so.6
+#1  0x00007f448bd91f62 in do_system () from /lib64/libc.so.6
+#2  0x00007f448b13d3c3 in TUnixSystem::StackTrace() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#3  0x00007f448b13fc14 in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#4  <signal handler called>
+#5  0x00007f447579a070 in ?? ()
+#6  0x00007f448bce13b9 in FastCall(long, void*, void*, void*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#7  0x00007f448bce237c in Cppyy::CallB(long, void*, void*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#8  0x00007f448bce549c in PyROOT::TBoolExecutor::Execute(long, void*, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#9  0x00007f448bd0c9f2 in PyROOT::TMethodHolder::CallSafe(void*, long, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#10 0x00007f448bd0bd15 in PyROOT::TMethodHolder::Execute(void*, long, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#11 0x00007f448bd0b3d8 in PyROOT::TMethodHolder::Call(PyROOT::ObjectProxy*&, _object*, _object*, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#12 0x00007f448bceb25a in PyROOT::(anonymous namespace)::mp_call(PyROOT::MethodProxy*, _object*, _object*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#13 0x00007f448ca90333 in PyObject_Call (func=func
+entry=0x7f448bbcf050, arg=arg
+entry=0x7f4464dc73d0, kw=kw
+entry=0x0) at Objects/abstract.c:2547
+#14 0x00007f448cb3aadc in do_call (nk=<optimized out>, na=<optimized out>, pp_stack=0x7ffef9d154b8, func=0x7f448bbcf050) at Python/ceval.c:4589
+#15 call_function (oparg=<optimized out>, pp_stack=0x7ffef9d154b8) at Python/ceval.c:4394
+#16 PyEval_EvalFrameEx (f=f
+entry=0xbc27dd0, throwflag=throwflag
+entry=0) at Python/ceval.c:3009
+#17 0x00007f448cb40712 in PyEval_EvalCodeEx (co=<optimized out>, globals=<optimized out>, locals=locals
+entry=0x0, args=args
+entry=0x7f448cdf2068, argcount=<optimized out>, kws=kws
+entry=0x7f448cdf2068, kwcount=0, defs=0x0, defcount=0, closure=0x0) at Python/ceval.c:3604
+#18 0x00007f448cab9d06 in function_call (func=0x7f4477331410, arg=0x7f448cdf2050, kw=0x7f44773074b0) at Objects/funcobject.c:523
+#19 0x00007f448ca90333 in PyObject_Call (func=func
+entry=0x7f4477331410, arg=arg
+entry=0x7f448cdf2050, kw=kw
+entry=0x7f44773074b0) at Objects/abstract.c:2547
+#20 0x00007f448cb37aac in ext_do_call (nk=<optimized out>, na=<optimized out>, flags=<optimized out>, pp_stack=0x7ffef9d15730, func=0x7f4477331410) at Python/ceval.c:4686
+#21 PyEval_EvalFrameEx (f=f
+entry=0x7f447398cde0, throwflag=throwflag
+entry=0) at Python/ceval.c:3048
+#22 0x00007f448cb40712 in PyEval_EvalCodeEx (co=<optimized out>, globals=<optimized out>, locals=locals
+entry=0x0, args=args
+entry=0x7f448cdf2068, argcount=<optimized out>, kws=kws
+entry=0x0, kwcount=0, defs=0x0, defcount=0, closure=0x0) at Python/ceval.c:3604
+#23 0x00007f448cab9c4c in function_call (func=0x7f4477328de8, arg=0x7f448cdf2050, kw=0x0) at Objects/funcobject.c:523
+#24 0x00007f448ca90333 in PyObject_Call (func=func
+entry=0x7f4477328de8, arg=arg
+entry=0x7f448cdf2050, kw=0x0) at Objects/abstract.c:2547
+#25 0x00007f448cb36513 in PyEval_CallObjectWithKeywords (func=func
+entry=0x7f4477328de8, arg=0x7f448cdf2050, arg
+entry=0x0, kw=kw
+entry=0x0) at Python/ceval.c:4241
+#26 0x00007f448cb65d4e in call_sys_exitfunc () at Python/pythonrun.c:1765
+#27 Py_Finalize () at Python/pythonrun.c:430
+#28 Py_Finalize () at Python/pythonrun.c:411
+#29 0x00007f448cb79996 in Py_Main (argc=<optimized out>, argv=<optimized out>) at Modules/main.c:670
+#30 0x00007f448bd71555 in __libc_start_main () from /lib64/libc.so.6
+#31 0x000000000040108e in _start ()
+===========================================================
+
+
+The lines below might hint at the cause of the crash.
+You may get help by asking at the ROOT forum http://root.cern.ch/forum
+Only if you are really convinced it is a bug in ROOT then please submit a
+report at http://root.cern.ch/bugs Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#5  0x00007f447579a070 in ?? ()
+#6  0x00007f448bce13b9 in FastCall(long, void*, void*, void*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#7  0x00007f448bce237c in Cppyy::CallB(long, void*, void*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#8  0x00007f448bce549c in PyROOT::TBoolExecutor::Execute(long, void*, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#9  0x00007f448bd0c9f2 in PyROOT::TMethodHolder::CallSafe(void*, long, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#10 0x00007f448bd0bd15 in PyROOT::TMethodHolder::Execute(void*, long, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#11 0x00007f448bd0b3d8 in PyROOT::TMethodHolder::Call(PyROOT::ObjectProxy*&, _object*, _object*, PyROOT::TCallContext*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#12 0x00007f448bceb25a in PyROOT::(anonymous namespace)::mp_call(PyROOT::MethodProxy*, _object*, _object*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/libPyROOT.so
+#13 0x00007f448ca90333 in PyObject_Call (func=func
+entry=0x7f448bbcf050, arg=arg
+entry=0x7f4464dc73d0, kw=kw
+entry=0x0) at Objects/abstract.c:2547
+#14 0x00007f448cb3aadc in do_call (nk=<optimized out>, na=<optimized out>, pp_stack=0x7ffef9d154b8, func=0x7f448bbcf050) at Python/ceval.c:4589
+#15 call_function (oparg=<optimized out>, pp_stack=0x7ffef9d154b8) at Python/ceval.c:4394
+#16 PyEval_EvalFrameEx (f=f
+entry=0xbc27dd0, throwflag=throwflag
+entry=0) at Python/ceval.c:3009
+#17 0x00007f448cb40712 in PyEval_EvalCodeEx (co=<optimized out>, globals=<optimized out>, locals=locals
+entry=0x0, args=args
+entry=0x7f448cdf2068, argcount=<optimized out>, kws=kws
+entry=0x7f448cdf2068, kwcount=0, defs=0x0, defcount=0, closure=0x0) at Python/ceval.c:3604
+#18 0x00007f448cab9d06 in function_call (func=0x7f4477331410, arg=0x7f448cdf2050, kw=0x7f44773074b0) at Objects/funcobject.c:523
+#19 0x00007f448ca90333 in PyObject_Call (func=func
+entry=0x7f4477331410, arg=arg
+entry=0x7f448cdf2050, kw=kw
+entry=0x7f44773074b0) at Objects/abstract.c:2547
+#20 0x00007f448cb37aac in ext_do_call (nk=<optimized out>, na=<optimized out>, flags=<optimized out>, pp_stack=0x7ffef9d15730, func=0x7f4477331410) at Python/ceval.c:4686
+#21 PyEval_EvalFrameEx (f=f
+entry=0x7f447398cde0, throwflag=throwflag
+entry=0) at Python/ceval.c:3048
+#22 0x00007f448cb40712 in PyEval_EvalCodeEx (co=<optimized out>, globals=<optimized out>, locals=locals
+entry=0x0, args=args
+entry=0x7f448cdf2068, argcount=<optimized out>, kws=kws
+entry=0x0, kwcount=0, defs=0x0, defcount=0, closure=0x0) at Python/ceval.c:3604
+#23 0x00007f448cab9c4c in function_call (func=0x7f4477328de8, arg=0x7f448cdf2050, kw=0x0) at Objects/funcobject.c:523
+#24 0x00007f448ca90333 in PyObject_Call (func=func
+entry=0x7f4477328de8, arg=arg
+entry=0x7f448cdf2050, kw=0x0) at Objects/abstract.c:2547
+#25 0x00007f448cb36513 in PyEval_CallObjectWithKeywords (func=func
+entry=0x7f4477328de8, arg=0x7f448cdf2050, arg
+entry=0x0, kw=kw
+entry=0x0) at Python/ceval.c:4241
+#26 0x00007f448cb65d4e in call_sys_exitfunc () at Python/pythonrun.c:1765
+#27 Py_Finalize () at Python/pythonrun.c:430
+#28 Py_Finalize () at Python/pythonrun.c:411
+#29 0x00007f448cb79996 in Py_Main (argc=<optimized out>, argv=<optimized out>) at Modules/main.c:670
+#30 0x00007f448bd71555 in __libc_start_main () from /lib64/libc.so.6
+#31 0x000000000040108e in _start ()
+===========================================================
+
+
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc820/external/python/2.7.15-bcolbf2/lib/python2.7/atexit.py", line 24, in _run_exitfuncs
+    func(*targs, **kargs)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/ROOT.py", line 832, in cleanup
+    isCocoa = _root.gSystem.InheritsFrom( 'TMacOSXSystem' )
+TypeError: none of the 2 overloaded methods succeeded. Full details:
+  bool TObject::InheritsFrom(const char* classname) =>
+    problem in C++; program state has been reset
+  bool TObject::InheritsFrom(const TClass* cl) =>
+    could not convert argument 1
+Error in sys.exitfunc:
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc820/external/python/2.7.15-bcolbf2/lib/python2.7/atexit.py", line 24, in _run_exitfuncs
+    func(*targs, **kargs)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.20.06-bcolbf/lib/ROOT.py", line 832, in cleanup
+    isCocoa = _root.gSystem.InheritsFrom( 'TMacOSXSystem' )
+TypeError: none of the 2 overloaded methods succeeded. Full details:
+  bool TObject::InheritsFrom(const char* classname) =>
+    problem in C++; program state has been reset
+  bool TObject::InheritsFrom(const TClass* cl) =>
+    could not convert argument 1
+
+ *** Break *** bus error
+
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+#0  0x00007f448be1460c in waitpid () from /lib64/libc.so.6
+#1  0x00007f448bd91f62 in do_system () from /lib64/libc.so.6
+#2  0x00007f448b13d3c3 in TUnixSystem::StackTrace() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#3  0x00007f448b13fc14 in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#4  <signal handler called>
+#5  0x00007f448bebe8c1 in __strlen_sse2_pminub () from /lib64/libc.so.6
+#6  0x00007f448b0511b4 in Hash(char const*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#7  0x00007f448b0a2946 in THashTable::FindObject(char const*) const () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#8  0x00007f448b09919a in ROOT::RemoveClass(char const*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#9  0x00007f448b0fc80e in ROOT::TGenericClassInfo::~TGenericClassInfo() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#10 0x00007f448bd88ce9 in __run_exit_handlers () from /lib64/libc.so.6
+#11 0x00007f448bd88d37 in exit () from /lib64/libc.so.6
+#12 0x00007f448bd7155c in __libc_start_main () from /lib64/libc.so.6
+#13 0x000000000040108e in _start ()
+===========================================================
+
+
+The lines below might hint at the cause of the crash.
+You may get help by asking at the ROOT forum http://root.cern.ch/forum
+Only if you are really convinced it is a bug in ROOT then please submit a
+report at http://root.cern.ch/bugs Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#5  0x00007f448bebe8c1 in __strlen_sse2_pminub () from /lib64/libc.so.6
+#6  0x00007f448b0511b4 in Hash(char const*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#7  0x00007f448b0a2946 in THashTable::FindObject(char const*) const () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#8  0x00007f448b09919a in ROOT::RemoveClass(char const*) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#9  0x00007f448b0fc80e in ROOT::TGenericClassInfo::~TGenericClassInfo() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_4/external/slc7_amd64_gcc820/lib/libCore.so
+#10 0x00007f448bd88ce9 in __run_exit_handlers () from /lib64/libc.so.6
+#11 0x00007f448bd88d37 in exit () from /lib64/libc.so.6
+#12 0x00007f448bd7155c in __libc_start_main () from /lib64/libc.so.6
+#13 0x000000000040108e in _start ()
+===========================================================
+
+
+Bus error (core dumped)
