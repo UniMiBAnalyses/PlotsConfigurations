@@ -1,7 +1,7 @@
 from collections import OrderedDict
 
 variables = {}
-handle = open("../opt_binning/opt_variables.py")
+handle = open("../opt_binning/opt_variables_10.py")
 exec(handle)
 handle.close()
 

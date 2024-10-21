@@ -182,14 +182,14 @@ plot['Wjets_HT_PUJets'] = {
                  'color': colors['kAzure']-1,
                  'isSignal' : 0,
                  'isData'   : 0, 
-                 'scale'    : 1.0
+                 'scale'    : 1.3
                 }
 
 plot['Wjets_HT_hardJets'] = {   
                  'color': colors['kAzure']-1,
                  'isSignal' : 0,
                  'isData'   : 0, 
-                 'scale'    : 1.0
+                 'scale'    : 1.3
                 }
 # plot['Wjets_NLO_pt'] = {   
 #                  'color': colors['kAzure']-1,

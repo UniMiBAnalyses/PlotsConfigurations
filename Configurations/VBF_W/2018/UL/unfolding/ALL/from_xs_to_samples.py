@@ -1,11 +1,12 @@
 from collections import OrderedDict
 
-## i need this for fiducal variable
+## i need this for "fiducial" variable
 samples = {}
 handle = open("../compute_measures/samples.py")
 exec(handle)
 handle.close()
 
+## i need this for the binning
 cuts = {}
 handle = open("../compute_measures/compute_cuts.py")
 exec(handle)
@@ -20,19 +21,19 @@ example_dict = {  'name'   : "nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK
                     }
 
 for cut in cuts:
-    if "TOT" in cut: continue
+    if "TOT" in cut or "fiducial" in cut: continue
     var = cut.split("_")[0]
     if "_out" in cut:
         samples["WLNuJJ_{}Out".format(var,number)] = example_dict.copy() 
-        samples["WLNuJJ_{}Out".format(var,number)]['weight'] = "CommonWeight+'* !('+fiducial+')'"
+        samples["WLNuJJ_{}Out".format(var,number)]['weight'] = "CommonWeight+'* !('+fiducialw+')'"
     else:
         number = cut.split("_bin")[-1]
         samples["WLNuJJ_{}{}".format(var,number)] = example_dict.copy()
         intresting_string = cuts[cut].replace(fiducial, "").split(" && ")
         if len(intresting_string) > 2:
-            samples["WLNuJJ_{}{}".format(var,number)]['weight'] = "CommonWeight+'*'+fiducial+'*'+'{} * {}'".format(intresting_string[0], intresting_string[1])
+            samples["WLNuJJ_{}{}".format(var,number)]['weight'] = "CommonWeight+'*'+fiducialw+'*'+'{} * {}'".format(intresting_string[0], intresting_string[1])
         else:
-            samples["WLNuJJ_{}{}".format(var,number)]['weight'] = "CommonWeight+'*'+fiducial+'*'+'{}'".format(intresting_string[0])
+            samples["WLNuJJ_{}{}".format(var,number)]['weight'] = "CommonWeight+'*'+fiducialw+'*'+'{}'".format(intresting_string[0])
 
 string = 'CMSSW=os.environ["CMSSW_BASE"]\n'
 string += 'samplesFile = "PlotsConfigurations/Configurations/VBF_W/2018/UL/unfolding/samples.py"\n'
@@ -43,7 +44,8 @@ string += '  handle.close()\n'
 string += '\n'
 string += '\n'
 
-string += 'fiducial = "{}"'.format(fiducial)
+string += 'fiducial = "{}"\n\n'.format(fiducial)
+string += 'fiducialw = fiducial.replace("&&","*")'
 string += '\n'
 string += '\n'
 

@@ -50,7 +50,7 @@ if    'iihe' in SITE:
   treeBaseDir = '/pnfs/iihe/cms/store/user/xjanssen/HWW2015'
 elif  'cern' in SITE:
   treeBaseDirHWW = '/eos/cms/store/group/phys_higgs/cmshww/amassiro/HWWNano'
-  treeBaseDirLat = '/eos/cms/store/group/phys_smp/Latinos/vbfw'
+  treeBaseDirLat = '/eos/cms/store/group/phys_smp/ec/Latinos/HWWNano'
 
 def makeMCDirectory(var=''):
   if var:
@@ -95,3 +95,40 @@ samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNu
                         'FilesPerJob' : 5,
                         'EventsPerJob' : 7000,
                     }
+
+# # Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(PhotonGen_eta)<2.5 ) > 0) '
+# Wjets_photon_filter = '1.'
+# Total_correction = 'WJets_reweight'
+# # Total_correction = '1.'
+
+# samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu-LO')
+#                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT70To100')
+#                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT100To200')
+#                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT200To400')
+#                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT400To600')
+#                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT600To800')
+#                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT800To1200')
+#                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT1200To2500')
+#                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT2500ToInf'),
+# #				                'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '* ewknloW',
+#                         # 'weight': CommonWeight+'*' + Wjets_photon_filter +'* ewknloW' + '*' +Total_correction,
+#                         'weight': CommonWeight+'*' + Wjets_photon_filter + '*' + Total_correction,
+# 			                	'FilesPerJob' : 6, 
+#                         'subsamples': {
+#                           'hardJets'  : 'hardJets',
+#                           'PUJets'    : 'PUJets'
+#                                     }
+# 		                 }
+
+# # # Fix Wjets binned + LO 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu-LO', '(LHE_HT < 70)') 
+# # ############
+# # # HT stiching corrections 2018
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT70To100',    '1.21 * 0.95148')  #adding also k-factor
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT100To200',   '0.9471') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT200To400',   '0.9515') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT400To600',   '0.9581') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT600To800',   '1.0582') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT800To1200',  '1.1285') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT1200To2500', '1.3268') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT2500ToInf',  '2.7948') 

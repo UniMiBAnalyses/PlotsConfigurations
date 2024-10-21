@@ -48,25 +48,26 @@ def do_lin_quad(op, card):
                 elif op+"=-1" in line:
                     w_minus = int(line.split("rwgt_")[1]) - 1 
 
-    ## forse in realtà ci va un -1!!!
-    # file_content += "samples['lin_{}'] = {{".format(op) + "\n"
-    # file_content += "    'name': changeMEname," + "\n"
-    # file_content += "    'weight': changeMEweight + '*' + '(0.5*(LHEReweightingWeight[{}] - LHEReweightingWeight[{}]))',".format(w_plus, w_minus) + "\n"
-    # file_content += "    'FilesPerJob': 30," + "\n"
-    # file_content += "}" + "\n\n"
+    if opt.DebugWeight:
+        file_content += "samples['lin_{}'] = {{".format(op) + "\n"
+        file_content += "    'name': EFTSamples," + "\n"
+        file_content += "    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[{}] - LHEReweightingWeight[{}]))',".format(w_plus, w_minus) + "\n"
+        file_content += "    'FilesPerJob': 30," + "\n"
+        file_content += "}" + "\n\n"
 
-    ## this goes in datacard, but now we are debugging 
-    file_content += "samples['sm_lin_quad_{}'] = {{".format(op) + "\n"
-    file_content += "    'name': changeMEname," + "\n"
-    file_content += "    'weight': changeMEweight + '*' + '(LHEReweightingWeight[{}])',".format(w_plus) + "\n"
-    file_content += "    'FilesPerJob': 30," + "\n"
-    file_content += "}" + "\n\n"
+    else:
+        ## this goes in the datacard
+        file_content += "samples['sm_lin_quad_{}'] = {{".format(op) + "\n"
+        file_content += "    'name': EFTSamples," + "\n"
+        file_content += "    'weight': CommonWeight + '*' + '(LHEReweightingWeight[{}])',".format(w_plus) + "\n"
+        file_content += "    'FilesPerJob': 30," + "\n"
+        file_content += "}" + "\n\n"
 
-    # file_content += "samples['quad_{}'] = {{".format(op) + "\n"
-    # file_content += "    'name': changeMEname," + "\n"
-    # file_content += "    'weight': changeMEweight + '*' + '(0.5*(LHEReweightingWeight[{}] + LHEReweightingWeight[{}] -2*LHEReweightingWeight[0]))',".format(w_plus, w_minus) + "\n"
-    # file_content += "    'FilesPerJob': 30," + "\n"
-    # file_content += "}" + "\n\n"
+        file_content += "samples['quad_{}'] = {{".format(op) + "\n"
+        file_content += "    'name': EFTSamples," + "\n"
+        file_content += "    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[{}] + LHEReweightingWeight[{}] -2*LHEReweightingWeight[0]))',".format(w_plus, w_minus) + "\n"
+        file_content += "    'FilesPerJob': 30," + "\n"
+        file_content += "}" + "\n\n"
 
     return file_content
 
@@ -88,18 +89,20 @@ def do_mixed(op1, op2, card):
             elif op1 in line and op2 in line:
                     w = int(line.split("rwgt_")[1]) - 1
     
-    ## this goes in datacard, but now we are debugging
-    file_content += "samples['sm_lin_quad_mixed_{}_{}'] = {{".format(op1,op2) + "\n"
-    file_content += "    'name': changeMEname," + "\n"
-    file_content += "    'weight': changeMEweight + '*' + '(LHEReweightingWeight[{}])',".format(w) + "\n"
-    file_content += "    'FilesPerJob': 30," + "\n"
-    file_content += "}" + "\n\n"
+    if opt.DebugWeight:
+        file_content += "samples['mixed_{}_{}'] = {{".format(op1,op2) + "\n"
+        file_content += "    'name': EFTSamples," + "\n"
+        file_content += "    'weight': CommonWeight + '*' + '(LHEReweightingWeight[{}] + LHEReweightingWeight[0] - LHEReweightingWeight[{}] - LHEReweightingWeight[{}])',".format(w,w1_plus,w2_plus) + "\n"
+        file_content += "    'FilesPerJob': 30," + "\n"
+        file_content += "}" + "\n\n"
 
-    # file_content += "samples['mixed_{}_{}'] = {{".format(op1,op2) + "\n"
-    # file_content += "    'name': changeMEname," + "\n"
-    # file_content += "    'weight': changeMEweight + '*' + '(LHEReweightingWeight[{}] + LHEReweightingWeight[0] - LHEReweightingWeight[{}] - LHEReweightingWeight[{}])',".format(w,w1_plus,w2_plus) + "\n"
-    # file_content += "    'FilesPerJob': 30," + "\n"
-    # file_content += "}" + "\n\n"
+    else:
+        ## this goes in datacard
+        file_content += "samples['sm_lin_quad_mixed_{}_{}'] = {{".format(op1,op2) + "\n"
+        file_content += "    'name': EFTSamples," + "\n"
+        file_content += "    'weight': CommonWeight + '*' + '(LHEReweightingWeight[{}])',".format(w) + "\n"
+        file_content += "    'FilesPerJob': 30," + "\n"
+        file_content += "}" + "\n\n"
 
     return file_content
     
@@ -110,8 +113,10 @@ if __name__ == '__main__':
     usage = 'usage: %prog [options]'
     parser = optparse.OptionParser(usage)   
 
-    parser.add_option('--card'           , dest='card'           , help='Path to the rwgt card'                      , default=None)
+    parser.add_option('--card'           , dest='card'           , help='Path to the rwgt card'                      , default="/eos/user/a/abulla/nanoAOD/EFT/gridUNPACKED/InputCards/Wewk_reweight_card.dat")
     parser.add_option('--numOp'          , dest='numOp'          , help='Number of operators used in the rwgt card'  , default=None)
+    parser.add_option('--DebugWeight'    , dest='DebugWeight'    , help='Creates ONLY samples that can be used on top of SM, not for fits', action='store_true', default=False)
+    parser.add_option('--op'             , dest='op'             , help='Creates ONLY samples given by some specific operator action (comma separated)', default=None)
     
     (opt, args) = parser.parse_args()
 
@@ -122,7 +127,10 @@ if __name__ == '__main__':
     else:
         numOp = opt.numOp
 
-    ops = get_list_operators(rw_card)
+    if opt.op is not None:
+        ops = opt.op.split(",")
+    else:
+        ops = get_list_operators(rw_card)
 
     print "Number of operators: ", numOp
     print "Operators: ", ops
@@ -137,6 +145,10 @@ if __name__ == '__main__':
                 file_content += do_mixed(op1, op2, rw_card)
 
 # write it all down
-with open("EFTweights.py", "w") as file:
-    file.write(file_content)
+if opt.DebugWeight:
+    with open("debug_EFTweights.py", "w") as file:
+        file.write(file_content)
+else:
+    with open("EFTweights.py", "w") as file:
+        file.write(file_content)
 

@@ -11,10 +11,10 @@ tag = 'vbf_w_2018'+tagger
 outputDir = 'rootFile/'+tagger
 
 # file with TTree aliases
-aliasesFile = 'aliases_DNNmodels.py'
+aliasesFile = 'aliases.py'
 
 # file with list of variables
-variablesFile = 'variables_DNNmodels.py'
+variablesFile = 'variables.py'
 
 # file with list of cuts
 cutsFile = 'cuts.py' 
@@ -36,7 +36,7 @@ outputDirPlots = 'plots/'+tagger
 
 # used by mkDatacards to define output directory for datacards
 outputDirDatacard = 'datacards/'+tagger
-
+    
 # structure file for datacard
 structureFile = 'structure.py'
 

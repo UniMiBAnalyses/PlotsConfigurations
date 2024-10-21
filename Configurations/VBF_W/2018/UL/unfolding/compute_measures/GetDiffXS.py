@@ -53,7 +53,7 @@ if __name__ == '__main__':
     parser = optparse.OptionParser(usage)
     parser.add_option('--file',  dest='FileName'     , help='Path to file with source histos')
     parser.add_option('--den' ,  dest='den'          , help='name of the histogram with no gen_bin selection', default="TOT")
-    parser.add_option('--variables' , dest='variables'         , help='Path to variables.py for bin definition', default="../opt_binning/opt_variables.py")
+    parser.add_option('--variables' , dest='variables'         , help='Path to variables.py for bin definition', default="../opt_binning/opt_variables_10.py")
 
     (opt, args) = parser.parse_args()
 

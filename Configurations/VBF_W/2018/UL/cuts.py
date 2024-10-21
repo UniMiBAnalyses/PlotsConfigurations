@@ -27,7 +27,7 @@ supercut = 'nLepton>=1 && (Alt$(Lepton_pt[0],0) > 25.) \
 #   Alt$(Lepton_isTightElectron_mvaFall17V2Iso_WP90[1], 0) < 0.5 && 
 # Alt$(Lepton_isTightMuon_cut_Tight_HWWW[1],0) < 0.5 )"',
 
-cuts['Z'] = '1'
+# cuts['Z'] = '1'
 
 #SR is ort to:
 #top
@@ -52,7 +52,7 @@ cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13)\
                  '
 
 
-# # ##Hard & PU WJets CRs
+# # # ##Hard & PU WJets CRs
 cuts['ele_HWJ'] = '(abs(Lepton_pdgId[0])==11) \
                     && Lepton_pt[0] > 35. \
                     && bVeto \
@@ -87,12 +87,15 @@ cuts['mu_PUWJ'] = '(abs(Lepton_pdgId[0])==13) \
                     '
 
                     
-# # # Top control region (common mu & e)
-cuts['topcr']  = '((zeroJet && !bVeto) || bReqTight) \
+# # # # Top control region (common mu & e)
+# cuts['topcr']  = '((zeroJet && !bVeto) || bReqTight) \
+#                   && Lepton_pt[0] > 35.\
+#                   '
+cuts['topcr']  = '((zeroJet && !bVeto) || bReq) \
                   && Lepton_pt[0] > 35.\
                   '
 
-# # ## Fake CR   
+# # # ## Fake CR   
 cuts['ele_FakeCR']  = '(abs(Lepton_pdgId[0])==11) \
                       && Lepton_pt[0] > 35. \
                       && detajj <= 5. \

@@ -6,7 +6,7 @@ def leggi(file_path, var):
     save_next_5_lines = False
     with open(file_path, 'r') as f:
         for i, line in enumerate(f.readlines()):
-            if i < 10:
+            if i < 12:
                 lines_to_save.append(line)
             if line.startswith("samples['WLNuJJ_{}".format(var)):
                 save_next_5_lines = True
@@ -27,7 +27,7 @@ haddedFile = os.path.join(os.getcwd(),outputDir,"plots_{}.root".format(tag))
 samplesFile = "PlotsConfigurations/Configurations/VBF_W/2018/UL/unfolding/ALL/samples.py"
 
 variables = ["ptW", "leppt", "lepeta", "nJet", "jet1pt", "jet1eta", "jet2pt", "jet2eta", "detajj", "mjj"]
-# variables = ["ptw"]
+# variables = ["mjj"]
 
 # Lista per memorizzare i processi avviati
 processes = []
@@ -55,7 +55,7 @@ for var in variables:
     # Attendere il completamento del processo prima di procedere
     processes[-1].wait()
 
-    # Esegui hadd per i segnali
+    # # Esegui datacard per tutti, decommenta se le voglio fare
     command = "mkDatacards.py --pycfg=configuration_{}.py --inputFile {}".format(var, outputDir+"/plots_"+tag+".root")
     processes.append(subprocess.Popen(command, shell=True))
     print(command)

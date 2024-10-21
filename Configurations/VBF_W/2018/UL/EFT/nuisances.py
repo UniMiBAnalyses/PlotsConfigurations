@@ -1,11 +1,14 @@
 from pprint import pprint
 # # # name of samples here must match keys in samples.py 
 
-mc_sm = ["WLNuJJ", "Wjets_HT", "top", "VV", "VBS" , "Higgs", "DY_M-50", "DY_else", "VBF-Z", "Vg", "VgS", "VVV"]
-mc_eft = ["sm", "sm_lin_quad_cW", "sm_lin_quad_mixed_cW_cHDD", "sm_lin_quad_mixed_cW_cHWB", "sm_lin_quad_mixed_cW_cHj1", "sm_lin_quad_mixed_cW_cHQ1", "sm_lin_quad_mixed_cW_cHj3", "sm_lin_quad_mixed_cW_cWtil", "sm_lin_quad_mixed_cW_cHWBtil", "sm_lin_quad_cHDD", "sm_lin_quad_mixed_cHDD_cHWB", "sm_lin_quad_mixed_cHDD_cHj1", "sm_lin_quad_mixed_cHDD_cHQ1", "sm_lin_quad_mixed_cHDD_cHj3", "sm_lin_quad_mixed_cHDD_cWtil", "sm_lin_quad_mixed_cHDD_cHWBtil", "sm_lin_quad_cHWB", "sm_lin_quad_mixed_cHWB_cHj1", "sm_lin_quad_mixed_cHWB_cHQ1", "sm_lin_quad_mixed_cHWB_cHj3", "sm_lin_quad_mixed_cHWB_cWtil", "sm_lin_quad_mixed_cHWB_cHWBtil", "sm_lin_quad_cHj1", "sm_lin_quad_mixed_cHj1_cHQ1", "sm_lin_quad_mixed_cHj1_cHj3", "sm_lin_quad_mixed_cHj1_cWtil", "sm_lin_quad_mixed_cHj1_cHWBtil", "sm_lin_quad_cHQ1", "sm_lin_quad_mixed_cHQ1_cHj3", "sm_lin_quad_mixed_cHQ1_cWtil", "sm_lin_quad_mixed_cHQ1_cHWBtil", "sm_lin_quad_cHj3", "sm_lin_quad_mixed_cHj3_cWtil", "sm_lin_quad_mixed_cHj3_cHWBtil", "sm_lin_quad_cWtil", "sm_lin_quad_mixed_cWtil_cHWBtil", "sm_lin_quad_cHWBtil", "quad_cW", "quad_cHDD", "quad_cHWB", "quad_cHj1", "quad_cHQ1", "quad_cHj3", "quad_cWtil", "quad_cHWBtil"]
+mc_sm = ["sm", "Wjets_HT", "top", "VV", "VBS" , "Higgs", "DY_M-50", "DY_else", "VBF-Z", "Vg", "VgS", "VVV"]
+
+mc_bkg = [c for c in mc_sm if "sm" not in c]
+mc_eft = [c for c in samples if any(substring in c for substring in ["lin", "quad", "mixed"])]
+signals = [c for c in samples if "sm" in c and c not in mc_eft]
 mc = mc_sm + mc_eft
 # regions = ["ele_SR","mu_SR","ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","mu_topcr","ele_topcr","ele_FakeCR","mu_FakeCR"]
-regions = ["ele_SR","mu_SR","ele_SR_highDNN","mu_SR_highDNN", "ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","topcr"]
+regions = ["ele_SR","mu_SR","ele_SR_highDNN","mu_SR_highDNN", "ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","topcr","ele_FakeCR","mu_FakeCR"]
 # regions = ["ele_SR","mu_SR","ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","topcr","ele_FakeCR","mu_FakeCR"]
 from LatinoAnalysis.Tools.commonTools import getSampleFiles, getBaseW, addSampleWeight
 
@@ -15,67 +18,63 @@ def nanoGetSampleFiles(inputDir, Sample):
 phase_spaces_tot_ele = [ c for c in regions if 'ele' in c]
 phase_spaces_tot_mu = [ c for c in regions if 'mu' in c]
 phase_spaces_tot_sr = [ c for c in regions if 'SR' in c]
-wj_region = [ c for c in regions if 'WJ' in c]
+phase_spaces_tot_sr_top = [ c for c in regions if 'SR' in c or "topcr" in c]
+wj_region = [ c for c in regions if 'HWJ' in c]
 
-# # # # # ################################ EXPERIMENTAL UNCERTAINTIES  #################################
+# # # # ################################ EXPERIMENTAL UNCERTAINTIES  #################################
 
-# #### Luminosity
+
+# # #### Luminosity
+### TO BE  FIXED FOR COMBINATION
+
+#### Luminosity
+
+# https://twiki.cern.ch/twiki/bin/view/CMS/LumiRecommendationsRun2#LumiComb
+# Uncorrelated 2016               1.0
+# Uncorrelated       2017              2.0
+# Uncorrelated             2018             1.5
+# Correlated   2016, 2017, 2018   0.6, 0.9, 2.0
+# Correlated         2017, 2018        0.6, 0.2
 
 nuisances['lumi_Uncorrelated'] = {
-    'name': 'lumi_13TeV_2018',
-    'type': 'lnN',
-    'samples': dict((skey, '1.015') for skey in mc)
+    'name'    : 'lumi_13TeV_2018',
+    'type'    : 'lnN',
+    'samples' : dict((skey, '1.015') for skey in mc)
 }
 
-nuisances['lumi_XYFact'] = {
-    'name': 'lumi_13TeV_XYFact',
-    'type': 'lnN',
-    'samples': dict((skey, '1.02') for skey in mc)
+nuisances['lumi_Correlated_Run2'] = {
+    'name'    : 'lumi_13TeV_correlated',
+    'type'    : 'lnN',
+    'samples' : dict((skey, '1.020') for skey in mc)
 }
 
-nuisances['lumi_LScale'] = {
-    'name': 'lumi_13TeV_LSCale',
-    'type': 'lnN',
-    'samples': dict((skey, '1.002') for skey in mc)
+nuisances['lumi_Correlated_2017_2018'] = {
+    'name'    : 'lumi_13TeV_1718',
+    'type'    : 'lnN',
+    'samples' : dict((skey, '1.002') for skey in mc)
 }
-
-nuisances['lumi_CurrCalib'] = {
-    'name': 'lumi_13TeV_CurrCalib',
-    'type': 'lnN',
-    'samples': dict((skey, '1.002') for skey in mc)
-}
-
 
 ##########Fakes
 # fakeW_jetUp       = '( fakeWeight_45 / fakeWeight_35  )'
 # fakeW_jetDown     =  '( fakeWeight_25 / fakeWeight_35  )'
 ## not a systematic because i preselect my phase-space!
 
-fakeW_statUp        =  '( fakeWeight_statUp / fakeWeight_30  )'
-fakeW_statDown      =  '( fakeWeight_statDo / fakeWeight_30  )'
-fakeW_EWKsub     =  '( fakeWeight_EWKsubtractionSF / fakeWeight_30  )'
+fakeW_statUp        =  '( fakeWeight_statUp / fakeWeight_0p8  )'
+fakeW_statDown      =  '( fakeWeight_statDo / fakeWeight_0p8  )'
+fakeW_EWKsubUp     =  '( fakeWeight_0p9 / fakeWeight_0p8  )'
+fakeW_EWKsubDown     =  '( fakeWeight_0p7 / fakeWeight_0p8  )'
+fakeW_PRMC     =  '( fakeWeight_PRfromMC / fakeWeight_0p8  )'
 
-nuisances['fake_syst_ele']  = {
-               'name'  : 'CMS_fake_syst_ele',
+nuisances['fake_syst']  = {
+               'name'  : 'CMS_fake_syst',
                'type'  : 'lnN',
                'samples'  : {
                              'Fake' : '1.30',
-                             },
-               'cuts': phase_spaces_tot_ele
+                             }
                }
-
-nuisances['fake_syst_mu']  = {
-               'name'  : 'CMS_fake_syst_mu',
-               'type'  : 'lnN',
-               'samples'  : {
-                             'Fake' : '1.30',
-                             },
-                'cuts': phase_spaces_tot_mu
-               }
-
 
 nuisances['fake_ele_stat']  = {
-                'name'  : 'CMS_fake_ele_stat_2018',
+                'name'  : 'CMS_fake_stat_e_2018_1lep',
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
@@ -84,9 +83,8 @@ nuisances['fake_ele_stat']  = {
                 'cuts':  phase_spaces_tot_ele
 }
 
-
 nuisances['fake_mu_stat']  = {
-                'name'  : 'CMS_fake_mu_stat_2018',
+                'name'  : 'CMS_fake_stat_m_2018_1lep',
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
@@ -96,30 +94,48 @@ nuisances['fake_mu_stat']  = {
 }
 
 nuisances['fake_ele_EWKsub']  = {
-                'name'  : 'CMS_fake_ele_EWKsub_2018',
+                'name'  : 'VBFW_fake_e_EWKsub_2018',
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
-                              'Fake'      : [ fakeW_EWKsub , "1." ],
+                              'Fake'      : [ fakeW_EWKsubUp , fakeW_EWKsubDown ],
                              },
-                'symmetrize': True,
                 'cuts':  phase_spaces_tot_ele
 }
 
 nuisances['fake_mu_EWKsub']  = {
-                'name'  : 'CMS_fake_mu_EWKsub_2018',
+                'name'  : 'VBFW_fake_m_EWKsub_2018',
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
-                              'Fake'      : [ fakeW_EWKsub , "1." ],
+                              'Fake'      : [ fakeW_EWKsubUp , fakeW_EWKsubDown ],
                              },
-                'symmetrize': True,
                 'cuts':  phase_spaces_tot_mu
 }
 
+nuisances['fake_mu_PRMC']  = {
+                'name'  : 'VBFW_fake_m_PR_fromMC_2018',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                              'Fake'      : [ fakeW_PRMC , "1." ],
+                             },
+                'cuts':  phase_spaces_tot_mu
+}
+
+nuisances['fake_ele_PRMC']  = {
+                'name'  : 'VBFW_fake_e_PR_fromMC_2018',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                              'Fake'      : [ fakeW_PRMC , "1." ],
+                             },
+                'cuts':  phase_spaces_tot_ele
+}
 
 
-# ##### Btag nuisances
+# # ##### Btag nuisances
+### TO BE  FIXED FOR COMBINATION
 
 for shift in ['jes', 'lf', 'hf', 'hfstats1', 'hfstats2', 'lfstats1', 'lfstats2', 'cferr1', 'cferr2']:
     btag_syst = ['(btagSF%sup)/(btagSF)' % shift, '(btagSF%sdown)/(btagSF)' % shift]
@@ -136,9 +152,10 @@ for shift in ['jes', 'lf', 'hf', 'hfstats1', 'hfstats2', 'lfstats1', 'lfstats2',
     }
 
 # # # # ##### Trigger Efficiency
+### TO BE  FIXED FOR COMBINATION
 
-trig_syst = ['((TriggerSFWeight_1l_u)/(TriggerSFWeight_1l))*(TriggerSFWeight_1l>0.02) + (TriggerSFWeight_1l<=0.02)', '(TriggerSFWeight_1l_d)/(TriggerSFWeight_1l)']
-# trig_syst = ['((TriggerSFWeight_1l_u)/(TriggerSFWeight_1l))', '(TriggerSFWeight_1l_d)/(TriggerSFWeight_1l)']
+# # trig_syst = ['((TriggerSFWeight_1l_u)/(TriggerSFWeight_1l))*(TriggerSFWeight_1l>0.02) + (TriggerSFWeight_1l<=0.02)', '(TriggerSFWeight_1l_d)/(TriggerSFWeight_1l)']
+trig_syst = ['((TriggerSFWeight_1l_u)/(TriggerSFWeight_1l))', '(TriggerSFWeight_1l_d)/(TriggerSFWeight_1l)']
 
 nuisances['trigg']  = {
                 'name'  : 'CMS_eff_trigger_2018',
@@ -149,6 +166,7 @@ nuisances['trigg']  = {
 
 
 # # # # ##### Electron Efficiency and energy scale
+### TO BE  FIXED FOR COMBINATION
 
 ele_id_syst_up = '(abs(Lepton_pdgId[0]) == 11)*(Lepton_tightElectron_'+eleWP+'_TotSF'+'_Up[0])/\
                     (Lepton_tightElectron_'+eleWP+'_TotSF[0]) + (abs(Lepton_pdgId[0]) == 13)'
@@ -170,19 +188,20 @@ nuisances['eff_e']  = {
                 'cuts': phase_spaces_tot_ele
 }
 
-# nuisances['electronpt']  = {
-#                 'name'  : 'CMS_scale_e_2018',
-#                 'kind'  : 'suffix',
-#                 'type'  : 'shape',
-#                 'mapUp': 'ElepTup',
-#                 'mapDown': 'ElepTdo',
-#                 'cuts': phase_spaces_tot_ele,
-#                 'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', "ggWW"]),
-#                 'folderUp' : mcPrivateDirectory+'__ElepTup_suffix',
-#                 'folderDown' : mcPrivateDirectory+'__ElepTdo_suffix'
-# }
+nuisances['electronpt']  = {
+                'name'  : 'CMS_scale_e_2018',
+                'kind'  : 'suffix',
+                'type'  : 'shape',
+                'mapUp': 'ElepTup',
+                'mapDown': 'ElepTdo',
+                'cuts': phase_spaces_tot_ele,
+                'samples': dict((skey, ['1.','1.']) for skey in mc),
+                'folderUp' : mcDirectoryLat+'__ElepTup_suffix',
+                'folderDown' : mcDirectoryLat+'__ElepTdo_suffix'
+}
 
-# # # # ##### Muon Efficiency and energy scale
+# # # # # ##### Muon Efficiency and energy scale
+### TO BE  FIXED FOR COMBINATION
 
 nuisances['eff_m']  = {
                 'name'  : 'CMS_eff_m_2018',
@@ -192,20 +211,21 @@ nuisances['eff_m']  = {
                 'cuts': phase_spaces_tot_mu
 }
 
-# nuisances['muonpt']  = {
-#                 'name'  : 'CMS_scale_m_2018',
-#                 'kind'  : 'suffix',
-#                 'type'  : 'shape',
-#                 'mapUp': 'MupTup',
-#                 'mapDown': 'MupTdo',
-#                 'cuts': phase_spaces_tot_mu,
-#                 'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', "ggWW"]),
-#                 'folderUp' : mcPrivateDirectory+'__MupTup_suffix',
-#                 'folderDown' : mcPrivateDirectory+'__MupTdo_suffix'
-# }
+nuisances['muonpt']  = {
+                'name'  : 'CMS_scale_m_2018',
+                'kind'  : 'suffix',
+                'type'  : 'shape',
+                'mapUp': 'MupTup',
+                'mapDown': 'MupTdo',
+                'cuts': phase_spaces_tot_mu,
+                'samples': dict((skey, ['1.','1.']) for skey in mc),
+                'folderUp' : mcDirectoryLat+'__MupTup_suffix',
+                'folderDown' : mcDirectoryLat+'__MupTdo_suffix'
+}
 
-# # ##################
-# # # PU jet id
+# # # ##################
+# # # # PU jet id
+### TO BE  FIXED FOR COMBINATION
 
 nuisances['JetPUID_sf']  = {
                 'name'  : 'CMS_jetpuid_2018',
@@ -214,51 +234,48 @@ nuisances['JetPUID_sf']  = {
                 'samples'  : dict((skey, ['PUJetIdSF_up/PUJetIdSF','PUJetIdSF_down/PUJetIdSF']) for skey in mc )
 }
 
-# # ##### Jet energy scale
-# jes_systs = ['JESAbsolute','JESAbsolute_2018','JESBBEC1','JESBBEC1_2018','JESEC2','JESEC2_2018','JESFlavorQCD','JESHF','JESHF_2018','JESRelativeBal','JESRelativeSample_2018']
+# ##### Jet energy scale
+### TO BE  FIXED FOR COMBINATION
+jes_systs = ['JESAbsolute','JESAbsolute_2018','JESBBEC1','JESBBEC1_2018','JESEC2','JESEC2_2018','JESFlavorQCD','JESHF','JESHF_2018','JESRelativeBal','JESRelativeSample_2018']
 
-# for js in jes_systs:
-
-#   nuisances[js] = {
-#       'name': 'CMS_scale_'+js,
-#       'kind': 'suffix',
-#       'type': 'shape',
-#       'mapUp': js+'up',
-#       'mapDown': js+'do',
-#       'samples': dict((skey, ['1', '1']) for skey in mc if skey not in ['VZ', 'Vg', 'VgS']),
-#       'folderUp': mcPrivateDirectory+'__JESup_suffix',
-#       'folderDown': mcPrivateDirectory+'__JESdo_suffix',
-#       'AsLnN': '1'
-#   }
+for js in jes_systs:
+    nuisances[js] = {
+        'name': 'CMS_scale_'+js,
+        'kind': 'suffix',
+        'type': 'shape',
+        'mapUp': js+'up',
+        'mapDown': js+'do',
+        'samples': dict((skey, ['1.', '1.']) for skey in mc ),
+        'folderUp': mcDirectoryLat+'__JESup_suffix',
+        'folderDown': mcDirectoryLat+'__JESdo_suffix'
+    }
 
 # # ##### Jet energy resolution
-# nuisances['JER'] = {
-#                 'name': 'CMS_res_j_2018',
-#                 'kind': 'suffix',
-#                 'type': 'shape',
-#                 'mapUp': 'JERup',
-#                 'mapDown': 'JERdo',
-#                 'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', "ggWW"]),
-#                 'folderUp' : mcPrivateDirectory+'__JERup_suffix',
-#                 'folderDown' : mcPrivateDirectory+'__JERdo_suffix',
-#                 'AsLnN'      : '1',
-# }
+nuisances['JER'] = {
+                'name': 'CMS_res_j_2018_UL',
+                'kind': 'suffix',
+                'type': 'shape',
+                'mapUp': 'JERup',
+                'mapDown': 'JERdo',
+                'samples': dict((skey, ['1.','1.']) for skey in mc),
+                'folderUp' : mcDirectoryLat+'__JERup_suffix',
+                'folderDown' : mcDirectoryLat+'__JERdo_suffix',
+}
 
-# # # # ##### MET energy scale
-# nuisances['MET']  = {
-#                 'name'  : 'CMS_scale_met_2018',
-#                 'kind'  : 'suffix',
-#                 'type'  : 'shape',
-#                 'mapUp':   'METup',
-#                 'mapDown': 'METdo', 
-#                 'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in ['Vg', 'VgS', "ggWW"]),
-#                 'folderUp' : mcPrivateDirectory+'__METup_suffix',
-#                 'folderDown' : mcPrivateDirectory+'__METdo_suffix',
-#                 'AsLnN'      : '1',
-# }
+# # # # # ##### MET energy scale
+nuisances['MET']  = {
+                'name'  : 'CMS_scale_met_2018_UL',
+                'kind'  : 'suffix',
+                'type'  : 'shape',
+                'mapUp':   'METup',
+                'mapDown': 'METdo', 
+                'samples': dict((skey, ['1.','1.']) for skey in mc ),
+                'folderUp' : mcDirectoryLat+'__METup_suffix',
+                'folderDown' : mcDirectoryLat+'__METdo_suffix'
+}
 
 
-# # ## Top pT reweighting uncertainty
+# # # ## Top pT reweighting uncertainty
 
 nuisances['singleTopToTTbar'] = {
     'name': 'singleTopToTTbar',
@@ -272,10 +289,10 @@ nuisances['singleTopToTTbar'] = {
       }
 }
 
-# # # ## Top pT reweighting uncertainty
+# # # # ## Top pT reweighting uncertainty
 
 nuisances['TopPtRew'] = {
-   'name': 'CMS_topPtRew',   # Theory uncertainty
+   'name': 'CMS_top_pT_reweighting',   # Theory uncertainty
    'kind': 'weight',
    'type': 'shape',
    'samples': {'top': ["Top_pTrw*Top_pTrw", "1."]},
@@ -283,129 +300,101 @@ nuisances['TopPtRew'] = {
 }
 
 
-# # # ######################
-# # # # Theory nuisance
-
-
-import json, os
-# VBS_pdf_factors = json.load(open("/afs/cern.ch/work/d/dvalsecc/private/CMSSW_11_1_4" + "/src/PlotsConfigurations/Configurations/VBSjjlnu/Full2018v7/conf_fit_v4.3/pdf_normcorr_VBS.json"))
-configurations = os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurations/"
-conf_folder = configurations +"/VBF_W/"
-FileJson = "/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/utils/2018/nuisance_incl_norm_factors_2018.json"
-with open(FileJson) as jsonFile:
-    nuis_factors = json.load(jsonFile)
-    jsonFile.close()
-
-for sample in mc :
-    if sample in ["WLNuJJ"] or sample in mc_eft : continue
-    nuisances['QCD_scale_'+sample] = {
-        'name'  : 'QCDscale_'+sample,
-        'kind'  : 'weight',
-        'type'  : 'shape',
-        'samples'  :  { sample: ["LHEScaleWeight[0]", "LHEScaleWeight[8]"] }
-    }
-
-# # # # #Correlate all signal samples
-
-# nuisances['QCD_scale_WLNuJJ_accept'] = {
-#             'name'  : 'QCD_scale_WLNuJJ_accept',
-#             'kind'  : 'weight',
-#             'type'  : 'shape',
-#             'samples'  :  { k:["QCDscale_normalized[0]", "QCDscale_normalized[8]"] for k in ["WLNuJJ"] }
-#         }
-
-
-# # # #
-# # # # PS and UE
+# # # # ######################
+# # # # # Theory nuisance
 # # # # #
-# # # #### USE this for producing shapes
+# # # # # PS and UE
+# # # # # #
+# # # # #### USE this for producing shapes
+
 nuisances['PS_ISR']  = {
                 'name'  : 'CMS_PS_ISR',
                 'kind'  : 'weight',
                 'type'  : 'shape',
-                'samples'  : {   
-                    s : ['PSWeight[2] * {}'.format(nuis_factors[s]["PS_ISR"][0]),
-                         'PSWeight[0] * {}'.format(nuis_factors[s]["PS_ISR"][1]) ] for s in mc if s not in ["Higgs"] and s not in mc_eft }
+                'samples'  : {   sample : ['PSWeight[2]','PSWeight[0]'] for sample in mc if sample not in ['VBS', 'VBF-Z']+signals+mc_eft}
             }
 
 nuisances['PS_FSR']  = {
                 'name'  : 'CMS_PS_FSR',
                 'kind'  : 'weight',
                 'type'  : 'shape',
-                'samples'  : {   
-                    s : ['PSWeight[3] * {}'.format(nuis_factors[s]["PS_FSR"][0]),
-                         'PSWeight[1] * {}'.format(nuis_factors[s]["PS_FSR"][1]) ] for s in mc if s not in ["Higgs"] and s not in mc_eft }
+                'samples'  : {     
+                    sample : ['PSWeight[3]','PSWeight[1]'] for sample in mc if sample not in ['VBS', 'VBF-Z']+signals+mc_eft}
             }
 
-# # ##############
+nuisances['PS_ISR_dipole']  = {
+                'name'  : 'CMS_PS_ISR_dipole',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {   sample : ['PSWeight[2]','PSWeight[0]'] for sample in ['VBS', 'VBF-Z']+signals+mc_eft}
+            }
+
+nuisances['PS_FSR_dipole']  = {
+                'name'  : 'CMS_PS_FSR_dipole',
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {     sample : ['PSWeight[3]','PSWeight[1]'] for sample in ['VBS', 'VBF-Z']+signals+mc_eft}
+            }
+
+# # # ##############
 
 nuisances['PU']  = {
                 'name'  : 'CMS_PU_2018',
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
-                    s : ['(puWeightUp/puWeight) * {}'.format(nuis_factors[s]["CMS_PU_2018"][0]),
-                         '(puWeightDown/puWeight) * {}'.format(nuis_factors[s]["CMS_PU_2018"][1])] for s in mc if s not in ["Higgs"] and s not in mc_eft },
-                'AsLnN'      : '1',
+                    sample : ['(puWeightUp/puWeight)','(puWeightDown/puWeight)'] for sample in mc},
 }
 
-#### mettere per tutti i sample ma in SR, poi anche in CR per quelli che hanno una CR
-## valutare se le cose sono strane con drawnuisances e se sono piatti via di logN
+## This should work for samples with either 8 or 9 LHE scale weights (Length$(LHEScaleWeight) == 8 or 9)
+variations   = ['Alt$(LHEScaleWeight[0],1)', 'Alt$(LHEScaleWeight[1],1)', 'Alt$(LHEScaleWeight[3],1)', 'Alt$(LHEScaleWeight[nLHEScaleWeight-4],1)', 'Alt$(LHEScaleWeight[nLHEScaleWeight-2],1)', 'Alt$(LHEScaleWeight[nLHEScaleWeight-1],1)']
 
-# # # ######## PDF uncertainty
-# nuisances['pdf_weight'] = {
-#     'name'  : 'pdf_weight_1718',
-#     'kind'  : 'weight_envelope',
-#     'type'  : 'shape',
-#     'samples' :  { s: ['Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in mc },
-#     'AsLnN':  '1',
-#     'cuts':  phase_spaces_tot_sr
-# }
+for sample in mc_bkg :
+    nuisances['QCDscale_'+sample] = {
+        'name'  : 'QCDscale_'+sample,
+        'kind'  : 'weight_envelope',
+        'type'  : 'shape',
+        'samples'  :  { sample: variations }
+    }
 
-# for sample in ["Wjets_HT", "top"] :
-#     if sample == "Wjets_HT" :
-#         nuisances['pdf_weight_'+sample] = {
-#             'name'  : 'pdf_weight_1718_'+sample,
-#             'kind'  : 'weight_envelope',
-#             'type'  : 'shape',
-#             'samples' :  { sample: ['Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] },
-#             'AsLnN':  '1',
-#             'cuts':  wj_region
-#         }
-#     else:   
-#         nuisances['pdf_weight_'+sample] = {
-#             'name'  : 'pdf_weight_1718_'+sample,
-#             'kind'  : 'weight_envelope',
-#             'type'  : 'shape',
-#             'samples' :  { sample: ['Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] },
-#             'AsLnN':  '1',
-#             'cuts':  "topcr"
-#         }
 
-# nuisances['pdf_weight_accept'] = {
-#     'name'  : 'pdf_weight_1718_accept',
-#     'kind'  : 'weight_envelope',
-#     'type'  : 'shape',
-#     'samples': { k : [ 'Alt$(PDFweight_normalized['+str(i)+'], 1.)' for i in range(0,103) ] for k in ["WLNuJJ"] },
-#     'cuts':  phase_spaces_tot_sr
-# }
+# # # # # #Correlate all signal samples
+nuisances['QCD_scale_VBFW'] = {
+            'name'  : 'QCDscale_VBFW',
+            'kind'  : 'weight_envelope',
+            'type'  : 'shape',
+            'samples'  :  { s: variations for s in signals+mc_eft}
+        }
 
-# # # An overall 1.5% UE uncertainty will cover all the UEup/UEdo variations
-# # # And we don't observe any dependency of UE variations on njet
+# # #### mettere per tutti i sample ma in SR, poi anche in CR per quelli che hanno una CR
+# # ## valutare se le cose sono strane con drawnuisances e se sono piatti via di logN
+
+nuisances['pdf_weight'] = {
+    'name'  : 'pdf',
+    'kind'  : 'weight_envelope',
+    'type'  : 'shape',
+    'samples' :  { s: ['Alt$(LHEPdfWeight['+str(i)+'], 1.)' for i in range(0,103)] for s in ["Wjets_HT", "top", "sm"] },
+}
+
+
+
+# # # # An overall 1.5% UE uncertainty will cover all the UEup/UEdo variations
+# # # # And we don't observe any dependency of UE variations on njet
 nuisances['UE']  = {
                 'name'  : 'UE_CP5',
-                'skipCMS' : 1,
                 'type': 'lnN',
-                # 'samples': dict((skey, '1.015') for skey in mc if skey not in ["top","Wjets_HT"]),  why not this? they use CP5...
                 'samples': dict((skey, '1.015') for skey in mc ), 
 }
 
-# reweight wjet nuisances
+# # # # reweight wjet nuisances
+# #### this should apply only for Wjets_HT_hardjets BUUTT non riesco
+# ### poi lo tolgo a mano...
+
 WJets_up = '( WJets_reweight_up / WJets_reweight )'
 WJets_do = '( WJets_reweight_do / WJets_reweight )'
 
 nuisances['WJets_reweight_stat'] = {
-    'name': 'WJets_rew_2018',
+    'name': 'VBFW_WJets_rew_stat_2018',
     'kind': 'weight',
     'type': 'shape',
     'samples': { 
@@ -415,43 +404,33 @@ nuisances['WJets_reweight_stat'] = {
 
 WJets_functional = '( WJets_reweight_func /  WJets_reweight )'
 nuisances['WJets_reweight_functional_2018'] = {
-    'name': 'WJets_rew_func_2018',
+    'name': 'VBFW_WJets_rew_func_2018',
     'kind': 'weight',
     'type': 'shape',
     'samples': {
        'Wjets_HT': [WJets_functional, "1."]
       },
-    'symmetrize': True
 }
 
 
-# ####### Generic "cross section uncertainties"
-# ##############
-# # Normalization factors
-# ##############
+# # ####### Generic "cross section uncertainties"
+# # ##############
+# # # Normalization factors
+# # ##############
 
 
-nuisances["Top_norm_2018"]  = {
-    'name'  : 'CMS_Top_norm_2018',
+nuisances["Top_norm"]  = {
+    'name'  : 'CMS_Top_norm',
     'samples'  : {
         'top' : '1.00',
         },
     'type'  : 'rateParam'
 }
 
-# # for fl in ["ele", "mu"]:
-# #     nuisances["Fake_norm_{}_2018".format(fl)]  = {
-# #         'name'  : 'CMS_Fake_norm_{}_2018'.format(fl),
-# #         'samples'  : {
-# #             'Fake' : '1.00',
-# #             },
-# #         'type'  : 'rateParam',
-# #         'cuts': [region for region in regions if fl in region or "topcr" in region]
-# #     }
 
 for fl in ["ele", "mu"]:
-    nuisances["WPUJet_norm_{}_2018".format(fl)]  = {
-        'name'  : 'CMS_WPUJet_norm_{}_2018'.format(fl),
+    nuisances["WPUJet_norm_{}".format(fl)]  = {
+        'name'  : 'CMS_WPUJet_norm_{}'.format(fl),
         'samples'  : {'Wjets_HT_PUJets' : '1.00'},
         'type'  : 'rateParam',
         'cuts': [region for region in regions if fl in region or "topcr" in region]
@@ -459,8 +438,8 @@ for fl in ["ele", "mu"]:
 
 
 for fl in ["ele", "mu"]:
-    nuisances["WhardJet_norm_{}_2018".format(fl)]  = {
-                    'name'  : 'CMS_WhardJet_norm_{}_2018'.format(fl),
+    nuisances["WhardJet_norm_{}".format(fl)]  = {
+                    'name'  : 'CMS_WhardJet_norm_{}'.format(fl),
                     'samples'  : {'Wjets_HT_hardJets' : '1.00'},
                     'type'  : 'rateParam',
                     'cuts': [region for region in regions if fl in region or "topcr" in region]
@@ -478,11 +457,5 @@ nuisances['stat']  = {
              }
 
 
-# for n in nuisances.values():
-#     n['skipCMS'] = 1
-
-   
-
-# # # nuisances = {k:v for k,v in nuisances.items() if k in ['detavbs_residual', 'zlep_residual']} #if 'PS' in k or 'QCD' in k
-
-# # # print ' '.join(nuis['name'] for nname, nuis in nuisances.iteritems() if nname not in ('lumi', 'stat'))
+for n in nuisances.values():
+    n['skipCMS'] = 1

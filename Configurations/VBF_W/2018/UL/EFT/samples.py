@@ -55,8 +55,7 @@ if    'iihe' in SITE:
   treeBaseDir = '/pnfs/iihe/cms/store/user/xjanssen/HWW2015'
 elif  'cern' in SITE:
   treeBaseDirHWW = '/eos/cms/store/group/phys_higgs/cmshww/amassiro/HWWNano'
-  treeBaseDirLat = '/eos/cms/store/group/phys_smp/Latinos/vbfw'
-  treeBaseDirPrivate = '/eos/user/a/abulla/nanoAOD/EFT/nano_new/'
+  treeBaseDirLat = '/eos/cms/store/group/phys_smp/ec/Latinos/HWWNano'
 
 def makeMCDirectory(var=''):
   if var:
@@ -64,25 +63,9 @@ def makeMCDirectory(var=''):
   else:
       return os.path.join(treeBaseDirPrivate, mcProduction, (mcSteps + '__' + skim).format(var=''))
 
-mcDirectoryHWW = os.path.join(treeBaseDirHWW,  mcProduction , mcSteps)
 mcDirectoryLat = os.path.join(treeBaseDirLat,  mcProduction , mcSteps)
 dataDirectoryHWW = os.path.join(treeBaseDirHWW, dataReco, dataSteps)
-dataDirectoryLat = os.path.join(treeBaseDirLat, dataReco, dataSteps)
-EFTDirectory = os.path.join(treeBaseDirPrivate, mcProduction, mcSteps)
 
-
-############################# PROVA
-# def CombineBaseW(samples, proc, samplelist):
-#   newbaseW = getBaseWnAOD(mcDirectoryHWW, 'Autumn18_102X_nAODv7_Full2018v7', samplelist)
-#   for s in samplelist:
-#     addSampleWeight(samples, proc, s, newbaseW+'/baseW')
-################################################
-############ NUMBER OF LEPTONS #################
-################################################
-
-#Nlep='1'
-#Nlep='3'
-#Nlep='4'
 
 ################################################
 ############### Lepton WP ######################
@@ -160,9 +143,9 @@ DataTrig = {
 #                         'EventsPerJob' : 7000,
 #                     }
 
-# ##########################################
-# ############  BACKGROUNDS  ###############
-# ##########################################
+##########################################
+############  BACKGROUNDS  ###############
+##########################################
 
 
 # # ####### Wjets #########
@@ -181,7 +164,6 @@ samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLN
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
 #				                'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '* ewknloW',
-                        # 'weight': CommonWeight+'*' + Wjets_photon_filter +'* ewknloW' + '*' +Total_correction,
                         'weight': CommonWeight+'*' + Wjets_photon_filter + '*' + Total_correction,
 			                	'FilesPerJob' : 6, 
                         'subsamples': {
@@ -219,11 +201,7 @@ samples['top'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'TTTo2L2Nu')
                                 #  + nanoGetSampleFiles(mcDirectoryLat,'TTWjets'),  same to do
                                  #+ nanoGetSampleFiles(mcDirectoryLat,'TTWJetsToLNu'), #also this is available (was commented)
                       'weight': CommonWeight,
-#                     'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC ,
                       'FilesPerJob' : 8,
-                      # 'EventsPerJob' : 7000,
-#                     'suppressNegative' :['all'],
-#                     'suppressNegativeNuisances' :['all'],
                 }
 
 # !!!! TTToSemiLeptonic_ext3?
@@ -255,8 +233,7 @@ samples['VV']  = { 'name' :  nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_WmTo2J_Q
                              + nanoGetSampleFiles(mcDirectoryLat,'ZTo2L_ZTo2J_QCD'),
                    'weight': CommonWeight,
 #                   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch, # still missing EWKnlowW 
-                   'FilesPerJob' : 10,
-                  #  'EventsPerJob' : 70000,
+                   'FilesPerJob' : 20,
                 }
 
 
@@ -275,9 +252,7 @@ samples['VBS']  = { 'name' :  nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_ZTo2J')
                               + nanoGetSampleFiles(mcDirectoryLat,'ZTo2L_ZTo2J'),
                               # + nanoGetSampleFiles(mcDirectoryLat,'WWToLNuQQ'),   missing from QCD and maybe also from DAS, ignore it for v9
                     'weight': CommonWeight,
-#                    'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
                     'FilesPerJob' :20,
-                    # 'EventsPerJob' : 70000,
                 }
 
 
@@ -288,9 +263,7 @@ samples['Higgs']  = {   'name'   :  nanoGetSampleFiles(mcDirectoryLat,'GluGluHTo
                                     + nanoGetSampleFiles(mcDirectoryLat,'HWplusJ_HToWWTo2L2Nu_WToLNu_M125')     #called HWplusJ_HToWWTo2L2Nu_WToLNu_M125
                                     + nanoGetSampleFiles(mcDirectoryLat,'VBFHToWWToLNuQQ_M125'),   #missing lat
                         'weight': CommonWeight,
-#                       'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
                         'FilesPerJob' : 5,
-                        # 'EventsPerJob' : 70000,
                   }
 
 
@@ -312,9 +285,6 @@ samples['DY_M-50'] = {    'name'   :   nanoGetSampleFiles(mcDirectoryLat,'DYJets
                         'weight': CommonWeight+'*'+DY_photon_filter,
 #                       'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter ,# missing ewkNLOW
                         'FilesPerJob' : 15,
-                        # 'EventsPerJob' : 70000,
-                      #  'suppressNegative' :['all'],
-                      #  'suppressNegativeNuisances' :['all'],
                 }
 
 #VBF-Z does use less sample (only M-50 and applies dome different weights (but uses signal at higher energies))
@@ -341,9 +311,6 @@ samples['DY_else'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'DYJetsTo
                         'weight': CommonWeight+'*'+DY_photon_filter,
 #                       'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter ,# missing ewkNLOW
                         'FilesPerJob' : 5,
-                        # 'EventsPerJob' : 70000,
-                      #  'suppressNegative' :['all'],
-                      #  'suppressNegativeNuisances' :['all'],
                 }
 
 addSampleWeight(samples,'DY_else','DYJetsToLL_M-10to50-LO', '(LHE_HT < 200)') 
@@ -359,9 +326,7 @@ addSampleWeight(samples,'DY_else','DYJetsToLL_M-10to50-LO', '(LHE_HT < 200)')
 
 samples['VBF-Z']  = {   'name'   :  nanoGetSampleFiles(mcDirectoryLat,'EWKZ2Jets_ZToLL_M-50'),
                         'weight': CommonWeight+ '*(lhe_mjj[0] > 120)',
-#                       'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
                         'FilesPerJob' : 5,
-                        # 'EventsPerJob' : 70000,
                   }
 
 ##VBF-Z --> slighly different weight
@@ -373,11 +338,7 @@ samples['VBF-Z']  = {   'name'   :  nanoGetSampleFiles(mcDirectoryLat,'EWKZ2Jets
 samples['Vg']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')   # this is called WGToLNuG in v9
                                  + nanoGetSampleFiles(mcDirectoryLat,'ZGToLLG'),
                     'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*(Gen_ZGstar_mass <= 0)',
-#                    'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*(Gen_ZGstar_mass <= 0)',
                     'FilesPerJob' : 5,
-                    # 'EventsPerJob' : 70000,
-#                    'suppressNegative' :['all'],
-#                    'suppressNegativeNuisances' :['all'],
                 }
 
 # the following baseW correction is needed in both v5 and v6 (for Zg, Not for ZGToLLG)
@@ -394,13 +355,6 @@ samples['VgS']  =  {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')
                                  + nanoGetSampleFiles(mcDirectoryLat,'WZTo3LNu_mllmin0p1'),
                       'weight' : CommonWeight + ' * (gstarLow * 0.94 + gstarHigh * 1.14)',
                       'FilesPerJob' : 15,
-                      # 'EventsPerJob' : 70000,
-                      'suppressNegative' :['all'],
-                      'suppressNegativeNuisances' :['all'],
-                      # 'subsamples': {
-                      #   'L': 'gstarLow',
-                      #   'H': 'gstarHigh'
-                      # }
                    }
 
 addSampleWeight(samples,'VgS','WGToLNuG', '(Gen_ZGstar_mass > 0 && Gen_ZGstar_mass < 0.1)')
@@ -415,17 +369,15 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'ZZZ')
                                 + nanoGetSampleFiles(mcDirectoryLat,'WWW'),
                     'weight': CommonWeight,
                                 #+ nanoGetSampleFiles(mcDirectory,'WWG'), #should this be included? or is it already taken into account in the WW sample?
-#                    'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch ,
                     'FilesPerJob' : 20,
-                    #  'EventsPerJob' : 70000,
                   }
 
 
-# #########################################
-# ############## EFT ###############
-# #########################################
+# # #########################################
+# # ############## EFT ###############
+# # #########################################
 
-EFTSamples = nanoGetSampleFiles(EFTDirectory,'WLNuJJ_EWK_EFT')
+EFTSamples = nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_EFT')
 
 samples['sm'] = {
     'name': EFTSamples,
@@ -440,9 +392,17 @@ if os.path.exists(CMSSW+'/src/'+sampleEFTFile):
   exec(handle)
   handle.close()
 
-# #########################################
-# ############## DATAA ###############
-# #########################################
+# ## fatti ma non usati per datacard
+# ######################################### debug weightssss ############################
+# sampleEFTFileDebug = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT/debug_EFTweights.py"
+# if os.path.exists(CMSSW+'/src/'+sampleEFTFileDebug):
+#   handle = open(CMSSW+'/src/'+sampleEFTFileDebug)
+#   exec(handle)
+#   handle.close()
+
+#########################################
+############## DATAA ###############
+#########################################
 
 
 # Then corrected

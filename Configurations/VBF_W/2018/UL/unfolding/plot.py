@@ -64,7 +64,7 @@ palette = {
 '''
 
 jetbin_detabins = [3,3,2]
-wlnujj_palette = ['#000137', '#02055A',  '#0219BB', '#253DA1', '#B0DBF1']
+wlnujj_palette = ['#b0dbf1', '#789cd1', '#415db1', '#1e36a6', '#1027b1', '#0219bb', '#021194', '#02096d', '#020453', '#010345', '#000137']
 wlnujj_out = ['#b83afb']
 
 
@@ -86,24 +86,24 @@ groupPlot['Others']  = {
                 'fill': 1001
               }
 
-# signals = [c for c in samples if "WLNuJJ" in c and "Out" not in c]
-signals = [c for c in samples if "WLNuJJ" in c and "ptw" in c]
+signals = [c for c in samples if "WLNuJJ" in c and "Out" not in c]
+# signals = [c for c in samples if "WLNuJJ" in c]
 
 for i,s in enumerate(signals):
     groupPlot['{}'.format(s)] = {
                 'nameHR' : '{}'.format(s),
                 'isSignal' : 0,
-                'color':   TColor.GetColor(wlnujj_palette[i-1]),
+                'color':   TColor.GetColor(wlnujj_palette[i]),
                 'samples'  : ['{}'.format(s)],
                 'fill': 1001
              }
 
-out = [c for c in signals if "Out" in c]
+out = [c for c in samples if "Out" in c]
 for i,s in enumerate(out):
     groupPlot['{}'.format(s)] = {
                 'nameHR' : '{}'.format(s),
                 'isSignal' : 0,
-                'color':   TColor.GetColor(wlnujj_out[i]),
+                'color':   TColor.GetColor(wlnujj_palette[-1]),
                 'samples'  : ['{}'.format(s)],
                 'fill': 1001
                 }
@@ -224,15 +224,15 @@ plot['Fake'] = {
                }
 
 
-# data
+# # data
 
-plot['DATA']  = { 
-                  'nameHR' : 'Data',
-                  'color': 1 ,  
-                  'isSignal' : 0,
-                  'isData'   : 1 ,
-                  'isBlind'  : 0
-              }
+# plot['DATA']  = { 
+#                   'nameHR' : 'Data',
+#                   'color': 1 ,  
+#                   'isSignal' : 0,
+#                   'isData'   : 1 ,
+#                   'isBlind'  : 0
+#               }
 
 
 # additional options

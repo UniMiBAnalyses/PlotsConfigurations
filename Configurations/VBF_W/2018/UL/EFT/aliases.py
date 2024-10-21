@@ -6,9 +6,13 @@ configurations = os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurati
 conf_folder = configurations +"/VBF_W/2018/"
 utils_folder = configurations +"/VBF_W/utils/"
 
-signals = [c for c in samples if "WLNuJJ" in c]
+signals = [c for c in samples if "sm" in c]
+#aliases = {}
 
+mc_eft = [c for c in samples if any(substring in c for substring in ["lin", "quad", "mixed"])]
 mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
+
+# mc = [skey for skey in samples]
 
 ####################
 
@@ -343,7 +347,7 @@ aliases['fakes_correction_do'] = {
 
 # PU jet Id SF
 
-puidSFSource = '{}/patches/PUID_81XTraining_EffSFandUncties.root'.format(configurations)
+# puidSFSource = '{}/patches/PUID_81XTraining_EffSFandUncties.root'.format(configurations)
 
 aliases['PUJetIdSF'] = {
   'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
@@ -394,7 +398,7 @@ aliases['QCDscale_normalized'] = {
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
         '.L {}/VBF_W/utils/macros/QCDscale_normalize.cc+'.format(configurations)
     ] ,
-    'samples':["WLNuJJ"]
+    'samples':[c for c in signals+mc_eft]
 }
 
 aliases['PDFweight_normalized'] = {
@@ -404,7 +408,7 @@ aliases['PDFweight_normalized'] = {
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
         '.L {}/VBF_W/utils/macros/PDFweight_normalize.cc+'.format(configurations)
     ] ,
-    'samples':["WLNuJJ"]
+    'samples':[c for c in signals+mc_eft]
 }
 
 

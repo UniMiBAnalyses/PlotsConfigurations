@@ -50,7 +50,7 @@ but in
 
 ### N.B. dont know why but the hadd process (with systematics) is rather slow. The last step ofter requires several hours, if kill the process, the final root file is not usable. There is some nuisance probabily which has something. Easy way to solve, try add one by one and see how slow is the hadd process!
 
-    mkShapesMulti.py --pycfg=configuration.py --doBatch=1 --batchSplit=Samples,Files --batchQueue=tomorrow
+    
 
 # Hadd the root files:
 
@@ -183,7 +183,7 @@ For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for e
     In this file you can set the number of GenBin (line 49 "nGenBin") and the previous hadded shape L7.
     The output is "opt_variables.py". You can round the values here. 
 
-    Now go to compute_measures and as the very first thing run 'pyhthon from_opt_to_xs.py'. The output is compute_cuts.py which is needed to compute the various
+    Now go to compute_measures and as the very first thing run 'python from_opt_to_xs.py'. The output is compute_cuts.py which is needed to compute the various
     XS measurment. If you want to change the fiducial phase-space, here you need to do it again!!
     Now run a shape which runs over CENTRAL DAS signal files with only weight XS and with the given cuts file. 
     Now run 'python GetDiffXS.py --file ....' where you point the file you already did. The outout is a JSON file with all the XS values computed. This is useful for fits.

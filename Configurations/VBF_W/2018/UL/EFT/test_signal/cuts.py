@@ -1,11 +1,5 @@
 # cuts
 
-# supercut = 'nLepton>=1 && (Alt$(Lepton_pt[0],0) > 25.) \
-#             && (Alt$(Lepton_eta[0],-3) > -2.) \
-#             && (Alt$(Lepton_eta[0],3) < 2.) \
-#             && Alt$(Lepton_pt[1],0)<=15. \
-#             && Alt$(Lepton_isLoose[1],1)> 0.5 \
-#             '
 supercut = 'nLepton>=1 && (Alt$(Lepton_pt[0],0) > 25.) \
             && ((Alt$(abs(CleanJet_eta[0]), 3) <2.5) || (Alt$(abs(CleanJet_eta[0]), 0) > 3.))\
             && ((Alt$(abs(CleanJet_eta[1]), 3) <2.5) || (Alt$(abs(CleanJet_eta[1]), 0) > 3.))\
@@ -18,51 +12,6 @@ supercut = 'nLepton>=1 && (Alt$(Lepton_pt[0],0) > 25.) \
             && Alt$(Lepton_pt[1],0)<=15. \
             && Alt$(Lepton_isLoose[1],1)> 0.5 \
             '
-#  
-# # #  FR & PR measurment:  
-# supercut = 'nLepton>=1 && (Alt$(Lepton_pt[0],0) > 25.) \
-#             && ((Alt$(abs(CleanJet_eta[0]), 3) <2.5) || (Alt$(abs(CleanJet_eta[0]), 0) > 3.))\
-#             && ((Alt$(abs(CleanJet_eta[1]), 3) <2.5) || (Alt$(abs(CleanJet_eta[1]), 0) > 3.))\
-#             && (Alt$(CleanJet_pt[1], 0) > 30.) \
-#             && (Alt$(CleanJet_pt[0],0) > 40.) \
-#             && (Alt$(Lepton_eta[0],-3) > -2.) \
-#             && (Alt$(Lepton_eta[0],3) < 2.) \
-#             '
-
-# skim: 
-# '"(Alt$(Lepton_pt[0],0) > 25.) && 
-# (Alt$(CleanJet_pt[1], 0) > 30.) && 
-# (Alt$(CleanJet_pt[0],0) > 40.) && (mjj >= 400.) && 
-# (detajj > 2.) && (Alt$(Lepton_eta[0],-3) > -2.) && 
-# (Alt$(Lepton_eta[0],3) < 2.) && Alt$(Lepton_pt[1],0)<=15. && 
-# Alt$(Lepton_isLoose[1],1)> 0.5 && (
-#   Alt$(Lepton_isTightElectron_mvaFall17V2Iso_WP90[1], 0) < 0.5 && 
-# Alt$(Lepton_isTightMuon_cut_Tight_HWWW[1],0) < 0.5 )"',
-
-# NEW
-# '"(Alt$(Lepton_pt[0],0) > 25.) && 
-# (Alt$(CleanJet_pt[1], 0) > 30.) && 
-# (Alt$(CleanJet_pt[0],0) > 40.) && (mjj >= 400.) && 
-# (detajj > 2.) && (Alt$(Lepton_eta[0],-3) > -2.) && 
-# (Alt$(Lepton_eta[0],3) < 2.) && Alt$(Lepton_pt[1],0)<=15. && 
-# Alt$(Lepton_isLoose[1],1)> 0.5 && 
-# (Alt$(Lepton_isTightElectron_mvaFall17V2Iso_WP90[1], 0) < 0.5 &&
-#  Alt$(Lepton_isTightMuon_cut_Tight_HWWW[1],0) < 0.5 ) && 
-# (Lepton_isTightElectron_mvaFall17V2Iso_WP90[0] > 0.5 || Lepton_isTightMuon_cut_Tight_HWWW[0] > 0.5 )"',
- 
-
-# cuts['Z'] = '1'
-
-#SR is ort to:
-#top
-#PU e Fake
-#levo fake e DY + ort to WH
-#fake
-
-
-# cuts['test'] = ' Lepton_pt[0] > 35. \
-#                   && bVeto \
-#                  '
 
 cuts['ele_SR'] = '(abs(Lepton_pdgId[0])==11) \
                   && Lepton_pt[0] > 35. \
@@ -84,7 +33,7 @@ cuts['ele_SR_highDNN'] = '(abs(Lepton_pdgId[0])==11) \
                   && CleanJet_pt[1]>70. \
                   && detajj > 4 \
                   && mtw1 > 50. \
-                  && DNNoutputSR_ALL > 0.5 \
+                  && DNNoutputSR_noQGL > 0.5 \
                  '
 
 cuts['mu_SR_highDNN'] = '(abs(Lepton_pdgId[0])==13)\
@@ -92,7 +41,7 @@ cuts['mu_SR_highDNN'] = '(abs(Lepton_pdgId[0])==13)\
                   && CleanJet_pt[1]>70. \
                   && detajj > 4 \
                   && mtw1 > 50. \
-                  && DNNoutputSR_ALL > 0.5 \
+                  && DNNoutputSR_noQGL > 0.5 \
                  '
 
 
@@ -136,119 +85,21 @@ cuts['topcr']  = '((zeroJet && !bVeto) || bReqTight) \
                   && Lepton_pt[0] > 35.\
                   '
 
-# ## Fake CR   
-# # cuts['ele_FakeCR']  = '(abs(Lepton_pdgId[0])==11) \
-# #                       && Lepton_pt[0] > 35. \
-# #                       && detajj <= 5. \
-# #                       && bVeto\
-# #                       && mtw1<=50. \
-# #                       && mtw1 > 20. \
-# #                       && CleanJet_pt[1]<=70.  \
-# #                      '
+# # ## Fake CR   
+cuts['ele_FakeCR']  = '(abs(Lepton_pdgId[0])==11) \
+                      && Lepton_pt[0] > 35. \
+                      && detajj <= 5. \
+                      && bVeto\
+                      && mtw1<=50. \
+                      && mtw1 > 20. \
+                      && CleanJet_pt[1]<=70.  \
+                     '
 
-# cuts['ele_FakeCR0j']  = '(abs(Lepton_pdgId[0])==11) \
-#                       && (Alt$(CleanJet_pt[0], 50) < 20.) \
-#                       && Lepton_pt[0] > 35. \
-#                       && mtw1<=50. \
-#                       && mtw1 > 20. \
-#                      '
+cuts['mu_FakeCR']  = '(abs(Lepton_pdgId[0])==13) \
+                      && detajj <= 5. \
+                      && bVeto\
+                      && mtw1<=50. \
+                      && mtw1 > 20. \
+                      && CleanJet_pt[1]<=70.  \
+                     '
 
-# # cuts['ele_FakeCR_gr1p5']  = '(abs(Lepton_pdgId[0])==11) \
-# #                       && Lepton_pt[0] > 35. \
-# #                       && mtw1<=50. \
-# #                       && mtw1 > 20. \
-# #                       && Dphilep1met > 1.5 \
-# #                      '
-
-# # cuts['ele_FakeCR_less1p5']  = '(abs(Lepton_pdgId[0])==11) \
-# #                       && Lepton_pt[0] > 35. \
-# #                       && mtw1<=50. \
-# #                       && mtw1 > 20. \
-# #                       && Dphilep1met < 1.5 \
-# #                      '
-
-# cuts['ele_FakeCR1j']  = '(abs(Lepton_pdgId[0])==11) \
-#                       && (Alt$(CleanJet_pt[0], 0) > 40.) \
-#                       && (Alt$(CleanJet_pt[1], 60) < 20.) \
-#                       && Lepton_pt[0] > 35. \
-#                       && bVeto\
-#                       && mtw1<=50. \
-#                       && mtw1 > 20. \
-#                      '
-
-# cuts['ele_FakeCR2j+']  = '(abs(Lepton_pdgId[0])==11) \
-#                       && (Alt$(CleanJet_pt[0], 0) > 40.) \
-#                       && (Alt$(CleanJet_pt[1], 0) > 30.) \
-#                       && Lepton_pt[0] > 35. \
-#                       && detajj <= 5. \
-#                       && bVeto\
-#                       && mtw1<=50. \
-#                       && mtw1 > 20. \
-#                       && CleanJet_pt[1]<=70.  \
-#                      '
-# cuts['ele_FakeCR2j']  = '(abs(Lepton_pdgId[0])==11) \
-#                       && (Alt$(CleanJet_pt[0], 0) > 40.) \
-#                       && (Alt$(CleanJet_pt[1], 0) > 30.) \
-#                       && Lepton_pt[0] > 35. \
-#                       && bVeto\
-#                       && mtw1<=50. \
-#                       && mtw1 > 20. \
-#                      '
-
-# # cuts['mu_FakeCR_gr1p5']  = '(abs(Lepton_pdgId[0])==13) \
-# #                       && Lepton_pt[0] > 25. \
-# #                       && mtw1<=50. \
-# #                       && mtw1 > 20. \
-# #                       && Dphilep1met > 1.5 \
-# #                      '
-
-# # cuts['mu_FakeCR_less1p5']  = '(abs(Lepton_pdgId[0])==13) \
-# #                       && Lepton_pt[0] > 25. \
-# #                       && mtw1<=50. \
-# #                       && mtw1 > 20. \
-# #                       && Dphilep1met < 1.5 \
-# #                      '
-
-# cuts['mu_FakeCR0j']  = '(abs(Lepton_pdgId[0])==13) \
-#                       && (Alt$(CleanJet_pt[0], 50) < 20.) \
-#                       && Lepton_pt[0] > 35. \
-#                       && mtw1<=50. \
-#                       && mtw1 > 20. \
-#                      '
-
-# cuts['mu_FakeCR1j']  = '(abs(Lepton_pdgId[0])==13) \
-#                       && (Alt$(CleanJet_pt[0], 0) > 40.) \
-#                       && (Alt$(CleanJet_pt[1], 60) < 20.) \
-#                       && Lepton_pt[0] > 35. \
-#                       && bVeto\
-#                       && mtw1<=50. \
-#                       && mtw1 > 20. \
-#                      '
-
-# cuts['mu_FakeCR2j+']  = '(abs(Lepton_pdgId[0])==13) \
-#                       && (Alt$(CleanJet_pt[0], 0) > 40.) \
-#                       && (Alt$(CleanJet_pt[1], 0) > 30.) \
-#                       && Lepton_pt[0] > 35. \
-#                       && detajj <= 5. \
-#                       && bVeto\
-#                       && mtw1<=50. \
-#                       && mtw1 > 20. \
-#                       && CleanJet_pt[1]<=70.  \
-#                      '
-
-# cuts['mu_FakeCR2j']  = '(abs(Lepton_pdgId[0])==13) \
-#                       && (Alt$(CleanJet_pt[0], 0) > 40.) \
-#                       && (Alt$(CleanJet_pt[1], 0) > 30.) \
-#                       && Lepton_pt[0] > 35. \
-#                       && bVeto\
-#                       && mtw1<=50. \
-#                       && mtw1 > 20. \
-#                      '
-
-# cuts['mu_FakeCR']  = '(abs(Lepton_pdgId[0])==13) \
-#                       && detajj <= 5. \
-#                       && bVeto\
-#                       && mtw1<=50. \
-#                       && mtw1 > 20. \
-#                       && CleanJet_pt[1]<=70.  \
-#                      '

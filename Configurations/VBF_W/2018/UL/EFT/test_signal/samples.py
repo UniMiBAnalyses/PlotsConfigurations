@@ -55,8 +55,8 @@ if    'iihe' in SITE:
   treeBaseDir = '/pnfs/iihe/cms/store/user/xjanssen/HWW2015'
 elif  'cern' in SITE:
   treeBaseDirHWW = '/eos/cms/store/group/phys_higgs/cmshww/amassiro/HWWNano'
-  treeBaseDirLat = '/eos/cms/store/group/phys_smp/Latinos/vbfw'
-  treeBaseDirPrivate = '/eos/user/a/abulla/nanoAOD/EFT/nano/'
+  treeBaseDirLat = '/eos/cms/store/group/phys_smp/ec/Latinos/HWWNano'
+  treeBaseDirPrivate = '/eos/user/a/abulla/nanoAOD/EFT/nano_new'
 
 def makeMCDirectory(var=''):
   if var:
@@ -67,7 +67,7 @@ def makeMCDirectory(var=''):
 mcDirectoryHWW = os.path.join(treeBaseDirHWW,  mcProduction , mcSteps)
 mcDirectoryLat = os.path.join(treeBaseDirLat,  mcProduction , mcSteps)
 # mcDirectoryHWW = os.path.join(treeBaseDirPrivate,  mcProduction , mcSteps + '__' + MC_skim)
-EFTDirectory = os.path.join(treeBaseDirPrivate,  mcProduction , mcSteps)
+EFTDirectory = os.path.join(treeBaseDirPrivate, mcProduction, mcSteps)
 dataDirectoryHWW = os.path.join(treeBaseDirHWW, dataReco, dataSteps)
 fakeDirectoryLat = os.path.join(treeBaseDirLat, dataReco, dataSteps+"__fakeW1l")
 # dataPrivateDirectory = os.path.join(treeBaseDirPrivate, dataReco, dataSteps + '__' + DATA_skim)
@@ -101,6 +101,8 @@ LepWPCut_1l =  '(Lepton_isTightElectron_'+eleWP+'[0]>0.5 || Lepton_isTightMuon_'
 LepWPWeight_1l = 'Lepton_tightElectron_'+eleWP+'_IdIsoSF'+'[0]*\
                 Lepton_tightMuon_'+muWP+'_IdIsoSF[0]'
 
+trigg_MC = '( (abs(Lepton_pdgId[0])==13) * (HLT_IsoMu24 > 0.5) || (abs(Lepton_pdgId[0])==11) * (HLT_Ele32_WPTight_Gsf > 0.5) )'
+
 LepWPCut = LepWPCut_1l
 LepWPWeight = LepWPWeight_1l
 ################################################
@@ -109,7 +111,7 @@ LepWPWeight = LepWPWeight_1l
 #corrected trigger efficiency
 
 XSWeight   = 'XSWeight'
-SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF'] 
+SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l', trigg_MC] 
 # SFweight1l = ['puWeight', 'SingleLepton_trigEff_corrected[0]',
 #               'Lepton_RecoSF[0]',LepWPWeight_1l, LepWPCut_1l,
 #               'btagSF','PUJetIdSF'] 

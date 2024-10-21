@@ -259,6 +259,17 @@ variables['jetpt1']  = {
                          }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
                         }
 
+variables['CleanJetNS_pt0']  = {
+                        'name': 'CleanJetNS_pt0',
+                        'range' : (70,40,350),
+                        'xaxis' : 'p_{T} 1st jet',
+                        'fold' : 3,
+                        'blind': {
+                           'ele_SR' : 'full',
+                           'mu_SR' : 'full'
+                         }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
+                        }
+
 
 variables['jetpt1_PU']  = {
                         'name': 'CleanJet_pt[0]',
@@ -273,6 +284,17 @@ variables['jetpt1_PU']  = {
 
 variables['jetpt2']  = {
                         'name': 'CleanJet_pt[1]',
+                        'range' : (50,30,250),
+                        'xaxis' : 'p_{T} 2nd jet',
+                        'fold' : 3,
+                        'blind': {
+                           'ele_SR' : 'full',
+                           'mu_SR' : 'full'
+                         }   # 0 = not fold (default), 1 = fold underflowbin, 2 = fold overflow bin, 3 = fold underflow and overflow
+                        }
+
+variables['CleanJetNS_pt1']  = {
+                        'name': 'CleanJetNS_pt1',
                         'range' : (50,30,250),
                         'xaxis' : 'p_{T} 2nd jet',
                         'fold' : 3,

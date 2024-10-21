@@ -3,7 +3,7 @@
 treeName = 'Events'
 fixSuffix = 'allsig'
 
-tagger = 'unfolding_20bins'
+tagger = 'unfolding_END10'
 tagger += "_"+fixSuffix
 
 

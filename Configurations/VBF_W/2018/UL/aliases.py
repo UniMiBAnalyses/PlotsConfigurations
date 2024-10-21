@@ -6,7 +6,7 @@ configurations = os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurati
 conf_folder = configurations +"/VBF_W/2018/"
 utils_folder = configurations +"/VBF_W/utils/"
 
-signals = [c for c in samples if "WLNuJJ" in c]
+signals = [c for c in samples if "WLNuJJ" in c and "Out" not in c]
 #aliases = {}
 
 mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
@@ -176,49 +176,63 @@ aliases['singleW'] = {
 }
 
 
-############################################
-# B tagging
-# loose 0.1241
-# tight 0.7527
 
+####################################################################################
+# b tagging WPs: https://twiki.cern.ch/twiki/bin/view/CMS/BtagRecommendation106XUL18
+####################################################################################
+### to be checked!!!!!
+
+# DeepB = DeepCSV
+bWP_loose_deepB  = '0.1208'
+bWP_medium_deepB = '0.4168' 
+bWP_tight_deepB  = '0.7665'
+
+# DeepFlavB = DeepJet
+bWP_loose_deepFlavB  = '0.0490'
+bWP_medium_deepFlavB = '0.2783'
+bWP_tight_deepFlavB  = '0.7100'
+
+# Actual algo and WP definition. BE CONSISTENT!!
+bAlgo = 'DeepB'          # ['DeepB',        'DeepFlavB'         ]
+bWP   = bWP_medium_deepB # [bWP_loose_deepB, bWP_loose_deepFlavB]
+bSF   = 'deepcsv'        # ['deepcsv',      'deepjet'           ]
+
+
+
+# b veto
 aliases['bVeto'] = {
-    'expr': '(Sum$(CleanJet_pt > 20. && abs(CleanJet_eta) < 2.5 && Jet_btagDeepB[CleanJet_jetIdx] > 0.1241) == 0)'
+    'expr': '(Sum$(CleanJet_pt > 20. && abs(CleanJet_eta) < 2.5 && Jet_btag{}[CleanJet_jetIdx] > {}) == 0)'.format(bAlgo, bWP),
 }
-
-aliases['bReq'] = {
-    'expr': '(Sum$(CleanJet_pt > 30. && abs(CleanJet_eta) < 2.5 && Jet_btagDeepB[CleanJet_jetIdx] > 0.1241) >= 2)'
-}
-
-aliases['bReqTight'] = {
-    'expr': '(Sum$(CleanJet_pt > 30. && abs(CleanJet_eta) < 2.5 && Jet_btagDeepB[CleanJet_jetIdx] > 0.7527) >= 2)'
-}
-
 
 aliases['bVetoSF'] = {
-    'expr': 'TMath::Exp(Sum$(TMath::Log((CleanJet_pt>20 && abs(CleanJet_eta)<2.5)*Jet_btagSF_deepcsv_shape[CleanJet_jetIdx]+1*(CleanJet_pt<=20 || abs(CleanJet_eta)>=2.5))))',
+    'expr': 'TMath::Exp(Sum$(TMath::Log((CleanJet_pt>20 && abs(CleanJet_eta)<2.5)*Jet_btagSF_{}_shape[CleanJet_jetIdx]+1*(CleanJet_pt<=20 || abs(CleanJet_eta)>=2.5))))'.format(bSF),
     'samples': mc
 }
 
-aliases['bReqSF'] = {
-    'expr': 'TMath::Exp(Sum$(TMath::Log((CleanJet_pt>30 && abs(CleanJet_eta)<2.5)*Jet_btagSF_deepcsv_shape[CleanJet_jetIdx]+1*(CleanJet_pt<=30 || abs(CleanJet_eta)>=2.5))))',
-    'samples': mc
+# At least two b-tagged jet
+aliases['bReq'] = {
+    'expr': '(Sum$(CleanJet_pt > 30. && abs(CleanJet_eta) < 2.5 && Jet_btag{}[CleanJet_jetIdx] > {}) >= 2)'.format(bAlgo, bWP),
 }
-
-# aliases['btagSF'] = {
-#     'expr': 'bVeto*bVetoSF + bReqTight *bReqSF',
-#     'samples': mc
+# aliases['bReqTight'] = {
+#     'expr': '(Sum$(CleanJet_pt > 30. && abs(CleanJet_eta) < 2.5 && Jet_btag{}[CleanJet_jetIdx] > {}) >= 2)'.format(bAlgo, bWP_tight_deepB),
 # }
 
-aliases['btagSF'] = {
-    'expr': 'bVetoSF',
+aliases['bReqSF'] = {
+    'expr': 'TMath::Exp(Sum$(TMath::Log((CleanJet_pt>30 && abs(CleanJet_eta)<2.5)*Jet_btagSF_{}_shape[CleanJet_jetIdx]+1*(CleanJet_pt<=30 || abs(CleanJet_eta)>=2.5))))'.format(bSF),
     'samples': mc
 }
+
+aliases['btagSF'] = {
+    'expr': 'bVeto*bVetoSF + bReq*bReqSF',
+    'samples': mc
+}
+
 
 systs = ['jes','lf','hf','lfstats1','lfstats2','hfstats1','hfstats2','cferr1','cferr2']
 
 for s in systs:
-  aliases['btagSF'+s+'up'] = { 'expr': '(bVeto*'+aliases['bVetoSF']['expr'].replace('shape','shape_up_'+s)+'+bReqTight*'+aliases['bReqSF']['expr'].replace('shape','shape_up_'+s)+'+ ( (!bVeto) && (!bReqTight) ))', 'samples':mc  }
-  aliases['btagSF'+s+'down'] = { 'expr': '(bVeto*'+aliases['bVetoSF']['expr'].replace('shape','shape_down_'+s)+'+bReqTight*'+aliases['bReqSF']['expr'].replace('shape','shape_down_'+s)+'+ ( (!bVeto) && (!bReqTight) ))', 'samples':mc }
+  aliases['btagSF'+s+'up'] = { 'expr': '(bVeto*'+aliases['bVetoSF']['expr'].replace('shape','shape_up_'+s)+'+bReq*'+aliases['bReqSF']['expr'].replace('shape','shape_up_'+s)+'+ ( (!bVeto) && (!bReq) ))', 'samples':mc  }
+  aliases['btagSF'+s+'down'] = { 'expr': '(bVeto*'+aliases['bVetoSF']['expr'].replace('shape','shape_down_'+s)+'+bReq*'+aliases['bReqSF']['expr'].replace('shape','shape_down_'+s)+'+ ( (!bVeto) && (!bReq) ))', 'samples':mc }
 
 
 aliases['hardJets'] = {
@@ -230,6 +244,29 @@ aliases['PUJets'] = {
     'expr':  '!(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10)',
     'samples': ['Wjets_HT']
 }
+
+
+###################################
+
+# PU jet Id SF
+
+
+# Need to redefine PUID scale factors, so that they are double and not vectors
+aliases['PUJetIdSF'] = {
+    'expr'    : 'TMath::Exp(Sum$((Jet_jetId>=2)*TMath::Log(Jet_PUIDSF_loose)))',
+    'samples' : mc,
+}
+
+aliases['PUJetIdSF_up'] = {
+    'expr'    : 'TMath::Exp(Sum$((Jet_jetId>=2)*TMath::Log(Jet_PUIDSF_loose_up)))',
+    'samples' : mc,
+}
+
+aliases['PUJetIdSF_down'] = {
+    'expr'    : 'TMath::Exp(Sum$((Jet_jetId>=2)*TMath::Log(Jet_PUIDSF_loose_down)))',
+    'samples' : mc,
+}
+
 
 # ################################################################################################
 
@@ -265,8 +302,6 @@ aliases['Top_pTrw'] = {
 #########################################################################################
 #fakes
 
-# basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/newHLT_2018"
-# basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/nnewHLT_18_1p4_top"
 basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/HLTMC_highPT"
 
 el_pr_file = basedir_fakes + "/PR_eleDATA.root"
@@ -341,39 +376,8 @@ aliases['fakes_correction_do'] = {
     'samples': ["Fake"]
 }
 
-###################################
-
-# PU jet Id SF
-
-puidSFSource = '{}/patches/PUID_81XTraining_EffSFandUncties.root'.format(configurations)
-
-aliases['PUJetIdSF'] = {
-  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
-                                          && ( (Jet_muonIdx1 != Lepton_muonIdx[0] ) || Jet_muonIdx1 < 0 ) \
-                            )*TMath::Log(Jet_PUIDSF_loose)))',
-  'samples': mc
-}
-
-
-aliases['PUJetIdSF_up'] = {
-  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
-                                          && ( (Jet_muonIdx1 != Lepton_muonIdx[0] ) || Jet_muonIdx1 < 0 ) \
-                            )*TMath::Log(Jet_PUIDSF_loose_up)))',
-  'samples': mc
-}
-
-
-aliases['PUJetIdSF_down'] = {
-  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
-                                          && ( (Jet_muonIdx1 != Lepton_muonIdx[0] ) || Jet_muonIdx1 < 0 ) \
-                            )*TMath::Log(Jet_PUIDSF_loose_down)))',
-  'samples': mc
-}
-
 
 ######################################
-
-
 # For VgS
 aliases['gstarLow'] = {
     'expr': 'Gen_ZGstar_mass >0 && Gen_ZGstar_mass < 4',
@@ -412,18 +416,9 @@ aliases['PDFweight_normalized'] = {
 
 aliases['lhe_mjj'] = {
     'expr': 'TMath::Sqrt(2. * LHEPart_pt[4] * LHEPart_pt[5] * (TMath::CosH(LHEPart_eta[4] - LHEPart_eta[5]) - TMath::Cos(LHEPart_phi[4] - LHEPart_phi[5])))',
-    'samples': mc
+    'samples': ['VBF-Z']
 }
 
-aliases['mu_isT'] = {
-    'expr': '(Lepton_isTightMuon_cut_Tight_HWWW[0]<0.5)+(Lepton_isTightMuon_cut_Tight_HWWW[0]>0.5)',
-    'samples': ['Fake'] 
-}
-
-aliases['ele_isT'] = {
-    'expr': '(Lepton_isTightElectron_mvaFall17V2Iso_WP90[0]<0.5)+(Lepton_isTightElectron_mvaFall17V2Iso_WP90[0]>0.5)',
-    'samples': ['Fake'] 
-}
 
 
 ## WJET REWEIGHT

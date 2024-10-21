@@ -6,6 +6,7 @@ configurations = os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurati
 conf_folder = configurations +"/VBF_W/2016/"
 utils_folder = configurations +"/VBF_W/utils/"
 
+signals = [c for c in samples if "WLNuJJ" in c]
 #aliases = {}
 
 mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
@@ -33,6 +34,7 @@ aliases ['x_ptl1'] = {
 aliases ['y_ptl1'] = {
     'expr': 'Alt$(Lepton_pt[0],-9999.) * TMath::Sin(Alt$(Lepton_phi[0],-9999.))'
 }
+
 
 ############# J1, J2 ###########
 aliases ['x_ptj1'] = {
@@ -130,66 +132,64 @@ aliases['Dphilep1met'] = {
     'expr' : '(Lepton_phi[0] - PuppiMET_phi) * (abs(Lepton_phi[0] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(Lepton_phi[0] - PuppiMET_phi)) * (abs(Lepton_phi[0] - PuppiMET_phi) >= 3.1415)'
 } 
 
+aliases['singleW'] = {
+    'expr' : 'baseW/(1000*Xsec)',
+    'samples' : mc
+}
+##########################################################################################
+# b tagging WPs: https://twiki.cern.ch/twiki/bin/view/CMS/BtagRecommendation106XUL16preVFP
+##########################################################################################
 
-###### W EWK nlo ######
+# DeepB = DeepCSV
+bWP_loose_deepB  = '0.2027'
+bWP_medium_deepB = '0.6001' 
+bWP_tight_deepB  = '0.8819'
 
-# aliases['EWKnloW'] = {
-#     'linesToAdd': [
-#         'gSystem->AddIncludePath("-I%s/src");' % os.getenv('CMSSW_RELEASE_BASE'),
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         '.L %s/src/PlotsConfigurations/Configurations/VBSjjlnu/macros/EWKnloW_otf.cc+' % os.getenv('CMSSW_BASE')
-#     ],
-#     'class': 'EWKnloW_otf',
-#     'args': ('%s/src/LatinoAnalysis/Gardener/python/data/ewk/kewk_w_for_python.txt' % os.getenv('CMSSW_BASE')),
-#     'samples': wjets_res_bins + ['Wjets_boost']
-# }
+# DeepFlavB = DeepJet
+bWP_loose_deepFlavB  = '0.0508'
+bWP_medium_deepFlavB = '0.2598'
+bWP_tight_deepFlavB  = '0.6502'
 
-##################################
-# BTag
+# Actual algo and WP definition. BE CONSISTENT!!
+bAlgo = 'DeepB'          # ['DeepB',        'DeepFlavB'         ]
+bWP   = bWP_medium_deepB # [bWP_loose_deepB, bWP_loose_deepFlavB]
+bSF   = 'deepcsv'        # ['deepcsv',      'deepjet'           ]
 
-bAlgo = 'DeepB'
-bWP = ' 0.2217 '
-bWPtight = '0.8953'
 
+
+# b veto
 aliases['bVeto'] = {
-    'expr': '(Sum$(CleanJet_pt > 20. && abs(CleanJet_eta) < 2.5 && Jet_btagDeepB[CleanJet_jetIdx] >  0.2217 ) == 0)'
-}
-
-aliases['bReq'] = {
-    'expr': '(Sum$(CleanJet_pt > 30. && abs(CleanJet_eta) < 2.5 && Jet_btagDeepB[CleanJet_jetIdx] >  0.2217 ) >= 2)'
-}
-
-
-aliases['bReqTight'] = {
-    'expr': '(Sum$(CleanJet_pt > 30. && abs(CleanJet_eta) < 2.5 && Jet_btagDeepB[CleanJet_jetIdx] >  0.8953 ) >= 2)'
+    'expr': '(Sum$(CleanJet_pt > 20. && abs(CleanJet_eta) < 2.5 && Jet_btag{}[CleanJet_jetIdx] > {}) == 0)'.format(bAlgo, bWP),
 }
 
 aliases['bVetoSF'] = {
-    'expr': 'TMath::Exp(Sum$(TMath::Log((CleanJet_pt>20 && abs(CleanJet_eta)<2.5)*Jet_btagSF_deepcsv_shape[CleanJet_jetIdx]+1*(CleanJet_pt<=20 || abs(CleanJet_eta)>=2.5))))',
+    'expr': 'TMath::Exp(Sum$(TMath::Log((CleanJet_pt>20 && abs(CleanJet_eta)<2.5)*Jet_btagSF_{}_shape[CleanJet_jetIdx]+1*(CleanJet_pt<=20 || abs(CleanJet_eta)>=2.5))))'.format(bSF),
     'samples': mc
 }
 
-aliases['bReqSF'] = {
-    'expr': 'TMath::Exp(Sum$(TMath::Log((CleanJet_pt>30 && abs(CleanJet_eta)<2.5)*Jet_btagSF_deepcsv_shape[CleanJet_jetIdx]+1*(CleanJet_pt<=30 || abs(CleanJet_eta)>=2.5))))',
-    'samples': mc
+# At least two b-tagged jet
+aliases['bReq'] = {
+    'expr': '(Sum$(CleanJet_pt > 30. && abs(CleanJet_eta) < 2.5 && Jet_btag{}[CleanJet_jetIdx] > {}) >= 2)'.format(bAlgo, bWP),
 }
-
-# # --> 2018 uses this
-# aliases['btagSF'] = {
-#     'expr': 'bVetoSF',
-#     'samples': mc
+# aliases['bReqTight'] = {
+#     'expr': '(Sum$(CleanJet_pt > 30. && abs(CleanJet_eta) < 2.5 && Jet_btag{}[CleanJet_jetIdx] > {}) >= 2)'.format(bAlgo, bWP_tight_deepB),
 # }
 
+aliases['bReqSF'] = {
+    'expr': 'TMath::Exp(Sum$(TMath::Log((CleanJet_pt>30 && abs(CleanJet_eta)<2.5)*Jet_btagSF_{}_shape[CleanJet_jetIdx]+1*(CleanJet_pt<=30 || abs(CleanJet_eta)>=2.5))))'.format(bSF),
+    'samples': mc
+}
+
 aliases['btagSF'] = {
-    'expr': 'bVeto*bVetoSF + bReqTight *bReqSF',
+    'expr': 'bVeto*bVetoSF + bReq*bReqSF',
     'samples': mc
 }
 
 systs = ['jes','lf','hf','lfstats1','lfstats2','hfstats1','hfstats2','cferr1','cferr2']
 
 for s in systs:
-  aliases['btagSF'+s+'up'] = { 'expr': '(bVeto*'+aliases['bVetoSF']['expr'].replace('shape','shape_up_'+s)+'+bReqTight*'+aliases['bReqSF']['expr'].replace('shape','shape_up_'+s)+'+ ( (!bVeto) && (!bReqTight) ))', 'samples':mc  }
-  aliases['btagSF'+s+'down'] = { 'expr': '(bVeto*'+aliases['bVetoSF']['expr'].replace('shape','shape_down_'+s)+'+bReqTight*'+aliases['bReqSF']['expr'].replace('shape','shape_down_'+s)+'+ ( (!bVeto) && (!bReqTight) ))', 'samples':mc }
+  aliases['btagSF'+s+'up'] = { 'expr': '(bVeto*'+aliases['bVetoSF']['expr'].replace('shape','shape_up_'+s)+'+bReq*'+aliases['bReqSF']['expr'].replace('shape','shape_up_'+s)+'+ ( (!bVeto) && (!bReq) ))', 'samples':mc  }
+  aliases['btagSF'+s+'down'] = { 'expr': '(bVeto*'+aliases['bVetoSF']['expr'].replace('shape','shape_down_'+s)+'+bReq*'+aliases['bReqSF']['expr'].replace('shape','shape_down_'+s)+'+ ( (!bVeto) && (!bReq) ))', 'samples':mc }
 
 aliases['hardJets'] = {
     'expr':  'Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10',
@@ -201,84 +201,29 @@ aliases['PUJets'] = {
     'samples': ['Wjets_HT']
 }
 
-aliases['nJetsBtag']= {
-    'expr' : 'Sum$(CleanJet_pt > 20 && abs(CleanJet_eta)<2.5)'
-}
+###################################
+
+# PU jet Id SF
 
 
-# btagSF_corr_samples_groups = {
-#     'VBS': ['VBS', 'VBS_dipoleRecoil'],
-#     # 'Wjets_HT': ['Wjets_boost']+wjets_res_bins,
-#     'Vg_VgS_VBFV':['Vg','VgS','VBF-Z',],
-#     'VV_VVV_ggWW':['VVV','VV','ggWW'],
-#     'top':['top'],
-#     'DY': ['DY_else','DY_M-50']
-# }
-
-# for sgroup_name, sgroup in btagSF_corr_samples_groups.items():
-#     aliases['btagSF_corr_'+sgroup_name] = {
-#         'class': 'BtagSFNormCorrection',
-#         'args': ('{}/VBSjjlnu/weights_files/btagsf_correction/btagsf_corr_2016.root'.format(configurations), sgroup_name),
-#         'linesToAdd' : [
-#             'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#             '.L {}/VBSjjlnu/macros/btagsf_norm_correction.cc+'.format(configurations)
-#         ],     
-#         'samples' : sgroup
-#     }
-
-################################################################################################
-
-
+# Need to redefine PUID scale factors, so that they are double and not vectors
 aliases['PUJetIdSF'] = {
-  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
-                                          && ( (Jet_muonIdx1 != Lepton_muonIdx[0] ) || Jet_muonIdx1 < 0 ) \
-                            )*TMath::Log(Jet_PUIDSF_loose)))',
-  'samples': mc
+    'expr'    : 'TMath::Exp(Sum$((Jet_jetId>=2)*TMath::Log(Jet_PUIDSF_loose)))',
+    'samples' : mc,
 }
 
 aliases['PUJetIdSF_up'] = {
-  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
-                                          && ( (Jet_muonIdx1 != Lepton_muonIdx[0] ) || Jet_muonIdx1 < 0 ) \
-                            )*TMath::Log(Jet_PUIDSF_loose_up)))',
-  'samples': mc
+    'expr'    : 'TMath::Exp(Sum$((Jet_jetId>=2)*TMath::Log(Jet_PUIDSF_loose_up)))',
+    'samples' : mc,
 }
 
 aliases['PUJetIdSF_down'] = {
-  'expr' : 'TMath::Exp(Sum$((Jet_jetId>=2 && ( (Jet_electronIdx1 != Lepton_electronIdx[0]) || Jet_electronIdx1 < 0 )  \
-                                          && ( (Jet_muonIdx1 != Lepton_muonIdx[0] ) || Jet_muonIdx1 < 0 ) \
-                            )*TMath::Log(Jet_PUIDSF_loose_down)))',
-  'samples': mc
+    'expr'    : 'TMath::Exp(Sum$((Jet_jetId>=2)*TMath::Log(Jet_PUIDSF_loose_down)))',
+    'samples' : mc,
 }
 
-##########################################
+##########################################################
 
-aliases['nCleanGenJet'] = {
-    'linesToAdd': ['.L %s/src/PlotsConfigurations/Configurations/Differential/ngenjet.cc+' % os.getenv('CMSSW_BASE')],
-    'class': 'CountGenJet',
-    'samples': mc
-}
-
-# ##### DY Z pT reweighting
-aliases['getGenZpt_OTF'] = {
-    'linesToAdd':['.L %s/src/PlotsConfigurations/Configurations/patches/getGenZpt.cc+' % os.getenv('CMSSW_BASE')],
-    'class': 'getGenZpt',
-    'samples': ['DY_else','DY_M-50']
-}
-handle = open('%s/src/PlotsConfigurations/Configurations/patches/DYrew30.py' % os.getenv('CMSSW_BASE'),'r')
-exec(handle)
-handle.close()
-aliases['DY_NLO_pTllrw'] = {
-    'expr': '('+DYrew['2016']['NLO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
-    'samples': ['DY_else','DY_M-50']
-}
-aliases['DY_LO_pTllrw'] = {
-    'expr': '('+DYrew['2016']['LO'].replace('x', 'getGenZpt_OTF')+')*(nCleanGenJet == 0)+1.0*(nCleanGenJet > 0)',
-    'samples': ['DY_else','DY_M-50']
-}
-
-#######################################################
-
-# PostProcessing did not create (anti)topGenPt for ST samples with _ext1
 lastcopy = (1 << 13)
 
 aliases['isTTbar'] = {
@@ -303,14 +248,9 @@ aliases['antitopGenPtOTF'] = {
 
 ##### Top pT reweighting
 aliases['Top_pTrw'] = {
-    # Mine:
-    #'expr': '(topGenPt * antitopGenPt > 0.) * (TMath::Sqrt(TMath::Exp(-2.02274e-01 + 1.09734e-04*topGenPt - 1.30088e-07*topGenPt*topGenPt + 5.83494e+01/(topGenPt+1.96252e+02)) * TMath::Exp(-2.02274e-01 + 1.09734e-04*antitopGenPt - 1.30088e-07*antitopGenPt*antitopGenPt + 5.83494e+01/(antitopGenPt+1.96252e+02)))) * (TMath::Sqrt(TMath::Exp(1.61468e-03 + 3.46659e-06*topGenPt - 8.90557e-08*topGenPt*topGenPt) * TMath::Exp(1.61468e-03 + 3.46659e-06*antitopGenPt - 8.90557e-08*antitopGenPt*antitopGenPt))) + (topGenPt * antitopGenPt <= 0.)', # Same Reweighting as other years, but with additional fix for tune CUET -> CP5
-
-    # New Top PAG
-    'expr': '(topGenPtOTF * antitopGenPtOTF > 0.) * (TMath::Sqrt((0.103*TMath::Exp(-0.0118*topGenPtOTF) - 0.000134*topGenPtOTF + 0.973) * (0.103*TMath::Exp(-0.0118*antitopGenPtOTF) - 0.000134*antitopGenPtOTF + 0.973))) * (TMath::Sqrt(TMath::Exp(1.61468e-03 + 3.46659e-06*topGenPtOTF - 8.90557e-08*topGenPtOTF*topGenPtOTF) * TMath::Exp(1.61468e-03 + 3.46659e-06*antitopGenPtOTF - 8.90557e-08*antitopGenPtOTF*antitopGenPtOTF))) + (topGenPtOTF * antitopGenPtOTF <= 0.)', # Same Reweighting as other years, but with additional fix for tune CUET -> CP5
+    'expr': 'isTTbar * (TMath::Sqrt((0.103*TMath::Exp(-0.0118*topGenPtOTF) - 0.000134*topGenPtOTF + 0.973) * (0.103*TMath::Exp(-0.0118*antitopGenPtOTF) - 0.000134*antitopGenPtOTF + 0.973))) + isSingleTop',
     'samples': ['top']
 }
-
 
 ###########################################################################################
 #fakes
@@ -324,7 +264,7 @@ el_fr_file = basedir_fakes + "/FR_ele1p3_.root"
 mu_fr_file = basedir_fakes + "/FR_mu1p3_.root"
 aliases['fakeWeight_1p3'] = { 
     'class': 'newFakeWeightOTFall',
-    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations
+    'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations, no PromtRate shifting
     'linesToAdd' : [
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
         '.L {}/VBF_W/utils/macros/newfakeweight_OTFall.cc+'.format(configurations)
@@ -334,12 +274,12 @@ aliases['fakeWeight_1p3'] = {
 
 aliases['fakeWeight_statUp'] = { 
         'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, True, False),   
+        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, True, False, False),   
         'samples': ["Fake"]
 }
 aliases['fakeWeight_statDo'] = { 
         'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, True), 
+        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, True, False), 
         'samples': ["Fake"]
 }
 
@@ -347,7 +287,7 @@ el_pr_file = basedir_fakes + "/PR_eleMC_.root"
 mu_pr_file = basedir_fakes + "/PR_muMC_.root"
 aliases['fakeWeight_PRfromMC'] = { 
         'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False), 
+        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, True), 
         'samples': ["Fake"]
 }
 
@@ -359,11 +299,11 @@ for ewk_sf in ["1p4","1p2"]:
 
     aliases['fakeWeight_{}'.format(ewk_sf)] = { 
             'class': 'newFakeWeightOTFall',
-            'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False), 
+            'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, False), 
             'samples': ["Fake"]
     }
 
-    
+
 
 ################################################
 # For VgS
@@ -377,27 +317,34 @@ aliases['gstarHigh'] = {
     'samples': 'VgS'
 }
 
-##############################################
-# # 
-# aliases['veto_fatjet_180'] = {
-#             'class': 'VetoFatJetResolved',
-#             'args': (180.),
-#             'linesToAdd' : [
-#                 'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#                 '.L {}/VBSjjlnu/macros/veto_fatjet_resolved.cc+'.format(configurations)
-#             ]           
-# }
+
 
 #######################################
 
 aliases['QCDscale_normalized'] = {
-            'class': 'QCDScaleNormalized',
-            'args': (),
-            'linesToAdd' : [
-                # 'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-                '.L {}/VBSjjlnu/macros/QCDscale_normalize.cc+'.format(configurations)
-            ] ,
-            'samples':['WLNuJJ']          
+    'class': 'QCDScaleNormalized',
+    'args': (),
+    'linesToAdd' : [
+        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+        '.L {}/VBF_W/utils/macros/QCDscale_normalize.cc+'.format(configurations)
+    ] ,
+    'samples':["WLNuJJ"]
+}
+
+aliases['PDFweight_normalized'] = {
+    'class': 'PDFWeightNormalized',
+    'args': (),
+    'linesToAdd' : [
+        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+        '.L {}/VBF_W/utils/macros/PDFweight_normalize.cc+'.format(configurations)
+    ] ,
+    'samples':["WLNuJJ"]
+}
+
+
+aliases['lhe_mjj'] = {
+    'expr': 'TMath::Sqrt(2. * LHEPart_pt[4] * LHEPart_pt[5] * (TMath::CosH(LHEPart_eta[4] - LHEPart_eta[5]) - TMath::Cos(LHEPart_phi[4] - LHEPart_phi[5])))',
+    'samples': ['VBF-Z']
 }
 
 
@@ -433,18 +380,16 @@ aliases['WJets_reweight_func'] = {
     'args': (morphing_file, copy.deepcopy("ele_pol2_HWJ"), copy.deepcopy("mu_pol2_HWJ"))
 } 
 
-
 # DNN
 models_path = utils_folder + '2018/NN'
-model_best = '64_64_64/SR_part/ALL/'
+model_best = '64_64_64/noQGL_test/4/'
 
-aliases['DNNoutputSR_ALL'] = {
-  'class': 'MVAReaderDNN',
-  'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
-  'linesToAdd':[
-      'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-      'gSystem->Load("libDNNEvaluator.so")',
-      '.L {}macros/ALLmva_reader_DNN.cc+'.format(utils_folder)
-  ]
+aliases['DNNoutputSR_noQGL'] = {
+    'class': 'MVAReaderDNNnoQGL',
+    'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
+    'linesToAdd':[
+        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+        'gSystem->Load("libDNNEvaluator.so")',
+        '.L {}macros/noQGLmva_reader_DNN.cc+'.format(utils_folder)
+    ]
 }
-

@@ -39,12 +39,12 @@ aliases ['y_ptl1'] = {
 ############# L1 GEN ###########
 aliases ['x_ptl1_gen'] = {
     'expr': 'Alt$(DressedLepton_pt[0],-9999.) * TMath::Cos(Alt$(DressedLepton_phi[0],-9999.))',
-    'samples' : signals
+    # 'samples' : signals
 }
 
 aliases ['y_ptl1_gen'] = {
     'expr': 'Alt$(DressedLepton_pt[0],-9999.) * TMath::Sin(Alt$(DressedLepton_phi[0],-9999.))',
-    'samples' : signals
+    # 'samples' : signals
 }
 
 ############# J1, J2 ###########
@@ -77,12 +77,12 @@ aliases ['y_ptMET'] = {
 ########## NEUTRINO GEN ############
 aliases ['x_ptMET_gen'] = {
     'expr': 'NeutrinoGen_pt * TMath::Cos(NeutrinoGen_phi)',
-    'samples' : signals
+    # 'samples' : signals
 }
 
 aliases ['y_ptMET_gen'] = {
     'expr': 'NeutrinoGen_pt * TMath::Sin(NeutrinoGen_phi)',
-    'samples' : signals
+    # 'samples' : signals
 }
 
 
@@ -102,17 +102,17 @@ aliases['ptW'] = {
 ########### W (L1+MET) GEN ###########
 aliases['x_ptW_gen'] = {
     'expr': 'x_ptl1_gen + x_ptMET_gen',
-    'samples' : signals
+    # 'samples' : signals
 }
 
 aliases['y_ptW_gen'] = {
     'expr': 'y_ptl1_gen + y_ptMET_gen',
-    'samples' : signals
+    # 'samples' : signals
 }
 
 aliases['ptW_gen'] = {
     'expr': 'TMath::Sqrt(x_ptW_gen*x_ptW_gen + y_ptW_gen*y_ptW_gen)',
-    'samples' : signals
+    # 'samples' : signals
 }
 
 #############  R from AN ##############

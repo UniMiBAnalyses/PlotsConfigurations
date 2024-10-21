@@ -80,60 +80,60 @@ cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13)\
                  '
 
 
-# # ##Hard & PU WJets CRs
-cuts['ele_HWJ'] = '(abs(Lepton_pdgId[0])==11) \
-                    && Lepton_pt[0] > 38. \
-                    && bVeto \
-                    && mjj <= 750. \
-                    && detajj <= 4 \
-                    && mtw1 > 50. \
-                    '
+# # # ##Hard & PU WJets CRs
+# cuts['ele_HWJ'] = '(abs(Lepton_pdgId[0])==11) \
+#                     && Lepton_pt[0] > 38. \
+#                     && bVeto \
+#                     && mjj <= 750. \
+#                     && detajj <= 4 \
+#                     && mtw1 > 50. \
+#                     '
 
-cuts['ele_PUWJ'] = '(abs(Lepton_pdgId[0])==11) \
-                    && Lepton_pt[0] > 38. \
-                    && detajj > 5. \
-                    && CleanJet_pt[1]<=70.\
-                    && bVeto \
-                    && PuppiMET_pt>70. \
-                    && mtw1>50. \
-                    '
+# cuts['ele_PUWJ'] = '(abs(Lepton_pdgId[0])==11) \
+#                     && Lepton_pt[0] > 38. \
+#                     && detajj > 5. \
+#                     && CleanJet_pt[1]<=70.\
+#                     && bVeto \
+#                     && PuppiMET_pt>70. \
+#                     && mtw1>50. \
+#                     '
 
 
-cuts['mu_HWJ'] = '(abs(Lepton_pdgId[0])==13) \
-                    && bVeto \
-                    && mjj <= 750. \
-                    && detajj <= 4 \
-                    && mtw1 > 50. \
-                    '
+# cuts['mu_HWJ'] = '(abs(Lepton_pdgId[0])==13) \
+#                     && bVeto \
+#                     && mjj <= 750. \
+#                     && detajj <= 4 \
+#                     && mtw1 > 50. \
+#                     '
 
-cuts['mu_PUWJ'] = '(abs(Lepton_pdgId[0])==13) \
-                    && detajj > 5. \
-                    && CleanJet_pt[1]<=70.\
-                    && bVeto \
-                    && PuppiMET_pt>70. \
-                    && mtw1>50. \
-                    '
+# cuts['mu_PUWJ'] = '(abs(Lepton_pdgId[0])==13) \
+#                     && detajj > 5. \
+#                     && CleanJet_pt[1]<=70.\
+#                     && bVeto \
+#                     && PuppiMET_pt>70. \
+#                     && mtw1>50. \
+#                     '
 
                     
-# # # Top control region (common mu & e)
-cuts['topcr']  = '((zeroJet && !bVeto) || bReqTight) \
-                  && Lepton_pt[0] > 38.\
-                  '
+# # # # Top control region (common mu & e)
+# cuts['topcr']  = '((zeroJet && !bVeto) || bReq) \
+#                   && Lepton_pt[0] > 38.\
+#                   '
 
-# ## Fake CR   
-cuts['ele_FakeCR']  = '(abs(Lepton_pdgId[0])==11) \
-                      && Lepton_pt[0] > 38. \
-                      && detajj <= 5. \
-                      && bVeto\
-                      && mtw1<=50. \
-                      && mtw1 > 20. \
-                      && CleanJet_pt[1]<=70.  \
-                     '
+# # ## Fake CR   
+# cuts['ele_FakeCR']  = '(abs(Lepton_pdgId[0])==11) \
+#                       && Lepton_pt[0] > 38. \
+#                       && detajj <= 5. \
+#                       && bVeto\
+#                       && mtw1<=50. \
+#                       && mtw1 > 20. \
+#                       && CleanJet_pt[1]<=70.  \
+#                      '
 
-cuts['mu_FakeCR']  = '(abs(Lepton_pdgId[0])==13) \
-                      && detajj <= 5. \
-                      && bVeto\
-                      && mtw1<=50. \
-                      && mtw1 > 20. \
-                      && CleanJet_pt[1]<=70.  \
-                     '
+# cuts['mu_FakeCR']  = '(abs(Lepton_pdgId[0])==13) \
+#                       && detajj <= 5. \
+#                       && bVeto\
+#                       && mtw1<=50. \
+#                       && mtw1 > 20. \
+#                       && CleanJet_pt[1]<=70.  \
+#                      '

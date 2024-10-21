@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'JERtest'
+tagger = 'END'
 # tagger = 'den_analysis'
 
 tag = 'vbf_w_2018'+tagger

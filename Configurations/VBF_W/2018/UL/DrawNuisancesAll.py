@@ -6,7 +6,13 @@ import os
 import ROOT
 import optparse
 
+def from_list_to_vector(python_list):
+  std_vector = ROOT.std.vector('string')()
 
+  for item in python_list:
+      std_vector.push_back(item)
+  
+  return std_vector
 
 if __name__ == '__main__':
     print '''
@@ -32,7 +38,8 @@ if __name__ == '__main__':
     parser.add_option('--dryRun'         , dest='dryRun'         , help='allow a dry run only '                      , default=None )
     parser.add_option('--drawYields'     , dest='drawYields'     , help='draw yields of the plots '                  , default='0' )
     parser.add_option('--joinSubsamples' , dest='joinSubsamples' , help='Add the histograms of subsamples'           , default='0' )
-    parser.add_option('--onlySample'    , dest='onlySample'     , help='Only plot the requested sample '            , default=None )
+    parser.add_option('--onlySample'     , dest='onlySample'     , help='Only plot the requested sample '            , default=None )
+    parser.add_option('--DrawSummary'    , dest='DrawSummary'    , help='Only plot the summary for each sample '     , default=False,        action = 'store_true')
     
 
     (opt, args) = parser.parse_args()
@@ -104,8 +111,10 @@ if __name__ == '__main__':
       texOutputFile.write('\\centering \n')
 
       counterNuisance = 0
+      jointNuisUp = []
+      jointNuisDown = []
 
-      for nuisanceName, nuisance in nuisances.iteritems(): 
+      for nuisanceName, nuisance in nuisances.iteritems():
         #print " nuisanceName = ", nuisanceName
         #print " nuisance = ", nuisance
         if 'name' in nuisance.keys() :
@@ -122,12 +131,16 @@ if __name__ == '__main__':
           print " nameUp   = ", nameUp
           
           if nameDown in ROOTinputFile.GetListOfKeys() :
+            jointNuisUp.append(nameUp)
+            jointNuisDown.append(nameDown)
 
-            print ('root -b -q DrawNuisances.cxx\(\\\"' + opt.inputFile + '\\\",\\\"' + nameNominal + '\\\",\\\"' + nameUp + '\\\",\\\"' + nameDown + '\\\",\\\"' + opt.outputDirPlots + '\\\",\\\"' + opt.drawYields + '\\\"\) ')
-            if opt.dryRun == None :
-              os.system ('root -b -q DrawNuisances.cxx\(\\\"' + opt.inputFile + '\\\",\\\"' + nameNominal + '\\\",\\\"' + nameUp + '\\\",\\\"' + nameDown + '\\\",\\\"' + opt.outputDirPlots + '\\\",\\\"' + opt.drawYields + '\\\"\) ')
-
+            command = 'root -b -q \'DrawNuisances.cxx(\"{}\",\"{}\",{{{}}},{{{}}},"{}","{}", "{}")\''.format(opt.inputFile, nameNominal, from_list_to_vector([nameUp]), from_list_to_vector([nameDown]) , opt.outputDirPlots, opt.drawYields, nameUp)
+            print command
+            if opt.dryRun == None and opt.DrawSummary == False :
+              os.system(command)
+    
             texOutputFile.write('\\includegraphics[width=0.09\\textwidth]{Figs/Nuisance/'+ opt.outputDirPlots + '/cc_' + nameUp +'.png}')
+
             
             counterNuisance += 1
             if counterNuisance >= 9 :
@@ -143,7 +156,7 @@ if __name__ == '__main__':
                   nameDown = 'histo_' + sampleName + '_CMS_' + opt.cutName + '_' + sampleName + '_ibin_'
                   nameUp   = 'histo_' + sampleName + '_CMS_' + opt.cutName + '_' + sampleName + '_ibin_'
                   print ('root -b -q DrawNuisancesStat.cxx\(\\\"' + opt.inputFile + '\\\",\\\"' + nameNominal + '\\\",\\\"' + nameUp + '\\\",\\\"' + nameDown + '\\\",\\\"' + opt.outputDirPlots + '\\\",\\\"' + opt.drawYields + '\\\"\) ')
-                  if opt.dryRun == None :
+                  if opt.dryRun == None and opt.DrawSummary == False:
                     os.system ('root -b -q DrawNuisancesStat.cxx\(\\\"' + opt.inputFile + '\\\",\\\"' + nameNominal + '\\\",\\\"' + nameUp + '\\\",\\\"' + nameDown + '\\\",\\\"' + opt.outputDirPlots + '\\\",\\\"' + opt.drawYields + '\\\"\) ')
 
                 else :
@@ -153,7 +166,7 @@ if __name__ == '__main__':
                     nameUp   = 'histo_' + sampleName + '_CMS_' + opt.cutName + '_' + sampleName + '_ibin_' + str(iBin) + '_stat' + 'Up'         
                     if nameDown in ROOTinputFile.GetListOfKeys() :
                       print ('root -b -q DrawNuisances.cxx\(\\\"' + opt.inputFile + '\\\",\\\"' + nameNominal + '\\\",\\\"' + nameUp + '\\\",\\\"' + nameDown + '\\\",\\\"' + opt.outputDirPlots + '\\\"\) ')
-                      if opt.dryRun == None :
+                      if opt.dryRun == None and opt.DrawSummary == False:
                         os.system ('root -b -q DrawNuisances.cxx\(\\\"' + opt.inputFile + '\\\",\\\"' + nameNominal + '\\\",\\\"' + nameUp + '\\\",\\\"' + nameDown + '\\\",\\\"' + opt.outputDirPlots + '\\\"\) ')
                       
                   texOutputFile.write('\\includegraphics[width=0.10\\textwidth]{Figs/Nuisance/'+ opt.outputDirPlots + '/cc_' + nameUp +'.png}')
@@ -164,7 +177,21 @@ if __name__ == '__main__':
                     texOutputFile.write('\\\\')
                   texOutputFile.write('\n')
             
-  
+      # # draw all the nuisances for this sample
+      if opt.dryRun is None :
+        print("Doing all the nuisances together")
+        print("jointNuisUp = ", jointNuisUp)
+        print("jointNuisDown = ", jointNuisDown)
+
+        # Format the command to execute DrawNuisances.cxx with all nuisance variations
+        command = 'root -b -q \'DrawNuisances.cxx(\"{}\",\"{}\",{{{}}},{{{}}},"{}","{}")\''.format(opt.inputFile, nameNominal, from_list_to_vector(jointNuisUp), from_list_to_vector(jointNuisDown) , opt.outputDirPlots, opt.drawYields)
+        print command
+        os.system(command)
+
+        # Write the LaTeX code to include the plot for all nuisances together
+        # texOutputFile.write('\\includegraphics[width=0.09\\textwidth]{Figs/Nuisance/{}/cc_AllNuis_{}.png}'.format(opt.outputDirPlots, sampleName))
+
+    
       texOutputFile.write('\\\\ \n')      
       texOutputFile.write('\\caption{ \n')
       texOutputFile.write('   Distributions for ' + (sampleName).replace('_', '-') + ' of nuisances effects for ' + (opt.cutName).replace('_', '-') + ' selections.\n')

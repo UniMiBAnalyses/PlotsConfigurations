@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'Full_with_nuis'
+tagger = 'END'
 
 tag = 'vbf_w_2017'+tagger
 

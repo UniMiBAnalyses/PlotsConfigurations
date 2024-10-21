@@ -2,7 +2,8 @@
 
 treeName = 'Events'
 
-tagger = 'LOvsJETNLO'
+tagger = 'BOTHNLO'
+# tagger = 'LOvsJETNLO'
 # tagger = 'den_analysis'
 
 tag = 'vbf_w_2018'+tagger

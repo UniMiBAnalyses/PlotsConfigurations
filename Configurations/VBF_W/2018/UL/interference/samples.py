@@ -56,6 +56,7 @@ if    'iihe' in SITE:
 elif  'cern' in SITE:
   treeBaseDirHWW = '/eos/cms/store/group/phys_higgs/cmshww/amassiro/HWWNano'
   treeBaseDirLat = '/eos/cms/store/group/phys_smp/Latinos/vbfw'
+  treeBaseDirPrivate2 = '/eos/user/a/abulla/nanoAOD/interference/reco_inter2/hadd/'
   treeBaseDirPrivate = '/eos/user/a/abulla/nanoAOD/interference/reco_inter/'
 
 def makeMCDirectory(var=''):
@@ -68,6 +69,7 @@ mcDirectoryHWW = os.path.join(treeBaseDirHWW,  mcProduction , mcSteps)
 mcDirectoryLat = os.path.join(treeBaseDirLat,  mcProduction , mcSteps)
 # mcDirectoryLat = mcDirectoryHWW
 # mcDirectoryHWW = mcDirectoryLat
+mcDirectoryPrivate2 = os.path.join(treeBaseDirPrivate2,  mcProduction , mcSteps)
 mcDirectoryPrivate = os.path.join(treeBaseDirPrivate,  mcProduction , mcSteps)
 #fakeDirectory = os.path.join(treeBaseDir, fakeRe
 dataDirectoryHWW = os.path.join(treeBaseDirHWW, dataReco, dataSteps)
@@ -152,7 +154,8 @@ samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_
 #########################################
 ###### W + jj EWK #######
 
-samples['WLNuJJ_inter']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryPrivate,'WLNuJJ_EWK_QCD_interference'),
+samples['WLNuJJ_inter']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryPrivate2,'WLNuJJ_EWK_QCD_interference2')
+                                          + nanoGetSampleFiles(mcDirectoryPrivate,'WLNuJJ_EWK_QCD_interference'),
 #                        'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
                         'weight': CommonWeight,
                         'FilesPerJob' : 5,
