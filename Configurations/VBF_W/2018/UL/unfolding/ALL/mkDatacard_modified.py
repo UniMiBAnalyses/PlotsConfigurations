@@ -26,7 +26,7 @@ if os.path.exists(CMSSW+'/src/'+configFile):
 haddedFile = os.path.join(os.getcwd(),outputDir,"plots_{}.root".format(tag))
 samplesFile = "PlotsConfigurations/Configurations/VBF_W/2018/UL/unfolding/ALL/samples.py"
 
-variables = ["ptW", "leppt", "lepeta", "nJet", "jet1pt", "jet1eta", "jet2pt", "jet2eta", "detajj", "mjj"]
+variables = ["ptW", "leppt", "lepeta", "nJet", "jet1pt", "jet1eta", "jet2pt", "jet2eta", "detajj", "mjj", "ptjj", "dphijj"]
 # variables = ["mjj"]
 
 # Lista per memorizzare i processi avviati

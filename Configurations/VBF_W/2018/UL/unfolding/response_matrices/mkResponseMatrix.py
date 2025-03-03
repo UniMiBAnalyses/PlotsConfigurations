@@ -292,6 +292,38 @@ def merge_TH2(hist_dic, RecoBins, GenBins, output_name):
     
     return new_hist
 
+def normalize_histogram_yaxis(histogram):
+    """
+    Funzione per normalizzare un istogramma 2D lungo l'asse Y.
+    La somma dei bin lungo l'asse X diventa 1 per ogni bin dell'asse Y.
+
+    Parametri:
+    -----------
+    histogram : ROOT.TH2
+        L'istogramma 2D da normalizzare.
+    
+    Restituisce:
+    -----------
+    ROOT.TH2
+        L'istogramma normalizzato.
+    """
+    
+    # Itera su tutti i bin lungo l'asse Y
+    for ybin in range(1, histogram.GetNbinsY() + 1):
+        # Calcola la somma per i bin lungo l'asse X per il bin corrente dell'asse Y
+        sum_x = 0
+        for xbin in range(1, histogram.GetNbinsX() + 1):
+            sum_x += histogram.GetBinContent(xbin, ybin)
+        
+        # Se la somma è diversa da zero, normalizza i bin lungo l'asse X
+        if sum_x > 0:
+            for xbin in range(1, histogram.GetNbinsX() + 1):
+                current_content = histogram.GetBinContent(xbin, ybin)
+                histogram.SetBinContent(xbin, ybin, current_content / sum_x)
+
+        histogram.GetYaxis().SetBinLabel(ybin, f"bin{ybin}")
+    
+    return histogram
 
 parser = argparse.ArgumentParser(description='Genera una matrice di risposta e la visualizza.')
 
@@ -303,7 +335,7 @@ parser.add_argument('--GenVar', required=True, type=str, help='Nome della variab
 parser.add_argument('--RecoVar', required=True, type=str, help='Nome della variabile di livello ricostruzione da utilizzare. Se 2D, usa var1:var2')
 parser.add_argument('--GenBins', action=ParseBinsAction,  type = str, default="20",  help='Numero di bin per la variabile di livello generatore. Anche accettata "[0,10,20..]:[0,10,20..]" (var1bins:var2bins). Anche tupla (nBin,min,max). Default è 20(:20)' )
 parser.add_argument('--RecoBins', action=ParseBinsAction, type = str, default="50", help='Numero di bin per la variabile di livello ricostruzione. Anche accettata "[0,10,20..]:[0,10,20..]" (var1bins:var2bins). Anche tupla (nBin,min,max). Default è 50(:50)')
-parser.add_argument('--output', default='/eos/user/a/abulla/www/public/VBF_W/differential/ResponseMatrix/ResponseMatrix', help='Nome dell\'output del plot')
+parser.add_argument('--output', default='/eos/user/a/abulla/www/public/VBF_W/differential/2018/ResponseMatrix/ResponseMatrix', help='Nome dell\'output del plot')
 
 # Parsing degli argomenti
 args = parser.parse_args()
@@ -454,11 +486,12 @@ for numeration, data in histos.items():
 # breakpoint()
 
 giant = merge_TH2(histos, RecoBins, GenBins, args.output)
+giant = normalize_histogram_yaxis(giant)
 c = ROOT.TCanvas("c", "c", 800, 600)
-c.SetLogz()
+# c.SetLogz()
 giant.SetStats(0)
 ## set axis labels
-giant.GetXaxis().SetTitle(args.RecoVar.split(':')[0])
+giant.GetXaxis().SetTitle(args.RecoVar.split(':')[1])
 giant.GetYaxis().SetTitle(args.GenVar.split(':')[0])
 
 giant.Draw("colz")

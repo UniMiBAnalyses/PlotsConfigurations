@@ -20,11 +20,11 @@ cuts['SR_fid'] = 'bVeto \
                   && {} \
                  '.format(fiducial)
 
-cuts['SR_only'] = 'bVeto \
-                  && CleanJet_pt[1]>70. \
-                  && detajj > 4 \
-                  && mtw1 > 50. \
-                 '
+# cuts['SR_only'] = 'bVeto \
+#                   && CleanJet_pt[1]>70. \
+#                   && detajj > 4 \
+#                   && mtw1 > 50. \
+#                  '
 
-# cuts['TOT'] = '1.'
-cuts['fiducial'] = '{}'.format(fiducial)
+# # cuts['TOT'] = '1.'
+# cuts['fiducial'] = '{}'.format(fiducial)

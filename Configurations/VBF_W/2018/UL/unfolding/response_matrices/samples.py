@@ -51,6 +51,9 @@ if    'iihe' in SITE:
 elif  'cern' in SITE:
   treeBaseDirHWW = '/eos/cms/store/group/phys_higgs/cmshww/amassiro/HWWNano'
   treeBaseDirLat = '/eos/cms/store/group/phys_smp/ec/Latinos/HWWNano'
+  treeBaseDirPrivate2 = '/eos/user/a/abulla/nanoAOD/interference/reco_inter2/hadd/'
+  treeBaseDirPrivate = '/eos/user/a/abulla/nanoAOD/interference/reco_inter/'
+
 
 def makeMCDirectory(var=''):
   if var:
@@ -60,6 +63,10 @@ def makeMCDirectory(var=''):
 
 mcDirectoryLat = os.path.join(treeBaseDirLat,  mcProduction , mcSteps)
 mcDirectoryLatSig = os.path.join(treeBaseDirLat,  mcProduction , mcSteps + "__" + MC_skim)
+
+mcDirectoryPrivate2 = os.path.join(treeBaseDirPrivate2,  mcProduction , mcSteps)
+mcDirectoryPrivate = os.path.join(treeBaseDirPrivate,  mcProduction , mcSteps)
+
 ################################################
 ############### Lepton WP ######################
 ################################################
@@ -94,3 +101,35 @@ samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNu
                         'FilesPerJob' : 5,
                         'EventsPerJob' : 7000,
                     }
+
+# samples['WLNuJJ_inter']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryPrivate2,'WLNuJJ_EWK_QCD_interference2')
+#                                           + nanoGetSampleFiles(mcDirectoryPrivate,'WLNuJJ_EWK_QCD_interference'),
+# #                        'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
+#                         'weight': CommonWeight,
+#                         'FilesPerJob' : 5,
+#                         'EventsPerJob' : 7000,
+#                     }
+
+
+# EFTSamples = nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_EFT')
+
+# samples['sm'] = {
+#     'name': EFTSamples,
+#     'weight': CommonWeight + '*' + '(LHEReweightingWeight[0])',
+#     'FilesPerJob': 30,
+# }
+
+# CMSSW=os.environ["CMSSW_BASE"]
+# sampleEFTFile = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT_4Comb/EFTweights.py"
+# if os.path.exists(CMSSW+'/src/'+sampleEFTFile):
+#   handle = open(CMSSW+'/src/'+sampleEFTFile)
+#   exec(handle)
+#   handle.close()
+
+# # ## fatti ma non usati per datacard
+# # ######################################### debug weightssss ############################
+# sampleEFTFileDebug = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT_4Comb/debug_EFTweights.py"
+# if os.path.exists(CMSSW+'/src/'+sampleEFTFileDebug):
+#   handle = open(CMSSW+'/src/'+sampleEFTFileDebug)
+#   exec(handle)
+#   handle.close()

@@ -294,19 +294,33 @@ void DrawNuisances(std::string inputRootFile, std::string histoNominal, std::vec
 
   // Salva i plot
   TString name;
+  TString namepng;
+  TString namepdf;
+  TString nameLogpng;
+  TString nameLogpdf;
+
   name = Form("%s/%s_Full.png", outputDirPlots.c_str(), plotName.c_str());
-  ccFull->SaveAs(name.Data());
-  name = Form("%s/%s_Full.pdf", outputDirPlots.c_str(), plotName.c_str());
-  ccFull->SaveAs(name.Data());
+  // Controlla se esiste un file con lo stesso nome e aggiungi un numero alla fine se necessario
+  int counter = 1;
+  while (gSystem->AccessPathName(name.Data()) == 0) {
+      counter++;
+      name = Form("%s/%s_Full_%d.png", outputDirPlots.c_str(), plotName.c_str(), counter);
+  }
+  namepng = name;
+  namepdf = Form("%s/%s_Full_%d.pdf", outputDirPlots.c_str(), plotName.c_str(), counter);
+  nameLogpng = Form("%s/%s_Full_%d_log.png", outputDirPlots.c_str(), plotName.c_str(), counter);
+  nameLogpdf = Form("%s/%s_Full_%d_log.pdf", outputDirPlots.c_str(), plotName.c_str(), counter);
+
+  ccFull->SaveAs(namepng.Data());
+  ccFull->SaveAs(namepdf.Data());
 
   // Salva il plot in formato logaritmico
   hNominal->GetYaxis()->SetRangeUser(0.01, max * 10.);
   pad1->SetLogy();
 
-  name = Form("%s/log_%s_Full.png", outputDirPlots.c_str(), plotName.c_str());
-  ccFull->SaveAs(name.Data());
-  name = Form("%s/log_%s_Full.pdf", outputDirPlots.c_str(), plotName.c_str());
-  ccFull->SaveAs(name.Data());
+  ccFull->SaveAs(nameLogpng.Data());
+  ccFull->SaveAs(nameLogpdf.Data());
+
 }
 
 

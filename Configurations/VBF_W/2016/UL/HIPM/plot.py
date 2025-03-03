@@ -73,48 +73,23 @@ wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400
 #     wjets_bins.append("Wjets_HT_res_"+str(ir))
 # for ir in range(1,6):
 #     wjets_bins.append("Wjets_HT_boost_"+str(ir))
-
-
-
-groupPlot['Higgs']  = {  
-                'nameHR' : "Higgs",
-                'isSignal' : 0,
-                'color'    : colors['kWhite'],
-                'samples'  : ['Higgs'],
-                'fill': 1001
-              }
-
-groupPlot['VV+VVV+VBS']  = {  
-                'nameHR' : 'VV+VVV+VBS',
-                'isSignal' : 0,
-                'color': palette["Violet"], #palette["Peach3"],  
-                'samples'  : ['VVV', 'VV','VBS'],
-                'fill': 1001
-              }
               
 groupPlot['Others']  = {  
                 'nameHR' : "Others",
                 'isSignal' : 0,
                 'color'    : palette["Orange"],
-                'samples'  : ['VBF-Z', 'Vg'],
+                'samples'  : ['VBF-Z', 'Vg', 'VgS', 'VVV', 'VV','VBS','Higgs'],
                 'fill': 1001
               }
 
-groupPlot['DY_else']  = {  
-                'nameHR' : "DY_else",
+groupPlot['DY']  = {  
+                'nameHR' : "DY",
                 'isSignal' : 0,
                 'color'    : palette["Pink"],
-                'samples'  : ['DY_else'],
+                'samples'  : ['DY_else','DY_M-50'],
                 'fill': 1001
               }   
 
-groupPlot['DY_M-50']  = {  
-                'nameHR' : "DY_M-50",
-                'isSignal' : 0,
-                'color'    : palette["DarkBlue"],
-                'samples'  : ['DY_M-50'],
-                'fill': 1001
-              }            
 
 groupPlot['Top']  = {  
                 'nameHR' : "Top",
@@ -139,6 +114,7 @@ groupPlot['Wjets_HT_PUJets']  = {
                 'samples'  : ['Wjets_HT_PUJets'],
                 'fill': 1001
                 }
+
 
 groupPlot['Fake']  = {  
                'nameHR' : "Non-prompt",
@@ -175,9 +151,12 @@ plot['Wjets_HT_hardJets'] = {
                  'isSignal' : 0,
                  'isData'   : 0, 
                  #'scale'    : 1.09950003 
-                 'scale'    : 1.
+                #  'scale'    : 1.0
+                 'scale'    : 1.0
+                #  'scale'     : 1.0232
                  #'scale'    : 1.1231175589276459 #mu
                  #'scale'    : 1.2795330335917352
+                # 'scale'    : 0.5
                 }
 
 plot['Wjets_HT_PUJets'] = {   
@@ -185,7 +164,9 @@ plot['Wjets_HT_PUJets'] = {
                  'isSignal' : 0,
                  'isData'   : 0, 
                  #'scale'    : 1.050420857 
+                #  'scale'    : 1.0
                  'scale'    : 1.0
+                #  'scale'    : 1.0854
                  #'scale'    : 1.0958905448504972
                  #'scale'    : 1.1768637821969707
                 }
@@ -195,6 +176,7 @@ plot['top'] = {
                  'isSignal' : 0,
                  'isData'   : 0, 
                  'scale'    : 1.0 
+                #  'scale'    : 0.93512
                  }
     
 plot['VV']  = {
@@ -247,12 +229,12 @@ plot['Vg']  = {
                   'scale'    : 1.   ,
               }   
 
-# plot['VgS'] = {   
-#                  'color': colors['kAzure']-1,
-#                  'isSignal' : 0,
-#                  'isData'   : 0, 
-#                  'scale'    : 1.0 
-#                 }
+plot['VgS'] = {   
+                 'color': colors['kAzure']-1,
+                 'isSignal' : 0,
+                 'isData'   : 0, 
+                 'scale'    : 1.0 
+                }
 
 plot['VVV'] = {   
                  'color': colors['kAzure']-1,
@@ -262,13 +244,12 @@ plot['VVV'] = {
                 }
 
 
+
 plot['Fake'] = {   
                 'color': colors['kAzure']-1,
                 'isSignal' : 0,
                 'isData'   : 0, 
-                'scale'    : 1.0 
-                #'scale' : 0.713100632928824
-                #'scale' : 0.6454715517898252
+                'scale'    : 1.               
                }
 
 
@@ -293,8 +274,6 @@ plot['DATA']  = {
 
 # additional options
 
-legend['lumi'] = 'L = 19.52/fb'
+legend['lumi'] = 'L = 59.74/fb'
 
 legend['sqrt'] = '#sqrt{s} = 13 TeV'
-
-

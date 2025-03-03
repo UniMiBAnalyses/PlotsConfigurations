@@ -1,7 +1,7 @@
 # Configuration file to produce initial root files 
 
 treeName = 'Events'
-fixSuffix = 'response_matrix'
+fixSuffix = 'response_matrix_EFTinter_NUISANCE'
 
 tagger = 'unfolding'
 tagger += "_"+fixSuffix
@@ -17,7 +17,8 @@ outputDir = '../rootFile/'+tagger
 aliasesFile = 'aliases.py'
 
 # file with list of variables
-variablesFile = 'ttree_var.py'
+# variablesFile = 'ttree_var.py'
+variablesFile = 'variables.py'
 
 # file with list of cuts
 cutsFile = 'cuts.py' 

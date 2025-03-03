@@ -1,0 +1,12 @@
+variables["MultiClass_detajj_class9"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (4, 0.0, 1.0), 'name': 'MultiClass_detajj_class9', 'xaxis': 'MultiClass_detajj_class9'}
+variables["MultiClass_detajj_class8"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (4, 0.0, 1.0), 'name': 'MultiClass_detajj_class8', 'xaxis': 'MultiClass_detajj_class8'}
+variables["MultiClass_detajj_class7"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_detajj_class7', 'xaxis': 'MultiClass_detajj_class7'}
+variables["MultiClass_detajj_class6"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_detajj_class6', 'xaxis': 'MultiClass_detajj_class6'}
+variables["MultiClass_detajj_class5"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_detajj_class5', 'xaxis': 'MultiClass_detajj_class5'}
+variables["MultiClass_detajj_class4"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_detajj_class4', 'xaxis': 'MultiClass_detajj_class4'}
+variables["MultiClass_detajj_class3"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_detajj_class3', 'xaxis': 'MultiClass_detajj_class3'}
+variables["MultiClass_detajj_class2"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_detajj_class2', 'xaxis': 'MultiClass_detajj_class2'}
+variables["MultiClass_detajj_class1"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_detajj_class1', 'xaxis': 'MultiClass_detajj_class1'}
+variables["events"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
+variables["DNN1detajj"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 3.5, 10.0, 5, 0.0, 1.0), 'name': 'DNNoutputSR_noQGL:detajj', 'xaxis': 'DNNoutput : #Delta#eta_{jj}'}
+variables["MultiClass_detajj_class10"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (2, 0.0, 1.0), 'name': 'MultiClass_detajj_class10', 'xaxis': 'MultiClass_detajj_class10'}

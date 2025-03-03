@@ -76,45 +76,22 @@ wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400
 
 
 
-groupPlot['Higgs']  = {  
-                'nameHR' : "Higgs",
-                'isSignal' : 0,
-                'color'    : colors['kWhite'],
-                'samples'  : ['Higgs'],
-                'fill': 1001
-              }
-
-groupPlot['VV+VVV+VBS']  = {  
-                'nameHR' : 'VV+VVV+VBS',
-                'isSignal' : 0,
-                'color': palette["Violet"], #palette["Peach3"],  
-                'samples'  : ['VVV', 'VV','VBS'],
-                'fill': 1001
-              }
-              
 groupPlot['Others']  = {  
                 'nameHR' : "Others",
                 'isSignal' : 0,
                 'color'    : palette["Orange"],
-                'samples'  : ['VBF-Z', 'Vg', 'VgS'],
+                'samples'  : ['VBF-Z', 'Vg', 'VgS', 'VVV', 'VV','VBS','Higgs'],
                 'fill': 1001
               }
 
-groupPlot['DY_else']  = {  
-                'nameHR' : "DY_else",
+groupPlot['DY']  = {  
+                'nameHR' : "DY",
                 'isSignal' : 0,
                 'color'    : palette["Pink"],
-                'samples'  : ['DY_else'],
+                'samples'  : ['DY_else','DY_M-50'],
                 'fill': 1001
               }   
 
-groupPlot['DY_M-50']  = {  
-                'nameHR' : "DY_M-50",
-                'isSignal' : 0,
-                'color'    : palette["DarkBlue"],
-                'samples'  : ['DY_M-50'],
-                'fill': 1001
-              }            
 
 groupPlot['Top']  = {  
                 'nameHR' : "Top",
@@ -147,14 +124,6 @@ groupPlot['Fake']  = {
               'samples'  : ['Fake'],
               'fill': 1001
           }
-
-# groupPlot['Fake_mu']  = {  
-#                'nameHR' : "Non-prompt",
-#                'isSignal' : 0,
-#                'color': palette["MediumBlue"],   
-#               'samples'  : ['Fake_mu'],
-#               'fill': 1001
-#           }
 
 groupPlot['WLNuJJ']  = {  
                 'nameHR' : 'WLNuJJ',

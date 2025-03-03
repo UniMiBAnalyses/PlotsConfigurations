@@ -64,15 +64,20 @@ samples['sm_lin_quad_mixed_cW_cWtil'] = {
     'FilesPerJob': 30,
 }
 
-samples['sm_lin_quad_mixed_cW_cHWBtil'] = {
+samples['w11_cW_cHWBtil'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[77])',
     'FilesPerJob': 30,
 }
 
-samples['sm_lin_quad_cHDD'] = {
+samples['w1_cHDD'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[4])',
+    'FilesPerJob': 30,
+}
+samples['wm1_cHDD'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[5])',
     'FilesPerJob': 30,
 }
 

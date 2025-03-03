@@ -37,16 +37,16 @@ aliases ['y_ptl1'] = {
     'expr': 'Alt$(Lepton_pt[0],-9999.) * TMath::Sin(Alt$(Lepton_phi[0],-9999.))'
 }
 
-############# L1 GEN ###########
-aliases ['x_ptl1_gen'] = {
-    'expr': 'Alt$(DressedLepton_pt[0],-9999.) * TMath::Cos(Alt$(DressedLepton_phi[0],-9999.))',
-    'samples' : signals
-}
+# ############# L1 GEN ###########
+# aliases ['x_ptl1_gen'] = {
+#     'expr': 'Alt$(DressedLepton_pt[0],-9999.) * TMath::Cos(Alt$(DressedLepton_phi[0],-9999.))',
+#     'samples' : signals
+# }
 
-aliases ['y_ptl1_gen'] = {
-    'expr': 'Alt$(DressedLepton_pt[0],-9999.) * TMath::Sin(Alt$(DressedLepton_phi[0],-9999.))',
-    'samples' : signals
-}
+# aliases ['y_ptl1_gen'] = {
+#     'expr': 'Alt$(DressedLepton_pt[0],-9999.) * TMath::Sin(Alt$(DressedLepton_phi[0],-9999.))',
+#     'samples' : signals
+# }
 
 ############# J1, J2 ###########
 aliases ['x_ptj1'] = {
@@ -75,16 +75,16 @@ aliases ['y_ptMET'] = {
     'expr': 'PuppiMET_pt * TMath::Sin(PuppiMET_phi)'
 }
 
-########## NEUTRINO GEN ############
-aliases ['x_ptMET_gen'] = {
-    'expr': 'NeutrinoGen_pt * TMath::Cos(NeutrinoGen_phi)',
-    'samples' : signals
-}
+# ########## NEUTRINO GEN ############
+# aliases ['x_ptMET_gen'] = {
+#     'expr': 'NeutrinoGen_pt * TMath::Cos(NeutrinoGen_phi)',
+#     'samples' : signals
+# }
 
-aliases ['y_ptMET_gen'] = {
-    'expr': 'NeutrinoGen_pt * TMath::Sin(NeutrinoGen_phi)',
-    'samples' : signals
-}
+# aliases ['y_ptMET_gen'] = {
+#     'expr': 'NeutrinoGen_pt * TMath::Sin(NeutrinoGen_phi)',
+#     'samples' : signals
+# }
 
 
 ########### W (L1+MET) ###########
@@ -100,21 +100,21 @@ aliases['ptW'] = {
     'expr': 'TMath::Sqrt(x_ptW*x_ptW + y_ptW*y_ptW)'
 }
 
-########### W (L1+MET) GEN ###########
-aliases['x_ptW_gen'] = {
-    'expr': 'x_ptl1_gen + x_ptMET_gen',
-    'samples' : signals
-}
+# ########### W (L1+MET) GEN ###########
+# aliases['x_ptW_gen'] = {
+#     'expr': 'x_ptl1_gen + x_ptMET_gen',
+#     'samples' : signals
+# }
 
-aliases['y_ptW_gen'] = {
-    'expr': 'y_ptl1_gen + y_ptMET_gen',
-    'samples' : signals
-}
+# aliases['y_ptW_gen'] = {
+#     'expr': 'y_ptl1_gen + y_ptMET_gen',
+#     'samples' : signals
+# }
 
-aliases['ptW_gen'] = {
-    'expr': 'TMath::Sqrt(x_ptW_gen*x_ptW_gen + y_ptW_gen*y_ptW_gen)',
-    'samples' : signals
-}
+# aliases['ptW_gen'] = {
+#     'expr': 'TMath::Sqrt(x_ptW_gen*x_ptW_gen + y_ptW_gen*y_ptW_gen)',
+#     'samples' : signals
+# }
 
 #############  R from AN ##############
 aliases['x_Wjj'] = {
@@ -141,39 +141,39 @@ aliases['Rpt_req_0p2'] = {
 
 ############ DELTAPHI #####################
 aliases['Dphijet1met'] = {
-    # 'expr' : 'abs(CleanJet_phi[0] - PuppiMET_phi) * (abs(CleanJet_phi[0] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - PuppiMET_phi)) * (abs(CleanJet_phi[0] - PuppiMET_phi) >= 3.1415)'
-    'expr' : '(CleanJet_phi[0] - PuppiMET_phi) * (abs(CleanJet_phi[0] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - PuppiMET_phi)) * (abs(CleanJet_phi[0] - PuppiMET_phi) >= 3.1415)'
+    'expr' : 'abs(CleanJet_phi[0] - PuppiMET_phi) * (abs(CleanJet_phi[0] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - PuppiMET_phi)) * (abs(CleanJet_phi[0] - PuppiMET_phi) >= 3.1415)'
+    # 'expr' : '(CleanJet_phi[0] - PuppiMET_phi) * (abs(CleanJet_phi[0] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - PuppiMET_phi)) * (abs(CleanJet_phi[0] - PuppiMET_phi) >= 3.1415)'
 } 
 
 aliases['Dphijet2met'] = {
-    # 'expr' : 'abs(CleanJet_phi[1] - PuppiMET_phi) * (abs(CleanJet_phi[1] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[1] - PuppiMET_phi)) * (abs(CleanJet_phi[1] - PuppiMET_phi) >= 3.1415)'
-    'expr' : '(CleanJet_phi[1] - PuppiMET_phi) * (abs(CleanJet_phi[1] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[1] - PuppiMET_phi)) * (abs(CleanJet_phi[1] - PuppiMET_phi) >= 3.1415)'
+    'expr' : 'abs(CleanJet_phi[1] - PuppiMET_phi) * (abs(CleanJet_phi[1] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[1] - PuppiMET_phi)) * (abs(CleanJet_phi[1] - PuppiMET_phi) >= 3.1415)'
+    # 'expr' : '(CleanJet_phi[1] - PuppiMET_phi) * (abs(CleanJet_phi[1] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[1] - PuppiMET_phi)) * (abs(CleanJet_phi[1] - PuppiMET_phi) >= 3.1415)'
 } 
 
-aliases['Dphijet1jet2'] = {
-    # 'expr' : 'abs(CleanJet_phi[0] - CleanJet_phi[1]) * (abs(CleanJet_phi[0] - CleanJet_phi[1]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - CleanJet_phi[1])) * (abs(CleanJet_phi[0] - CleanJet_phi[1]) >= 3.1415)'
-    'expr' : '(CleanJet_phi[0] - CleanJet_phi[1]) * (abs(CleanJet_phi[0] - CleanJet_phi[1]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - CleanJet_phi[1])) * (abs(CleanJet_phi[0] - CleanJet_phi[1]) >= 3.1415)'
-} 
+aliases['Dphijet1jet2'] = {    
+    'expr': 'abs((CleanJet_phi[0] - CleanJet_phi[1]) - 2*3.1415*((CleanJet_phi[0] - CleanJet_phi[1]) > 3.1415) + 2*3.1415*((CleanJet_phi[0] - CleanJet_phi[1]) < -3.1415))'
+    # 'expr': '(CleanJet_phi[0] - CleanJet_phi[1]) - 2*3.1415*((CleanJet_phi[0] - CleanJet_phi[1]) > 3.1415) + 2*3.1415*((CleanJet_phi[0] - CleanJet_phi[1]) < -3.1415)'
+}
 
 aliases['Dphilep1jet1'] = {
-    # 'expr' : 'abs(CleanJet_phi[0] - Lepton_phi[0]) * (abs(CleanJet_phi[0] - Lepton_phi[0]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - Lepton_phi[0])) * (abs(CleanJet_phi[0] - Lepton_phi[0]) >= 3.1415)'
-    'expr' : '(CleanJet_phi[0] - Lepton_phi[0]) * (abs(CleanJet_phi[0] - Lepton_phi[0]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - Lepton_phi[0])) * (abs(CleanJet_phi[0] - Lepton_phi[0]) >= 3.1415)'
+    'expr' : 'abs(CleanJet_phi[0] - Lepton_phi[0]) * (abs(CleanJet_phi[0] - Lepton_phi[0]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - Lepton_phi[0])) * (abs(CleanJet_phi[0] - Lepton_phi[0]) >= 3.1415)'
+    # 'expr' : '(CleanJet_phi[0] - Lepton_phi[0]) * (abs(CleanJet_phi[0] - Lepton_phi[0]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - Lepton_phi[0])) * (abs(CleanJet_phi[0] - Lepton_phi[0]) >= 3.1415)'
 } 
 
 aliases['Dphilep1jet2'] = {
-    # 'expr' : 'abs(CleanJet_phi[1] - Lepton_phi[0]) * (abs(CleanJet_phi[1] - Lepton_phi[0]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[1] - Lepton_phi[0])) * (abs(CleanJet_phi[1] - Lepton_phi[0]) >= 3.1415)'
-    'expr' : '(CleanJet_phi[1] - Lepton_phi[0]) * (abs(CleanJet_phi[1] - Lepton_phi[0]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[1] - Lepton_phi[0])) * (abs(CleanJet_phi[1] - Lepton_phi[0]) >= 3.1415)'
+    'expr' : 'abs(CleanJet_phi[1] - Lepton_phi[0]) * (abs(CleanJet_phi[1] - Lepton_phi[0]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[1] - Lepton_phi[0])) * (abs(CleanJet_phi[1] - Lepton_phi[0]) >= 3.1415)'
+    # 'expr' : '(CleanJet_phi[1] - Lepton_phi[0]) * (abs(CleanJet_phi[1] - Lepton_phi[0]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[1] - Lepton_phi[0])) * (abs(CleanJet_phi[1] - Lepton_phi[0]) >= 3.1415)'
 } 
 
 aliases['Dphilep1met'] = {
-    # 'expr' : 'abs(Lepton_phi[0] - PuppiMET_phi) * (abs(Lepton_phi[0] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(Lepton_phi[0] - PuppiMET_phi)) * (abs(Lepton_phi[0] - PuppiMET_phi) >= 3.1415)'
-    'expr' : '(Lepton_phi[0] - PuppiMET_phi) * (abs(Lepton_phi[0] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(Lepton_phi[0] - PuppiMET_phi)) * (abs(Lepton_phi[0] - PuppiMET_phi) >= 3.1415)'
+    'expr' : 'abs(Lepton_phi[0] - PuppiMET_phi) * (abs(Lepton_phi[0] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(Lepton_phi[0] - PuppiMET_phi)) * (abs(Lepton_phi[0] - PuppiMET_phi) >= 3.1415)'
+    # 'expr' : '(Lepton_phi[0] - PuppiMET_phi) * (abs(Lepton_phi[0] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(Lepton_phi[0] - PuppiMET_phi)) * (abs(Lepton_phi[0] - PuppiMET_phi) >= 3.1415)'
 } 
 
-aliases['singleW'] = {
-    'expr' : 'baseW/(1000*Xsec)',
-    'samples' : mc
-}
+# aliases['singleW'] = {
+#     'expr' : 'baseW/(1000*Xsec)',
+#     'samples' : mc
+# }
 
 
 
@@ -237,12 +237,12 @@ for s in systs:
 
 aliases['hardJets'] = {
     'expr':  'Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10',
-    'samples': ['Wjets_HT']
+    'samples': ['Wjets_HT_hardJets', 'Wjets_HT_PUJets']
 }
 
 aliases['PUJets'] = {
     'expr':  '!(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10)',
-    'samples': ['Wjets_HT']
+    'samples': ['Wjets_HT_hardJets', 'Wjets_HT_PUJets']
 }
 
 
@@ -294,22 +294,29 @@ aliases['antitopGenPtOTF'] = {
     'samples': ['top']
 }
 
+# Data-NLO  : SF(pT) = e^(0.0615-0.0005*pT)  
+# Data-NNLO : SF(pT) = e^(0.0416-0.0003*pT)
+# NNLO-NLO  : SF(pT) = 0.103*e^(-0.0118*pT) - 0.000134*pT + 0.973
+
+##### Top pT reweighting
 aliases['Top_pTrw'] = {
-    'expr': 'isTTbar * (TMath::Sqrt((0.103*TMath::Exp(-0.0118*topGenPtOTF) - 0.000134*topGenPtOTF + 0.973) * (0.103*TMath::Exp(-0.0118*antitopGenPtOTF) - 0.000134*antitopGenPtOTF + 0.973))) + isSingleTop',
+    'expr': 'isTTbar * (TMath::Sqrt(TMath::Exp(0.0615 - 0.0005 * topGenPtOTF) * TMath::Exp(0.0615 - 0.0005 * antitopGenPtOTF))) + isSingleTop',
+    # 'expr': 'isTTbar * (TMath::Sqrt(TMath::Exp(0.0416 - 0.0003 * topGenPtOTF) * TMath::Exp(0.0416 - 0.0003 * antitopGenPtOTF))) + isSingleTop',
+    # 'expr': 'isTTbar * (TMath::Sqrt((0.103*TMath::Exp(-0.0118*topGenPtOTF) - 0.000134*topGenPtOTF + 0.973) * (0.103*TMath::Exp(-0.0118*antitopGenPtOTF) - 0.000134*antitopGenPtOTF + 0.973))) + isSingleTop',
     'samples': ['top']
 }
 
 #########################################################################################
 #fakes
 
-basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/HLTMC_highPT"
+basedir_fakes = configurations + "/VBF_W/utils/2018/fakes/HLTMC_highPT_newWP/mkS"
 
 el_pr_file = basedir_fakes + "/PR_eleDATA.root"
 mu_pr_file = basedir_fakes + "/PR_muDATA.root"
 
-el_fr_file = basedir_fakes + "/FR_ele0p8.root"
-mu_fr_file = basedir_fakes + "/FR_mu0p8.root"
-aliases['fakeWeight_0p8'] = { 
+el_fr_file = basedir_fakes + "/FR_ele0p9.root"
+mu_fr_file = basedir_fakes + "/FR_mu0p9.root"
+aliases['fakeWeight_0p9'] = { 
     'class': 'newFakeWeightOTFall',
     'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations, no PromtRate shifting
     'linesToAdd' : [
@@ -330,17 +337,17 @@ aliases['fakeWeight_statDo'] = {
         'samples': ["Fake"]
 }
 
-el_pr_file = basedir_fakes + "/PR_eleMC.root"
-mu_pr_file = basedir_fakes + "/PR_muMC.root"
-aliases['fakeWeight_PRfromMC'] = { 
-        'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, True), 
-        'samples': ["Fake"]
-}
+# el_pr_file = basedir_fakes + "/PR_eleMC.root"
+# mu_pr_file = basedir_fakes + "/PR_muMC.root"
+# aliases['fakeWeight_PRfromMC'] = { 
+#         'class': 'newFakeWeightOTFall',
+#         'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, True), 
+#         'samples': ["Fake"]
+# }
 
 el_pr_file = basedir_fakes + "/PR_eleDATA.root"
 mu_pr_file = basedir_fakes + "/PR_muDATA.root"
-for ewk_sf in ["0p7","0p9"]:
+for ewk_sf in ["0p9Down","0p9Up"]:
     el_fr_file = basedir_fakes + "/FR_ele{}.root".format(ewk_sf)
     mu_fr_file = basedir_fakes + "/FR_mu{}.root".format(ewk_sf)
 
@@ -427,7 +434,7 @@ aliases['lhe_mjj'] = {
 morphing_file = utils_folder + '2018/UL/reweight/reweight.root'
 aliases['WJets_reweight'] = {
     'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
+    'samples': ["Wjets_HT_hardJets"],
     'args': (morphing_file, "ele_ideal_function", "mu_ideal_function"),
      'linesToAdd' : [
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
@@ -437,32 +444,37 @@ aliases['WJets_reweight'] = {
 
 aliases['WJets_reweight_up'] = {
     'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
+    'samples': ["Wjets_HT_hardJets"],
     'args': (morphing_file, copy.deepcopy("ele_sys_up"), copy.deepcopy("mu_sys_up"))
 } 
 
 aliases['WJets_reweight_do'] = {
     'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
+    'samples': ["Wjets_HT_hardJets"],
     'args': (morphing_file, copy.deepcopy("ele_sys_down"), copy.deepcopy("mu_sys_down"))
 } 
 
 aliases['WJets_reweight_func'] = {
     'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
+    'samples': ["Wjets_HT_hardJets"],
     'args': (morphing_file, copy.deepcopy("ele_pol2_HWJ"), copy.deepcopy("mu_pol2_HWJ"))
 } 
 
-# DNN
+#DNNs
 models_path = utils_folder + '2018/NN'
-model_best = '64_64_64/noQGL_test/4/'
 
-aliases['DNNoutputSR_noQGL'] = {
-    'class': 'MVAReaderDNNnoQGL',
-    'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
+model_ev = models_path+"/"+'64_64_64/SR_RUN2_newWP_ev/'
+transform_ev = model_ev + 'cumulative_signal_2018.root'
+
+model_odd = models_path+"/"+'64_64_64/SR_RUN2_newWP_odd/'
+transform_odd = model_odd + 'cumulative_signal_2018.root'
+
+aliases['DNNJoined'] = {
+    'class': 'MVAReaderDNNnoQGLEvOdd',
+    'args': ( model_ev, transform_ev, model_odd, transform_odd ,False),
     'linesToAdd':[
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
         'gSystem->Load("libDNNEvaluator.so")',
-        '.L {}macros/noQGLmva_reader_DNN.cc+'.format(utils_folder)
+        '.L {}macros/noQGLmva_reader_DNN_EVODD.cc+'.format(utils_folder)
     ]
 }

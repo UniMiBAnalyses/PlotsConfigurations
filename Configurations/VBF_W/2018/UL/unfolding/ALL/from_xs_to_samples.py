@@ -16,16 +16,15 @@ handle.close()
 samples = {}
 example_dict = {  'name'   : "nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')\n" +
             "               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK')",
-                        'FilesPerJob' : 5,
-                        'EventsPerJob' : 7000,
+                        'FilesPerJob' :5,
                     }
 
 for cut in cuts:
     if "TOT" in cut or "fiducial" in cut: continue
     var = cut.split("_")[0]
     if "_out" in cut:
-        samples["WLNuJJ_{}Out".format(var,number)] = example_dict.copy() 
-        samples["WLNuJJ_{}Out".format(var,number)]['weight'] = "CommonWeight+'* !('+fiducialw+')'"
+        samples["WLNuJJ_{}Out".format(var)] = example_dict.copy() 
+        samples["WLNuJJ_{}Out".format(var)]['weight'] = "CommonWeight+'* !('+fiducialw+')'"
     else:
         number = cut.split("_bin")[-1]
         samples["WLNuJJ_{}{}".format(var,number)] = example_dict.copy()
@@ -49,11 +48,36 @@ string += 'fiducialw = fiducial.replace("&&","*")'
 string += '\n'
 string += '\n'
 
+string2 = 'CMSSW=os.environ["CMSSW_BASE"]\n'
+string2 += 'samplesFile = "PlotsConfigurations/Configurations/VBF_W/2018/UL/unfolding/samples_nobkg.py"\n'
+string2 += 'if os.path.exists(CMSSW+"/src/"+samplesFile):\n'
+string2 += '  handle = open(CMSSW+"/src/"+samplesFile)\n'
+string2 += '  exec(handle)\n'
+string2 += '  handle.close()\n'
+string2 += '\n'
+string2 += '\n'
+
+string2 += 'fiducial = "{}"\n\n'.format(fiducial)
+string2 += 'fiducialw = fiducial.replace("&&","*")'
+string2 += '\n'
+string2 += '\n'
+
 sorted_samples = OrderedDict(sorted(samples.items()))
 
 # Aprire un nuovo file per la scrittura
 with open("samples.py", "w") as file:
     file.write(string)
+    # Scrivere il dizionario ordinato nel nuovo file nel formato desiderato
+    for var_name in sorted_samples:
+        file.write("samples['{}'] = {{ \n".format(var_name))
+        for field in sorted_samples[var_name]:
+            file.write("        '{}' : {},\n".format(field,sorted_samples[var_name][field]))
+        file.write("}")
+        file.write("\n")
+        file.write("\n")
+
+with open("samples_onlysig.py", "w") as file:
+    file.write(string2)
     # Scrivere il dizionario ordinato nel nuovo file nel formato desiderato
     for var_name in sorted_samples:
         file.write("samples['{}'] = {{ \n".format(var_name))

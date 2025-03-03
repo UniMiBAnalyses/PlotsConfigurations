@@ -31,9 +31,10 @@ def compute_ranges(variables,var):
     ## ha più senso prendere il variabile e prendere gli estremi della variabile
     ## ovviamente, sarebe più sicuro coi cuts, ma è più complicato!!
 
-    var_in_var = var.split("_")[0]+"_flat"
+    var_in_var = var.split("_")[0]+"_ACM"
 
     nbin = int(len(variables[var_in_var]['range'][0]) - 1)
+    print(var)
     actual_bin = int(var.split("bin")[-1])
 
     if actual_bin > nbin:
@@ -53,7 +54,7 @@ if __name__ == '__main__':
     parser = optparse.OptionParser(usage)
     parser.add_option('--file',  dest='FileName'     , help='Path to file with source histos')
     parser.add_option('--den' ,  dest='den'          , help='name of the histogram with no gen_bin selection', default="TOT")
-    parser.add_option('--variables' , dest='variables'         , help='Path to variables.py for bin definition', default="../opt_binning/opt_variables_10.py")
+    parser.add_option('--variables' , dest='variables'         , help='Path to variables.py for bin definition', default="../opt_binning/variables_flatS_8.py")
 
     (opt, args) = parser.parse_args()
 
@@ -85,7 +86,7 @@ if __name__ == '__main__':
 
 
     data_dict = {}
-    print selected_keys
+    print(selected_keys)
     for var in selected_keys:
         num = sourceFile.Get(var + "/events/histo_WLNuJJ")
         xs, err = compute_var_info(num)
@@ -103,7 +104,7 @@ if __name__ == '__main__':
 
     import json
     # Scrivi il dizionario ordinato in un file JSON
-    with open('data.json', 'w') as json_file:
+    with open('semiDEF.json', 'w') as json_file:
         json.dump(data_dict, json_file, indent=4, sort_keys=True)
 
 

@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'EFT_4Comb'
+tagger = 'EFT'
 
 tag = 'vbf_w_2018'+tagger
 

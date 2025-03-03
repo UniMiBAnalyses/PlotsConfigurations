@@ -1,0 +1,109 @@
+# -*- coding: utf-8 -*-
+
+import sys
+# bypass ROOT argv parsing
+argv = sys.argv
+sys.argv = argv[:1]
+import ROOT
+import optparse
+
+
+def compute_var_info(dir, key):
+    sf = []
+    den = dir.Get("histo_WLNuJJ").GetBinContent(1)
+    for histo in dir.GetListOfKeys():
+        # if key in histo.GetName() and "SIGNAL" in histo.GetName():
+        if key in histo.GetName() and histo.GetName().endswith("Var"):
+            h = dir.Get(histo.GetName())
+            print(h.GetName())
+            (val, bin) = (h.GetBinContent(1)/den, h.GetName().split("V")[1])
+            sf.append((val, bin))
+
+    ##resort the list such that the bins are in order
+    sf.sort(key=lambda x: int(x[1]))
+
+    return [v for (v,z) in sf]
+
+def compute_ranges(variables,var):
+    ## ha più senso prendere il variabile e prendere gli estremi della variabile
+    ## ovviamente, sarebe più sicuro coi cuts, ma è più complicato!!
+
+    var_in_var = var.split("_")[0]+"_ACM"
+
+    nbin = int(len(variables[var_in_var]['range'][0]) - 1)
+    actual_bin = int(var.split("bin")[-1])
+
+    if actual_bin > nbin:
+        print("ERROREEEE: actaual bin: ", actual_bin)
+        print("TOTAL BINS FROM VARIBALES: ", nbin)
+
+    _min = (variables[var_in_var]['range'][0][actual_bin - 1])
+    _max = (variables[var_in_var]['range'][0][actual_bin])
+
+    return float(_min),float(_max)
+
+
+if __name__ == '__main__':
+    sys.argv = argv
+
+    usage = 'usage: %prog [options]'
+    parser = optparse.OptionParser(usage)
+    parser.add_option('--file',  dest='FileName'     , help='Path to file with source histos')
+    parser.add_option('--den' ,  dest='den'          , help='name of the histogram with no gen_bin selection', default="TOT")
+    parser.add_option('--variables' , dest='variables'         , help='Path to variables.py for bin definition', default="../opt_binning/variables_flatS_8.py")
+
+    (opt, args) = parser.parse_args()
+
+    # Validazione dell'opzione --file
+    if opt.FileName is None:
+        parser.error("Option --file is required")
+
+    sourceFile = ROOT.TFile(opt.FileName,"r")
+
+    # den = sourceFile.Get(opt.den+"/events/histo_WLNuJJ")
+
+    keys = sourceFile.GetListOfKeys()
+    selected_keys = []
+
+    for key in keys:
+        if key.GetName() != opt.den and key.GetName() not in selected_keys and "out" not in key.GetName() and "fiducial" not in key.GetName(): selected_keys.append(key.GetName())
+    selected_keys.sort()
+
+    samples = {}
+    handle = open("samples.py")
+    exec(handle)
+    handle.close()
+
+    variables = {}
+    VariablesCfg=opt.variables
+    handle = open(VariablesCfg)
+    exec(handle)
+    handle.close()
+
+
+    data_dict = {}
+    print selected_keys
+
+    map = {
+        "pdf_weight": "PDFSF",
+        "QCDscale": "QCDSF",
+        "PS_dipole": "PSSF",
+    }
+
+    for var in selected_keys:
+
+        var_parts = var.split("_bin")
+        data_dict.setdefault(var_parts[0], {})
+        data_dict[var_parts[0]].setdefault("bin" + var_parts[1], {})
+
+        dir = sourceFile.Get(var + "/events")
+
+        for nuis in ["pdf_weight", "QCDscale", "PS_dipole"]:
+            norm_fact = compute_var_info(dir,nuis)
+            data_dict[var_parts[0]]["bin" + var_parts[1]][map[nuis]] = norm_fact
+
+
+    import json
+    # Scrivi il dizionario ordinato in un file JSON
+    with open('semiDEFNuis.json', 'w') as json_file:
+        json.dump(data_dict, json_file, indent=4, sort_keys=True)

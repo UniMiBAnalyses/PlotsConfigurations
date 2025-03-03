@@ -2,7 +2,8 @@
 
 treeName = 'Events'
 
-tagger = 'unfolding_finetuning'
+# tagger = 'unfolding_xsmeasure'
+tagger = 'unfolding_measures'
 
 tag = 'vbf_w_2018'+tagger
 

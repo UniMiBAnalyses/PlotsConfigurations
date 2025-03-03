@@ -77,22 +77,14 @@ for i,s in enumerate(signals):
                 'fill': 1001
              }
 
-groupPlot['Wjets_HT']  = {  
-                'nameHR' : 'WJets',
-                'isSignal' : 0,
-                'color':   palette["Yellow"],
-                'samples'  : ['Wjets_HT_hardJets', 'Wjets_HT_PUJets'],
-                'fill': 1001
-                }
+# groupPlot['Wjets_HT']  = {  
+#                 'nameHR' : 'WJets',
+#                 'isSignal' : 0,
+#                 'color':   palette["Yellow"],
+#                 'samples'  : ['Wjets_HT_hardJets', 'Wjets_HT_PUJets'],
+#                 'fill': 1001
+#                 }
 
-groupPlot['S/rad(S+B)']  = {  
-                'nameHR' : 'S/rad(S+B)',
-                'isSignal' : 0,
-                'color':   palette["Yellow"],
-                'samples'  : ['WLNuJJ', 'Wjets_HT_hardJets', 'Wjets_HT_PUJets'],
-                'operation' : "0/rad(0+1+2)",
-                'fill': 1001
-                }
 
 #plot = {}
 
@@ -107,19 +99,19 @@ for i,s in enumerate(signals):
                 'scale'    : 1.   ,
              }
 
-plot['Wjets_HT_hardJets'] = {   
-                 'color': colors['kAzure']-1,
-                 'isSignal' : 0,
-                 'isData'   : 0, 
-                 'scale'    : 1.0
-                }
+# plot['Wjets_HT_hardJets'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  'scale'    : 1.0
+#                 }
 
-plot['Wjets_HT_PUJets'] = {   
-                 'color': colors['kAzure']-1,
-                 'isSignal' : 0,
-                 'isData'   : 0, 
-                 'scale'    : 1.0
-                }
+# plot['Wjets_HT_PUJets'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  'scale'    : 1.0
+#                 }
 
 # additional options
 

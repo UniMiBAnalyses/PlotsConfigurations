@@ -1,1 +1,1 @@
-../structure.py
+../BKG_ONLY/structure.py

@@ -1,21 +1,23 @@
 from collections import OrderedDict
 
 variables = {}
-handle = open("../opt_binning/opt_variables_10.py")
+handle = open("../opt_binning/variables_flatS_8.py")
 exec(handle)
 handle.close()
 
 _map={
     "ptW" : "ptW_gen",
     "leppt" : "DressedLepton_pt[0]",
-    "lepeta" : "DressedLepton_eta[0]",
+    "lepeta" : "lepeta_gen_abs",
     "nJet" : "nCleanGenJet",
     "jet1pt" : "CleanGenJet_pt[0]",
     "jet2pt" : "CleanGenJet_pt[1]",
-    "jet1eta" : "CleanGenJet_eta[1]",
-    "jet2eta" : "CleanGenJet_eta[1]",
+    "jet1eta" : "jeteta1_gen_abs",
+    "jet2eta" : "jeteta2_gen_abs",
     "detajj" : "detajj_gen",
-    "mjj" : "mjj_gen"
+    "mjj" : "mjj_gen",
+    "ptjj" : "ptjj_gen",
+    "dphijj" : "dphijj_gen"
 }
 
 cuts = {}

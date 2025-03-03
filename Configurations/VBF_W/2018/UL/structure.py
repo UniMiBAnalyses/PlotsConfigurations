@@ -69,7 +69,11 @@ structure['WLNuJJ']  = {
               }
 
 
-structure['Fake']  = {  
+structure['mkSFake']  = {  
+                  'isSignal' : 0,
+                  'isData'   : 0
+              }
+structure['ToolFake']  = {  
                   'isSignal' : 0,
                   'isData'   : 0
               }

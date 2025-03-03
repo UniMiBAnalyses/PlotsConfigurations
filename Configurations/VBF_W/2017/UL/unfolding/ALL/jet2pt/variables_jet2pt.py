@@ -1,0 +1,9 @@
+variables["events"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
+variables["MultiClass_jet2pt_class4"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_jet2pt_class4', 'xaxis': 'MultiClass_jet2pt_class4'}
+variables["MultiClass_jet2pt_class5"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_jet2pt_class5', 'xaxis': 'MultiClass_jet2pt_class5'}
+variables["MultiClass_jet2pt_class6"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_jet2pt_class6', 'xaxis': 'MultiClass_jet2pt_class6'}
+variables["MultiClass_jet2pt_class7"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_jet2pt_class7', 'xaxis': 'MultiClass_jet2pt_class7'}
+variables["MultiClass_jet2pt_class1"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_jet2pt_class1', 'xaxis': 'MultiClass_jet2pt_class1'}
+variables["MultiClass_jet2pt_class2"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_jet2pt_class2', 'xaxis': 'MultiClass_jet2pt_class2'}
+variables["MultiClass_jet2pt_class3"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_jet2pt_class3', 'xaxis': 'MultiClass_jet2pt_class3'}
+variables["DNN1jet2pt"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 30.0, 250.0, 5, 0.0, 1.0), 'name': 'DNNoutputSR_noQGL:CleanJet_pt[1]', 'xaxis': 'DNNoutput : p_{T} 2nd jet [GeV]'}

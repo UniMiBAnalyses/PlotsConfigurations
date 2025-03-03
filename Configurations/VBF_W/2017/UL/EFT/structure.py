@@ -100,7 +100,7 @@ for eft_sample in mc_eft:
                 }
 
 # drop stat uncertainty (autoMCstat) for all 
-# EFT components except for the sm one
+# EFT components including the sm one
 
-# for eft_sample in mc_eft:
-#    structure[eft_sample]["removeStatUnc"] = 1
+for eft_sample in mc_eft + signals:
+   structure[eft_sample]["removeStatUnc"] = 1

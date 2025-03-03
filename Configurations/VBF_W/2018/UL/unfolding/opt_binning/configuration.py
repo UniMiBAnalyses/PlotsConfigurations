@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'unfolding_binningOPT'
+tagger = 'unfolding_binningOPT_show'
 
 tag = 'vbf_w_2018'+tagger
 
@@ -14,7 +14,7 @@ outputDir = '../rootFile/'+tagger
 aliasesFile = 'aliases.py'
 
 # file with list of variables
-variablesFile = 'variables.py'
+variablesFile = 'variables_flatS_8.py'
 
 # file with list of cuts
 cutsFile = 'cuts.py' 

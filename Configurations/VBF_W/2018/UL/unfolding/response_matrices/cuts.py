@@ -36,30 +36,35 @@ supercut = 'nLepton>=1 && (Alt$(Lepton_pt[0],0) > 25.) \
 #fake
 
 
-cuts['ele_SR'] = '(abs(Lepton_pdgId[0])==11) \
-                  && Lepton_pt[0] > 35. \
-                  && bVeto \
-                  && CleanJet_pt[1]>70. \
-                  && detajj > 4 \
-                  && mtw1 > 50. \
-                  && {} \
-                 '.format(fiducial)
+# cuts['ele_SR'] = '(abs(Lepton_pdgId[0])==11) \
+#                   && Lepton_pt[0] > 35. \
+#                   && bVeto \
+#                   && CleanJet_pt[1]>70. \
+#                   && detajj > 4 \
+#                   && mtw1 > 50. \
+#                   && {} \
+#                  '.format(fiducial)
 
-cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13)\
-                  && bVeto \
-                  && CleanJet_pt[1]>70. \
-                  && detajj > 4 \
-                  && mtw1 > 50. \
-                  && {} \
-                 '.format(fiducial)
+# cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13)\
+#                   && bVeto \
+#                   && CleanJet_pt[1]>70. \
+#                   && detajj > 4 \
+#                   && mtw1 > 50. \
+#                   && {} \
+#                  '.format(fiducial)
+
+# cuts['all_SR'] = 'bVeto \
+#                   && Lepton_pt[0] > 35. \
+#                   && CleanJet_pt[1]>70. \
+#                   && detajj > 4 \
+#                   && mtw1 > 50. \
+#                   && {} \
+#                  '.format(fiducial)
 
 cuts['all_SR'] = 'bVeto \
                   && Lepton_pt[0] > 35. \
                   && CleanJet_pt[1]>70. \
-                  && detajj > 4 \
-                  && mtw1 > 50. \
-                  && {} \
-                 '.format(fiducial)
+                  && mtw1 > 50.'
 
 
 # # # ##Hard & PU WJets CRs

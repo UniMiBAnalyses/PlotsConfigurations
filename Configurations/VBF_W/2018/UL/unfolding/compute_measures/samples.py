@@ -39,7 +39,6 @@ fakeReco = dataReco
 mcSteps = 'iniGENStep__iniGENStep2' 
 
 
-
 ##############################################
 ###### Tree base directory for the site ######
 ##############################################

@@ -11,844 +11,786 @@ fiducial = "(Alt$(DressedLepton_pt[0],0) >= 20.) && (Alt$(CleanGenJet_pt[1],0) >
 fiducialw = fiducial.replace("&&","*")
 
 samples['WLNuJJ_detajj1'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen < 4.12)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen < 4.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_detajj10'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 6.1)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 6.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_detajj2'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 4.12) * (detajj_gen < 4.27)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 4.0) * (detajj_gen < 4.2)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_detajj3'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 4.27) * (detajj_gen < 4.42)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 4.2) * (detajj_gen < 4.4)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_detajj4'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 4.42) * (detajj_gen < 4.59)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 4.4) * (detajj_gen < 4.6)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_detajj5'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 4.59) * (detajj_gen < 4.79)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 4.6) * (detajj_gen < 4.8)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_detajj6'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 4.79) * (detajj_gen < 5.03)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 4.8) * (detajj_gen < 5.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_detajj7'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 5.03) * (detajj_gen < 5.28)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 5.0) * (detajj_gen < 5.2)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_detajj8'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 5.28) * (detajj_gen < 5.57)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 5.2) * (detajj_gen < 5.5)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_detajj9'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 5.57) * (detajj_gen < 6.1)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(detajj_gen >= 5.5) * (detajj_gen < 6.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_detajjOut'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijj1'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(dphijj_gen < 1.5)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijj10'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(dphijj_gen >= 3.05)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijj2'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(dphijj_gen >= 1.5) * (dphijj_gen < 2.0)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijj3'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(dphijj_gen >= 2.0) * (dphijj_gen < 2.5)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijj4'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(dphijj_gen >= 2.5) * (dphijj_gen < 2.6)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijj5'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(dphijj_gen >= 2.6) * (dphijj_gen < 2.7)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijj6'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(dphijj_gen >= 2.7) * (dphijj_gen < 2.8)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijj7'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(dphijj_gen >= 2.8) * (dphijj_gen < 2.9)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijj8'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(dphijj_gen >= 2.9) * (dphijj_gen < 3.0)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijj9'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(dphijj_gen >= 3.0) * (dphijj_gen < 3.05)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_dphijjOut'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'* !('+fiducialw+')',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1eta1'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] < -3.32)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta1_gen_abs < 0.9)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1eta10'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= 3.32)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta1_gen_abs >= 3.6)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1eta2'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= -3.32) * (CleanGenJet_eta[1] < -2.42)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta1_gen_abs >= 0.9) * (jeteta1_gen_abs < 1.3)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1eta3'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= -2.42) * (CleanGenJet_eta[1] < -1.96)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta1_gen_abs >= 1.3) * (jeteta1_gen_abs < 1.7)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1eta4'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= -1.96) * (CleanGenJet_eta[1] < -1.3)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta1_gen_abs >= 1.7) * (jeteta1_gen_abs < 2.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1eta5'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= -1.3) * (CleanGenJet_eta[1] < -0.04)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta1_gen_abs >= 2.0) * (jeteta1_gen_abs < 2.2)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1eta6'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= -0.04) * (CleanGenJet_eta[1] < 1.28)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta1_gen_abs >= 2.2) * (jeteta1_gen_abs < 2.4)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1eta7'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= 1.28) * (CleanGenJet_eta[1] < 1.94)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta1_gen_abs >= 2.4) * (jeteta1_gen_abs < 3.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1eta8'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= 1.94) * (CleanGenJet_eta[1] < 2.4)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta1_gen_abs >= 3.0) * (jeteta1_gen_abs < 3.3)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1eta9'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= 2.4) * (CleanGenJet_eta[1] < 3.32)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta1_gen_abs >= 3.3) * (jeteta1_gen_abs < 3.6)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1etaOut'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1pt1'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] < 88.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_jet1pt10'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 235.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] < 95.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1pt2'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 88.0) * (CleanGenJet_pt[0] < 99.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 95.0) * (CleanGenJet_pt[0] < 110.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1pt3'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 99.0) * (CleanGenJet_pt[0] < 110.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 110.0) * (CleanGenJet_pt[0] < 130.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1pt4'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 110.0) * (CleanGenJet_pt[0] < 121.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 130.0) * (CleanGenJet_pt[0] < 150.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1pt5'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 121.0) * (CleanGenJet_pt[0] < 133.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 150.0) * (CleanGenJet_pt[0] < 175.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1pt6'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 133.0) * (CleanGenJet_pt[0] < 148.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 175.0) * (CleanGenJet_pt[0] < 225.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1pt7'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 148.0) * (CleanGenJet_pt[0] < 165.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_jet1pt8'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 165.0) * (CleanGenJet_pt[0] < 191.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_jet1pt9'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 191.0) * (CleanGenJet_pt[0] < 235.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[0] >= 225.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet1ptOut'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2eta1'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] < -3.62)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta2_gen_abs < 1.3)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2eta10'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= 3.62)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta2_gen_abs >= 3.85)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2eta2'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= -3.62) * (CleanGenJet_eta[1] < -3.24)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta2_gen_abs >= 1.3) * (jeteta2_gen_abs < 1.8)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2eta3'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= -3.24) * (CleanGenJet_eta[1] < -2.36)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta2_gen_abs >= 1.8) * (jeteta2_gen_abs < 2.1)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2eta4'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= -2.36) * (CleanGenJet_eta[1] < -1.78)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta2_gen_abs >= 2.1) * (jeteta2_gen_abs < 2.3)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2eta5'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= -1.78) * (CleanGenJet_eta[1] < 0.16)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta2_gen_abs >= 2.3) * (jeteta2_gen_abs < 3.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2eta6'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= 0.16) * (CleanGenJet_eta[1] < 1.78)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta2_gen_abs >= 3.0) * (jeteta2_gen_abs < 3.2)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2eta7'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= 1.78) * (CleanGenJet_eta[1] < 2.36)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta2_gen_abs >= 3.2) * (jeteta2_gen_abs < 3.4)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2eta8'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= 2.36) * (CleanGenJet_eta[1] < 3.24)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta2_gen_abs >= 3.4) * (jeteta2_gen_abs < 3.6)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2eta9'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_eta[1] >= 3.24) * (CleanGenJet_eta[1] < 3.62)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(jeteta2_gen_abs >= 3.6) * (jeteta2_gen_abs < 3.85)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2etaOut'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2pt1'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] < 68.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_jet2pt10'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 149.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] < 70.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2pt2'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 68.0) * (CleanGenJet_pt[1] < 74.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 70.0) * (CleanGenJet_pt[1] < 80.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2pt3'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 74.0) * (CleanGenJet_pt[1] < 79.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 80.0) * (CleanGenJet_pt[1] < 90.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2pt4'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 79.0) * (CleanGenJet_pt[1] < 85.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 90.0) * (CleanGenJet_pt[1] < 100.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2pt5'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 85.0) * (CleanGenJet_pt[1] < 91.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 100.0) * (CleanGenJet_pt[1] < 115.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2pt6'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 91.0) * (CleanGenJet_pt[1] < 99.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 115.0) * (CleanGenJet_pt[1] < 140.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2pt7'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 99.0) * (CleanGenJet_pt[1] < 109.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_jet2pt8'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 109.0) * (CleanGenJet_pt[1] < 123.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_jet2pt9'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 123.0) * (CleanGenJet_pt[1] < 149.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(CleanGenJet_pt[1] >= 140.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_jet2ptOut'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepeta1'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_eta[0] < -1.42)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(lepeta_gen_abs < 0.15)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepeta10'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_eta[0] >= 1.41)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(lepeta_gen_abs >= 1.7)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepeta2'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_eta[0] >= -1.42) * (DressedLepton_eta[0] < -1.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(lepeta_gen_abs >= 0.15) * (lepeta_gen_abs < 0.3)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepeta3'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_eta[0] >= -1.0) * (DressedLepton_eta[0] < -0.64)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(lepeta_gen_abs >= 0.3) * (lepeta_gen_abs < 0.5)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepeta4'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_eta[0] >= -0.64) * (DressedLepton_eta[0] < -0.32)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(lepeta_gen_abs >= 0.5) * (lepeta_gen_abs < 0.65)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepeta5'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_eta[0] >= -0.32) * (DressedLepton_eta[0] < 0.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(lepeta_gen_abs >= 0.65) * (lepeta_gen_abs < 0.8)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepeta6'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_eta[0] >= 0.0) * (DressedLepton_eta[0] < 0.31)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(lepeta_gen_abs >= 0.8) * (lepeta_gen_abs < 1.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepeta7'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_eta[0] >= 0.31) * (DressedLepton_eta[0] < 0.64)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(lepeta_gen_abs >= 1.0) * (lepeta_gen_abs < 1.2)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepeta8'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_eta[0] >= 0.64) * (DressedLepton_eta[0] < 1.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(lepeta_gen_abs >= 1.2) * (lepeta_gen_abs < 1.4)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepeta9'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_eta[0] >= 1.0) * (DressedLepton_eta[0] < 1.41)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(lepeta_gen_abs >= 1.4) * (lepeta_gen_abs < 1.7)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepetaOut'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_leppt1'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] < 30.0)',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_leppt10'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 133.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 150.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_leppt2'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 30.0) * (DressedLepton_pt[0] < 36.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 30.0) * (DressedLepton_pt[0] < 35.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_leppt3'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 36.0) * (DressedLepton_pt[0] < 42.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 35.0) * (DressedLepton_pt[0] < 40.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_leppt4'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 42.0) * (DressedLepton_pt[0] < 48.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 40.0) * (DressedLepton_pt[0] < 50.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_leppt5'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 48.0) * (DressedLepton_pt[0] < 56.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 50.0) * (DressedLepton_pt[0] < 60.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_leppt6'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 56.0) * (DressedLepton_pt[0] < 65.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 60.0) * (DressedLepton_pt[0] < 65.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_leppt7'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 65.0) * (DressedLepton_pt[0] < 77.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 65.0) * (DressedLepton_pt[0] < 80.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_leppt8'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 77.0) * (DressedLepton_pt[0] < 96.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 80.0) * (DressedLepton_pt[0] < 100.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_leppt9'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 96.0) * (DressedLepton_pt[0] < 133.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(DressedLepton_pt[0] >= 100.0) * (DressedLepton_pt[0] < 150.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_lepptOut'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_mjj1'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen < 807.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_mjj10'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 2637.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen < 850.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_mjj2'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 807.0) * (mjj_gen < 951.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 850.0) * (mjj_gen < 1000.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_mjj3'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 951.0) * (mjj_gen < 1078.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 1000.0) * (mjj_gen < 1200.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_mjj4'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 1078.0) * (mjj_gen < 1216.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 1200.0) * (mjj_gen < 1400.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_mjj5'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 1216.0) * (mjj_gen < 1361.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 1400.0) * (mjj_gen < 1600.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_mjj6'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 1361.0) * (mjj_gen < 1535.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 1600.0) * (mjj_gen < 2000.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_mjj7'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 1535.0) * (mjj_gen < 1757.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 2000.0) * (mjj_gen < 2500.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_mjj8'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 1757.0) * (mjj_gen < 2071.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_mjj9'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 2071.0) * (mjj_gen < 2637.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(mjj_gen >= 2500.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_mjjOut'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_nJet1'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'*'+fiducialw+'*'+'(nCleanGenJet < 2.5)',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_nJet2'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'*'+fiducialw+'*'+'(nCleanGenJet >= 2.5) * (nCleanGenJet < 3.5)',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_nJet3'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(nCleanGenJet >= 3.5) * (nCleanGenJet < 4.5)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_nJet4'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(nCleanGenJet >= 4.5) * (nCleanGenJet < 5.5)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_nJet5'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(nCleanGenJet >= 5.5)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(nCleanGenJet >= 3.5)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_nJetOut'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_ptW1'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen < 23.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_ptW10'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 198.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen < 30.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_ptW2'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 23.0) * (ptW_gen < 35.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 30.0) * (ptW_gen < 45.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_ptW3'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 35.0) * (ptW_gen < 47.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 45.0) * (ptW_gen < 65.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_ptW4'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 47.0) * (ptW_gen < 59.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 65.0) * (ptW_gen < 90.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_ptW5'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 59.0) * (ptW_gen < 73.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 90.0) * (ptW_gen < 120.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_ptW6'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 73.0) * (ptW_gen < 90.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 120.0) * (ptW_gen < 180.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_ptW7'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 90.0) * (ptW_gen < 111.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_ptW8'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 111.0) * (ptW_gen < 143.0)',
-        'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_ptW9'] = { 
-        'FilesPerJob' : 5,
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 143.0) * (ptW_gen < 198.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptW_gen >= 180.0)',
+        'EventsPerJob' : 5000,
 }
 
 samples['WLNuJJ_ptWOut'] = { 
-        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
+        'EventsPerJob' : 5000,
 }
 
-# ## select only the samples we are interested in: the ones with "out" in the name
-# samples = {k:v for k,v in samples.items() if 'Out' in k}
+samples['WLNuJJ_ptjj1'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen < 30.0)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_ptjj2'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 30.0) * (ptjj_gen < 45.0)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_ptjj3'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 45.0) * (ptjj_gen < 60.0)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_ptjj4'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 60.0) * (ptjj_gen < 75.0)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_ptjj5'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 75.0) * (ptjj_gen < 100.0)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_ptjj6'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 100.0) * (ptjj_gen < 130.0)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_ptjj7'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 130.0) * (ptjj_gen < 180.0)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_ptjj8'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 180.0)',
+        'EventsPerJob' : 5000,
+}
+
+samples['WLNuJJ_ptjjOut'] = { 
+        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
+               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
+        'weight' : CommonWeight+'* !('+fiducialw+')',
+        'EventsPerJob' : 5000,
+}
+

@@ -411,13 +411,13 @@ if os.path.exists(CMSSW+'/src/'+sampleEFTFile):
   exec(handle)
   handle.close()
 
-# fatti ma non usati per hadd
-######################################### debug weightssss ############################
-sampleEFTFileDebug = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT/debug_EFTweights.py"
-if os.path.exists(CMSSW+'/src/'+sampleEFTFileDebug):
-  handle = open(CMSSW+'/src/'+sampleEFTFileDebug)
-  exec(handle)
-  handle.close()
+# # fatti ma non usati per hadd
+# ######################################### debug weightssss ############################
+# sampleEFTFileDebug = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT/debug_EFTweights.py"
+# if os.path.exists(CMSSW+'/src/'+sampleEFTFileDebug):
+#   handle = open(CMSSW+'/src/'+sampleEFTFileDebug)
+#   exec(handle)
+#   handle.close()
 
 #########################################
 ############## DATAA ###############

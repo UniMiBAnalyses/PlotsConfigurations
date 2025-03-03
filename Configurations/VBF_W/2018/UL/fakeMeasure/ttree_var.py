@@ -59,8 +59,3 @@ variables['dnn_inputs_all'] = {
     'tree': all_var,
     'cuts' : ['mu_FR_Zpeak', 'ele_FR_Zpeak', 'mu_FR_QCD', 'ele_FR_QCD', 'mu_topcr', 'ele_topcr']
 }
-# variables['dnn_inputs_all'] = {
-#     'tree': all_var,
-#     'cuts' : ['SR2', 'SR4', 'SRAll', 'HWJ2', 'HWJ4', 'HWJAll']
-# }
-

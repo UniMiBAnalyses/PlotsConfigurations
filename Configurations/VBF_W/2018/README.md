@@ -60,7 +60,7 @@ or
 
     hadd rootFile/plots_vbf_w_2018.root rootFile/plots_vbf_w_2018_ALL_*.root
     hadd rootFile/plots_vbf_w_2018.root rootFile/plots_vbf_w_2018_do.root rootFile/prov/plots_vbf_w_2018.root 
-
+o
 
 # Make plots:
 For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for example) recreating the same path ~/CMSSW 10../src/Plotconfig/config/VBF_W/2018/ and here it is needed utils folder. This folder is used somewhere in the nuisances, it is easy to solve this problem, didnt have the time!
@@ -180,13 +180,14 @@ For this section, at the time being (nov. 2022), it is needed CMSSW10_6_4 (for e
 # Run Differential analysis
     Run a shape maker in opt_binning. We are running on signal samples in ~SR + fiducial. Here for the first time "fiducial" phase-space is defined!!
     Then run 'python fine_tuning_binning.py' which computes the cumulative and choose the correct binning such as we end up with the same statistic in each bin.
-    In this file you can set the number of GenBin (line 49 "nGenBin") and the previous hadded shape L7.
-    The output is "opt_variables.py". You can round the values here. 
+    In this file you can set the number of GenBin (line 49 "nGenBin") and the previous hadded shape L7. Right now it is a map based on the resolutions (compute in max_binn_resolution.py):
+    The output is "new_opt_variables_different.py". You can round the values here. 
 
     Now go to compute_measures and as the very first thing run 'python from_opt_to_xs.py'. The output is compute_cuts.py which is needed to compute the various
     XS measurment. If you want to change the fiducial phase-space, here you need to do it again!!
     Now run a shape which runs over CENTRAL DAS signal files with only weight XS and with the given cuts file. 
-    Now run 'python GetDiffXS.py --file ....' where you point the file you already did. The outout is a JSON file with all the XS values computed. This is useful for fits.
+    Now run 'python GetDiffXS.py --file .... --variables .....' where you point the file you already did. The outout is a JSON file with all the XS values computed. This is useful for fits.
+    run also 'python GetDiffNuis.py --file.... --variables ....' to get also the normalized SF for thorethical uncertainties. 
 
     Last step, go to ALL:
     Here you can run 'python from_xs_to_samples.py' and this will gives you a "ALL_samples.py" file which is ready to be run as input for shapes, running on postprocessed samples.

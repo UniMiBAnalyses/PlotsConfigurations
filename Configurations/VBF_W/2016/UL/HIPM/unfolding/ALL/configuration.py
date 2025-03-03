@@ -4,7 +4,7 @@ treeName = 'Events'
 fixSuffix = 'allsig'
 pretag = 'HIPM'
 
-tagger = pretag+'unfolding_END10'
+tagger = pretag+'unfolding_final'
 
 tagger += "_"+fixSuffix
 tag = 'vbf_w_2016'+tagger

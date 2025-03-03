@@ -57,7 +57,7 @@ all_var['QGL2'] = 'Jet_qgl[1]'
 
 variables['dnn_inputs_all'] = {
     'tree': all_var,
-    'cuts' : ['ele_SR', 'mu_SR', 'ele_FakeCR', 'mu_FakeCR']
+    'cuts' : ['ele_SR', 'mu_SR']
 }
 # variables['dnn_inputs_all'] = {
 #     'tree': all_var,

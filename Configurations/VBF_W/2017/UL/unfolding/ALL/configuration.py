@@ -3,7 +3,7 @@
 treeName = 'Events'
 fixSuffix = 'allsig'
 
-tagger = 'unfolding_END10'
+tagger = 'unfolding_final'
 tagger += "_"+fixSuffix
 
 tag = 'vbf_w_2017'+tagger

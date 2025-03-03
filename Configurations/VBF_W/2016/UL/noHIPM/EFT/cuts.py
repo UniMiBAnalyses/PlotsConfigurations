@@ -31,20 +31,20 @@ supercut = 'nLepton>=1 && (Alt$(Lepton_pt[0],0) > 25.) \
 #levo fake e DY + ort to WH
 #fake
 
-cuts['ele_SR'] = '(abs(Lepton_pdgId[0])==11) \
-                  && Lepton_pt[0] > 30. \
-                  && bVeto \
-                  && CleanJet_pt[1]>70. \
-                  && detajj > 4 \
-                  && mtw1 > 50. \
-                 '
+# cuts['ele_SR'] = '(abs(Lepton_pdgId[0])==11) \
+#                   && Lepton_pt[0] > 30. \
+#                   && bVeto \
+#                   && CleanJet_pt[1]>70. \
+#                   && detajj > 4 \
+#                   && mtw1 > 50. \
+#                  '
 
-cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13) \
-                  && bVeto \
-                  && CleanJet_pt[1]>70. \
-                  && detajj > 4 \
-                  && mtw1 > 50. \
-                 '
+# cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13) \
+#                   && bVeto \
+#                   && CleanJet_pt[1]>70. \
+#                   && detajj > 4 \
+#                   && mtw1 > 50. \
+#                  '
 cuts['ele_SR_highDNN'] = '(abs(Lepton_pdgId[0])==11) \
                   && Lepton_pt[0] > 30. \
                   && bVeto \
@@ -60,6 +60,22 @@ cuts['mu_SR_highDNN'] = '(abs(Lepton_pdgId[0])==13) \
                   && detajj > 4 \
                   && mtw1 > 50. \
                   && DNNoutputSR_noQGL > 0.5 \
+                 '
+cuts['ele_SR_lowDNN'] = '(abs(Lepton_pdgId[0])==11) \
+                  && Lepton_pt[0] > 30. \
+                  && bVeto \
+                  && CleanJet_pt[1]>70. \
+                  && detajj > 4 \
+                  && mtw1 > 50. \
+                  && DNNoutputSR_noQGL < 0.5 \
+                 '
+
+cuts['mu_SR_lowDNN'] = '(abs(Lepton_pdgId[0])==13) \
+                  && bVeto \
+                  && CleanJet_pt[1]>70. \
+                  && detajj > 4 \
+                  && mtw1 > 50. \
+                  && DNNoutputSR_noQGL < 0.5 \
                  '
 
 ##Hard & PU WJets CRs

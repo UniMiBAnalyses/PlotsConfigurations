@@ -152,7 +152,7 @@ variables['puppimet_phi']  = {  'name': 'PuppiMET_phi',
 
 variables['puppimet']  = {
                         'name': 'PuppiMET_pt',
-                        'range' : (40,0,200),
+                        'range' : (20,0,200),
                         'xaxis' : 'puppimet [GeV]',
                         'fold' : 3,
                             'blind': {
@@ -165,7 +165,7 @@ variables['puppimet']  = {
 
 variables['puppimetbin1']  = {
                         'name': 'PuppiMET_pt',
-                        'range' : (60,0,60),
+                        'range' : (30,0,60),
                         'xaxis' : 'puppimet [GeV]',
                         'fold' : 3,
                             'blind': {
@@ -228,7 +228,7 @@ variables['puppimetbin1']  = {
 #                         }
 
 variables['ptW']  = {   'name': 'ptW',     
-                        'range' : (30,0,300),   
+                        'range' : (20,0,300),   
                         'xaxis' : 'pT(W) [GeV]',
                         'fold' : 3,
                         'blind': {
@@ -296,7 +296,7 @@ variables['ptW']  = {   'name': 'ptW',
 
 variables['jetpt1']  = {
                         'name': 'CleanJet_pt[0]',
-                        'range' : (70,40,350),
+                        'range' : (20,40,350),
                         'xaxis' : 'p_{T} 1st jet',
                         'fold' : 3,
                         'blind': {
@@ -546,7 +546,7 @@ variables['jetpt1']  = {
 #                         }
 
 variables['Dphijet1jet2']  = {   'name': 'Dphijet1jet2',     
-                        'range' : (60,-3.14,3.14),   
+                        'range' : (30,0,3.14),   
                         'xaxis' : '#Delta#phi{J1, J2}',
                         'fold' : 3,
                         'blind': {
@@ -558,7 +558,7 @@ variables['Dphijet1jet2']  = {   'name': 'Dphijet1jet2',
                         }
 
 variables['Dphijet1jet2PU']  = {   'name': 'Dphijet1jet2',     
-                        'range' : (30,-3.14,3.14),   
+                        'range' : (15,0,3.14),   
                         'xaxis' : '#Delta#phi{J1, J2}PU',
                         'fold' : 3,
                         'blind': {

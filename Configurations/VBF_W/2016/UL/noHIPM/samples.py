@@ -71,8 +71,8 @@ dataDirectoryLat = os.path.join(treeBaseDirLat, dataReco, dataSteps)
 ############### Lepton WP ######################
 ################################################
   
-eleWP='mvaFall17V2Iso_WP90'
-muWP='cut_Tight80x'
+eleWP='mvaFall17V2Iso_WP90_tthmva_70'
+muWP='cut_Tight80x_tthmva_80'
 
 LepWPCut_1l =  '(Lepton_isTightElectron_'+eleWP+'[0]>0.5 || Lepton_isTightMuon_'+muWP+'[0]>0.5)'
 LepWPWeight_1l = 'Lepton_tightElectron_'+eleWP+'_IdIsoSF'+'[0]*\
@@ -145,7 +145,7 @@ Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(P
 Total_correction = 'WJets_reweight'
 # Total_correction = '1.'
 
-samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu-LO')
+samples['Wjets_HT_hardJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu-LO')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT70To100')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT100To200')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT200To400')
@@ -155,31 +155,58 @@ samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLN
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
                         # 'weight': CommonWeight+'*' + Wjets_photon_filter +'* ewknloW' + '*' +Total_correction,
-                        'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction,
+                        'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction  + '* hardJets',
 			                	'FilesPerJob' : 10, 
-                        'subsamples': {
-                          'hardJets'  : 'hardJets',
-                          'PUJets'    : 'PUJets'
-                                    }
 		                 }
 
 
 # No needed HT stiching corrections
 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu-LO', '(LHE_HT < 70)') 
+addSampleWeight(samples,'Wjets_HT_hardJets', 'WJetsToLNu-LO', '(LHE_HT < 70)') 
 
 # HT bins to LO factors 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT70To100',          '1.21 * 1.0346')  #adding also k-factor
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT100To200',         '1.019') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT200To400',         '1.012') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT400To600',         '0.9945') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT600To800',         '0.9537') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT800To1200',        '0.8844') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT1200To2500',       '0.7643') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT2500ToInf',        '0.2422') 
+addSampleWeight(samples,'Wjets_HT_hardJets', 'WJetsToLNu_HT70To100',          '1.21 * 1.0346')  #adding also k-factor
+addSampleWeight(samples,'Wjets_HT_hardJets', 'WJetsToLNu_HT100To200',         '1.019') 
+addSampleWeight(samples,'Wjets_HT_hardJets', 'WJetsToLNu_HT200To400',         '1.012') 
+addSampleWeight(samples,'Wjets_HT_hardJets', 'WJetsToLNu_HT400To600',         '0.9945') 
+addSampleWeight(samples,'Wjets_HT_hardJets', 'WJetsToLNu_HT600To800',         '0.9537') 
+addSampleWeight(samples,'Wjets_HT_hardJets', 'WJetsToLNu_HT800To1200',        '0.8844') 
+addSampleWeight(samples,'Wjets_HT_hardJets', 'WJetsToLNu_HT1200To2500',       '0.7643') 
+addSampleWeight(samples,'Wjets_HT_hardJets', 'WJetsToLNu_HT2500ToInf',        '0.2422') 
 
 
 ###############################################
+
+samples['Wjets_HT_PUJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu-LO')
+                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT70To100')
+                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT100To200')
+                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT200To400')
+                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT400To600')
+                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT600To800')
+                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT800To1200')
+                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500')
+                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
+                        'weight': CommonWeight+'*' + Wjets_photon_filter + '* PUJets',
+			                	'FilesPerJob' : 4,
+		                 }
+
+
+# No needed HT stiching corrections
+
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu-LO', '(LHE_HT < 70)') 
+
+# HT bins to LO factors 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT70To100',          '1.21 * 1.0346')  #adding also k-factor
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT100To200',         '1.019') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT200To400',         '1.012') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT400To600',         '0.9945') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT600To800',         '0.9537') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT800To1200',        '0.8844') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT1200To2500',       '0.7643') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT2500ToInf',        '0.2422') 
+
+
+
 
 
 ############ Top ############
@@ -368,7 +395,7 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'ZZZ')
 
 # Then corrected
 # fakeW = 'fakeWeight_35'
-fakeW = 'fakeWeight_1p3'
+fakeW = '(fakeWeight_0p8 * (fakeWeight_0p8<20) + 0.*(fakeWeight_0p8>20))'
 
 ### Fakes
 samples['Fake'] = {
@@ -376,7 +403,7 @@ samples['Fake'] = {
   'weight': METFilter_DATA+'*'+fakeW,
   'weights': [],
   'isData': ['all'],
-  'FilesPerJob' : 70,
+  'FilesPerJob' : 40,
 }
 
 for _, sd in DataRun:

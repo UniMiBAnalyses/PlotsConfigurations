@@ -70,21 +70,21 @@ wlnujj_out = ['#b83afb']
 
 
 
-groupPlot['Wjets_HT']  = {  
-                'nameHR' : 'WJets_hardJets',
-                'isSignal' : 0,
-                'color':   palette["Yellow"],
-                'samples'  : ['Wjets_HT_hardJets', 'Wjets_HT_PUJets'],
-                'fill': 1001
-                }
+# groupPlot['Wjets_HT']  = {  
+#                 'nameHR' : 'WJets_hardJets',
+#                 'isSignal' : 0,
+#                 'color':   palette["Yellow"],
+#                 'samples'  : ['Wjets_HT_hardJets', 'Wjets_HT_PUJets'],
+#                 'fill': 1001
+#                 }
 
-groupPlot['Others']  = {  
-                'nameHR' : "Others",
-                'isSignal' : 0,
-                'color'    : palette["Orange"],
-                'samples'  : ['VBF-Z', 'Vg', 'VgS', 'DY_else', 'DY_M-50', 'top', 'VVV', 'VV','VBS', 'Higgs', 'Fake'],
-                'fill': 1001
-              }
+# groupPlot['Others']  = {  
+#                 'nameHR' : "Others",
+#                 'isSignal' : 0,
+#                 'color'    : palette["Orange"],
+#                 'samples'  : ['VBF-Z', 'Vg', 'VgS', 'DY_else', 'DY_M-50', 'top', 'VVV', 'VV','VBS', 'Higgs', 'Fake'],
+#                 'fill': 1001
+#               }
 
 # signals = [c for c in samples if "WLNuJJ" in c and "Out" not in c]
 signals = [c for c in samples if "WLNuJJ" in c]
@@ -98,15 +98,15 @@ for i,s in enumerate(signals):
                 'fill': 1001
              }
 
-out = [c for c in signals if "Out" in c]
-for i,s in enumerate(out):
-    groupPlot['{}'.format(s)] = {
-                'nameHR' : '{}'.format(s),
-                'isSignal' : 0,
-                'color':   TColor.GetColor(wlnujj_out[i]),
-                'samples'  : ['{}'.format(s)],
-                'fill': 1001
-                }
+# out = [c for c in signals if "Out" in c]
+# for i,s in enumerate(out):
+#     groupPlot['{}'.format(s)] = {
+#                 'nameHR' : '{}'.format(s),
+#                 'isSignal' : 0,
+#                 'color':   TColor.GetColor(wlnujj_out[i]),
+#                 'samples'  : ['{}'.format(s)],
+#                 'fill': 1001
+#                 }
 
 #plot = {}
 
@@ -116,18 +116,18 @@ for i,s in enumerate(out):
 for i,s in enumerate(signals):
     plot['{}'.format(s)] = {
                 'color': colors['kCyan']+1, 
-                'isSignal' : 1,
+                'isSignal' : 0,
                 'isData'   : 0,
                 'scale'    : 1.   ,
              }
              
-for i,s in enumerate(out):
-    plot['{}'.format(s)] = {
-                'color': colors['kCyan']+1, 
-                'isSignal' : 1,
-                'isData'   : 0,
-                'scale'    : 1.   ,
-             }
+# for i,s in enumerate(out):
+#     plot['{}'.format(s)] = {
+#                 'color': colors['kCyan']+1, 
+#                 'isSignal' : 1,
+#                 'isData'   : 0,
+#                 'scale'    : 1.   ,
+#              }
              
 plot['Wjets_HT_hardJets'] = {   
                  'color': colors['kAzure']-1,
@@ -233,7 +233,6 @@ plot['Fake'] = {
 #                   'isData'   : 1 ,
 #                   'isBlind'  : 0
 #               }
-
 
 # additional options
 

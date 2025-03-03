@@ -4,7 +4,7 @@ treeName = 'Events'
 fixSuffix = 'allsig'
 pretag = 'noHIPM'
 
-tagger = pretag+'unfolding_END10'
+tagger = pretag+'unfolding_final'
 
 tagger += "_"+fixSuffix
 tag = 'vbf_w_2016'+tagger
@@ -29,7 +29,7 @@ samplesFile = 'samples.py'
 plotFile = 'plot.py' 
 
 # luminosity to normalize to (in 1/fb)
-lumi = 19.52
+lumi = 16.81
 
 # used by mkPlot to define output directory for plots
 # different from "outputDir" to do things more tidy

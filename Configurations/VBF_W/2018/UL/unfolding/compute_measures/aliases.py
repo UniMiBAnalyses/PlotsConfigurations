@@ -54,3 +54,35 @@ aliases['ptW_gen'] = {
     'expr': 'TMath::Sqrt(x_ptW_gen*x_ptW_gen + y_ptW_gen*y_ptW_gen)',
     'samples' : signals
 }
+
+aliases['jeteta1_gen_abs'] = {
+    'expr': 'TMath::Abs(Alt$(CleanGenJet_eta[0],-9999.))'
+}
+
+aliases['jeteta2_gen_abs'] = {
+    'expr': 'TMath::Abs(Alt$(CleanGenJet_eta[1],-9999.))'
+}
+
+aliases['lepeta_gen_abs'] = {
+    'expr': 'TMath::Abs(Alt$(DressedLepton_eta[0],-9999.))'
+}
+
+aliases['CleanGenJet1_px'] = {
+    'expr': 'Alt$(CleanGenJet_pt[0],-9999.) * TMath::Cos(Alt$(CleanGenJet_phi[0],-9999.))'
+}
+
+aliases['CleanGenJet1_py'] = {
+    'expr': 'Alt$(CleanGenJet_pt[0],-9999.) * TMath::Sin(Alt$(CleanGenJet_phi[0],-9999.))'
+}
+
+aliases['CleanGenJet2_px'] = {
+    'expr': 'Alt$(CleanGenJet_pt[1],-9999.) * TMath::Cos(Alt$(CleanGenJet_phi[1],-9999.))'
+}
+
+aliases['CleanGenJet2_py'] = {
+    'expr': 'Alt$(CleanGenJet_pt[1],-9999.) * TMath::Sin(Alt$(CleanGenJet_phi[1],-9999.))'
+}
+
+aliases['ptjj_gen'] = {
+    'expr': 'TMath::Sqrt(( (CleanGenJet1_px + CleanGenJet2_px)**2 + (CleanGenJet1_py + CleanGenJet2_py)**2 ))'
+}

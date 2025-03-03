@@ -107,7 +107,7 @@ bins = [bin1, bin2, bin3, bin4, bin5]
 for (j,s) in enumerate(bins):
     groupPlot['WLNuJJ_bin{}'.format(j+1)] = {
                 'nameHR' : 'WLNuJJ_bin{}'.format(j+1),
-                'isSignal' : 0,
+                'isSignal' : 1,
                 'color':   wlnujj_palette[j],
                 'samples'  : [c for c in signals if any(c.endswith(b) for b in s)],
                 'fill': 1001
@@ -155,7 +155,7 @@ plot['Wjets_HT_PUJets'] = {
                  'color': colors['kAzure']-1,
                  'isSignal' : 0,
                  'isData'   : 0, 
-                 'scale'    : 1.0
+                 'scale'    : 1.3
                 }
 
 plot['top'] = {   
@@ -241,13 +241,13 @@ plot['Fake'] = {
 
 # # data
 
-# plot['DATA']  = { 
-#                   'nameHR' : 'Data',
-#                   'color': 1 ,  
-#                   'isSignal' : 0,
-#                   'isData'   : 1 ,
-#                   'isBlind'  : 0
-#               }
+plot['DATA']  = { 
+                  'nameHR' : 'Data',
+                  'color': 1 ,  
+                  'isSignal' : 0,
+                  'isData'   : 1 ,
+                  'isBlind'  : 0
+              }
 
 
 # additional options

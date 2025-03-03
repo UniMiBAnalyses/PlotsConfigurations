@@ -44,17 +44,17 @@ variables['leppt_div']  = {   'name': 'DressedLepton_pt[0]',
                         'divideByBinWidth': 1,
                         }
 
-variables['lepeta']  = {   'name': 'DressedLepton_eta[0]',     
-                        'range' : (400,-2,2),   
+variables['lepeta']  = {   'name': 'lepeta_gen_abs',     
+                        'range' : (400,0,2),   
                         'xaxis' : 'eta 1st lep',
                         'fold' : 3,
                         }
-variables['lepeta_flat']  = {   'name': 'DressedLepton_eta[0]',     
+variables['lepeta_flat']  = {   'name': 'lepeta_gen_abs',     
                         'range' : ([-2.0, -1.0, -0.3, 0.3, 1., 2.],),   
                         'xaxis' : 'eta 1st lep',
                         'fold' : 3,
                         }
-variables['lepeta_div']  = {   'name': 'DressedLepton_eta[0]',     
+variables['lepeta_div']  = {   'name': 'lepeta_gen_abs',     
                         'range' : ([-2.0, -1.0, -0.3, 0.3, 1., 2.],),   
                         'xaxis' : 'eta 1st lep',
                         'fold' : 3,
@@ -95,37 +95,54 @@ variables['jet2pt_div']  = {   'name': 'CleanGenJet_pt[1]',
                         'divideByBinWidth': 1,
                         }
 
-variables['jet1eta']  = {   'name': 'CleanGenJet_eta[0]',     
-                        'range' : (500,-5,5),   
+variables['jet1eta']  = {   'name': 'jeteta1_gen_abs',     
+                        'range' : (500,0,5),   
                         'xaxis' : 'eta 1st jet',
                         'fold' : 3,
                         }
-variables['jet1eta_flat']  = {   'name': 'CleanGenJet_eta[0]',     
+variables['jet1eta_flat']  = {   'name': 'jeteta1_gen_abs',     
                         'range' : ([-5.0, -2.4, -1.3, 1.3, 2.4, 5.],),   
                         'xaxis' : 'eta 1st jet',
                         'fold' : 3,
                         }
-variables['jet1eta_div']  = {   'name': 'CleanGenJet_eta[0]',     
+variables['jet1eta_div']  = {   'name': 'jeteta1_gen_abs',     
                         'range' : ([-5.0, -2.4, -1.3, 1.3, 2.4, 5.],),   
                         'xaxis' : 'eta 1st jet',
                         'fold' : 3,
                         'divideByBinWidth': 1,
                         }
 
-variables['jet2eta']  = {   'name': 'CleanGenJet_eta[1]',     
-                        'range' : (500,-5,5),   
+variables['jet2eta']  = {   'name': 'jeteta2_gen_abs',     
+                        'range' : (500,0,5),   
                         'xaxis' : 'eta 2nd jet',
                         'fold' : 3,
                         }
-variables['jet2eta_flat']  = {   'name': 'CleanGenJet_eta[1]',     
+variables['jet2eta_flat']  = {   'name': 'jeteta2_gen_abs',     
                         'range' : ([-5.0, -3.2, -1.8, 1.8, 3.2, 5.],),   
                         'xaxis' : 'eta 2nd jet',
                         'fold' : 3,
                         }
-variables['jet2eta_div']  = {   'name': 'CleanGenJet_eta[1]',     
+variables['jet2eta_div']  = {   'name': 'jeteta2_gen_abs',     
                         'range' : ([-5.0, -3.2, -1.8, 1.8, 3.2, 5.],),   
                         'xaxis' : 'eta 2nd jet',
                         'fold' : 3,
+                        'divideByBinWidth': 1,
+                        }
+
+variables['dphijj']  = {   'name': 'dphijj_gen',     
+                        'range' : (314,0,3.14),   
+                        'xaxis' : 'dphijj_gen',
+                        'fold' : 2,
+                        }
+variables['dphijj_flat']  = {   'name': 'dphijj_gen',     
+                        'range' : ([-5.0, -3.2, -1.8, 1.8, 3.2, 5.],),   
+                        'xaxis' : 'dphijj_gen',
+                        'fold' : 2,
+                        }
+variables['dphijj_div']  = {   'name': 'dphijj_gen',     
+                        'range' : ([-5.0, -3.2, -1.8, 1.8, 3.2, 5.],),   
+                        'xaxis' : 'dphijj_gen',
+                        'fold' : 2,
                         'divideByBinWidth': 1,
                         }
 
@@ -163,18 +180,35 @@ variables['mjj_div']  = {   'name': 'mjj_gen',
                         'divideByBinWidth': 1,
                         }
 
+variables['ptjj']  = {   'name': 'ptjj_gen',     
+                        'range' : (500,0,500),   
+                        'xaxis' : 'ptjj',
+                        'fold' : 3,
+                        }
+variables['ptjj_flat']  = {   'name': 'ptjj_gen',     
+                        'range' : ([0.0, 950.0, 1200.0, 1500.0, 2000.0, 5000.0],),   
+                        'xaxis' : 'ptjj',
+                        'fold' : 3,
+                        }
+variables['ptjj_div']  = {   'name': 'ptjj_gen',     
+                        'range' : ([0.0, 950.0, 1200.0, 1500.0, 2000.0, 5000.0],),   
+                        'xaxis' : 'ptjj',
+                        'fold' : 3,
+                        'divideByBinWidth': 1,
+                        }
+
 variables['nJet']  = {   'name': 'nCleanGenJet',     
                         'range' : (10,0,10),   
                         'xaxis' : 'nCleanGenJet',
                         'fold' : 3,
                         }
 variables['nJet_flat']  = {   'name': 'nCleanGenJet',     
-                        'range' : ([1.5, 2.5, 3.5, 4.5, 5.5, 10.5],),   
+                        'range' : ([1.5, 2.5, 4.5, 10.5],),   
                         'xaxis' : 'nCleanGenJet',
                         'fold' : 3,
                         }
 variables['nJet_div']  = {   'name': 'nCleanGenJet',     
-                        'range' : ([1.5, 2.5, 3.5, 4.5, 5.5, 10.5],),      
+                        'range' : ([1.5, 2.5, 4.5, 10.5],),      
                         'xaxis' : 'nCleanGenJet',
                         'fold' : 3,
                         'divideByBinWidth': 1,

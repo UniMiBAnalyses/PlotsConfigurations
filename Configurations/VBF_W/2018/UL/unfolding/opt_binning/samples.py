@@ -96,10 +96,10 @@ samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNu
                         'EventsPerJob' : 7000,
                     }
 
-# # Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(PhotonGen_eta)<2.5 ) > 0) '
+# # # Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(PhotonGen_eta)<2.5 ) > 0) '
 # Wjets_photon_filter = '1.'
 # Total_correction = 'WJets_reweight'
-# # Total_correction = '1.'
+# # # Total_correction = '1.'
 
 # samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu-LO')
 #                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT70To100')
