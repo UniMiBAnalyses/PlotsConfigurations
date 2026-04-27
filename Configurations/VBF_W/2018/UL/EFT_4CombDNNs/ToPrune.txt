@@ -1,0 +1,1538 @@
+['CMS_scale_met_2018_top_norm_UL_ele', 'CMS_scale_met_2018_UL', 'CMS_res_j_2018_UL', 'CMS_scale_met_2018_top_norm_UL_mu', 'CMS_scale_JESBBEC1', 'CMS_scale_JESHF', 'CMS_scale_e_2018', 'CMS_scale_JESHF_2018', 'CMS_btag_jes', 'CMS_scale_met_2018_Wjets_HT_hardJets_norm_UL_ele', 'CMS_PS_FSR_dipole', 'CMS_scale_met_2018_Wjets_HT_PUJets_norm_UL_ele', 'CMS_scale_JESAbsolute', 'CMS_scale_JESAbsolute_2018', 'CMS_scale_JESEC2', 'pdfAlpha', 'CMS_scale_JESBBEC1_2018', 'VBFW_fake_e_EWKsub_2018', 'CMS_scale_JESEC2_2018', 'CMS_scale_met_2018_Wjets_HT_hardJets_norm_UL_mu', 'CMS_fake_stat_e_2018_1lep', 'CMS_scale_met_2018_Wjets_HT_PUJets_norm_UL_mu']
+[DEBUG] ❌ 'VBFW_WJets_rew_stat_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_Wjets_HT_hardJets_acceptVBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018_Wjets_HT_hardJets_norm_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR_Wjets_HT_hardJets_acceptVBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal_Wjets_HT_hardJets_norm_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_Wjets_HT_hardJets_Alpha_acceptVBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'VBFW_WJets_rew_func_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_Wjets_HT_hardJets_accept_VBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_Wjets_HT_hardJets_accept_VBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] Trovati 11 sistematiche per 'Wjets_HT_hardJets' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_Wjets_HT_PUJets_Alpha_acceptVBFW_mu' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_Wjets_HT_PUJets_acceptVBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal_Wjets_HT_PUJets_norm_mu' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR_Wjets_HT_PUJets_acceptVBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_Wjets_HT_PUJets_Alpha_acceptVBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018_Wjets_HT_PUJets_norm_mu' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR_Wjets_HT_PUJets_acceptVBFW_mu' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal_Wjets_HT_PUJets_norm_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018_Wjets_HT_PUJets_norm_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_Wjets_HT_PUJets_acceptVBFW_mu' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_Wjets_HT_PUJets_accept_VBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_Wjets_HT_PUJets_accept_VBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] Trovati 11 sistematiche per 'Wjets_HT_PUJets' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal_top_norm_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018_top_norm_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_top_pT_reweighting' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_top_Alpha_acceptVBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_top_acceptVBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR_top_acceptVBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'singleTopToTTbar' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_top_accept_VBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_top_accept_VBFW_mu18' ignorata: non è in nuisances.py
+[DEBUG] Trovati 11 sistematiche per 'top' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'top' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.046)
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VV' ignorata: non è in nuisances.py
+[DEBUG] Trovati 11 sistematiche per 'VV' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'VV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.072)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'VV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.067)
+ [-] PRUNED 'CMS_btag_jes' for sample 'VV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.053)
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBS' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'VBS' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'VBS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.065)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'VBS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.095)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'VBS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.038)
+ [-] PRUNED 'CMS_btag_jes' for sample 'VBS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.030)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'VBS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.056)
+ [-] PRUNED 'CMS_res_j_2018_UL' for sample 'VBS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.079)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'VBS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.022)
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'VBS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.078)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'VBS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.046)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'VBS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.054)
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_Higgs' ignorata: non è in nuisances.py
+[DEBUG] Trovati 11 sistematiche per 'Higgs' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'Higgs' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.089)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'Higgs' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.061)
+ [-] PRUNED 'CMS_btag_jes' for sample 'Higgs' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.021)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'Higgs' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.094)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'Higgs' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.041)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'Higgs' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.088)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'Higgs' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.097)
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_DY_M-50' ignorata: non è in nuisances.py
+[DEBUG] Trovati 11 sistematiche per 'DY_M-50' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'DY_M-50' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.089)
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_DY_else' ignorata: non è in nuisances.py
+[DEBUG] Trovati 11 sistematiche per 'DY_else' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'DY_else' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.069)
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBF-Z' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'VBF-Z' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'VBF-Z' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.061)
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_Vg' ignorata: non è in nuisances.py
+[DEBUG] Trovati 11 sistematiche per 'Vg' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'Vg' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.023)
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VgS' ignorata: non è in nuisances.py
+[DEBUG] Trovati 11 sistematiche per 'VgS' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.007)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [!] Fluctuation or negative bin in 'mu_SR / DNNJoinedDphijet1jet2PU2 / VgS' for nuisance 'CMS_scale_met_2018_UL': up = 0.014, down = 0.000
+ [-] PRUNED 'CMS_scale_met_2018_UL' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.168)
+ [-] PRUNED 'CMS_res_j_2018_UL' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.012)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+ [-] PRUNED 'CMS_btag_jes' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.021)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.018)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'VgS' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.005)
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VVV' ignorata: non è in nuisances.py
+[DEBUG] Trovati 11 sistematiche per 'VVV' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.005)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.035)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.035)
+ [-] PRUNED 'CMS_scale_met_2018_UL' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.098)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.036)
+ [-] PRUNED 'CMS_res_j_2018_UL' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.059)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.036)
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.036)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'VVV' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.036)
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'sm' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.079)
+[DEBUG] ❌ 'VBFW_fake_m_EWKsub_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_fake_stat_m_2018_1lep' ignorata: non è in nuisances.py
+[DEBUG] Trovati 0 sistematiche per 'Fake' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.078)
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'quad_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.092)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.040)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.064)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.021)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.061)
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.080)
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_mixed_cW_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.077)
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_mixed_cW_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.076)
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.077)
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'quad_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'pdfAlpha' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.020)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.009)
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_res_j_2018_UL' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.017)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.005)
+ [-] PRUNED 'CMS_scale_met_2018_UL' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.015)
+ [-] PRUNED 'CMS_PS_FSR_dipole' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.012)
+[DEBUG] ❌ Istogramma nominale 'mu_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHDD_cW' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHDD_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.075)
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.076)
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_m_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'quad_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.010)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.026)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.010)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.009)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.007)
+ [-] PRUNED 'pdfAlpha' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.011)
+ [-] PRUNED 'CMS_PS_FSR_dipole' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.044)
+ [-] PRUNED 'CMS_scale_met_2018_UL' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.051)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.060)
+ [-] PRUNED 'CMS_res_j_2018_UL' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.059)
+[DEBUG] ❌ Istogramma nominale 'mu_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHWB_cW' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHWB_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ Istogramma nominale 'mu_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHWB_cHDD' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHWB_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ 'VBFW_WJets_rew_stat_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018_Wjets_HT_hardJets_norm_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR_Wjets_HT_hardJets_acceptVBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_Wjets_HT_hardJets_Alpha_acceptVBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal_Wjets_HT_hardJets_norm_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_Wjets_HT_hardJets_acceptVBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'VBFW_WJets_rew_func_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_Wjets_HT_hardJets_accept_VBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_Wjets_HT_hardJets_accept_VBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'Wjets_HT_hardJets' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal_Wjets_HT_PUJets_norm_ele' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_Wjets_HT_PUJets_acceptVBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR_Wjets_HT_PUJets_acceptVBFW_ele' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_Wjets_HT_PUJets_acceptVBFW_ele' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018_Wjets_HT_PUJets_norm_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_Wjets_HT_PUJets_Alpha_acceptVBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR_Wjets_HT_PUJets_acceptVBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_Wjets_HT_PUJets_Alpha_acceptVBFW_ele' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018_Wjets_HT_PUJets_norm_ele' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal_Wjets_HT_PUJets_norm_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_Wjets_HT_PUJets_accept_VBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_Wjets_HT_PUJets_accept_VBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'Wjets_HT_PUJets' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR_top_acceptVBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal_top_norm_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_top_pT_reweighting' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_top_acceptVBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_top_Alpha_acceptVBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'singleTopToTTbar' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018_top_norm_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf_weight_top_accept_VBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_top_accept_VBFW_ele18' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'top' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'top' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.038)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'top' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.063)
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'top' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.027)
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VV' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'VV' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'VV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.097)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'VV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.090)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'VV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.063)
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'VV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.031)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'VV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.051)
+ [-] PRUNED 'CMS_btag_jes' for sample 'VV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.053)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'VV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.090)
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBS' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'VBS' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.055)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.072)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.033)
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.013)
+ [-] PRUNED 'CMS_btag_jes' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.014)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.045)
+ [-] PRUNED 'CMS_res_j_2018_UL' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.067)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.017)
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.062)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.062)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'VBS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.035)
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_Higgs' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'Higgs' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'Higgs' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'Higgs' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.056)
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_DY_M-50' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'DY_M-50' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_DY_else' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'DY_else' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'DY_else' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.032)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'DY_else' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.062)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'DY_else' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.052)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'DY_else' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.083)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'DY_else' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.092)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'DY_else' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.076)
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBF-Z' ignorata: non è in nuisances.py
+[DEBUG] Trovati 13 sistematiche per 'VBF-Z' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'VBF-Z' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.081)
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_Vg' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'Vg' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'Vg' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.022)
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'Vg' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'Vg' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.068)
+ [!] Fluctuation or negative bin in 'ele_SR / DNNJoinedDphijet1jet2PU2 / Vg' for nuisance 'CMS_scale_met_2018_UL': up = 0.137, down = 0.000
+ [-] PRUNED 'CMS_scale_met_2018_UL' for sample 'Vg' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 1.003)
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VgS' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'VgS' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [!] Fluctuation or negative bin in 'ele_SR / DNNJoinedDphijet1jet2PU2 / VgS' for nuisance 'CMS_scale_JESHF': up = 0.008, down = 0.000
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [!] Fluctuation or negative bin in 'ele_SR / DNNJoinedDphijet1jet2PU2 / VgS' for nuisance 'CMS_scale_met_2018_UL': up = 0.008, down = 0.000
+ [-] PRUNED 'CMS_scale_met_2018_UL' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.069)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_res_j_2018_UL' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+ [-] PRUNED 'CMS_btag_jes' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [!] Fluctuation or negative bin in 'ele_SR / DNNJoinedDphijet1jet2PU2 / VgS' for nuisance 'CMS_scale_JESAbsolute': up = 0.011, down = 0.000
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+ [!] Fluctuation or negative bin in 'ele_SR / DNNJoinedDphijet1jet2PU2 / VgS' for nuisance 'CMS_scale_JESAbsolute_2018': up = 0.008, down = 0.000
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'VgS' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VVV' ignorata: non è in nuisances.py
+[DEBUG] Trovati 12 sistematiche per 'VVV' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.007)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.023)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [!] Fluctuation or negative bin in 'ele_SR / DNNJoinedDphijet1jet2PU2 / VVV' for nuisance 'CMS_scale_met_2018_UL': up = 0.000, down = 0.055
+ [!] Fluctuation or negative bin in 'ele_SR / DNNJoinedDphijet1jet2PU2 / VVV' for nuisance 'CMS_scale_met_2018_UL': up = 0.063, down = 0.000
+ [-] PRUNED 'CMS_scale_met_2018_UL' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.034)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.023)
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [!] Fluctuation or negative bin in 'ele_SR / DNNJoinedDphijet1jet2PU2 / VVV' for nuisance 'CMS_res_j_2018_UL': up = 0.055, down = 0.000
+ [!] Fluctuation or negative bin in 'ele_SR / DNNJoinedDphijet1jet2PU2 / VVV' for nuisance 'CMS_res_j_2018_UL': up = 0.034, down = 0.000
+ [-] PRUNED 'CMS_res_j_2018_UL' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.041)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.023)
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'VVV' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.024)
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_pdfAlpha' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESBBEC1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESEC2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESAbsolute_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESHF_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_met_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_PS_FSR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_scale_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_CMS_res_j_2018_UL' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cW_pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHDD_pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cHDD_cHWB_pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_cHWB_pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHDD_pdf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'lin_quad_mixed_cW_cHWB_pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 14 sistematiche per 'sm' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.074)
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 14 sistematiche per 'sm_lin_quad_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.098)
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 14 sistematiche per 'quad_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.054)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.016)
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.070)
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 14 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_mixed_cW_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.096)
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 14 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_mixed_cW_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.094)
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 14 sistematiche per 'sm_lin_quad_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.073)
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 14 sistematiche per 'quad_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'pdfAlpha' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.005)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.011)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.007)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_res_j_2018_UL' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.010)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+ [-] PRUNED 'CMS_scale_met_2018_UL' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.012)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_PS_FSR_dipole' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+[DEBUG] ❌ Istogramma nominale 'ele_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHDD_cW' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHDD_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 14 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.096)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.073)
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 14 sistematiche per 'sm_lin_quad_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.099)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.074)
+[DEBUG] ❌ 'CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_jetpuid_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_e_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeSample_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PU_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_lfstats1_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_trigger_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_PS_ISR_dipole' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hfstats2_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'CMS_eff_prefiring_2018' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'QCDscale_VBFW' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'pdf' ignorata: non è in nuisances.py
+[DEBUG] Trovati 14 sistematiche per 'quad_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2_2018' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.008)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.005)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.016)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2018' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.021)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.005)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.009)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2018' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.020)
+ [-] PRUNED 'pdfAlpha' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+ [-] PRUNED 'CMS_PS_FSR_dipole' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.022)
+ [-] PRUNED 'CMS_scale_JESHF_2018' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.015)
+ [-] PRUNED 'CMS_scale_met_2018_UL' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.029)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.037)
+ [-] PRUNED 'CMS_scale_e_2018' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+ [-] PRUNED 'CMS_res_j_2018_UL' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.036)
+[DEBUG] ❌ Istogramma nominale 'ele_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHWB_cW' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHWB_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ Istogramma nominale 'ele_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHWB_cHDD' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHWB_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+All done. Changes saved to: ../../rootFile/EFT_4Comb_final_v3/plots_vbf_w_2018EFT_4Comb_final_v3.root

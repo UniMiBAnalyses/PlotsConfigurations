@@ -2,6 +2,7 @@
 
 import optparse
 import math
+import re
 
 ## counts the number of "set" from the line "# SM rwgt_1" to the first line starting with "#"
 ## this is also the number of operators
@@ -80,13 +81,24 @@ def do_mixed(op1, op2, card):
 
     with open(card, "r") as file:
         for line in file:
-            if op1 in line and "," not in line:
-                if op1+"=1" in line:
+            if "rwgt_" not in line:
+                continue
+
+            # prendi la parte prima di rwgt_
+            left = line.split("rwgt_")[0]
+
+            # estrai token in forma dict {op: val}
+            tokens = [tok.strip() for tok in left.strip("# ").split(",")]
+            kv = dict(tok.split("=") for tok in tokens if "=" in tok)
+
+            # --- match esatto: controlla chiavi del dict ---
+            if len(tokens) == 1:
+                if op1 in kv and op2 not in kv and kv[op1] == "1":
                     w1_plus = int(line.split("rwgt_")[1]) - 1
-            elif op2 in line and "," not in line:
-                if op2+"=1" in line:
+                elif op2 in kv and op1 not in kv and kv[op2] == "1":
                     w2_plus = int(line.split("rwgt_")[1]) - 1
-            elif op1 in line and op2 in line:
+            else:
+                if op1 in kv and op2 in kv:
                     w = int(line.split("rwgt_")[1]) - 1
     
     if opt.DebugWeight:
@@ -132,8 +144,8 @@ if __name__ == '__main__':
     else:
         ops = get_list_operators(rw_card)
 
-    print "Number of operators: ", numOp
-    print "Operators: ", ops
+    print("Number of operators: ", numOp)
+    print("Operators: ", ops)
     # print "Number of weights (lin, quad, mixed) = ", numOp*2 + math.comb(numOp, 2)  ##lin quad + mixed
 
     file_content = ""
@@ -144,11 +156,11 @@ if __name__ == '__main__':
             if idx2 > idx1:
                 file_content += do_mixed(op1, op2, rw_card)
 
-# write it all down
-if opt.DebugWeight:
-    with open("debug_EFTweights.py", "w") as file:
-        file.write(file_content)
-else:
-    with open("EFTweights.py", "w") as file:
-        file.write(file_content)
+    # write it all down
+    if opt.DebugWeight:
+        with open("debug_EFTweights.py", "w") as file:
+            file.write(file_content)
+    else:
+        with open("EFTweights.py", "w") as file:
+            file.write(file_content)
 

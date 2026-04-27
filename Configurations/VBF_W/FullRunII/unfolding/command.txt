@@ -1,0 +1,37 @@
+SR: 
+plot data is blind = 1
+coonfiguratio run variables_combined.py
+
+for i in nJet mjj ptW detajj dphijj jet1pt jet2pt leppt ptjj; do 
+    sed -i "s/var=\"SED_ME\"/var=\"${i}\"/g" plot_combined.py
+    sed -i "s/SED_ME/${i}/g" variables_combined.py
+    sed -i "s/SED_ME/${i}/g" configuration_combined.py
+
+    mkPlot.py --pycfg=configuration_combined.py \
+              --inputFile ../rootFile/TBPlotunfolding_final_v9_${i}_FullRunII.root \
+              --onlyPlot=cratio --showIntegralLegend=1
+
+    sed -i "s/${i}/SED_ME/g" variables_combined.py
+    sed -i "s/var=\"${i}\"/var=\"SED_ME\"/g" plot_combined.py
+    sed -i "s/${i}/SED_ME/g" configuration_combined.py
+done
+
+
+CR:
+plot data is blind = 0
+coonfiguratio run variables_CR_combined.py
+
+for i in nJet mjj ptW detajj dphijj jet1pt jet2pt leppt ptjj; do
+for i in fiducial; do
+    sed -i "s/var=\"SED_ME\"/var=\"${i}\"/g" plot_combined.py
+    sed -i "s/SED_ME/${i}/g" variables_CR_combined.py
+    sed -i "s/SED_ME/${i}/g" configuration_combined.py
+
+    mkPlot.py --pycfg=configuration_combined.py \
+              --inputFile ../rootFile/TBPlotunfolding_final_v9_${i}_FullRunII_CR.root \
+              --onlyPlot=cratio --showIntegralLegend=1
+
+    sed -i "s/${i}/SED_ME/g" variables_CR_combined.py
+    sed -i "s/var=\"${i}\"/var=\"SED_ME\"/g" plot_combined.py
+    sed -i "s/${i}/SED_ME/g" configuration_combined.py
+done

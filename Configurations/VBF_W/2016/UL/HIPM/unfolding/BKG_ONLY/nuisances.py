@@ -1,39 +1,93 @@
 from pprint import pprint
 import re
 import json
+from collections import defaultdict, OrderedDict
 # # # name of samples here must match keys in samples.py 
 
-mc_bkg =["Wjets_HT_hardJets", "Wjets_HT_PUJets", "top", "VV", "VBS" , "Higgs", "DY_M-50", "DY_else", "VBF-Z", "Vg", "VgS", "VVV"]
-mc_bkg = mc_bkg + [c for c in samples if "Out" in c]
+# mc_bkg =["Wjets_HT_hardJets", "Wjets_HT_PUJets", "top", "VV", "VBS" , "Higgs", "DY_M-50", "DY_else", "VBF-Z", "Vg", "VgS", "VVV"]
+mc_bkg =["Wjets_HT_hardJets", "Wjets_HT_PUJets", "top", "DY_M-50", "Others"]
+out = [ c for c in samples if "Out" in c]
+mc_bkg = mc_bkg + out
+
 signals = [c for c in samples if "WLNuJJ" in c and "Out" not in c]
 signals_correlated = list(set(re.sub(r'\d{1,2}$', '', c) for c in signals))
 
 mc = signals + mc_bkg
 
-regions = ["ele_SR","mu_SR","ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","topcr","ele_FakeCR","mu_FakeCR"]
-from LatinoAnalysis.Tools.commonTools import getSampleFiles, getBaseW, addSampleWeight
+regions = ["ele_SR","mu_SR","ele_HWJ","mu_HWJ","ele_PUWJ", "mu_PUWJ","ele_topcr","mu_topcr","ele_FakeCR","mu_FakeCR"]
 
-def nanoGetSampleFiles(inputDir, Sample):
-    return getSampleFiles(inputDir, Sample, False, 'nanoLatino_')
 
 phase_spaces_tot_ele = [ c for c in regions if 'ele' in c]
 phase_spaces_tot_mu = [ c for c in regions if 'mu' in c]
 phase_spaces_tot_sr = [ c for c in regions if 'SR' in c]
-phase_spaces_tot_sr_top = [ c for c in regions if 'SR' in c or "topcr" in c]
-wj_region = [ c for c in regions if 'HWJ' in c]
-all_but_top = [c for c in mc if "top" not in c]
 
-# # Function to split a nuisance on different folders for different group of samples
-# # keeping the same nuisance name
-# # groups = [ (list of samples, folder), ...  ]
-# # def split_nuisance_samples_dir(nuisance_name, nuisance_options, variation, groups):
-# #     for ig, (samples_list, folder) in enumerate(groups):
-# #         n = {}
-# #         n.update(nuisance_options)
-# #         n["samples"] = dict((skey, ['1.','1.']) for skey in samples_list)
-# #         n["folderUp"] = folder +'_'+variation + 'up'
-# #         n["folderDown"] = folder +'_'+variation + 'do'
-# #         nuisances['{}_{}'.format(nuisance_name, ig)] = n
+wj_region = [ c for c in regions if 'HWJ' in c]
+
+
+def merge_nuisances(nuisances):
+    # Step 1: Raggruppa le keys per "name"
+    name_to_keys = defaultdict(list)
+
+    for key, nuis in nuisances.items():
+        name = nuis.get('name')
+        if name:
+            name_to_keys[name].append(key)
+
+    # Step 2: Per ogni gruppo di keys con lo stesso "name", fai il merge
+    merged_nuisances = OrderedDict()
+
+    # Mantieni l'ordine di apparizione di 'name' in nuisances
+    seen_names = []
+    for key, nuis in nuisances.items():
+        name = nuis.get('name')
+        if name and name not in seen_names:
+            seen_names.append(name)
+
+    for name in seen_names:
+        keys = name_to_keys[name]
+
+        # Usa la prima entry come base
+        base_key = keys[0]
+        base_nuis = dict(nuisances[base_key])  # copia
+
+        # Mergia 'samples' e 'cuts' da tutte le altre entries
+        merged_samples = dict(base_nuis.get('samples', {}))
+        merged_cuts = list(base_nuis.get('cuts', []))  # se non esiste 'cuts', prende lista vuota
+
+        for other_key in keys[1:]:
+            other_nuis = nuisances[other_key]
+
+            # Unisci samples
+            for sample, val in other_nuis.get('samples', {}).items():
+                merged_samples[sample] = val
+
+            # Unisci cuts solo se esiste in questa nuisance
+            if 'cuts' in other_nuis:
+                merged_cuts.extend(other_nuis.get('cuts', []))
+
+        # Rimuovi duplicati in cuts
+        if merged_cuts:
+            merged_cuts = sorted(set(merged_cuts))
+            base_nuis['cuts'] = merged_cuts
+        elif 'cuts' in base_nuis:
+            del base_nuis['cuts']  # se alla fine non ci sono cuts, rimuovi
+
+        # Aggiorna la nuisance unificata
+        base_nuis['samples'] = merged_samples
+
+        # Mantieni la chiave master (es: 'JESAbsolute') se esiste
+        master_key = None
+        for k in keys:
+            if not ('_ele' in k or '_mu' in k):
+                master_key = k
+                break
+        if not master_key:
+            master_key = base_key  # fallback
+
+        merged_nuisances[master_key] = base_nuis
+
+    return merged_nuisances
+
 
 # # ################################ EXPERIMENTAL UNCERTAINTIES  #################################
 bkg_to_norm = ['top', 'Wjets_HT_hardJets', 'Wjets_HT_PUJets']
@@ -64,72 +118,63 @@ nuisances['lumi_Correlated_Run2'] = {
 # fakeW_jetDown     =  '( fakeWeight_25 / fakeWeight_35  )'
 ## not a systematic because i preselect my phase-space!
 
+
 fakeW_statUp = '\
 (\
-    (fakeWeight_1p3 <= 20) *\
+    (fakeWeight_0p9 <= 20) *\
     (\
-        (abs(fakeWeight_statUp / fakeWeight_1p3 - 1) <= 0.3) * (fakeWeight_statUp / fakeWeight_1p3) +\
-        (abs(fakeWeight_statUp / fakeWeight_1p3 - 1) > 0.3) * 1.\
+        (abs(fakeWeight_statUp / fakeWeight_0p9 - 1) <= 0.3) * (fakeWeight_statUp / fakeWeight_0p9) +\
+        (abs(fakeWeight_statUp / fakeWeight_0p9 - 1) > 0.3) * 1.\
     )\
 )\
 '
 
 fakeW_statDown = '\
 (\
-    (fakeWeight_1p3 <= 20) *\
+    (fakeWeight_0p9 <= 20) *\
     (\
-        (abs(fakeWeight_statDo / fakeWeight_1p3 - 1) <= 0.3) * (fakeWeight_statDo / fakeWeight_1p3) +\
-        (abs(fakeWeight_statDo / fakeWeight_1p3 - 1) > 0.3) * 1.\
+        (abs(fakeWeight_statDo / fakeWeight_0p9 - 1) <= 0.3) * (fakeWeight_statDo / fakeWeight_0p9) +\
+        (abs(fakeWeight_statDo / fakeWeight_0p9 - 1) > 0.3) * 1.\
     )\
 )\
 '
 
 fakeW_EWKsubUp = '\
 (\
-    (fakeWeight_1p3 <= 20) *\
+    (fakeWeight_0p9 <= 20) *\
     (\
-        (abs(fakeWeight_1p4 / fakeWeight_1p3 - 1) <= 0.3) * (fakeWeight_1p4 / fakeWeight_1p3) +\
-        (abs(fakeWeight_1p4 / fakeWeight_1p3 - 1) > 0.3) * 1.\
+        (abs(fakeWeight_0p9Up / fakeWeight_0p9 - 1) <= 0.3) * (fakeWeight_0p9Up / fakeWeight_0p9) +\
+        (abs(fakeWeight_0p9Up / fakeWeight_0p9 - 1) > 0.3) * 1.\
     )\
 )\
 '
 
 fakeW_EWKsubDown = '\
 (\
-    (fakeWeight_1p3 <= 20) *\
+    (fakeWeight_0p9 <= 20) *\
     (\
-        (abs(fakeWeight_1p2 / fakeWeight_1p3 - 1) <= 0.3) * (fakeWeight_1p2 / fakeWeight_1p3) +\
-        (abs(fakeWeight_1p2 / fakeWeight_1p3 - 1) > 0.3) * 1.\
-    )\
-)\
-'
-
-fakeW_PRMC = '\
-(\
-    (fakeWeight_1p3 <= 20) *\
-    (\
-        (fakeWeight_PRfromMC / fakeWeight_1p3 <= 1.3) * (fakeWeight_PRfromMC / fakeWeight_1p3) +\
-        (fakeWeight_PRfromMC / fakeWeight_1p3 > 1.3) * 1.\
+        (abs(fakeWeight_0p9Down / fakeWeight_0p9 - 1) <= 0.3) * (fakeWeight_0p9Down / fakeWeight_0p9) +\
+        (abs(fakeWeight_0p9Down / fakeWeight_0p9 - 1) > 0.3) * 1.\
     )\
 )\
 '
 
 nuisances['fake_syst_ele']  = {
-               'name'  : 'CMS_fake_syst_ele',
+               'name'  : 'CMS_fake_syst_ele_2016_HIPM',
                'type'  : 'lnN',
                'samples'  : {
                              'Fake' : '1.30',
                              },
-               'cuts': phase_spaces_tot_ele
+               'cuts':  phase_spaces_tot_ele,
                }
 
 nuisances['fake_syst_mu']  = {
-               'name'  : 'CMS_fake_syst_mu',
+               'name'  : 'CMS_fake_syst_mu_2016_HIPM',
                'type'  : 'lnN',
                'samples'  : {
                              'Fake' : '1.30',
                              },
-                'cuts': phase_spaces_tot_mu
+                'cuts':  phase_spaces_tot_mu,
                }
 
 nuisances['fake_ele_stat']  = {
@@ -139,7 +184,8 @@ nuisances['fake_ele_stat']  = {
                 'samples'  : {
                               'Fake'      : [ fakeW_statUp , fakeW_statDown ],
                              },
-                'cuts':  phase_spaces_tot_ele
+                'cuts':  phase_spaces_tot_ele,
+                'AsLnN' : '1',
 }
 
 nuisances['fake_mu_stat']  = {
@@ -149,7 +195,8 @@ nuisances['fake_mu_stat']  = {
                 'samples'  : {
                               'Fake'     :[ fakeW_statUp , fakeW_statDown ],
                              },
-                'cuts':  phase_spaces_tot_mu
+                'cuts':  phase_spaces_tot_mu,
+                'AsLnN' : '1',
 }
 
 nuisances['fake_ele_EWKsub']  = {
@@ -159,7 +206,8 @@ nuisances['fake_ele_EWKsub']  = {
                 'samples'  : {
                               'Fake'      : [ fakeW_EWKsubUp , fakeW_EWKsubDown ],
                              },
-                'cuts':  phase_spaces_tot_ele
+                'cuts':  phase_spaces_tot_ele,
+                'AsLnN' : '1',
 }
 
 nuisances['fake_mu_EWKsub']  = {
@@ -169,33 +217,18 @@ nuisances['fake_mu_EWKsub']  = {
                 'samples'  : {
                               'Fake'      : [ fakeW_EWKsubUp , fakeW_EWKsubDown ],
                              },
-                'cuts':  phase_spaces_tot_mu
+                'cuts':  phase_spaces_tot_mu,
+                'AsLnN' : '1',
 }
 
-nuisances['fake_mu_PRMC']  = {
-                'name'  : 'VBFW_fake_m_PR_fromMC_2016_HIPM',
+prefire_syst = ['L1PreFiringWeight_Up/L1PreFiringWeight_Nom', 'L1PreFiringWeight_Dn/L1PreFiringWeight_Nom']
+nuisances['prefire']  = {
+                'name'  : 'CMS_eff_prefiring_2016',
                 'kind'  : 'weight',
                 'type'  : 'shape',
-                'samples'  : {
-                              'Fake'      : [ fakeW_PRMC , "1." ],
-                             },
-                'cuts':  phase_spaces_tot_mu
+                'samples'  : dict((skey, prefire_syst) for skey in mc)
 }
 
-nuisances['fake_ele_PRMC']  = {
-                'name'  : 'VBFW_fake_e_PR_fromMC_2016_HIPM',
-                'kind'  : 'weight',
-                'type'  : 'shape',
-                'samples'  : {
-                              'Fake'      : [ fakeW_PRMC , "1." ],
-                             },
-                'cuts':  phase_spaces_tot_ele
-}
-
-
-json_file ='/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/utils/2016/HIPM/nuisance_incl_norm_factors_2016HIPM_exp.json'
-with open(json_file) as jsonfile:
-    data_exp = json.load(jsonfile)
 
 # # ##### Btag nuisances
 
@@ -221,22 +254,13 @@ nuisances['trigg']  = {
                 'name'  : 'CMS_eff_trigger_2016',
                 'kind'  : 'weight',
                 'type'  : 'shape',
-                'samples' :  dict((skey, trig_syst) for skey in mc)
+                'samples' :  dict((skey, trig_syst) for skey in mc),
+                'symmetrize': True,
 }
 
-# # Prefire correction
-prefire_syst = ['PrefireWeight_Up/PrefireWeight', 'PrefireWeight_Down/PrefireWeight']
-
-nuisances['prefire']  = {
-                'name'  : 'CMS_eff_prefiring_2016',
-                'kind'  : 'weight',
-                'type'  : 'shape',
-                'samples'  : dict((skey, trig_syst) for skey in mc)
-}
 
 # # ##### Electron Efficiency and energy scale
-eleWP='mvaFall17V2Iso_WP90'
-muWP='cut_Tight80x'
+
 ele_id_syst_up = '(abs(Lepton_pdgId[0]) == 11)*(Lepton_tightElectron_'+eleWP+'_TotSF'+'_Up[0])/\
                     (Lepton_tightElectron_'+eleWP+'_TotSF[0]) + (abs(Lepton_pdgId[0]) == 13)'
 ele_id_syst_do = '(abs(Lepton_pdgId[0]) == 11)*(Lepton_tightElectron_'+eleWP+'_TotSF'+'_Down[0])/\
@@ -271,7 +295,6 @@ nuisances['electronpt']  = {
 
 # # # ##### Muon Efficiency and energy scale
 
-
 nuisances['eff_m']  = {
                 'name'  : 'CMS_eff_m_2016',
                 'kind'  : 'weight',
@@ -291,7 +314,6 @@ nuisances['muonpt']  = {
                 'folderUp' : mcDirectoryLat+'__MupTup_suffix',
                 'folderDown' : mcDirectoryLat+'__MupTdo_suffix'
 }
-
 
 # ##################
 # # PU jet id
@@ -313,33 +335,12 @@ for js in jes_systs:
         'type': 'shape',
         'mapUp': js+'up',
         'mapDown': js+'do',
-        'samples': dict((skey, ['1.', '1.']) for skey in mc if skey not in bkg_to_norm),
+        # 'samples': dict((skey, ['1.', '1.']) for skey in mc if skey not in bkg_to_norm),
+        'samples': dict((skey, ['1.', '1.']) for skey in mc),
         'folderUp': mcDirectoryLat+'__JESup_suffix',
         'folderDown': mcDirectoryLat+'__JESdo_suffix'
     }
 
-    for bkg in bkg_to_norm:
-        if js in data_exp[bkg]:
-            name = 'CMS_scale_'+js+"_"+bkg+"_norm"
-            upFact = str(float(1./data_exp[bkg][js][-1]))
-            doFact = str(float(1./data_exp[bkg][js][0]))
-        else:
-            name = 'CMS_scale_'+js
-            upFact = "1."
-            doFact = "1."
-
-        nuisances[js+"_"+bkg+"_norm"]  = {
-            'name': name,
-            'kind': 'suffix',
-            'type': 'shape',
-            'mapUp': js+'up',
-            'mapDown': js+'do',
-            'samples': {
-                bkg: [upFact,doFact] 
-            },
-            'folderUp': mcDirectoryLat+'__JESup_suffix',
-            'folderDown': mcDirectoryLat+'__JESdo_suffix'
-        }
 
 # # # ##### Jet energy resolution
 nuisances['JER'] = {
@@ -354,34 +355,18 @@ nuisances['JER'] = {
 }
 
 # ##### MET energy scale
+
 nuisances['MET']  = {
                 'name'  : 'CMS_scale_met_2016',
                 'kind'  : 'suffix',
                 'type'  : 'shape',
                 'mapUp':   'METup',
                 'mapDown': 'METdo', 
-                'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in bkg_to_norm),
+                # 'samples': dict((skey, ['1.','1.']) for skey in mc if skey not in bkg_to_norm),
+                'samples': dict((skey, ['1.','1.']) for skey in mc ),
                 'folderUp' : mcDirectoryLat+'__METup_suffix',
                 'folderDown' : mcDirectoryLat+'__METdo_suffix'
 }
-
-for bkg in bkg_to_norm:
-    upFact = str(float(1./data_exp[bkg]["scale_met_2016_UL"][-1]))
-    doFact = str(float(1./data_exp[bkg]["scale_met_2016_UL"][0]))
-
-    nuisances["MET_"+bkg+"_norm"]  = {
-        'name': 'CMS_scale_met_2016_{}_norm'.format(bkg),
-        'kind'  : 'suffix',
-        'type'  : 'shape',
-        'mapUp':   'METup',
-        'mapDown': 'METdo', 
-        'samples'  : {
-            bkg      : [upFact,doFact]                                                                                                                                                                                                                 
-        },
-        'folderUp' : mcDirectoryLat+'__METup_suffix',
-        'folderDown' : mcDirectoryLat+'__METdo_suffix'
-    }
-
 
 # # # Top pT reweighting uncertainty
 
@@ -414,16 +399,12 @@ nuisances['TopPtRew'] = {
 # # # # # PS and UE
 # # # # # #
 # # # # #### USE this for producing shapes
-## normalized theorical ones for main bkgs!!
-json_file ='/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/utils/2016/HIPM/nuisance_incl_norm_factors_2016HIPM.json'
-with open(json_file) as jsonfile:
-    data_bkg_th = json.load(jsonfile)
 
 nuisances['PS_ISR']  = {
                 'name'  : 'CMS_PS_ISR',
                 'kind'  : 'weight',
                 'type'  : 'shape',
-                'samples'  : {   sample : ['PSWeight[2]','PSWeight[0]'] for sample in mc if sample not in ['VBS', 'VBF-Z']+signals+bkg_to_norm}
+                'samples'  : {   sample : ['PSWeight[2]','PSWeight[0]'] for sample in mc if sample not in ['VBS', 'VBF-Z']+signals}
             }
 
 nuisances['PS_FSR']  = {
@@ -431,42 +412,27 @@ nuisances['PS_FSR']  = {
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {     
-                    sample : ['PSWeight[3]','PSWeight[1]'] for sample in mc if sample not in ['VBS', 'VBF-Z']+signals+bkg_to_norm}
+                    sample : ['PSWeight[3]','PSWeight[1]'] for sample in mc if sample not in ['VBS', 'VBF-Z']+signals}
             }
-
-for bkg in bkg_to_norm:
-    nuisances['PS_ISR_{}_accept'.format(bkg)]  = {
-                    'name'  : 'CMS_PS_ISR_{}_accept'.format(bkg),
-                    'kind'  : 'weight',
-                    'type'  : 'shape',
-                    'samples'  : { bkg : ['PSWeight[2]/{}'.format(data_bkg_th[bkg]["PSISR"][-1]),'PSWeight[0]/{}'.format(data_bkg_th[bkg]["PSISR"][0])] }
-                }
-
-    nuisances['PS_FSR_{}_accept'.format(bkg)]  = {
-                    'name'  : 'CMS_PS_FSR_{}_accept'.format(bkg),
-                    'kind'  : 'weight',
-                    'type'  : 'shape',
-                    'samples'  : { bkg : ['PSWeight[3]/{}'.format(data_bkg_th[bkg]["PSFSR"][-1]),'PSWeight[1]/{}'.format(data_bkg_th[bkg]["PSFSR"][0])] }
-                }
 
 nuisances['PS_ISR_dipole']  = {
                 'name'  : 'CMS_PS_ISR_dipole',
                 'kind'  : 'weight',
                 'type'  : 'shape',
-                'samples'  : {   sample : ['PSWeight[2]','PSWeight[0]'] for sample in ['VBS', 'VBF-Z']}
+                'samples'  : {   sample : ['PSWeight[2]','PSWeight[0]'] for sample in ['VBS', 'VBF-Z']+out}
             }
 
 nuisances['PS_FSR_dipole']  = {
                 'name'  : 'CMS_PS_FSR_dipole',
                 'kind'  : 'weight',
                 'type'  : 'shape',
-                'samples'  : {     sample : ['PSWeight[3]','PSWeight[1]'] for sample in ['VBS', 'VBF-Z']}
+                'samples'  : {     sample : ['PSWeight[3]','PSWeight[1]'] for sample in ['VBS', 'VBF-Z']+out}
             }
 
 # # # ##############
 
 nuisances['PU']  = {
-                'name'  : 'CMS_PU_2016HIPM',
+                'name'  : 'CMS_PU_2016',
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
@@ -477,45 +443,24 @@ nuisances['PU']  = {
 variations   = ['Alt$(LHEScaleWeight[0],1)', 'Alt$(LHEScaleWeight[1],1)', 'Alt$(LHEScaleWeight[3],1)', 'Alt$(LHEScaleWeight[nLHEScaleWeight-4],1)', 'Alt$(LHEScaleWeight[nLHEScaleWeight-2],1)', 'Alt$(LHEScaleWeight[nLHEScaleWeight-1],1)']
 
 for sample in mc_bkg :
-    if sample in bkg_to_norm:
-        nuisances['QCDscale_'+sample+'_accept'] = {
-            'name'  : 'QCDscale_'+sample+'_accept',
-            'kind'  : 'weight_envelope',
-            'type'  : 'shape',
-            'samples': {sample: [
-                    'Alt$(LHEScaleWeight[{}]/{},1)'.format(
-                        idx if idx >= 0 else "nLHEScaleWeight{}".format(idx), data_bkg_th[sample]["QCDSF"][i]
-                    )
-                    for i, idx in enumerate([0, 1, 3, -4, -2, -1])
-                    ]}
+    nuisances['QCDscale_'+sample] = {
+        'name'  : 'QCDscale_'+sample,
+        'kind'  : 'weight_envelope',
+        'type'  : 'shape',
+        'samples'  :  { sample: variations }
+    }
+    if sample in bkg_to_norm+out:
+        nuisances['PDFscale_'+sample] = {
+                'name'  : 'pdf_weight_{}'.format(sample),
+                'kind'  : 'weight_square',
+                'type'  : 'shape',
+                'samples' :  { sample: ['Alt$(LHEPdfWeight[{}], 1.)'.format(i) for i in range(0,101)]},
         }
-
-        nuisances['pdf_weight_{}_accept'.format(sample)] = {
-            'name'  : 'pdf_weight_{}_accept'.format(sample),
-            'kind'  : 'weight_square',
-            'type'  : 'shape',
-            'samples' :  { sample: ['Alt$(LHEPdfWeight[{}]/{}, 1.)'.format(i, data_bkg_th[sample]["PDFSF"][i]) for i in range(0,101)]},
-        }
-
-        nuisances['pdf_weight_{}_Alpha_accept'.format(sample)] = {
-            'name'  : 'pdf_weight_{}_Alpha_accept'.format(sample),
-            'kind'  : 'weight',
-            'type'  : 'shape',
-            'samples' :  { sample: ['Alt$(LHEPdfWeight[{}]/{}, 1.)'.format(102, data_bkg_th[sample]["PDFSF"][102]), 'Alt$(LHEPdfWeight[{}]/{}, 1.)'.format(101, data_bkg_th[sample]["PDFSF"][101])]},
-        }
-    else:
-        nuisances['QCDscale_'+sample] = {
-            'name'  : 'QCDscale_'+sample,
-            'kind'  : 'weight_envelope',
-            'type'  : 'shape',
-            'samples'  :  { sample: variations }
-        }
-
 
 ## normalized theorical ones!!
 avoidTH = [2,6]
 # json_file ='/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/2018/UL/unfolding/compute_measures/semiDEFNuis.json'
-json_file ='/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/utils/2018/nuisance_diff_norm_factors_2018_sig.json'
+json_file ='/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/utils/2018/nuisance_diff_norm_factors_2018_sig_v4.json'
 with open(json_file) as jsonfile:
     data_sig_th = json.load(jsonfile)
 
@@ -540,22 +485,9 @@ for s in signals_correlated:
         'samples': {
             k: [
                 'Alt$(LHEPdfWeight[{}]/{}, 1.)'.format(i, data_sig_th[var]["bin{}".format(k.split(var)[-1])]["PDFSF"][i])
-                for i in range(0, 101)
+                for i in range(0, 103)
             ]
             for k in signals if s in k 
-        }
-    }
-
-    nuisances['pdf_weight_{}_Alpha_accept'.format(s)] = {
-        'name'  : 'pdf_weight_{}_Alpha_accept'.format(s),
-        'kind'  : 'weight',
-        'type'  : 'shape',
-        'samples' : {
-            k: [
-                'Alt$(LHEPdfWeight[{}]/{}, 1.)'.format(102, data_sig_th[var]["bin{}".format(k.split(var)[-1])]["PDFSF"][102]),
-                'Alt$(LHEPdfWeight[{}]/{}, 1.)'.format(101, data_sig_th[var]["bin{}".format(k.split(var)[-1])]["PDFSF"][101])
-            ]
-            for k in signals if s in k
         }
     }
 
@@ -624,23 +556,24 @@ nuisances['WJets_reweight_functional_2016_HIPM'] = {
 # # # Normalization factors
 # # ##############
 
-
-nuisances["Top_norm"]  = {
-    'name'  : 'CMS_Top_norm16HIPM',
-    'samples'  : {
-        'top' : '1.00',
-        },
-    'range': (0.7, 1.3),
-    'type'  : 'rateParam'
-}
+for fl in ["ele", "mu"]:
+    nuisances["Top_norm_{}".format(fl)]  = {
+        'name'  : 'CMS_Top_norm_{}16HIPM'.format(fl),
+        'samples'  : {
+            'top' : '1.00',
+            },
+        'range': (0.5,1.5),
+        'type'  : 'rateParam',
+        'cuts': [region for region in regions if fl in region]
+    }
 
 for fl in ["ele", "mu"]:
     nuisances["WPUJet_norm_{}".format(fl)]  = {
         'name'  : 'CMS_WPUJet_norm_{}16HIPM'.format(fl),
         'samples'  : {'Wjets_HT_PUJets' : '1.00'},
         'type'  : 'rateParam',
-        'range': (0.7, 1.3),
-        'cuts': [region for region in regions if fl in region or "topcr" in region]
+        'range': (0.5,2.0),
+        'cuts': [region for region in regions if fl in region]
     }
 
 
@@ -649,25 +582,25 @@ for fl in ["ele", "mu"]:
                     'name'  : 'CMS_WhardJet_norm_{}16HIPM'.format(fl),
                     'samples'  : {'Wjets_HT_hardJets' : '1.00'},
                     'type'  : 'rateParam',
-                    'range': (0.7, 1.3),
-                    'cuts': [region for region in regions if fl in region or "topcr" in region]
+                    'range': (0.5,1.5),
+                    'cuts': [region for region in regions if fl in region]
             }
-
-
-# ## Use the following if you want to apply the automatic combine MC stat nuisances.
-nuisances['stat']  = {
-              'type'  : 'auto',
-              'maxPoiss'  : '10',
-              'includeSignal'  : '1',
-            #    nuisance ['maxPoiss'] =  Number of threshold events for Poisson modelling
-            #    nuisance ['includeSignal'] =  Include MC stat nuisances on signal processes (1=True, 0=False)
-              'samples' : {}
-             }
 
 
 for n in nuisances.values():
     n['skipCMS'] = 1
 
+nuisances = merge_nuisances(nuisances)
+
+# ## Use the following if you want to apply the automatic combine MC stat nuisances.
+nuisances['stat']  = {
+              'type'  : 'auto',
+              'maxPoiss'  : '10',
+              'includeSignal'  : '0',
+            #    nuisance ['maxPoiss'] =  Number of threshold events for Poisson modelling
+            #    nuisance ['includeSignal'] =  Include MC stat nuisances on signal processes (1=True, 0=False)
+              'samples' : {}
+             }
 
 # ################################
 # ## Customizations

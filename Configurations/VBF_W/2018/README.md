@@ -54,7 +54,7 @@ but in
 
 # Hadd the root files:
 
-    mkShapesMulti.py --pycfg=configuration.py --doHadd=1 --batchSplit=Samples,Files --doNotCleanup --nThreads=10
+    mkShapesMulti.py --pycfg=configuration.py --doHadd=1 --batchSplit=Samples,Files --doNotCleanup --nThreads=10 --doResub --ForceResub
 
 or
 
@@ -131,7 +131,7 @@ but in
 
 # Hadd the root files:
 
-    mkShapesMulti.py --pycfg=configuration.py --doHadd=1 --batchSplit=Samples,Files --doNotCleanup --nThreads=10
+    mkShapesMulti.py --pycfg=configuration.py --doHadd=1 --batchSplit=Samples,Files --doNotCleanup --nThreads=10 --doResub --ForceResub
 
 or
 

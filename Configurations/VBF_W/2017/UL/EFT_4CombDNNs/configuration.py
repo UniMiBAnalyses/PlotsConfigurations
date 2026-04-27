@@ -2,7 +2,9 @@
 
 treeName = 'Events'
 
-tagger = 'EFT_4Comb_joinedNEW_lastDNNs'
+# tagger = 'EFT_4Comb_DNNsAA'
+tagger = 'EFT_4Comb_final_v6'
+# tagger = 'EFT_4Comb_newWP'
 
 tag = 'vbf_w_2017'+tagger
 
@@ -33,7 +35,7 @@ outputDirPlots = '../../plots/'+tagger
 
 
 # used by mkDatacards to define output directory for datacards
-outputDirDatacard = '../../datacards/'+tagger
+outputDirDatacard = '../../datacards/'+tagger+"_Sym"
 
 # structure file for datacard
 structureFile = 'structure.py'

@@ -1,12 +1,5 @@
-variables["MultiClass_jet1eta_class10"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (2, 0.0, 1.0), 'name': 'MultiClass_jet1eta_class10', 'xaxis': 'MultiClass_jet1eta_class10'}
-variables["events"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
-variables["DNN1jet1eta"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0, 5.0, 5, 0.0, 1.0), 'name': 'DNNoutputSR_noQGL:jeteta1_abs', 'xaxis': 'DNNoutput : #eta 1st jet'}
-variables["MultiClass_jet1eta_class8"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (4, 0.0, 1.0), 'name': 'MultiClass_jet1eta_class8', 'xaxis': 'MultiClass_jet1eta_class8'}
-variables["MultiClass_jet1eta_class9"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (4, 0.0, 1.0), 'name': 'MultiClass_jet1eta_class9', 'xaxis': 'MultiClass_jet1eta_class9'}
-variables["MultiClass_jet1eta_class4"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_jet1eta_class4', 'xaxis': 'MultiClass_jet1eta_class4'}
-variables["MultiClass_jet1eta_class5"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_jet1eta_class5', 'xaxis': 'MultiClass_jet1eta_class5'}
-variables["MultiClass_jet1eta_class6"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_jet1eta_class6', 'xaxis': 'MultiClass_jet1eta_class6'}
-variables["MultiClass_jet1eta_class7"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_jet1eta_class7', 'xaxis': 'MultiClass_jet1eta_class7'}
-variables["MultiClass_jet1eta_class1"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_jet1eta_class1', 'xaxis': 'MultiClass_jet1eta_class1'}
-variables["MultiClass_jet1eta_class2"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_jet1eta_class2', 'xaxis': 'MultiClass_jet1eta_class2'}
-variables["MultiClass_jet1eta_class3"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_jet1eta_class3', 'xaxis': 'MultiClass_jet1eta_class3'}
+variables["high0p5DNN1jet1eta3"] = {'fold': 2, 'range': ([0.5, 1.0], [0.0, 0.6, 0.77, 0.9, 1.04, 1.167, 1.3, 1.45, 1.567, 1.7, 1.8, 1.9, 2.0, 2.07, 2.133, 2.2, 2.267, 2.333, 2.4, 2.44, 3.0, 3.1, 3.2, 3.3, 3.4, 3.45, 3.6, 3.7, 3.9, 5.0]), 'name': 'jeteta1_abs:DNNJoined', 'xaxis': 'DNNoutput : |#eta| 1st jet'}
+variables["high0p5DNN1jet1eta2"] = {'fold': 2, 'range': ([0.5, 1.0], [0.0, 0.45, 0.9, 1.1, 1.3, 1.5, 1.7, 1.85, 2.0, 2.1, 2.2, 2.3, 2.4, 2.7, 3.0, 3.15, 3.3, 3.45, 3.6, 4.3, 5.0]), 'name': 'jeteta1_abs:DNNJoined', 'xaxis': 'DNNoutput : |#eta| 1st jet'}
+variables["high0p5DNN1jet1eta4"] = {'fold': 2, 'range': ([0.5, 1.0], [0.0, 0.225, 0.45, 0.675, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.775, 1.85, 1.925, 2.0, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.55, 2.7, 2.85, 3.0, 3.075, 3.15, 3.225, 3.3, 3.375, 3.45, 3.525, 3.6, 3.95, 4.3, 4.65, 5.0]), 'name': 'jeteta1_abs:DNNJoined', 'xaxis': 'DNNoutput : |#eta| 1st jet'}
+variables["events"] = {'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
+variables["high0p5events"] = {'fold': 2, 'range': (1, 0.5, 1.0, 1, 0.0, 10000.0), 'name': 'ptjj:DNNJoined', 'xaxis': 'DNNoutput : events [GeV]'}

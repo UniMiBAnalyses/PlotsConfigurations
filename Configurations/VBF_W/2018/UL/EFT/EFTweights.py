@@ -1,83 +1,6 @@
-samples['sm_lin_quad_cW'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[2])',
-    'FilesPerJob': 30,
-}
-
 samples['quad_cW'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[2] + LHEReweightingWeight[1] -2*LHEReweightingWeight[0]))',
-    'FilesPerJob': 30,
-}
-
-samples['sm_lin_quad_mixed_cW_cHDD'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[40])',
-    'FilesPerJob': 30,
-}
-
-samples['sm_lin_quad_mixed_cW_cHWB'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[77])',
-    'FilesPerJob': 30,
-}
-
-samples['sm_lin_quad_mixed_cW_cHj1'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[55])',
-    'FilesPerJob': 30,
-}
-
-samples['sm_lin_quad_mixed_cW_cHQ1'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[61])',
-    'FilesPerJob': 30,
-}
-
-samples['sm_lin_quad_mixed_cW_cHj3'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[66])',
-    'FilesPerJob': 30,
-}
-
-samples['sm_lin_quad_mixed_cW_cHQ3'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[70])',
-    'FilesPerJob': 30,
-}
-
-samples['sm_lin_quad_mixed_cW_cHl3'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[73])',
-    'FilesPerJob': 30,
-}
-
-samples['sm_lin_quad_mixed_cW_cll1'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[75])',
-    'FilesPerJob': 30,
-}
-
-samples['sm_lin_quad_mixed_cW_cWtil'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[77])',
-    'FilesPerJob': 30,
-}
-
-samples['w11_cW_cHWBtil'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[77])',
-    'FilesPerJob': 30,
-}
-
-samples['w1_cHDD'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[4])',
-    'FilesPerJob': 30,
-}
-samples['wm1_cHDD'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[5])',
     'FilesPerJob': 30,
 }
 
@@ -87,9 +10,135 @@ samples['quad_cHDD'] = {
     'FilesPerJob': 30,
 }
 
+samples['quad_cHWB'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[6] + LHEReweightingWeight[5] -2*LHEReweightingWeight[0]))',
+    'FilesPerJob': 30,
+}
+
+samples['quad_cHj1'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[8] + LHEReweightingWeight[7] -2*LHEReweightingWeight[0]))',
+    'FilesPerJob': 30,
+}
+
+samples['quad_cHQ1'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[10] + LHEReweightingWeight[9] -2*LHEReweightingWeight[0]))',
+    'FilesPerJob': 30,
+}
+
+samples['quad_cHj3'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[12] + LHEReweightingWeight[11] -2*LHEReweightingWeight[0]))',
+    'FilesPerJob': 30,
+}
+
+samples['quad_cHQ3'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[14] + LHEReweightingWeight[13] -2*LHEReweightingWeight[0]))',
+    'FilesPerJob': 30,
+}
+
+samples['quad_cHl3'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[16] + LHEReweightingWeight[15] -2*LHEReweightingWeight[0]))',
+    'FilesPerJob': 30,
+}
+
+samples['quad_cll1'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[18] + LHEReweightingWeight[17] -2*LHEReweightingWeight[0]))',
+    'FilesPerJob': 30,
+}
+
+samples['quad_cWtil'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[20] + LHEReweightingWeight[19] -2*LHEReweightingWeight[0]))',
+    'FilesPerJob': 30,
+}
+
+samples['quad_cHWBtil'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[22] + LHEReweightingWeight[21] -2*LHEReweightingWeight[0]))',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_cW'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[2])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_mixed_cW_cHDD'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[23])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_mixed_cW_cHWB'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[24])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_mixed_cW_cHj1'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[25])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_mixed_cW_cHQ1'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[26])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_mixed_cW_cHj3'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[27])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_mixed_cW_cHQ3'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[28])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_mixed_cW_cHl3'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[29])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_mixed_cW_cll1'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[30])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_mixed_cW_cWtil'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[31])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_mixed_cW_cHWBtil'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[32])',
+    'FilesPerJob': 30,
+}
+
+samples['sm_lin_quad_cHDD'] = {
+    'name': EFTSamples,
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[4])',
+    'FilesPerJob': 30,
+}
+
 samples['sm_lin_quad_mixed_cHDD_cHWB'] = {
     'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[41])',
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[33])',
     'FilesPerJob': 30,
 }
 
@@ -147,57 +196,51 @@ samples['sm_lin_quad_cHWB'] = {
     'FilesPerJob': 30,
 }
 
-samples['quad_cHWB'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[6] + LHEReweightingWeight[5] -2*LHEReweightingWeight[0]))',
-    'FilesPerJob': 30,
-}
-
 samples['sm_lin_quad_mixed_cHWB_cHj1'] = {
     'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[56])',
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[42])',
     'FilesPerJob': 30,
 }
 
 samples['sm_lin_quad_mixed_cHWB_cHQ1'] = {
     'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[62])',
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[43])',
     'FilesPerJob': 30,
 }
 
 samples['sm_lin_quad_mixed_cHWB_cHj3'] = {
     'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[67])',
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[44])',
     'FilesPerJob': 30,
 }
 
 samples['sm_lin_quad_mixed_cHWB_cHQ3'] = {
     'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[71])',
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[45])',
     'FilesPerJob': 30,
 }
 
 samples['sm_lin_quad_mixed_cHWB_cHl3'] = {
     'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[74])',
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[46])',
     'FilesPerJob': 30,
 }
 
 samples['sm_lin_quad_mixed_cHWB_cll1'] = {
     'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[76])',
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[47])',
     'FilesPerJob': 30,
 }
 
 samples['sm_lin_quad_mixed_cHWB_cWtil'] = {
     'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[77])',
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[48])',
     'FilesPerJob': 30,
 }
 
 samples['sm_lin_quad_mixed_cHWB_cHWBtil'] = {
     'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(LHEReweightingWeight[77])',
+    'weight': CommonWeight + '*' + '(LHEReweightingWeight[49])',
     'FilesPerJob': 30,
 }
 
@@ -207,11 +250,6 @@ samples['sm_lin_quad_cHj1'] = {
     'FilesPerJob': 30,
 }
 
-samples['quad_cHj1'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[8] + LHEReweightingWeight[7] -2*LHEReweightingWeight[0]))',
-    'FilesPerJob': 30,
-}
 
 samples['sm_lin_quad_mixed_cHj1_cHQ1'] = {
     'name': EFTSamples,
@@ -261,12 +299,6 @@ samples['sm_lin_quad_cHQ1'] = {
     'FilesPerJob': 30,
 }
 
-samples['quad_cHQ1'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[10] + LHEReweightingWeight[9] -2*LHEReweightingWeight[0]))',
-    'FilesPerJob': 30,
-}
-
 samples['sm_lin_quad_mixed_cHQ1_cHj3'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[57])',
@@ -309,12 +341,6 @@ samples['sm_lin_quad_cHj3'] = {
     'FilesPerJob': 30,
 }
 
-samples['quad_cHj3'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[12] + LHEReweightingWeight[11] -2*LHEReweightingWeight[0]))',
-    'FilesPerJob': 30,
-}
-
 samples['sm_lin_quad_mixed_cHj3_cHQ3'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[63])',
@@ -351,12 +377,6 @@ samples['sm_lin_quad_cHQ3'] = {
     'FilesPerJob': 30,
 }
 
-samples['quad_cHQ3'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[14] + LHEReweightingWeight[13] -2*LHEReweightingWeight[0]))',
-    'FilesPerJob': 30,
-}
-
 samples['sm_lin_quad_mixed_cHQ3_cHl3'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[68])',
@@ -387,12 +407,6 @@ samples['sm_lin_quad_cHl3'] = {
     'FilesPerJob': 30,
 }
 
-samples['quad_cHl3'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[16] + LHEReweightingWeight[15] -2*LHEReweightingWeight[0]))',
-    'FilesPerJob': 30,
-}
-
 samples['sm_lin_quad_mixed_cHl3_cll1'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[72])',
@@ -417,12 +431,6 @@ samples['sm_lin_quad_cll1'] = {
     'FilesPerJob': 30,
 }
 
-samples['quad_cll1'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[18] + LHEReweightingWeight[17] -2*LHEReweightingWeight[0]))',
-    'FilesPerJob': 30,
-}
-
 samples['sm_lin_quad_mixed_cll1_cWtil'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[75])',
@@ -441,12 +449,6 @@ samples['sm_lin_quad_cWtil'] = {
     'FilesPerJob': 30,
 }
 
-samples['quad_cWtil'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[20] + LHEReweightingWeight[19] -2*LHEReweightingWeight[0]))',
-    'FilesPerJob': 30,
-}
-
 samples['sm_lin_quad_mixed_cWtil_cHWBtil'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[77])',
@@ -458,10 +460,3 @@ samples['sm_lin_quad_cHWBtil'] = {
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[22])',
     'FilesPerJob': 30,
 }
-
-samples['quad_cHWBtil'] = {
-    'name': EFTSamples,
-    'weight': CommonWeight + '*' + '(0.5*(LHEReweightingWeight[22] + LHEReweightingWeight[21] -2*LHEReweightingWeight[0]))',
-    'FilesPerJob': 30,
-}
-

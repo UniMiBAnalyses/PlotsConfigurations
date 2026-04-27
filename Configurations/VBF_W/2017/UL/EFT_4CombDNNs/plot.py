@@ -65,7 +65,7 @@ palette = {
 
 jetbin_detabins = [3,3,2]
 #wjets_palette = ['#FFF59D', '#FFEE58', '#FFD54F', '#FFB300', '#FF8F00', '#F57C00', '#E65100','#BF360C']
-wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400', '#FFEA00', '#FFFF00']
+wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400', '#FFEA00', '#FFFF00', '#00BFA5']
 
 
 # wjets_bins = []
@@ -74,7 +74,8 @@ wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400
 # for ir in range(1,6):
 #     wjets_bins.append("Wjets_HT_boost_"+str(ir))
 
-
+eft = [s for s in samples if "sm_" in s or "quad" in s]
+print(eft)
 
 # groupPlot['Higgs']  = {  
 #                 'nameHR' : "Higgs",
@@ -84,37 +85,37 @@ wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400
 #                 'fill': 1001
 #               }
 
-groupPlot['VV+VVV+VBS']  = {  
-                'nameHR' : 'VV+VVV+VBS',
-                'isSignal' : 0,
-                'color': palette["Violet"], #palette["Peach3"],  
-                'samples'  : ['VVV', 'VV','VBS'],
-                'fill': 1001
-              }
+# groupPlot['VV+VVV+VBS']  = {  
+#                 'nameHR' : 'VV+VVV+VBS',
+#                 'isSignal' : 0,
+#                 'color': palette["Violet"], #palette["Peach3"],  
+#                 'samples'  : ['VVV', 'VV','VBS'],
+#                 'fill': 1001
+#               }
               
 groupPlot['Others']  = {  
                 'nameHR' : "Others",
                 'isSignal' : 0,
                 'color'    : palette["Orange"],
-                'samples'  : ['VBF-Z', 'Vg', 'Higss'],
+                'samples'  : ['VBF-Z', 'Vg', 'VgS','VVV', 'VV','VBS'],
                 'fill': 1001
               }
 
-groupPlot['DY_else']  = {  
+# groupPlot['DY_else']  = {  
+#                 'nameHR' : "DY_else",
+#                 'isSignal' : 0,
+#                 'color'    : palette["Pink"],
+#                 'samples'  : ['DY_else'],
+#                 'fill': 1001
+#               }   
+
+groupPlot['DY']  = {  
                 'nameHR' : "DY",
                 'isSignal' : 0,
-                'color'    : palette["Pink"],
-                'samples'  : ['DY_else', 'DY_M-50'],
+                'color'    : palette["DarkBlue"],
+                'samples'  : ['DY_M-50', 'DY_else'],
                 'fill': 1001
-              }   
-
-# groupPlot['DY_M-50']  = {  
-#                 'nameHR' : "DY_M-50",
-#                 'isSignal' : 0,
-#                 'color'    : palette["DarkBlue"],
-#                 'samples'  : ['DY_M-50'],
-#                 'fill': 1001
-#               }            
+              }            
 
 groupPlot['Top']  = {  
                 'nameHR' : "Top",
@@ -148,57 +149,37 @@ groupPlot['Fake']  = {
               'fill': 1001
           }
 
-cW = [c for c in samples if "cW" in c and "mixed" not in c]
-
 groupPlot['sm']  = {  
-                'nameHR' : 'SM',
-                'isSignal' : 1,
+                'nameHR' : 'WLNuJJ',
+                'isSignal' : 3,
                 'color': palette["FerrariRed"],   
-                # 'samples'  : [s for s in cW+["sm"]],
                 'samples'  : ['sm'],
                 'fill': 1001
               }
 
-# cHWB = [c for c in samples if "quad_cHWB" in c or "lin_cHWB" in c and "sm" not in c]
-# cHDD = [c for c in samples if "cHDD" in c and "mixed" not in c]
-
-# mixed = [c for c in samples if "mixed" in c and "sm" not in c]
-# due = [c for c in cHWB + cHDD + cW if "sm_lin_quad" not in c and "til" not in c]
-# due = [c for c in cHDD]
-# print(cHDD)
-
-
-for i,s in enumerate(cW):
-    groupPlot['{}'.format(s)] = {
-        'nameHR' : '{}'.format(s),
-        'isSignal' : 1,
-        'color':   wjets_palette[i],
-        'samples'  : [s],
-        'fill': 1001
-        }
+for i,sample in enumerate(eft):
+    if "sm_lin_quad" in sample and "mixed" not in sample:
+        label = "SM + {}".format(sample.split("sm_lin_quad_")[-1])
+        continue
+    elif "mixed" in sample:
+        label = "SM + {} + {}".format(sample.split("mixed_")[-1].split("_")[0], sample.split("mixed_")[-1].split("_")[-1])
+        continue
+    elif "quad" in sample:
+        label = "{} only".format(sample.split("quad_")[-1])
+    groupPlot[sample]  = {  
+                'nameHR' : label,
+                'isSignal' : 2,
+                'color': wjets_palette[i],   
+                'samples'  : [sample],
+                'fill': 1001
+              }
     
-    plot['{}'.format(s)] = {   
-                    'color': colors['kAzure']-1,
+    plot[sample] = {
+                    'color': wjets_palette[i],
                     'isSignal' : 2,
-                    'isData'   : 0, 
-                    'scale'    : 1.              
-                }
-
-    
-
-
-#plot = {}
-
-# keys here must match keys in samples.py
-
-# for i,s in enumerate(due):
-#     plot['{}'.format(s)] = {   
-#                     'color': colors['kAzure']-1,
-#                     'isSignal' : 2,
-#                     'isData'   : 0, 
-#                     'scale'    : 1.              
-#                 }
-
+                    'isData'   : 0,
+                    'scale'    : 1.0
+                    }
 
 #plot = {}
 
@@ -218,9 +199,12 @@ plot['Wjets_HT_hardJets'] = {
                  'isSignal' : 0,
                  'isData'   : 0, 
                  #'scale'    : 1.09950003 
-                 'scale'    : 1.
+                #  'scale'    : 1.0
+                 'scale'    : 1.0
+                #  'scale'     : 1.0232
                  #'scale'    : 1.1231175589276459 #mu
                  #'scale'    : 1.2795330335917352
+                # 'scale'    : 0.5
                 }
 
 plot['Wjets_HT_PUJets'] = {   
@@ -228,7 +212,9 @@ plot['Wjets_HT_PUJets'] = {
                  'isSignal' : 0,
                  'isData'   : 0, 
                  #'scale'    : 1.050420857 
+                #  'scale'    : 1.0
                  'scale'    : 1.0
+                #  'scale'    : 1.0854
                  #'scale'    : 1.0958905448504972
                  #'scale'    : 1.1768637821969707
                 }
@@ -238,6 +224,7 @@ plot['top'] = {
                  'isSignal' : 0,
                  'isData'   : 0, 
                  'scale'    : 1.0 
+                #  'scale'    : 0.93512
                  }
     
 plot['VV']  = {
@@ -290,12 +277,12 @@ plot['Vg']  = {
                   'scale'    : 1.   ,
               }   
 
-# plot['VgS'] = {   
-#                  'color': colors['kAzure']-1,
-#                  'isSignal' : 0,
-#                  'isData'   : 0, 
-#                  'scale'    : 1.0 
-#                 }
+plot['VgS'] = {   
+                 'color': colors['kAzure']-1,
+                 'isSignal' : 0,
+                 'isData'   : 0, 
+                 'scale'    : 1.0 
+                }
 
 plot['VVV'] = {   
                  'color': colors['kAzure']-1,
@@ -309,19 +296,18 @@ plot['Fake'] = {
                 'color': colors['kAzure']-1,
                 'isSignal' : 0,
                 'isData'   : 0, 
-                'scale'    : 1.0 
+                'scale'    : 1.
+                # 'scale'    : 0.90796
                 #'scale' : 0.713100632928824
                 #'scale' : 0.6454715517898252
+                #'scale' : 0.4 ele
+                #'scale' : 0.5 mu
+                # 'scale' : 1.0253
+                
                }
 
 
-# for wjetbin in wjets_bins:
-#     plot[wjetbin] = {   
-#                     'color': colors['kAzure']-1,
-#                     'isSignal' : 0,
-#                     'isData'   : 0, 
-#                     'scale'    : 1.0 
-#                     }
+
 
 # # data
 
@@ -332,7 +318,6 @@ plot['DATA']  = {
                   'isData'   : 1 ,
                   'isBlind'  : 0
               }
-
 
 # additional options
 

@@ -12,6 +12,9 @@ signals = [c for c in samples if "WLNuJJ" in c]
 mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
 # mc = [skey for skey in samples]
 
+aliases['nCleanGenJet20'] = {
+    'expr': 'Sum$(CleanGenJet_pt > 20.)',
+}
 
 #####################################
 ######## user defined ###############
@@ -86,3 +89,15 @@ aliases['CleanGenJet2_py'] = {
 aliases['ptjj_gen'] = {
     'expr': 'TMath::Sqrt(( (CleanGenJet1_px + CleanGenJet2_px)**2 + (CleanGenJet1_py + CleanGenJet2_py)**2 ))'
 }
+aliases['Dphijet1jet2_gen'] = {    
+    'expr': 'abs((CleanGenJet_phi[0] - CleanGenJet_phi[1]) - 2*3.1415*((CleanGenJet_phi[0] - CleanGenJet_phi[1]) > 3.1415) + 2*3.1415*((CleanGenJet_phi[0] - CleanGenJet_phi[1]) < -3.1415))'
+}
+
+aliases['lhesel'] = {
+    'class': 'LHE_selection',
+    'args': (),
+     'linesToAdd' : [
+        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+        '.L {}macros/lhemjj.cc+'.format(utils_folder)
+        ] 
+} 

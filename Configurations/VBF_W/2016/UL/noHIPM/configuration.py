@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'noHIPMnewWp_fake_semidef'
+tagger = 'noHIPM_final_v7'
 # tagger = 'nosys_yesrw_try'
 tag = 'vbf_w_2016'+tagger
 

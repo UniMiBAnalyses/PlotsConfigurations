@@ -89,8 +89,8 @@ Nlep='1'
 ############### Lepton WP ######################
 ################################################
 
-eleWP='mvaFall17V2Iso_WP90'
-muWP='cut_Tight_HWWW'
+eleWP='mvaFall17V2Iso_WP90_tthmva_70'
+muWP='cut_Tight_HWWW_tthmva_80'
 
 
 LepWPCut_1l =  '(Lepton_isTightElectron_'+eleWP+'[0]>0.5 || Lepton_isTightMuon_'+muWP+'[0]>0.5)'
@@ -107,7 +107,7 @@ LepWPWeight = LepWPWeight_1l
 #corrected trigger efficiency
 
 XSWeight   = 'XSWeight'
-SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l', trigg_MC, 'PrefireWeight', 'EMTFbug_veto']
+SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l', trigg_MC, 'L1PreFiringWeight_Nom', 'EMTFbug_veto']
 
 SFweight = '*'.join(SFweight1l)
      

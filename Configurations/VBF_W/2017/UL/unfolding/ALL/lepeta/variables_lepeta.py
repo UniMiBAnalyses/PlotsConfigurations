@@ -1,12 +1,5 @@
-variables["MultiClass_lepeta_class10"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (2, 0.0, 1.0), 'name': 'MultiClass_lepeta_class10', 'xaxis': 'MultiClass_lepeta_class10'}
-variables["events"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
-variables["DNN1lepeta"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0, 2.0, 5, 0.0, 1.0), 'name': 'DNNoutputSR_noQGL:lepeta_abs', 'xaxis': 'DNNoutput : #eta lepton'}
-variables["MultiClass_lepeta_class4"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_lepeta_class4', 'xaxis': 'MultiClass_lepeta_class4'}
-variables["MultiClass_lepeta_class5"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_lepeta_class5', 'xaxis': 'MultiClass_lepeta_class5'}
-variables["MultiClass_lepeta_class6"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_lepeta_class6', 'xaxis': 'MultiClass_lepeta_class6'}
-variables["MultiClass_lepeta_class7"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_lepeta_class7', 'xaxis': 'MultiClass_lepeta_class7'}
-variables["MultiClass_lepeta_class1"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_lepeta_class1', 'xaxis': 'MultiClass_lepeta_class1'}
-variables["MultiClass_lepeta_class2"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_lepeta_class2', 'xaxis': 'MultiClass_lepeta_class2'}
-variables["MultiClass_lepeta_class3"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_lepeta_class3', 'xaxis': 'MultiClass_lepeta_class3'}
-variables["MultiClass_lepeta_class8"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (4, 0.0, 1.0), 'name': 'MultiClass_lepeta_class8', 'xaxis': 'MultiClass_lepeta_class8'}
-variables["MultiClass_lepeta_class9"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (4, 0.0, 1.0), 'name': 'MultiClass_lepeta_class9', 'xaxis': 'MultiClass_lepeta_class9'}
+variables["events"] = {'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
+variables["high0p5DNN1lepeta4"] = {'fold': 2, 'range': ([0.5, 1.0], [0.0, 0.037, 0.075, 0.112, 0.15, 0.188, 0.225, 0.262, 0.3, 0.35, 0.4, 0.45, 0.5, 0.537, 0.575, 0.613, 0.65, 0.688, 0.725, 0.763, 0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.475, 1.55, 1.625, 1.7, 1.775, 1.85, 1.925, 2.0]), 'name': 'lepeta_abs:DNNJoined', 'xaxis': 'DNNoutput : |#eta| lepton'}
+variables["high0p5DNN1lepeta3"] = {'fold': 2, 'range': ([0.5, 1.0], [0.0, 0.057, 0.1, 0.15, 0.2, 0.25, 0.3, 0.367, 0.433, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.867, 0.933, 1.0, 1.067, 1.133, 1.2, 1.267, 1.333, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0]), 'name': 'lepeta_abs:DNNJoined', 'xaxis': 'DNNoutput : |#eta| lepton'}
+variables["high0p5DNN1lepeta2"] = {'fold': 2, 'range': ([0.5, 1.0], [0.0, 0.075, 0.15, 0.225, 0.3, 0.4, 0.5, 0.575, 0.65, 0.725, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.55, 1.7, 1.85, 2.0]), 'name': 'lepeta_abs:DNNJoined', 'xaxis': 'DNNoutput : |#eta| lepton'}
+variables["high0p5events"] = {'fold': 2, 'range': (1, 0.5, 1.0, 1, 0.0, 10000.0), 'name': 'ptjj:DNNJoined', 'xaxis': 'DNNoutput : events [GeV]'}

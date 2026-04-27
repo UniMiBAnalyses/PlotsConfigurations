@@ -3,7 +3,7 @@
 treeName = 'Events'
 
 # tagger = 'unfolding_xsmeasure'
-tagger = 'unfolding_measures'
+tagger = 'unfolding_measure_v10'
 
 tag = 'vbf_w_2018'+tagger
 
@@ -27,7 +27,7 @@ samplesFile = 'samples.py'
 plotFile = 'plot.py' 
 
 # luminosity to normalize to (in 1/fb)
-lumi = 59.74
+lumi = 1.0
 
 # used by mkPlot to define output directory for plots
 # different from "outputDir" to do things more tidy

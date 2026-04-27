@@ -1,0 +1,16 @@
+## dovrei scrivere un json con quello che ho fatto
+
+ele e mu solo SR e solo DNNjoineddphijj!!
+
+
+fake: smoothing di tutte le sue syst
+
+per tutti i major process (segnali, DY top Wjets): + altri 
+per queste incertezze:
+["CMS_scale_JESAbsolute", "CMS_scale_JESBBEC1", "CMS_scale_JESEC2", "CMS_scale_JESHF", "CMS_res_j", "CMS_btag_jes", "CMS_PS_FSR_dipole"]
+abbiamo fatto un symmetrize --mode max
+
+per altre:
+cms_scale_e cms_scale_m cms_scale_met abbiamo simmetrizzato alla latinos (tenendo buono l'up e modificando il down)
+
+

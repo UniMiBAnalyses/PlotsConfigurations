@@ -126,22 +126,22 @@ DataTrig = {
 }
 
 
-#########################################
-############### SIGNAL ##################
-#########################################
-###### W + jj EWK #######
+# # #########################################
+# # ############### SIGNAL ##################
+# # #########################################
+# # ###### W + jj EWK #######
 
-# samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_EWK')
-#                                   + nanoGetSampleFiles(mcDirectoryLat,'Wp_LNuJJ_EWK'),
-# #                        'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
-#                         'weight': CommonWeight,
-#                         'FilesPerJob' : 5,
-#                         'EventsPerJob' : 70000,
-#                     }
+# # # samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_EWK')
+# # #                                   + nanoGetSampleFiles(mcDirectoryLat,'Wp_LNuJJ_EWK'),
+# # # #                        'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
+# # #                         'weight': CommonWeight,
+# # #                         'FilesPerJob' : 5,
+# # #                         'EventsPerJob' : 70000,
+# # #                     }
 
-##########################################
-############  BACKGROUNDS  ###############
-##########################################
+# ##########################################
+# ############  BACKGROUNDS  ###############
+# ##########################################
 
 
 ####### Wjets #########
@@ -158,7 +158,7 @@ samples['Wjets_HT_hardJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, '
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT800To1200')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
-                        'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction  + '* hardJets',
+                                'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction  + '* hardJets',
 			                	'FilesPerJob' : 4,
 		                 }
 
@@ -189,8 +189,10 @@ samples['Wjets_HT_PUJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJ
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT800To1200')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
-                        'weight': CommonWeight+'*' + Wjets_photon_filter + '* PUJets',
+                        'weight': '(' + CommonWeight + ' * ' + Wjets_photon_filter + ' * PUJets) * (' + CommonWeight + ' * ' + Wjets_photon_filter + ' * PUJets < 5)',
 			                	'FilesPerJob' : 4,
+                        # 'suppressNegative' :['ele_SR','mu_SR'],
+                        # 'suppressNegativeNuisances' :['ele_SR','mu_SR'],
 		                 }
 
 
@@ -236,7 +238,7 @@ addSampleWeight(samples,'top','TTWjets-LO','Top_pTrw')
 
 addSampleWeight(samples,'top','ST_t-channel_top',  "100. / 32.4 ") # N.B We are using inclusive sample with leptonic-only XS
 addSampleWeight(samples,'top','ST_t-channel_antitop',  "100. / 32.4")
-###############################################
+# ###############################################
 
 
 ############## VV ##################
@@ -290,7 +292,7 @@ samples['Higgs']  = {   'name'   :  nanoGetSampleFiles(mcDirectoryLat,'GluGluHTo
                   }
 
 
-######### DY ############
+# # ######### DY ############
 
 DY_photon_filter = '( !(Sum$(PhotonGen_isPrompt==1 && PhotonGen_pt>15 && abs(PhotonGen_eta)<2.6) > 0 && Sum$(LeptonGen_isPrompt==1 && LeptonGen_pt>15)>=2) )'
 # DY_photon_filter = '1.'
@@ -306,7 +308,7 @@ samples['DY_M-50'] = {  'name'  : nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_
                                   + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-50_HT-2500toInf'),
                         'weight': CommonWeight+'*'+DY_photon_filter,
                       # 'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter ,# missing ewkNLOW --> it is avaible
-                        'FilesPerJob' :20,
+                        'FilesPerJob' :5,
                       #  'suppressNegative' :['all'],
                       #  'suppressNegativeNuisances' :['all'],
                 }
@@ -334,7 +336,7 @@ samples['DY_else'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'DYJetsTo
                                   + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-600toInf'),
                         'weight': CommonWeight+'*'+DY_photon_filter,
                       # 'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter ,# missing ewkNLOW
-                        'FilesPerJob' : 20,
+                        'FilesPerJob' : 5,
                       #  'suppressNegative' :['all,,
                       #  'suppressNegativeNuisances' :['all,,
                 }
@@ -409,16 +411,16 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'ZZZ')
                   }
 
 
-# # # # # #########################################
-# # # # # ############## EFT ###############
-# # # # # #########################################
+# # # # # # #########################################
+# # # # # # ############## EFT ###############
+# # # # # # #########################################
 
-EFTSamples = nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_EFT')
+EFTSamples = nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_EFT_crab')
 
 samples['sm'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[0])',
-    'FilesPerJob': 10,
+    'FilesPerJob': 2,
 }
 
 CMSSW=os.environ["CMSSW_BASE"]
@@ -436,9 +438,9 @@ if os.path.exists(CMSSW+'/src/'+sampleEFTFile):
 # # #   exec(handle)
 # # #   handle.close()
 
-#########################################
-############## DATAA ###############
-#########################################
+# #########################################
+# ############## DATAA ###############
+# #########################################
 
 
 # Then corrected
@@ -452,6 +454,8 @@ samples['Fake'] = {
   'weights': [],
   'isData': ['all'],
   'FilesPerJob' : 30,
+  'suppressNegative' :['ele_SR','mu_SR'],
+  'suppressNegativeNuisances' :['ele_SR','mu_SR'],
 }
 
 for _, sd in DataRun:
@@ -481,13 +485,13 @@ for Run in DataRun :
                         samples['DATA']['weights'].append(DataTrig[DataSet])
 
 
-#samples = {   key:v for key,v in samples.items() if key  in ["VBS_dipoleRecoil"]}
+# # #samples = {   key:v for key,v in samples.items() if key  in ["VBS_dipoleRecoil"]}
 
 
-# # mkPostProc.py -p Summer16_102X_nAODv7_Full2016v7 -s 2Jets1leptonW2016 -i MCl1loose2016v7__MCCorr2016v7 -b -Q workday -T EWK_LNuJJ,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,WWToLNuQQ,GluGluWWToLNuQQ,GluGluHToWWToLNuQQ_M125,HWminusJ_HToWW_LNu_M125,HWplusJ_HToWW_LNu_M125,VBFHToWWToLNuQQ_M125,EWK_LLJJ_MLL-50_MJJ-120,Wg_MADGRAPHMLM,Zg,WZTo3LNu_mllmin01,ZZZ,WZZ,WWZ,WWW,WJetsToLNu-LO,WJetsToLNu-LO_ext2,WJetsToLNu_HT70_100,WJetsToLNu_HT100_200,WJetsToLNu_HT100_200_ext2,WJetsToLNu_HT200_400,WJetsToLNu_HT200_400_ext2,WJetsToLNu_HT400_600,WJetsToLNu_HT400_600_ext1,WJetsToLNu_HT600_800,WJetsToLNu_HT600_800_ext1,WJetsToLNu_HT800_1200,WJetsToLNu_HT800_1200_ext1,WJetsToLNu_HT1200_2500,WJetsToLNu_HT1200_2500_ext1,WJetsToLNu_HT2500_inf,WJetsToLNu_HT2500_inf_ext1,TTTo2L2Nu,ST_s-channel,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop,ST_tW_top,TTToSemiLeptonic,TTZjets,TTWJetsToLNu_ext1,TTWJetsToLNu_ext2,TTWJetsToQQ,DYJetsToLL_M-50_ext2,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-100to200_ext1,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-200to400_ext1,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-400to600_ext1,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,DYJetsToLL_M-10to50,DYJetsToLL_M-10to50_ext1,DYJetsToLL_M-5to50_HT-70to100,DYJetsToLL_M-5to50_HT-100to200,DYJetsToLL_M-5to50_HT-200to400,DYJetsToLL_M-5to50_HT-200to400_ext1,DYJetsToLL_M-5to50_HT-400to600,DYJetsToLL_M-5to50_HT-400to600_ext1,DYJetsToLL_M-5to50_HT-600toinf,DYJetsToLL_M-5to50_HT-600toinf_ext1
+# # # # mkPostProc.py -p Summer16_102X_nAODv7_Full2016v7 -s 2Jets1leptonW2016 -i MCl1loose2016v7__MCCorr2016v7 -b -Q workday -T EWK_LNuJJ,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,WWToLNuQQ,GluGluWWToLNuQQ,GluGluHToWWToLNuQQ_M125,HWminusJ_HToWW_LNu_M125,HWplusJ_HToWW_LNu_M125,VBFHToWWToLNuQQ_M125,EWK_LLJJ_MLL-50_MJJ-120,Wg_MADGRAPHMLM,Zg,WZTo3LNu_mllmin01,ZZZ,WZZ,WWZ,WWW,WJetsToLNu-LO,WJetsToLNu-LO_ext2,WJetsToLNu_HT70_100,WJetsToLNu_HT100_200,WJetsToLNu_HT100_200_ext2,WJetsToLNu_HT200_400,WJetsToLNu_HT200_400_ext2,WJetsToLNu_HT400_600,WJetsToLNu_HT400_600_ext1,WJetsToLNu_HT600_800,WJetsToLNu_HT600_800_ext1,WJetsToLNu_HT800_1200,WJetsToLNu_HT800_1200_ext1,WJetsToLNu_HT1200_2500,WJetsToLNu_HT1200_2500_ext1,WJetsToLNu_HT2500_inf,WJetsToLNu_HT2500_inf_ext1,TTTo2L2Nu,ST_s-channel,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop,ST_tW_top,TTToSemiLeptonic,TTZjets,TTWJetsToLNu_ext1,TTWJetsToLNu_ext2,TTWJetsToQQ,DYJetsToLL_M-50_ext2,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-100to200_ext1,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-200to400_ext1,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-400to600_ext1,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,DYJetsToLL_M-10to50,DYJetsToLL_M-10to50_ext1,DYJetsToLL_M-5to50_HT-70to100,DYJetsToLL_M-5to50_HT-100to200,DYJetsToLL_M-5to50_HT-200to400,DYJetsToLL_M-5to50_HT-200to400_ext1,DYJetsToLL_M-5to50_HT-400to600,DYJetsToLL_M-5to50_HT-400to600_ext1,DYJetsToLL_M-5to50_HT-600toinf,DYJetsToLL_M-5to50_HT-600toinf_ext1
 
-# # mkPostProc.py -p Run2016_102X_nAODv7_Full2016v7 -s DATA2Jets1leptonW2016 -i DATAl1loose2016v7__DATACombJJLNu2016 -b -Q workday
+# # # # mkPostProc.py -p Run2016_102X_nAODv7_Full2016v7 -s DATA2Jets1leptonW2016 -i DATAl1loose2016v7__DATACombJJLNu2016 -b -Q workday
 
 
 
-# mkPostProc.py -p Summer20UL16_106x_nAODv9_HIPM_Full2016v9 -s $iSyst -i MCl1loose2016v9__MCCorr2016v9NoJERInHorn -b -Q nextweek -T Wm_LNuJJ_EWK,Wp_LNuJJ_EWK,EWKZ2Jets_ZToLL_M-50_MJJ-120,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,GluGluHToWWToLNuQQ_M125,VBFHToWWToLNuQQ_M125,ZZZ,WZZ,WWZ,WWW,TTTo2L2Nu,ST_s-channel,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop,ST_tW_top,TTToSemiLeptonic,WGToLNuG,ZGToLLG,DYJetsToLL_M-10to50-LO,DYJetsToLL_M-4to50_HT-100to200,DYJetsToLL_M-4to50_HT-200to400,DYJetsToLL_M-4to50_HT-400to600,DYJetsToLL_M-4to50_HT-600toInf,WJetsToLNu-LO,WJetsToLNu_HT70To100,WJetsToLNu_HT100To200,WJetsToLNu_HT200To400,WJetsToLNu_HT400To600,WJetsToLNu_HT600To800,WJetsToLNu_HT800To1200,WJetsToLNu_HT1200To2500,WJetsToLNu_HT2500ToInf,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,DYJetsToLL_M-50,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,WGToLNuG,ZGToLLG,WZTo3LNu_mllmin0p1
+# # # mkPostProc.py -p Summer20UL16_106x_nAODv9_HIPM_Full2016v9 -s $iSyst -i MCl1loose2016v9__MCCorr2016v9NoJERInHorn -b -Q nextweek -T Wm_LNuJJ_EWK,Wp_LNuJJ_EWK,EWKZ2Jets_ZToLL_M-50_MJJ-120,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,GluGluHToWWToLNuQQ_M125,VBFHToWWToLNuQQ_M125,ZZZ,WZZ,WWZ,WWW,TTTo2L2Nu,ST_s-channel,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop,ST_tW_top,TTToSemiLeptonic,WGToLNuG,ZGToLLG,DYJetsToLL_M-10to50-LO,DYJetsToLL_M-4to50_HT-100to200,DYJetsToLL_M-4to50_HT-200to400,DYJetsToLL_M-4to50_HT-400to600,DYJetsToLL_M-4to50_HT-600toInf,WJetsToLNu-LO,WJetsToLNu_HT70To100,WJetsToLNu_HT100To200,WJetsToLNu_HT200To400,WJetsToLNu_HT400To600,WJetsToLNu_HT600To800,WJetsToLNu_HT800To1200,WJetsToLNu_HT1200To2500,WJetsToLNu_HT2500ToInf,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,DYJetsToLL_M-50,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,WGToLNuG,ZGToLLG,WZTo3LNu_mllmin0p1

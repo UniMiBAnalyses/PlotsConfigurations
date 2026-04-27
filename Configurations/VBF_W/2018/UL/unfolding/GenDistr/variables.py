@@ -1,0 +1,35 @@
+
+
+##############################################
+# now variables to plot
+# Include also variables to be plotted
+
+variables['events']  = {   'name': '1',      
+                        'range' : (1,0,2),  
+                        'xaxis' : 'events', 
+                        'fold' : 3,
+                        }
+
+variables['detajj'] = {'fold': 2, 'range': ([4.0, 4.2, 4.4, 4.6, 4.8, 5, 5.2, 5.5, 6.0, 10.0],), 'name': 'detajj_gen', 'xaxis': 'detajj', 'divideByBinWidth': 0}
+
+variables['dphijj'] = {'fold': 2, 'range': ([0.0, 2.0, 2.4, 2.6, 2.8, 3.0, 3.14],), 'name': 'Dphijet1jet2_gen', 'xaxis': 'dphijj_gen', 'divideByBinWidth': 0}
+
+variables['jet1eta'] = {'fold': 2, 'range': ([0.0, 0.9, 1.3, 1.7, 2.0, 2.2, 2.4, 3.0, 3.3, 3.6, 5.0],), 'name': 'jeteta1_gen_abs', 'xaxis': 'eta 1st jet', 'divideByBinWidth': 0}
+
+variables['jet1pt'] = {'fold': 2, 'range': ([60.0, 110.0, 140.0, 180.0, 230.0, 300.0, 1000.0],), 'name': 'CleanGenJet_pt[0]', 'xaxis': 'p_{T} 1st jet', 'divideByBinWidth': 0}
+
+variables['jet2eta'] = {'fold': 2, 'range': ([0.0, 1.3, 1.8, 2.1, 2.3, 3.0, 3.2, 3.4, 3.6, 3.85, 5.0],), 'name': 'jeteta2_gen_abs', 'xaxis': 'eta 2nd jet', 'divideByBinWidth': 0}
+
+variables['jet2pt'] = {'fold': 2, 'range': ([60.0, 80.0, 100.0, 130.0, 170.0, 230.0, 1000.0],), 'name': 'CleanGenJet_pt[1]', 'xaxis': 'p_{T} 2st jet', 'divideByBinWidth': 0}
+
+variables['lepeta'] = {'fold': 2, 'range': ([0.0, 0.15, 0.3, 0.5, 0.65, 0.8, 1.0, 1.2, 1.4, 1.7, 2.0],), 'name': 'lepeta_gen_abs', 'xaxis': 'eta 1st lep', 'divideByBinWidth': 0}
+
+variables['leppt'] = {'fold': 2, 'range': ([20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 100.0, 150.0, 1000.0],), 'name': 'DressedLepton_pt[0]', 'xaxis': 'p_{T} 1st lep', 'divideByBinWidth': 0}
+
+variables['mjj'] = {'fold': 2, 'range': ([300.0, 850.0, 1000.0, 1200.0, 1400.0, 1600.0, 2000.0, 2500.0, 10000.0],), 'name': 'mjj_gen', 'xaxis': 'detajj', 'divideByBinWidth': 0}
+
+variables['nJet'] = {'fold': 2, 'range': ([1.5, 2.5, 3.5, 10.5],), 'name': 'nCleanGenJet20', 'xaxis': 'nCleanGenJet20', 'divideByBinWidth': 0}
+
+variables['ptW'] = {'fold': 2, 'range': ([0.0, 30.0, 60.0, 90.0, 120.0, 180.0, 1000.0],), 'name': 'ptW_gen', 'xaxis': 'pT(W) [GeV]', 'divideByBinWidth': 0}
+
+variables['ptjj'] = {'fold': 2, 'range': ([0.0, 30.0, 50.0, 75.0, 100.0, 130.0, 180.0, 1000.0],), 'name': 'ptjj_gen', 'xaxis': 'ptjj', 'divideByBinWidth': 0}

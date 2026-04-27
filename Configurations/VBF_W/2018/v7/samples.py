@@ -9,13 +9,7 @@ configurations = os.path.dirname(configurations) # Configurations
 from LatinoAnalysis.Tools.commonTools import getSampleFiles, getBaseW, getBaseWnAOD, addSampleWeight
 
 def nanoGetSampleFiles(inputDir, sample):
-    try:
-        if _samples_noload:
-            return []
-    except NameError:
-        pass
-
-    return getSampleFiles(inputDir, sample, True, 'nanoLatino_')
+    return "miao"
 
 # samples
 
@@ -383,7 +377,7 @@ samples['DY_M-50'] = {    'name'   :   nanoGetSampleFiles(mcPrivateDirectory,'DY
                 }
 
 #VBF-Z does use less sample (only M-50 and applies dome different weights (but uses signal at higher energies))
-CombineBaseW(samples, 'DY_M-50', ['DYJetsToLL_M-50', 'DYJetsToLL_M-50_ext2'])
+# CombineBaseW(samples, 'DY_M-50', ['DYJetsToLL_M-50', 'DYJetsToLL_M-50_ext2'])
 addSampleWeight(samples,'DY_M-50','DYJetsToLL_M-50','DY_NLO_pTllrw')
 addSampleWeight(samples,'DY_M-50','DYJetsToLL_M-50_ext2','DY_NLO_pTllrw')
 addSampleWeight(samples,'DY_M-50','DYJetsToLL_M-50',               '(LHE_HT < 70)')

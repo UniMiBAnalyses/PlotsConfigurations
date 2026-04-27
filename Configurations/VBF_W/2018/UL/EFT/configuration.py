@@ -2,7 +2,11 @@
 
 treeName = 'Events'
 
-tagger = 'EFT'
+# tagger = 'EFT_4Comb_TEST'
+# tagger = 'EFT_final_v1p5'
+# tagger = 'EFT_final_v1_Mods_large_nocHWBtil'
+# tagger = 'EFT_final_v2p0'
+tagger = 'EFT_final_v3'
 
 tag = 'vbf_w_2018'+tagger
 
@@ -15,6 +19,7 @@ aliasesFile = 'aliases.py'
 
 # file with list of variables
 variablesFile = 'variables.py'
+# variablesFile = 'variables_2p0.py'
 
 # file with list of cuts
 cutsFile = 'cuts.py' 
@@ -41,4 +46,5 @@ outputDirDatacard = '../../datacards/'+tagger
 structureFile = 'structure.py'
 
 # nuisances file for mkDatacards and for mkShape
+# nuisancesFile = 'nuisances_testNO.py'
 nuisancesFile = 'nuisances.py'

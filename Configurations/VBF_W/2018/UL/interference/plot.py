@@ -124,13 +124,29 @@ wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400
 #                 'fill': 1001
 #             }
 
-groupPlot['Wjets_HT']  = {  
-                'nameHR' : 'WJets_hardJets',
-                'isSignal' : 0,
-                'color':   palette["Yellow"],
-                'samples'  : ['Wjets_HT_hardJets','Wjets_HT_PUJets'],
-                'fill': 1001
-                }
+# groupPlot['WLNuJJ_inter']  = {  
+#                 'nameHR' : 'ewk_qcd_interference',
+#                 'isSignal' : 0,
+#                 'color': palette["DarkBlue"],   
+#                 'samples'  : ['WLNuJJ_inter'],
+#                 'fill': 1001
+#               }
+
+# groupPlot['Wjets_HT_hardJets']  = {  
+#                 'nameHR' : 'WJets_hardJets',
+#                 'isSignal' : 0,
+#                 'color':   palette["Yellow"],
+#                 'samples'  : ['Wjets_HT_hardJets'],
+#                 'fill': 1001
+#                 }
+
+# groupPlot['WLNuJJ_0mtw']  = {  
+#                 'nameHR' : 'WJets_PUJets',
+#                 'isSignal' : 0,
+#                 'color':   palette["MediumBlue"],
+#                 'samples'  : ['WLNuJJ_0mtw'],
+#                 'fill': 1001
+#                 }
 
 # groupPlot['Wjets_HT_PUJets']  = {  
 #                 'nameHR' : 'WJets_PUJets',
@@ -150,17 +166,9 @@ groupPlot['Wjets_HT']  = {
 
 groupPlot['WLNuJJ']  = {  
                 'nameHR' : 'WLNuJJ',
-                'isSignal' : 3,
+                'isSignal' : 0 ,
                 'color': palette["FerrariRed"],   
                 'samples'  : ['WLNuJJ'],
-                'fill': 1001
-              }
-
-groupPlot['WLNuJJ_inter']  = {  
-                'nameHR' : 'ewk_qcd_interference',
-                'isSignal' : 1,
-                'color': palette["MediumBlue"],   
-                'samples'  : ['WLNuJJ_inter'],
                 'fill': 1001
               }
 
@@ -173,42 +181,42 @@ groupPlot['WLNuJJ_inter']  = {
 
 plot['WLNuJJ']  = {
                   'color': colors['kCyan']+1, 
-                  'isSignal' : 1,
+                  'isSignal' : 0,
                   'isData'   : 0,
                   'scale'    : 1.   ,
              }
              
-plot['WLNuJJ_inter']  = {
-                  'color': colors['kCyan']+1, 
-                  'isSignal' : 1,
-                  'isData'   : 0,
-                  'scale'    : 1.   ,
-             }
+# plot['WLNuJJ_inter']  = {
+#                   'color': colors['kCyan']+1, 
+#                   'isSignal' : 1,
+#                   'isData'   : 0,
+#                   'scale'    : 100.   ,
+#              }
 
-plot['Wjets_HT_hardJets'] = {   
-                 'color': colors['kAzure']-1,
-                 'isSignal' : 0,
-                 'isData'   : 0, 
-                 #'scale'    : 1.09950003 
-                #  'scale'    : 1.0
-                 'scale'    : 1.0
-                #  'scale'     : 1.0232
-                 #'scale'    : 1.1231175589276459 #mu
-                 #'scale'    : 1.2795330335917352
-                # 'scale'    : 0.5
-                }
+# plot['Wjets_HT_hardJets'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  #'scale'    : 1.09950003 
+#                 #  'scale'    : 1.0
+#                  'scale'    : 1.0
+#                 #  'scale'     : 1.0232
+#                  #'scale'    : 1.1231175589276459 #mu
+#                  #'scale'    : 1.2795330335917352
+#                 # 'scale'    : 0.5
+#                 }
 
-plot['Wjets_HT_PUJets'] = {   
-                 'color': colors['kAzure']-1,
-                 'isSignal' : 0,
-                 'isData'   : 0, 
-                 #'scale'    : 1.050420857 
-                #  'scale'    : 1.0
-                 'scale'    : 1.0
-                #  'scale'    : 1.0854
-                 #'scale'    : 1.0958905448504972
-                 #'scale'    : 1.1768637821969707
-                }
+# plot['WLNuJJ_0mtw'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  #'scale'    : 1.050420857 
+#                 #  'scale'    : 1.0
+#                  'scale'    : 1.0
+#                 #  'scale'    : 1.0854
+#                  #'scale'    : 1.0958905448504972
+#                  #'scale'    : 1.1768637821969707
+#                 }
 
 # plot['top'] = {   
 #                  'color': colors['kAzure']-1,
@@ -308,13 +316,14 @@ plot['Wjets_HT_PUJets'] = {
 
 # # # data
 
-# plot['DATA']  = { 
-#                   'nameHR' : 'Data',
-#                   'color': 1 ,  
-#                   'isSignal' : 0,
-#                   'isData'   : 1 ,
-#                   'isBlind'  : 0
-#               }
+plot['WLNuJJ_0mtw']  = { 
+                  'nameHR' : 'WLNuJJ mtw > 0',
+                  'color': 1 ,  
+                  'isSignal' : 0,
+                  'isData'   : 1 ,
+                  'isBlind'  : 0,
+                  'retainMCErrs' : 1,
+              }
 
 
 # additional options

@@ -1,9 +1,5 @@
-variables["events"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
-variables["DNN1jet1pt"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 40.0, 350.0, 5, 0.0, 1.0), 'name': 'DNNoutputSR_noQGL:CleanJet_pt[0]', 'xaxis': 'DNNoutput : p_{T} 1st jet [GeV]'}
-variables["MultiClass_jet1pt_class5"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_jet1pt_class5', 'xaxis': 'MultiClass_jet1pt_class5'}
-variables["MultiClass_jet1pt_class4"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_jet1pt_class4', 'xaxis': 'MultiClass_jet1pt_class4'}
-variables["MultiClass_jet1pt_class7"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_jet1pt_class7', 'xaxis': 'MultiClass_jet1pt_class7'}
-variables["MultiClass_jet1pt_class6"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_jet1pt_class6', 'xaxis': 'MultiClass_jet1pt_class6'}
-variables["MultiClass_jet1pt_class1"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_jet1pt_class1', 'xaxis': 'MultiClass_jet1pt_class1'}
-variables["MultiClass_jet1pt_class3"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_jet1pt_class3', 'xaxis': 'MultiClass_jet1pt_class3'}
-variables["MultiClass_jet1pt_class2"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_jet1pt_class2', 'xaxis': 'MultiClass_jet1pt_class2'}
+variables["events"] = {'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
+variables["high0p5events"] = {'fold': 2, 'range': (1, 0.5, 1.0, 1, 0.0, 10000.0), 'name': 'ptjj:DNNJoined', 'xaxis': 'DNNoutput : events [GeV]'}
+variables["high0p5DNN1jet1pt2"] = {'fold': 2, 'range': ([0.5, 1.0], [60.0, 85.0, 110.0, 125.0, 140.0, 160.0, 180.0, 205.0, 230.0, 265.0, 300.0, 650.0, 1000.0]), 'name': 'CleanJet_pt[0]:DNNJoined', 'xaxis': 'DNNoutput : p_{T} 1st jet [GeV]'}
+variables["high0p5DNN1jet1pt3"] = {'fold': 2, 'range': ([0.5, 1.0], [60.0, 91.0, 100.0, 110.0, 120.0, 130.0, 140.0, 155.0, 166.0, 180.0, 197.0, 213.333, 230.0, 253.333, 272.0, 300.0, 350.0, 426.0, 10000.0]), 'name': 'CleanJet_pt[0]:DNNJoined', 'xaxis': 'DNNoutput : p_{T} 1st jet [GeV]'}
+variables["high0p5DNN1jet1pt4"] = {'fold': 2, 'range': ([0.5, 1.0], [60.0, 72.5, 85.0, 97.5, 110.0, 117.5, 125.0, 132.5, 140.0, 150.0, 160.0, 170.0, 180.0, 192.5, 205.0, 217.5, 230.0, 247.5, 265.0, 282.5, 300.0, 475.0, 650.0, 825.0, 1000.0]), 'name': 'CleanJet_pt[0]:DNNJoined', 'xaxis': 'DNNoutput : p_{T} 1st jet [GeV]'}

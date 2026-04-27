@@ -1,0 +1,21 @@
+
+{  "file": "/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/2016/rootFile/noHIPMunfolding_final_v11_jet1eta/fixed_plots_vbf_w_2016noHIPMunfolding_final_v11_jet1eta_p_bkg.root",
+  "operations": [
+    {
+      "regions": ["ele_HWJ"],
+      "samples": ["Wjets_HT_hardJets"],
+      "vars": ["high0p5events"],
+      "action": {
+        "applySF": 1.7
+      }
+    },
+    {
+      "regions": ["ele_topcr"],
+      "samples": ["top"],
+      "vars": ["high0p5events"],
+      "action": {
+        "applySF": 1.2
+      }
+    }
+  ]
+}

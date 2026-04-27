@@ -3,7 +3,7 @@
 treeName = 'Events'
 fixSuffix = 'bkgOnly'
 
-tagger = 'unfolding_final'
+tagger = 'unfolding_final_v12'
 tagger += "_"+fixSuffix
 
 tag = 'vbf_w_2018'+tagger

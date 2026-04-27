@@ -48,7 +48,7 @@ if    'iihe' in SITE:
   treeBaseDir = '/pnfs/iihe/cms/store/user/xjanssen/HWW2015'
 elif  'cern' in SITE:
   treeBaseDirHWW = '/eos/cms/store/group/phys_higgs/cmshww/amassiro/HWWNano'
-  treeBaseDirLat = '/eos/cms/store/group/phys_smp/Latinos/vbfw'
+  treeBaseDirLat = '/eos/cms/store/group/phys_smp/ec/Latinos/HWWNano'
 
 def makeMCDirectory(var=''):
   if var:
@@ -62,8 +62,8 @@ mcDirectoryLat = os.path.join(treeBaseDirLat,  mcProduction , mcSteps)
 ############### Lepton WP ######################
 ################################################
 
-eleWP='mvaFall17V2Iso_WP90'
-muWP='cut_Tight_HWWW'
+eleWP='mvaFall17V2Iso_WP90_tthmva_70'
+muWP='cut_Tight_HWWW_tthmva_80'
 
 
 LepWPCut_1l =  '(Lepton_isTightElectron_'+eleWP+'[0]>0.5 || Lepton_isTightMuon_'+muWP+'[0]>0.5)'
@@ -80,16 +80,40 @@ LepWPWeight = LepWPWeight_1l
 XSWeight   = 'XSWeight'
 CommonWeight = XSWeight
 
-fiducial  = '(Alt$(DressedLepton_pt[0],0) >= 20.) && (Alt$(CleanGenJet_pt[1],0) >= 60.) && (Alt$(CleanGenJet_pt[0],0) >= 60.) && (Alt$(mjj_gen,0) >= 300.) && (Alt$(detajj_gen,0) >= 3.5) && (Alt$(abs(DressedLepton_eta[0]), 10) < 2) && (Alt$(abs(CleanGenJet_eta[0]), 100) < 10) && (Alt$(abs(CleanGenJet_eta[1]), 100) < 10) && (Alt$(nCleanGenJet,-1) >= 0.)'
+fiducial = '(((abs(Alt$(DressedLepton_pdgId[0],0))==11) + (abs(Alt$(DressedLepton_pdgId[0],0))==13))>0) \
+            && (Alt$(DressedLepton_pt[0],0)>=20.) \
+            && (Alt$(CleanGenJet_pt[0],0)>=60.) \
+            && (Alt$(CleanGenJet_pt[1],0)>=60.) \
+            && (Alt$(mjj_gen,0)>=300.) \
+            && (Alt$(detajj_gen,0)>=4.) \
+            && (Alt$(abs(DressedLepton_eta[0]),999.)<2.) \
+            && (Alt$(abs(CleanGenJet_eta[0]),999.)<4.7) \
+            && (Alt$(abs(CleanGenJet_eta[1]),999.)<4.7) \
+            && (Alt$(nCleanGenJet20,0)>=2)'
+            
 #########################################
 ######### MULTIPLE SIGNALS ##############
 #########################################
 ###### W + jj EWK #######
 
+# fiducialw = fiducial.replace("&&","*")
 
-samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_EWK')
-                                    + nanoGetSampleFiles(mcDirectoryLat,'Wp_LNuJJ_EWK'),
-                        'weight': CommonWeight,
-                        'FilesPerJob' : 5,
-                        'EventsPerJob' : 7000,
-                    }
+
+# samples['WLNuJJ_plus']  = {  'name'   : nanoGetSampleFiles(mcDirectoryLat,'Wp_LNuJJ_EWK'),
+#                         'weight' : CommonWeight,
+#                         'FilesPerJob' : 2,
+#                         'EventsPerJob' : 7000,
+#                     }
+
+# samples['WLNuJJ_minus']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_EWK'),
+#                         'weight' : CommonWeight,
+#                         'FilesPerJob' : 2,
+#                         'EventsPerJob' : 7000,
+#                     }
+
+samples['WLNuJJ'] = { 
+                        'name' : nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_EWK')
+                                + nanoGetSampleFiles(mcDirectoryLat,'Wp_LNuJJ_EWK'),
+                        'weight' : CommonWeight,
+                        'FilesPerJob' : 3,
+}

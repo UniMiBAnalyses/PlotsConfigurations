@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'HIPM_ENDtopcr'
+tagger = 'HIPM_final_v7'
 # tagger = 'nosys_yesrw_try'
 tag = 'vbf_w_2016'+tagger
 

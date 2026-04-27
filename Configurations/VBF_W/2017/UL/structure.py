@@ -42,54 +42,64 @@ structure['top']  = {
                   'isData'   : 0
               }
 
-structure['VV']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0
-              }
+# structure['VV']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0
+#               }
 
-structure['VBS']  = { 
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
+# structure['VBS']  = { 
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
 
-structure['Higgs']  = { 
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
+# structure['Higgs']  = { 
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
 
 structure['DY_M-50']  = {  
                   'isSignal' : 0,
                   'isData'   : 0
               }
 
-structure['DY_else']  = {  
+structure['Others']  = {  
                   'isSignal' : 0,
                   'isData'   : 0
               }
 
-structure['VBF-Z']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0
-              }
+# structure['DY_else']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0
+#               }
 
-structure['Vg']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
+# structure['VBF-Z']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0
+#               }
 
-structure['VgS']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
+# structure['Vg']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
+
+# structure['VgS']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
 
 
-structure['VVV']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
+# structure['VVV']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
 
 structure['WLNuJJ']  = {  
                   'isSignal' : 1,
+                  'isData'   : 0 
+                }
+
+structure['WLNuJJ_Out']  = {  
+                  'isSignal' : 0,
                   'isData'   : 0 
               }
 
@@ -98,6 +108,7 @@ structure['Fake']  = {
                   'isSignal' : 0,
                   'isData'   : 0
               }
+
 
 
 # data

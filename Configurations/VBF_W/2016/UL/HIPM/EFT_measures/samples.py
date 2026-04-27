@@ -87,7 +87,7 @@ LepWPWeight = LepWPWeight_1l
 ################################################
 
 XSWeight   = 'XSWeight'         
-SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF', 'PUJetIdSF','TriggerSFWeight_1l', trigg_MC, 'EMTFbug_veto', 'PrefireWeight']
+SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF', 'PUJetIdSF','TriggerSFWeight_1l', trigg_MC, 'EMTFbug_veto', 'L1PreFiringWeight_Nom']
 
 
 SFweight = '*'.join(SFweight1l)
@@ -159,7 +159,7 @@ samples['Wjets_HT_hardJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, '
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
                         'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction  + '* hardJets',
-			                	'FilesPerJob' : 4, 
+			                	'FilesPerJob' : 2, 
 		                 }
 
 
@@ -190,7 +190,7 @@ samples['Wjets_HT_PUJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJ
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
                         'weight': CommonWeight+'*' + Wjets_photon_filter + '* PUJets',
-			                	'FilesPerJob' : 4, 
+			                	'FilesPerJob' : 2, 
 		                 }
 
 
@@ -225,7 +225,7 @@ samples['top'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'TTTo2L2Nu')
                                  + nanoGetSampleFiles(mcDirectoryLat,'TTWjets-LO'),
                                 #  + nanoGetSampleFiles(mcDirectoryLat,'TTWjets-NLO')   ## use one of them (or NLO or LO)
                       'weight': CommonWeight,
-                      'FilesPerJob' : 10,
+                      'FilesPerJob' : 3,
                       # 'EventsPerJob' : 70000,
                 }
 

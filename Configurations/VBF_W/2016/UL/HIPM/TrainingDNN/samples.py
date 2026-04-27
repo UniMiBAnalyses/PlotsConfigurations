@@ -173,7 +173,44 @@ Wjets_photon_filter = '!(Sum$( PhotonGen_isPrompt==1 && PhotonGen_pt>10 && abs(P
 Total_correction = 'WJets_reweight'
 # Total_correction = '1.'
 
-samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu-LO')
+# samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu-LO')
+#                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT70To100')
+#                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT100To200')
+#                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT200To400')
+#                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT400To600')
+#                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT600To800')
+#                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT800To1200')
+#                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500')
+#                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
+#                         # 'weight': CommonWeight+'*' + Wjets_photon_filter +'* ewknloW' + '*' +Total_correction,
+#                         'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction,
+# 			                	'FilesPerJob' : 10, 
+#                         'subsamples': {
+#                           'hardJets'  : 'hardJets',
+#                           'PUJets'    : 'PUJets'
+#                                     }
+# 		                 }
+
+
+# # No needed HT stiching corrections
+
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu-LO', '(LHE_HT < 70)') 
+
+# # HT bins to LO factors 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT70To100',          '1.21 * 1.0346')  #adding also k-factor
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT100To200',         '1.019') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT200To400',         '1.012') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT400To600',         '0.9945') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT600To800',         '0.9537') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT800To1200',        '0.8844') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT1200To2500',       '0.7643') 
+# addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT2500ToInf',        '0.2422') 
+
+
+
+###############################################
+
+samples['Wjets_HT_PUJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu-LO')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT70To100')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT100To200')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT200To400')
@@ -182,29 +219,26 @@ samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLN
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT800To1200')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500')
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
-                        # 'weight': CommonWeight+'*' + Wjets_photon_filter +'* ewknloW' + '*' +Total_correction,
-                        'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction,
-			                	'FilesPerJob' : 10, 
-                        'subsamples': {
-                          'hardJets'  : 'hardJets',
-                          'PUJets'    : 'PUJets'
-                                    }
+                        'weight': CommonWeight+'*' + Wjets_photon_filter + '* PUJets',
+			                	'FilesPerJob' : 4,
+                        # 'suppressNegative' :['ele_SR','mu_SR'],
+                        # 'suppressNegativeNuisances' :['ele_SR','mu_SR'],
 		                 }
 
 
 # No needed HT stiching corrections
 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu-LO', '(LHE_HT < 70)') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu-LO', '(LHE_HT < 70)') 
 
 # HT bins to LO factors 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT70To100',          '1.21 * 1.0346')  #adding also k-factor
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT100To200',         '1.019') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT200To400',         '1.012') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT400To600',         '0.9945') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT600To800',         '0.9537') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT800To1200',        '0.8844') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT1200To2500',       '0.7643') 
-addSampleWeight(samples,'Wjets_HT', 'WJetsToLNu_HT2500ToInf',        '0.2422') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT70To100',          '1.21 * 1.0346')  #adding also k-factor
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT100To200',         '1.019') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT200To400',         '1.012') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT400To600',         '0.9945') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT600To800',         '0.9537') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT800To1200',        '0.8844') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT1200To2500',       '0.7643') 
+addSampleWeight(samples,'Wjets_HT_PUJets', 'WJetsToLNu_HT2500ToInf',        '0.2422') 
 
 
 ###############################################

@@ -1,0 +1,795 @@
+subject   : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=abulla/CN=857947/CN=Andrea Bulla/CN=1595658895
+issuer    : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=abulla/CN=857947/CN=Andrea Bulla
+identity  : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=abulla/CN=857947/CN=Andrea Bulla
+type      : RFC3820 compliant impersonation proxy
+strength  : 2048
+path      : /afs/cern.ch/user/a/abulla/.proxy
+timeleft  : 06:08:39
+key usage : Digital Signature, Key Encipherment
+Current directory: /tmp
+Contents of /tmp:
+total 0
+drwxr-xr-x. 2 abulla zh 6 Aug 18 16:04 hsperfdata_abulla
+total 44896
+-rwxr-xr-x. 1 abulla zh    26956 Aug 18 16:04 SymmetrizeByHand.py
+-rw-r--r--. 1 abulla zh 45846936 Aug 18 16:04 fixed_plots_vbf_w_2016noHIPMEFT_4Comb_final_v6.root
+drwxr-xr-x. 2 abulla zh        6 Aug 18 16:04 hsperfdata_abulla
+-rw-r--r--. 1 abulla zh    30975 Aug 18 16:04 nuisances.py
+-rw-r--r--. 1 abulla zh    27412 Aug 18 16:04 samples.py
+-rw-r--r--. 1 abulla zh    30555 Aug 18 16:04 variables.py
+[INFO] ✨ Lavorerò su una copia del file: /tmp/fixed_fixed_plots_vbf_w_2016noHIPMEFT_4Comb_final_v6.root
+[INFO] Trovati 170 task da eseguire.
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'ele_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_topcr/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_topcr/events'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'CMS_fake_stat_e_2016_1lep' in 'ele_topcr'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'VBFW_fake_e_EWKsub_2016_noHIPM' in 'ele_topcr'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'ele_topcr/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'ele_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_topcr/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'mu_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_HWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'mu_HWJ/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'mu_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_HWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'mu_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_PUWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'mu_PUWJ/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'mu_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_PUWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESBBEC1' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESEC2' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PS_ISR' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_res_j_2016_UL' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESFlavorQCD' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PU_2016noHIPM' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hfstats2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'QCDscale_Wjets_HT_PUJets' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESAbsolute_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_jetpuid_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PS_FSR' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_m_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_jes' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_prefiring_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESEC2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hf' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'pdf_weight_Wjets_HT_PUJets' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lf' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lfstats2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_m_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_trigger_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESAbsolute' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESBBEC1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeSample_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lfstats1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_cferr1' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_cferr2' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESHF' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeBal' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_met_2016_UL' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hfstats1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESHF_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESBBEC1' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESEC2' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_PS_ISR' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_res_j_2016_UL' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESFlavorQCD' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_PU_2016noHIPM' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_hfstats2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESAbsolute_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_jetpuid_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_PS_FSR' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_m_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_jes' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_lf' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESEC2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_hf' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_eff_prefiring_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'QCDscale_DY_M-50' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_lfstats2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_eff_m_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_eff_trigger_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESAbsolute' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESBBEC1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESRelativeSample_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_lfstats1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_cferr1' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_cferr2' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESHF' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESRelativeBal' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_met_2016_UL' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_hfstats1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESHF_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'CMS_fake_stat_m_2016_1lep' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'VBFW_fake_m_EWKsub_2016_noHIPM' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESBBEC1' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESEC2' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PS_ISR' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_res_j_2016_UL' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESFlavorQCD' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PU_2016noHIPM' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hfstats2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'QCDscale_Wjets_HT_PUJets' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESAbsolute_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_jetpuid_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PS_FSR' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_m_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_jes' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_prefiring_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESEC2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hf' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'pdf_weight_Wjets_HT_PUJets' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lf' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lfstats2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_m_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_trigger_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESAbsolute' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESBBEC1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeSample_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lfstats1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_cferr1' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_cferr2' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESHF' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeBal' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_met_2016_UL' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hfstats1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESHF_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESBBEC1' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESEC2' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_PS_ISR' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_res_j_2016_UL' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESFlavorQCD' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_PU_2016noHIPM' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_hfstats2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESAbsolute_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_jetpuid_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_PS_FSR' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_m_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_jes' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_lf' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESEC2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_hf' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_eff_prefiring_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'QCDscale_DY_M-50' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_lfstats2_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_eff_m_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_eff_trigger_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESAbsolute' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESBBEC1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESRelativeSample_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_lfstats1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_cferr1' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_cferr2' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESHF' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESRelativeBal' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_met_2016_UL' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_btag_hfstats1_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample DY_M-50 e syst 'CMS_scale_JESHF_2016' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'CMS_fake_stat_m_2016_1lep' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'VBFW_fake_m_EWKsub_2016_noHIPM' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESBBEC1' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESEC2' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PS_ISR' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_res_j_2016_UL' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESFlavorQCD' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PU_2016noHIPM' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hfstats2_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'QCDscale_Wjets_HT_PUJets' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESAbsolute_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_jetpuid_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_e_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_jes' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_prefiring_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESEC2_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hf' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'pdf_weight_Wjets_HT_PUJets' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lf' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lfstats2_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_trigger_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESAbsolute' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_e_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESBBEC1_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeSample_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PS_FSR' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lfstats1_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_cferr1' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_cferr2' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESHF' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeBal' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_met_2016_UL' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hfstats1_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESHF_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'CMS_fake_stat_e_2016_1lep' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'VBFW_fake_e_EWKsub_2016_noHIPM' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESBBEC1' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESEC2' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PS_ISR' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_res_j_2016_UL' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESFlavorQCD' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PU_2016noHIPM' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hfstats2_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'QCDscale_Wjets_HT_PUJets' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESAbsolute_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_jetpuid_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_e_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_jes' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_prefiring_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESEC2_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hf' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'pdf_weight_Wjets_HT_PUJets' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lf' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lfstats2_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_trigger_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESAbsolute' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_e_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESBBEC1_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeSample_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PS_FSR' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lfstats1_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_cferr1' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_cferr2' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESHF' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeBal' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_met_2016_UL' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hfstats1_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESHF_2016' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'CMS_fake_stat_e_2016_1lep' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'VBFW_fake_e_EWKsub_2016_noHIPM' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'mu_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_topcr/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'mu_topcr/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'mu_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_topcr/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'ele_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_HWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'ele_HWJ/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'ele_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_HWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'ele_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_PUWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'ele_PUWJ/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'ele_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_PUWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'ele_PUWJ/events'
+All done. Changes saved to: fixed_plots_vbf_w_2016noHIPMEFT_4Comb_final_v6.root
+[INFO] Output ROOT file creato.
+[INFO] Script completato con successo, copio l'output su EOS...
+[INFO] Copia completata.

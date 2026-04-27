@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'TrainingDNN'
+tagger = 'TrainingDNN2'
 # tagger = 'den_analysis'
 
 tag = 'vbf_w_2018'+tagger

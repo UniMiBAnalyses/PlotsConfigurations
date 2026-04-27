@@ -1,0 +1,9 @@
+executable = /afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/2018/UL/unfolding/ALL/jet1eta/run_symmetrize.sh
+universe = vanilla
+output = /afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/2018/UL/unfolding/ALL/jet1eta/run_symmetrize.out
+error = /dev/null
+log = /dev/null
+MY.WantOS = "el7"
+request_cpus = 1
++JobFlavour = "workday"
+queue

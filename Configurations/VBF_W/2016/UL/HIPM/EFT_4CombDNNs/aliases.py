@@ -19,6 +19,16 @@ aliases['zeroJet'] = {
     'expr': 'Alt$(CleanJet_pt[0], 0) < 30.'
 }
 
+aliases['mjj23'] = {
+    'expr': 'sqrt(2 * Alt$(CleanJet_pt[2], 0) * Alt$(CleanJet_pt[3], 0) * \
+                 (cosh(Alt$(CleanJet_eta[2], 0) - Alt$(CleanJet_eta[3], 0)) - \
+                  cos(Alt$(CleanJet_phi[2], 0) - Alt$(CleanJet_phi[3], 0))))'
+}
+
+aliases['nJet30']= {
+    'expr' : 'Sum$(CleanJet_pt > 30.)'
+}
+
 #####################################
 ######## user defined ###############
 #####################################
@@ -195,12 +205,12 @@ for s in systs:
 
 aliases['hardJets'] = {
     'expr':  'Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10',
-    'samples': ['Wjets_HT']
+    'samples': ['Wjets_HT_hardJets', 'Wjets_HT_PUJets']
 }
 
 aliases['PUJets'] = {
     'expr':  '!(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10)',
-    'samples': ['Wjets_HT']
+    'samples': ['Wjets_HT_hardJets', 'Wjets_HT_PUJets']
 }
 
 ###################################
@@ -254,17 +264,16 @@ aliases['Top_pTrw'] = {
     'samples': ['top']
 }
 
-###########################################################################################
-#fakes
+##############################################
 
-basedir_fakes = configurations + "/VBF_W/utils/2016/HIPM/fakes/HLTMC_highPT"
+basedir_fakes = configurations + "/VBF_W/utils/2016/HIPM/fakes/HLTMC_highPT_newWP"
 
-el_pr_file = basedir_fakes + "/PR_eleDATA_.root"
-mu_pr_file = basedir_fakes + "/PR_muDATA_.root"
+el_pr_file = basedir_fakes + "/PR_eleDATA.root"
+mu_pr_file = basedir_fakes + "/PR_muDATA.root"
 
-el_fr_file = basedir_fakes + "/FR_ele1p3_.root"
-mu_fr_file = basedir_fakes + "/FR_mu1p3_.root"
-aliases['fakeWeight_1p3'] = { 
+el_fr_file = basedir_fakes + "/FR_ele0p9.root"
+mu_fr_file = basedir_fakes + "/FR_mu0p9.root"
+aliases['fakeWeight_0p9'] = { 
     'class': 'newFakeWeightOTFall',
     'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations, no PromtRate shifting
     'linesToAdd' : [
@@ -285,19 +294,10 @@ aliases['fakeWeight_statDo'] = {
         'samples': ["Fake"]
 }
 
-el_pr_file = basedir_fakes + "/PR_eleMC_.root"
-mu_pr_file = basedir_fakes + "/PR_muMC_.root"
-aliases['fakeWeight_PRfromMC'] = { 
-        'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, True), 
-        'samples': ["Fake"]
-}
 
-el_pr_file = basedir_fakes + "/PR_eleDATA_.root"
-mu_pr_file = basedir_fakes + "/PR_muDATA_.root"
-for ewk_sf in ["1p4","1p2"]:
-    el_fr_file = basedir_fakes + "/FR_ele{}_.root".format(ewk_sf)
-    mu_fr_file = basedir_fakes + "/FR_mu{}_.root".format(ewk_sf)
+for ewk_sf in ["0p9Down","0p9Up"]:
+    el_fr_file = basedir_fakes + "/FR_ele{}.root".format(ewk_sf)
+    mu_fr_file = basedir_fakes + "/FR_mu{}.root".format(ewk_sf)
 
     aliases['fakeWeight_{}'.format(ewk_sf)] = { 
             'class': 'newFakeWeightOTFall',
@@ -329,7 +329,7 @@ aliases['QCDscale_normalized'] = {
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
         '.L {}/VBF_W/utils/macros/QCDscale_normalize.cc+'.format(configurations)
     ] ,
-    'samples':[c for c in signals+mc_eft]
+    'samples': [c for c in ["Wjets_HT_hardJets","Wjets_HT_PUJets","top"]]
 }
 
 aliases['PDFweight_normalized'] = {
@@ -339,15 +339,14 @@ aliases['PDFweight_normalized'] = {
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
         '.L {}/VBF_W/utils/macros/PDFweight_normalize.cc+'.format(configurations)
     ] ,
-    'samples':[c for c in signals]
+    'samples': [c for c in ["Wjets_HT_hardJets","Wjets_HT_PUJets","top"]]
 }
 
 
 aliases['lhe_mjj'] = {
     'expr': 'TMath::Sqrt(2. * LHEPart_pt[4] * LHEPart_pt[5] * (TMath::CosH(LHEPart_eta[4] - LHEPart_eta[5]) - TMath::Cos(LHEPart_phi[4] - LHEPart_phi[5])))',
-    'samples': ['VBF-Z']
+    'samples': ['VBF-Z', 'Others']
 }
-
 
 ## WJET REWEIGHT
 
@@ -355,7 +354,7 @@ aliases['lhe_mjj'] = {
 morphing_file = utils_folder + '2016/HIPM/reweight/reweight.root'
 aliases['WJets_reweight'] = {
     'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
+    'samples': ["Wjets_HT_hardJets"],
     'args': (morphing_file, "ele_ideal_function", "mu_ideal_function"),
      'linesToAdd' : [
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
@@ -365,58 +364,29 @@ aliases['WJets_reweight'] = {
 
 aliases['WJets_reweight_up'] = {
     'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
+    'samples': ["Wjets_HT_hardJets"],
     'args': (morphing_file, copy.deepcopy("ele_sys_up"), copy.deepcopy("mu_sys_up"))
 } 
 
 aliases['WJets_reweight_do'] = {
     'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
+    'samples': ["Wjets_HT_hardJets"],
     'args': (morphing_file, copy.deepcopy("ele_sys_down"), copy.deepcopy("mu_sys_down"))
 } 
 
 aliases['WJets_reweight_func'] = {
     'class': 'ReweightJet1pT',
-    'samples': ['Wjets_HT'],
+    'samples': ["Wjets_HT_hardJets"],
     'args': (morphing_file, copy.deepcopy("ele_pol2_HWJ"), copy.deepcopy("mu_pol2_HWJ"))
 } 
-
-# # DNN
-# models_path = utils_folder + '2018/NN'
-# model_best = '64_64_64/noQGL_test/4/'
-
-# aliases['DNNoutputSR_noQGL'] = {
-#     'class': 'MVAReaderDNNnoQGL',
-#     'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
-#     'linesToAdd':[
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         'gSystem->Load("libDNNEvaluator.so")',
-#         '.L {}macros/noQGLmva_reader_DNN.cc+'.format(utils_folder)
-#     ]
-# }
-
-# # DNN
-# models_path = utils_folder + '2018/NN'
-# model_best = '64_64_64/JoinedHWJ_SR/'
-
-# aliases['DNNJoined'] = {
-#     'class': 'MVAReaderDNNnoQGL',
-#     'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
-#     'linesToAdd':[
-#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-#         'gSystem->Load("libDNNEvaluator.so")',
-#         '.L {}macros/noQGLmva_reader_DNN.cc+'.format(utils_folder)
-#     ]
-# }
-
 
 # DNN
 models_path = utils_folder + '2018/NN'
 
-model_ev = models_path+"/"+'64_64_64/JoinedHWJ_SR_ev/'
+model_ev = models_path+"/"+'64_64_64/SR_RUN2_newWP_ev/'
 transform_ev = model_ev + 'cumulative_signal_2018.root'
 
-model_odd = models_path+"/"+'64_64_64/JoinedHWJ_SR_ev/'
+model_odd = models_path+"/"+'64_64_64/SR_RUN2_newWP_odd/'
 transform_odd = model_odd + 'cumulative_signal_2018.root'
 
 aliases['DNNJoined'] = {
@@ -428,3 +398,131 @@ aliases['DNNJoined'] = {
         '.L {}macros/noQGLmva_reader_DNN_EVODD.cc+'.format(utils_folder)
     ]
 }
+
+# #########################################################################################
+# weightFile = utils_folder + '2018/PDFs/CMS_SumSquared102.root'
+# aliases['PDFweight_ModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['PDFweight_ModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+
+# #########################################################################################
+
+# weightFile = utils_folder + '2018/PDFs/CMS_SumSquared100.root'
+# aliases['PDFweight_100ModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['PDFweight_100ModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# #########################################################################################
+
+# weightFile = utils_folder + '2018/PDFs/CMS_AlphaS.root'
+# aliases['PDFweight_AlphaModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['PDFweight_AlphaModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# #########################################################################################
+
+# weightFile = utils_folder + '2018/PDFs/CMS_QCDscale_2D.root'
+# aliases['QCDscaleSig_ModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['QCDscaleSig_ModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# #########################################################################################
+
+# weightFile = utils_folder + '2018/PDFs/CMS_PS_FSR_2D.root'
+# aliases['FSRSig_ModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['FSRSig_ModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# #########################################################################################
+
+# weightFile = utils_folder + '2018/PDFs/CMS_PS_ISR_2D.root'
+# aliases['ISRSig_ModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['ISRSig_ModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# #########################################################################################

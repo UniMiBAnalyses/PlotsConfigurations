@@ -9,7 +9,7 @@ def leggi_samples(file_path, var):
     save_next_5_lines = False
     with open(file_path, 'r') as f:
         for i, line in enumerate(f.readlines()):
-            if i < 12:
+            if i < 21:
                 lines_to_save.append(line)
             if line.startswith("samples['WLNuJJ_{}".format(var)):
                 save_next_5_lines = True
@@ -70,7 +70,7 @@ haddedFile = os.path.join(os.getcwd(),outputDir,"plots_{}.root".format(tag))
 samplesFile = "PlotsConfigurations/Configurations/VBF_W/2016/UL/noHIPM/unfolding/ALL/samples_onlysig.py"
 
 var_unfolding = ["ptW", "leppt", "lepeta", "nJet", "jet1pt", "jet1eta", "jet2pt", "jet2eta", "detajj", "mjj", "ptjj", "dphijj"]
-# var_unfolding = ["mjj"]
+# var_unfolding = ["ptW"]
 
 # Lista per memorizzare i processi avviati
 processes = []

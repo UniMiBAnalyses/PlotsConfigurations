@@ -3,7 +3,7 @@
 treeName = 'Events'
 pretag = 'HIPM'
 
-tagger = pretag+'EFT_4Comb_joinNEW_lastDNNs'
+tagger = pretag+'EFT_4Comb_final_v6'
 tag = 'vbf_w_2016'+tagger
 
 # used by mkShape to define output directory for root files
@@ -33,7 +33,7 @@ outputDirPlots = '../../../plots/'+tagger
 
 
 # used by mkDatacards to define output directory for datacards
-outputDirDatacard = '../../../datacards/'+tagger
+outputDirDatacard = '../../../datacards/'+tagger+"_Sym"
 
 # structure file for datacard
 structureFile = 'structure.py'

@@ -1,7 +1,7 @@
 from collections import OrderedDict
 
 variables = {}
-handle = open("../opt_binning/variables_flatS_8.py")
+handle = open("../opt_binning/variables_semiflat.py")
 exec(handle)
 handle.close()
 
@@ -25,7 +25,7 @@ cuts['TOT'] = "'1.'"
 cuts['fiducial'] = "'{}'.format(fiducial)"
 
 for var in variables:
-    if "_flat" in var:
+    if "_ACM" in var:
         nBins = len(variables[var]["range"][0]) - 1
         var_to_use = var.split("_")[0]
 

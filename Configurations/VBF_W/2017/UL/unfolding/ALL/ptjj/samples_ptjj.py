@@ -6,70 +6,72 @@ if os.path.exists(CMSSW+"/src/"+samplesFile):
   handle.close()
 
 
-fiducial = "(Alt$(DressedLepton_pt[0],0) >= 20.) && (Alt$(CleanGenJet_pt[1],0) >= 60.) && (Alt$(CleanGenJet_pt[0],0) >= 60.) && (Alt$(mjj_gen,0) >= 300.) && (Alt$(detajj_gen,0) >= 3.5) && (Alt$(abs(DressedLepton_eta[0]), 10) < 2) && (Alt$(abs(CleanGenJet_eta[0]), 100) < 10) && (Alt$(abs(CleanGenJet_eta[1]), 100) < 10) && (Alt$(nCleanGenJet,-1) >= 0.)"
-
+fiducial = '(((abs(Alt$(DressedLepton_pdgId[0],0))==11) + (abs(Alt$(DressedLepton_pdgId[0],0))==13))>0) \
+        && (Alt$(DressedLepton_pt[0],0)>=20.) \
+        && (Alt$(CleanGenJet_pt[0],0)>=60.) \
+        && (Alt$(CleanGenJet_pt[1],0)>=60.) \
+        && (Alt$(mjj_gen,0)>=300.) \
+        && (Alt$(detajj_gen,0)>=4.) \
+        && (Alt$(abs(DressedLepton_eta[0]),999.)<2.) \
+        && (Alt$(abs(CleanGenJet_eta[0]),999.)<4.7) \
+        && (Alt$(abs(CleanGenJet_eta[1]),999.)<4.7) \
+        && (Alt$(nCleanGenJet20,0)>=2)'
+        
 fiducialw = fiducial.replace("&&","*")
 
 samples['WLNuJJ_ptjj1'] = { 
+        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen < 30.0)',
-        'FilesPerJob' : 5,
 }
 
 samples['WLNuJJ_ptjj2'] = { 
+        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 30.0) * (ptjj_gen < 45.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 30.0) * (ptjj_gen < 50.0)',
 }
 
 samples['WLNuJJ_ptjj3'] = { 
+        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 45.0) * (ptjj_gen < 60.0)',
-        'FilesPerJob' : 5,
+        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 50.0) * (ptjj_gen < 75.0)',
 }
 
 samples['WLNuJJ_ptjj4'] = { 
-        'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
-               + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
-        'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 60.0) * (ptjj_gen < 75.0)',
         'FilesPerJob' : 5,
-}
-
-samples['WLNuJJ_ptjj5'] = { 
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 75.0) * (ptjj_gen < 100.0)',
-        'FilesPerJob' : 5,
 }
 
-samples['WLNuJJ_ptjj6'] = { 
+samples['WLNuJJ_ptjj5'] = { 
+        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 100.0) * (ptjj_gen < 130.0)',
-        'FilesPerJob' : 5,
 }
 
-samples['WLNuJJ_ptjj7'] = { 
+samples['WLNuJJ_ptjj6'] = { 
+        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 130.0) * (ptjj_gen < 180.0)',
-        'FilesPerJob' : 5,
 }
 
-samples['WLNuJJ_ptjj8'] = { 
+samples['WLNuJJ_ptjj7'] = { 
+        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'*'+fiducialw+'*'+'(ptjj_gen >= 180.0)',
-        'FilesPerJob' : 5,
 }
 
 samples['WLNuJJ_ptjjOut'] = { 
+        'FilesPerJob' : 5,
         'name' : nanoGetSampleFiles(mcDirectoryLatSig,'Wm_LNuJJ_EWK')
                + nanoGetSampleFiles(mcDirectoryLatSig,'Wp_LNuJJ_EWK'),
         'weight' : CommonWeight+'* !('+fiducialw+')',
-        'FilesPerJob' : 5,
 }
 

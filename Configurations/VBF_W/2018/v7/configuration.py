@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'final'
+tagger = 'no_reweighted'
 
 tag = 'vbf_w_2018'+tagger
 
@@ -32,7 +32,7 @@ lumi = 59.74
 # different from "outputDir" to do things more tidy
 #outputDirPlots = 'plots'
 # outputDirPlots = 'plots/NORWALLSYS'
-outputDirPlots = 'plots/'+tagger
+outputDirPlots = '../plots/'+tagger
 
 # used by mkDatacards to define output directory for datacards
 outputDirDatacard = 'datacards/'+tagger

@@ -1,0 +1,82 @@
+#include "LatinoAnalysis/MultiDraw/interface/TTreeFunction.h"
+#include "LatinoAnalysis/MultiDraw/interface/FunctionLibrary.h"
+#include "PhysicsTools/NanoAODTools/interface/WeightCalculatorFromHistogram.h"
+
+#include <vector>
+#include <array>
+#include <map>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+
+#include "TString.h"
+#include "TTreeReader.h"
+#include "TFile.h"
+#include "TH2.h"
+#include "TH2F.h"
+#include "TH1D.h"
+
+#include <iostream>
+
+
+#ifndef QCDScaleNormalized_unfolding
+#define QCDScaleNormalized_unfolding
+
+namespace multidraw {
+  extern thread_local TTree* currentTree;
+}
+
+
+class QCDScaleNormalized_unfolding : public multidraw::TTreeFunction {
+
+public:
+  QCDScaleNormalized_unfolding(string sample_name, vector<double> norm_fact);
+  ~QCDScaleNormalized_unfolding();
+
+  char const* getName() const override { return "QCDScaleNormalized_unfolding"; }
+  TTreeFunction* clone() const override { return new QCDScaleNormalized_unfolding(sample_name, norm_fact);}
+  
+  void beginEvent(long long) override;
+  unsigned getNdata() override { return 9; } //9 scale variations
+  int getMultiplicity() override { return 1; }
+  double evaluate(unsigned) override;
+
+protected:
+  void bindTree_(multidraw::FunctionLibrary&) override;
+  
+  FloatArrayReader* LHEScaleWeight{};
+  TString _currentFileName;
+  std::array<double,9> _currentWeightsSum; 
+};
+
+
+QCDScaleNormalized_unfolding::QCDScaleNormalized_unfolding() :
+  TTreeFunction()
+{}
+
+
+QCDScaleNormalized_unfolding::~QCDScaleNormalized_unfolding(){
+}
+
+void
+QCDScaleNormalized_unfolding::beginEvent(long long _iEntry)
+{ 
+
+  for (int i =0; i<9; i++) _currentWeightsSum[i] = norm_fact.At(i);
+
+
+double
+QCDScaleNormalized_unfolding::evaluate(unsigned iJ)
+{
+  //std::cout << LHEScaleWeight->At(iJ) << " " << _currentWeightsSum[iJ] << std::endl;
+  return LHEScaleWeight->At(iJ) / _currentWeightsSum[iJ];
+}
+
+void
+QCDScaleNormalized_unfolding::bindTree_(multidraw::FunctionLibrary& _library)
+{
+  _library.bindBranch(LHEScaleWeight, "LHEScaleWeight");
+}
+
+#endif

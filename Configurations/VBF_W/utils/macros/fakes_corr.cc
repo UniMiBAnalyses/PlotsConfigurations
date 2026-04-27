@@ -52,8 +52,10 @@ protected:
   TH1F* h_mu;
 
   FloatArrayReader* Lepton_phi{};
+  FloatArrayReader* CleanJet_phi{};
   FloatArrayReader* Lepton_eta{};
   IntArrayReader*   Lepton_pdgId{};
+
 
 };
 
@@ -90,6 +92,8 @@ Fakes_corrector::evaluate(unsigned)
   float weight = 1.;
   float weight_err = 0.;
 
+  float jetphi = CleanJet_phi->At(0);
+
   if(abs(Lepton_pdgId->At(0)) == 11 && eta < -1.3){
     weight = h_ele->GetBinContent(h_ele->FindBin(phi));
     weight_err = h_ele->GetBinError(h_ele->FindBin(phi));
@@ -100,7 +104,7 @@ Fakes_corrector::evaluate(unsigned)
     if (do_statDo){
         weight -= weight_err;
     }
-  } else if (abs(Lepton_pdgId->At(0)) == 13) {
+  } else if (abs(Lepton_pdgId->At(0)) == 13 && jetphi < -1.) {
     weight = h_mu->GetBinContent(h_mu->FindBin(phi));
     weight_err = h_mu->GetBinError(h_mu->FindBin(phi));
 
@@ -120,11 +124,13 @@ Fakes_corrector::bindTree_(multidraw::FunctionLibrary& _library)
 {   
     _library.bindBranch(Lepton_eta, "Lepton_eta");
     _library.bindBranch(Lepton_phi, "Lepton_phi");
+    _library.bindBranch(CleanJet_phi, "CleanJet_phi");
     _library.bindBranch(Lepton_pdgId, "Lepton_pdgId");
 }
 
 Fakes_corrector::~Fakes_corrector(){
     Lepton_phi = nullptr;
+    CleanJet_phi = nullptr;
     Lepton_eta = nullptr;
     Lepton_pdgId = nullptr;
 

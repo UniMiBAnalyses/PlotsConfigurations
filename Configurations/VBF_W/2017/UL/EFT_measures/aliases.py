@@ -20,6 +20,16 @@ aliases['zeroJet'] = {
     'expr': 'Alt$(CleanJet_pt[0], 0) < 30.'
 }
 
+aliases['mjj23'] = {
+    'expr': 'sqrt(2 * Alt$(CleanJet_pt[2], 0) * Alt$(CleanJet_pt[3], 0) * \
+                 (cosh(Alt$(CleanJet_eta[2], 0) - Alt$(CleanJet_eta[3], 0)) - \
+                  cos(Alt$(CleanJet_phi[2], 0) - Alt$(CleanJet_phi[3], 0))))'
+}
+
+aliases['nJet30']= {
+    'expr' : 'Sum$(CleanJet_pt > 30.)'
+}
+
 #####################################
 ######## user defined ###############
 #####################################
@@ -267,14 +277,14 @@ aliases['Top_pTrw'] = {
 #########################################################################################
 #fakes
 
-basedir_fakes = configurations + "/VBF_W/utils/2017/fakes/HLTMC_highPT"
+basedir_fakes = configurations + "/VBF_W/utils/2017/fakes/HLTMC_highPT_newWP"
 
-el_pr_file = basedir_fakes + "/PR_eleDATA_.root"
-mu_pr_file = basedir_fakes + "/PR_muDATA_.root"
+el_pr_file = basedir_fakes + "/PR_eleDATA.root"
+mu_pr_file = basedir_fakes + "/PR_muDATA.root"
 
-el_fr_file = basedir_fakes + "/FR_ele1p3_.root"
-mu_fr_file = basedir_fakes + "/FR_mu1p3_.root"
-aliases['fakeWeight_1p3'] = { 
+el_fr_file = basedir_fakes + "/FR_ele0p9.root"
+mu_fr_file = basedir_fakes + "/FR_mu0p9.root"
+aliases['fakeWeight_0p9'] = { 
     'class': 'newFakeWeightOTFall',
     'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations
     'linesToAdd' : [
@@ -295,19 +305,9 @@ aliases['fakeWeight_statDo'] = {
         'samples': ["Fake"]
 }
 
-el_pr_file = basedir_fakes + "/PR_eleMC_.root"
-mu_pr_file = basedir_fakes + "/PR_muMC_.root"
-aliases['fakeWeight_PRfromMC'] = { 
-        'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, True), 
-        'samples': ["Fake"]
-}
-
-el_pr_file = basedir_fakes + "/PR_eleDATA_.root"
-mu_pr_file = basedir_fakes + "/PR_muDATA_.root"
-for ewk_sf in ["1p4","1p2"]:
-    el_fr_file = basedir_fakes + "/FR_ele{}_.root".format(ewk_sf)
-    mu_fr_file = basedir_fakes + "/FR_mu{}_.root".format(ewk_sf)
+for ewk_sf in ["0p9Down","0p9Up"]:
+    el_fr_file = basedir_fakes + "/FR_ele{}.root".format(ewk_sf)
+    mu_fr_file = basedir_fakes + "/FR_mu{}.root".format(ewk_sf)
 
     aliases['fakeWeight_{}'.format(ewk_sf)] = { 
             'class': 'newFakeWeightOTFall',
@@ -409,10 +409,10 @@ aliases['WJets_reweight_func'] = {
 # DNN
 models_path = utils_folder + '2018/NN'
 
-model_ev = models_path+"/"+'64_64_64/JoinedHWJ_SR_ev/'
+model_ev = models_path+"/"+'64_64_64/SR_RUN2_newWP_ev/'
 transform_ev = model_ev + 'cumulative_signal_2018.root'
 
-model_odd = models_path+"/"+'64_64_64/JoinedHWJ_SR_ev/'
+model_odd = models_path+"/"+'64_64_64/SR_RUN2_newWP_odd/'
 transform_odd = model_odd + 'cumulative_signal_2018.root'
 
 aliases['DNNJoined'] = {

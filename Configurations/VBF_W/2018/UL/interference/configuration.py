@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'w_interference'
+tagger = 'tests'
 
 tag = 'vbf_w_2018'+tagger
 

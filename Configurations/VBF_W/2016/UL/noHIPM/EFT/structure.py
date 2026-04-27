@@ -23,20 +23,6 @@ structure['top']  = {
                   'isData'   : 0
               }
 
-structure['VV']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0
-              }
-
-structure['VBS']  = { 
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
-
-structure['Higgs']  = { 
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
 
 structure['DY_M-50']  = {  
                   'isSignal' : 0,
@@ -48,23 +34,43 @@ structure['DY_else']  = {
                   'isData'   : 0
               }
 
-structure['VBF-Z']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0
-              }
+# structure['VV']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0
+#               }
 
-structure['Vg']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
+# structure['VBS']  = { 
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
 
-structure['VgS']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
+# structure['Higgs']  = { 
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
+
+# structure['VBF-Z']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0
+#               }
+
+# structure['Vg']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
+
+# structure['VgS']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
 
 
-structure['VVV']  = {  
+# structure['VVV']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
+
+structure['Others']  = {  
                   'isSignal' : 0,
                   'isData'   : 0 
               }
@@ -100,5 +106,5 @@ for eft_sample in mc_eft:
 # drop stat uncertainty (autoMCstat) for all 
 # EFT components including the sm one
 
-for eft_sample in mc_eft + signals:
+for eft_sample in mc_eft+signals:
    structure[eft_sample]["removeStatUnc"] = 1

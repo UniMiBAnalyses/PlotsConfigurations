@@ -150,7 +150,7 @@ groupPlot['Fake']  = {
           }
 
 groupPlot['sm']  = {  
-                'nameHR' : 'sm',
+                'nameHR' : 'WLNuJJ',
                 'isSignal' : 3,
                 'color': palette["FerrariRed"],   
                 'samples'  : ['sm'],
@@ -160,8 +160,10 @@ groupPlot['sm']  = {
 for i,sample in enumerate(eft):
     if "sm_lin_quad" in sample and "mixed" not in sample:
         label = "SM + {}".format(sample.split("sm_lin_quad_")[-1])
+        continue
     elif "mixed" in sample:
         label = "SM + {} + {}".format(sample.split("mixed_")[-1].split("_")[0], sample.split("mixed_")[-1].split("_")[-1])
+        continue
     elif "quad" in sample:
         label = "{} only".format(sample.split("quad_")[-1])
     groupPlot[sample]  = {  
@@ -305,13 +307,7 @@ plot['Fake'] = {
                }
 
 
-# for wjetbin in wjets_bins:
-#     plot[wjetbin] = {   
-#                     'color': colors['kAzure']-1,
-#                     'isSignal' : 0,
-#                     'isData'   : 0, 
-#                     'scale'    : 1.0 
-#                     }
+
 
 # # data
 

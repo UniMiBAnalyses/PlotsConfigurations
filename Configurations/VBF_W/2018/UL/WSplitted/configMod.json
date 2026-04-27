@@ -1,0 +1,58 @@
+
+{ "__PIG (not used) " : {
+    "file": "fixed_plots_vbf_w_2018charge_final_v2.root",
+    "operations": [
+      {
+        "regions": ["ele_HWJ_minus"],
+        "samples": ["Wjets_HT_hardJets","Fake"],
+        "vars": ["highDNN0p5events"],
+        "action": {
+          "applySF": {
+            "measureFrom": "ele_HWJ_plus",
+            "mode": "differential"
+          }
+        }
+      },
+      {
+        "regions": ["ele_SR_minus"],
+        "samples": ["Fake"],
+        "vars": ["DNN0p5Joined10"],
+        "action": {
+          "applySF": {
+            "measureFrom": "ele_SR_plus",
+            "mode": "differential",
+            "comment": "(anche se \"integral\" se si vuole una SF unica per tutto il region)"
+          }
+        }
+      }
+    ]
+  },
+
+  "file": "/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/2018/rootFile/charge_final_v2/fixed_plots_vbf_w_2018charge_final_v2.root",
+  "operations": [
+    {
+      "regions": ["ele_HWJ_minus"],
+      "samples": ["Fake"],
+      "vars": ["highDNN0p5events"],
+      "action": {
+        "applySF": 0.3
+      }
+    },
+    {
+      "regions": ["ele_SR_minus"],
+      "samples": ["Fake"],
+      "vars": ["DNN0p5Joined10"],
+      "action": {
+        "applySF": 0.3
+        }
+    },
+    {
+      "regions": ["ele_topcr_minus"],
+      "samples": ["Wjets_HT_PUJets"],
+      "vars": ["highDNN0p5events"],
+      "action": {
+        "applySF": 0.01
+        }
+    }
+  ]
+}

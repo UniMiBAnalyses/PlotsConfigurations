@@ -4,7 +4,7 @@ treeName = 'Events'
 fixSuffix = 'bkgOnly'
 pretag = 'HIPM'
 
-tagger = pretag+'unfolding_final'
+tagger = pretag+'unfolding_final_v12'
 
 tagger += "_"+fixSuffix
 tag = 'vbf_w_2016'+tagger

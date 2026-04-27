@@ -11,6 +11,8 @@ supercut = 'nLepton>=1 && (Alt$(Lepton_pt[0],0) > 30.) \
             && (Alt$(Lepton_eta[0],3) < 2.) \
             && Alt$(Lepton_pt[1],0)<=15. \
             && Alt$(Lepton_isLoose[1],1)> 0.5 \
+            && (Sum$( Alt$(CleanFatJet_mass,0) > 70 && Alt$(CleanFatJet_mass,0) < 115 ) == 0) \
+            && ( nJet30 <= 3 || (mjj23 < 65 || mjj23 > 105) ) \
             '
 
 
@@ -79,9 +81,13 @@ cuts['mu_PUWJ'] = '(abs(Lepton_pdgId[0])==13) \
 
                     
 # # # Top control region (common mu & e)
-cuts['topcr']  = '((zeroJet && !bVeto) || bReq) \
-                  && Lepton_pt[0] > 38.\
-                  '
+cuts['ele_topcr']  = '(bReq) \
+                    && (abs(Lepton_pdgId[0])==11) \
+                    && Lepton_pt[0] > 38.\
+                    '
+cuts['mu_topcr']  = '(bReq) \
+                    && (abs(Lepton_pdgId[0])==13) \
+                    '
 
 # # ## Fake CR   
 # cuts['ele_FakeCR']  = '(abs(Lepton_pdgId[0])==11) \

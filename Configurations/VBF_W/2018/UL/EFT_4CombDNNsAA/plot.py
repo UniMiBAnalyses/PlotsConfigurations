@@ -65,8 +65,24 @@ palette = {
 
 jetbin_detabins = [3,3,2]
 #wjets_palette = ['#FFF59D', '#FFEE58', '#FFD54F', '#FFB300', '#FF8F00', '#F57C00', '#E65100','#BF360C']
-# wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400', '#FFEA00', '#FFFF00', '#00BFA5']
-wjets_palette = ['#2A6041', '#2CEAA3', '#C4F5AE', '#6BFFB8', '#7CFEF0']
+wjets_palette = [
+    '#DD2C00',  # rosso scuro
+    '#FF3D00',  # rosso acceso
+    '#FF6D00',  # arancio intenso
+    '#F57C00',  # arancio
+    '#FFAB00',  # arancio chiaro
+    '#FFC400',  # giallo caldo
+    '#FFEA00',  # giallo
+    '#FFFF00',  # giallo limone
+    '#00BFA5',  # verde acqua
+    '#00ACC1',  # turchese
+    '#0091EA',  # azzurro
+    '#2962FF',  # blu acceso
+    '#6200EA',  # viola
+    '#AA00FF',  # violetto
+    '#C51162',  # fucsia
+]
+# wjets_palette = ['#2A6041', '#2CEAA3', '#C4F5AE', '#6BFFB8', '#7CFEF0']
 
 
 # wjets_bins = []
@@ -75,8 +91,70 @@ wjets_palette = ['#2A6041', '#2CEAA3', '#C4F5AE', '#6BFFB8', '#7CFEF0']
 # for ir in range(1,6):
 #     wjets_bins.append("Wjets_HT_boost_"+str(ir))
 
-# eft = [s for s in samples if "lin" in s or "quad" in s or "mixed" in s]
-# print(eft)
+# =========================
+# Operators you want
+# =========================
+# ops = [
+#     "cW", "cHDD", "cHWB", "cHj1", "cHQ1", "cHj3", "cHQ3", "cHl3", "cll1",
+#     "cWtil", "cHWBtil"
+# ]
+ops = [
+    "cW", "cHj3", "cll1"
+]
+
+
+groupPlot['SM bkg']  = {  
+                'nameHR' : 'SM Backgrounds',
+                'isSignal' : 0,
+                'color':   colors['kGray'],
+                'samples'  : ['Wjets_HT_hardJets', 'Fake', 'DY_M-50', 'top', 'Others', 'Wjets_HT_PUJets'],
+                'fill': 1001
+                }
+
+
+groupPlot['sm']  = {  
+                'nameHR' : 'WLNuJJ',
+                'isSignal' : 0,
+                'color': palette["FerrariRed"],   
+                'samples'  : ['sm'],
+                'fill': 1001
+              }
+
+# =========================
+# Build groupPlot + plot
+# =========================
+color_idx = 0
+
+for op in ops:
+    lin = "lin_{}".format(op)
+    quad = "quad_{}".format(op)
+
+    # ---- groupPlot: the "sum" (lin + quad) under the operator name ----
+    groupPlot[op] = {
+        "nameHR": op,                 # or f"{op} (lin+quad)"
+        "isSignal": 2,
+        "color": wjets_palette[color_idx],
+        "samples": [lin, quad],              # THIS is the sum: ['lin_op','quad_op']
+        "fill": 1001,
+        "scale": 1.0,
+    }
+
+    plot[lin] = {
+            "color": wjets_palette[color_idx],
+            "isSignal": 2,
+            "isData": 0,
+            "scale": 1.0,
+        }
+
+    plot[quad] = {
+        "color": wjets_palette[color_idx],
+        "isSignal": 1,
+        "isData": 0,
+        "scale": 1.0,
+    }
+
+    color_idx += 1
+
 
 
 # groupPlot['Others']  = {  
@@ -89,89 +167,56 @@ wjets_palette = ['#2A6041', '#2CEAA3', '#C4F5AE', '#6BFFB8', '#7CFEF0']
 
 
               
-groupPlot['Others']  = {  
-                'nameHR' : "Others",
-                'isSignal' : 0,
-                'color'    : palette["Orange"],
-                'samples'  : ['VBF-Z', 'Vg', 'VgS','VVV', 'VV','VBS','Higgs'],
-                'fill': 1001
-              }
-
-
-groupPlot['DY']  = {  
-                'nameHR' : "DY",
-                'isSignal' : 0,
-                'color'    : palette["DarkBlue"],
-                'samples'  : ['DY_M-50', 'DY_else'],
-                'fill': 1001
-              }            
-
-groupPlot['Top']  = {  
-                'nameHR' : "Top",
-                'isSignal' : 0,
-                'color':palette["GreenDarker"],# palette["Green5"],    #Green2
-                'samples'  : ['top' ],
-                'fill': 1001
-            }
-
-groupPlot['Wjets_HT_hardJets']  = {  
-                'nameHR' : 'WJets_hardJets',
-                'isSignal' : 0,
-                'color':   palette["Yellow"],
-                'samples'  : ['Wjets_HT_hardJets'],
-                'fill': 1001
-                }
-
-groupPlot['Wjets_HT_PUJets']  = {  
-                'nameHR' : 'WJets_PUJets',
-                'isSignal' : 0,
-                'color':   palette["MediumBlue"],
-                'samples'  : ['Wjets_HT_PUJets'],
-                'fill': 1001
-                }
-
-groupPlot['Fake']  = {  
-               'nameHR' : "Non-prompt",
-               'isSignal' : 0,
-               'color': palette["LightBlue"],   
-              'samples'  : ['Fake'],
-              'fill': 1001
-          }
-
-groupPlot['sm']  = {  
-                'nameHR' : 'sm',
-                'isSignal' : 3,
-                'color': palette["FerrariRed"],   
-                'samples'  : ['sm'],
-                'fill': 1001
-              }
-
-# for i,sample in enumerate(eft):
-#     if "mixed_" in sample and "sm" not in sample: 
-#         ops = sample.split("mixed_")[-1]
-#         op1, op2 = ops.split("_")
-#         label = op1+" + "+op2 +" Only"
-#     elif "quad_" in sample and "sm" not in sample:
-#         op = sample.split("quad_")[-1]
-#         label = op+" Only"
-#     elif "lin_" in sample and "sm" not in sample:
-#         op = sample.split("lin_")[-1]
-#         label = "SM + "+op + " Only"
-
-#     groupPlot[sample]  = {  
-#                 'nameHR' : label,
-#                 'isSignal' : 2,
-#                 'color': wjets_palette[i],   
-#                 'samples'  : [sample],
+# groupPlot['Others']  = {  
+#                 'nameHR' : "Others",
+#                 'isSignal' : 0,
+#                 'color'    : palette["Orange"],
+#                 'samples'  : ['VBF-Z', 'Vg', 'VgS','VVV', 'VV','VBS','Higgs'],
 #                 'fill': 1001
 #               }
-    
-#     plot[sample] = {
-#                     'color': wjets_palette[i],
-#                     'isSignal' : 2,
-#                     'isData'   : 0,
-#                     'scale'    : 1.0
-#                     }
+
+
+# groupPlot['DY']  = {  
+#                 'nameHR' : "DY",
+#                 'isSignal' : 0,
+#                 'color'    : palette["DarkBlue"],
+#                 'samples'  : ['DY_M-50', 'DY_else'],
+#                 'fill': 1001
+#               }            
+
+# groupPlot['Top']  = {  
+#                 'nameHR' : "Top",
+#                 'isSignal' : 0,
+#                 'color':palette["GreenDarker"],# palette["Green5"],    #Green2
+#                 'samples'  : ['top' ],
+#                 'fill': 1001
+#             }
+
+# groupPlot['SM bkg']  = {  
+#                 'nameHR' : 'SM Backgrounds',
+#                 'isSignal' : 0,
+#                 'color':   colors['kGray'],
+#                 'samples'  : ['Wjets_HT_hardJets', 'Fake', 'DY_M-50', 'top', 'Others', 'Wjets_HT_PUJets'],
+#                 'fill': 1001
+#                 }
+
+# groupPlot['Wjets_HT_PUJets']  = {  
+#                 'nameHR' : 'WJets_PUJets',
+#                 'isSignal' : 0,
+#                 'color':   palette["MediumBlue"],
+#                 'samples'  : ['Wjets_HT_PUJets'],
+#                 'fill': 1001
+#                 }
+
+# groupPlot['Fake']  = {  
+#                'nameHR' : "Non-prompt",
+#                'isSignal' : 0,
+#                'color': palette["LightBlue"],   
+#               'samples'  : ['Fake'],
+#               'fill': 1001
+#           }
+
+
 
 #plot = {}
 
@@ -199,89 +244,89 @@ plot['Wjets_HT_hardJets'] = {
                 # 'scale'    : 0.5
                 }
 
-plot['Wjets_HT_PUJets'] = {   
-                 'color': colors['kAzure']-1,
-                 'isSignal' : 0,
-                 'isData'   : 0, 
-                 #'scale'    : 1.050420857 
-                #  'scale'    : 1.0
-                 'scale'    : 1.3
-                #  'scale'    : 1.0854
-                 #'scale'    : 1.0958905448504972
-                 #'scale'    : 1.1768637821969707
-                }
+# plot['Wjets_HT_PUJets'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  #'scale'    : 1.050420857 
+#                 #  'scale'    : 1.0
+#                  'scale'    : 1.3
+#                 #  'scale'    : 1.0854
+#                  #'scale'    : 1.0958905448504972
+#                  #'scale'    : 1.1768637821969707
+#                 }
 
-plot['top'] = {   
-                 'color': colors['kAzure']-1,
-                 'isSignal' : 0,
-                 'isData'   : 0, 
-                 'scale'    : 1.0 
-                #  'scale'    : 0.93512
-                 }
+# plot['top'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  'scale'    : 1.0 
+#                 #  'scale'    : 0.93512
+#                  }
     
-plot['VV']  = {
-                  'color': colors['kGreen']+3,  
-                  'isSignal' : 0,
-                  'isData'   : 0,
-                  'scale'    : 1.   ,
-              }   
+# plot['VV']  = {
+#                   'color': colors['kGreen']+3,  
+#                   'isSignal' : 0,
+#                   'isData'   : 0,
+#                   'scale'    : 1.   ,
+#               }   
     
-plot['VBS']  = { 
-                  'color': colors["kAzure"] -3,    
-                  'isSignal' : 0,
-                  'isData'   : 0,
-                  'scale'    : 1.0
-                  }
+# plot['VBS']  = { 
+#                   'color': colors["kAzure"] -3,    
+#                   'isSignal' : 0,
+#                   'isData'   : 0,
+#                   'scale'    : 1.0
+#                   }
 
 
-plot['Higgs'] = {   
-                 'color': colors['kAzure']-1,
-                 'isSignal' : 0,
-                 'isData'   : 0, 
-                 'scale'    : 1.0 
-                }
+# plot['Higgs'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  'scale'    : 1.0 
+#                 }
     
-plot['DY_M-50']  = {  
-                'color': colors['kMagenta']+1,
-                'isSignal' : 0,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
+# plot['DY_M-50']  = {  
+#                 'color': colors['kMagenta']+1,
+#                 'isSignal' : 0,
+#                 'isData'   : 0, 
+#                 'scale'    : 1.0,
+#             }
 
-plot['DY_else']  = {  
-                'color': colors['kMagenta']+1,
-                'isSignal' : 0,
-                'isData'   : 0, 
-                'scale'    : 1.0,
-            }
+# plot['DY_else']  = {  
+#                 'color': colors['kMagenta']+1,
+#                 'isSignal' : 0,
+#                 'isData'   : 0, 
+#                 'scale'    : 1.0,
+#             }
 
-plot['VBF-Z']  = {
-                  'color': colors['kYellow']+3,  
-                  'isSignal' : 0,
-                  'isData'   : 0,
-                  'scale'    : 1.   ,
-              }
+# plot['VBF-Z']  = {
+#                   'color': colors['kYellow']+3,  
+#                   'isSignal' : 0,
+#                   'isData'   : 0,
+#                   'scale'    : 1.   ,
+#               }
 
-plot['Vg']  = {
-                  'color': colors['kGreen']+3,  
-                  'isSignal' : 0,
-                  'isData'   : 0,
-                  'scale'    : 1.   ,
-              }   
+# plot['Vg']  = {
+#                   'color': colors['kGreen']+3,  
+#                   'isSignal' : 0,
+#                   'isData'   : 0,
+#                   'scale'    : 1.   ,
+#               }   
 
-plot['VgS'] = {   
-                 'color': colors['kAzure']-1,
-                 'isSignal' : 0,
-                 'isData'   : 0, 
-                 'scale'    : 1.0 
-                }
+# plot['VgS'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  'scale'    : 1.0 
+#                 }
 
-plot['VVV'] = {   
-                 'color': colors['kAzure']-1,
-                 'isSignal' : 0,
-                 'isData'   : 0, 
-                 'scale'    : 1.0 
-                }
+# plot['VVV'] = {   
+#                  'color': colors['kAzure']-1,
+#                  'isSignal' : 0,
+#                  'isData'   : 0, 
+#                  'scale'    : 1.0 
+#                 }
 
 
 plot['Fake'] = {   
@@ -309,13 +354,13 @@ plot['Fake'] = {
 
 # # data
 
-plot['DATA']  = { 
-                  'nameHR' : 'Data',
-                  'color': 1 ,  
-                  'isSignal' : 0,
-                  'isData'   : 1 ,
-                  'isBlind'  : 0
-              }
+# plot['DATA']  = { 
+#                   'nameHR' : 'Data',
+#                   'color': 1 ,  
+#                   'isSignal' : 0,
+#                   'isData'   : 1 ,
+#                   'isBlind'  : 0
+#               }
 
 
 # additional options

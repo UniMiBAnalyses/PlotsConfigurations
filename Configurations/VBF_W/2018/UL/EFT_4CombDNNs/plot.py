@@ -65,7 +65,8 @@ palette = {
 
 jetbin_detabins = [3,3,2]
 #wjets_palette = ['#FFF59D', '#FFEE58', '#FFD54F', '#FFB300', '#FF8F00', '#F57C00', '#E65100','#BF360C']
-wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400', '#FFEA00', '#FFFF00']
+wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400', '#FFEA00', '#FFFF00', '#00BFA5']
+# wjets_palette = ['#2A6041', '#2CEAA3', '#C4F5AE', '#6BFFB8', '#7CFEF0']
 
 
 # wjets_bins = []
@@ -74,39 +75,29 @@ wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400
 # for ir in range(1,6):
 #     wjets_bins.append("Wjets_HT_boost_"+str(ir))
 
+eft = [s for s in samples if "sm_" in s or "quad" in s]
+print(eft)
 
 
-groupPlot['Higgs']  = {  
-                'nameHR' : "Higgs",
-                'isSignal' : 0,
-                'color'    : colors['kWhite'],
-                'samples'  : ['Higgs'],
-                'fill': 1001
-              }
 
-groupPlot['VV+VVV+VBS']  = {  
-                'nameHR' : 'VV+VVV+VBS',
-                'isSignal' : 0,
-                'color': palette["Violet"], #palette["Peach3"],  
-                'samples'  : ['VVV', 'VV','VBS'],
-                'fill': 1001
-              }
+# groupPlot['Others']  = {  
+#                 'nameHR' : "SM bkg",
+#                 'isSignal' : 0,
+#                 'color'    : colors["kGray"],
+#                 'samples'  : ['VBF-Z', 'Vg', 'VgS','VVV', 'VV','VBS', 'top', 'Wjets_HT_hardJets', 'Wjets_HT_PUJets', 'Fake', 'DY_M-50', 'DY_else'],
+#                 'fill': 1001
+#               }
+
+
               
 groupPlot['Others']  = {  
                 'nameHR' : "Others",
                 'isSignal' : 0,
                 'color'    : palette["Orange"],
-                'samples'  : ['VBF-Z', 'Vg', 'VgS'],
+                'samples'  : ['VBF-Z', 'Vg', 'VgS','VVV', 'VV','VBS','Higgs'],
                 'fill': 1001
               }
 
-groupPlot['DY_else']  = {  
-                'nameHR' : "DY_else",
-                'isSignal' : 0,
-                'color'    : palette["Pink"],
-                'samples'  : ['DY_else'],
-                'fill': 1001
-              }   
 
 groupPlot['DY']  = {  
                 'nameHR' : "DY",
@@ -149,13 +140,36 @@ groupPlot['Fake']  = {
           }
 
 groupPlot['sm']  = {  
-                'nameHR' : 'sm',
+                'nameHR' : 'WLNuJJ',
                 'isSignal' : 3,
                 'color': palette["FerrariRed"],   
                 'samples'  : ['sm'],
                 'fill': 1001
               }
 
+for i,sample in enumerate(eft):
+    if "sm_lin_quad" in sample and "mixed" not in sample:
+        label = "SM + {}".format(sample.split("sm_lin_quad_")[-1])
+        continue
+    elif "mixed" in sample:
+        label = "SM + {} + {}".format(sample.split("mixed_")[-1].split("_")[0], sample.split("mixed_")[-1].split("_")[-1])
+        continue
+    elif "quad" in sample:
+        label = "{} only".format(sample.split("quad_")[-1])
+    groupPlot[sample]  = {  
+                'nameHR' : label,
+                'isSignal' : 2,
+                'color': wjets_palette[i],   
+                'samples'  : [sample],
+                'fill': 1001
+              }
+    
+    plot[sample] = {
+                    'color': wjets_palette[i],
+                    'isSignal' : 2,
+                    'isData'   : 0,
+                    'scale'    : 1.0
+                    }
 
 #plot = {}
 

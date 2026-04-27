@@ -6,28 +6,28 @@ import json
 configurations = os.getenv("CMSSW_BASE") + "/src/PlotsConfigurations/Configurations/"
 conf_folder = configurations +"/VBF_W/2016/"
 utils_folder = configurations +"/VBF_W/utils/"
-
 # DNN multiclass
-models_path = utils_folder + '2018/NN/multiclassCONDOR/'
+models_path = utils_folder + '2018/NN/multiclassCONDOR_newWP_geninfo/'
 
 map_multiclass = {
-    "leppt" : 10,
+    "leppt" : 9,
     "lepeta" : 10,
-    "jet1pt" : 7,
+    "jet1pt" : 6,
     "jet1eta" : 10,
-    "jet2pt" : 7,
+    "jet2pt" : 6,
     "jet2eta" : 10,
     "mjj" : 8,
-    "detajj" : 10,
-    "ptjj": 8,
-    "dphijj": 10,
-    "ptW": 7,
+    "detajj" : 9,
+    "ptjj": 7,
+    "dphijj": 6,
+    "ptW": 6,
     "nJet": 3     
 }
 
 
 model_best = {}
-for v in ["ptW", "leppt", "lepeta", "nJet", "jet1pt", "jet1eta", "jet2pt", "jet2eta", "detajj", "mjj", "ptjj", "dphijj"]:
+for v in ["ptW", "leppt", "lepeta", "nJet", "jet1pt", "jet1eta", "jet2pt", "jet2eta", "detajj", "mjj", "dphijj","ptjj"]:
+# for v in ["ptjj"]:
     candidates_ev = [d for d in os.listdir(models_path) if d.startswith(v) and 'even' in d]
     candidates_ev_sorted = sorted(candidates_ev, key=lambda x: int(x.split('_v')[-1]) if '_v' in x else 0,reverse=True)
     model_best[v] = {}
@@ -41,13 +41,12 @@ for v in ["ptW", "leppt", "lepeta", "nJet", "jet1pt", "jet1eta", "jet2pt", "jet2
     model_odd = models_path + '/' + model_best[v]["odd"]
     transform_odd = model_ev + 'cumulative_distributions.root'
 
-    for i in range(1, map_multiclass[v]+1):
-        aliases['MultiClass_{}_class{}'.format(v,i)] = {
-            'class': 'MVAReaderDNNMultiRatio',
-            'args': (model_ev, transform_ev, model_odd, transform_odd, False, i),
+    aliases['MultiClass_{}'.format(v)] = {
+            'class': 'MVAReaderDNNMultiRatioSingle',
+            'args': (model_ev, transform_ev, model_odd, transform_odd, False),
             'linesToAdd': [
                 'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
                 'gSystem->Load("libDNNEvaluator.so")',
-                '.L {}macros/multiclassmva_reader_DNN_ratio.cc+'.format(utils_folder),
+                '.L {}macros/multiclassmva_reader_DNN_ratioSingle.cc+'.format(utils_folder),
             ]
         }

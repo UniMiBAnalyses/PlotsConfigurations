@@ -56,20 +56,11 @@ if    'iihe' in SITE:
 elif  'cern' in SITE:
   treeBaseDirHWW = '/eos/cms/store/group/phys_higgs/cmshww/amassiro/HWWNano'
   treeBaseDirLat = '/eos/cms/store/group/phys_smp/ec/Latinos/HWWNano'
-  treeBaseDirPrivate2 = '/eos/user/a/abulla/nanoAOD/interference/reco_inter2/hadd/'
-  treeBaseDirPrivate = '/eos/user/a/abulla/nanoAOD/interference/reco_inter/'
 
-def makeMCDirectory(var=''):
-  if var:
-      return os.path.join(treeBaseDirPrivate, mcProduction, (mcSteps + '__' + skim).format(var='__' + var))
-  else:
-      return os.path.join(treeBaseDirPrivate, mcProduction, (mcSteps + '__' + skim).format(var=''))
 
 mcDirectoryLat = os.path.join(treeBaseDirLat,  mcProduction , mcSteps)
 dataDirectoryHWW = os.path.join(treeBaseDirHWW, dataReco, dataSteps)
-
-mcDirectoryPrivate2 = os.path.join(treeBaseDirPrivate2,  mcProduction , mcSteps)
-mcDirectoryPrivate = os.path.join(treeBaseDirPrivate,  mcProduction , mcSteps)
+dataDirectoryLat = os.path.join(treeBaseDirLat, dataReco, dataSteps)
 
 ################################################
 ############### Lepton WP ######################
@@ -147,18 +138,18 @@ DataTrig = {
 #                         'EventsPerJob' : 5000,
 #                     }
 
-# # ##########################################
-# # ############  BACKGROUNDS  ###############
-# # ##########################################
+##########################################
+############  BACKGROUNDS  ###############
+##########################################
 
 
-# # # samples['WLNuJJ_inter']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryPrivate2,'WLNuJJ_EWK_QCD_interference2')
-# # #                                           + nanoGetSampleFiles(mcDirectoryPrivate,'WLNuJJ_EWK_QCD_interference'),
-# # # #                        'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
-# # #                         'weight': CommonWeight,
-# # #                         'FilesPerJob' : 5,
-# # #                         'EventsPerJob' : 7000,
-# # #                     }
+# samples['WLNuJJ_inter']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryPrivate2,'WLNuJJ_EWK_QCD_interference2')
+#                                           + nanoGetSampleFiles(mcDirectoryPrivate,'WLNuJJ_EWK_QCD_interference'),
+# #                        'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
+#                         'weight': CommonWeight,
+#                         'FilesPerJob' : 5,
+#                         'EventsPerJob' : 7000,
+#                     }
 
 
 # # ####### Wjets #########
@@ -178,7 +169,7 @@ samples['Wjets_HT_hardJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, '
                                           + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
 #				                'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '* ewknloW',
                                 'weight': CommonWeight+'*' + Wjets_photon_filter + '*' + Total_correction + '* hardJets',
-			                	'FilesPerJob' : 4,
+			                	'FilesPerJob' : 3,
 		                 }
 
 # # Fix Wjets binned + LO 
@@ -208,7 +199,7 @@ samples['Wjets_HT_PUJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJ
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
 #				                'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '* ewknloW',
                                 'weight': CommonWeight+'*' + Wjets_photon_filter + '* PUJets',
-			                	'FilesPerJob' : 4,
+			                	'FilesPerJob' : 3,
 		                 }
 
 # # Fix Wjets binned + LO 
@@ -259,53 +250,6 @@ addSampleWeight(samples,'top','ST_t-channel_antitop',  "100. / 32.4")
 ###############################################
 
 
-############# VV ##################
-
-samples['VV']  = { 'name' :  nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_WmTo2J_QCD')
-                             + nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_ZTo2J_QCD')
-                             + nanoGetSampleFiles(mcDirectoryLat,'WmTo2J_ZTo2L_QCD')
-                             + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_WmToLNu_QCD')
-                             + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_ZTo2L_QCD')
-                             + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WpTo2J_QCD')
-                             + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WmTo2J_QCD')
-                             + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_ZTo2J_QCD')
-                             + nanoGetSampleFiles(mcDirectoryLat,'ZTo2L_ZTo2J_QCD'),
-                   'weight': CommonWeight,
-#                   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch, # still missing EWKnlowW 
-                   'FilesPerJob' : 20,
-                }
-
-
-###############################################
-
-############ VBS ############
-
-samples['VBS']  = { 'name' :  nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_ZTo2J') 
-                              + nanoGetSampleFiles(mcDirectoryLat,'WmTo2J_ZTo2L')
-                              + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_ZTo2L')
-                              + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_ZTo2J')
-                              + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WpTo2J')
-                              + nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_WmTo2J')
-                              + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WmTo2J')
-                              + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_WmToLNu')
-                              + nanoGetSampleFiles(mcDirectoryLat,'ZTo2L_ZTo2J'),
-                              # + nanoGetSampleFiles(mcDirectoryLat,'WWToLNuQQ'),   missing from QCD and maybe also from DAS, ignore it for v9
-                    'weight': CommonWeight,
-                    'FilesPerJob' :20,
-                }
-
-
-########### Higgs Related #############
-
-samples['Higgs']  = {   'name'   :  nanoGetSampleFiles(mcDirectoryLat,'GluGluHToWWToLNuQQ_M125')   #missing lat
-                                    + nanoGetSampleFiles(mcDirectoryLat,'HWminusJ_HToWWTo2L2Nu_WToLNu_M125')   #called HWminusJ_HToWWTo2L2Nu_WToLNu_M125
-                                    + nanoGetSampleFiles(mcDirectoryLat,'HWplusJ_HToWWTo2L2Nu_WToLNu_M125')     #called HWplusJ_HToWWTo2L2Nu_WToLNu_M125
-                                    + nanoGetSampleFiles(mcDirectoryLat,'VBFHToWWToLNuQQ_M125'),   #missing lat
-                        'weight': CommonWeight,
-                        'FilesPerJob' : 20,
-                  }
-
-
 ########### DY ############
 
 # DY_photon_filter = '( !(Sum$(PhotonGen_isPrompt==1 && PhotonGen_pt>15 && abs(PhotonGen_eta)<2.6) > 0 && Sum$(LeptonGen_isPrompt==1 && LeptonGen_pt>15)>=2) )'
@@ -320,10 +264,15 @@ samples['DY_M-50'] = {    'name'   :   nanoGetSampleFiles(mcDirectoryLat,'DYJets
                                   + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-50_HT-600to800')
                                   + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-50_HT-800to1200')
                                   + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-50_HT-1200to2500')
-                                  + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-50_HT-2500toInf'),
+                                  + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-50_HT-2500toInf')
+                                  + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-10to50-LO')
+                                  # + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-100to200')   #missing (lat)
+                                  + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-200to400')
+                                  + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-400to600'),
+                                  # + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-600toInf'),   missing.. search for it
                         'weight': CommonWeight+'*'+DY_photon_filter,
 #                       'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter ,# missing ewkNLOW
-                        'FilesPerJob' : 20,
+                        'FilesPerJob' : 5,
                 }
 
 #VBF-Z does use less sample (only M-50 and applies dome different weights (but uses signal at higher energies))
@@ -340,83 +289,173 @@ addSampleWeight(samples,'DY_M-50','DYJetsToLL_M-50_HT-600to800',   '0.975')
 addSampleWeight(samples,'DY_M-50','DYJetsToLL_M-50_HT-800to1200',  '0.907')
 addSampleWeight(samples,'DY_M-50','DYJetsToLL_M-50_HT-1200to2500', '0.833')
 addSampleWeight(samples,'DY_M-50','DYJetsToLL_M-50_HT-2500toInf',  '1.015')  
+addSampleWeight(samples,'DY_M-50','DYJetsToLL_M-10to50-LO', '(LHE_HT < 200)') 
 
 
-samples['DY_else'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-10to50-LO')
-                                  # + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-100to200')   to do (or search..)
-                                  + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-200to400') #missing (lat)
-                                  + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-400to600'), #missing (lat)
-                                  # + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-600toInf'),   missing.. search for it
-                        'weight': CommonWeight+'*'+DY_photon_filter,
-#                       'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter ,# missing ewkNLOW
-                        'FilesPerJob' : 20,
-                }
+# samples['DY_else'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-10to50-LO')
+#                                   # + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-100to200')   to do (or search..)
+#                                   + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-200to400') #missing (lat)
+#                                   + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-400to600'), #missing (lat)
+#                                   # + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-600toInf'),   missing.. search for it
+#                         'weight': CommonWeight+'*'+DY_photon_filter,
+# #                       'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter ,# missing ewkNLOW
+#                         'FilesPerJob' : 5,
+#                 }
 
-addSampleWeight(samples,'DY_else','DYJetsToLL_M-10to50-LO', '(LHE_HT < 200)') 
-# addSampleWeight(samples,'DY_else','DYJetsToLL_M-10to50-LO', '(LHE_HT > 600)') 
-# addSampleWeight(samples,'DY_else','DYJetsToLL_M-4to50_HT-100to200','DY_LO_pTllrw') 
-# addSampleWeight(samples,'DY_else','DYJetsToLL_M-4to50_HT-200to400','DY_LO_pTllrw')
-# addSampleWeight(samples,'DY_else','DYJetsToLL_M-4to50_HT-400to600','DY_LO_pTllrw')
-# addSampleWeight(samples,'DY_else','DYJetsToLL_M-4to50_HT-600toInf','DY_LO_pTllrw')
+# addSampleWeight(samples,'DY_else','DYJetsToLL_M-10to50-LO', '(LHE_HT < 200)') 
+# # addSampleWeight(samples,'DY_else','DYJetsToLL_M-10to50-LO', '(LHE_HT > 600)') 
+# # addSampleWeight(samples,'DY_else','DYJetsToLL_M-4to50_HT-100to200','DY_LO_pTllrw') 
+# # addSampleWeight(samples,'DY_else','DYJetsToLL_M-4to50_HT-200to400','DY_LO_pTllrw')
+# # addSampleWeight(samples,'DY_else','DYJetsToLL_M-4to50_HT-400to600','DY_LO_pTllrw')
+# # addSampleWeight(samples,'DY_else','DYJetsToLL_M-4to50_HT-600toInf','DY_LO_pTllrw')
+
+
+# # ############# VV ##################
+
+# samples['VV']  = { 'name' :  nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_WmTo2J_QCD')
+#                              + nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_ZTo2J_QCD')
+#                              + nanoGetSampleFiles(mcDirectoryLat,'WmTo2J_ZTo2L_QCD')
+#                              + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_WmToLNu_QCD')
+#                              + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_ZTo2L_QCD')
+#                              + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WpTo2J_QCD')
+#                              + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WmTo2J_QCD')
+#                              + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_ZTo2J_QCD')
+#                              + nanoGetSampleFiles(mcDirectoryLat,'ZTo2L_ZTo2J_QCD'),
+#                    'weight': CommonWeight,
+# #                   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch, # still missing EWKnlowW 
+#                    'FilesPerJob' : 10,
+#                 }
+
+
+# ###############################################
+
+# ############ VBS ############
+
+# samples['VBS']  = { 'name' :  nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_ZTo2J') 
+#                               + nanoGetSampleFiles(mcDirectoryLat,'WmTo2J_ZTo2L')
+#                               + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_ZTo2L')
+#                               + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_ZTo2J')
+#                               + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WpTo2J')
+#                               + nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_WmTo2J')
+#                               + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WmTo2J')
+#                               + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_WmToLNu')
+#                               + nanoGetSampleFiles(mcDirectoryLat,'ZTo2L_ZTo2J'),
+#                               # + nanoGetSampleFiles(mcDirectoryLat,'WWToLNuQQ'),   missing from QCD and maybe also from DAS, ignore it for v9
+#                     'weight': CommonWeight,
+#                     'FilesPerJob' :10,
+#                 }
+
+
+# ########### Higgs Related #############
+
+# samples['Higgs']  = {   'name'   :  nanoGetSampleFiles(mcDirectoryLat,'GluGluHToWWToLNuQQ_M125')   #missing lat
+#                                     + nanoGetSampleFiles(mcDirectoryLat,'HWminusJ_HToWWTo2L2Nu_WToLNu_M125')   #called HWminusJ_HToWWTo2L2Nu_WToLNu_M125
+#                                     + nanoGetSampleFiles(mcDirectoryLat,'HWplusJ_HToWWTo2L2Nu_WToLNu_M125')     #called HWplusJ_HToWWTo2L2Nu_WToLNu_M125
+#                                     + nanoGetSampleFiles(mcDirectoryLat,'VBFHToWWToLNuQQ_M125'),   #missing lat
+#                         'weight': CommonWeight,
+#                         'FilesPerJob' : 5,
+#                   }
+
 
 ################################
 
-########## VBF - Z #############
+# ########## VBF - Z #############
 
-samples['VBF-Z']  = {   'name'   :  nanoGetSampleFiles(mcDirectoryLat,'EWKZ2Jets_ZToLL_M-50'),
-                        'weight': CommonWeight+ '*(lhe_mjj[0] > 120)',
-                        'FilesPerJob' : 20,
-                  }
+# samples['VBF-Z']  = {   'name'   :  nanoGetSampleFiles(mcDirectoryLat,'EWKZ2Jets_ZToLL_M-50'),
+#                         'weight': CommonWeight+ '*(lhe_mjj[0] > 120)',
+#                         'FilesPerJob' : 20,
+#                   }
 
-# ##VBF-Z --> slighly different weight
+# # ##VBF-Z --> slighly different weight
+# # ###############################
+
+
+# ############ Vg ##############
+
+# samples['Vg']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')   # this is called WGToLNuG in v9
+#                                  + nanoGetSampleFiles(mcDirectoryLat,'ZGToLLG'),
+#                     'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*(Gen_ZGstar_mass <= 0)',
+#                     'FilesPerJob' : 10,
+#                 }
+
+# # the following baseW correction is needed in both v5 and v6 (for Zg, Not for ZGToLLG)
+# #addSampleWeight(samples, 'Vg', 'Zg', '0.448')
+
+# ##VBF-Z has different weights (common)+genstar
 # ###############################
 
 
-############ Vg ##############
+# ############ VgS ############
 
-samples['Vg']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')   # this is called WGToLNuG in v9
-                                 + nanoGetSampleFiles(mcDirectoryLat,'ZGToLLG'),
-                    'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*(Gen_ZGstar_mass <= 0)',
-                    'FilesPerJob' : 20,
-                }
+# samples['VgS']  =  {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')
+#                                  + nanoGetSampleFiles(mcDirectoryLat,'ZGToLLG')
+#                                  + nanoGetSampleFiles(mcDirectoryLat,'WZTo3LNu_mllmin0p1'),
+#                       'weight' : CommonWeight + ' * (gstarLow * 0.94 + gstarHigh * 1.14)',
+#                       'FilesPerJob' : 10,
+#                    }
 
-# the following baseW correction is needed in both v5 and v6 (for Zg, Not for ZGToLLG)
-#addSampleWeight(samples, 'Vg', 'Zg', '0.448')
+# addSampleWeight(samples,'VgS','WGToLNuG', '(Gen_ZGstar_mass > 0 && Gen_ZGstar_mass < 0.1)')
+# addSampleWeight(samples,'VgS','ZGToLLG', '(Gen_ZGstar_mass > 0)') # *0.448 XS correction for Zg
+# addSampleWeight(samples,'VgS','WZTo3LNu_mllmin0p1', '(Gen_ZGstar_mass > 0.1)')
 
-##VBF-Z has different weights (common)+genstar
-###############################
-
-
-############ VgS ############
-
-samples['VgS']  =  {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')
-                                 + nanoGetSampleFiles(mcDirectoryLat,'ZGToLLG')
-                                 + nanoGetSampleFiles(mcDirectoryLat,'WZTo3LNu_mllmin0p1'),
-                      'weight' : CommonWeight + ' * (gstarLow * 0.94 + gstarHigh * 1.14)',
-                      'FilesPerJob' : 20,
-                   }
-
-addSampleWeight(samples,'VgS','WGToLNuG', '(Gen_ZGstar_mass > 0 && Gen_ZGstar_mass < 0.1)')
-addSampleWeight(samples,'VgS','ZGToLLG', '(Gen_ZGstar_mass > 0)') # *0.448 XS correction for Zg
-addSampleWeight(samples,'VgS','WZTo3LNu_mllmin0p1', '(Gen_ZGstar_mass > 0.1)')
-
-############ VVV ############
+# ############ VVV ############
   
-samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'ZZZ')
+# samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'ZZZ')
+#                                 + nanoGetSampleFiles(mcDirectoryLat,'WZZ')
+#                                 + nanoGetSampleFiles(mcDirectoryLat,'WWZ')
+#                                 + nanoGetSampleFiles(mcDirectoryLat,'WWW'),
+#                     'weight': CommonWeight,
+#                                 #+ nanoGetSampleFiles(mcDirectory,'WWG'), #should this be included? or is it already taken into account in the WW sample?
+#                     'FilesPerJob' : 20,
+#                   }
+
+
+##### trying to group:
+samples['Others']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'ZZZ')
                                 + nanoGetSampleFiles(mcDirectoryLat,'WZZ')
                                 + nanoGetSampleFiles(mcDirectoryLat,'WWZ')
-                                + nanoGetSampleFiles(mcDirectoryLat,'WWW'),
+                                + nanoGetSampleFiles(mcDirectoryLat,'WWW')
+                                # + nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')
+                                # + nanoGetSampleFiles(mcDirectoryLat,'ZGToLLG')
+                                # + nanoGetSampleFiles(mcDirectoryLat,'WZTo3LNu_mllmin0p1')
+                                + nanoGetSampleFiles(mcDirectoryLat,'EWKZ2Jets_ZToLL_M-50')
+                                + nanoGetSampleFiles(mcDirectoryLat,'GluGluHToWWToLNuQQ_M125')
+                                + nanoGetSampleFiles(mcDirectoryLat,'HWminusJ_HToWWTo2L2Nu_WToLNu_M125') 
+                                + nanoGetSampleFiles(mcDirectoryLat,'HWplusJ_HToWWTo2L2Nu_WToLNu_M125')   
+                                + nanoGetSampleFiles(mcDirectoryLat,'VBFHToWWToLNuQQ_M125')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_ZTo2J') 
+                                + nanoGetSampleFiles(mcDirectoryLat,'WmTo2J_ZTo2L')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_ZTo2L')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_ZTo2J')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WpTo2J')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_WmTo2J')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WmTo2J')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_WmToLNu')
+                                + nanoGetSampleFiles(mcDirectoryLat,'ZTo2L_ZTo2J')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_WmTo2J_QCD')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_ZTo2J_QCD')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WmTo2J_ZTo2L_QCD')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_WmToLNu_QCD')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WpTo2J_ZTo2L_QCD')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WpTo2J_QCD')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_WmTo2J_QCD')
+                                + nanoGetSampleFiles(mcDirectoryLat,'WpToLNu_ZTo2J_QCD')
+                                + nanoGetSampleFiles(mcDirectoryLat,'ZTo2L_ZTo2J_QCD'),
                     'weight': CommonWeight,
-                                #+ nanoGetSampleFiles(mcDirectory,'WWG'), #should this be included? or is it already taken into account in the WW sample?
-                    'FilesPerJob' : 20,
+                    'FilesPerJob' : 5,
                   }
 
+# addSampleWeight(samples,'Others','WGToLNuG', '(Gen_ZGstar_mass > 0 && Gen_ZGstar_mass < 0.1) * (gstarLow * 0.94 + gstarHigh * 1.14)')
+# addSampleWeight(samples,'Others','ZGToLLG', '(Gen_ZGstar_mass > 0) * (gstarLow * 0.94 + gstarHigh * 1.14)') # *0.448 XS correction for Zg
+# addSampleWeight(samples,'Others','WZTo3LNu_mllmin0p1', '(Gen_ZGstar_mass > 0.1) * (gstarLow * 0.94 + gstarHigh * 1.14)')
+addSampleWeight(samples,'Others','EWKZ2Jets_ZToLL_M-50', 'lhe_mjj[0] > 120')
 
-# #########################################
-# ############## EFT ###############
-# #########################################
 
-EFTSamples = nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_EFT')
+#########################################
+############## EFT ###############
+#########################################
+
+EFTSamples = nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_EFT2_crab')
 
 samples['sm'] = {
     'name': EFTSamples,
@@ -425,23 +464,23 @@ samples['sm'] = {
 }
 
 CMSSW=os.environ["CMSSW_BASE"]
-sampleEFTFile = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT_4Comb/EFTweights.py"
+sampleEFTFile = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT_4CombDNNsAA/EFTweights.py"
 if os.path.exists(CMSSW+'/src/'+sampleEFTFile):
   handle = open(CMSSW+'/src/'+sampleEFTFile)
   exec(handle)
   handle.close()
 
-# # # # ## fatti ma non usati per datacard
-# # # # ######################################### debug weightssss ############################
-# # # sampleEFTFileDebug = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT_4Comb/debug_EFTweights.py"
-# # # if os.path.exists(CMSSW+'/src/'+sampleEFTFileDebug):
-# # #   handle = open(CMSSW+'/src/'+sampleEFTFileDebug)
-# # #   exec(handle)
-# # #   handle.close()
+# # ## fatti ma non usati per datacard
+# ######################################### debug weightssss ############################
+sampleEFTFileDebug = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT_4CombDNNsAA/debug_EFTweights.py"
+if os.path.exists(CMSSW+'/src/'+sampleEFTFileDebug):
+  handle = open(CMSSW+'/src/'+sampleEFTFileDebug)
+  exec(handle)
+  handle.close()
 
-# # # #########################################
-# # # ############## DATAA ###############
-# # # #########################################
+# # #########################################
+# # ############## DATAA ###############
+# # #########################################
 
 
 # Then corrected
@@ -451,10 +490,10 @@ fakeW = '((fakeWeight_0p9 * (fakeWeight_0p9 <= 20)) + 0. * (fakeWeight_0p9>20))'
 # # ## Fakes
 samples['Fake'] = {
   'name': [],
-  'weight': METFilter_DATA+'*'+ fakeW + '*' + 'fakes_correction',
+  'weight': METFilter_DATA +'*'+ fakeW +'* fakes_correction',
   'weights': [],
   'isData': ['all'],
-  'FilesPerJob' : 30,
+  'FilesPerJob' : 30
 }
 
 for Run in DataRun :
@@ -493,11 +532,9 @@ for Run in DataRun :
       samples['DATA']['weights'].append(DataTrig[DataSet])
 
 
-#samples = {   key:v for key,v in samples.items() if key  in ["VBS_dipoleRecoil"]}
-
-# # # mkPostProc.py -p Autumn18_102X_nAODv7_Full2018v7 -s 2Jets1leptonW2018 -i MCl1loose2018v7__MCCorr2018v7 -b -Q workday -T  WLNuJJ_EWK,WJetsToLNu-LO,WJetsToLNu_HT70_100,WJetsToLNu_HT100_200,WJetsToLNu_HT200_400,WJetsToLNu_HT400_600,WJetsToLNu_HT600_800,WJetsToLNu_HT800_1200,WJetsToLNu_HT1200_2500,WJetsToLNu_HT2500_inf,WJetsToLNu,WJetsToLNu_Pt50to100,WJetsToLNu_Pt100to250,WJetsToLNu_Pt250to400,WJetsToLNu_Pt400to600,WJetsToLNu_Pt600toInf,TTTo2L2Nu,ST_s-channel_ext1,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop_ext1,ST_tW_top_ext1,TTToSemiLeptonic,TTZjets,TTWjets,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,WWToLNuQQ,GluGluWWToLNuQQ,GluGluHToWWToLNuQQ_M125,HWminusJ_HToWW_LNu_M125,HWplusJ_HToWW_LNu_M125,VBFHToWWToLNuQQ_M125,DYJetsToLL_M-50,DYJetsToLL_M-50_ext2,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,DYJetsToLL_M-10to50-LO_ext1,DYJetsToLL_M-4to50_HT-100to200,DYJetsToLL_M-4to50_HT-200to400,DYJetsToLL_M-4to50_HT-400to600,DYJetsToLL_M-4to50_HT-600toInf,EWKZ2Jets_ZToLL_M-50,Wg_MADGRAPHMLM,ZGToLLG,ZZZ,WZZ,WWZ,WWW,WJetsToLNu-0J,WJetsToLNu-1J,WJetsToLNu-2J
+# # mkPostProc.py -p Autumn18_102X_nAODv7_Full2018v7 -s 2Jets1leptonW2018 -i MCl1loose2018v7__MCCorr2018v7 -b -Q workday -T  WLNuJJ_EWK,WJetsToLNu-LO,WJetsToLNu_HT70_100,WJetsToLNu_HT100_200,WJetsToLNu_HT200_400,WJetsToLNu_HT400_600,WJetsToLNu_HT600_800,WJetsToLNu_HT800_1200,WJetsToLNu_HT1200_2500,WJetsToLNu_HT2500_inf,WJetsToLNu,WJetsToLNu_Pt50to100,WJetsToLNu_Pt100to250,WJetsToLNu_Pt250to400,WJetsToLNu_Pt400to600,WJetsToLNu_Pt600toInf,TTTo2L2Nu,ST_s-channel_ext1,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop_ext1,ST_tW_top_ext1,TTToSemiLeptonic,TTZjets,TTWjets,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,WWToLNuQQ,GluGluWWToLNuQQ,GluGluHToWWToLNuQQ_M125,HWminusJ_HToWW_LNu_M125,HWplusJ_HToWW_LNu_M125,VBFHToWWToLNuQQ_M125,DYJetsToLL_M-50,DYJetsToLL_M-50_ext2,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,DYJetsToLL_M-10to50-LO_ext1,DYJetsToLL_M-4to50_HT-100to200,DYJetsToLL_M-4to50_HT-200to400,DYJetsToLL_M-4to50_HT-400to600,DYJetsToLL_M-4to50_HT-600toInf,EWKZ2Jets_ZToLL_M-50,Wg_MADGRAPHMLM,ZGToLLG,ZZZ,WZZ,WWZ,WWW,WJetsToLNu-0J,WJetsToLNu-1J,WJetsToLNu-2J
 
 
-# mkPostProc.py -p Summer20UL18_106x_nAODv9_Full2018v9 -s $iSyst -i MCl1loose2018v9__MCCorr2018v9NoJERInHorn -b -Q nextweek -T Wm_LNuJJ_EWK,Wp_LNuJJ_EWK,EWKZ2Jets_ZToLL_M-50,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,GluGluHToWWToLNuQQ_M125,HWminusJ_HToWWTo2L2Nu_WToLNu_M125,HWplusJ_HToWWTo2L2Nu_WToLNu_M125,VBFHToWWToLNuQQ_M125,ZZZ,WZZ,WWZ,WWW,TTTo2L2Nu,ST_s-channel,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop,ST_tW_top,TTToSemiLeptonic,WGToLNuG,ZGToLLG,DYJetsToLL_M-10to50-LO,DYJetsToLL_M-4to50_HT-200to400,DYJetsToLL_M-4to50_HT-400to600,WJetsToLNu-LO,WJetsToLNu_HT70To100,WJetsToLNu_HT100To200,WJetsToLNu_HT200To400,WJetsToLNu_HT400To600,WJetsToLNu_HT600To800,WJetsToLNu_HT800To1200,WJetsToLNu_HT1200To2500,WJetsToLNu_HT2500ToInf,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,DYJetsToLL_M-50,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,WGToLNuG,ZGToLLG,WZTo3LNu_mllmin0p1
+# # mkPostProc.py -p Summer20UL18_106x_nAODv9_Full2018v9 -s $iSyst -i MCl1loose2018v9__MCCorr2018v9NoJERInHorn -b -Q nextweek -T Wm_LNuJJ_EWK,Wp_LNuJJ_EWK,EWKZ2Jets_ZToLL_M-50,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,GluGluHToWWToLNuQQ_M125,HWminusJ_HToWWTo2L2Nu_WToLNu_M125,HWplusJ_HToWWTo2L2Nu_WToLNu_M125,VBFHToWWToLNuQQ_M125,ZZZ,WZZ,WWZ,WWW,TTTo2L2Nu,ST_s-channel,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop,ST_tW_top,TTToSemiLeptonic,WGToLNuG,ZGToLLG,DYJetsToLL_M-10to50-LO,DYJetsToLL_M-4to50_HT-200to400,DYJetsToLL_M-4to50_HT-400to600,WJetsToLNu-LO,WJetsToLNu_HT70To100,WJetsToLNu_HT100To200,WJetsToLNu_HT200To400,WJetsToLNu_HT400To600,WJetsToLNu_HT600To800,WJetsToLNu_HT800To1200,WJetsToLNu_HT1200To2500,WJetsToLNu_HT2500ToInf,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,DYJetsToLL_M-50,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,WGToLNuG,ZGToLLG,WZTo3LNu_mllmin0p1
 
-# # # mkPostProc.py -p Run2018_102X_nAODv7_Full2018v7 -s DATA2Jets1leptonW2018 -i DATAl1loose2018v7__DATACombJJLNu2018 -b -Q workday
+# # mkPostProc.py -p Run2018_102X_nAODv7_Full2018v7 -s DATA2Jets1leptonW2018 -i DATAl1loose2018v7__DATACombJJLNu2018 -b -Q workday

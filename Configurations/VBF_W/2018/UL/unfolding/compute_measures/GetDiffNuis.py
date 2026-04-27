@@ -8,39 +8,44 @@ import ROOT
 import optparse
 
 
-def compute_var_info(dir, key):
+def compute_var_info(dir, key, sample):
     sf = []
-    den = dir.Get("histo_WLNuJJ").GetBinContent(1)
+    den = dir.Get("histo_{}".format(sample)).GetBinContent(1)
+
     for histo in dir.GetListOfKeys():
-        # if key in histo.GetName() and "SIGNAL" in histo.GetName():
-        if key in histo.GetName() and histo.GetName().endswith("Var"):
-            h = dir.Get(histo.GetName())
-            print(h.GetName())
-            (val, bin) = (h.GetBinContent(1)/den, h.GetName().split("V")[1])
+        name = histo.GetName()
+        if sample not in name: continue
+        # Caso generale
+        if key in name and name.endswith("Var"):
+            h = dir.Get(name)
+            print(name)
+            (val, bin) = (h.GetBinContent(1)/den, name.split("V")[1])
             sf.append((val, bin))
+
+        # --- FSR ---
+        elif "FSR_dipole" in key and "FSR_dipole" in name and \
+             (name.endswith("Down") or name.endswith("Up")):
+            h = dir.Get(name)
+            print(name)
+            bin = 0 if name.endswith("Up") else 1
+            sf.append((h.GetBinContent(1)/den, bin))
+
+        # --- ISR ---
+        elif "ISR_dipole" in key and "ISR_dipole" in name and \
+             (name.endswith("Down") or name.endswith("Up")):
+            h = dir.Get(name)
+            print(name)
+            bin = 0 if name.endswith("Up") else 1
+            sf.append((h.GetBinContent(1)/den, bin))
+
+    sf.sort(key=lambda x: int(x[1]))
+    return [v for (v,z) in sf]
+        
 
     ##resort the list such that the bins are in order
     sf.sort(key=lambda x: int(x[1]))
 
     return [v for (v,z) in sf]
-
-def compute_ranges(variables,var):
-    ## ha più senso prendere il variabile e prendere gli estremi della variabile
-    ## ovviamente, sarebe più sicuro coi cuts, ma è più complicato!!
-
-    var_in_var = var.split("_")[0]+"_ACM"
-
-    nbin = int(len(variables[var_in_var]['range'][0]) - 1)
-    actual_bin = int(var.split("bin")[-1])
-
-    if actual_bin > nbin:
-        print("ERROREEEE: actaual bin: ", actual_bin)
-        print("TOTAL BINS FROM VARIBALES: ", nbin)
-
-    _min = (variables[var_in_var]['range'][0][actual_bin - 1])
-    _max = (variables[var_in_var]['range'][0][actual_bin])
-
-    return float(_min),float(_max)
 
 
 if __name__ == '__main__':
@@ -66,7 +71,7 @@ if __name__ == '__main__':
     selected_keys = []
 
     for key in keys:
-        if key.GetName() != opt.den and key.GetName() not in selected_keys and "out" not in key.GetName() and "fiducial" not in key.GetName(): selected_keys.append(key.GetName())
+        if key.GetName() != opt.den and key.GetName() not in selected_keys and "out" not in key.GetName(): selected_keys.append(key.GetName())
     selected_keys.sort()
 
     samples = {}
@@ -87,23 +92,44 @@ if __name__ == '__main__':
     map = {
         "pdf_weight": "PDFSF",
         "QCDscale": "QCDSF",
+        # "PS_ISR_dipole": "PSSF_ISR",
+        # "PS_FSR_dipole": "PSSF_FSR",
         "PS_dipole": "PSSF",
     }
 
-    for var in selected_keys:
+    for s in samples.keys():
+        for var in selected_keys:
+            if "fiducial" not in var:
+                var_parts = var.split("_bin")
+                data_dict.setdefault(var_parts[0], {})
+                data_dict[var_parts[0]].setdefault("bin" + var_parts[1], {})
 
-        var_parts = var.split("_bin")
-        data_dict.setdefault(var_parts[0], {})
-        data_dict[var_parts[0]].setdefault("bin" + var_parts[1], {})
+                dir = sourceFile.Get(var + "/events")
 
-        dir = sourceFile.Get(var + "/events")
+                for nuis in ["pdf_weight", "QCDscale", "PS_dipole"]:
+                    norm_fact = compute_var_info(dir,nuis, s)
+                    data_dict[var_parts[0]]["bin" + var_parts[1]][map[nuis]] = norm_fact
+            else:
+                data_dict.setdefault(var+"_"+s, {})
+                data_dict[var+"_"+s].setdefault("all", {})
 
-        for nuis in ["pdf_weight", "QCDscale", "PS_dipole"]:
-            norm_fact = compute_var_info(dir,nuis)
-            data_dict[var_parts[0]]["bin" + var_parts[1]][map[nuis]] = norm_fact
+                dir = sourceFile.Get(var + "/events")
+                for nuis in ["pdf_weight", "QCDscale", "PS_dipole"]:
+                    norm_fact = compute_var_info(dir,nuis, s)
+                    data_dict[var+"_"+s]["all"][map[nuis]] = norm_fact
 
+    
+    # for var in ["fiducial"]:
+    # # for var in ["LHESEL", "LHESEL_PLUS", "LHESEL_MINUS"]:
+    #     data_dict.setdefault(var, {})
+    #     data_dict[var].setdefault("all", {})
+
+    #     dir = sourceFile.Get(var + "/events")
+    #     for nuis in ["pdf_weight", "QCDscale", "PS_dipole"]:
+    #         norm_fact = compute_var_info(dir,nuis)
+    #         data_dict[var]["all"][map[nuis]] = norm_fact
 
     import json
     # Scrivi il dizionario ordinato in un file JSON
-    with open('semiDEFNuis.json', 'w') as json_file:
+    with open('diffNuis_fiduciale.json', 'w') as json_file:
         json.dump(data_dict, json_file, indent=4, sort_keys=True)

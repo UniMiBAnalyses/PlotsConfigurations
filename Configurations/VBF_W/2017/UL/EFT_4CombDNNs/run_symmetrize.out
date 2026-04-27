@@ -1,0 +1,321 @@
+subject   : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=abulla/CN=857947/CN=Andrea Bulla/CN=1595658895
+issuer    : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=abulla/CN=857947/CN=Andrea Bulla
+identity  : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=abulla/CN=857947/CN=Andrea Bulla
+type      : RFC3820 compliant impersonation proxy
+strength  : 2048
+path      : /afs/cern.ch/user/a/abulla/.proxy
+timeleft  : 06:11:59
+key usage : Digital Signature, Key Encipherment
+Current directory: /tmp
+Contents of /tmp:
+total 0
+drwxr-xr-x. 2 abulla zh 10 Aug 18 16:01 hsperfdata_abulla
+total 45080
+-rwxr-xr-x. 1 abulla zh    26959 Aug 18 16:01 SymmetrizeByHand.py
+-rw-r--r--. 1 abulla zh 46026833 Aug 18 16:01 fixed_plots_vbf_w_2017EFT_4Comb_final_v6.root
+drwxr-xr-x. 2 abulla zh       10 Aug 18 16:01 hsperfdata_abulla
+-rw-r--r--. 1 abulla zh    34257 Aug 18 16:01 nuisances.py
+-rw-r--r--. 1 abulla zh    30824 Aug 18 16:01 samples.py
+-rw-r--r--. 1 abulla zh    30750 Aug 18 16:01 variables.py
+[INFO] Scriverò direttamente nel file: /tmp/fixed_plots_vbf_w_2017EFT_4Comb_final_v6.root
+[INFO] Trovati 170 task da eseguire.
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'ele_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_topcr/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_topcr/events'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'VBFW_fake_e_EWKsub_2017' in 'ele_topcr'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'CMS_fake_stat_e_2017_1lep' in 'ele_topcr'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'ele_topcr/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'ele_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_topcr/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'mu_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_HWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'mu_HWJ/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'mu_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_HWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'mu_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_PUWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'mu_PUWJ/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'mu_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_PUWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'VBFW_fake_m_EWKsub_2017' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'CMS_fake_stat_m_2017_1lep' in 'mu_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'mu_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'pdf_weight_Wjets_HT_PUJets' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeBal' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'VBFW_fake_e_EWKsub_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'CMS_fake_stat_e_2017_1lep' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESBBEC1' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESEC2' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PS_ISR' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESFlavorQCD' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hfstats2_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_met_2017_UL' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_jetpuid_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESAbsolute_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_e_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PS_FSR' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_jes' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESEC2_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_PU_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'QCDscale_Wjets_HT_PUJets' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hf' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'pdf_weight_Wjets_HT_PUJets' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lf' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_prefiring_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_res_j_2017_UL' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_eff_trigger_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESAbsolute' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lfstats2_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_e_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESBBEC1_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeSample_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_lfstats1_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_cferr1' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_cferr2' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESHF' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESRelativeBal' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_btag_hfstats1_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Wjets_HT_PUJets e syst 'CMS_scale_JESHF_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[INFO] 🔧 Simmetrizzazione applicata per sample top e syst 'pdf_weight_top' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'VBFW_fake_e_EWKsub_2017' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] ❌ Il nominale contiene valori <= 0, lo sostituisco con 1e-6
+[INFO] 🔧 Simmetrizzazione applicata per sample Fake e syst 'CMS_fake_stat_e_2017_1lep' in 'ele_SR'
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'ele_SR/DNNJoined_Dphijj_jet1pt1'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'ele_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_HWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'ele_HWJ/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'ele_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_HWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'mu_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_topcr/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'mu_topcr/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'mu_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_topcr/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHDD' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cW' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHDD' in 'ele_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_PUWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cW' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_cHWB' in 'ele_PUWJ/events'
+[DEBUG] Trovati 224 sistematiche per 'sm' in 'ele_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_PUWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'quad_cHWB' in 'ele_PUWJ/events'
+All done. Changes saved to: fixed_plots_vbf_w_2017EFT_4Comb_final_v6.root
+[INFO] Output ROOT file creato.
+[INFO] Script completato con successo, copio l'output su EOS...
+[INFO] Copia completata.

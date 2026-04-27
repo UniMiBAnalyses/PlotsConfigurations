@@ -30,8 +30,9 @@ var = [
     'Dphilep1jet2',
     'R',
     'Zl1',
-    'QGL1',
-    'QGL2'
+    'TriggerSFWeight_1l_u',
+    'TriggerSFWeight_1l_d',
+    'TriggerSFWeight_1l',
 ]
 
 

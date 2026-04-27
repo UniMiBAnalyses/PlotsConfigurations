@@ -3,7 +3,7 @@
 treeName = 'Events'
 pretag = 'HIPM'
 
-tagger = pretag+'EFT'
+tagger = pretag+'EFT_final_v3'
 tag = 'vbf_w_2016'+tagger
 
 # used by mkShape to define output directory for root files

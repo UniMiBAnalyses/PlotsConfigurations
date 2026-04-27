@@ -106,7 +106,7 @@ LepWPWeight = LepWPWeight_1l
 #corrected trigger efficiency
 
 XSWeight   = 'XSWeight'
-SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l', trigg_MC, 'PrefireWeight', 'EMTFbug_veto']
+SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l', trigg_MC, 'L1PreFiringWeight_Nom', 'EMTFbug_veto']
 
 SFweight = '*'.join(SFweight1l)
      
@@ -163,7 +163,7 @@ samples['Wjets_HT_hardJets'] = { 'name' : nanoGetSampleFiles(mcDirectoryLat, 'WJ
                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
                         'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction + '* hardJets',
                         # 'EventsPerJob' : 7000,
-                        'FilesPerJob' : 4
+                        'FilesPerJob' : 2,
 		                 }
 
 # Fix Wjets binned + LO 
@@ -195,7 +195,7 @@ samples['Wjets_HT_PUJets'] = { 'name' : nanoGetSampleFiles(mcDirectoryLat, 'WJet
                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
                         'weight': CommonWeight+'*' + Wjets_photon_filter  + '* PUJets',
                         # 'EventsPerJob' : 7000,
-                        'FilesPerJob' : 4,
+                        'FilesPerJob' : 2,
 		                 }
 
 # Fix Wjets binned + LO 
@@ -227,7 +227,7 @@ samples['top'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'TTTo2L2Nu')
                                 #  + nanoGetSampleFiles(mcDirectory,'TTWjets')    ## only w/ pythia, non amcatnlo
                                 #  + nanoGetSampleFiles(mcDirectory,'TTWjets_ext1'),
                       'weight': CommonWeight,
-                      'FilesPerJob' : 4,
+                      'FilesPerJob' : 3,
                       # 'EventsPerJob' : 7000,
                 }
 

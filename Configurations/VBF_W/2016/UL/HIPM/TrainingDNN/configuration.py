@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'TrainingDNN'
+tagger = 'WJetsPU_2016w'
 # tagger = 'nosys_yesrw_try'
 tag = 'vbf_w_2016'+tagger
 

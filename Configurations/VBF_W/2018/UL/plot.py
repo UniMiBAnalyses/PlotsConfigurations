@@ -74,11 +74,18 @@ wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400
 # for ir in range(1,6):
 #     wjets_bins.append("Wjets_HT_boost_"+str(ir))
               
+# groupPlot['Others']  = {  
+#                 'nameHR' : "Others",
+#                 'isSignal' : 0,
+#                 'color'    : palette["Orange"],
+#                 'samples'  : ['VBF-Z', 'Vg', 'VgS', 'VVV', 'VV','VBS','Higgs'],
+#                 'fill': 1001
+#               }
 groupPlot['Others']  = {  
                 'nameHR' : "Others",
                 'isSignal' : 0,
                 'color'    : palette["Orange"],
-                'samples'  : ['VBF-Z', 'Vg', 'VgS', 'VVV', 'VV','VBS','Higgs'],
+                'samples'  : ['Others'],
                 'fill': 1001
               }
 
@@ -152,7 +159,7 @@ plot['Wjets_HT_hardJets'] = {
                  'isData'   : 0, 
                  #'scale'    : 1.09950003 
                 #  'scale'    : 1.0
-                 'scale'    : 1.0
+                 'scale'    : 1.14
                 #  'scale'     : 1.0232
                  #'scale'    : 1.1231175589276459 #mu
                  #'scale'    : 1.2795330335917352
@@ -237,6 +244,12 @@ plot['VgS'] = {
                 }
 
 plot['VVV'] = {   
+                 'color': colors['kAzure']-1,
+                 'isSignal' : 0,
+                 'isData'   : 0, 
+                 'scale'    : 1.0 
+                }
+plot['Others'] = {   
                  'color': colors['kAzure']-1,
                  'isSignal' : 0,
                  'isData'   : 0, 

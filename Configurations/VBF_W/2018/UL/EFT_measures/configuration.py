@@ -3,7 +3,7 @@
 treeName = 'Events'
 
 # tagger = 'EFT_4Comb_TEST'
-tagger = 'MeasureNuisBKnewWP'
+tagger = 'MeasureNuisBKnewWP_v1'
 
 tag = 'vbf_w_2018'+tagger
 

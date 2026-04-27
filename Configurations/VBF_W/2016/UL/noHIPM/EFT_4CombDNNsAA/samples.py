@@ -87,7 +87,7 @@ LepWPWeight = LepWPWeight_1l
 ################################################
 
 XSWeight   = 'XSWeight'         
-SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF', 'PUJetIdSF','TriggerSFWeight_1l', trigg_MC, 'EMTFbug_veto', 'PrefireWeight']
+SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF', 'PUJetIdSF','TriggerSFWeight_1l', trigg_MC, 'EMTFbug_veto', 'L1PreFiringWeight_Nom']
 
 
 SFweight = '*'.join(SFweight1l)
@@ -123,10 +123,10 @@ DataTrig = {
 }
 
 
-#########################################
-############### SIGNAL ##################
-#########################################
-###### W + jj EWK #######
+# #########################################
+# ############### SIGNAL ##################
+# #########################################
+# ###### W + jj EWK #######
 
 # samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_EWK')
 #                                   + nanoGetSampleFiles(mcDirectoryLat,'Wp_LNuJJ_EWK'),
@@ -299,7 +299,7 @@ samples['DY_M-50'] = {    'name'  : nanoGetSampleFiles(mcDirectoryLat,'DYJetsToL
                                   + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-50_HT-1200to2500')
                                   + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-50_HT-2500toInf'),
                           'weight': CommonWeight+'*'+DY_photon_filter,
-                        'FilesPerJob' :20,
+                        'FilesPerJob' :5,
                 }
 
 #addSampleWeight(samples,'DY','DYJetsToLL_M-50-LO-ext1','DY_LO_pTllrw')
@@ -325,7 +325,7 @@ samples['DY_else'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'DYJetsTo
                                   + nanoGetSampleFiles(mcDirectoryLat,'DYJetsToLL_M-4to50_HT-600toInf'),
                         'weight': CommonWeight+'*'+DY_photon_filter,
                       # 'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter ,# missing ewkNLOW
-                        'FilesPerJob' : 20,
+                        'FilesPerJob' : 5,
                 }
 
 
@@ -358,7 +358,7 @@ samples['VBF-Z']  = {   'name'   :  nanoGetSampleFiles(mcDirectoryLat,'EWKZ2Jets
 samples['Vg']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')   #called WGToLNuG
                                  + nanoGetSampleFiles(mcDirectoryLat,'ZGToLLG'),        ## not found in das
                     'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*(Gen_ZGstar_mass <= 0)',
-                    'FilesPerJob' : 20,
+                    'FilesPerJob' : 10,
                 }
 
 
@@ -369,7 +369,7 @@ samples['VgS']  =  {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')
                                  + nanoGetSampleFiles(mcDirectoryLat,'ZGToLLG')       ## called ZGToLLG
                                  + nanoGetSampleFiles(mcDirectoryLat,'WZTo3LNu_mllmin0p1'),     #called WZTo3LNu_mllmin0p1
                       'weight' : CommonWeight + ' * (gstarLow * 0.94 + gstarHigh * 1.14)',
-                      'FilesPerJob' : 20,
+                      'FilesPerJob' : 10,
                    }
 
 # 14.02.2020: Changed Vg treatment
@@ -386,7 +386,7 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'ZZZ')
                                 + nanoGetSampleFiles(mcDirectoryLat,'WWW'),
                     'weight': CommonWeight,
                                 #+ nanoGetSampleFiles(mcDirectory,'WWG'), #should this be included? or is it already taken into account in the WW sample?
-                    'FilesPerJob' : 20,
+                    'FilesPerJob' : 10,
                   }
 
 
@@ -394,7 +394,7 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'ZZZ')
 # # # # ############## EFT ###############
 # # # # #########################################
 
-EFTSamples = nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_EFT')
+EFTSamples = nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_EFT_crab')
 
 samples['sm'] = {
     'name': EFTSamples,
@@ -409,22 +409,22 @@ if os.path.exists(CMSSW+'/src/'+sampleEFTFile):
   exec(handle)
   handle.close()
 
-# # # ## fatti ma non usati per datacard
-# # # # ######################################### debug weightssss ############################
-# # sampleEFTFileDebug = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT_4Comb/debug_EFTweights.py"
-# # if os.path.exists(CMSSW+'/src/'+sampleEFTFileDebug):
-# #   handle = open(CMSSW+'/src/'+sampleEFTFileDebug)
-# #   exec(handle)
-# #   handle.close()
+# # # # ## fatti ma non usati per datacard
+# # # # # ######################################### debug weightssss ############################
+# # # sampleEFTFileDebug = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT_4Comb/debug_EFTweights.py"
+# # # if os.path.exists(CMSSW+'/src/'+sampleEFTFileDebug):
+# # #   handle = open(CMSSW+'/src/'+sampleEFTFileDebug)
+# # #   exec(handle)
+# # #   handle.close()
 
-########################################
-############# Fakesss ###############
-########################################
+######################################
+########### Fakesss ###############
+######################################
 
 
 # Then corrected
 # fakeW = 'fakeWeight_35'
-fakeW = '(fakeWeight_0p8 * (fakeWeight_0p8<20) + 0.*(fakeWeight_0p8>20))'
+fakeW = '(fakeWeight_0p9 * (fakeWeight_0p9<=20) + 0.*(fakeWeight_0p9>20))'
 
 ### Fakes
 samples['Fake'] = {
@@ -433,6 +433,8 @@ samples['Fake'] = {
   'weights': [],
   'isData': ['all'],
   'FilesPerJob' : 30,
+  # 'suppressNegative' :['ele_SR','mu_SR'],
+  # 'suppressNegativeNuisances' :['ele_SR','mu_SR'],
 }
 
 for _, sd in DataRun:
@@ -443,9 +445,9 @@ for _, sd in DataRun:
 
     
 
-#########################################
-################ DATA ###################
-#########################################
+# #########################################
+# ################ DATA ###################
+# #########################################
 
 samples['DATA']  = {   'name': [ ] ,
                        'weight' : METFilter_DATA+'*'+LepWPCut,

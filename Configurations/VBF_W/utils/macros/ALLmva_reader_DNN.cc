@@ -92,9 +92,9 @@ MVAReaderDNNALL::MVAReaderDNNALL(const char* model_path, const char* transform_p
     TFile * tf_file = new TFile(transform_path_.c_str(), "READ");
     if(tf_file->IsZombie() == false){
       dnn_transformation = (TGraph*) tf_file->Get("cumulative_signal");
-      std::cout << "file NON zombie!!" << std::endl;
+      // std::cout << "file NON zombie!!" << std::endl;
     }
-    std::cout << "ERROR READING TRASFORMER FILE :" << transform_path_.c_str();
+    // std::cout << "ERROR READING TRASFORMER FILE :" << transform_path_.c_str();
     tf_file->Close();
 }
 

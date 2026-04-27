@@ -3,7 +3,7 @@
 treeName = 'Events'
 
 # tagger = 'EFT_4Comb_TEST'
-tagger = 'EFT_4Comb_joinedNEW_lastDNNs'
+tagger = 'EFT_4Comb_final_v6'
 
 tag = 'vbf_w_2018'+tagger
 

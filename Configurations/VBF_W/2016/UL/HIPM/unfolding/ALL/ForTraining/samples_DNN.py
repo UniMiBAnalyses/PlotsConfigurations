@@ -72,8 +72,8 @@ mcDirectoryLatSig = os.path.join(treeBaseDirLat,  mcProduction , mcSteps+"__genS
 ############### Lepton WP ######################
 ################################################
   
-eleWP='mvaFall17V2Iso_WP90'
-muWP='cut_Tight80x'
+eleWP='mvaFall17V2Iso_WP90_tthmva_70'
+muWP='cut_Tight80x_tthmva_80'
 
 LepWPCut_1l =  '(Lepton_isTightElectron_'+eleWP+'[0]>0.5 || Lepton_isTightMuon_'+muWP+'[0]>0.5)'
 LepWPWeight_1l = 'Lepton_tightElectron_'+eleWP+'_IdIsoSF'+'[0]*\
@@ -88,7 +88,7 @@ LepWPWeight = LepWPWeight_1l
 ################################################
 
 XSWeight   = 'XSWeight'         
-SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF', 'PUJetIdSF','TriggerSFWeight_1l', trigg_MC, 'EMTFbug_veto', 'PrefireWeight']
+SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF', 'PUJetIdSF','TriggerSFWeight_1l', trigg_MC, 'EMTFbug_veto', 'L1PreFiringWeight_Nom']
 
 
 SFweight = '*'.join(SFweight1l)
@@ -144,7 +144,8 @@ samples['Wjets_HT'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsT
                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT600To800')
                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT800To1200')
                                    + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT1200To2500')
-                                   + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT2500ToInf'),
+                                   + nanoGetSampleFiles(mcDirectoryLatSig, 'WJetsToLNu_HT2500ToInf')
+                                   + nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_QCD_inter'),
                         # 'weight': CommonWeight+'*' + Wjets_photon_filter +'* ewknloW' + '*' +Total_correction,
                         'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction,
 			                	'FilesPerJob' : 6, 

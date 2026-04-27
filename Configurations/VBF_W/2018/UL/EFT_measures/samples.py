@@ -93,7 +93,7 @@ LepWPWeight = LepWPWeight_1l
 #corrected trigger efficiency
 
 XSWeight   = 'XSWeight'
-SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l', trigg_MC] 
+SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l', trigg_MC, 'L1PreFiringWeight_Nom'] 
 # SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', 'btagSF','PUJetIdSF', 'TriggerSFWeight_1l', trigg_MC] 
 # SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF', 'SingleLepton_trigEff_corrected[0]'] 
 # SFweight1l = ['puWeight', 'Lepton_RecoSF[0]', LepWPWeight_1l, LepWPCut_1l, 'btagSF','PUJetIdSF', 'TriggerEffWeight_1l'] 
@@ -178,7 +178,7 @@ samples['Wjets_HT_hardJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, '
                                           + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
 #				                'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '* ewknloW',
                                 'weight': CommonWeight+'*' + Wjets_photon_filter + '*' + Total_correction + '* hardJets',
-			                	'FilesPerJob' : 4,
+			                	'FilesPerJob' : 2,
 		                 }
 
 # # Fix Wjets binned + LO 
@@ -207,7 +207,7 @@ samples['Wjets_HT_PUJets'] = { 'name' :   nanoGetSampleFiles(mcDirectoryLat, 'WJ
                                    + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
 #				                'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch + '* ewknloW',
                                 'weight': CommonWeight+'*' + Wjets_photon_filter + '* PUJets',
-			                	'FilesPerJob' : 4,
+			                	'FilesPerJob' : 2,
 		                 }
 
 # # Fix Wjets binned + LO 
@@ -239,7 +239,7 @@ samples['top'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'TTTo2L2Nu')
                                 #  + nanoGetSampleFiles(mcDirectoryLat,'TTWjets'),  same to do
                                  #+ nanoGetSampleFiles(mcDirectoryLat,'TTWJetsToLNu'), #also this is available (was commented)
                       'weight': CommonWeight,
-                      'FilesPerJob' : 8,
+                      'FilesPerJob' : 3,
                 }
 
 # !!!! TTToSemiLeptonic_ext3?

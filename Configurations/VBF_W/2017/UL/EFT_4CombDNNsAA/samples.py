@@ -142,6 +142,17 @@ DataTrig = {
     'SingleElectron' : '!Trigger_sngMu && Trigger_sngEl',
 }
 
+
+# samples['WLNuJJ']  = {  'name'   :  nanoGetSampleFiles(mcDirectoryLat,'Wm_LNuJJ_EWK')
+#                                     + nanoGetSampleFiles(mcDirectoryLat,'Wp_LNuJJ_EWK'),
+# #                        'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
+#                         # 'weight': CommonWeight+'*btagSF_corr_Vg_VgS_VBFV',
+#                         'weight': CommonWeight,
+#                         'FilesPerJob' : 5,
+#                         # 'EventsPerJob' : 7000,
+#                     }
+
+
 ##########################################
 ############  BACKGROUNDS  ###############
 ##########################################
@@ -162,8 +173,8 @@ samples['Wjets_HT_hardJets'] = { 'name' : nanoGetSampleFiles(mcDirectoryLat, 'WJ
                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT1200To2500')
                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
                         'weight': CommonWeight+'*' + Wjets_photon_filter + '*' +Total_correction + '* hardJets',
-			                	'FilesPerJob' : 3,
-                        'EventsPerJob' : 7000,
+			                	'FilesPerJob' : 2,
+                        # 'EventsPerJob' : 7000,
 		                 }
 
 # Fix Wjets binned + LO 
@@ -195,7 +206,7 @@ samples['Wjets_HT_PUJets'] = { 'name' : nanoGetSampleFiles(mcDirectoryLat, 'WJet
                                   + nanoGetSampleFiles(mcDirectoryLat, 'WJetsToLNu_HT2500ToInf'),
                         'weight': CommonWeight+'*' + Wjets_photon_filter  + '* PUJets',
 			                	'FilesPerJob' : 3,
-                        'EventsPerJob' : 7000,
+                        # 'EventsPerJob' : 7000,
 		                 }
 
 # Fix Wjets binned + LO 
@@ -227,8 +238,8 @@ samples['top'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'TTTo2L2Nu')
                                 #  + nanoGetSampleFiles(mcDirectory,'TTWjets')    ## only w/ pythia, non amcatnlo
                                 #  + nanoGetSampleFiles(mcDirectory,'TTWjets_ext1'),
                       'weight': CommonWeight,
-                      'FilesPerJob' : 3,
-                      'EventsPerJob' : 7000,
+                      'FilesPerJob' : 2,
+                      # 'EventsPerJob' : 7000,
                 }
 
 
@@ -256,7 +267,7 @@ samples['VV']  = { 'name' :  nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_WmTo2J_Q
                              + nanoGetSampleFiles(mcDirectoryLat,'ZTo2L_ZTo2J_QCD'),
                    'weight': CommonWeight,
 #                   'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch, # still missing EWKnlowW 
-                   'FilesPerJob' : 20,
+                   'FilesPerJob' : 10,
                    'EventsPerJob' : 70000,
                 }
 
@@ -277,7 +288,7 @@ samples['VBS']  = { 'name' :  nanoGetSampleFiles(mcDirectoryLat,'WmToLNu_ZTo2J')
                               # + nanoGetSampleFiles(mcDirectory,'WWToLNuQQ'),   #no in das UL, who cares
                     'weight': CommonWeight,
 #                    'weight': XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch,
-                    'FilesPerJob' : 20,
+                    'FilesPerJob' : 10,
                     'EventsPerJob' : 70000,
                 }
 
@@ -330,7 +341,7 @@ samples['DY_M-50'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'DYJetsTo
                         # 'weight': CommonWeight,
                       # 'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter +'*btagSF_corr_DY',# missing ewkNLOW
                       'weight': CommonWeight+'*'+DY_photon_filter,
-                        'FilesPerJob' : 20,
+                        'FilesPerJob' : 5,
                         'EventsPerJob' : 7000,
                       #  'suppressNegative' :['all'],
                       #  'suppressNegativeNuisances' :['all'],
@@ -352,7 +363,7 @@ samples['DY_else'] = {    'name'   : nanoGetSampleFiles(mcDirectoryLat,'DYJetsTo
                         # 'weight': CommonWeight+ '*' + DY_photon_filter +'*btagSF_corr_DY',
                         'weight': CommonWeight+ '*' + DY_photon_filter,
 #                       'weight' : XSWeight+'*'+SFweight+'*'+GenLepMatch+'*'+METFilter_MC + '*' + DY_photon_filter ,# missing ewkNLOW
-                        'FilesPerJob' : 20,
+                        'FilesPerJob' : 5,
                         'EventsPerJob' : 7000,
                       #  'suppressNegative' :['all'],
                       #  'suppressNegativeNuisances' :['all'],
@@ -388,7 +399,7 @@ samples['Vg']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')  
                     # 'weight':  XSWeight+'*'+SFweight+'*'+METFilter_MC+'*(Gen_ZGstar_mass <= 0) *btagSF_corr_Vg_VgS_VBFV_WLNuJJ',
                     'weight':  XSWeight+'*'+SFweight+'*'+METFilter_MC+'*(Gen_ZGstar_mass <= 0)',
                     # 'weight': CommonWeight,
-                    'FilesPerJob' : 20,
+                    'FilesPerJob' : 10,
                     'EventsPerJob' : 7000,
                     # 'suppressNegative' :['all'],
                     # 'suppressNegativeNuisances' :['all'],
@@ -407,7 +418,7 @@ samples['VgS']  =  {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'WGToLNuG')
                                  + nanoGetSampleFiles(mcDirectoryLat,'WZTo3LNu_mllmin0p1'),    ## called WZTo3LNu_mllmin0p1
                       # 'weight' : CommonWeight + ' * (gstarLow * 0.94 + gstarHigh * 1.14) * btagSF_corr_Vg_VgS_VBFV_WLNuJJ',
                       'weight' : CommonWeight + ' * (gstarLow * 0.94 + gstarHigh * 1.14)',
-                      'FilesPerJob' : 20,
+                      'FilesPerJob' : 10,
                       'EventsPerJob' : 7000,
                       # 'suppressNegative' :['all'],
                       # 'suppressNegativeNuisances' :['all'],
@@ -429,21 +440,21 @@ samples['VVV']  = {  'name'   :   nanoGetSampleFiles(mcDirectoryLat,'ZZZ')
                     'weight': CommonWeight,
                                 #+ nanoGetSampleFiles(mcDirectory,'WWG'), #should this be included? or is it already taken into account in the WW sample?
 #                    'weight' : XSWeight+'*'+SFweight+'*'+METFilter_MC+'*'+GenLepMatch ,
-                    'FilesPerJob' : 20,
+                    'FilesPerJob' : 10,
                      'EventsPerJob' : 7000,
                   }
 
 
-# # # # #########################################
-# # # # ############## EFT ###############
-# # # # #########################################
+# # # #########################################
+# # # ############## EFT ###############
+# # # #########################################
 
-EFTSamples = nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_EFT')
+EFTSamples = nanoGetSampleFiles(mcDirectoryLat,'WLNuJJ_EWK_EFT_crab')
 
 samples['sm'] = {
     'name': EFTSamples,
     'weight': CommonWeight + '*' + '(LHEReweightingWeight[0])',
-    'FilesPerJob': 10,
+    'FilesPerJob': 2,
 }
 
 CMSSW=os.environ["CMSSW_BASE"]
@@ -453,18 +464,18 @@ if os.path.exists(CMSSW+'/src/'+sampleEFTFile):
   exec(handle)
   handle.close()
 
-# # ### haddato, ma non nelle datacard
-# # # ######################################### debug weightssss ############################
-# # # sampleEFTFileDebug = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT_4Comb/debug_EFTweights.py"
-# # # if os.path.exists(CMSSW+'/src/'+sampleEFTFileDebug):
-# # #   handle = open(CMSSW+'/src/'+sampleEFTFileDebug)
-# # #   exec(handle)
-# # #   handle.close()
+# # # ### haddato, ma non nelle datacard
+# # # # ######################################### debug weightssss ############################
+# # # # sampleEFTFileDebug = "PlotsConfigurations/Configurations/VBF_W/2018/UL/EFT_4Comb/debug_EFTweights.py"
+# # # # if os.path.exists(CMSSW+'/src/'+sampleEFTFileDebug):
+# # # #   handle = open(CMSSW+'/src/'+sampleEFTFileDebug)
+# # # #   exec(handle)
+# # # #   handle.close()
 
-# #########################################################################
+#########################################################################
 
 # Then corrected
-fakeW = '(fakeWeight_0p9 * (fakeWeight_0p9<20) + 0.*(fakeWeight_0p9>20))'
+fakeW = '(fakeWeight_0p9 * (fakeWeight_0p9 <= 20) + 0.*(fakeWeight_0p9>20))'
 # fakeW = 'fakeWeight_0p8'
 
 # Fake_ele_corr = ((abs(Lepton_pdgId[0]) == 11) * (((Lepton_phi[0]<-1.)*(Lepton_phi[0]>-1.5)*(0.4)) + ((Lepton_phi[0]>-1.)*(1.) + (Lepton_phi[0]<1.5)*(1.))))
@@ -478,7 +489,9 @@ samples['Fake'] = {
   'weight': METFilter_DATA+'*'+fakeW,
   'weights': [],
   'isData': ['all'],
-  'FilesPerJob' : 30
+  'FilesPerJob' : 30,
+  # 'suppressNegative' :['ele_SR','mu_SR'],
+  # 'suppressNegativeNuisances' :['ele_SR','mu_SR'],
 }
 
 
@@ -511,11 +524,11 @@ for Run in DataRun :
                   samples['DATA']['weights'].append(DataTrig[DataSet])
 
 
-# # # #samples = {   key:v for key,v in samples.items() if key  in ["VBS_dipoleRecoil"]}
+# # #samples = {   key:v for key,v in samples.items() if key  in ["VBS_dipoleRecoil"]}
 
-# # # # mkPostProc.py -p Fall2017_102X_nAODv7_Full2017v7 -s 2Jets1leptonW2017 -i MCl1loose2017v7__MCCorr2017v7__MCCombJJLNu2017 -b -Q workday -T WLNuJJ_EWK,EWK_LNuJJ_herwig,WJetsToLNu-LO,WJetsToLNu-LO_ext1,WJetsToLNu_HT70_100,WJetsToLNu_HT100_200,WJetsToLNu_HT200_400,WJetsToLNu_HT400_600,WJetsToLNu_HT600_800,WJetsToLNu_HT800_1200,WJetsToLNu_HT1200_2500,WJetsToLNu_HT2500_inf,TTTo2L2Nu,ST_s-channel,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop,ST_tW_top,TTToSemiLeptonic,TTZjets,TTZjets_ext1,TTWjets,TTWjets_ext1,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,WWToLNuQQ,GluGluWWToLNuQQ,GluGluHToWWToLNuQQ_M125,VBFHToWWToLNuQQ_M125,DYJetsToLL_M-50,DYJetsToLL_M-50_ext1,DYJetsToLL_M-10to50-LO_ext1,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-200to400_ext1,DYJetsToLL_M-50_HT-400to600_newpmx,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,DYJetsToLL_M-4to50_HT-100to200_newpmx,DYJetsToLL_M-4to50_HT-200to400_newpmx,DYJetsToLL_M-4to50_HT-400to600,DYJetsToLL_M-4to50_HT-400to600_ext1,DYJetsToLL_M-4to50_HT-600toInf,DYJetsToLL_M-4to50_HT-600toInf_ext1,EWKZ2Jets_ZToLL_M-50_newpmx,EWK_LLJJ_herwig,Wg_MADGRAPHMLM,ZGToLLG,WZTo3LNu_mllmin01,ZZZ,WWZ,WWW,WZZ
+# # # mkPostProc.py -p Fall2017_102X_nAODv7_Full2017v7 -s 2Jets1leptonW2017 -i MCl1loose2017v7__MCCorr2017v7__MCCombJJLNu2017 -b -Q workday -T WLNuJJ_EWK,EWK_LNuJJ_herwig,WJetsToLNu-LO,WJetsToLNu-LO_ext1,WJetsToLNu_HT70_100,WJetsToLNu_HT100_200,WJetsToLNu_HT200_400,WJetsToLNu_HT400_600,WJetsToLNu_HT600_800,WJetsToLNu_HT800_1200,WJetsToLNu_HT1200_2500,WJetsToLNu_HT2500_inf,TTTo2L2Nu,ST_s-channel,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop,ST_tW_top,TTToSemiLeptonic,TTZjets,TTZjets_ext1,TTWjets,TTWjets_ext1,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,WWToLNuQQ,GluGluWWToLNuQQ,GluGluHToWWToLNuQQ_M125,VBFHToWWToLNuQQ_M125,DYJetsToLL_M-50,DYJetsToLL_M-50_ext1,DYJetsToLL_M-10to50-LO_ext1,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-200to400_ext1,DYJetsToLL_M-50_HT-400to600_newpmx,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,DYJetsToLL_M-4to50_HT-100to200_newpmx,DYJetsToLL_M-4to50_HT-200to400_newpmx,DYJetsToLL_M-4to50_HT-400to600,DYJetsToLL_M-4to50_HT-400to600_ext1,DYJetsToLL_M-4to50_HT-600toInf,DYJetsToLL_M-4to50_HT-600toInf_ext1,EWKZ2Jets_ZToLL_M-50_newpmx,EWK_LLJJ_herwig,Wg_MADGRAPHMLM,ZGToLLG,WZTo3LNu_mllmin01,ZZZ,WWZ,WWW,WZZ
 
-# # # per il 2017 posso usare lo stesso step perche parto da uno step in piu (ereditato da davide) in cui i veti sul tight [0] e [1] sono gia applicati correttamente. Se cosi non fosse mi uscirebbero i fake sbagliati
-# # # # mkPostProc.py -p Run2017_102X_nAODv7_Full2017v7 -s 2Jets1leptonW2017 -i DATAl1loose2017v7__DATACombJJLNu2017 -b -Q workday
+# # per il 2017 posso usare lo stesso step perche parto da uno step in piu (ereditato da davide) in cui i veti sul tight [0] e [1] sono gia applicati correttamente. Se cosi non fosse mi uscirebbero i fake sbagliati
+# # # mkPostProc.py -p Run2017_102X_nAODv7_Full2017v7 -s 2Jets1leptonW2017 -i DATAl1loose2017v7__DATACombJJLNu2017 -b -Q workday
 
-# # mkPostProc.py -p Summer20UL17_106x_nAODv9_Full2017v9 -s $iSyst -i MCl1loose2017v9__MCCorr2017v9NoJERInHorn -b -Q nextweek -T Wm_LNuJJ_EWK,Wp_LNuJJ_EWK,EWKZ2Jets_ZToLL_M-50_MJJ-120,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,GluGluHToWWToLNuQQ_M125,VBFHToWWToLNuQQ_M125,ZZZ,WZZ,WWZ,WWW,TTTo2L2Nu,ST_s-channel,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop,ST_tW_top,TTToSemiLeptonic,WGToLNuG,ZGToLLG,DYJetsToLL_M-10to50-LO,DYJetsToLL_M-4to50_HT-100to200,DYJetsToLL_M-4to50_HT-200to400,DYJetsToLL_M-4to50_HT-400to600,DYJetsToLL_M-4to50_HT-600toInf,WJetsToLNu-LO,WJetsToLNu_HT70To100,WJetsToLNu_HT100To200,WJetsToLNu_HT200To400,WJetsToLNu_HT400To600,WJetsToLNu_HT600To800,WJetsToLNu_HT800To1200,WJetsToLNu_HT1200To2500,WJetsToLNu_HT2500ToInf,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,DYJetsToLL_M-50,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,WGToLNuG,ZGToLLG,WZTo3LNu_mllmin0p1
+# mkPostProc.py -p Summer20UL17_106x_nAODv9_Full2017v9 -s $iSyst -i MCl1loose2017v9__MCCorr2017v9NoJERInHorn -b -Q nextweek -T Wm_LNuJJ_EWK,Wp_LNuJJ_EWK,EWKZ2Jets_ZToLL_M-50_MJJ-120,WmToLNu_WmTo2J_QCD,WmToLNu_ZTo2J_QCD,WmTo2J_ZTo2L_QCD,WpTo2J_WmToLNu_QCD,WpTo2J_ZTo2L_QCD,WpToLNu_WpTo2J_QCD,WpToLNu_WmTo2J_QCD,WpToLNu_ZTo2J_QCD,ZTo2L_ZTo2J_QCD,GluGluHToWWToLNuQQ_M125,VBFHToWWToLNuQQ_M125,ZZZ,WZZ,WWZ,WWW,TTTo2L2Nu,ST_s-channel,ST_t-channel_antitop,ST_t-channel_top,ST_tW_antitop,ST_tW_top,TTToSemiLeptonic,WGToLNuG,ZGToLLG,DYJetsToLL_M-10to50-LO,DYJetsToLL_M-4to50_HT-100to200,DYJetsToLL_M-4to50_HT-200to400,DYJetsToLL_M-4to50_HT-400to600,DYJetsToLL_M-4to50_HT-600toInf,WJetsToLNu-LO,WJetsToLNu_HT70To100,WJetsToLNu_HT100To200,WJetsToLNu_HT200To400,WJetsToLNu_HT400To600,WJetsToLNu_HT600To800,WJetsToLNu_HT800To1200,WJetsToLNu_HT1200To2500,WJetsToLNu_HT2500ToInf,WmToLNu_ZTo2J,WmTo2J_ZTo2L,WpTo2J_ZTo2L,WpToLNu_ZTo2J,WpToLNu_WpTo2J,WmToLNu_WmTo2J,WpToLNu_WmTo2J,WpTo2J_WmToLNu,ZTo2L_ZTo2J,DYJetsToLL_M-50,DYJetsToLL_M-50_HT-70to100,DYJetsToLL_M-50_HT-100to200,DYJetsToLL_M-50_HT-200to400,DYJetsToLL_M-50_HT-400to600,DYJetsToLL_M-50_HT-600to800,DYJetsToLL_M-50_HT-800to1200,DYJetsToLL_M-50_HT-1200to2500,DYJetsToLL_M-50_HT-2500toInf,WGToLNuG,ZGToLLG,WZTo3LNu_mllmin0p1

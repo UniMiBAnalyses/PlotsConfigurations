@@ -3,7 +3,10 @@
 treeName = 'Events'
 
 # tagger = 'EFT_4Comb_TEST'
-tagger = 'EFT_4Comb_newWP'
+# tagger = 'EFT_final_v1p5'
+# tagger = 'EFT_final_v1_Mods_large_nocHWBtil'
+# tagger = 'EFT_final_v2p0'
+tagger = 'EFT_final_v1_plots'
 
 tag = 'vbf_w_2018'+tagger
 

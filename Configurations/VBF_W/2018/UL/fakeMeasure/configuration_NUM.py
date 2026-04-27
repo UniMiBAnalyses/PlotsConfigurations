@@ -3,7 +3,7 @@
 treeName = 'Events'
 
 # tagger = 'fakeNUM_testnoJET'
-tagger = 'fakeNum_newWPs_dphi'
+tagger = 'fakeNum_plus_minus'
 
 tag = 'vbf_w_2018'+tagger
 
@@ -33,7 +33,7 @@ lumi = 59.74
 # different from "outputDir" to do things more tidy
 #outputDirPlots = 'plots'
 # outputDirPlots = 'plots/NORWALLSYS'
-outputDirPlots = '../../plots/'+tagger+"HORNS_metdata"
+outputDirPlots = '../../plots/'+tagger
 
 # used by mkDatacards to define output directory for datacards
 outputDirDatacard = 'datacards/'+tagger

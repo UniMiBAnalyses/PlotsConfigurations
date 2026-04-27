@@ -3,7 +3,7 @@
 treeName = 'Events'
 fixSuffix = 'bkgOnly'
 
-tagger = 'unfolding_final'
+tagger = 'unfolding_final_v12'
 tagger += "_"+fixSuffix
 
 tag = 'vbf_w_2017'+tagger
@@ -21,7 +21,7 @@ variablesFile = 'variables.py'
 cutsFile = 'cuts.py' 
 
 # file with list of samples
-samplesFile = 'samples.py' 
+samplesFile = 'samples.py'
 
 # file with list of samples
 plotFile = 'plot.py' 
@@ -32,7 +32,6 @@ lumi = 41.5
 # used by mkPlot to define output directory for plots
 # different from "outputDir" to do things more tidy
 outputDirPlots = '../plots/'+tagger
-
 
 # used by mkDatacards to define output directory for datacards
 outputDirDatacard = '../datacards/'+tagger

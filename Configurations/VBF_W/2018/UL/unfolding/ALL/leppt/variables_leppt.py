@@ -1,12 +1,5 @@
-variables["events"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
-variables["DNN1leppt"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0, 200, 5, 0.0, 1.0), 'name': 'DNNoutputSR_noQGL:Lepton_pt[0]', 'xaxis': 'DNNoutput : p_{T} lepton [GeV]'}
-variables["MultiClass_leppt_class8"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (4, 0.0, 1.0), 'name': 'MultiClass_leppt_class8', 'xaxis': 'MultiClass_leppt_class8'}
-variables["MultiClass_leppt_class10"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (2, 0.0, 1.0), 'name': 'MultiClass_leppt_class10', 'xaxis': 'MultiClass_leppt_class10'}
-variables["MultiClass_leppt_class1"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_leppt_class1', 'xaxis': 'MultiClass_leppt_class1'}
-variables["MultiClass_leppt_class3"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_leppt_class3', 'xaxis': 'MultiClass_leppt_class3'}
-variables["MultiClass_leppt_class2"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_leppt_class2', 'xaxis': 'MultiClass_leppt_class2'}
-variables["MultiClass_leppt_class5"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_leppt_class5', 'xaxis': 'MultiClass_leppt_class5'}
-variables["MultiClass_leppt_class4"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_leppt_class4', 'xaxis': 'MultiClass_leppt_class4'}
-variables["MultiClass_leppt_class7"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_leppt_class7', 'xaxis': 'MultiClass_leppt_class7'}
-variables["MultiClass_leppt_class6"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_leppt_class6', 'xaxis': 'MultiClass_leppt_class6'}
-variables["MultiClass_leppt_class9"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (4, 0.0, 1.0), 'name': 'MultiClass_leppt_class9', 'xaxis': 'MultiClass_leppt_class9'}
+variables["high0p5DNN1leppt2"] = {'fold': 2, 'range': ([0.5, 1.0], [20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 90.0, 100.0, 125.0, 150.0, 575.0, 1000.0]), 'name': 'Lepton_pt[0]:DNNJoined', 'xaxis': 'DNNoutput : p_{T} lepton [GeV]'}
+variables["high0p5DNN1leppt3"] = {'fold': 2, 'range': ([0.5, 1.0], [20.0, 26.0, 28.0, 30.0, 33.0, 37.0, 40.0, 43.0, 46.0, 50.0, 53.0, 56.0, 60.0, 63.0, 66.0, 70.0, 73.0, 76.0, 80.0, 85.0, 92.0, 100.0, 110.0, 130.0, 150.0, 177.0, 230.0, 1000.0]), 'name': 'Lepton_pt[0]:DNNJoined', 'xaxis': 'DNNoutput : p_{T} lepton [GeV]'}
+variables["high0p5DNN1leppt4"] = {'fold': 2, 'range': ([0.5, 1.0], [20.0, 22.5, 25.0, 27.5, 30.0, 32.5, 35.0, 37.5, 40.0, 42.5, 45.0, 47.5, 50.0, 52.5, 55.0, 57.5, 60.0, 62.5, 65.0, 67.5, 70.0, 72.5, 75.0, 77.5, 80.0, 85.0, 90.0, 95.0, 100.0, 112.5, 125.0, 137.5, 150.0, 362.5, 575.0, 787.5, 1000.0]), 'name': 'Lepton_pt[0]:DNNJoined', 'xaxis': 'DNNoutput : p_{T} lepton [GeV]'}
+variables["events"] = {'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
+variables["high0p5events"] = {'fold': 2, 'range': (1, 0.5, 1.0, 1, 0.0, 10000.0), 'name': 'ptjj:DNNJoined', 'xaxis': 'DNNoutput : events [GeV]'}

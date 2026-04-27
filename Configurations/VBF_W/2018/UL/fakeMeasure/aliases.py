@@ -455,3 +455,22 @@ aliases['WJets_reweight_func'] = {
     'samples': ["Wjets_HT"],
     'args': (morphing_file, copy.deepcopy("ele_pol2_HWJ"), copy.deepcopy("mu_pol2_HWJ"))
 } 
+
+#DNNs
+models_path = utils_folder + '2018/NN'
+
+model_ev = models_path+"/"+'64_64_64/SR_RUN2_newWP_ev/'
+transform_ev = model_ev + 'cumulative_signal_2018.root'
+
+model_odd = models_path+"/"+'64_64_64/SR_RUN2_newWP_odd/'
+transform_odd = model_odd + 'cumulative_signal_2018.root'
+
+aliases['DNNJoined'] = {
+    'class': 'MVAReaderDNNnoQGLEvOdd',
+    'args': ( model_ev, transform_ev, model_odd, transform_odd ,False),
+    'linesToAdd':[
+        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+        'gSystem->Load("libDNNEvaluator.so")',
+        '.L {}macros/noQGLmva_reader_DNN_EVODD.cc+'.format(utils_folder)
+    ]
+}

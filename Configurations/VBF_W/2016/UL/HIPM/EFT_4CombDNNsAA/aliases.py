@@ -399,130 +399,130 @@ aliases['DNNJoined'] = {
     ]
 }
 
-#########################################################################################
-weightFile = utils_folder + '2018/PDFs/CMS_SumSquared102.root'
-aliases['PDFweight_ModUp'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, True, False),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-aliases['PDFweight_ModDown'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, False, True),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
+# #########################################################################################
+# weightFile = utils_folder + '2018/PDFs/CMS_SumSquared102.root'
+# aliases['PDFweight_ModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['PDFweight_ModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
 
-#########################################################################################
+# #########################################################################################
 
-weightFile = utils_folder + '2018/PDFs/CMS_SumSquared100.root'
-aliases['PDFweight_100ModUp'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, True, False),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-aliases['PDFweight_100ModDown'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, False, True),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-#########################################################################################
+# weightFile = utils_folder + '2018/PDFs/CMS_SumSquared100.root'
+# aliases['PDFweight_100ModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['PDFweight_100ModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# #########################################################################################
 
-weightFile = utils_folder + '2018/PDFs/CMS_AlphaS.root'
-aliases['PDFweight_AlphaModUp'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, True, False),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-aliases['PDFweight_AlphaModDown'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, False, True),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-#########################################################################################
+# weightFile = utils_folder + '2018/PDFs/CMS_AlphaS.root'
+# aliases['PDFweight_AlphaModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['PDFweight_AlphaModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# #########################################################################################
 
-weightFile = utils_folder + '2018/PDFs/CMS_QCDscale_2D.root'
-aliases['QCDscaleSig_ModUp'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, True, False),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-aliases['QCDscaleSig_ModDown'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, False, True),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-#########################################################################################
+# weightFile = utils_folder + '2018/PDFs/CMS_QCDscale_2D.root'
+# aliases['QCDscaleSig_ModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['QCDscaleSig_ModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# #########################################################################################
 
-weightFile = utils_folder + '2018/PDFs/CMS_PS_FSR_2D.root'
-aliases['FSRSig_ModUp'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, True, False),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-aliases['FSRSig_ModDown'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, False, True),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-#########################################################################################
+# weightFile = utils_folder + '2018/PDFs/CMS_PS_FSR_2D.root'
+# aliases['FSRSig_ModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['FSRSig_ModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# #########################################################################################
 
-weightFile = utils_folder + '2018/PDFs/CMS_PS_ISR_2D.root'
-aliases['ISRSig_ModUp'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, True, False),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-aliases['ISRSig_ModDown'] = {
-    'class': 'PDFsReader',
-    'args': (weightFile, False, True),
-    'linesToAdd' : [
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
-    ] ,
-    'samples': [c for c in signals + mc_eft]
-}
-#########################################################################################
+# weightFile = utils_folder + '2018/PDFs/CMS_PS_ISR_2D.root'
+# aliases['ISRSig_ModUp'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, True, False),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# aliases['ISRSig_ModDown'] = {
+#     'class': 'PDFsReader',
+#     'args': (weightFile, False, True),
+#     'linesToAdd' : [
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         '.L {}/VBF_W/utils/macros/PDFsReader.cc+'.format(configurations)
+#     ] ,
+#     'samples': [c for c in signals + mc_eft]
+# }
+# #########################################################################################

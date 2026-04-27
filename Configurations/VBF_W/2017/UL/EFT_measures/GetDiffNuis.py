@@ -51,7 +51,7 @@ def iterate_histograms(file, directory=None, base_path="", histograms_info=[], s
 
     map = {
         # "pdf_weight": {'source': 'pdf_weight', 'dest': "PDFSF"},
-        # "QCDscale": {'source': 'QCDscale', 'dest': "QCDFSF"},
+        # "QCDscale": {'source': 'QCDscale', 'dest': "QCDSF"},
         # "PS_FSR": {'source': 'PS_FSR', 'dest': "PSFSR"},
         # "PS_ISR": {'source': 'PS_ISR', 'dest': "PSISR"},
         "JESRelativeSample_2017":{'source': 'JESRelativeSample_2017', 'dest': "JESRelativeSample_2017"},
@@ -80,6 +80,7 @@ def iterate_histograms(file, directory=None, base_path="", histograms_info=[], s
                     num = int(obj.GetName().split("Var")[0].split("V")[-1])
                 except ValueError:
                     if "PDFSF" in variation: continue
+                    if "QCDSF" in variation: continue
                     else:
                         if "Down" in obj.GetName():
                             num = -1
@@ -109,12 +110,36 @@ def iterate_histograms(file, directory=None, base_path="", histograms_info=[], s
 
     return histograms_info
 
+
+def process_and_save(df, json_name):
+    # Step 1: Raggruppa per sample, variation, num, sommando histogram
+    grouped = df.groupby(['sample', 'variation', 'num'], as_index=False)['histogram'].sum()
+
+    # Step 2: Estrai nominali
+    nominal = grouped[grouped['variation'] == 'Nominal'].copy()
+    nominal = nominal.rename(columns={'histogram': 'nominal_histogram'})[['sample', 'nominal_histogram']]
+
+    # Step 3: Merge con nominali
+    merged = pd.merge(grouped, nominal, on='sample', how='outer')
+
+    # Step 4: Calcola ratio
+    merged['ratio'] = merged['histogram'] / merged['nominal_histogram']
+
+    # Debug: stampa solo PSFSR
+    print(merged[merged["variation"] == "PSFSR"])
+
+    # Step 5: Filtro per salvare solo le variazioni (escludendo i Nominal)
+    merged_filtered = merged[merged['variation'] != 'Nominal']
+
+    # Step 6: Salva su json
+    save_to_json(merged_filtered, json_name)
+
 if __name__ == '__main__':
     sys.argv = argv
 
     usage = 'usage: %prog [options]'
     parser = optparse.OptionParser(usage)
-    parser.add_option('--file',  dest='FileName'     , help='Path to file with source histos')
+    parser.add_option('--file', dest='FileName'     , help='Path to file with source histos')
 
     (opt, args) = parser.parse_args()
 
@@ -128,24 +153,15 @@ if __name__ == '__main__':
     df_histograms = pd.DataFrame(histograms_info)
     print(df_histograms)
 
-    # Step 1: Raggruppa per `sample`, `variation`, e `num`, sommando i valori di `histogram`
-    grouped = df_histograms.groupby(['sample', 'variation', 'num'], as_index=False)['histogram'].sum()
 
-    # Step 2: Ottieni i valori nominali per ciascun `sample`
-    nominal = grouped[grouped['variation'] == 'Nominal'].copy()
-    nominal = nominal.rename(columns={'histogram': 'nominal_histogram'})[['sample', 'nominal_histogram']]
+    # Step 0: Dividi il dataframe originale in ele e mu usando 'region'
+    df_ele = df_histograms[df_histograms['region'].str.contains('ele', case=False)]
+    df_mu  = df_histograms[df_histograms['region'].str.contains('mu', case=False)]
+    print(df_ele)
 
-    # Step 3: Unisci i valori nominali al gruppo principale
-    merged = pd.merge(grouped, nominal, on='sample', how='outer')
 
-    # Step 4: Calcola il rapporto tra `histogram` e `nominal_histogram`
-    merged['ratio'] = merged['histogram'] / merged['nominal_histogram']
-    print(merged[merged["variation"]== "PSFSR"])
-
-    # Assumiamo che `df_histograms` sia il tuo DataFrame
-    merged_filtered = merged[merged['variation'] != 'Nominal']
-
-    # Chiamata alla funzione per salvare i dati
-    save_to_json(merged_filtered, 'sample_variations_TEST.json')
+    # Processa e salva separatamente
+    process_and_save(df_ele, 'sample_variations_ele.json')
+    process_and_save(df_mu,  'sample_variations_mu.json')
 
 

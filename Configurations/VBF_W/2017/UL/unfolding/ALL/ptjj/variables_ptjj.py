@@ -1,10 +1,5 @@
-variables["events"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
-variables["DNN1ptjj"] = {'fold': 3, 'range': (10, 0.0, 400.0, 5, 0.0, 1.0), 'name': 'DNNoutputSR_noQGL:ptjj', 'xaxis': 'DNNoutput : m_{jj} [GeV]'}
-variables["MultiClass_ptjj_class8"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (4, 0.0, 1.0), 'name': 'MultiClass_ptjj_class8', 'xaxis': 'MultiClass_ptjj_class8'}
-variables["MultiClass_ptjj_class1"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_ptjj_class1', 'xaxis': 'MultiClass_ptjj_class1'}
-variables["MultiClass_ptjj_class3"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_ptjj_class3', 'xaxis': 'MultiClass_ptjj_class3'}
-variables["MultiClass_ptjj_class2"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (10, 0.0, 1.0), 'name': 'MultiClass_ptjj_class2', 'xaxis': 'MultiClass_ptjj_class2'}
-variables["MultiClass_ptjj_class5"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_ptjj_class5', 'xaxis': 'MultiClass_ptjj_class5'}
-variables["MultiClass_ptjj_class4"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (8, 0.0, 1.0), 'name': 'MultiClass_ptjj_class4', 'xaxis': 'MultiClass_ptjj_class4'}
-variables["MultiClass_ptjj_class7"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_ptjj_class7', 'xaxis': 'MultiClass_ptjj_class7'}
-variables["MultiClass_ptjj_class6"] = {'blind': {'ele_SR': 'full', 'mu_SR': 'full'}, 'fold': 3, 'range': (5, 0.0, 1.0), 'name': 'MultiClass_ptjj_class6', 'xaxis': 'MultiClass_ptjj_class6'}
+variables["high0p5DNN1ptjj2"] = {'fold': 2, 'range': ([0.5, 1.0], [0.0, 15.0, 30.0, 40.0, 50.0, 62.5, 75.0, 87.5, 100.0, 115.0, 130.0, 155.0, 180.0, 590.0, 1000.0]), 'name': 'ptjj:DNNJoined', 'xaxis': 'DNNoutput : pT_{jj} [GeV]'}
+variables["high0p5DNN1ptjj"] = {'fold': 2, 'range': ([0.5, 1.0], [0.0, 7.5, 15.0, 22.5, 30.0, 35.0, 40.0, 45.0, 50.0, 56.25, 62.5, 68.75, 75.0, 81.25, 87.5, 93.75, 100.0, 107.5, 115.0, 122.5, 130.0, 142.5, 155.0, 167.5, 180.0, 385.0, 590.0, 795.0, 1000.0]), 'name': 'ptjj:DNNJoined', 'xaxis': 'DNNoutput : pT_{jj} [GeV]'}
+variables["events"] = {'fold': 3, 'range': (1, 0, 2), 'name': '1', 'xaxis': 'events'}
+variables["high0p5DNN1ptjj3"] = {'fold': 2, 'range': ([0.5, 1.0], [0.0, 15.0, 20.0, 30.0, 36.667, 43.333, 50.0, 58.333, 66.667, 75.0, 84.333, 91.667, 100.0, 110.0, 120.0, 130.0, 146.667, 163.333, 180.0, 229.0, 300.0, 10000.0]), 'name': 'ptjj:DNNJoined', 'xaxis': 'DNNoutput : pT_{jj} [GeV]'}
+variables["high0p5events"] = {'fold': 2, 'range': (1, 0.5, 1.0, 1, 0.0, 10000.0), 'name': 'ptjj:DNNJoined', 'xaxis': 'DNNoutput : events [GeV]'}

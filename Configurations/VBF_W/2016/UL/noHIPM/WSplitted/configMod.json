@@ -1,0 +1,37 @@
+
+{  "file": "/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/2016/rootFile/noHIPM_charge_final_v2/fixed_plots_vbf_w_2016noHIPM_charge_final_v2.root",
+  "operations": [
+    {
+      "regions": ["ele_HWJ_minus"],
+      "samples": ["Wjets_HT_hardJets"],
+      "vars": ["highDNN0p5events"],
+      "action": {
+        "applySF": 3.0
+      }
+    },
+    {
+      "regions": ["mu_HWJ_minus"],
+      "samples": ["Wjets_HT_hardJets"],
+      "vars": ["highDNN0p5events"],
+      "action": {
+        "applySF": {
+        "measureFrom": "mu_HWJ_plus",
+        "mode": "integral",
+        "comment": "This was 0.5 ish"
+        }
+      }
+    },
+    {
+      "regions": ["mu_SR_minus"],
+      "samples": ["Wjets_HT_PUJets"],
+      "vars": ["DNN0p5Joined10"],
+      "action": {
+        "applySF": {
+        "measureFrom": "mu_SR_plus",
+        "mode": "integral",
+        "comment": "This was small i.e. 0.08. maybe also removed Wjet PU from HWJ CR ma non serve a niente, come mettere prior gaussiani.."
+        }
+      }
+    }
+  ]
+}

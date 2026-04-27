@@ -1,0 +1,197 @@
+['CMS_res_j_2016_UL', 'CMS_scale_JESAbsolute', 'CMS_scale_JESBBEC1_2016', 'CMS_scale_JESEC2_2016', 'CMS_btag_jes', 'CMS_scale_met_2016HIPM_Wjets_HT_PUJets_norm_UL_ele', 'CMS_scale_JESBBEC1', 'CMS_scale_met_2016HIPM_Wjets_HT_hardJets_norm_UL_ele', 'CMS_scale_met_2016_UL', 'CMS_scale_met_2016HIPM_Wjets_HT_PUJets_norm_UL_mu', 'CMS_scale_JESAbsolute_2016', 'CMS_scale_JESHF_2016', 'CMS_scale_JESHF', 'CMS_scale_e_2016', 'CMS_scale_met_2016HIPM_top_norm_UL_ele', 'CMS_scale_met_2016HIPM_Wjets_HT_hardJets_norm_UL_mu', 'CMS_scale_JESEC2', 'CMS_scale_met_2016HIPM_top_norm_UL_mu', 'CMS_PS_FSR_dipole']
+[DEBUG] Trovati 11 sistematiche per 'Wjets_HT_hardJets' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 11 sistematiche per 'Wjets_HT_PUJets' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 11 sistematiche per 'top' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'top' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.052)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'top' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.086)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'top' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.068)
+[DEBUG] Trovati 11 sistematiche per 'DY_M-50' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'DY_M-50' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.045)
+[DEBUG] Trovati 11 sistematiche per 'DY_else' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'DY_else' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.020)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'DY_else' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.076)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'DY_else' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.076)
+[DEBUG] Trovati 12 sistematiche per 'sm' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'sm' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.053)
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.026)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.066)
+[DEBUG] Trovati 0 sistematiche per 'Fake' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 12 sistematiche per 'sm_lin_quad_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.067)
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.026)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'sm_lin_quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.045)
+[DEBUG] Trovati 12 sistematiche per 'quad_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.080)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.039)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.021)
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.017)
+ [-] PRUNED 'CMS_res_j_2016_UL' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.079)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.079)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.016)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cW' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.013)
+[DEBUG] Trovati 12 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'sm_lin_quad_mixed_cW_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.063)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_mixed_cW_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.066)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'sm_lin_quad_mixed_cW_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.045)
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_mixed_cW_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.026)
+[DEBUG] Trovati 12 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_mixed_cW_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.026)
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'sm_lin_quad_mixed_cW_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.063)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_mixed_cW_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.065)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'sm_lin_quad_mixed_cW_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.044)
+[DEBUG] Trovati 12 sistematiche per 'sm_lin_quad_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.026)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.064)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'sm_lin_quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.052)
+[DEBUG] Trovati 12 sistematiche per 'quad_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+ [-] PRUNED 'CMS_res_j_2016_UL' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.020)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2016' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_scale_met_2016_UL' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.005)
+ [-] PRUNED 'CMS_PS_FSR_dipole' for sample 'quad_cHDD' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+[DEBUG] ❌ Istogramma nominale 'mu_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHDD_cW' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHDD_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 12 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.026)
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.055)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.062)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.050)
+[DEBUG] Trovati 12 sistematiche per 'sm_lin_quad_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'sm_lin_quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.054)
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.026)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.063)
+[DEBUG] Trovati 12 sistematiche per 'quad_cHWB' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.005)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.013)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+ [-] PRUNED 'CMS_PS_FSR_dipole' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.013)
+ [-] PRUNED 'CMS_scale_met_2016_UL' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.012)
+ [-] PRUNED 'CMS_res_j_2016_UL' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.006)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.013)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2016' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.011)
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'quad_cHWB' in mu_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+[DEBUG] ❌ Istogramma nominale 'mu_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHWB_cW' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHWB_cW' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ Istogramma nominale 'mu_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHWB_cHDD' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHWB_cHDD' in 'mu_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 12 sistematiche per 'Wjets_HT_hardJets' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_e_2016' for sample 'Wjets_HT_hardJets' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.091)
+[DEBUG] Trovati 12 sistematiche per 'Wjets_HT_PUJets' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'Wjets_HT_PUJets' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [-] PRUNED 'CMS_scale_e_2016' for sample 'Wjets_HT_PUJets' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.008)
+[DEBUG] Trovati 12 sistematiche per 'top' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'top' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.073)
+ [-] PRUNED 'CMS_scale_e_2016' for sample 'top' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.021)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'top' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.077)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'top' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.071)
+[DEBUG] Trovati 12 sistematiche per 'DY_M-50' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'DY_M-50' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.035)
+[DEBUG] Trovati 12 sistematiche per 'DY_else' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'DY_else' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+[DEBUG] Trovati 13 sistematiche per 'sm' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'sm' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.072)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'sm' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.061)
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.058)
+[DEBUG] Trovati 0 sistematiche per 'Fake' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'sm_lin_quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.097)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'sm_lin_quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.062)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.057)
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.018)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'sm_lin_quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.064)
+[DEBUG] Trovati 13 sistematiche per 'quad_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.058)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.052)
+ [-] PRUNED 'CMS_scale_e_2016' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.070)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.042)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2016' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.069)
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.023)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.007)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cW' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.025)
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_mixed_cW_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'sm_lin_quad_mixed_cW_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.061)
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'sm_lin_quad_mixed_cW_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.067)
+ [-] PRUNED 'CMS_scale_e_2016' for sample 'sm_lin_quad_mixed_cW_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.058)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_mixed_cW_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.057)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'sm_lin_quad_mixed_cW_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.062)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'sm_lin_quad_mixed_cW_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.094)
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_mixed_cW_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_mixed_cW_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_mixed_cW_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'sm_lin_quad_mixed_cW_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.066)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'sm_lin_quad_mixed_cW_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.094)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_mixed_cW_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.057)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'sm_lin_quad_mixed_cW_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.060)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'sm_lin_quad_mixed_cW_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.060)
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'sm_lin_quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.060)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.057)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'sm_lin_quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.062)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'sm_lin_quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.097)
+ [-] PRUNED 'CMS_scale_e_2016' for sample 'sm_lin_quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.042)
+[DEBUG] Trovati 13 sistematiche per 'quad_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_res_j_2016_UL' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.012)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2016' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [-] PRUNED 'CMS_scale_e_2016' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [-] PRUNED 'CMS_scale_met_2016_UL' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [-] PRUNED 'CMS_PS_FSR_dipole' for sample 'quad_cHDD' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.003)
+[DEBUG] ❌ Istogramma nominale 'ele_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHDD_cW' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHDD_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_mixed_cHDD_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.059)
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.020)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.091)
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.064)
+ [-] PRUNED 'CMS_scale_e_2016' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.042)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.057)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'sm_lin_quad_mixed_cHDD_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.060)
+[DEBUG] Trovati 13 sistematiche per 'sm_lin_quad_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'sm_lin_quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.066)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'sm_lin_quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.059)
+ [-] PRUNED 'CMS_btag_jes' for sample 'sm_lin_quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.019)
+ [-] PRUNED 'CMS_scale_e_2016' for sample 'sm_lin_quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.040)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'sm_lin_quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.057)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'sm_lin_quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.092)
+[DEBUG] Trovati 13 sistematiche per 'quad_cHWB' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+ [-] PRUNED 'CMS_scale_e_2016' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+ [-] PRUNED 'CMS_scale_JESBBEC1_2016' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.005)
+ [-] PRUNED 'CMS_btag_jes' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.000)
+ [-] PRUNED 'CMS_scale_JESHF' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.009)
+ [-] PRUNED 'CMS_scale_JESBBEC1' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.001)
+ [-] PRUNED 'CMS_scale_JESEC2' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_scale_JESHF_2016' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.002)
+ [-] PRUNED 'CMS_PS_FSR_dipole' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.014)
+ [-] PRUNED 'CMS_scale_met_2016_UL' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.012)
+ [-] PRUNED 'CMS_res_j_2016_UL' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.007)
+ [-] PRUNED 'CMS_scale_JESAbsolute' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.010)
+ [-] PRUNED 'CMS_scale_JESAbsolute_2016' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.009)
+ [-] PRUNED 'CMS_scale_JESEC2_2016' for sample 'quad_cHWB' in ele_SR/DNNJoinedDphijet1jet2PU2 (max variation: 0.004)
+[DEBUG] ❌ Istogramma nominale 'ele_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHWB_cW' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHWB_cW' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+[DEBUG] ❌ Istogramma nominale 'ele_SR/DNNJoinedDphijet1jet2PU2/histo_sm_lin_quad_mixed_cHWB_cHDD' non trovato.
+[DEBUG] Trovati 0 sistematiche per 'sm_lin_quad_mixed_cHWB_cHDD' in 'ele_SR/DNNJoinedDphijet1jet2PU2'
+All done. Changes saved to: ../../../rootFile/HIPMEFT_4Comb_final_v3/Symplots_vbf_w_2016HIPMEFT_4Comb_final_v3.root

@@ -11,6 +11,8 @@ supercut = 'nLepton>=1 && (Alt$(Lepton_pt[0],0) > 30.) \
             && ((Alt$(abs(CleanJet_eta[1]), 3) <2.5) || (Alt$(abs(CleanJet_eta[1]), 0) > 3.))\
             && (Alt$(CleanJet_pt[1], 0) > 30.) \
             && (Alt$(CleanJet_pt[0],0) > 40.) \
+            && (Alt$(abs(CleanJet_eta[0]), 5) <4.7) \
+            && (Alt$(abs(CleanJet_eta[1]), 5) <4.7) \
             && (mjj >= 400.) \
             && (detajj > 2.) \
             && (Alt$(Lepton_eta[0],-3) > -2.) \

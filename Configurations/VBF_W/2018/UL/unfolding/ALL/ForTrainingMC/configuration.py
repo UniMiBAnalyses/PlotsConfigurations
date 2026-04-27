@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'TrainingMC'
+tagger = 'TrainingMC_newWP_geninfo_v10'
 
 tag = 'vbf_w_2018'+tagger
 

@@ -4,7 +4,7 @@ treeName = 'Events'
 fixSuffix = 'allsig'
 pretag = 'noHIPM'
 
-tagger = pretag+'unfolding_final'
+tagger = pretag+'unfolding_final_v11'
 
 tagger += "_"+fixSuffix
 tag = 'vbf_w_2016'+tagger
@@ -26,7 +26,7 @@ cutsFile = 'cuts.py'
 samplesFile = 'samples.py' 
 
 # file with list of samples
-plotFile = 'plot.py' 
+plotFile = '../plot.py' 
 
 # luminosity to normalize to (in 1/fb)
 lumi = 16.81

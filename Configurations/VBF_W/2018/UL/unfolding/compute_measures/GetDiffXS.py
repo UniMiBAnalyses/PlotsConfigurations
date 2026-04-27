@@ -8,7 +8,7 @@ import ROOT
 import optparse
 
 
-def compute_var_info(num):
+def compute_var_info(num,den):
     XS = 39.04 + 32.17
 
     n = num.GetBinContent(1)
@@ -54,7 +54,7 @@ if __name__ == '__main__':
     parser = optparse.OptionParser(usage)
     parser.add_option('--file',  dest='FileName'     , help='Path to file with source histos')
     parser.add_option('--den' ,  dest='den'          , help='name of the histogram with no gen_bin selection', default="TOT")
-    parser.add_option('--variables' , dest='variables'         , help='Path to variables.py for bin definition', default="../opt_binning/variables_flatS_8.py")
+    parser.add_option('--variables' , dest='variables'         , help='Path to variables.py for bin definition', default="../opt_binning/variables_semiflat.py")
 
     (opt, args) = parser.parse_args()
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     print(selected_keys)
     for var in selected_keys:
         num = sourceFile.Get(var + "/events/histo_WLNuJJ")
-        xs, err = compute_var_info(num)
+        xs, err = compute_var_info(num,den)
         _min,_max = compute_ranges(variables,var)
         
         var_parts = var.split("_bin")
@@ -101,10 +101,21 @@ if __name__ == '__main__':
         data_dict[var_parts[0]]["bin" + var_parts[1]]["min"] = _min
         data_dict[var_parts[0]]["bin" + var_parts[1]]["max"] = _max
 
+    # # for var in ["fiducial"]:
+    # for var in ["LHESEL", "LHESEL_PLUS", "LHESEL_MINUS"]:
+    #     num = sourceFile.Get(var + "/events/histo_WLNuJJ")
+    #     xs, err = compute_var_info(num,den)
+    #     # _min,_max = compute_ranges(variables,var)
+        
+    #     data_dict.setdefault(var, {})
+    #     data_dict[var]["XS"] = xs
+    #     data_dict[var]["XS_err"] = err
+    #     data_dict[var]["min"] = _min
+    #     data_dict[var]["max"] = _max
 
     import json
     # Scrivi il dizionario ordinato in un file JSON
-    with open('semiDEF.json', 'w') as json_file:
+    with open('XS_v10.json', 'w') as json_file:
         json.dump(data_dict, json_file, indent=4, sort_keys=True)
 
 

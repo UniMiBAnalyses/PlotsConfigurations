@@ -35,7 +35,20 @@ var = [
     'R',
     'Zl1',
     'QGL1',
-    'QGL2'
+    'QGL2',
+    'nCleanJet30',
+    'detajj_gen',
+    'Dphijet1jet2_gen',
+    'jeteta1_gen_abs',
+    'CleanGenJet_pt1',
+    'jeteta2_gen_abs',
+    'CleanGenJet_pt2',
+    'lepeta_gen_abs',
+    'DressedLepton_pt1',
+    'mjj_gen',
+    'nCleanGenJet20',
+    'ptW_gen',
+    'ptjj_gen',
 ]
 
 
@@ -56,10 +69,14 @@ all_var['puppimet_phi'] =  'PuppiMET_phi'
 all_var['R'] = 'R_AN'
 all_var['QGL1'] = 'Jet_qgl[0]'
 all_var['QGL2'] = 'Jet_qgl[1]'
+all_var['CleanGenJet_pt1'] = 'CleanGenJet_pt[0]'
+all_var['CleanGenJet_pt2'] = 'CleanGenJet_pt[1]'
+all_var['DressedLepton_pt1'] = 'DressedLepton_pt[0]'
 
 
 
 variables['dnn_inputs_all'] = {
     'tree': all_var,
-    'cuts' : ['ele_SR', 'mu_SR']
+    # 'cuts' : ['ele_SR', 'mu_SR']
+    'cuts' : ['SR']
 }

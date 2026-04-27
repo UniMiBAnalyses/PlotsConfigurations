@@ -8,6 +8,7 @@ conf_folder = configurations +"/VBF_W/2016/"
 utils_folder = configurations +"/VBF_W/utils/"
 
 signals = [c for c in samples if "WLNuJJ" in c and "Out" not in c]
+out = [c for c in samples if "WLNuJJ" in c and "Out" in c]
 #aliases = {}
 
 mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
@@ -16,6 +17,15 @@ mc = [skey for skey in samples if skey not in ('Fake', 'DATA')]
 
 aliases['zeroJet'] = {
     'expr': 'Alt$(CleanJet_pt[0], 0) < 30.'
+}
+
+aliases['nCleanGenJet20'] = {
+    'expr': 'Sum$(CleanGenJet_pt > 20.)',
+    'samples': signals + out
+}
+
+aliases['nCleanJet30'] = {
+    'expr': 'Sum$(CleanJet_pt > 30.)',
 }
 
 #####################################
@@ -39,12 +49,12 @@ aliases ['y_ptl1'] = {
 ############# L1 GEN ###########
 aliases ['x_ptl1_gen'] = {
     'expr': 'Alt$(DressedLepton_pt[0],-9999.) * TMath::Cos(Alt$(DressedLepton_phi[0],-9999.))',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases ['y_ptl1_gen'] = {
     'expr': 'Alt$(DressedLepton_pt[0],-9999.) * TMath::Sin(Alt$(DressedLepton_phi[0],-9999.))',
-    'samples' : signals
+    'samples': signals + out
 }
 
 ############# J1, J2 ###########
@@ -77,12 +87,12 @@ aliases ['y_ptMET'] = {
 ########## NEUTRINO GEN ############
 aliases ['x_ptMET_gen'] = {
     'expr': 'NeutrinoGen_pt * TMath::Cos(NeutrinoGen_phi)',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases ['y_ptMET_gen'] = {
     'expr': 'NeutrinoGen_pt * TMath::Sin(NeutrinoGen_phi)',
-    'samples' : signals
+    'samples': signals + out
 }
 
 
@@ -102,17 +112,17 @@ aliases['ptW'] = {
 ########### W (L1+MET) GEN ###########
 aliases['x_ptW_gen'] = {
     'expr': 'x_ptl1_gen + x_ptMET_gen',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases['y_ptW_gen'] = {
     'expr': 'y_ptl1_gen + y_ptMET_gen',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases['ptW_gen'] = {
     'expr': 'TMath::Sqrt(x_ptW_gen*x_ptW_gen + y_ptW_gen*y_ptW_gen)',
-    'samples' : signals
+    'samples': signals + out
 }
 
 #############  R from AN ##############
@@ -153,17 +163,17 @@ aliases['lepeta_abs']  = {
 
 aliases['jeteta1_gen_abs'] = {
     'expr': 'TMath::Abs(Alt$(CleanGenJet_eta[0],-9999.))',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases['jeteta2_gen_abs'] = {
     'expr': 'TMath::Abs(Alt$(CleanGenJet_eta[1],-9999.))',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases['lepeta_gen_abs'] = {
     'expr': 'TMath::Abs(Alt$(DressedLepton_eta[0],-9999.))',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases['CleanJet1_px'] = {
@@ -188,27 +198,27 @@ aliases['ptjj'] = {
 
 aliases['CleanGenJet1_px'] = {
     'expr': 'Alt$(CleanGenJet_pt[0],-9999.) * TMath::Cos(Alt$(CleanGenJet_phi[0],-9999.))',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases['CleanGenJet1_py'] = {
     'expr': 'Alt$(CleanGenJet_pt[0],-9999.) * TMath::Sin(Alt$(CleanGenJet_phi[0],-9999.))',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases['CleanGenJet2_px'] = {
     'expr': 'Alt$(CleanGenJet_pt[1],-9999.) * TMath::Cos(Alt$(CleanGenJet_phi[1],-9999.))',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases['CleanGenJet2_py'] = {
     'expr': 'Alt$(CleanGenJet_pt[1],-9999.) * TMath::Sin(Alt$(CleanGenJet_phi[1],-9999.))',
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases['ptjj_gen'] = {
     'expr': 'TMath::Sqrt(( (CleanGenJet1_px + CleanGenJet2_px)**2 + (CleanGenJet1_py + CleanGenJet2_py)**2 ))',
-    'samples' : signals
+    'samples': signals + out
 }
 
 ############ DELTAPHI #####################
@@ -222,10 +232,15 @@ aliases['Dphijet2met'] = {
     # 'expr' : '(CleanJet_phi[1] - PuppiMET_phi) * (abs(CleanJet_phi[1] - PuppiMET_phi) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[1] - PuppiMET_phi)) * (abs(CleanJet_phi[1] - PuppiMET_phi) >= 3.1415)'
 } 
 
-aliases['Dphijet1jet2'] = {
-    'expr' : 'abs(CleanJet_phi[0] - CleanJet_phi[1]) * (abs(CleanJet_phi[0] - CleanJet_phi[1]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - CleanJet_phi[1])) * (abs(CleanJet_phi[0] - CleanJet_phi[1]) >= 3.1415)'
-    # 'expr' : '(CleanJet_phi[0] - CleanJet_phi[1]) * (abs(CleanJet_phi[0] - CleanJet_phi[1]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - CleanJet_phi[1])) * (abs(CleanJet_phi[0] - CleanJet_phi[1]) >= 3.1415)'
-} 
+aliases['Dphijet1jet2'] = {    
+    'expr': 'abs((CleanJet_phi[0] - CleanJet_phi[1]) - 2*3.1415*((CleanJet_phi[0] - CleanJet_phi[1]) > 3.1415) + 2*3.1415*((CleanJet_phi[0] - CleanJet_phi[1]) < -3.1415))'
+    # 'expr': '(CleanJet_phi[0] - CleanJet_phi[1]) - 2*3.1415*((CleanJet_phi[0] - CleanJet_phi[1]) > 3.1415) + 2*3.1415*((CleanJet_phi[0] - CleanJet_phi[1]) < -3.1415)'
+}
+
+aliases['Dphijet1jet2_gen'] = {    
+    'expr': 'abs((CleanGenJet_phi[0] - CleanGenJet_phi[1]) - 2*3.1415*((CleanGenJet_phi[0] - CleanGenJet_phi[1]) > 3.1415) + 2*3.1415*((CleanGenJet_phi[0] - CleanGenJet_phi[1]) < -3.1415))',
+    'samples': signals + out
+}
 
 aliases['Dphilep1jet1'] = {
     'expr' : 'abs(CleanJet_phi[0] - Lepton_phi[0]) * (abs(CleanJet_phi[0] - Lepton_phi[0]) < 3.1415) + (2*3.1415 - abs(CleanJet_phi[0] - Lepton_phi[0])) * (abs(CleanJet_phi[0] - Lepton_phi[0]) >= 3.1415)'
@@ -319,12 +334,12 @@ for s in systs:
 
 aliases['hardJets'] = {
     'expr':  'Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10',
-    'samples': ['Wjets_HT_hardJets','Wjets_HT_PUJets']
+    'samples': ['Wjets_HT_hardJets', 'Wjets_HT_PUJets']
 }
 
 aliases['PUJets'] = {
     'expr':  '!(Jet_genJetIdx[CleanJet_jetIdx[0]] >= 0 && Jet_genJetIdx[CleanJet_jetIdx[1]] >= 0 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[0]]] > 10 && GenJet_pt[Jet_genJetIdx[CleanJet_jetIdx[1]]] > 10)',
-    'samples': ['Wjets_HT_hardJets','Wjets_HT_PUJets']
+    'samples': ['Wjets_HT_hardJets', 'Wjets_HT_PUJets']
 }
 
 ###################################
@@ -381,14 +396,14 @@ aliases['Top_pTrw'] = {
 
 ##############################################
 
-basedir_fakes = configurations + "/VBF_W/utils/2016/noHIPM/fakes/HLTMC_highPT"
+basedir_fakes = configurations + "/VBF_W/utils/2016/noHIPM/fakes/HLTMC_highPT_newWP"
 
-el_pr_file = basedir_fakes + "/PR_eleDATA_.root"
-mu_pr_file = basedir_fakes + "/PR_muDATA_.root"
+el_pr_file = basedir_fakes + "/PR_eleDATA.root"
+mu_pr_file = basedir_fakes + "/PR_muDATA.root"
 
-el_fr_file = basedir_fakes + "/FR_ele1p3_.root"
-mu_fr_file = basedir_fakes + "/FR_mu1p3_.root"
-aliases['fakeWeight_1p3'] = { 
+el_fr_file = basedir_fakes + "/FR_ele0p9.root"
+mu_fr_file = basedir_fakes + "/FR_mu0p9.root"
+aliases['fakeWeight_0p9'] = { 
     'class': 'newFakeWeightOTFall',
     'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, False),  #doabsEta=True (weights files have only positive value for eta), no stat variations, no PromtRate shifting
     'linesToAdd' : [
@@ -409,19 +424,10 @@ aliases['fakeWeight_statDo'] = {
         'samples': ["Fake"]
 }
 
-el_pr_file = basedir_fakes + "/PR_eleMC_.root"
-mu_pr_file = basedir_fakes + "/PR_muMC_.root"
-aliases['fakeWeight_PRfromMC'] = { 
-        'class': 'newFakeWeightOTFall',
-        'args': (eleWP, muWP, copy.deepcopy(el_fr_file), copy.deepcopy(el_pr_file), copy.deepcopy(mu_fr_file), copy.deepcopy(mu_pr_file), False, False, False, True), 
-        'samples': ["Fake"]
-}
 
-el_pr_file = basedir_fakes + "/PR_eleDATA_.root"
-mu_pr_file = basedir_fakes + "/PR_muDATA_.root"
-for ewk_sf in ["1p4","1p2"]:
-    el_fr_file = basedir_fakes + "/FR_ele{}_.root".format(ewk_sf)
-    mu_fr_file = basedir_fakes + "/FR_mu{}_.root".format(ewk_sf)
+for ewk_sf in ["0p9Down","0p9Up"]:
+    el_fr_file = basedir_fakes + "/FR_ele{}.root".format(ewk_sf)
+    mu_fr_file = basedir_fakes + "/FR_mu{}.root".format(ewk_sf)
 
     aliases['fakeWeight_{}'.format(ewk_sf)] = { 
             'class': 'newFakeWeightOTFall',
@@ -454,7 +460,7 @@ aliases['QCDscale_normalized'] = {
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
         '.L {}/VBF_W/utils/macros/QCDscale_normalize.cc+'.format(configurations)
     ] ,
-    'samples' : signals
+    'samples': signals + out
 }
 
 aliases['PDFweight_normalized'] = {
@@ -464,13 +470,13 @@ aliases['PDFweight_normalized'] = {
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
         '.L {}/VBF_W/utils/macros/PDFweight_normalize.cc+'.format(configurations)
     ] ,
-    'samples' : signals
+    'samples': signals + out
 }
 
 
 aliases['lhe_mjj'] = {
     'expr': 'TMath::Sqrt(2. * LHEPart_pt[4] * LHEPart_pt[5] * (TMath::CosH(LHEPart_eta[4] - LHEPart_eta[5]) - TMath::Cos(LHEPart_phi[4] - LHEPart_phi[5])))',
-    'samples': ['VBF-Z']
+    'samples': ['VBF-Z','Others']
 }
 
 
@@ -509,14 +515,19 @@ aliases['WJets_reweight_func'] = {
 
 # DNN
 models_path = utils_folder + '2018/NN'
-model_best = '64_64_64/noQGL_test/4/'
 
-aliases['DNNoutputSR_noQGL'] = {
-    'class': 'MVAReaderDNNnoQGL',
-    'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
+model_ev = models_path+"/"+'64_64_64/SR_RUN2_newWP_ev/'
+transform_ev = model_ev + 'cumulative_signal_2018.root'
+
+model_odd = models_path+"/"+'64_64_64/SR_RUN2_newWP_odd/'
+transform_odd = model_odd + 'cumulative_signal_2018.root'
+
+aliases['DNNJoined'] = {
+    'class': 'MVAReaderDNNnoQGLEvOdd',
+    'args': ( model_ev, transform_ev, model_odd, transform_odd ,False),
     'linesToAdd':[
         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
         'gSystem->Load("libDNNEvaluator.so")',
-        '.L {}macros/noQGLmva_reader_DNN.cc+'.format(utils_folder)
+        '.L {}macros/noQGLmva_reader_DNN_EVODD.cc+'.format(utils_folder)
     ]
 }

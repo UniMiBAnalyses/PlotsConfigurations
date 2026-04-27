@@ -1,0 +1,1054 @@
+subject   : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=abulla/CN=857947/CN=Andrea Bulla/CN=1678636450
+issuer    : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=abulla/CN=857947/CN=Andrea Bulla
+identity  : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=abulla/CN=857947/CN=Andrea Bulla
+type      : RFC3820 compliant impersonation proxy
+strength  : 512
+path      : /afs/cern.ch/user/a/abulla/.proxy
+timeleft  : 00:00:00
+key usage : Digital Signature, Key Encipherment
+Current directory: /tmp
+Contents of /tmp:
+total 0
+drwxr-xr-x. 2 abulla zh 10 Feb 17 12:54 hsperfdata_abulla
+total 14352
+-rwxr-xr-x. 1 abulla zh    27525 Feb 17 12:54 SymmetrizeByHand.py
+-rw-r--r--. 1 abulla zh 14610002 Feb 17 12:54 fixed_plots_vbf_w_2016HIPM_final_v6.root
+drwxr-xr-x. 2 abulla zh       10 Feb 17 12:54 hsperfdata_abulla
+-rw-r--r--. 1 abulla zh    20955 Feb 17 12:54 nuisances.py
+-rw-r--r--. 1 abulla zh    30319 Feb 17 12:54 samples.py
+[INFO] Scriverò direttamente nel file: /tmp/fixed_plots_vbf_w_2016HIPM_final_v6.root
+[INFO] Trovati 140 task da eseguire.
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_topcr/highDNN0p5events'
+[INFO] fix_empty: symmetrized/clamped for pdf_weight_Wjets_HT_PUJets Wjets_HT_PUJets in ele_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'ele_topcr/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_topcr/highDNN0p5events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_topcr/highDNN0p5events'
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'ele_topcr/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_topcr/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_topcr/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_topcr/highDNN0p5events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_topcr/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'ele_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_topcr/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_topcr/events'
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_fake_stat_e_2016_HIPM Fake in ele_topcr/events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for VBFW_fake_e_EWKsub_2016_HIPM Fake in ele_topcr/events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'ele_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_topcr/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_HWJ/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'mu_HWJ/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_HWJ/highDNN0p5events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_HWJ/highDNN0p5events'
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_fake_stat_m_2016_HIPM Fake in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for VBFW_fake_m_EWKsub_2016_HIPM Fake in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'mu_HWJ/highDNN0p5events'
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESBBEC1 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESEC2 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESFlavorQCD WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_jes WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PS_FSR_dipole_accept_WLNuJJ WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hfstats2_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for pdf_weight_WLNuJJ_accept WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESAbsolute_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_jetpuid_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_m_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PS_ISR_dipole_accept_WLNuJJ WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_met_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for QCDscale_WLNuJJ_accept WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_prefiring_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESEC2_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESHF WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lf WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_trigger_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_m_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lfstats2_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESAbsolute WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESBBEC1_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESRelativeSample_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PU_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lfstats1_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_cferr1 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_cferr2 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hf WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_res_j_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESRelativeBal WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hfstats1_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESHF_2016 WLNuJJ in mu_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_HWJ/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_HWJ/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_HWJ/highDNN0p5events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_HWJ/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'mu_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_HWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_HWJ/events'
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'mu_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_HWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'mu_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_PUWJ/highDNN0p5events'
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'mu_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'mu_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_PUWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_PUWJ/events'
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'mu_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_PUWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_SR/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'mu_SR/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_SR/highDNN0p5events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_SR/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_SR/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_SR/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_SR/highDNN0p5events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_SR/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_SR/DNN0p5Joined10'
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESBBEC1 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESEC2 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PS_ISR Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESFlavorQCD Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hfstats2_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for QCDscale_Wjets_HT_PUJets Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESAbsolute_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_jetpuid_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PS_FSR Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_m_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_jes Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lf Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESEC2_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_met_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for pdf_weight_Wjets_HT_PUJets Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PU_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lfstats2_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_m_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_prefiring_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_trigger_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESAbsolute Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESBBEC1_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESRelativeSample_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lfstats1_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_cferr1 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_cferr2 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESHF Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_res_j_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESRelativeBal Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hf Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hfstats1_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESHF_2016 Wjets_HT_PUJets in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'mu_SR/DNN0p5Joined10'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_SR/DNN0p5Joined10'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_SR/DNN0p5Joined10'
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_fake_stat_m_2016_HIPM Fake in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for VBFW_fake_m_EWKsub_2016_HIPM Fake in mu_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_SR/DNN0p5Joined10'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_SR/DNN0p5Joined10'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_SR/DNN0p5Joined10'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_SR/DNN0p5Joined10'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_SR/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'ele_SR/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_SR/highDNN0p5events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_SR/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_SR/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_SR/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_SR/highDNN0p5events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_SR/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_SR/DNN0p5Joined10'
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESBBEC1 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESEC2 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PS_ISR Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESFlavorQCD Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_jes Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hfstats2_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for QCDscale_Wjets_HT_PUJets Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESAbsolute_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_jetpuid_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_e_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_met_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lf Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESEC2_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESHF Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for pdf_weight_Wjets_HT_PUJets Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PU_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lfstats2_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_prefiring_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_trigger_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESAbsolute Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_e_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESBBEC1_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESRelativeSample_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PS_FSR Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lfstats1_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_cferr1 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_cferr2 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hf Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_res_j_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESRelativeBal Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hfstats1_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESHF_2016 Wjets_HT_PUJets in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'ele_SR/DNN0p5Joined10'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_SR/DNN0p5Joined10'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_SR/DNN0p5Joined10'
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_fake_stat_e_2016_HIPM Fake in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for VBFW_fake_e_EWKsub_2016_HIPM Fake in ele_SR/DNN0p5Joined10
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_SR/DNN0p5Joined10'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_SR/DNN0p5Joined10'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_SR/DNN0p5Joined10'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_SR/DNN0p5Joined10'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_topcr/highDNN0p5events'
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESBBEC1 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESEC2 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PS_ISR Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESFlavorQCD Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hfstats2_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for QCDscale_Wjets_HT_PUJets Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESAbsolute_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_jetpuid_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PS_FSR Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_m_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_jes Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lf Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESEC2_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_met_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for pdf_weight_Wjets_HT_PUJets Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PU_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lfstats2_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_m_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_prefiring_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_trigger_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESAbsolute Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESBBEC1_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESRelativeSample_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lfstats1_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_cferr1 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_cferr2 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESHF Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_res_j_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESRelativeBal Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hf Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hfstats1_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESHF_2016 Wjets_HT_PUJets in mu_topcr/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'mu_topcr/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_topcr/highDNN0p5events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_topcr/highDNN0p5events'
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'mu_topcr/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_topcr/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_topcr/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_topcr/highDNN0p5events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_topcr/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'mu_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'mu_topcr/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'mu_topcr/events'
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_m_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'mu_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'mu_topcr/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'mu_topcr/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'mu_topcr/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'mu_topcr/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_HWJ/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'ele_HWJ/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_HWJ/highDNN0p5events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_HWJ/highDNN0p5events'
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'ele_HWJ/highDNN0p5events'
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESBBEC1 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESEC2 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESFlavorQCD WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_jes WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PS_FSR_dipole_accept_WLNuJJ WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hfstats2_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for pdf_weight_WLNuJJ_accept WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESAbsolute_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_jetpuid_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_e_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PS_ISR_dipole_accept_WLNuJJ WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_met_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for QCDscale_WLNuJJ_accept WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_prefiring_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESEC2_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESHF WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lf WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_eff_trigger_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lfstats2_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESAbsolute WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_e_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESBBEC1_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESRelativeSample_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_PU_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_lfstats1_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_cferr1 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_cferr2 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hf WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_res_j_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESRelativeBal WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_btag_hfstats1_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[WARNING] nominale <=0 -> 1e-6
+[INFO] fix_empty: symmetrized/clamped for CMS_scale_JESHF_2016 WLNuJJ in ele_HWJ/highDNN0p5events
+[DEBUG] ✔️ Nuovi contenuti calcolati. Scrittura nuovi istogrammi...
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_HWJ/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_HWJ/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_HWJ/highDNN0p5events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_HWJ/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'ele_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_HWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_HWJ/events'
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'ele_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_HWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_HWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_HWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_HWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'ele_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_PUWJ/highDNN0p5events'
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'ele_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_PUWJ/highDNN0p5events'
+[DEBUG] Trovati 32 sistematiche per 'Wjets_HT_PUJets' in 'ele_PUWJ/events'
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ_Out' in 'ele_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'top' in 'ele_PUWJ/events'
+[DEBUG] Trovati 2 sistematiche per 'Fake' in 'ele_PUWJ/events'
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_ISR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_pdf_weight_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESFlavorQCD' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_jes' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_jetpuid_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_QCDscale_WLNuJJ_Out' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_met_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESEC2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hf' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PU_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_trigger_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_eff_prefiring_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats2_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESAbsolute' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_e_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESBBEC1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeSample_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_PS_FSR' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_lfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr1' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_cferr2' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_res_j_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESRelativeBal' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_btag_hfstats1_2016' ignorata: non è in nuisances.py
+[DEBUG] ❌ 'Out_CMS_scale_JESHF_2016' ignorata: non è in nuisances.py
+[DEBUG] Trovati 32 sistematiche per 'WLNuJJ' in 'ele_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'DY_M-50' in 'ele_PUWJ/events'
+[DEBUG] Trovati 31 sistematiche per 'Others' in 'ele_PUWJ/events'
+[DEBUG] Trovati 34 sistematiche per 'Wjets_HT_hardJets' in 'ele_PUWJ/events'
+[DEBUG] Trovati 0 sistematiche per 'DATA' in 'ele_PUWJ/events'
+All done. Changes saved to: fixed_plots_vbf_w_2016HIPM_final_v6.root
+[INFO] Output ROOT file creato.
+[INFO] Script completato con successo, copio l'output su EOS...
+[INFO] Copia completata.

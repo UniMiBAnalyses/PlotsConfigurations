@@ -1,0 +1,21 @@
+
+{  "file": "/afs/cern.ch/user/a/abulla/CMSSW_11_1_4/src/PlotsConfigurations/Configurations/VBF_W/2016/rootFile/HIPM_charge_final_v2/fixed_plots_vbf_w_2016HIPM_charge_final_v2.root",
+  "operations": [
+    {
+      "regions": ["ele_HWJ_minus"],
+      "samples": ["Fake"],
+      "vars": ["highDNN0p5events"],
+      "action": {
+        "applySF": 0.5
+      }
+    },
+    {
+      "regions": ["ele_SR_minus"],
+      "samples": ["Fake"],
+      "vars": ["highDNN0p5events"],
+      "action": {
+        "applySF": 0.5
+      }
+    }
+  ]
+}

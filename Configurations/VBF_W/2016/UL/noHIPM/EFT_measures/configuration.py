@@ -3,7 +3,7 @@
 treeName = 'Events'
 pretag = 'noHIPM'
 
-tagger = pretag+'MeasureNuisBKGnewWP'
+tagger = pretag+'MeasureNuisBKGnewWP_v1'
 tag = 'vbf_w_2016'+tagger
 
 # used by mkShape to define output directory for root files

@@ -453,16 +453,16 @@ aliases['WJets_reweight_func'] = {
     'args': (morphing_file, copy.deepcopy("ele_pol2_HWJ"), copy.deepcopy("mu_pol2_HWJ"))
 } 
 
-# DNN
-models_path = utils_folder + '2018/NN'
-model_best = '64_64_64/noQGL_test/4/'
+# # DNN
+# models_path = utils_folder + '2018/NN'
+# model_best = '64_64_64/noQGL_test/4/'
 
-aliases['DNNoutputSR_noQGL'] = {
-    'class': 'MVAReaderDNNnoQGL',
-    'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
-    'linesToAdd':[
-        'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
-        'gSystem->Load("libDNNEvaluator.so")',
-        '.L {}macros/noQGLmva_reader_DNN.cc+'.format(utils_folder)
-    ]
-}
+# aliases['DNNoutputSR_noQGL'] = {
+#     'class': 'MVAReaderDNNnoQGL',
+#     'args': ( models_path + '/' + model_best, models_path + '/' + model_best + 'cumulative_signal_2018.root', False, 1),
+#     'linesToAdd':[
+#         'gSystem->Load("libLatinoAnalysisMultiDraw.so")',
+#         'gSystem->Load("libDNNEvaluator.so")',
+#         '.L {}macros/noQGLmva_reader_DNN.cc+'.format(utils_folder)
+#     ]
+# }

@@ -63,39 +63,62 @@ ReweightJet1pT::ReweightJet1pT(const char * weights_file, string ele_function, s
 }
 
 ReweightJet1pT::~ReweightJet1pT(){
-  _file->Close();
-  delete ele_hard_weight;
-  delete mu_hard_weight;
-  delete _file;
+  if (_file) {
+    _file->Close();
+    delete _file;
+    _file = nullptr;
+  }
 }
 
 
-double
-ReweightJet1pT::evaluate(unsigned iJ){
+double ReweightJet1pT::evaluate(unsigned iJ) {
+  if (Lepton_pdgId->GetSize() == 0) {
+    return 1.0;  
+  }
+
   int lepId = abs(Lepton_pdgId->At(0));
+
+  if (CleanJet_jetIdx->GetSize() < 2 || CleanJet_pt->GetSize() < 1) {
+    return 1.0;  
+  }
 
   int Cjetidx0 = CleanJet_jetIdx->At(0);
   int Cjetidx1 = CleanJet_jetIdx->At(1);
 
+  if (Cjetidx0 < 0 || Cjetidx1 < 0 || static_cast<std::size_t>(Cjetidx0) >= Jet_genJetIdx->GetSize() || 
+    static_cast<std::size_t>(Cjetidx1) >= Jet_genJetIdx->GetSize()) {
+    return 1.0;  
+  }
+
   int Jjetidx0 = Jet_genJetIdx->At(Cjetidx0);
   int Jjetidx1 = Jet_genJetIdx->At(Cjetidx1);
 
-  int cat = 0.*(Jjetidx0 >= 0 && Jjetidx1 >= 0 && GenJet_pt->At(Jjetidx0) > 10 && GenJet_pt->At(Jjetidx1) > 10) + 1.*(!(Jjetidx0 >= 0 && Jjetidx1 >= 0 && GenJet_pt->At(Jjetidx0) > 10 && GenJet_pt->At(Jjetidx1) > 10));
+  bool is_hard = (Jjetidx0 >= 0 && Jjetidx1 >= 0 &&
+                  static_cast<std::size_t>(Jjetidx0) < GenJet_pt->GetSize() && 
+                  static_cast<std::size_t>(Jjetidx1) < GenJet_pt->GetSize() &&
+                  GenJet_pt->At(Jjetidx0) > 10 && GenJet_pt->At(Jjetidx1) > 10);
 
 
-  //cat==0 hard, cat==1 PU 
+  int cat = is_hard ? 0 : 1;
 
-  float jet1pt = CleanJet_pt->At(0);
-  double weight = 1.;
-  if (jet1pt > 350){jet1pt = 350;}
-
-  if(cat==0 and lepId == 11){
-    weight = ele_hard_weight->Eval(jet1pt);
+  if (CleanJet_pt->GetSize() == 0) {
+    return 1.0;
   }
 
-  if(cat==0 and lepId == 13){
-    weight = mu_hard_weight->Eval(jet1pt);
-  } 
+  float jet1pt = CleanJet_pt->At(0);
+  if (jet1pt > 350) {
+    jet1pt = 350;
+  }
+
+  double weight = 1.0;
+
+  if (cat == 0) {
+    if (lepId == 11 && ele_hard_weight) {
+      weight = ele_hard_weight->Eval(jet1pt);
+    } else if (lepId == 13 && mu_hard_weight) {
+      weight = mu_hard_weight->Eval(jet1pt);
+    }
+  }
 
   return weight;
 }

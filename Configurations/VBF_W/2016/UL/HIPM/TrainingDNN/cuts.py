@@ -31,16 +31,7 @@ supercut = 'nLepton>=1 && (Alt$(Lepton_pt[0],0) > 25.) \
 #levo fake e DY + ort to WH
 #fake
 
-cuts['ele_SR'] = '(abs(Lepton_pdgId[0])==11) \
-                  && Lepton_pt[0] > 30. \
-                  && bVeto \
-                  && detajj > 4 \
-                  && CleanJet_pt[1]>70. \
-                  && mtw1 > 50. \
-                 '
-
-cuts['mu_SR'] = '(abs(Lepton_pdgId[0])==13) \
-                  && bVeto \
+cuts['SR'] = 'bVeto \
                   && detajj > 4 \
                   && CleanJet_pt[1]>70. \
                   && mtw1 > 50. \

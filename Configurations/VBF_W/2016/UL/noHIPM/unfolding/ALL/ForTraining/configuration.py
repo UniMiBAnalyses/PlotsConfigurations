@@ -3,7 +3,7 @@
 treeName = 'Events'
 
 pretag = "2016noHIPM"
-tagger = pretag+'TrainingMC'
+tagger = pretag+'TrainingMC_newWP_geninfo_v10'
 
 tag = 'vbf_w_'+tagger
 

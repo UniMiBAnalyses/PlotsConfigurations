@@ -17,21 +17,6 @@ structure['top']  = {
                   'isData'   : 0
               }
 
-structure['VV']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0
-              }
-
-structure['VBS']  = { 
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
-
-structure['Higgs']  = { 
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
-
 structure['DY_M-50']  = {  
                   'isSignal' : 0,
                   'isData'   : 0
@@ -42,26 +27,47 @@ structure['DY_else']  = {
                   'isData'   : 0
               }
 
-structure['VBF-Z']  = {  
+# structure['VV']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0
+#               }
+
+# structure['VBS']  = { 
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
+
+# structure['Higgs']  = { 
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
+
+# structure['VBF-Z']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0
+#               }
+
+# structure['Vg']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
+
+# structure['VgS']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
+
+
+# structure['VVV']  = {  
+#                   'isSignal' : 0,
+#                   'isData'   : 0 
+#               }
+
+structure['Others']  = {  
                   'isSignal' : 0,
                   'isData'   : 0
               }
 
-structure['Vg']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
-
-structure['VgS']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
-
-
-structure['VVV']  = {  
-                  'isSignal' : 0,
-                  'isData'   : 0 
-              }
 
 signals = [c for c in samples if "WLNuJJ" in c and "Out" not in c]
 for i in signals:

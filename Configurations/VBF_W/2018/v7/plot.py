@@ -75,46 +75,14 @@ wjets_palette = ['#DD2C00', '#FF3D00',  '#FF6D00','#F57C00', '#FFAB00', '#FFC400
 #     wjets_bins.append("Wjets_HT_boost_"+str(ir))
 
 
-
-groupPlot['Higgs']  = {  
-                'nameHR' : "Higgs",
-                'isSignal' : 0,
-                'color'    : colors['kWhite'],
-                'samples'  : ['Higgs'],
-                'fill': 1001
-              }
-
-groupPlot['VV+VVV+VBS']  = {  
-                'nameHR' : 'VV+VVV+VBS',
-                'isSignal' : 0,
-                'color': palette["Violet"], #palette["Peach3"],  
-                'samples'  : ['VVV', 'VV','VBS'],
-                'fill': 1001
-              }
-              
 groupPlot['Others']  = {  
                 'nameHR' : "Others",
                 'isSignal' : 0,
                 'color'    : palette["Orange"],
-                'samples'  : ['ggWW', 'VBF-Z', 'Vg', 'VgS'],
+                'samples'  : ['ggWW', 'VBF-Z', 'Vg', 'VgS', 'DY_else', 'DY_M-50', 'Higgs','VVV', 'VV', 'VBS', 'Wjets_HT_PUJets'],
                 'fill': 1001
-              }
-
-groupPlot['DY_else']  = {  
-                'nameHR' : "DY_else",
-                'isSignal' : 0,
-                'color'    : palette["Pink"],
-                'samples'  : ['DY_else'],
-                'fill': 1001
-              }   
-
-groupPlot['DY_M-50']  = {  
-                'nameHR' : "DY_M-50",
-                'isSignal' : 0,
-                'color'    : palette["DarkBlue"],
-                'samples'  : ['DY_M-50'],
-                'fill': 1001
-              }            
+                }
+              
 
 groupPlot['Top']  = {  
                 'nameHR' : "Top",
@@ -176,7 +144,7 @@ plot['Wjets_HT_hardJets'] = {
                  'isData'   : 0, 
                  #'scale'    : 1.09950003 
                 #  'scale'    : 1.0
-                 'scale'    : 1.0064
+                 'scale'    : 1.00
                 #  'scale'     : 1.0232
                  #'scale'    : 1.1231175589276459 #mu
                  #'scale'    : 1.2795330335917352
@@ -189,7 +157,7 @@ plot['Wjets_HT_PUJets'] = {
                  'isData'   : 0, 
                  #'scale'    : 1.050420857 
                 #  'scale'    : 1.0
-                 'scale'    : 1.1871
+                 'scale'    : 1.00
                 #  'scale'    : 1.0854
                  #'scale'    : 1.0958905448504972
                  #'scale'    : 1.1768637821969707
@@ -200,7 +168,7 @@ plot['top'] = {
                  'isSignal' : 0,
                  'isData'   : 0, 
                 #  'scale'    : 1.0 
-                 'scale'    : 0.93512
+                 'scale'    : 1.0
                  }
     
 plot['VV']  = {
@@ -313,6 +281,3 @@ plot['DATA']  = {
 legend['lumi'] = 'L = 59.74/fb'
 
 legend['sqrt'] = '#sqrt{s} = 13 TeV'
-
-
-['detajj', 'mjj', 'ptW', 'Zl1', 'eta1']

@@ -2,7 +2,7 @@
 
 treeName = 'Events'
 
-tagger = 'newWp_fakesemiDef'
+tagger = 'final_v7'
 
 tag = 'vbf_w_2017'+tagger
 

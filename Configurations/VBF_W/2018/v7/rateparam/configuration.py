@@ -34,7 +34,7 @@ lumi = 59.74
 # different from "outputDir" to do things more tidy
 #outputDirPlots = 'plots'
 # outputDirPlots = 'plots/NORWALLSYS'
-outputDirPlots = 'plots/'+tagger+"1"
+outputDirPlots = '../../plots/'+tagger+"_noscaled"
 
 
 # used by mkDatacards to define output directory for datacards
